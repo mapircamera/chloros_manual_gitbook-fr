@@ -4,44 +4,46 @@ Chloros offre une prise en charge complète de l&#x27;interface dans **38 langue
 
 Chloros prend en charge les langues suivantes :
 
-1. 🇺🇸 **Anglais**
-2. 🇪🇸 **Español** (espagnol)
-3. 🇵🇹 **Português** (portugais)
-4. 🇫🇷 **Français** (français)
-5. 🇩🇪 **Deutsch** (allemand)
-6. 🇮🇹 **Italiano** (italien)
-7. 🇯🇵 **日本語** (japonais)
-8. 🇰🇷 **한국어** (coréen)
-9. 🇨🇳 **简体中文** (chinois simplifié)
-10. 🇹🇼 **繁體中文** (Chinois traditionnel)
-11. 🇷🇺 **Русский** (Russe)
-12. 🇳🇱 **Nederlands** (Néerlandais)
-13. 🇸🇦 **العربية** (Arabe)
-14. 🇵🇱 **Polski** (polonais)
-15. 🇹🇷 **Türkçe** (turc)
-16. 🇮🇳 **हिंदी** (hindi)
-17. 🇮🇩 **Bahasa Indonesia** (indonésien)
-18. 🇻🇳 **Tiếng Việt** (vietnamien)
-19. 🇹🇭 **ไทย** (thaï)
-20. 🇸🇪 **Svenska** (suédois)
-21. 🇩🇰 **Dansk** (danois)
-22. 🇳🇴 **Norsk** (norvégien)
-23. 🇫🇮 **Suomi** (finnois)
-24. 🇬🇷 **Ελληνικά** (grec)
-25. 🇨🇿 **Čeština** (tchèque)
-26. 🇭🇺 **Magyar** (hongrois)
-27. 🇷🇴 **Română** (roumain)
-28. 🇺🇦 **Українська** (ukrainien)
-29. 🇧🇷 **Português Brasileiro** (portugais brésilien)
-30. 🇭🇰 **粵語** (cantonais)
-31. 🇲🇾 **Bahasa Melayu** (malais)
-32. 🇸🇰 **Slovenčina** (slovaque)
-33. 🇧🇬 **Български** (bulgare)
-34. 🇭🇷 **Hrvatski** (croate)
-35. 🇱🇹 **Lietuvių** (lituanien)
-36. 🇱🇻 **Latviešu** (letton)
-37. 🇪🇪 **Eesti** (estonien)
-38. 🇸🇮 **Slovenščina** (slovène)
+| # | Langue | Nom natif | Code CLI |
+|---|----------|-------------|----------|
+| 1 | 🇺🇸 Anglais | Anglais | `en` |
+| 2 | 🇪🇸 Espagnol | Español | `es` |
+| 3 | 🇵🇹 Portugais | Português | `pt` |
+| 4 | 🇫🇷 Français | Français | `fr` |
+| 5 | 🇩🇪 Allemand | Deutsch | `de` |
+| 6 | 🇮🇹 Italien | Italiano | `it` |
+| 7 | 🇯🇵 Japonais | 日本語 | `ja` |
+| 8 | 🇰🇷 Coréen | 한국어 | `ko` |
+| 9 | 🇨🇳 Chinois (simplifié) | 简体中文 | `zh` |
+| 10 | 🇹🇼 Chinois (traditionnel) | 繁體中文 | `zh-TW` |
+| 11 | 🇷🇺 Russe | Русский | `ru` |
+| 12 | 🇳🇱 Néerlandais | Nederlands | `nl` |
+| 13 | 🇸🇦 Arabe | العربية | `ar` |
+| 14 | 🇵🇱 Polonais | Polski | `pl` |
+| 15 | 🇹🇷 Turc | Türkçe | `tr` |
+| 16 | 🇮🇳 Hindi | हिंदी | `hi` |
+| 17 | 🇮🇩 Indonésien | Bahasa Indonesia | `id` |
+| 18 | 🇻🇳 Vietnamien | Tiếng Việt | `vi` |
+| 19 | 🇹🇭 Thaï | ไทย | `th` |
+| 20 | 🇸🇪 Suédois | Svenska | `sv` |
+| 21 | 🇩🇰 Danois | Dansk | `da` |
+| 22 | 🇳🇴 Norvégien | Norsk | `no` |
+| 23 | 🇫🇮 Finnois | Suomi | `fi` |
+| 24 | 🇬🇷 Grec | Ελληνικά | `el` |
+| 25 | 🇨🇿 Tchèque | Čeština | `cs` |
+| 26 | 🇭🇺 Hongrois | Magyar | `hu` |
+| 27 | 🇷🇴 Roumain | Română | `ro` |
+| 28 | 🇺🇦 Ukrainien | Українська | `uk` |
+| 29 | 🇧🇷 Portugais brésilien | Português Brasileiro | `pt-BR` |
+| 30 | 🇭🇰 Cantonais | 粵語 | `zh-HK` |
+| 31 | 🇲🇾 Malais | Bahasa Melayu | `ms` |
+| 32 | 🇸🇰 Slovaque | Slovenčina | `sk` |
+| 33 | 🇧🇬 Bulgare | Български | `bg` |
+| 34 | 🇭🇷 Croate | Hrvatski | `hr` |
+| 35 | 🇱🇹 Lituanien | Lietuvių | `lt` |
+| 36 | 🇱🇻 Letton | Latviešu | `lv` |
+| 37 | 🇪🇪 Estonien | Eesti | `et` |
+| 38 | 🇸🇮 Slovène | Slovenščina | `sl` |
 
 ## Comment changer de langue
 
@@ -54,11 +56,30 @@ Chloros prend en charge les langues suivantes :
 
 ### Dans Chloros CLI
 
-Utilisez le paramètre de langue avec vos commandes pour définir la langue de l&#x27;interface.
+Utilisez la commande `language` pour afficher ou modifier la langue de l&#x27;interface CLI :
+
+```bash
+# View current language
+chloros-cli language
+
+# Change to Spanish
+chloros-cli language es
+
+# Change to Chinese (Simplified)
+chloros-cli language zh
+
+# Change to Brazilian Portuguese
+chloros-cli language pt-BR
+
+# List all available languages
+chloros-cli language --list
+```
+
+Pour plus de détails, consultez la [documentation CLI](CLI.md).
 
 ### Dans Chloros Python SDK
 
-Définissez le paramètre de langue lors de l&#x27;initialisation du SDK pour obtenir les messages et les sorties dans la langue de votre choix.
+Définissez le paramètre de langue lors de l&#x27;initialisation de SDK pour obtenir les messages et les sorties dans la langue de votre choix.
 
 ## Couverture
 
