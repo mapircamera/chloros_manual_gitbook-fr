@@ -27,7 +27,7 @@ Pour les utilisateurs ayant la licence Chloros+ :
 
 **Affichage de la progression en 4 étapes:**
 
-1. **Détection** - Recherche des cibles d'étalonnage
+1. **Détection** - Recherche de cibles d'étalonnage
 2. **Analyse** - Examen des images et préparation du pipeline
 3. **Calibrage** - Application des corrections de vignette et de réflectance
 4. **Exportation** - Enregistrement des fichiers traités
@@ -183,7 +183,7 @@ Problèmes non critiques qui n'interrompent pas le traitement :
 
 #### Messages d'erreur (Red)
 
-Problèmes critiques pouvant entraîner l'échec du traitement :
+Problèmes critiques susceptibles de faire échouer le traitement :
 
 ```
 [ERROR] Cannot write file - disk full
@@ -199,7 +199,7 @@ Problèmes critiques pouvant entraîner l'échec du traitement :
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
 | "Target detected in \[filename]" (Cible détectée dans [nom de fichier]) | "Cible détectée dans \N[nom de fichier]" | Cible d'étalonnage trouvée avec succès | Aucun - normal |
 | "Traitement de l'image X de Y"        | "Traitement de l'image X de Y" | Mise à jour de la progression en cours | Aucun - normal
-| "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Marquer les images cibles ou désactiver l'étalonnage par réflectance | "Aucune cible trouvée" | "Aucune cible détectée" | Aucune - normal
+| "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Marquer les images cibles ou désactiver l'étalonnage de la réflectance | "Aucune cible trouvée" | Aucune cible d'étalonnage détectée
 | "Espace disque insuffisant" | Espace disque insuffisant pour la sortie | Libérer de l'espace disque
 | "Skipping corrupted file" | Fichier d'image endommagé | Recopier le fichier à partir de la carte SD
 | "Données PPK appliquées" | Les corrections GPS du fichier .daq sont appliquées | Aucune - normal |
@@ -235,7 +235,7 @@ Pour copier le journal à des fins de dépannage ou d'assistance :
 
 * Windows Gestionnaire des tâches (Ctrl+Shift+Esc)
 * Onglet Performance → section CPU
-* Recherchez les processus "Chloros" ou "chloros-backend"
+* Rechercher les processus "Chloros" ou "chloros-backend"
 
 ### Utilisation de la mémoire (RAM)
 
@@ -384,9 +384,9 @@ Lorsque le traitement est terminé :
 
 Une fois le traitement terminé :
 
-1. **Examen des résultats** - Voir [Fin du traitement](fin-the-processing.md)
+1. **Examen des résultats** - Voir [Fin du traitement](Fin du traitement.md)
 2. **Vérifier le dossier de sortie** - Vérifier que tous les fichiers ont été exportés correctement
 3. **Consulter le journal de débogage** - Vérifier qu'il n'y a pas d'avertissement ou d'erreur
 4. **Visualiser les images traitées** - Utiliser la visionneuse d'images ou un logiciel externe
 
-Pour plus d'informations sur l'examen et l'utilisation des résultats traités, voir [Fin du traitement] (Fin-the-processing.md).
+Pour plus d'informations sur l'examen et l'utilisation des résultats traités, voir [Fin du traitement] (Fin du traitement.md).

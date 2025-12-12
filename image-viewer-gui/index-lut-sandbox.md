@@ -31,7 +31,7 @@ L'Environnement de travail fournit :
 * Meilleur lorsque les paramètres sont finalisés
 
 {% hint style="success" %}
-**Best Workflow**: Use the Sandbox to experiment and find optimal index and LUT settings, then apply those settings during Project Processing for your entire dataset.
+**Meilleur flux de travail** : Utilisez l'Environnement de travail pour expérimenter et trouver les paramètres d'index et de LUT optimaux, puis appliquez ces paramètres pendant le Traitement du projet pour l'ensemble de votre jeu de données.
 {% endhint %}
 
 ***
@@ -100,7 +100,7 @@ Pour une documentation complète sur les formules d'index, voir [Multispectral I
 
 ***
 
-## Travailler avec les LUTs (Look-Up Tables)
+## Travailler avec des LUT (Look-Up Tables)
 
 ### Qu'est-ce qu'une LUT ?
 
@@ -116,7 +116,7 @@ Un **Look-Up Table (LUT)** associe des valeurs d'index numériques à des couleu
 * LUT de couleur : Intuitive et percutante, elle met en évidence les modèles et les différences
 
 {% hint style="success" %}
-**Visualization Power**: Applying a color LUT to a grayscale index image makes it dramatically easier to identify patterns, anomalies, and areas of interest at a glance.
+**Puissance de visualisation** : L'application d'une table de conversion des couleurs à une image d'index en niveaux de gris facilite considérablement l'identification des modèles, des anomalies et des zones d'intérêt d'un seul coup d'œil.
 {% endhint %}
 
 ### Application d'une LUT à une image d'index
@@ -125,9 +125,9 @@ Une fois que vous avez une image d'index montrant
 
 1. Cliquez sur le bouton <img src="../.gitbook/assets/image.png" alt="" data-size="line"> "+Add LUT"
 2. Sélectionnez le dégradé de couleurs
-3. Ajustez les points de terminaison min/max de l'écrêtage
+3. Ajustez les points finaux min/max de l'écrêtage
 4. Ajuster le mode d'écrêtage
-5. Cochez la case Index dans la barre latérale de l'onglet **Visionneuse d'images** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> pour appliquer la LUT
+5. Cochez la case Index dans la barre latérale de l'onglet **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> pour appliquer la LUT
 
 ### Choix d'un dégradé de couleurs
 
@@ -139,12 +139,12 @@ Une fois que vous avez une image d'index montrant
 4. L'image **se met à jour immédiatement** avec les nouvelles couleurs lorsque la case Index est cochée
 
 {% hint style="success" %}
-**Best Practice**: For vegetation indices like NDVI, the Red-Yellow-Green gradient is most intuitive because it aligns with natural color associations (green=healthy, yellow=moderate, red=stressed).
+**Best Practice** : Pour les indices de végétation tels que NDVI, le gradient Red-Jaune-Green est le plus intuitif car il s'aligne sur les associations de couleurs naturelles (vert = sain, jaune = modéré, rouge = stressé).
 {% endhint %}
 
-### Ajustement des classes de couleurs
+### Ajustement des classes de couleur
 
-La commande **Classes** détermine le nombre de pas de couleur distincts apparaissant dans votre dégradé :
+La commande **Classes** détermine le nombre d'étapes de couleur distinctes qui apparaissent dans votre dégradé :
 
 **Options de nombre de classes:**
 
@@ -194,12 +194,12 @@ Les **règles de valeurs** déterminent quelles valeurs d'index correspondent à
 6. La visualisation **se met à jour immédiatement**
 
 {% hint style="info" %}
-**Auto-Scaling**: When you first apply a LUT, Chloros automatically sets the min/max to the actual data range in the image. You can then narrow this range to focus on specific value ranges of interest.
+**Mise à l'échelle automatique** : Lorsque vous appliquez une LUT pour la première fois, Chloros définit automatiquement les valeurs min/max sur la plage de données réelle de l'image. Vous pouvez ensuite réduire cette plage pour vous concentrer sur les plages de valeurs spécifiques qui vous intéressent.
 {% endhint %}
 
-**Exemple NDVI d'ajustements de gamme:**
+**Exemple NDVI ajustements de plage:**
 
-* **Toute la gamme** : `-1.0` à `1.0` (afficher toutes les valeurs possibles)
+* **Gamme complète** : `-1.0` à `1.0` (afficher toutes les valeurs possibles)
 * **Focalisation sur la végétation** : `0.2` à `0.9` (exclure le sol nu et l'eau)
 * **Végétation saine uniquement** : `0.5` à `0.9` (ne met en évidence que les plantes vigoureuses)
 * **Détection de stress** : `0.2` à `0.5` (souligne les zones à problèmes)
@@ -233,10 +233,10 @@ Lorsque les valeurs des pixels se situent en dehors de la plage min/max définie
 * **Exemple** : Afficher seulement NDVI 0.4-0.7 en couleur, tout le reste étant transparent
 
 {% hint style="warning" %}
-**Transparency Limitation**: Transparent pixels will appear as the background color in the viewer. When exported during processing, transparency is preserved in PNG format but not in JPG.
+**Limitation de la transparence** : Les pixels transparents apparaissent comme couleur de fond dans le visualiseur. Lors de l'exportation pendant le traitement, la transparence est préservée dans le format PNG mais pas dans le format JPG.
 {% endhint %}
 
-#### 3. Fond de l'index
+#### 3. Fond d'index
 
 * Les pixels **hors de la plage** s'affichent en **échelle de gris** (montrant les valeurs brutes de l'index)
 * Les pixels **à l'intérieur de la plage** affichent un **gradient de couleur**
@@ -290,7 +290,7 @@ Pour un contrôle total de votre visualisation, vous pouvez créer des **gradien
 * **Multi-seuils** : Utilisez des couleurs distinctes à des seuils de valeur spécifiques pour la classification
 
 {% hint style="info" %}
-**Saving Custom Gradients**: Custom gradients can be saved and reused. Click the save icon in the LUT panel to preserve your custom color schemes for future use.
+**Sauvegarde des dégradés personnalisés** : Les dégradés personnalisés peuvent être enregistrés et réutilisés. Cliquez sur l'icône d'enregistrement dans le panneau LUT pour conserver vos schémas de couleurs personnalisés en vue d'une utilisation ultérieure.
 {% endhint %}
 
 ***
@@ -311,15 +311,15 @@ Tous les ajustements de LUT dans le bac à sable mettent à jour l'image **insta
 **Aucun bouton "Appliquer" n'est nécessaire** - tous les changements sont en direct et interactifs !
 
 {% hint style="success" %}
-**Live Feedback**: The instant visual feedback allows you to rapidly experiment with different settings until you find the optimal visualization for your analysis needs.
+**Retour d'information en direct** : Le retour visuel instantané vous permet d'expérimenter rapidement différents paramètres jusqu'à ce que vous trouviez la visualisation optimale pour vos besoins d'analyse.
 {% endhint %}
 
-### Flux de travail de l'affinage itératif
+### Flux de travail d'affinage itératif
 
 **Flux de travail typique pour l'optimisation de la LUT:**
 
 1. **Sélection de la couche d'index** (par exemple, RAW (Reflectance))
-2. **Appliquer l'index** - Choisir le filtre de la caméra et la formule d'index, faire glisser les cercles colorés à l'endroit approprié dans la formule d'index
+2. **Appliquer l'index** - Choisir le filtre de la caméra et la formule d'index, faire glisser les cercles colorés à l'emplacement approprié dans la formule d'index
 3. **Appliquer le gradient LUT** - Commencez par le préréglage Red-Jaune-Green
 4. **Inspecter les valeurs des pixels** - Déplacer le curseur, noter les plages de valeurs
 5. **Ajuster min/max** - Réduire pour se concentrer sur la végétation (par exemple, 0,2 à 0,9)
@@ -356,7 +356,7 @@ Après avoir inspecté les valeurs des pixels, réglez les valeurs min/max de vo
 * **Résultat** : Le gradient de couleur ne s'applique qu'à la végétation, le sol apparaît comme l'image originale
 
 {% hint style="info" %}
-**Dynamic Range**: Different crops, seasons, and growth stages will have different value ranges. Always inspect pixel values in your specific dataset before setting LUT ranges.
+**Gamme dynamique** : Des cultures, des saisons et des stades de croissance différents auront des plages de valeurs différentes. Inspectez toujours les valeurs des pixels dans votre jeu de données spécifique avant de définir les plages de la LUT.
 {% endhint %}
 
 ***
@@ -366,14 +366,14 @@ Après avoir inspecté les valeurs des pixels, réglez les valeurs min/max de vo
 ### Création de formules d'indices personnalisés
 
 {% hint style="info" %}
-**Where to Create**: Custom indices can be configured in **Project Settings** before processing, as well as in the Image Viewer sandbox sidebar.
+**Où créer** : Les indices personnalisés peuvent être configurés dans les **Paramètres du projet** avant le traitement, ainsi que dans la barre latérale de la visionneuse d'images.
 {% endhint %}
 
 **Pour créer un index personnalisé:**
 
 1. **Ouvrez les paramètres du projet** (avant le traitement) ou la barre latérale de la visionneuse d'images
 2. Naviguez jusqu'à la liste déroulante **Formule d'index**
-3. Recherchez l'option **"Personnalisée "** (vous devez être connecté avec une licence Chloros+)
+3. Recherchez l'option **"Personnalisée "** (vous devez être connecté avec la licence Chloros+)
 4. **Définissez votre formule** en utilisant des variables de bande :
    * Nom des bandes : `NIR`, `Red`, `Green`, `Blue`, `RedEdge`, etc.
    * Opérateurs : `+`, `-`, `*`, `/`, `^` (exposant)
@@ -399,7 +399,7 @@ Exponential index:
 ```
 
 {% hint style="warning" %}
-**Formula Validation**: Ensure your formula uses bands available in your camera. For example, RedEdge is only available on cameras with a RedEdge filter.
+**Validation de la formule** : Assurez-vous que votre formule utilise les bandes disponibles dans votre appareil photo. Par exemple, RedEdge n'est disponible que sur les appareils photo dotés d'un filtre RedEdge.
 {% endhint %}
 
 ***
@@ -409,11 +409,11 @@ Exponential index:
 Maintenant que vous avez compris ce qu'est l'Index/LUT Sandbox :
 
 * **Appliquer au traitement** : Utilisez les paramètres découverts dans [Project Settings](../project-settings/project-settings.md)
-* **Traitement par lots** : Appliquer les indices optimisés à des ensembles de données complets
+* **Traitement par lots** : Appliquer des indices optimisés à des ensembles de données complets
 * **Pour en savoir plus Lire [Formules de l'indice multispectral](../project-settings/multispectral-index-formulas.md)
 
 Documentation connexe :
 
-* [**Calques d'image**](image-layers.md) - Gestion et visualisation des calques
+* [**Calques d'images**](image-layers.md) - Gestion et visualisation des calques
 * [**Ouverture d'une image en plein écran**](opening-an-image-full-screen.md) - Principes de base de la visionneuse d'images
 * [**Traitement des images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Flux de travail complet pour le traitement des images

@@ -9,9 +9,9 @@ metaLinks:
 
 <details>
 
-<summary>Puis-je traiter des images provenant de caméras qui ne sont pas de MAPIR marque Chloros?</summary>
+<summary>Puis-je traiter des images provenant d'appareils photo qui ne sont pas de MAPIR marque Chloros?</summary>
 
-Non, Chloros ne prend en charge que le traitement des images des caméras MAPIR. Veuillez consulter la liste des [modèles d'appareils photo pris en charge] (pris en charge-cameras.md) pour plus d'informations. Nous proposons le traitement d'autres caméras sur MAPIR Cloud, voir la liste complète [ici](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+Non, Chloros ne prend en charge que le traitement des images d'appareils photo MAPIR. Veuillez consulter la liste des [modèles d'appareils photo pris en charge] (supported-cameras.md) pour plus d'informations. Nous proposons le traitement d'autres caméras sur MAPIR Cloud, voir la liste complète [ici](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
@@ -35,7 +35,7 @@ Non. Chloros suppose que les données d'entrée n'ont pas été modifiées. Ne c
 
 <summary>Puis-je régler mes MAPIR Survey3 caméras sur l'exposition automatique et traiter les images en Chloros?</summary>
 
-Non. Les ensembles d'images Survey3 doivent avoir une exposition fixe/verrouillée, donc pas de vitesse d'obturation automatique ou d'ISO automatique. Toutes les images du même modèle d'appareil photo doivent avoir une vitesse d'obturation et une sensibilité ISO (exposition) identiques.
+Non. Les ensembles d'images Survey3 doivent avoir une exposition fixe/verrouillée, donc pas de vitesse d'obturation automatique ni d'ISO automatique. Toutes les images du même modèle d'appareil photo doivent avoir une vitesse d'obturation et une sensibilité ISO (exposition) identiques.
 
 </details>
 
@@ -57,7 +57,7 @@ Dans le tableau du navigateur de fichiers, la présélection des images cibles d
 
 <details>
 
-<summary>Si je télécharge mes images sur <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> dois-je les traiter dans Chloros avant de les télécharger ? </summary>
+<summary> Si je télécharge mes images sur <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> dois-je les traiter dans Chloros avant de les télécharger ? </summary>
 
 Si vous prévoyez de télécharger vers notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant de les télécharger. Cloud effectuera tous les mêmes traitements et plus encore.
 

@@ -9,14 +9,14 @@ Une fois que vous avez créé ou ouvert un projet dans Chloros, l'étape suivant
 3. Le panneau du navigateur de fichiers affiche la liste des fichiers de votre projet
 
 {% hint style="info" %}
-**Supported File Types**: Chloros supports RAW+JPG and JPG image files from MAPIR Survey3W and Survey3N cameras. Only RAW+JPG are recommended.
+**Types de fichiers pris en charge** : Chloros prend en charge les fichiers d'images RAW+JPG et JPG des appareils photo MAPIR Survey3W et Survey3N. Seuls les fichiers RAW+JPG sont recommandés.
 {% endhint %}
 
 ***
 
 ## Ajouter des images à votre projet
 
-Il existe deux façons principales d'ajouter des images à votre projet :
+Il y a deux façons principales d'ajouter des images à votre projet :
 
 ### Méthode 1 : Ajouter des fichiers
 
@@ -66,8 +66,8 @@ Une fois les images importées, elles apparaissent dans un tableau comportant le
 ### Colonne cible (case à cocher)
 
 * Cochez cette case pour les images contenant des cibles d'étalonnage
-* Accélère considérablement la détection des cibles pendant le traitement
-* Voir [Choix des images cibles] (choisir-target-images.md) pour plus de détails
+* Accélère considérablement la détection des cibles lors du traitement
+* Voir [Choix des images cibles](choosing-target-images.md) pour plus de détails
 
 ***
 
@@ -117,7 +117,7 @@ Chloros détecte et ignore automatiquement les fichiers en double :
 * Un message d'avertissement s'affiche lorsque des doublons sont détectés
 
 {% hint style="warning" %}
-**Important**: Do not rename or modify your original image files before importing. Chloros relies on original filenames and metadata for proper processing.
+**Important** : Ne renommez pas et ne modifiez pas vos fichiers d'images originaux avant de les importer. Chloros s'appuie sur les noms de fichiers et les métadonnées d'origine pour un traitement correct.
 {% endhint %}
 
 ***
@@ -165,7 +165,7 @@ Si votre projet contient des images provenant de plusieurs MAPIR caméras :
 **Causes possibles:**
 
 * Format de fichier non pris en charge (uniquement RAW+JPG et JPG des appareils photo MAPIR)
-* Les images proviennent d'appareils photo qui ne sont pas MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
+* Les images proviennent d'appareils photo nonMAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
 * Corruption de fichier ou transfert incomplet depuis la carte SD
 
 **Solution** : Vérifiez la compatibilité du format de fichier et du modèle d'appareil photo
@@ -197,8 +197,8 @@ Une fois vos fichiers importés :
 
 1. **Revoir la liste des fichiers** - S'assurer que toutes les images ont été chargées correctement
 2. **Vérifier les modèles d'appareil photo** - Vérifier la détection correcte de l'appareil photo
-3. **Marquer les images cibles** - Voir [Choix des images cibles] (choisir-target-images.md)
-4. **Ajuster les paramètres** - Configurez les options de traitement dans [Paramètres du projet] (ajuster-project-settings.md)
-5. **Lancer le traitement** - Voir [Démarrer le traitement](démarrer-the-processing.md)
+3. **Marquer les images cibles** - Voir [Choix des images cibles](choosing-target-images.md)
+4. **Ajuster les paramètres** - Configurez les options de traitement dans [Paramètres du projet](adjusting-project-settings.md)
+5. **Lancer le traitement** - Voir [Lancer le traitement](lancer-le-traitement.md)
 
-Pour des informations détaillées sur la configuration du projet, voir [Ajuster les paramètres du projet](ajuster-project-settings.md).
+Pour des informations détaillées sur la configuration du projet, voir [Adjusting Project Settings](adjusting-project-settings.md).

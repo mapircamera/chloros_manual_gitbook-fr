@@ -23,7 +23,7 @@ Une fois l'image chargée dans la zone de prévisualisation :
 
 ***
 
-## Aperçu de l'interface de la visionneuse d'images
+## Vue d'ensemble de l'interface de la visionneuse d'images
 
 ### Zone d'affichage principale
 
@@ -134,7 +134,7 @@ Appliquer des indices multispectraux et des tables de correspondance des couleur
 
 1. Localiser **Index/LUT Sandbox** dans **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
 2. Sélectionner l'indice de végétation (NDVI, NDRE, etc.)
-3. Sélectionnez la formule multispectrale ou créez votre propre formule personnalisée (Chloros+ uniquement)
+3. Sélectionnez une formule multispectrale ou créez-en une personnalisée (Chloros+ uniquement)
 4. Appliquer le gradient de la LUT de couleur pour la visualisation
 5. Ajuster les plages de valeurs et les seuils
 
@@ -217,7 +217,7 @@ Vérifier que les indices ont été calculés correctement :
 2. Essayer d'ouvrir le fichier dans QGIS ou un logiciel similaire avec ajustement automatique de la plage d'affichage
 3. Vérifier le journal de débogage du traitement pour les erreurs
 
-### Les valeurs des pixels semblent incorrectes
+### Les valeurs des pixels semblent erronées
 
 **Causes possibles:**
 
@@ -240,8 +240,8 @@ Vous pouvez maintenant afficher les images en plein écran :
 
 * [**Calques d'images**](image-layers.md) - Découvrez la visualisation multibande
 * [**Index/LUT Sandbox**](index-lut-sandbox.md) - Appliquez des indices et des cartographies de couleurs personnalisés
-* [Formules d'index multispectrales**](../project-settings/multispectral-index-formulas.md) - Comprendre les index disponibles
+* [Formules d'indices multi-spectraux**](../project-settings/multispectral-index-formulas.md) - Comprendre les indices disponibles
 
-Pour le flux de travail, voir :
+Pour le processus de traitement, voir :
 
 * [**Traitement des images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Guide de traitement complet

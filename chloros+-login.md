@@ -25,10 +25,10 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
 {% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
+**Caractères spéciaux** : Utilisez des guillemets simples autour des mots de passe contenant des caractères tels que `$`, `!`, ou des espaces.
 {% endhint %}
 
-**Output:**
+**Sortie:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 

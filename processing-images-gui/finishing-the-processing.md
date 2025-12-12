@@ -1,6 +1,6 @@
 # Fin du traitement
 
-Une fois que Chloros a terminé son traitement, il est temps d'examiner les résultats, de vérifier la qualité de la sortie et de préparer les images traitées pour les utiliser dans votre flux de travail. Cette page vous guide dans les étapes finales et les actions suivantes.
+Une fois que Chloros a terminé le traitement, il est temps d'examiner les résultats, de vérifier la qualité de la sortie et de préparer les images traitées pour les utiliser dans votre flux de travail. Cette page vous guide dans les étapes finales et les actions suivantes.
 
 ## Indication de traitement terminé
 
@@ -8,7 +8,7 @@ Lorsque le traitement est terminé avec succès, plusieurs indicateurs s'affiche
 
 * ✅ **Barre de progression** : Le traitement est terminé à 100 %
 * ✅ **Journal de débogage** : Affiche le message "Traitement terminé
-* ✅ **Bouton de démarrage** : Redevient actif (prêt pour le traitement suivant)
+* **Bouton de démarrage** : Redevient actif (prêt pour le traitement suivant)
 * fichiers de sortie** : Toutes les images traitées sont enregistrées dans le sous-dossier du modèle de l'appareil photo
 
 ***
@@ -32,7 +32,7 @@ Lorsque le traitement est terminé avec succès, plusieurs indicateurs s'affiche
 
 1. Naviguer vers le sous-dossier du modèle de l'appareil photo
 2. Sélectionner un fichier image
-3. L'aperçu apparaît dans le volet d'aperçu de l'explorateur
+3. Un aperçu apparaît dans le volet d'aperçu de l'explorateur
 4. Utiliser les touches fléchées pour parcourir les images
 
 ### Prévisualisation dans les visionneuses d'images externes
@@ -43,7 +43,7 @@ Lorsque le traitement est terminé avec succès, plusieurs indicateurs s'affiche
 * **IrfanView** - Visionneuse d'images rapide et légère (supporte TIFF)
 * **Adobe Photoshop** - Edition professionnelle (prise en charge TIFF)
 * **GIMP** - Alternative gratuite à Photoshop
-* **Windows Photos** - Visualisation de base (peut ne pas prendre en charge les images 16 bits TIFF)
+* **Windows Photos** - Visualisation de base (peut ne pas prendre en charge les TIFF 16 bits)
 
 ### Aperçu dans Chloros Image Viewer
 
@@ -273,12 +273,12 @@ Si vous rencontrez des problèmes :
 
 Vous avez maintenant terminé le processus de traitement complet Chloros :
 
-1. ✅ **Créé un projet** - Voir [Projets](.../projects.md)
-2. ✅ **Fichiers ajoutés** - Voir [Ajout de fichiers](ajout-files-to-a-project.md)
-3. ✅ **Paramètres ajustés** - Voir [Ajuster les paramètres du projet](ajuster-project-settings.md)
-4. ✅ **Cibles marquées** - Voir [Choix des images cibles](choix-target-images.md)
-5. ✅ **Démarrer le traitement** - Voir [Démarrer le traitement](démarrer-the-processing.md)
-6. ✅ **Suivi de la progression** - Voir [Suivi du traitement](suivi-the-processing.md)
+1. ✅ **Créé un projet** - Voir [Projets](../projets.md)
+2. ✅ **Fichiers ajoutés** - Voir [Ajout de fichiers](ajout de fichiers à un projet.md)
+3. ✅ **Paramètres ajustés** - Voir [Ajuster les paramètres du projet](ajusterlesparamètresduprojet.md)
+4. ✅ **Cibles marquées** - Voir [Choix des images cibles](choosing-target-images.md)
+5. ✅ **Démarrer le traitement** - Voir [Démarrer le traitement](démarrer-le-traitement.md)
+6. ✅ **Suivi de la progression** - Voir [Suivi du traitement](suivi du traitement.md)
 7. ✅ **Résultats examinés** - Cette page
 
 **Vos images multispectrales calibrées et corrigées en fonction de la réflectance sont prêtes pour l'analyse !
@@ -290,17 +290,17 @@ Vous avez maintenant terminé le processus de traitement complet Chloros :
 ### Fonctionnalités avancées
 
 * [**Image Viewer**](../image-viewer-gui/opening-an-image-full-screen.md) - Visualisation et analyse interactives
-* [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Test d'index personnalisé
-* [Formules d'index multispectrales**](../project-settings/multispectral-index-formulas.md) - Référence d'index complète
+* [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Tests d'index personnalisés
+* [Formules de l'indice multispectral**](../project-settings/multispectral-index-formulas.md) - Référence complète de l'indice
 
 ### Automatisation et intégration
 
 * [**CLI Documentation**](../CLI.md) - Traitement par lots en ligne de commande
 * [**Python SDK**](../api-python-sdk.md) - Automatisation programmatique
-* [**Chloros+ Caractéristiques**](../#chloros) - Capacités de traitement avancées
+* [**Chloros+ Features**](../#chloros) - Capacités de traitement avancées
 
 ### Support et apprentissage
 
-* [**FAQ**](../faq.md) - Réponses aux questions les plus courantes
+* [**FAQ**](../faq.md) - Réponses aux questions courantes
 * [**Cibles d'étalonnage**](../calibration-targets.md) - Comprendre l'étalonnage de la réflectance
-* [**Caméras supportées**](../supported-cameras.md) - Matériel compatible
+* [**Caméras compatibles**](../caméras compatibles.md) - Matériel compatible

@@ -143,7 +143,7 @@ Ces paramètres vous permettent de configurer des indices multispectraux pour l'
   * Sélection de formules d'index prédéfinies
   * Configurer les gradients de couleur de visualisation (LUT - Look-Up Tables)
   * Définir des valeurs seuils pour l'analyse
-  * Créer des formules d'index personnalisées
+  * Créer des formules d'indexation personnalisées
 
 ### Formules personnalisées (Chloros+ Fonctionnalité)
 
@@ -168,10 +168,10 @@ Ces paramètres contrôlent le format et la qualité des images traitées export
 
 * **Type** : Sélection déroulante
 * **Options** :
-  * **TIFF (16 bits)** - Format 16 bits non compressé TIFF
+  * **TIFF (16 bits)** - Format 16 bits non compressé
   * **TIFF (32 bits, Pourcentage)** - Format 32 bits à virgule flottante TIFF avec des valeurs de réflectance sous forme de pourcentages
   * **PNG (8 bits)** - Format 8 bits compressé PNG
-  * **JPG (8 bits)** - Format 8 bits compressé JPEG
+  * **JPG (8-bit)** - Format 8-bit compressé JPEG (8-bit)** - Format 8-bit compressé JPEG (8-bit)**
 * **Par défaut** : TIFF (16 bits)
 * **Description** : Sélectionne le format de fichier pour l'enregistrement des images traitées et calibrées.
 * **Recommandations de format** :
@@ -223,7 +223,7 @@ Tous les paramètres du projet sont automatiquement enregistrés avec votre fich
 
 Les paramètres sont appliqués dans l'ordre suivant :
 
-1. **Défauts du système** - Défauts intégrés définis par Chloros
+1. **Valeurs par défaut du système** - Valeurs par défaut intégrées définies par Chloros
 2. **Paramètres du modèle** - Si vous chargez un modèle lors de la création d'un projet
 3. **Paramètres du projet enregistrés** - Paramètres enregistrés avec le fichier de projet
 4. **Ajustements manuels** - Toutes les modifications que vous apportez pendant la session en cours
@@ -252,4 +252,4 @@ La plupart des changements de paramètres (en particulier dans les catégories T
 
 ***
 
-Pour plus d'informations sur les indices multispectraux dans Chloros, voir la page [Formules d'indices multispectraux](multispectral-index-formulas.md).
+Pour plus d'informations sur les indices multispectraux dans Chloros, voir la page [Multispectral Index Formulas](multispectral-index-formulas.md).

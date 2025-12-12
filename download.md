@@ -10,25 +10,25 @@ Téléchargez la dernière version de Chloros pour Windows pour commencer à tra
 
 ### Configuration requise
 
-| Exigences du système - Minimum - Recommandé - Exigences du système - Exigences du système - Exigences du système - Minimum - Recommandé
+| Exigence | Minimale | Recommandée |
 | -------------------- | ------------------------------- | ------------------------------- |
 | **Système d'exploitation** | Windows 10 (64-bit) | Windows 11 (64-bit) | Windows 10 (64-bit) | Windows 11 (64-bit)
-| Système d'exploitation** - Windows 10 (64 bits) - Windows 11 (64 bits)
+| Système d'exploitation** - Windows 11 (64 bits) - **Processeur** - Intel Core i5 ou équivalent - Intel Core i7 ou supérieur
 | Mémoire vive (RAM)** 8 Go | 16 Go ou plus
-carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus | Carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus
-| Mémoire vive (RAM) ** 2GB | Espace libre | SSD avec 10GB+ d'espace libre
+| Carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus
+| Mémoire vive (RAM) ** 2Go | Espace libre | SSD avec 10Go+ d'espace libre
 | Affichage** : 1920x1080 | 2560x1440 ou plus
 | Internet**** requis pour l'activation de la licence | requis pour l'activation de la licence | requis pour l'activation de la licence
 
 {% hint style="info" %}
-**GPU Acceleration**: Chloros+ users with NVIDIA GPUs (4GB+ VRAM) can use CUDA acceleration for significantly faster processing.
+**Accélération GPU** : Chloros Les utilisateurs de GPU NVIDIA (4 Go de VRAM ou plus) peuvent utiliser l'accélération CUDA pour un traitement nettement plus rapide.
 {% endhint %}
 
 ***
 
 ## Télécharger Chloros
 
-### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Télécharger Chloros Ici</a>
+### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Téléchargez Chloros Ici</a>
 
 ### Dernière version stable
 
@@ -37,11 +37,11 @@ carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus
 * **Version** : 1.0.3
 * **Date de sortie** : Décembre 2025
 * **Taille du fichier** : 1.6GB
-* **Type de fichier** : .exe (Windows Installateur)
+* **File Type** : .exe (Windows Installateur)
 
 #### **Étapes d'installation:**
 
-1. Télécharger le fichier `CHLOROS INSTALLER - CURRENT VERSION.exe`
+1. Téléchargez le fichier `CHLOROS INSTALLER - CURRENT VERSION.exe`
 2. Double-cliquer sur le programme d'installation pour commencer l'installation
 3. Suivre les instructions de l'assistant d'installation
 4. Choisissez le répertoire d'installation (par défaut : `C:\Program Files\Chloros\`)
@@ -49,7 +49,7 @@ carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus
 6. Connectez-vous avec votre compte MAPIR Cloud Chloros+ (ou continuez avec la version gratuite)
 
 {% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH for command-line access.
+Le programme d'installation ajoute automatiquement `chloros-cli` au PATH de votre système pour l'accès à la ligne de commande.
 {% endhint %}
 
 ***
@@ -66,7 +66,7 @@ pip install chloros-sdk
 
 **Documentation** : [API: Python SDK](api-python-sdk.md)
 
-**Exigences** : Chloros Desktop doit être installé, Chloros+ licence requise
+**Requirements** : Chloros Desktop doit être installé, Chloros+ licence requise
 
 ***
 
@@ -77,7 +77,7 @@ L'installation Chloros comprend :
 * ✅ **Chloros Desktop GUI** - Interface graphique complète
 * ✅ **Chloros (Browser)** - Interface basée sur le Web pour les systèmes moins sophistiqués
 * ✅ **Chloros CLI** - Interface en ligne de commande (nécessite une licence Chloros+)
-* ✅ **Moteur backend** - Pipeline de traitement d'images
+* ✅ **Backend Engine** - Pipeline de traitement d'images
 * ✅ **Profils de caméra** - Modèles de caméra préconfigurés MAPIR
 
 ***
@@ -90,7 +90,7 @@ Débloquez des fonctionnalités avancées avec un abonnement Chloros+ :
 * ⚡ **GPU (CUDA) Acceleration** - Exploitez la puissance du GPU NVIDIA
 * 💻 **CLI Access** - Automatisez avec des outils de ligne de commande
 * 🐍 **Python SDK** - Accès programmatique API
-* 📱 **Multiple Devices** - Utilisation sur 2-10+ appareils (en fonction du plan)
+* 📱 **Multiple Devices** - Utilisation sur 2-10+ devices (plan dependent)
 * 🧮 **Formules personnalisées** - Créer des indices multispectraux personnalisés
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Voir Chloros+ Plans &#x26 ; Pricing</a></p>

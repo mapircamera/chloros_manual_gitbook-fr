@@ -6,11 +6,11 @@
 * [CLI : Ligne de commande](CLI.md)
 * [API : Python SDK](api-python-sdk.md)
 * [Caméras prises en charge](supported-cameras.md)
-* [Formats d'image de sortie](output-image-formats.md)
+* [Formats des images de sortie](output-image-formats.md)
 * [Chloros+ Login](chloros+-login.md)
 * [Cibles d'étalonnage](calibration-targets.md)
-* [Langues supportées](supported-languages.md)
-* [Téléchargement](download.md)
+* [Langues prises en charge](supported-languages.md)
+* [Download](download.md)
 * [FAQ](faq.md)
 
 ## Traitement des images (GUI)
@@ -20,7 +20,7 @@
 * [Choix des images cibles](processing-images-gui/choosing-target-images.md)
 * [Démarrage du traitement](processing-images-gui/starting-the-processing.md)
 * [Suivi du traitement](processing-images-gui/monitoring-the-processing.md)
-* [Fin du traitement](processing-images-gui/finishing-the-processing.md)
+* [Terminer le traitement](processing-images-gui/finishing-the-processing.md)
 
 ## PARAMÈTRES DU PROJET
 
@@ -29,6 +29,6 @@
 
 ## VISIONNEUSE D'IMAGES (GUI)
 
-* [Ouverture d'une image en plein écran](image-viewer-gui/opening-an-image-full-screen.md)
-* [Couches d'image](image-viewer-gui/image-layers.md)
+* [Ouvrir une image en plein écran](image-viewer-gui/opening-an-image-full-screen.md)
+* [Couches d'images](image-viewer-gui/image-layers.md)
 * [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)

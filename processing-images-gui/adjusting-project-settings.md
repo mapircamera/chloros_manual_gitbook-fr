@@ -6,22 +6,22 @@ Avant de traiter vos images, il est important de configurer les paramètres de v
 
 1. Ouvrez votre projet dans Chloros
 2. Cliquez sur l'icône **Paramètres du projet** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> dans la barre latérale gauche
-3. Le panneau des paramètres du projet affiche toutes les options de configuration
+3. Le panneau Paramètres du projet affiche toutes les options de configuration
 
 {% hint style="info" %}
-**Settings are saved automatically** with your project. When you reopen a project, all settings are restored.
+**Les paramètres sont sauvegardés automatiquement** avec votre projet. Lorsque vous rouvrez un projet, tous les paramètres sont restaurés.
 {% endhint %}
 
 ***
 
-## Installation rapide pour les flux de travail courants
+## Configuration rapide pour les flux de travail courants
 
 ### Paramètres par défaut (recommandés pour la plupart des utilisateurs)
 
 Pour les flux de travail typiques des caméras MAPIR Survey3, les paramètres par défaut fonctionnent bien :
 
 * ✅ **Correction de la vignette** : Activé
-* ✅ **Calibrage de la réflectance** : Activé (nécessite des images des cibles MAPIR)
+* ✅ **Calibrage de la réflectance** : Activé (nécessite des images de cibles MAPIR)
 * ✅ **Méthode de débayerisation** : Haute qualité (plus rapide)
 * ✅ **Format d'exportation** : TIFF (16 bits)
 
@@ -81,7 +81,7 @@ Configure les indices de végétation à calculer et à exporter.
 * **NDVI**: Santé générale de la végétation (le plus courant)
 * **NDRE**: Détection précoce du stress avec RedEdge
 * **GNDVI**: Concentration de chlorophylle sensible
-* **OSAVI**: Fonctionne bien avec un sol visible
+* **OSAVI**: Fonctionne bien avec le sol visible
 * **EVI**: Indice de surface foliaire élevé (LAI) régions
 
 **Formules personnalisées (Chloros+ seulement):**
@@ -170,7 +170,7 @@ Si vous utilisez des MAPIR enregistreurs DAQ avec GPS pour une géolocalisation 
 * La même caméra ne peut pas être assignée aux deux broches
 
 {% hint style="warning" %}
-**Important**: Exposure pins must be correctly assigned to their respective cameras. Incorrect assignment will result in wrong geolocation data.
+**Important** : Les broches d'exposition doivent être correctement attribuées à leurs caméras respectives. Une affectation incorrecte se traduira par des données de géolocalisation erronées.
 {% endhint %}
 
 ***
@@ -227,8 +227,8 @@ Avant de commencer le traitement, vérifiez ces paramètres clés :
 
 Une fois vos paramètres configurés :
 
-1. **Marquer les images cibles d'étalonnage** - Voir [Choix des images cibles] (choisir-target-images.md)
-2. **Lancer le traitement** - Voir [Démarrer le traitement](démarrer-the-processing.md)
-3. **Surveiller la progression** - Voir [Surveiller le traitement](surveiller-the-processing.md)
+1. **Marquer les images cibles d'étalonnage** - Voir [Choix des images cibles](choosing-target-images.md)
+2. **Lancer le traitement** - Voir [Démarrer le traitement](starting-the-processing.md)
+3. **Surveiller la progression** - Voir [Surveiller le traitement](surveiller le traitement.md)
 
-Pour plus de détails sur tous les paramètres disponibles, voir la documentation de référence [Project Settings](../project-settings/project-settings.md).
+Pour des détails complets sur tous les paramètres disponibles, voir la documentation de référence [Project Settings](../project-settings/project-settings.md).

@@ -30,7 +30,7 @@ translate-deepl.bat fr     # French
 translate-deepl.bat de     # German
 ```
 
-#### Option 3 : Utilisation directe de Python
+#### Option 3 : utiliser directement Python
 
 **Traduire toutes les langues:**
 ```bash
@@ -64,7 +64,7 @@ DeepL API prend en charge les langues suivantes de notre liste :
 | Code | Langue | DeepL Code |
 |------|----------|------------|
 | ES | espagnol | ES | pt | portugais (Portugal)
-| pt | portugais (Portugal) | PT-PT | pt-BR | portugais (Espagne) | ES | ES
+| pt | portugais (Portugal) | PT-PT | pt-BR | portugais (Portugal) | PT-PT | pt-BR | portugais (Portugal)
 pt-BR | Portugais (Brésil) | PT-BR | pt-BR | Portugais (Brésil) | PT-BR | pt-BR | Portugais (Brésil) | PT-PT
 | pt-BR | portugais (Brésil) | PT-BR | pt-BR | portugais (Brésil) | PT-BR
 | français | FR | de | allemand | DE | it | italien | IT
@@ -107,7 +107,7 @@ Les langues suivantes nécessitent des méthodes de traduction alternatives :
 Pour ces langues, vous devrez :
 1. Utiliser Google Translate API (qualité moindre mais couverture plus large)
 2. Utiliser des services de traduction manuelle
-3. Ne pas les utiliser pour l'instant et ajouter des avis "Coming Soon" (à venir)
+3. Ne pas les utiliser pour l'instant et ajouter des avis "Coming Soon" (bientôt disponible)
 
 ## 🛡️ Caractéristiques de protection
 
@@ -132,7 +132,7 @@ Le script de traduction protège automatiquement :
 - **Limite** : Basé sur votre plan
 - **Coût** : ~5.49$/mois pour 1M de caractères
 
-### Estimation de l'utilisation du manuel Chloros
+### Utilisation estimée pour le manuel <!--PLHDR000081
 Chaque traduction linguistique utilise environ **50 000 à 100 000 caractères** en fonction de la taille du manuel.
 
 - Traduction complète (30 langues) : ~2-3 millions de caractères
@@ -146,9 +146,9 @@ python translate_with_deepl.py . --usage
 
 ## 🔧 How It Works
 
-1. **Découverte de fichiers** : Trouve tous les fichiers `.md` dans le repo de la langue
+1. **Découverte de fichiers** : Trouve tous les fichiers `.md` dans le répertoire de langues
 2. **Protection du contenu** : Remplace le code, les liens et les termes protégés par des caractères de remplacement
-3. **Découpage** : Divise les fichiers volumineux en morceaux compatibles avec API
+3. **Découpage** : Divise les fichiers volumineux en morceaux compatibles API
 4. **Traduction** : Envoi à DeepL API avec préservation du formatage
 5. **Restauration** : Restaure tous les éléments protégés
 6. **Writing** : Enregistre le contenu traduit dans le fichier
@@ -169,7 +169,7 @@ current_directory/
 └── translate_with_deepl.py             # This script
 ```
 
-## 🔍 Fichiers qui sont ignorés
+## 🔍 Fichiers ignorés
 
 Le script saute automatiquement :
 - `TRANSLATION-PROJECT-README.md`
@@ -181,7 +181,7 @@ Le script saute automatiquement :
 
 ## ⚙️ Configuration avancée
 
-### Changement du point d'arrivée API
+### Changement du point de terminaison API
 
 Pour les comptes DeepL Pro, mettez à jour la ligne 21 dans `translate_with_deepl.py` :
 ```python

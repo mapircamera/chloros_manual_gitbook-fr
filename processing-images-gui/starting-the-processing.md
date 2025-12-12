@@ -11,10 +11,10 @@ Avant de cliquer sur le bouton Start, vérifiez que tout est prêt :
 * [ ] **Modèles de caméra détectés** - La colonne Modèle de caméra affiche les caméras correctes
 * [ ] **Paramètres configurés** - Les paramètres du projet sont examinés et ajustés
 * [ ] **Indices sélectionnés** - Les indices multispectraux souhaités sont ajoutés (si nécessaire)
-* [Format d'exportation choisi** - Format de sortie approprié pour votre flux de travail
+* [Format d'exportation choisi** - Format de sortie approprié à votre flux de travail
 
 {% hint style="info" %}
-**Tip**: Click through a few images in the File Browser to verify they loaded correctly before processing.
+**Astuce** : Cliquez sur quelques images dans le navigateur de fichiers pour vérifier qu'elles se sont chargées correctement avant le traitement.
 {% endhint %}
 
 ***
@@ -23,11 +23,11 @@ Avant de cliquer sur le bouton Start, vérifiez que tout est prêt :
 
 ### Localiser le bouton de démarrage
 
-Le bouton Démarrer/Lecture est situé dans la barre d'en-tête supérieure de Chloros :
+Le bouton Start/Play est situé dans la barre d'en-tête supérieure de Chloros :
 
 * Position : Centre supérieur de la fenêtre
 * Icône : **Bouton Jouer/Démarrer** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
-* Statut : Le bouton est activé (lumineux) lorsqu'il est prêt à être utilisé
+* Statut : Le bouton est activé (lumineux) lorsqu'il est prêt à être traité
 
 ### Cliquer pour démarrer
 
@@ -37,7 +37,7 @@ Le bouton Démarrer/Lecture est situé dans la barre d'en-tête supérieure de C
 4. La barre de progression se met à jour et indique l'état d'avancement du traitement
 
 {% hint style="success" %}
-**Processing Started**: Once clicked, Chloros automatically handles all processing steps - target detection, debayering, calibration, index calculation, and export.
+**Traitement démarré** : Une fois cliqué, Chloros gère automatiquement toutes les étapes du traitement - détection de la cible, débayerisation, calibrage, calcul de l'indice et exportation.
 {% endhint %}
 
 ***
@@ -98,148 +98,148 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 
 {% hint style="info" %}
 **Chloros+ Speed**: Parallel processing can be 5-10x faster than sequential mode for large datasets. A 500-image project that takes 2 hours in free mode may complete in 15-20 minutes with Chloros+.
-{% endhint %})
+{% endhint %}
 
 ***
 
-## Ce qui se passe pendant le traitement
+## What Happens During Processing
 
-### Étape 1 : Détection de la cible
+### Stage 1: Target Detection
 
-**Ce que Chloros fait:**
+**What Chloros does:**
 
-* Analyse les images de cibles marquées (ou toutes les images si aucune n'est marquée)
-* Identifie les 4 panneaux d'étalonnage de chaque cible
-* Extrait les valeurs de réflectance des panneaux cibles
-* Enregistre les horodatages des cibles pour la programmation de l'étalonnage
+* Scans marked target images (or all images if none marked)
+* Identifies the 4 calibration panels in each target
+* Extracts reflectance values from target panels
+* Records target timestamps for calibration scheduling
 
-**Durée:** 1-30 secondes (avec des cibles marquées), 5-30+ minutes (non marquées)
+**Duration:** 1-30 seconds (with marked targets), 5-30+ minutes (unmarked)
 
-### Étape 2 : Débayerisation (conversion RAW)
+### Stage 2: Debayering (RAW Conversion)
 
-**Ce que Chloros fait:**
+**What Chloros does:**
 
-* Convertit les données de motif de Bayer RAW en images complètes RGB
-* Applique un algorithme de démosaïquage de haute qualité
-* Préserve la qualité et les détails de l'image
+* Converts RAW Bayer pattern data to full RGB images
+* Applies high-quality demosaicing algorithm
+* Preserves maximum image quality and detail
 
-**Durée:** Varie en fonction du nombre d'images et de la vitesse de l'unité centrale
+**Duration:** Varies by image count and CPU speed
 
-### Étape 3 : Étalonnage
+### Stage 3: Calibration
 
-**Ce que Chloros fait:**
+**What Chloros does:**
 
-* **Correction de la vignette** : Supprime l'assombrissement de l'objectif sur les bords
-* **Étalonnage de la réflectance** : Normalisation à l'aide des valeurs de réflectance cibles
-* Applique les corrections à toutes les bandes/canaux
-* Utilise la cible d'étalonnage appropriée pour chaque image en fonction de l'horodatage
+* **Vignette correction**: Removes lens darkening at edges
+* **Reflectance calibration**: Normalizes using target reflectance values
+* Applies corrections across all bands/channels
+* Uses appropriate calibration target for each image based on timestamp
 
-**Durée:** Majorité du temps de traitement
+**Duration:** Majority of processing time
 
-### Étape 4 : Calcul de l'indice
+### Stage 4: Index Calculation
 
-**Ce que fait Chloros:**
+**What Chloros does:**
 
-* Calcule les indices multispectraux configurés (NDVI, NDRE, etc.)
-* Applique les mathématiques de bande aux images calibrées
-* Génère des images d'index pour chaque index sélectionné
+* Calculates configured multispectral indices (NDVI, NDRE, etc.)
+* Applies band math to calibrated images
+* Generates index images for each selected index
 
-**Durée:** Quelques secondes par image
+**Duration:** A few seconds per image
 
-### Étape 5 : Exportation
+### Stage 5: Export
 
-**Ce que fait Chloros:**
+**What Chloros does:**
 
-* Sauvegarde les images calibrées dans le format sélectionné
-* Exporte les images d'index avec les couleurs LUT configurées
-* Écrit les fichiers dans les sous-dossiers du modèle de caméra
-* Préserve les noms de fichiers originaux avec les suffixes
+* Saves calibrated images in selected format
+* Exports index images with configured LUT colors
+* Writes files to camera model subfolders
+* Preserves original filenames with suffixes
 
-**Durée:** Varie en fonction du format d'exportation et de la taille du fichier
+**Duration:** Varies by export format and file size
 
 ***
 
-## Comportement de traitement
+## Processing Behavior
 
-### Pipeline de traitement automatique
+### Automatic Processing Pipeline
 
-Une fois lancé, l'ensemble du pipeline s'exécute automatiquement :
+Once started, the entire pipeline runs automatically:
 
-* Aucune interaction de l'utilisateur n'est nécessaire
-* Toutes les étapes configurées s'exécutent en séquence
-* Les mises à jour de la progression sont affichées en temps réel
+* No user interaction needed
+* All configured steps execute in sequence
+* Progress updates shown in real-time
 
-### Utilisation de l'ordinateur pendant le traitement
+### Computer Usage During Processing
 
-**Mode libre:**
+**Free Mode:**
 
-* Utilisation relativement faible de l'unité centrale (simple)
-* L'ordinateur reste réactif pour d'autres tâches
-* Il est possible de minimiser l'utilisation de Chloros et de travailler avec d'autres applications
+* Relatively low CPU usage (single-threaded)
+* Computer remains responsive for other tasks
+* Safe to minimize Chloros and work in other applications
 
-**Chloros+ Mode parallèle:**
+**Chloros+ Parallel Mode:**
 
-* Utilisation élevée du processeur (multithread, jusqu'à 16 cœurs)
-* Avec accélération GPU : Utilisation élevée du GPU
-* L'ordinateur peut être moins réactif pendant le traitement
-* Évitez de lancer d'autres tâches gourmandes en ressources processeur
+* High CPU usage (multi-threaded, up to 16 cores)
+* With GPU acceleration: High GPU usage
+* Computer may be less responsive during processing
+* Avoid starting other CPU-intensive tasks
 
 {% hint style="warning" %}
 **Performance Tip**: For best Chloros+ performance, close other applications and let Chloros use full system resources.
 {% endhint %}
 
-### Le traitement ne peut pas être interrompu
+### Processing Cannot Be Paused
 
 **Important limitations:**
 
-* Une fois lancé, le traitement ne peut pas être interrompu
-* Il est possible d'annuler le traitement, mais la progression est perdue
-* Les résultats partiels ne sont pas sauvegardés
-* Le traitement doit être repris depuis le début s'il est annulé
+* Once started, processing cannot be paused
+* You can cancel processing, but progress is lost
+* Partial results are not saved
+* Must restart from beginning if canceled
 
-**Conseil de planification:** Pour les très grands projets, envisagez de traiter par lots ou d'utiliser CLI pour un meilleur contrôle.
-
-***
-
-## Suivi de votre traitement
-
-Pendant l'exécution du traitement, vous pouvez
-
-* **regarder la barre de progression** - voir le pourcentage d'achèvement global
-* **Afficher l'étape en cours** - Détecter, Analyser, Étalonner ou Exporter
-* **Vérifier l'onglet du journal** - Voir les messages de traitement détaillés et les avertissements
-* **Visualiser les images terminées** - Certains fichiers d'exportation peuvent apparaître pendant le traitement
-
-Pour des informations détaillées sur la surveillance, voir [Surveillance du traitement] (surveillance-the-processing.md).
+**Planning tip:** For very large projects, consider processing in batches or using CLI for better control.
 
 ***
 
-## Annulation du traitement
+## Monitoring Your Processing
 
-Si vous devez interrompre le traitement :
+While processing runs, you can:
 
-### Comment annuler
+* **Watch progress bar** - See overall completion percentage
+* **View current stage** - Detect, Analyze, Calibrate, or Export
+* **Check log tab** - See detailed processing messages and warnings
+* **Preview completed images** - Some export files may appear during processing
 
-1. Localisez le bouton **Stop/Cancel** (qui remplace le bouton Start pendant le traitement)
-2. Cliquez sur le bouton Stop
-3. Le traitement s'arrête immédiatement
-4. Les résultats partiels sont rejetés
+For detailed information on monitoring, see [Monitoring the Processing](monitoring-the-processing.md).
 
-### Quand annuler
+***
 
-**Raisons valables d'annulation:**
+## Canceling Processing
 
-* Réalisation que des paramètres incorrects ont été utilisés
-* Oubli de marquer les images cibles
-* Mauvaises images importées
-* Le système est trop lent ou ne répond pas
+If you need to stop processing:
 
-**Après l'annulation:**
+### How to Cancel
 
-* Examiner et résoudre les problèmes éventuels
-* Ajuster les paramètres si nécessaire
-* Recommencer le traitement depuis le début
-* Pour une expérience plus propre, fermez complètement Chloros et redémarrez
+1. Locate the **Stop/Cancel button** (replaces Start button during processing)
+2. Click the Stop button
+3. Processing halts immediately
+4. Partial results are discarded
+
+### When to Cancel
+
+**Valid reasons to cancel:**
+
+* Realized incorrect settings were used
+* Forgot to mark target images
+* Wrong images imported
+* System running too slow or unresponsive
+
+**After canceling:**
+
+* Review and fix any issues
+* Adjust settings as needed
+* Restart processing from the beginning
+* For the cleanest experience, completely close Chloros and restart
 
 {% hint style="warning" %}
 **No Partial Results**: Canceling discards all progress. Chloros does not save partially processed images.
@@ -247,28 +247,28 @@ Si vous devez interrompre le traitement :
 
 ***
 
-## Estimation du temps de traitement
+## Processing Time Estimates
 
-Le délai de traitement réel varie considérablement en fonction des éléments suivants
+Actual processing time varies greatly based on:
 
-* Du nombre d'images
-* Résolution de l'image
-* Format d'entrée RAW ou JPG
-* Mode de traitement (libre ou Chloros+)
-* Vitesse du processeur et nombre de cœurs
-* Disponibilité du GPU (Chloros+ uniquement)
-* Nombre d'indices à calculer
-* Complexité du format d'exportation
+* Number of images
+* Image resolution
+* RAW vs JPG input format
+* Processing mode (Free vs Chloros+)
+* CPU speed and core count
+* GPU availability (Chloros+ only)
+* Number of indices to calculate
+* Export format complexity
 
-### Estimations approximatives (Chloros+, images de 12MP, CPU moderne)
+### Rough Estimates (Chloros+, 12MP images, modern CPU)
 
-| Nombre d'images | Mode libre | Chloros+ (CPU) | Chloros+ (GPU) |
+| Image Count | Free Mode | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
-| 50 images | 15-20 min | 5-8 min | 3-5 min | 100 images | 30-40 min | 5-8 min | 3-5 min
-| 100 images | 30-40 min | 10-15 min | 5-8 min | | 200 images | 1-1,5 h
-| 200 images | 1-1.5 h | 20-30 min | 10-15 min | 500 images | 2-3 h | 45 min | 5-8 min | 3-5 min
-| 500 images | 2-3 heures | 45-60 min | 20-30 min | 1000 images | 4-6 heures | 5-8 min | 5-5 min | 500 images | 4-6 heures | 5-8 min | 5-5 min
-| 1000 images | 4-6 heures | 1,5-2 heures | 40-60 min | 1,5-2 heures | 1,5-2 heures | 1,5-2 heures | 1,5-2 heures | 1,5-2 heures
+| 50 images   | 15-20 min | 5-8 min        | 3-5 min        |
+| 100 images  | 30-40 min | 10-15 min      | 5-8 min        |
+| 200 images  | 1-1.5 hrs | 20-30 min      | 10-15 min      |
+| 500 images  | 2-3 hrs   | 45-60 min      | 20-30 min      |
+| 1000 images | 4-6 hrs   | 1.5-2 hrs      | 40-60 min      |
 
 {% hint style="info" %}
 **First Run**: Initial processing may take longer as Chloros builds caches and profiles. Subsequent processing of similar datasets will be faster.
@@ -276,38 +276,38 @@ Le délai de traitement réel varie considérablement en fonction des éléments
 
 ***
 
-## Problèmes communs au début
+## Common Issues at Start
 
-### Bouton de démarrage désactivé (grisé)
+### Start Button Disabled (Grayed Out)
 
-**Causes possibles:**
+**Possible causes:**
 
-* Aucune image n'a été importée
-* Le backend n'est pas complètement démarré
-* Traitement précédent toujours en cours
-* Le projet n'est pas complètement chargé
-
-**Solutions:**
-
-1. Attendre l'initialisation complète du backend (vérifier l'icône du menu principal)
-2. Vérifier que les images sont importées dans le navigateur de fichiers
-3. Redémarrer Chloros si le bouton reste désactivé
-4. Vérifier les messages d'erreur dans le journal de débogage
-
-### Le traitement commence puis échoue immédiatement
-
-**Causes possibles:**
-
-* Aucune image valide dans le projet
-* Fichiers d'images corrompus
-* Espace disque insuffisant
-* Mémoire insuffisante (RAM)
+* No images imported
+* Backend not fully started
+* Previous processing still running
+* Project not fully loaded
 
 **Solutions:**
 
-1. Vérifier le journal de débogage <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> pour les messages d'erreur
+1. Wait for backend to fully initialize (check main menu icon)
+2. Verify images are imported in File Browser
+3. Restart Chloros if button remains disabled
+4. Check Debug Log for error messages
+
+### Processing Starts Then Immediately Fails
+
+**Possible causes:**
+
+* No valid images in project
+* Corrupted image files
+* Insufficient disk space
+* Insufficient memory (RAM)
+
+**Solutions:**
+
+1. Check Debug Log <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> pour les messages d'erreur)
 2. Vérifier l'espace disque disponible
-3. Essayer de traiter un plus petit sous-ensemble d'images
+3. Essayez de traiter un sous-ensemble d'images plus petit
 4. Vérifier que les images ne sont pas corrompues
 
 ### Avertissement "Aucune cible détectée
@@ -320,7 +320,7 @@ Le délai de traitement réel varie considérablement en fonction des éléments
 
 **Solutions:**
 
-1. Revoir [Choix des images cibles](choosing-target-images.md)
+1. Revoir [Choisir les images cibles](choosing-target-images.md)
 2. Marquer les images appropriées dans la colonne Cible
 3. Vérifier que les cibles sont visibles dans les images marquées
 4. Ajuster les paramètres de détection des cibles si nécessaire
@@ -359,8 +359,8 @@ Si vous utilisez l'accélération GPU NVIDIA :
 
 Une fois que le traitement a commencé :
 
-1. **Surveiller la progression** - Voir [Suivi du traitement] (suivi-the-processing.md)
+1. **Surveiller la progression** - Voir [Suivi du traitement] (suivi du traitement.md)
 2. **Attendre l'achèvement** - Le traitement s'exécute automatiquement
-3. **Examen des résultats** - Voir [Fin du traitement](Fin-the-processing.md)
+3. **Examiner les résultats** - Voir [Terminer le traitement] (Terminer le traitement.md)
 
-Pour plus d'informations sur ce qu'il convient de faire pendant le traitement, voir [Suivi du traitement](suivi-the-processing.md).
+Pour plus d'informations sur ce qu'il convient de faire pendant le traitement, voir [Suivi du traitement](suivi du traitement.md).

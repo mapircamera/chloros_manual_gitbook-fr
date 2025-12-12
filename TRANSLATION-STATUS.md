@@ -19,7 +19,7 @@ Le script protège maintenant correctement :
 ✅ **HTML Tables** - `<table>...</table>` contenu protégé
 ✅ **Liens** - `[text](url)` et `![alt](image.png)` protégés
 ✅ **File Paths** - `*.md` références protégées
-✅ **GitBook Syntaxe** - `{% hint %}`, `{% embed %}` protégées
+✅ **GitBook Syntaxe** - `{% hint %}`, `{% embed %}` protégé
 ✅ **URLs & Emails** - Toutes les adresses web sont protégées
 ✅ **Modèles d'appareils photo** - Survey3, Survey3W, Survey3N, noms de filtres protégés
 
@@ -69,7 +69,7 @@ Besoin d'une approche alternative :
 - ~3 millions de caractères nécessaires au total (5-15 $ au total)
 
 **Comment faire** :
-1. Allez sur https://www.deepl.com/pro-api
+1. Aller sur https://www.deepl.com/pro-api
 2. S'inscrire à Pro API (essai gratuit)
 3. Obtenir une nouvelle clé API
 4. Mettre à jour la clé dans `translate_with_deepl.py` (ligne 21)
@@ -128,7 +128,7 @@ Avant de poursuivre la traduction, vous devez vérifier la qualité de la traduc
    - `project-settings/multispectral-index-formulas.md` - Vérifier que les formules sont correctes
    - `README.md` - Vérifier que le texte général se lit naturellement
    - `CLI.md` - Vérifier que les termes techniques sont préservés
-3. Vérifier sur GitBook après synchronisation
+3. Vérifier sur GitBook après la synchronisation
 
 Si la qualité est bonne, passez aux autres langues !
 
@@ -137,7 +137,7 @@ Si la qualité est bonne, passez aux autres langues !
 Pour les 3 langues que DeepL ne prend pas en charge, options :
 
 1. **Google Cloud Translation API** - Prend en charge ces langues
-2. **Services de traduction manuelle** - Embauchez des traducteurs professionnels
+2. **Services de traduction manuelle** - Engagez des traducteurs professionnels
 3. **Skip for now** - Ajouter la mention "Anglais seulement pour l'instant"
 4. **Traductions communautaires** - Ouverture aux contributions ultérieures
 

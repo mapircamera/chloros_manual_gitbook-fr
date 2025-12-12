@@ -4,7 +4,7 @@ La liste déroulante des couches d'images de la visionneuse d'images Chloros vou
 
 ## Qu'est-ce qu'une couche d'image ?
 
-Dans Chloros, les **couches** désignent les différentes sorties d'image disponibles pour une seule image source. Lorsque vous traitez des images, Chloros crée plusieurs versions :
+Dans Chloros, les **couches** font référence aux différentes sorties d'image disponibles pour une seule image source. Lorsque vous traitez des images, Chloros crée plusieurs versions :
 
 * **Images originales** (fichiers JPG et RAW de votre appareil photo)
 * **Sorties calibrées en fonction de la réflectance** (si la calibration de la réflectance a été activée)
@@ -55,19 +55,19 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 * Résolution des problèmes d'étalonnage
 
 {% hint style="info" %}
-**Target Layer**: This layer only appears in the dropdown for images that contain calibration targets. Regular capture images will not have this option.
+**Couche cible** : Cette couche n'apparaît dans la liste déroulante que pour les images contenant des cibles d'étalonnage. Les images de capture ordinaires n'ont pas cette option.
 {% endhint %}
 
 ### RAW (Réflectance)
 
-* L'image de sortie calibrée de la réflectance
+* L'image de sortie de la réflectance calibrée
 * Vignette corrigée (si activée lors du traitement)
 * Réflectance calibrée à l'aide de données cibles (si activée)
 * Multibande TIFF avec tous les canaux de la caméra
-* Les valeurs des pixels représentent le pourcentage de réflectance (en mode pourcentage)
-* Prêt à être manipulé avec l'[Index/LUT Sandbox] (index-lut-sandbox.md)
+* Les valeurs des pixels représentent le pourcentage de réflectance (lors de l'utilisation du mode pourcentage)
+* Prêt à être manipulé avec l'[Index/LUT Sandbox](index-lut-sandbox.md)
 
-**Quand regarder:**
+**Quand voir:**
 
 * Inspection des résultats calibrés
 * Vérification de la qualité de l'étalonnage
@@ -75,7 +75,7 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 * Comparaison avec l'original pour voir les effets de l'étalonnage
 
 {% hint style="success" %}
-**Recommended**: Use RAW (Reflectance) layer when checking pixel values for scientific measurements and analysis.
+**Recommandé** : Utiliser la couche RAW (réflectance) lors de la vérification des valeurs de pixels pour les mesures et analyses scientifiques.
 {% endhint %}
 
 ### RAW (NDVI Index)... et similaires
@@ -94,7 +94,7 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 * RAW (OSAVI Index)
 * RAW (EVI Index)
 * RAW (SAVI Index)
-* Et bien d'autres encore... (voir [Formules d'indice multispectral](../project-settings/multispectral-index-formulas.md))
+* Et bien d'autres encore... (voir [Formules de l'indice multispectral](../project-settings/multispectral-index-formulas.md))
 
 **Quand voir:**
 
@@ -112,7 +112,7 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 1. Ouvrez une image en mode plein écran (cliquez sur n'importe quelle vignette dans la visionneuse d'images)
 2. Localisez la liste déroulante **couche** dans le coin supérieur droit de la visionneuse
 3. La liste déroulante affiche le calque actuellement sélectionné (par exemple, "JPG")
-4. Cliquez sur la liste déroulante pour voir tous les calques disponibles
+4. Cliquez sur la liste déroulante pour afficher tous les calques disponibles
 
 ### Passer d'un calque à l'autre
 
@@ -125,7 +125,7 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 
 * La liste déroulante se souvient de votre dernière sélection
 * Lors du passage à l'image suivante, Chloros tente d'afficher le même type de calque
-* Si ce calque n'existe pas sur l'image suivante, il s'agit par défaut d'un JPG
+* Si ce calque n'existe pas sur l'image suivante, il est affiché par défaut en JPG
 
 ### Disponibilité des calques
 
@@ -183,7 +183,7 @@ Lorsque vous naviguez vers une autre image (en utilisant les touches fléchées 
 **Objectif** : Examiner rapidement les résultats NDVI dans l'ensemble des données
 
 1. Ouvrir la première image traitée
-2. Sélectionner **RAW (NDVI Index)** dans la liste déroulante
+2. Sélectionner **RAW (NDVI Index)** dans le menu déroulant
 3. Utiliser la touche → pour passer à l'image suivante
 4. le calque NDVI persiste automatiquement
 5. Continuer à parcourir toutes les images, en vérifiant les motifs NDVI
@@ -231,7 +231,7 @@ Des couches différentes affichent des plages de valeurs de pixels différentes 
 ### RAW (Réflectance)
 
 * **Plage** : 0-65 535 (16 bits TIFF) ou 0,0-1,0 (32 bits Pourcentage)
-* **Signification Pourcentage de réflectance calibré
+* **Signification Pourcentage de réflectance calibrée
 * **Utilisation** : Mesures et analyses scientifiques
 
 **Pour 16-bit TIFF:** Diviser par 65,535 pour obtenir le pourcentage de réflectance **Pour 32-bit Percent:** Les valeurs représentent directement le pourcentage (0.5 = 50% de réflectance)
@@ -328,7 +328,7 @@ Lors de la visualisation d'un calque, vous pouvez utiliser :
 * **Flèches de navigation** : Flèches de navigation** : Déplacez-vous entre les images tout en maintenant la couche
 * **Mode pourcentage de pixels** : Basculer entre l'affichage des DN et des pourcentages
 
-Voir [Ouverture d'une image en plein écran] (ouverture-an-image-full-screen.md) pour la documentation complète de la visionneuse d'images.
+Voir [Ouvrir une image en plein écran](opening-an-image-full-screen.md) pour une documentation complète sur la visionneuse d'images.
 
 ### Index/LUT Sandbox
 
@@ -348,5 +348,5 @@ Maintenant que vous comprenez ce que sont les calques d'image :
 
 * [**Ouverture d'une image en plein écran**](opening-an-image-full-screen.md) - Guide complet de la visionneuse d'images
 * [**Index/LUT Sandbox**](index-lut-sandbox.md) - Visualisation interactive de l'index
-* [**Formules d'index multispectrales**](../project-settings/multispectral-index-formulas.md) - Référence des index disponibles
+* [**Formules de l'index multispectral**](../project-settings/multispectral-index-formulas.md) - Référence des index disponibles
 * [**Finalisation du traitement**](../processing-images-gui/finishing-the-processing.md) - Comprendre les résultats du traitement
