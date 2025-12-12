@@ -1,221 +1,115 @@
-# Choosing Target Images
+# Choisir les images cibles
 
-Marking which images contain calibration targets is a crucial step that significantly speeds up the Chloros processing pipeline. By pre-selecting target images, you eliminate the need for Chloros to scan every image in your dataset for calibration targets.
+Le marquage des images contenant des cibles de calibration est une étape cruciale qui accélère considérablement le pipeline de traitement Chloros. En présélectionnant les images cibles, vous évitez à ChlorosX de scanner chaque image de votre jeu de données à la recherche de cibles de calibration.
 
-## Why Mark Target Images?
+## Pourquoi marquer les images cibles ?
 
-### Processing Speed
+### Vitesse de traitement
 
-Without marking target images, Chloros must:
+Sans marquer les images cibles, ZXZXZZ000008ZXZZXXXX doit :
 
-* Scan every single image in your project
-* Run target detection algorithms on each image
-* Check hundreds or thousands of images unnecessarily
+* Scanner toutes les images de votre projet
+* Exécuter des algorithmes de détection de cibles sur chaque image
+* Vérifier inutilement des centaines ou des milliers d'images
 
-**Result**: Processing can take significantly longer, especially for large datasets.
+**Résultat** : Le traitement peut prendre beaucoup plus de temps, en particulier pour les grands ensembles de données.
 
-### With Marked Target Images
+### Avec des images cibles marquées
 
-When you check the Target column for specific images:
+Lorsque vous cochez la colonne Cible pour des images spécifiques :
 
-* Chloros only scans the checked images for targets
-* Target detection completes much faster
-* Overall processing time is greatly reduced
+* ChlorosX ne recherche des cibles que dans les images cochées
+* La détection des cibles s'effectue beaucoup plus rapidement
+* Le temps de traitement global est considérablement réduit
 
-{% hint style="success" %}
-**Speed Improvement**: Marking 2-3 target images in a 500-image dataset can reduce target detection time from 30+ minutes to under 1 minute.
-{% endhint %}
+___PROTÉGÉ_0001___
 
 ***
 
-## How to Mark Target Images
+## Comment marquer les images cibles
 
-### Step 1: Identify Your Target Images
+### Étape 1 : Identifier les images cibles
 
-Look through your imported images in the File Browser and identify which images contain calibration targets.
+Examinez les images importées dans l'Explorateur de fichiers et identifiez celles qui contiennent des cibles de calibrage.
 
-**Common scenarios:**
+**Scénarios courants:**
 
-* **Pre-capture target**: Captured before starting the session
-* **Post-capture target**: Captured after completing the session
-* **In-field targets**: Targets placed within the capture area
-* **Multiple targets**: 2-3 target images per session (recommended)
+* **Cible pré-capture** : Capturée avant le début de la session
+* **Cible post-capture** : Cible post-capture** : capturée après avoir terminé la session
+* **Cibles dans le champ** : Cibles placées dans la zone de capture
+* **Cibles multiples** : 2-3 images de cibles par session (recommandé)
 
-### Step 2: Check the Target Column
+### Étape 2 : Vérifier la colonne des cibles
 
-For each image containing a calibration target:
+Pour chaque image contenant une cible d'étalonnage :
 
-1. Locate the image in the File Browser table
-2. Find the **Target** column (rightmost column)
-3. Click the checkbox in the Target column for that image
-4. Repeat for all images containing targets
+1. Localisez l'image dans le tableau de l'explorateur de fichiers
+2. Trouver la colonne **Cible** (colonne la plus à droite)
+3. Cliquez sur la case à cocher de la colonne Cible pour cette image
+4. Répéter l'opération pour toutes les images contenant des cibles
 
-### Step 3: Verify Your Selection
+### Étape 3 : Vérifier votre sélection
 
-Before processing, double-check:
+Avant le traitement, vérifiez deux fois :
 
-* [ ] All images with calibration targets are checked
-* [ ] No non-target images are accidentally checked
-* [ ] Targets are clearly visible in checked images
+* [ ] Toutes les images comportant des cibles d'étalonnage sont vérifiées
+* ZXZXZX000001ZXXXZX :
 
-***
+**Surface minimale de l'échantillon d'étalonnage:**
 
-## Best Practices for Target Images
+* **Par défaut** : 25 pixels
+* **Augmentez cette valeur si vous obtenez de fausses détections sur de petits artefacts
+* **Diminuer** si les cibles ne sont pas détectées
 
-### Target Capture Guidelines
+**Groupement minimal de cibles:**
 
-**Timing:**
-
-* Capture target images immediately before and throughout your capture session
-* Within the same lighting conditions as your DAQ light sensor
-* Ideally capture target images as often as possible for the best results. Otherwise, the light sensor data will be used to adjust the calibration over time.
-
-**Camera Position:**
-
-* Hold camera above target such that is is centered and fills around 40-60% of the image center.
-* Keep camera parallel/nadir to target surface
-
-**Lighting:**
-
-* Same ambient lighting as your DAQ light sensor
-* Avoid shadows on the target surfaces
-* Don't block your light source with your body, vehicle or vegetation
-* Overcast conditions provide most consistent results
-
-**Target Condition:**
-
-* Keep target panels clean and dry
-* All 4 panels should be clearly visible and unobstructed
-* Targets perpendicular/nadir to the light source if possible
-
-### How Many Target Images?
-
-**Minimum:** 1 target image per session. **Recommended:** 3-5 target images per session.
-
-**Best practice schedule:**
-
-* 3-5 images captured shortly after the light sensor is recording
-* Rotate the camera between captures for the best results
-* Optional: periodically mid-session if lighting conditions change constantly
+* **Par défaut** : 60
+* **Augmentation** si les cibles sont divisées en plusieurs détections
+* **Diminuer** si les cibles avec des variations de couleur ne sont pas entièrement détectées
 
 ***
 
-## Working with Multiple Cameras
+## Problèmes courants liés à l'image de la cible
 
-### Dual-Camera Setups
+### Problème : Aucune cible n'est détectée
 
-If using two MAPIR cameras simultaneously (e.g., Survey3W RGN + Survey3N OCN):
+**Causes possibles:**
 
-1. Capture target images with **both cameras** at the same time
-2. Use the **same physical target** for both cameras
-3. Mark target images for **both camera types** in the File Browser
-4. Chloros will use appropriate targets for each camera's calibration
-
-### Camera Model Column
-
-The **Camera Model** column helps identify which images came from which camera:
-
-* Survey3W\_RGN
-* Survey3N\_OCN
-* Survey3W\_RGB
-* etc.
-
-Use this column to verify you've marked targets for each camera type in your project.
-
-***
-
-## Target Detection Settings
-
-### Adjusting Detection Sensitivity
-
-If Chloros isn't detecting your targets correctly, adjust these settings in [Project Settings](adjusting-project-settings.md):
-
-**Minimum calibration sample area:**
-
-* **Default**: 25 pixels
-* **Increase** if getting false detections on small artifacts
-* **Decrease** if targets aren't being detected
-
-**Minimum target clustering:**
-
-* **Default**: 60
-* **Increase** if targets are being split into multiple detections
-* **Decrease** if targets with color variation aren't fully detected
-
-***
-
-## Common Target Image Issues
-
-### Problem: No Targets Detected
-
-**Possible causes:**
-
-* Target images not marked in File Browser
-* Target too small in frame (< 30% of image)
-* Poor lighting (shadows, glare)
-* Target detection settings too strict
+* Les images cibles ne sont pas marquées dans le navigateur de fichiers
+* Cible trop petite dans le cadre (< 30 % de l'image)
+* Mauvais éclairage (ombres, reflets)
+* Paramètres de détection de la cible trop stricts
 
 **Solutions:**
 
-1. Verify Target column is checked for correct images
-2. Review target image quality in preview
-3. Recapture targets if quality is poor
-4. Adjust target detection settings if needed
+1. Vérifier que la colonne Cible est vérifiée pour les images correctes
+2. Vérifier la qualité de l'image cible dans l'aperçu
+3. Recapturer les cibles si la qualité est mauvaise
+4. Ajuster les paramètres de détection des cibles si nécessaire
 
-### Problem: False Target Detections
+### Problème : fausses détections de cibles
 
-**Possible causes:**
+**Causes possibles:**
 
-* White buildings, vehicles, or ground cover mistaken for targets
-* Bright patches in vegetation
-* Detection sensitivity too low
+* Bâtiments, véhicules ou couverture végétale blancs pris pour des cibles
+* Taches lumineuses dans la végétation
+* Sensibilité de détection trop faible
 
 **Solutions:**
 
-1. Mark only actual target images to limit detection scope
-2. Increase minimum calibration sample area
-3. Increase minimum target clustering value
-4. Ensure target images show only the target (minimal background clutter)
+1. Ne marquer que les images de la cible réelle pour limiter la portée de la détection
+2. Augmenter la surface minimale de l'échantillon d'étalonnage
+3. Augmenter la valeur minimale de regroupement des cibles
+4. S'assurer que les images de la cible ne montrent que la cible (minimum de bruit de fond)
 
 ***
 
-## Verification Checklist
+## Liste de contrôle pour la vérification
 
-Before starting processing, verify your target image selection:
+Avant de commencer le traitement, vérifiez la sélection de l'image cible :
 
-* [ ] At least 1 target image marked per session
-* [ ] Target column checkboxes are checked for all target images
-* [ ] Target images captured within same timeframe as survey
-* [ ] Targets clearly visible in preview when clicked
-* [ ] All 4 calibration panels visible in each target image
-* [ ] No shadows or obstructions on targets
-* [ ] For dual-camera: Targets marked for both camera types
+* ZXZXZX000002ZXXXZXX
+2. **Lancer le traitement** - Voir [Starting the Processing](starting-the-processing.md)XX
+3. **Suivre la progression** - Voir [Monitoring the Processing](monitoring-the-processing.md)XX
 
-***
-
-## Target-Free Processing
-
-### Processing Without Calibration Targets
-
-While not recommended for scientific work, you can process without targets:
-
-1. Leave all Target column checkboxes unchecked
-2. **Disable** "Reflectance calibration" in Project Settings
-3. Vignette correction will still be applied
-4. Output will not be calibrated for absolute reflectance
-
-{% hint style="warning" %}
-**Not Recommended**: Without reflectance calibration, pixel values represent relative brightness only, not scientific reflectance measurements. Use calibration targets for accurate, repeatable results.
-{% endhint %}
-
-***
-
-## Next Steps
-
-Once you've marked your target images:
-
-1. **Review your settings** - See [Adjusting Project Settings](adjusting-project-settings.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
-
-For more information about calibration targets themselves, see [Calibration Targets](../calibration-targets.md).
+Pour plus d'informations sur les cibles d'étalonnage elles-mêmes, voir ZXZXZ000005ZXZXZXXX.

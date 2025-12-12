@@ -1,17 +1,17 @@
-# Projects
+# Projets
 
-Chloros allows you to create projects which can be reopened in the future.
+ZXZXZZ000012ZXZXZX vous permet de créer des projets qui pourront être rouverts à l'avenir.
 
-## New Project
+## Nouveau projet
 
 <figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "New Project" from the main menu and enter a unique name for your project.
+Sélectionnez "Nouveau projet" dans le menu principal et saisissez un nom unique pour votre projet.
 
-## Open Project
+## Ouvrir le projet
 
 <figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "Open Project" to see a list of existing projects in the Project Folder. If no projects exist the secondary side menu will not open. You can see some GUI created projects (t1, t2, t3) listed in the above photo. The DATE\_TIME projects were created by the CLI using the default project naming scheme. Clicking any project name will open it.
+Sélectionnez "Ouvrir un projet" pour afficher la liste des projets existants dans le dossier de projet. Si aucun projet n'existe, le menu secondaire ne s'ouvrira pas. Vous pouvez voir certains projets créés par l'interface graphique (t1, t2, t3) dans la photo ci-dessus. Les projets DATE_TIME ont été créés par ZXZXZ0000X13ZXZXZX en utilisant le schéma de dénomination par défaut. Un clic sur n'importe quel nom de projet l'ouvrira.
 
-Clicking the "Open Project Folder" button opens your computer's file explorer at the project path. You can adjust the project path in the [Project Settings](project-settings/page-2.md).
+En cliquant sur le bouton "Ouvrir le dossier du projet", vous ouvrirez l'explorateur de fichiers de votre ordinateur au niveau du chemin d'accès du projet. Vous pouvez modifier le chemin d'accès au projet dans ZXZXZ000011ZXZXZXX.

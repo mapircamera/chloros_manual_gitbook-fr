@@ -1,392 +1,378 @@
-# Monitoring the Processing
+# Suivi du traitement
 
-Once processing has started, Chloros provides several ways to monitor progress, check for issues, and understand what's happening with your dataset. This page explains how to track your processing and interpret the information Chloros provides.
+Une fois que le traitement a commencé, ZXZXZ000004ZXZXZX offre plusieurs moyens de suivre la progression, de vérifier les problèmes et de comprendre ce qui se passe avec votre jeu de données. Cette page explique comment suivre votre traitement et interpréter les informations fournies par ZXZXZ000005ZXZXZXXX.
 
-## Progress Bar Overview
+## Vue d'ensemble de la barre de progression
 
-The progress bar in the top header shows real-time processing status and completion percentage.
+La barre de progression située dans l'en-tête supérieur indique en temps réel l'état du traitement et le pourcentage d'achèvement.
 
-### Free Mode Progress Bar
+### Barre de progression du mode libre
 
-For users without Chloros+ license:
+Pour les utilisateurs sans licence Chloros+ :
 
-**2-Stage Progress Display:**
+**Affichage de la progression en 2 étapes:**
 
-1. **Target Detect** - Finding calibration targets in images
-2. **Processing** - Applying corrections and exporting
+1. **Détection de cibles** - Recherche de cibles d'étalonnage dans les images
+2. **Traitement** - Application des corrections et exportation
 
-**Progress bar shows:**
+**La barre de progression indique:**
 
-* Overall completion percentage (0-100%)
-* Current stage name
-* Simple horizontal bar visualization
+* Le pourcentage d'achèvement global (0-100%)
+* Le nom de l'étape en cours
+* Visualisation simple de la barre horizontale
 
-### Chloros+ Progress Bar
+### Chloros+ Barre de progression
 
-For users with Chloros+ license:
+Pour les utilisateurs ayant la licence §§§6§§+ :
 
-**4-Stage Progress Display:**
+**Affichage de la progression en 4 étapes:**
 
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining images and preparing pipeline
-3. **Calibrating** - Applying vignette and reflectance corrections
-4. **Exporting** - Saving processed files
+1. **Détection** - Recherche des cibles d'étalonnage
+2. **Analyse** - Examen des images et préparation du pipeline
+3. **Calibrage** - Application des corrections de vignette et de réflectance
+4. **Exportation** - Enregistrement des fichiers traités
 
-**Interactive Features:**
+**Fonctionnalités interactives:**
 
-* **Hover over** progress bar to see expanded 4-stage panel
-* **Click** progress bar to freeze/pin the expanded panel
-* **Click again** to unfreeze and auto-hide on mouse leave
-* Each stage shows individual progress (0-100%)
-
-***
-
-## Understanding Each Processing Stage
-
-### Stage 1: Detecting (Target Detection)
-
-**What's happening:**
-
-* Chloros scans images marked with Target checkbox
-* Computer vision algorithms identify the 4 calibration panels
-* Reflectance values extracted from each panel
-* Target timestamps recorded for proper calibration scheduling
-
-**Duration:**
-
-* With marked targets: 10-60 seconds
-* Without marked targets: 5-30+ minutes (scans all images)
-
-**Progress indicator:**
-
-* Detecting: 0% → 100%
-* Number of images scanned
-* Targets found count
-
-**What to watch for:**
-
-* Should complete quickly if targets properly marked
-* If taking too long, targets may not be marked
-* Check Debug Log for "Target found" messages
-
-### Stage 2: Analyzing
-
-**What's happening:**
-
-* Reading image EXIF metadata (timestamps, exposure settings)
-* Determining calibration strategy based on target timestamps
-* Organizing image processing queue
-* Preparing parallel processing workers (Chloros+ only)
-
-**Duration:** 5-30 seconds
-
-**Progress indicator:**
-
-* Analyzing: 0% → 100%
-* Fast stage, usually completes quickly
-
-**What to watch for:**
-
-* Should progress steadily without pauses
-* Warnings about missing metadata will appear in Debug Log
-
-### Stage 3: Calibrating
-
-**What's happening:**
-
-* **Debayering**: Converting RAW Bayer pattern to 3 channels
-* **Vignette correction**: Removing lens edge darkening
-* **Reflectance calibration**: Normalizing with target values
-* **Index calculation**: Computing multispectral indices
-* Processing each image through the full pipeline
-
-**Duration:** Majority of total processing time (60-80%)
-
-**Progress indicator:**
-
-* Calibrating: 0% → 100%
-* Current image being processed
-* Images completed / Total images
-
-**Processing behavior:**
-
-* **Free mode**: Processes one image at a time sequentially
-* **Chloros+ mode**: Processes up to 16 images simultaneously
-* **GPU acceleration**: Significantly speeds up this stage
-
-**What to watch for:**
-
-* Steady progress through image count
-* Check Debug Log for per-image completion messages
-* Warnings about image quality or calibration issues
-
-### Stage 4: Exporting
-
-**What's happening:**
-
-* Writing calibrated images to disk in selected format
-* Exporting multispectral index images with LUT colors
-* Creating camera model subfolders
-* Preserving original filenames with appropriate suffixes
-
-**Duration:** 10-20% of total processing time
-
-**Progress indicator:**
-
-* Exporting: 0% → 100%
-* Files being written
-* Export format and destination
-
-**What to watch for:**
-
-* Disk space warnings
-* File write errors
-* Completion of all configured outputs
+* **Passez la souris sur la barre de progression pour voir le panneau élargi en 4 étapes
+* **Cliquez sur la barre de progression pour figer/épingler le panneau élargi
+* **Cliquez à nouveau** pour libérer le panneau et le masquer automatiquement lorsque vous quittez la souris
+* Chaque étape montre la progression individuelle (0-100%)
 
 ***
 
-## Debug Log Tab
+## Comprendre chaque étape de traitement
 
-The Debug Log provides detailed information about processing progress and any issues encountered.
+### Étape 1 : Détection (détection de la cible)
 
-### Accessing the Debug Log
+**What's happening:**
 
-1. Click the **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> icon in the left sidebar
-2. Log panel opens showing real-time processing messages
-3. Auto-scrolls to show latest messages
+* ZXZXZ000009ZXZXZXX scanne les images marquées d'une case à cocher Cible
+* Des algorithmes de vision par ordinateur identifient les 4 panneaux d'étalonnage
+* Les valeurs de réflectance sont extraites de chaque panneau
+* L'horodatage des cibles est enregistré pour une programmation correcte de l'étalonnage
 
-### Understanding Log Messages
+**Durée:**
 
-#### Information Messages (White/Gray)
+* Avec des cibles marquées : 10-60 secondes
+* Sans cibles marquées : 5-30+ minutes (balayage de toutes les images)
 
-Normal processing updates:
+**Indicateur de progression:**
 
-```
-[INFO] Processing started
-[INFO] Target detected in IMG_0015.RAW - 4 panels found
-[INFO] Calibrating IMG_0234.RAW
-[INFO] Exported NDVI image: IMG_0234_NDVI.tif
-[INFO] Processing complete
-```
+* Détection : 0% → 100%
+* Nombre d'images scannées
+* Nombre de cibles trouvées
 
-#### Warning Messages (Yellow)
+**Ce qu'il faut surveiller:**
 
-Non-critical issues that don't stop processing:
+* L'opération devrait s'achever rapidement si les cibles sont correctement marquées
+* Si cela prend trop de temps, il se peut que les cibles ne soient pas marquées
+* Vérifier le journal de débogage pour les messages "Cible trouvée"
 
-```
-[WARN] No GPS data found in IMG_0145.RAW
-[WARN] Target image timestamp gap > 30 minutes
-[WARN] Low contrast in calibration panel - results may vary
-```
+### Étape 2 : Analyse
 
-**Action:** Review warnings after processing, but don't interrupt
+**What's happening:*
 
-#### Error Messages (Red)
+* Lecture des métadonnées EXIF de l'image (horodatage, paramètres d'exposition)
+* Détermination de la stratégie d'étalonnage sur la base des horodatages cibles
+* Organisation de la file d'attente pour le traitement des images
+* Préparation des travailleurs de traitement parallèle (ZXZXZZ000010ZXZXXX+ seulement)
 
-Critical issues that may cause processing to fail:
+**Durée:** 5-30 secondes
 
-```
-[ERROR] Cannot write file - disk full
-[ERROR] Corrupted image file: IMG_0299.RAW
-[ERROR] No targets detected - enable reflectance calibration or mark target images
-```
+**Indicateur de progression:**
 
-**Action:** Stop processing, resolve error, restart
+* Analyse : 0% → 100%
+* Étape rapide, généralement terminée rapidement
 
-### Common Log Messages
+**Ce qu'il faut surveiller:**
 
-| Message                          | Meaning                                | Action Needed                                         |
+* La progression doit être régulière et sans pause
+* Des avertissements concernant les métadonnées manquantes apparaîtront dans le journal de débogage
+
+### Étape 3 : Étalonnage
+
+**What's happening:**
+
+* **Débayage** : Conversion du motif Bayer RAW en 3 canaux
+* **Correction de la vignette** : Suppression de l'assombrissement des bords de l'objectif
+* **Calibrage de la réflectance** : Étalonnage de la réflectance** : normalisation avec des valeurs cibles
+* **Calcul de l'indice** : Calcul des indices multispectraux
+* Traitement de chaque image par le pipeline complet
+
+**Durée:** Majorité du temps de traitement total (60-80%)
+
+**Indicateur de progrès:**
+
+* Étalonnage : 0% → 100%
+* Image en cours de traitement
+* Images terminées / Total des images
+
+**Comportement du traitement:**
+
+* **Mode libre** : Traite une image à la fois de manière séquentielle
+* **Mode ZXZXZZX000011ZXZXZX+** : Traite jusqu'à 16 images simultanément
+* **Accélération GPU** : Accélération du processeur graphique** : accélère considérablement cette étape
+
+**Ce qu'il faut surveiller:**
+
+* Progression régulière du nombre d'images
+* Vérifier le journal de débogage pour les messages d'achèvement par image
+* Avertissements concernant la qualité de l'image ou les problèmes d'étalonnage
+
+### Étape 4 : Exportation
+
+**What's happening:**
+
+* Écriture des images calibrées sur le disque dans le format sélectionné
+* Exportation d'images d'index multispectrales avec des couleurs LUT
+* Création de sous-dossiers de modèles de caméras
+* Préservation des noms de fichiers originaux avec les suffixes appropriés
+
+**Durée:** 10-20% du temps total de traitement
+
+**Indicateur de progression:**
+
+* Exportation : 0% → 100%
+* Fichiers en cours d'écriture
+* Format d'exportation et destination
+
+**Ce qu'il faut surveiller:**
+
+* Avertissements concernant l'espace disque
+* Erreurs d'écriture de fichier
+* Achèvement de toutes les sorties configurées
+
+***
+
+## Onglet Debug Log
+
+Le journal de débogage fournit des informations détaillées sur l'état d'avancement du traitement et sur les problèmes rencontrés.
+
+### Accès au journal de débogage
+
+1. Cliquez sur l'icône **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> dans la barre latérale gauche
+2. Le panneau du journal s'ouvre et affiche les messages de traitement en temps réel
+3. Défilement automatique pour afficher les derniers messages
+
+### Comprendre les messages du journal
+
+#### Messages d'information (blanc/gris)
+
+Mises à jour normales du traitement :
+
+___PROTÉGÉ_0001___
+
+#### Messages d'avertissement (jaune)
+
+Problèmes non critiques qui n'interrompent pas le traitement :
+
+___PROTÉGÉ_0002___
+
+**Action:** Examiner les avertissements après le traitement, sans les interrompre
+
+#### Messages d'erreur (Red)
+
+Problèmes critiques pouvant entraîner l'échec du traitement :
+
+___PROTÉGÉ_0003___
+
+**Action:** Arrêter le traitement, résoudre l'erreur, redémarrer
+
+### Messages communs du journal
+
+| Message - Signification - Action à entreprendre
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| "Target detected in \[filename]" | Calibration target found successfully  | None - normal                                         |
-| "Processing image X of Y"        | Current progress update                | None - normal                                         |
-| "No targets found"               | No calibration targets detected        | Mark target images or disable reflectance calibration |
-| "Insufficient disk space"        | Not enough storage for output          | Free up disk space                                    |
-| "Skipping corrupted file"        | Image file is damaged                  | Re-copy file from SD card                             |
-| "PPK data applied"               | GPS corrections from .daq file applied | None - normal                                         |
+| "Target detected in \[filename]" (Cible détectée dans [nom de fichier]) | "Cible détectée dans \N[nom de fichier]" | Cible d'étalonnage trouvée avec succès | Aucun - normal |
+| Traitement de l'image X de Y | "Traitement de l'image X de Y" | Mise à jour de la progression en cours | Aucun - normal
+| "Aucune cible trouvée" | Marquer les images cibles ou désactiver l'étalonnage de la réflectance | "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Aucune - normal
+| Le système d'exploitation de l'entreprise a été mis à l'épreuve par le système d'exploitation de l'entreprise, qui a été mis à l'épreuve par le système d'exploitation de l'entreprise
+| "Skipping corrupted file" | Fichier d'image endommagé | Recopier le fichier à partir de la carte SD
+| "Données PPK appliquées" | Les corrections GPS du fichier .daq sont appliquées | Aucune - normal |
 
-### Copying Log Data
+### Copie des données du journal
 
-To copy log for troubleshooting or support:
+Pour copier le journal à des fins de dépannage ou d'assistance :
 
-1. Open Debug Log panel
-2. Click **"Copy Log"** button (or right-click → Select All)
-3. Paste into text file or email
-4. Send to MAPIR support if needed
+1. Ouvrez le panneau Debug Log
+2. Cliquez sur le bouton **"Copier le journal "** (ou cliquez avec le bouton droit de la souris → Tout sélectionner)
+3. Coller dans un fichier texte ou dans un courriel
+4. Envoyer au support MAPIR si nécessaire
 
 ***
 
-## System Resource Monitoring
+## Surveillance des ressources du système
 
-### CPU Usage
+### Utilisation de l'unité centrale
 
 **Free Mode:**
 
-* 1 CPU core at \~100%
-* Other cores idle or available
-* System remains responsive
+* 1 cœur de CPU à \~100%
+* Les autres cœurs sont inactifs ou disponibles
+* Le système reste réactif
 
-**Chloros+ Parallel Mode:**
+**Chloros+ Mode parallèle:**
 
-* Multiple cores at 80-100% (up to 16 cores)
-* High overall CPU utilization
-* System may feel less responsive
-
-**To monitor:**
-
-* Windows Task Manager (Ctrl+Shift+Esc)
-* Performance tab → CPU section
-* Look for "Chloros" or "chloros-backend" processes
-
-### Memory (RAM) Usage
-
-**Typical usage:**
-
-* Small projects (< 100 images): 2-4 GB
-* Medium projects (100-500 images): 4-8 GB
-* Large projects (500+ images): 8-16 GB
-* Chloros+ parallel mode uses more RAM
-
-**If memory is low:**
-
-* Process smaller batches
-* Close other applications
-* Upgrade RAM if regularly processing large datasets
-
-### GPU Usage (Chloros+ with CUDA)
-
-When GPU acceleration is enabled:
-
-* NVIDIA GPU shows high utilization (60-90%)
-* VRAM usage increases (requires 4GB+ VRAM)
-* Calibrating stage is significantly faster
+* Plusieurs cœurs à 80-100% (jusqu'à 16 cœurs)
+* Utilisation globale élevée de l'unité centrale
+* Le système peut sembler moins réactif
 
 **To monitor:**
 
-* NVIDIA System Tray icon
-* Task Manager → Performance → GPU
-* GPU-Z or similar monitoring tool
+* Windows Gestionnaire des tâches (Ctrl+Shift+Esc)
+* Onglet Performance → section CPU
+* Recherchez les processus "ZXZZX000013ZXZXZX" ou "chloros-backend"
 
-### Disk I/O
+### Utilisation de la mémoire (RAM)
 
-**What to expect:**
+**Utilisation typique:**
 
-* High disk read during Analyzing stage
-* High disk write during Exporting stage
-* SSD significantly faster than HDD
+* Petits projets (< 100 images) : 2-4 GO
+* Projets moyens (100-500 images) : 4-8 GO
+* Grands projets (500+ images) : 8-16 GO
+* le mode parallèle ChlorosX+ utilise plus de RAM
 
-**Performance tip:**
+**Si la mémoire est faible:**
 
-* Use SSD for project folder when possible
-* Avoid network drives for large datasets
-* Ensure disk isn't near capacity (affects write speed)
+* Traiter des lots plus petits
+* Fermer les autres applications
+* Augmenter la RAM si vous traitez régulièrement de grands ensembles de données
+
+### Utilisation du GPU (ChlorosX+ avec CUDA)
+
+Lorsque l'accélération GPU est activée :
+
+* Le GPU NVIDIA affiche un taux d'utilisation élevé (60-90 %)
+* L'utilisation de la VRAM augmente (nécessite plus de 4 Go de VRAM)
+* L'étape d'étalonnage est nettement plus rapide
+
+**To monitor:**
+
+* Icône de la barre d'état système de NVIDIA
+* Gestionnaire des tâches → Performances → GPU
+* GPU-Z ou outil de surveillance similaire
+
+### E/S disque
+
+**Ce à quoi il faut s'attendre:**
+
+* Nombre élevé de lectures sur le disque pendant la phase d'analyse
+* Nombre élevé d'écritures sur le disque pendant la phase d'exportation
+* Les disques SSD sont nettement plus rapides que les disques durs
+
+**Conseil de performance:**
+
+* Utiliser un disque SSD pour le dossier du projet lorsque c'est possible
+* Éviter les lecteurs réseau pour les grands ensembles de données
+* S'assurer que le disque n'est pas proche de sa capacité (affecte la vitesse d'écriture)
 
 ***
 
-## Detecting Problems During Processing
+## Détection des problèmes en cours de traitement
 
-### Warning Signs
+### Signes d'alerte
 
-**Progress stalls (no change for 5+ minutes):**
+**La progression est bloquée (pas de changement pendant plus de 5 minutes):**
 
-* Check Debug Log for errors
-* Verify disk space available
-* Check Task Manager to ensure Chloros is running
+* Vérifier le journal de débogage pour les erreurs
+* Vérifier l'espace disque disponible
+* Vérifiez dans le gestionnaire des tâches que ZXZXZ000016ZXZXZXX est en cours d'exécution
 
-**Error messages appear frequently:**
+**Les messages d'erreur apparaissent fréquemment:**
 
-* Stop processing and review errors
-* Common causes: disk space, corrupted files, memory issues
-* See Troubleshooting section below
+* Arrêtez le traitement et examinez les erreurs
+* Causes courantes : espace disque, fichiers corrompus, problèmes de mémoire
+* Voir la section Dépannage ci-dessous
 
-**System becomes unresponsive:**
+**Le système ne répond plus:**
 
-* Chloros+ parallel mode using too many resources
-* Consider reducing concurrent tasks or upgrading hardware
-* Free mode is less resource-intensive
+* Chloros+ le mode parallèle utilise trop de ressources
+* Envisagez de réduire les tâches simultanées ou de mettre à niveau le matériel
+* Le mode libre est moins gourmand en ressources
 
-### When to Stop Processing
+#### Quand arrêter le traitement
 
-Stop processing if you see:
+Arrêtez le traitement si vous constatez :
 
-* ❌ "Disk full" or "Cannot write file" errors
-* ❌ Repeated image file corruption errors
-* ❌ System completely frozen (not responding)
-* ❌ Realized wrong settings were configured
-* ❌ Wrong images imported
+* ❌ des erreurs "Disque plein" ou "Impossible d'écrire un fichier"
+* ❌ Erreurs répétées de corruption du fichier image
+* ❌ Le système est complètement bloqué (ne répond pas)
+* ❌ Réalisation que des paramètres erronés ont été configurés
+* mauvaises images importées
 
 **How to stop:**
 
-1. Click **Stop/Cancel button** (replaces Start button)
-2. Processing halts, progress is lost
-3. Fix issues and restart from beginning
+1. Cliquez sur le bouton **Arrêter/Annuler** (remplace le bouton Démarrer)
+2. Le traitement s'arrête, la progression est perdue
+3. Corriger les problèmes et recommencer depuis le début
 
 ***
 
-## Troubleshooting During Processing
+## Dépannage en cours de traitement
 
-### Processing is Very Slow
+### Le traitement est très lent
 
-**Possible causes:**
+**Causes possibles:**
 
-* Unmarked target images (scanning all images)
-* HDD instead of SSD storage
-* Insufficient system resources
-* Many indices configured
-* Network drive access
-
-**Solutions:**
-
-1. If just started and in Detecting stage: Cancel, mark targets, restart
-2. For future: Use SSD, reduce indices, upgrade hardware
-3. Consider CLI for batch processing large datasets
-
-### "Disk Space" Warnings
+* Images cibles non marquées (balayage de toutes les images)
+* Disque dur au lieu d'un disque SSD
+* Ressources système insuffisantes
+* Nombreux indices configurés
+* Accès au lecteur réseau
 
 **Solutions:**
 
-1. Free up disk space immediately
-2. Move project to drive with more space
-3. Reduce number of indices to export
-4. Use JPG format instead of TIFF (smaller files)
+1. Si vous venez de démarrer et que vous êtes en phase de détection : Annuler, marquer les cibles, redémarrer
+2. Pour l'avenir : Utiliser un disque SSD, réduire les indices, mettre à niveau le matériel
+3. Envisager CLIX pour le traitement par lots de grands ensembles de données
 
-### Frequent "Corrupted File" Messages
-
-**Solutions:**
-
-1. Re-copy images from SD card to ensure integrity
-2. Test SD card for errors
-3. Remove corrupted files from project
-4. Continue processing remaining images
-
-### System Overheating / Throttling
+### Avertissements concernant l'espace disque
 
 **Solutions:**
 
-1. Ensure adequate ventilation
-2. Clean dust from computer vents
-3. Reduce processing load (use Free mode instead of Chloros+)
-4. Process during cooler times of day
+1. Libérer immédiatement de l'espace disque
+2. Déplacer le projet vers un disque disposant de plus d'espace
+3. Réduire le nombre d'indices à exporter
+4. Utiliser le format JPG au lieu de TIFF (fichiers plus petits)
+
+### Messages fréquents "Fichier corrompu"
+
+**Solutions:**
+
+1. Recopier les images de la carte SD pour en assurer l'intégrité
+2. Tester la carte SD pour vérifier qu'il n'y a pas d'erreurs
+3. Supprimer les fichiers corrompus du projet
+4. Poursuivre le traitement des images restantes
+
+### Surchauffe du système / étranglement
+
+**Solutions:**
+
+1. Assurer une ventilation adéquate
+2. Éliminer la poussière des évents de l'ordinateur
+3. Réduisez la charge de traitement (utilisez le mode libre au lieu de ZXZXZX000018ZXZXX+)
+4. Traiter aux heures les moins chaudes de la journée
 
 ***
 
-## Processing Complete Notification
+## Avis de fin de traitement
 
-When processing finishes:
+Lorsque le traitement est terminé :
 
-* Progress bar reaches 100%
-* **"Processing Complete"** message appears in Debug Log
-* Start button becomes enabled again
-* All output files are in camera model subfolder
+* La barre de progression atteint 100 %
+* **Le message "Traitement terminé "** apparaît dans le journal de débogage
+* Le bouton Démarrer est à nouveau activé
+* Tous les fichiers de sortie se trouvent dans le sous-dossier du modèle de l'appareil photo
 
 ***
 
-## Next Steps
+## Prochaines étapes
 
-Once processing completes:
+Une fois le traitement terminé :
 
-1. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
-2. **Check output folder** - Verify all files exported correctly
-3. **Review Debug Log** - Check for any warnings or errors
-4. **Preview processed images** - Use Image Viewer or external software
+1. **Examen des résultats** - Voir [Finishing the Processing](finishing-the-processing.md)X
+2. **Vérifier le dossier de sortie** - Vérifier que tous les fichiers ont été exportés correctement
+3. **Consulter le journal de débogage** - Vérifier qu'il n'y a pas d'avertissement ou d'erreur
+4. **Visualiser les images traitées** - Utiliser la visionneuse d'images ou un logiciel externe
 
-For information about reviewing and using your processed results, see [Finishing the Processing](finishing-the-processing.md).
+Pour plus d'informations sur l'examen et l'utilisation des résultats traités, voir [Finishing the Processing](finishing-the-processing.md)X.

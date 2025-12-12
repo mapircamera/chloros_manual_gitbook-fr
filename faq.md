@@ -1,72 +1,67 @@
----
-description: Frequently Asked Questions
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
----
+___PROTÉGÉ_0001___
 
 # FAQ
 
-<details>
+___PROTÉGÉ_0002___
 
-<summary>Can I process images from cameras that are not MAPIR brand with Chloros?</summary>
+<summary>Puis-je traiter des images provenant de caméras qui ne sont pas de marque ZXZXZ000033ZXZXZXX avec Chloros ? ZXZXZX000002ZXXXZXX
 
-No, Chloros only supports processing MAPIR camera images. Please see the list of [supported camera models](supported-cameras.md) for more information. We do offer processing of other cameras on MAPIR Cloud, see full list [here](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+Non, ChlorosXX ne prend en charge que le traitement des images d'appareils photo ZXZXZ000034ZXZXZXX. Veuillez consulter la liste des ZXZZXZXXX0000ZXZXX pour plus d'informations. Nous proposons le traitement d'autres caméras sur ZXZXZ000035ZXZXX Cloud, voir la liste complète ZXZXZ0000X21ZXZXZXX.
 
-</details>
+___PROTÉGÉ_0005___
 
-<details>
+___PROTÉGÉ_0006___
 
-<summary>Can I calibrate my images for reflectance without a calibration target?</summary>
+<summary>Puis-je calibrer mes images pour la réflectance sans cible de calibrage ? </summary>X
 
-No. Without an image of the calibration target captured around when the non target images are captured you will not be able to relate the image's pixel values to a known reflectance percent. If you also do not include the log from a MAPIR light sensor then the ambient light spectrum will not be measured, and the reflectance results will not be accurate.
+Non. Sans une image de la cible de calibration capturée à peu près au moment où les images sans cible sont capturées, vous ne serez pas en mesure de relier les valeurs des pixels de l'image à un pourcentage de réflectance connu. Si vous n'incluez pas non plus le journal d'un capteur de lumière MAPIR, le spectre de la lumière ambiante ne sera pas mesuré et les résultats de réflectance ne seront pas précis.
 
-</details>
+___PROTÉGÉ_0009___
 
-<details>
+___PROTÉGÉ_0010___
 
-<summary>Can I edit my images prior to processing in Chloros?</summary>
+<summary>Puis-je éditer mes images avant de les traiter dans Chloros ? ZXZXX000006ZXXXZXX
 
-No. Chloros assumes the input data has not been modified. Do not change the file names.
+Non. Chloros suppose que les données d'entrée n'ont pas été modifiées. Ne changez pas les noms de fichiers.
 
-</details>
+___PROTÉGÉ_0013___
 
-<details>
+___PROTÉGÉ_0014___
 
-<summary>Can I set my MAPIR Survey3 cameras to auto exposure and process the images in Chloros?</summary>
+<summary>ZXX Puis-je régler mes ZXZZX000037ZXZXZXX ZXZZX000041ZXZXZXX appareils photo sur l'exposition automatique et traiter les images en Chloros ? ZXZXZ000008ZXXXZXX
 
-No. Survey3 image datasets must have a fixed/locked exposure, so no auto shutter speed or auto ISO. All images of the same camera model must have identical shutter speed and ISO (exposure).
+Non. Les ensembles d'images §§§18§§ doivent avoir une exposition fixe/verrouillée, donc pas de vitesse d'obturation automatique ou d'ISO automatique. Toutes les images d'un même modèle d'appareil photo doivent avoir une vitesse d'obturation et une sensibilité ISO (exposition) identiques.
 
-</details>
+___PROTÉGÉ_0017___
 
-<details>
+___PROTÉGÉ_0018___
 
-<summary>Can Chloros process or analyze orthomosaic images?</summary>
+<summary>Pouvez-vous ChlorosXX traiter ou analyser des images orthomosaïques ? ZXZXZX000010ZXXXZX
 
-No. Only individual MAPIR camera images are supported, not stitched images like an orthomosaic map.
+Non. Seules les images individuelles des MAPIR caméras sont prises en charge, et non les images assemblées comme une carte orthomosaïque.
 
-</details>
+___PROTÉGÉ_0021___
 
-<details>
+___PROTÉGÉ_0022___
 
-<summary>How can I speed up the target detection step of Chloros?</summary>
+<summary> Comment puis-je accélérer l'étape de détection de la cible de ZXZXZ000030ZXXZX ? ZXZXZX000012ZXXXZXX
 
-In the file browser table pre-selecting the target images in the right column will tell Chloros to only look in those images for calibration targets, greatly speeding up the processing.
+Dans le tableau du navigateur de fichiers, la présélection des images cibles dans la colonne de droite permet à ZXZXZ000031ZXZXX de ne rechercher que les cibles d'étalonnage dans ces images, ce qui accélère grandement le traitement.
 
-</details>
-
-<details>
-
-<summary>If I will upload my images to <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> should I process in Chloros prior to uploading?</summary>
-
-If you plan to upload to our online processing platform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) do not edit the images prior to uploading. Cloud will perform all the same processing and more.
-
-</details>
+___PROTÉGÉ_0025___
 
 <details>
 
-<summary>Will MAPIR ever support X feature? I really wish MAPIR offered X.</summary>
+§§§9§§Si je télécharge mes images sur ZXZXZ000015ZXZXZMAPIR CloudZXXZZZ000016ZXZXZXX, dois-je les traiter dans ZXZXZX000032ZXXZX avant de les télécharger ? ZXZXZX000017ZXXZXXX
 
-We are always interested in receiving feedback on our products. If you find an issue with our products, or have a suggestion on how we can improve our products please [CONTACT US](https://www.mapir.camera/community/contact) to share your thoughts. Most of our R\&D is guided by listening to our customer's biggest needs.
+Si vous prévoyez de télécharger sur notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant de les télécharger. Le nuage effectuera le même traitement et plus encore.
 
-</details>
+___PROTÉGÉ_0031___
+
+___PROTÉGÉ_0032___
+
+<summary>La société ZXZXZ000039ZXZXZX supportera-t-elle un jour la fonctionnalité X ? J'aimerais vraiment que ZXZZXX000040ZXZXZXX propose X.ZXZXZ000019ZXZXZXXX
+
+Nous sommes toujours intéressés par les commentaires sur nos produits. Si vous rencontrez un problème avec nos produits ou si vous avez une suggestion sur la manière dont nous pouvons les améliorer, veuillez ZXXZZ000023ZXXZXX nous faire part de vos réflexions. La plupart de nos R\&D sont guidés par l'écoute des besoins les plus importants de nos clients.
+
+___PROTÉGÉ_0035___

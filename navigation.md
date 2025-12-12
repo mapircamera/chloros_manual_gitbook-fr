@@ -1,47 +1,47 @@
 # GUI : Navigation
 
-When you first launch Chloros and Chloros (Browser) it will start up its backend. Once it is ready the top left main menu icon will be revealed <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
+Lorsque vous lancez ChlorosX et ZXZZZX000026ZXZXZXX (Navigateur) pour la première fois, il démarre son backend. Une fois qu'il est prêt, l'icône du menu principal en haut à gauche apparaît <img src=".gitbook/assets/image (1).png" alt="" data-size="line">X .
 
 <figure><img src=".gitbook/assets/header.JPG" alt=""><figcaption></figcaption></figure>
 
-From left to right the top header contains:
+De gauche à droite, l'en-tête supérieur contient :
 
-### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> Main Menu
+### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line">X Menu principal
 
-From the main menu you can start a new project, open an existing project or open the project folder.
+Le menu principal permet de démarrer un nouveau projet, d'ouvrir un projet existant ou d'ouvrir le dossier du projet.
 
-### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Play/Start Button
+### ZXZXZ000008ZXZXZXX Bouton Lecture/Démarrage
 
-When enabled, the start processing button starts the image processing pipeline.
+Lorsqu'il est activé, le bouton de démarrage du traitement permet de lancer le pipeline de traitement des images.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Progress Bar <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+### §§§8§§X Barre de progression §§§9§§X
 
-In the free Chloros mode, which processes all files sequentially, the progress bar will show 2 stages: Target Detect and Processing.
+En mode libre ChlorosX, qui traite tous les fichiers de manière séquentielle, la barre de progression indique deux étapes : Détection de la cible et Traitement.
 
-In the paid Chloros+ licensed mode, which process all files simultaneously, the progress bar shows 4 stages: Detecting, Analyzing, Calibrating, Exporting. If you hover your mouse cursor over the Chloros+ progress bar it will drop down the extended 4 progress bar panel so you can follow along. Clicking the top progress bar will freeze the dropdown panel, clicking again unfreezes it.
+Dans le mode payant ZXZXZ000028ZXZXZXX+ sous licence, qui traite tous les fichiers simultanément, la barre de progression affiche 4 étapes : Détection, Analyse, Calibrage, Exportation. Si vous passez le curseur de votre souris sur la barre de progression de ZXZXZ000029ZXXZXX+, le panneau étendu des 4 barres de progression s'affichera afin que vous puissiez suivre le processus. Un clic sur la barre de progression supérieure fige le panneau déroulant, un nouveau clic le débloque.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
-## Side Menu
+## Menu latéral
 
-The left sidebar menu contains various icons to interact with:
+Le menu latéral de gauche contient diverses icônes avec lesquelles il est possible d'interagir :
 
-#### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> [Project Settings](project-settings/page-2.md)
+#### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line">X ZXZXX000021ZXXXZXXX
 
-The Project Setting tab allows you to adjust project global and project processing settings. Adjust these prior to starting to process your files.
+L'onglet Paramètres du projet vous permet d'ajuster les paramètres globaux et les paramètres de traitement du projet. Ajustez ces paramètres avant de commencer à traiter vos fichiers.
 
-#### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> File Browser
+#### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> Navigateur de fichiers
 
-Add files/folders and remove files from the project. Duplicate files are ignored. Check the target column box for any target image, and the processing will only look at checked images for targets, greatly speeding up your processing time.
+Ajoutez des fichiers/dossiers et supprimez des fichiers du projet. Les fichiers en double sont ignorés. Cochez la case de la colonne cible pour n'importe quelle image cible, et le traitement ne regardera que les images cochées pour les cibles, ce qui accélère considérablement votre temps de traitement.
 
-#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Image Viewer](image-viewer-gui/page-3.md)
+#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">X ZXZXX000022ZXZXZXXX
 
-When an image is clicked in the main image viewer it is opened full screen in the Image Viewer tab.
+Lorsqu'on clique sur une image dans la visionneuse d'images principale, elle s'ouvre en plein écran dans l'onglet Visionneuse d'images.
 
-#### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> Debug Log
+#### ZXZXZX000019ZXZXZZX Journal de débogage
 
-Review the log for debug prints when issues happen. Copy/download the log and send to [MAPIR Support](https://www.mapir.camera/community/contact) for assistance.
+Consultez le journal pour obtenir des impressions de débogage lorsque des problèmes surviennent. Copiez/téléchargez le journal et envoyez-le à ZXZXZX000023ZXZXXZX pour obtenir de l'aide.
 
-#### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [User Login](chloros+-login.md)
+#### §§§18§§X ZXZXX000024ZXXXZXX
 
-The user login sidebar allows you to log into your Chloros+ account to unlock advanced features. You can also view the current application version, as well as adjust the language of the displayed text in Chloros GUI and CLI.
+La barre latérale de connexion utilisateur vous permet de vous connecter à votre compte ChlorosX+ pour débloquer des fonctionnalités avancées. Vous pouvez également consulter la version actuelle de l'application et ajuster la langue du texte affiché dans Chloros GUI et CLIX.

@@ -1,34 +1,34 @@
-# Table of contents
+# Table des matières
 
-* [Getting Started](README.md)
-* [GUI : Navigation](navigation.md)
-* [GUI : Projects](projects.md)
-* [CLI : Command Line](CLI.md)
-* [API : Python SDK](api-python-sdk.md)
-* [Supported Cameras](supported-cameras.md)
-* [Output Image Formats](output-image-formats.md)
-* [Chloros+ Login](chloros+-login.md)
-* [Calibration Targets](calibration-targets.md)
-* [Supported Languages](supported-languages.md)
-* [Download](download.md)
-* [FAQ](faq.md)
+* ___PROTÉGÉ_0001___
+* ___PROTÉGÉ_0002___
+* ___PROTÉGÉ_0003___
+* ___PROTÉGÉ_0004___
+*[API : Python SDK](api-python-sdk.md)
+* ZXZXX000002ZXXXZXX
+* ZXZXX000003ZXXXZXX
+* ZXZXX000004ZXXXZXX
+* ZXZXX000005ZXXXZXX
+* ZXZXX000006ZXXXZXX
+* ZXZXX000007ZXXXZXX
+* ZXZXZ000008ZXXXZXX
 
-## Processing Images (GUI)
+## Traitement des images (GUI)
 
-* [Adjusting Project Settings](processing-images-gui/adjusting-project-settings.md)
-* [Adding Files to a Project](processing-images-gui/page-1.md)
-* [Choosing Target Images](processing-images-gui/choosing-target-images.md)
-* [Starting the Processing](processing-images-gui/starting-the-processing.md)
-* [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Finishing the Processing](processing-images-gui/finishing-the-processing.md)
+* ZXZXX000009ZXXZXXX
+* ___PROTÉGÉ_0014___
+* ___PROTÉGÉ_0015___
+* ___PROTÉGÉ_0016___
+* ZXZXX000010ZXXXZX
+* ZXZXX000011ZXXXZXX
 
-## PROJECT SETTINGS
+## PARAMÈTRES DU PROJET
 
-* [Project Settings](project-settings/page-2.md)
-* [Multispectral Index Formulas](project-settings/multispectral-index-formulas.md)
+* ZXZXX000012ZXXXZXX
+* ___PROTÉGÉ_0020___
 
-## IMAGE VIEWER (GUI)
+## VISIONNEUSE D'IMAGES (GUI)
 
-* [Opening an Image Full Screen](image-viewer-gui/page-3.md)
-* [Image Layers](image-viewer-gui/image-layers.md)
-* [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* ZXZXX000013ZXXXZXX
+* ___PROTÉGÉ_0022___
+* ___PROTÉGÉ_0023___
