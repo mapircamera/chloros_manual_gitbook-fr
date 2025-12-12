@@ -6,7 +6,7 @@ metaLinks: {}
 
 <div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
 
-Chloros est une application logicielle de [MAPIR](https://www.mapir.camera) permettant de traiter des images et d'autres données de capteurs.
+Chloros est une application logicielle de [MAPIR] (https://www.mapir.camera) pour traiter les images et autres données de capteurs.
 
 ***
 
@@ -14,9 +14,9 @@ Chloros est disponible en 4 modes d'application :
 
 ## Chloros : Application GUI de bureau
 
-\[Recommandé] Fenêtre autonome séparée avec toutes les fonctionnalités.
+\N[Recommandé] Fenêtre autonome séparée avec toutes les fonctionnalités.
 
-## Chloros (Navigateur) : Interface GUI basée sur le web
+## Chloros (Navigateur) : Interface GUI basée sur le Web
 
 S'exécute dans votre navigateur web (Chrome/Edge). Meilleur pour les ordinateurs plus lents avec <4GB VRAM.
 
@@ -41,7 +41,7 @@ While Chloros is free to use for most tasks, you may find you want more. That is
 * **Multiple Device Usage**: each Chloros+ license allows for 2+ devices to be registered. Use your MAPIR Cloud account to manage registered devices. Add support for more devices by upgrading your Chloros+ license.
 * **Custom Multispectral Index Formulas:** enter in custom multispectral indices in the Chloros raster calculators, both for processing and the image viewing sandbox.
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Prix &#x26 ; Inscription</a></p>
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Pricing &#x26 ; Signup</a></p>
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 

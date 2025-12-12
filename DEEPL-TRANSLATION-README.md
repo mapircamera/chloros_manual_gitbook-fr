@@ -1,10 +1,10 @@
 # Chloros Traduction manuelle avec DeepL API
 
-Ce répertoire contient des scripts pour traduire automatiquement le manuel Chloros dans plus de 30 langues à l'aide de DeepL API, qui fournit une traduction automatique de qualité professionnelle.
+Ce répertoire contient des scripts permettant de traduire automatiquement le manuel Chloros en plus de 30 langues à l'aide de DeepL API, qui fournit une traduction automatique de qualité professionnelle.
 
 ## 🚀 Quick Start
 
-### Prérequis
+### Conditions préalables
 - Python 3.8 ou supérieur
 - DeepL API clé (déjà configurée dans le script)
 - Dépôts Git clonés pour chaque langue cible
@@ -37,16 +37,12 @@ translate-deepl.bat de     # German
 python translate_with_deepl.py .
 ```
 
-**Traduire une langue spécifique:** ```bash
-python translate_with_deepl.py . --lang es
-``` *Traduire une langue spécifique:**
+**Traduire une langue spécifique:**
 ```bash
 python translate_with_deepl.py . --lang es
 ```
 
-**Traduire plusieurs langues spécifiques:** ```bash
-python translate_with_deepl.py . --langs es fr de it
-``` *Traduire plusieurs langues spécifiques:**
+**Traduire plusieurs langues spécifiques:**
 ```bash
 python translate_with_deepl.py . --langs es fr de it
 ```
@@ -65,10 +61,10 @@ python translate_with_deepl.py . --list
 
 DeepL API prend en charge les langues suivantes de notre liste :
 
-| Code | Langue | DeepL Code
+| Code | Langue | DeepL Code |
 |------|----------|------------|
-| es | Espagnol | ES | pt | Portugais (Portugal) | PT
-| pt | portugais (Portugal) | PT-PT | pt-BR | portugais (Portugal) | ES | ES
+| ES | espagnol | ES | pt | portugais (Portugal)
+| pt | portugais (Portugal) | PT-PT | pt-BR | portugais (Espagne) | ES | ES
 pt-BR | Portugais (Brésil) | PT-BR | pt-BR | Portugais (Brésil) | PT-BR | pt-BR | Portugais (Brésil) | PT-PT
 | pt-BR | portugais (Brésil) | PT-BR | pt-BR | portugais (Brésil) | PT-BR
 | français | FR | de | allemand | DE | it | italien | IT
@@ -81,7 +77,7 @@ zh-CN | Chinois (simplifié) | ZH | zh-TW | Chinois (traditionnel) | ZH* | ru | 
 | nl | néerlandais | NL | ar | arabe | AR | AR
 | ar | Arabe | AR | pl | Polonais | PL
 | pl | Polonais | PL | tr | Turc | TR | TR
-| tr | Turc | TR
+| tr | turc | TR | id | indonésien | ID
 | id | indonésien | ID | bg | bulgare | BG
 bg | Bulgare | BG | bg | Bulgare | BG | bg | Bulgare | BG | bg | Bulgare
 bg | Bulgare | BG | cs | Tchèque | CS
@@ -109,9 +105,9 @@ Les langues suivantes nécessitent des méthodes de traduction alternatives :
 - **th** (thaïlandais)
 
 Pour ces langues, vous devrez :
-1. Utiliser Google Translate API (qualité inférieure mais couverture plus large)
+1. Utiliser Google Translate API (qualité moindre mais couverture plus large)
 2. Utiliser des services de traduction manuelle
-3. Ne pas les utiliser pour l'instant et ajouter des avis "Coming Soon" (bientôt disponible)
+3. Ne pas les utiliser pour l'instant et ajouter des avis "Coming Soon" (à venir)
 
 ## 🛡️ Caractéristiques de protection
 
@@ -119,7 +115,7 @@ Le script de traduction protège automatiquement :
 
 ✅ **Noms de produits** : Chloros, MAPIR
 ✅ **Termes techniques** : RGB, NDVI, NDRE, toutes les formules d'indexation
-✅ **Blocs de code** : blocs ` [PLH:000009] ` et en ligne `code`
+✅ **Code Blocks** : blocs ` ```code``` ` et blocs inline `code`
 ✅ **Liens** : `[text](url)` et `![alt](image.png)`
 ✅ **Balises HTML** : `<div>`, `<figure>`, etc.  
 ✅ **Chemins d'accès aux fichiers** : `supported-languages.md`, etc.  
@@ -136,11 +132,11 @@ Le script de traduction protège automatiquement :
 - **Limite** : Basé sur votre plan
 - **Coût** : ~5.49$/mois pour 1M de caractères
 
-### Utilisation estimée pour Chloros Manuel
+### Estimation de l'utilisation du manuel Chloros
 Chaque traduction linguistique utilise environ **50 000 à 100 000 caractères** en fonction de la taille du manuel.
 
 - Traduction complète (30 langues) : ~2-3 millions de caractères
-- Avec la version gratuite : Peut traduire ~5-10 langues/mois
+- Avec le niveau gratuit : Peut traduire ~5-10 langues/mois
 - Avec la version Pro : Possibilité de traduire toutes les langues à la fois
 
 **Vérifiez votre utilisation actuelle:**
@@ -150,9 +146,9 @@ python translate_with_deepl.py . --usage
 
 ## 🔧 How It Works
 
-1. **Découverte de fichiers** : Trouve tous les fichiers `.md` dans le répertoire de langues
+1. **Découverte de fichiers** : Trouve tous les fichiers `.md` dans le repo de la langue
 2. **Protection du contenu** : Remplace le code, les liens et les termes protégés par des caractères de remplacement
-3. **Découpage** : Divise les fichiers volumineux en morceaux compatibles avec la norme API
+3. **Découpage** : Divise les fichiers volumineux en morceaux compatibles avec API
 4. **Traduction** : Envoi à DeepL API avec préservation du formatage
 5. **Restauration** : Restaure tous les éléments protégés
 6. **Writing** : Enregistre le contenu traduit dans le fichier
@@ -173,7 +169,7 @@ current_directory/
 └── translate_with_deepl.py             # This script
 ```
 
-## 🔍 Fichiers ignorés
+## 🔍 Fichiers qui sont ignorés
 
 Le script saute automatiquement :
 - `TRANSLATION-PROJECT-README.md`
@@ -185,14 +181,14 @@ Le script saute automatiquement :
 
 ## ⚙️ Configuration avancée
 
-### Modifier le point de terminaison API
+### Changement du point d'arrivée API
 
 Pour les comptes DeepL Pro, mettez à jour la ligne 21 dans `translate_with_deepl.py` :
 ```python
 DEEPL_API_URL = "https://api.deepl.com/v2/translate"  # Pro endpoint
 ```
 
-### Ajout d'autres termes protégés
+### Ajout de termes protégés
 
 Modifiez la liste `PROTECTED_TERMS` dans `translate_with_deepl.py` (ligne 68) :
 ```python
@@ -206,7 +202,7 @@ PROTECTED_TERMS = [
 ### Ajustement de la limitation du taux
 
 Modifier les temps de sommeil dans le script :
-- Ligne 399 : Entre les chunks (actuellement 0.5 secondes)
+- Ligne 399 : entre les morceaux (actuellement 0,5 seconde)
 - Ligne 459 : Entre les dépôts (actuellement 2 secondes)
 
 ## 🐛 Résolution des problèmes
@@ -214,10 +210,10 @@ Modifier les temps de sommeil dans le script :
 ### "DeepL API quota dépassé"
 - Vous avez atteint votre limite mensuelle
 - Attendez le mois prochain ou passez à la version Pro
-- Vérifier l'utilisation : `python translate_with_deepl.py . --usage`
+- Vérifiez l'utilisation : `python translate_with_deepl.py . --usage`
 
 ### "Dépôt non trouvé"
-- S'assurer que les dépôts de langues sont clonés dans le répertoire courant
+- S'assurer que les dépôts de langues sont clonés dans le répertoire actuel
 - Vérifier le nom du dépôt : doit être `chloros_manual_gitbook-{lang_code}`
 
 ### "Aucun fichier markdown trouvé"
@@ -260,17 +256,17 @@ git push origin main
 
 ## 📞 Support
 
-If you encounter issues:
-1. Check the troubleshooting section above
-2. Review DeepL API documentation: https://www.deepl.com/docs-api
-3. Contact: info@mapir.camera
+Si vous rencontrez des problèmes :
+1. Consultez la section de dépannage ci-dessus
+2. Consultez la documentation de DeepL API : https://www.deepl.com/docs-api
+3. Contact : info@mapir.camera
 
-## 📜 License
+## 📜 Licence
 
-This translation script is part of the Chloros manual project.
-© MAPIR Camera. All rights reserved.
+Ce script de traduction fait partie du projet de manuel Chloros.
+© MAPIR Caméra. Tous droits réservés.
 
 ---
 
-**Ready to translate?** Run `translate-deepl.bat`` et regardez la magie opérer ! ✨
+**Lancez `translate-deepl.bat` et regardez la magie opérer ! ✨
 

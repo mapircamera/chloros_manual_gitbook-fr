@@ -4,13 +4,13 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
 
-# Formats d'image de sortie
+# Formats des images de sortie
 
 ### TIFF (16 bits)
 
-sortie au format 16 bits (nombre numérique de pixels 0 - 65535) TIFF (.tif).
+format de sortie 16 bits (nombre numérique de pixels 0 - 65535) TIFF (.tif).
 
-### TIFF (32-bit, Pourcentage %)
+### TIFF (32 bits, pourcentage %)
 
 sortie au format 32 bits (pixel float 0.0 - 1.0) TIFF (.tif). Les valeurs des pixels représentent des pourcentages de réflectance où 0,0 = 0 % et 1,0 = 100 %.
 

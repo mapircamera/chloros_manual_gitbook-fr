@@ -1,6 +1,6 @@
 # Langues prises en charge
 
-Chloros offre une prise en charge complète de l'interface en **38 langues**, ce qui le rend accessible aux utilisateurs du monde entier. Vous pouvez changer de langue instantanément dans toutes les interfaces : Bureau, Navigateur, CLI, et Python SDK.
+Chloros offre une prise en charge complète de l'interface en **38 langues**, ce qui le rend accessible aux utilisateurs du monde entier. Vous pouvez changer de langue instantanément dans toutes les interfaces : Desktop, Browser, CLI, et Python SDK.
 
 Chloros prend en charge les langues suivantes :
 
@@ -48,13 +48,13 @@ Chloros prend en charge les langues suivantes :
 ### Dans Chloros Desktop/Browser
 
 1. Ouvrez les paramètres de l'application
-2. Naviguer vers le menu de sélection de la langue
+2. Naviguer jusqu'au menu de sélection de la langue
 3. Choisissez votre langue préférée dans la liste
 4. L'interface sera mise à jour instantanément
 
-### Dans Chloros CLI
+### En Chloros CLI
 
-Utilisez le paramètre de langue avec vos commandes pour définir la langue de l'interface.
+Utilisez le paramètre "langue" avec vos commandes pour définir la langue de l'interface.
 
 ### In Chloros Python SDK
 
@@ -67,6 +67,6 @@ Les 38 langues sont entièrement prises en charge :
 * **Chloros Desktop** - Traduction complète de l'interface graphique
 * **Chloros Navigateur** - Interface Web dans toutes les langues
 * **Chloros CLI** - Interface de ligne de commande et messages de sortie
-* **Chloros Python SDK** - Messages et documentation API
+* **Chloros Python SDK** - API messages et documentation
 
-La prise en charge des langues permet aux utilisateurs du monde entier de travailler efficacement dans leur langue maternelle sans aucune barrière.
+La prise en charge des langues permet aux utilisateurs du monde entier de travailler efficacement dans leur langue maternelle, sans obstacle.

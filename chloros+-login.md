@@ -1,8 +1,8 @@
 # Chloros+ Login
 
-## Chloros et Chloros (Navigateur) Connexion
+## Chloros et Chloros (Navigateur) Login
 
-Le menu latéral de l'utilisateur <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> vous permet de vous connecter à votre compte Chloros+ et de débloquer des fonctions supplémentaires.
+Le menu latéral utilisateur <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> vous permet de vous connecter à votre compte Chloros+ et de débloquer des fonctionnalités supplémentaires.
 
 Lorsque vous êtes connecté, les détails de votre compte s'affichent :
 
@@ -10,7 +10,7 @@ Lorsque vous êtes connecté, les détails de votre compte s'affichent :
 
 ## CLI Connexion
 
-Connectez-vous avec vos identifiants Chloros+ pour permettre le traitement CLI.
+Connectez-vous avec vos Chloros+ informations d'identification pour permettre le traitement CLI.
 
 **Syntaxe:**
 
@@ -25,10 +25,10 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
 {% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like [PLH:000003], [PLH:000004], or spaces.
+**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
 {% endhint %}
 
-**Sortie:**
+**Output:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -38,6 +38,6 @@ L'expiration du plan dans l'interface graphique indique la date à laquelle votr
 
 ### Limite d'appareils
 
-Chaque plan Chloros+ offre un nombre différent d'appareils enregistrés. Chaque appareil auquel vous vous connectez avec un compte Chloros+ comptera pour votre nombre d'appareils enregistrés. Vous pouvez renommer et supprimer un appareil sur la page de votre compte MAPIR Cloud.
+Chaque plan Chloros+ offre un nombre différent d'appareils enregistrés. Chaque appareil auquel vous vous connectez avec un compte Chloros+ sera pris en compte dans le calcul de votre nombre d'appareils enregistrés. Vous pouvez renommer et supprimer un appareil sur la page de votre compte MAPIR Cloud.
 
 <table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Devices Supported</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>

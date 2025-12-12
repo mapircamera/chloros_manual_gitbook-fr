@@ -1,6 +1,6 @@
 # Ouverture d'une image en plein écran
 
-La visionneuse d'images Chloros offre une interface plein écran dédiée à la visualisation, l'analyse et la manipulation de vos images multispectrales. Qu'il s'agisse d'images originales ou de sorties traitées, la visionneuse d'images offre des outils puissants pour l'inspection et l'analyse.
+La Chloros visionneuse d'images offre une interface plein écran dédiée à la visualisation, à l'analyse et à la manipulation de vos images multispectrales. Qu'il s'agisse d'images originales ou de sorties traitées, la visionneuse d'images offre des outils puissants pour l'inspection et l'analyse.
 
 ## Accès à la visionneuse d'images
 
@@ -23,7 +23,7 @@ Une fois l'image chargée dans la zone de prévisualisation :
 
 ***
 
-## Vue d'ensemble de l'interface de la visionneuse d'images
+## Aperçu de l'interface de la visionneuse d'images
 
 ### Zone d'affichage principale
 
@@ -32,7 +32,7 @@ La plus grande partie de l'écran affiche votre image :
 * **Résolution complète** : Images affichées à la résolution native
 * **Zoomable** : Utilisez les commandes ou la molette de la souris pour zoomer
 * **Possibilité de cliquer et de faire glisser la souris pour se déplacer lorsque l'on fait un zoom Cliquez et faites glisser pour vous déplacer lorsque le zoom est effectué
-* **Le rapport d'aspect est maintenu : Les images sont mises à l'échelle de façon proportionnelle
+* **Le rapport d'aspect est maintenu : Les images sont mises à l'échelle de manière proportionnelle
 
 ***
 
@@ -115,9 +115,9 @@ Lorsque vous déplacez le curseur de votre souris sur l'image, les valeurs des p
 * Vignette corrigée
 * Réflectance calibrée
 * Multi-bandes TIFF (Red, Green, NIR, etc.)
-* Données scientifiques prêtes pour l'analyse
+* Données scientifiques prêtes à être analysées
 
-### Images de l'index
+### Index Images
 
 **NDVI, NDRE, GNDVI, etc. (fichiers \_NDVI.tif):**
 
@@ -175,13 +175,13 @@ Voir [Index/LUT Sandbox](index-lut-sandbox.md) pour des instructions détaillée
 
 Vérifier que les indices ont été calculés correctement :
 
-1. Ouvrir NDVI ou une autre image d'indice
+1. Ouvrir NDVI ou une autre image d'index
 2. Vérifier les zones de végétation :
-   * **NDVI** : Doit être compris entre 0,4 et 0,9 pour les plantes saines
-   * **NDRE** : Des valeurs plus élevées pour une croissance vigoureuse
-   * **GNDVI** : Similaire à NDVI mais sensible à la chlorophylle
+   * **NDVI**: Doit afficher 0,4-0,9 pour les plantes saines
+   * **NDRE**: Des valeurs plus élevées pour une croissance vigoureuse
+   * **GNDVI**: Similaire à NDVI mais sensible à la chlorophylle
 3. Vérifier la non-végétation :
-   * **Sol** : Proche de 0 ou légèrement négatif
+   * **Sol** : Sol** : proche de 0 ou légèrement négatif
    * **Eau** : Valeurs négatives (-0,5 à 0)
 
 ***
@@ -215,9 +215,9 @@ Vérifier que les indices ont été calculés correctement :
 
 1. Vérifier les valeurs des pixels - si elles sont toutes très basses ou très hautes, ajuster la plage d'affichage
 2. Essayer d'ouvrir le fichier dans QGIS ou un logiciel similaire avec ajustement automatique de la plage d'affichage
-3. Vérifier les erreurs dans le journal de débogage du traitement
+3. Vérifier le journal de débogage du traitement pour les erreurs
 
-### Les valeurs des pixels semblent erronées
+### Les valeurs des pixels semblent incorrectes
 
 **Causes possibles:**
 
@@ -238,10 +238,10 @@ Vérifier que les indices ont été calculés correctement :
 
 Vous pouvez maintenant afficher les images en plein écran :
 
-* [**Image Layers**](image-layers.md) - En savoir plus sur la visualisation multibande
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Appliquer les indices personnalisés et le mappage des couleurs
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Comprendre les indices disponibles
+* [**Calques d'images**](image-layers.md) - Découvrez la visualisation multibande
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Appliquez des indices et des cartographies de couleurs personnalisés
+* [Formules d'index multispectrales**](../project-settings/multispectral-index-formulas.md) - Comprendre les index disponibles
 
-Pour le processus de traitement, voir :
+Pour le flux de travail, voir :
 
-* [**Processing Images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Guide de traitement complet
+* [**Traitement des images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Guide de traitement complet

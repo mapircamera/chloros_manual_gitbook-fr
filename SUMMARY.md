@@ -1,34 +1,34 @@
 # Table des matières
 
-* [Getting Started](README.md)
+* [Mise en route](README.md)
 * [GUI : Navigation](navigation.md)
-* [GUI : Projects](projects.md)
-* [CLI : Command Line](CLI.md)
+* [GUI : Projets](projects.md)
+* [CLI : Ligne de commande](CLI.md)
 * [API : Python SDK](api-python-sdk.md)
-* [Supported Cameras](supported-cameras.md)
-* [Output Image Formats](output-image-formats.md)
+* [Caméras prises en charge](supported-cameras.md)
+* [Formats d'image de sortie](output-image-formats.md)
 * [Chloros+ Login](chloros+-login.md)
-* [Calibration Targets](calibration-targets.md)
-* [Supported Languages](supported-languages.md)
-* [Download](download.md)
+* [Cibles d'étalonnage](calibration-targets.md)
+* [Langues supportées](supported-languages.md)
+* [Téléchargement](download.md)
 * [FAQ](faq.md)
 
 ## Traitement des images (GUI)
 
-* [Adjusting Project Settings](processing-images-gui/adjusting-project-settings.md) [Adding Files to a Project](processing-images-gui/adding-files-to-a-project.md) [Adding Files to a Project](processing-images-gui/adding-files-to-a-project.md) [Adding Files to a Project](processing-images-gui/adding-files-to-a-project.md)
-* [Adding Files to a Project](processing-images-gui/adding-files-to-a-project.md)
-* [Choosing Target Images](processing-images-gui/choosing-target-images.md)
-* [Starting the Processing](processing-images-gui/starting-the-processing.md) [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Finishing the Processing](processing-images-gui/finishing-the-processing.md)
+* [Ajuster les paramètres du projet](processing-images-gui/adjusting-project-settings.md)
+* [Ajout de fichiers à un projet](processing-images-gui/adding-files-to-a-project.md)
+* [Choix des images cibles](processing-images-gui/choosing-target-images.md)
+* [Démarrage du traitement](processing-images-gui/starting-the-processing.md)
+* [Suivi du traitement](processing-images-gui/monitoring-the-processing.md)
+* [Fin du traitement](processing-images-gui/finishing-the-processing.md)
 
 ## PARAMÈTRES DU PROJET
 
-* [Project Settings](project-settings/project-settings.md)
-* [Multispectral Index Formulas](project-settings/multispectral-index-formulas.md)
+* [Paramètres du projet](project-settings/project-settings.md)
+* [Formules de l'indice multispectral](project-settings/multispectral-index-formulas.md)
 
 ## VISIONNEUSE D'IMAGES (GUI)
 
-* [Opening an Image Full Screen](image-viewer-gui/opening-an-image-full-screen.md)
-* [Image Layers](image-viewer-gui/image-layers.md)
+* [Ouverture d'une image en plein écran](image-viewer-gui/opening-an-image-full-screen.md)
+* [Couches d'image](image-viewer-gui/image-layers.md)
 * [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)

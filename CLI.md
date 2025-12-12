@@ -2,7 +2,7 @@
 
 <figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
 
-La **Chloros CLI** offre un accès puissant en ligne de commande au moteur de traitement d'images Chloros, permettant l'automatisation, la création de scripts et le fonctionnement sans tête pour vos flux de travail d'imagerie.
+Le **Chloros CLI** offre un accès puissant en ligne de commande au moteur de traitement d'images Chloros, permettant l'automatisation, l'écriture de scripts et le fonctionnement sans tête pour vos flux de travail d'imagerie.
 
 ### Caractéristiques principales
 
@@ -16,11 +16,11 @@ La **Chloros CLI** offre un accès puissant en ligne de commande au moteur de tr
 
 | Exigences | Détails |
 | -------------------- | ------------------------------------------------------------------- |
-| **Système d'exploitation** | Windows 10/11 (64-bit) | **Licence** | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing))
-| Licence d'exploitation** - Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) - [paid plan required](https://cloud.mapir.camera/pricing) - [paid plan required](https://cloud.mapir.camera/pricing) - Chloros
-| **Mémoire** | 8 Go de RAM minimum (16 Go recommandés) | **Internet** | Nécessaire
-| **Internet** | Nécessaire pour l'activation de la licence
-| Espace disque** | Varie en fonction de la taille du projet
+| Système d'exploitation** Windows 10/11 (64-bit)
+| **Licence** | Chloros+ ([plan payant requis](https://cloud.mapir.camera/pricing)) |
+| Mémoire**** 8 Go de RAM minimum (16 Go recommandés)
+**Internet** | Nécessaire pour l'activation de la licence
+| Espace disque*** : varie en fonction de la taille du projet
 
 {% hint style="warning" %}
 **License Requirement**: The CLI requires a paid Chloros+ subscription. Standard (free) plans do not have CLI access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
@@ -30,14 +30,14 @@ La **Chloros CLI** offre un accès puissant en ligne de commande au moteur de tr
 
 ### Installation
 
-Le CLI est automatiquement inclus dans le programme d'installation du Chloros :
+Le CLI est automatiquement inclus dans l'installateur Chloros :
 
 1. Téléchargez et exécutez **Chloros Installer.exe**
-2. Compléter l'assistant d'installation
+2. Complétez l'assistant d'installation
 3. CLI installé sur : `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
 {% hint style="success" %}
-The installer automatically adds [PLH:000059] to your system PATH. Restart your terminal after installation.
+The installer automatically adds `chloros-cli` to your system PATH. Restart your terminal after installation.
 {% endhint %}
 
 ### Première installation
@@ -79,7 +79,7 @@ chloros-cli [global-options] <command> [command-options]
 
 ### `process` - Traiter les images
 
-Traite les images d'un dossier avec étalonnage.
+Traite les images d'un dossier avec l'étalonnage.
 
 **Syntaxe:**
 
@@ -93,31 +93,31 @@ chloros-cli process <input-folder> [options]
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### Options de commande de processus
+#### Options de commande du processus
 
 | Option | Type | Défaut | Description
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-pLH:000061] | Chemin d'accès | _Nécessaire_ | Dossier contenant les images multispectrales RAW/JPG | PLH:000062] | Chemin d'accès
-| PLH:000062] | Chemin d'accès | Identique à l'entrée | Dossier de sortie pour les images traitées |
-| PLH:000063] | Chaîne de caractères | Auto-générée | Nom de projet personnalisé
-pLH:000064] | Drapeau | Activé | Activer la correction de vignette | PLH:000064] | Drapeau | Activé | Activer la correction de vignette | PLH:000065] | Drapeau
-| PLH:000065] | Drapeau | - | Désactiver la correction de la vignette
-pLH:000066] | Drapeau | Activé | Activer l'étalonnage de la réflectance | `--reflectance` | Drapeau | - | Désactiver la correction de la vignette
-pLH:000067] | Drapeau | - | Désactiver l'étalonnage de la réflectance | `--ppk` | Drapeau
-pLH:000068] | Drapeau | Désactivé | Appliquer les corrections PPK à partir des données du capteur de lumière .daq | PLH:000069] | Drapeau | Désactivé | Désactivé
-| PLH:000069] | Choix | TIFF (16 bits) | Format de sortie : `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` - FORMAT DE SORTIE : `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `JPG (8-bit)`
-| PLH:000074] | Entier | Auto | Taille minimale de la cible en pixels pour la détection du panneau d'étalonnage
-pLH:000075] | Entier | Auto | Seuil de regroupement des cibles (0-100) | PLH:000076] | Entier | Auto
-| PLH:000076] | String | None | Verrouillage de l'exposition pour le modèle de caméra (Pin 1) |
-| PLH:000077] | String | None | Verrouiller l'exposition pour le modèle de caméra (Pin 2) |
-pLH:000078] | Integer | Auto | Intervalle de recalibrage en secondes | PLH:000079] | Integer | Auto | Intervalle de recalibrage en secondes
-| PLH:000079] | Entier | 0 | Décalage du fuseau horaire en heures
+`<input-folder>` | Chemin d'accès | _Required_ | Dossier contenant les images multispectrales RAW/JPG | `<input-folder>` | Chemin d'accès | Identique à l'entrée
+| `-o, --output` | Chemin d'accès | Identique à l'entrée | Dossier de sortie pour les images traitées |
+| `-n, --project-name` | Chaîne de caractères | Auto-générée | Nom de projet personnalisé
+| `--vignette` | Drapeau | Activé | Activer la correction de la vignette | `--vignette` | Drapeau | Activé | Activer la correction de la vignette
+`--no-vignette` | Drapeau | - | Désactiver la correction de vignette |
+`--reflectance` | Drapeau | Activé | Activer l'étalonnage de la réflectance |
+`--no-reflectance` | Drapeau | - | Désactiver l'étalonnage de la réflectance |
+| Drapeau | Désactivé | Appliquer les corrections PPK à partir des données du capteur de lumière .daq | Drapeau | Désactivé | Désactivé
+| `--format` | Choix | TIFF (16 bits) | Format de sortie : `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
+| Entier | Auto | Taille minimale de la cible en pixels pour la détection du panneau d'étalonnage |
+`--target-clustering` | Entier | Auto | Seuil de regroupement des cibles (0-100) |
+| Chaîne | Aucune | Verrouillage de l'exposition pour le modèle de caméra (broche 1) |
+| | Chaîne | Aucune | Verrouillage de l'exposition pour le modèle de caméra (broche 2) | `--exposure-pin-2` | Chaîne | Aucune | Verrouillage de l'exposition pour le modèle de caméra (broche 2) |
+| | Entier | Auto | Intervalle de recalibrage en secondes | `--recal-interval` | Entier | Auto | Intervalle de recalibrage en secondes
+| `--timezone-offset` | Entier | 0 | Décalage du fuseau horaire en heures |
 
 ***
 
 ### `login` - Authentification du compte
 
-Connectez-vous avec vos informations d'identification Chloros+ pour permettre le traitement CLI.
+Connectez-vous avec vos Chloros+ informations d'identification pour permettre le traitement CLI.
 
 **Syntaxe:**
 
@@ -132,10 +132,10 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
 {% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like [PLH:000081], [PLH:000082], or spaces.
+**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
 {% endhint %}
 
-**Sortie:**
+**Output:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -143,7 +143,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ### `logout` - Effacer les informations d'identification
 
-Efface les informations d'identification enregistrées et se déconnecte de votre compte.
+Effacez les informations d'identification enregistrées et déconnectez-vous de votre compte.
 
 **Syntaxe:**
 
@@ -157,7 +157,7 @@ chloros-cli logout
 chloros-cli logout
 ```
 
-**Sortie:**
+**Output:**
 
 ```
 ✓ Logout successful
@@ -166,7 +166,7 @@ chloros-cli logout
 
 ***
 
-### `status` - Vérifier le statut de la licence
+### `status` - Vérifier l'état de la licence
 
 Affiche l'état actuel de la licence et de l'authentification.
 
@@ -182,7 +182,7 @@ chloros-cli status
 chloros-cli status
 ```
 
-**Sortie:**
+**Output:**
 
 ```
 ╔══════════════════════════════════════╗
@@ -213,11 +213,11 @@ chloros-cli export-status
 chloros-cli export-status
 ```
 
-**Use Case:** Appeler cette commande pendant que le traitement est en cours pour vérifier l'état d'avancement de l'exportation.
+**Use Case:** Appeler cette commande en cours de traitement pour vérifier la progression de l'exportation.
 
 ***
 
-### `language` - Gérer le langage d'interface
+### `language` - Gérer la langue de l'interface
 
 Affichez ou modifiez la langue de l'interface CLI.
 
@@ -252,49 +252,49 @@ chloros-cli language ja
 
 #### Langues supportées (38 au total)
 
-| Langue : code, langue, nom, langue maternelle
+| Code | Langue | Nom natif
 | ------- | --------------------- | ---------------- |
-| `en` | Anglais | English | English | `es` `es` | Espagnol | Spanish | Spanish
-| `es` | Espagnol | Español
-| `pt` | Português | Português | Português | Português | Português
-| `fr` | Français | Français | `fr` | Français | `fr` | Français
-| `de` | Allemand | Deutsch | `de` | Français | `fr` | Français
-| `it` | Italien | Italiano | `ja` `ja` `ja` | Français
-| `ja` | Japonais | 日本語 |
-
-| `zh` | Chinois (simplifié) | 简体中文 | `zh` | Chinois (simplifié) | 简体中文
-| | Chinois (traditionnel) | 繁體中文
-| ♪ `ru` ♪ Russian ♪ Русский ♪
-| `nl` | Dutch | Nederlands
-| العربية | arabe | العربية | العربية | العربية
-| `pl` - `pl` - | Polonais | Polski
-| `tr` | Turc | Türkçe | `tr` `tr` `tr`
-| `hi` | Hindi [हिंदी] `hi` | Hindi
-| `id` | Indonésien | Bahasa Indonesia | `id` | Indonésien | Bahasa Indonesia | `id` | Indonésien
-| `vi` | Vietnamien | Tiếng Việt | `th` `th` `th` | Viêt Nam
-| `th` | Thaïlandais | ไทย | `sv` | Thaïlandais
-| `sv` | Suédois | Svenska
-| `da` | Dansk | Danois
-| `no` | norvégien | Norsk | `fi` | danois | Dansk | `fi` | danois
-
-| | grecque | Ελληνικά |
-
-| `hu` | hongrois | magyar | `ro` | hongrois
-| `ro` | Roumain | Română | `ro` `uk` | Roumain
-| | ukrainien | Українська |
-`pt-BR` | Português Brasileiro | Português Brasileiro | Português Brasileiro | Português Brasileiro
-| 粵語 | Cantonese | 粵語 |
-`ms` | Malais | Bahasa Melayu `ms` | Malais | Bahasa Melayu `sk` | Portugais
-| `sk` | Slovaque | Slovenčina | `sk` | Slovaque | Slovenčina | `sk` | Slovaque
-| `bg` | Bulgare | Български |
-`hr` | Croate | Hrvatski `hr` `hr` | Croate | Hrvatski
-| `lt` | Lituanien | Lietuvių |
-| `lv` | Letton | Latviešu | `lv` `lv` `lv` | Letton | Latviešu
-| `et` | Estonien | Eesti | `et` | Estonien | Eesti
-| `sl` | Slovène | Slovenščina | `et` | Estonien | Eesti
+| `en` | Anglais | English | English |
+| `es` | Espagnol | Español |
+| `pt` | Portugais | Português |
+| `fr` | Français | French | Français |
+| `de` | Allemand | Deutsch |
+| `it` | Italian | Italiano |
+| | | Japonais | 日本語 | | Japonais | 日本語 | | Japonais | 日本語 | Japonais
+| `ko` | Coréen | 한국어 |
+| `zh` | Chinois (simplifié) | 简体中文 |
+| 繁體中文 | Chinese (Traditional) | 繁體中文 |
+| | Russe | Русский
+`nl` | Dutch | Nederlands |
+| العربية | arabe | العربية | العربية | العربية | arabe
+| `pl` | Polish | Polski |
+| `tr` | Turc | Türkçe |
+| Hindi | हिंदी | Hindi | हिंदी | Hindi | हिी | Hindi
+| `id` | Indonésien | Bahasa Indonesia |
+| Tiếng Việt | Viêt Nam | Tiếng Việt | Vietnamien
+| `th` | Thai | ไทย |
+| `sv` | suédois | Svenska |
+| `da` | Danois | Dansk |
+| `no` | Norvégien | Norsk |
+`fi` | Finlandaise | Suomi |
+| Grecque | Ελληνικά |
+`cs` | Czech | Čeština |
+| `hu` | Hongrois | Magyar |
+`ro` | Roumain | Română |
+| | Ukrainien | Українська |
+| `pt-BR` | Brazilian Portuguese | Português Brasileiro |
+| | Cantonese | 粵語 |
+| `ms` | Malais | Bahasa Melayu |
+| `sk` | Slovak | Slovenčina |
+| Български | Български | Български | Български
+`hr` | Croate | Hrvatski |
+`lt` | Lithuanien | Lietuvių |
+| `lv` | Letton | Latviešu |
+| | Estonien | Eesti |
+| `sl` | Slovène | Slovenščina |
 
 {% hint style="success" %}
-**Automatic Persistence**: Your language preference is saved to [PLH:000125] and persists across all sessions.
+**Automatic Persistence**: Your language preference is saved to `~/.chloros/cli_language.json` and persists across all sessions.
 {% endhint %}
 
 ***
@@ -333,7 +333,7 @@ chloros-cli get-project-folder
 chloros-cli get-project-folder
 ```
 
-**Sortie:**
+**Output:**
 
 ```
 ℹ Current project folder: C:\Projects\2025
@@ -341,7 +341,7 @@ chloros-cli get-project-folder
 
 ***
 
-### `reset-project-folder` - Réinitialisation aux valeurs par défaut
+### `reset-project-folder` - Réinitialisation par défaut
 
 Réinitialise le dossier du projet à l'emplacement par défaut.
 
@@ -359,13 +359,13 @@ Ces options s'appliquent à toutes les commandes :
 
 | Option | Type | Valeur par défaut | Description |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| PLH:000129] | Chemin d'accès | Détecté automatiquement | Chemin d'accès à l'exécutable du backend | PLH:000130] | Integer | 5000 | Backend
-| PLH:000130] | Entier | 5000 | Numéro de port du backend API | Numéro de port du backend API | Numéro de port du backend
-| PLH:000131] | Drapeau | - | Forcer le redémarrage du backend (tue les processus existants) |
-| PLH:000132] | Drapeau | - | Afficher les informations de version et quitter |
-| PLH:000133] | Drapeau | - | Afficher les informations d'aide et quitter |
+| `--backend-exe` | Chemin d'accès | Auto-détecté | Chemin d'accès à l'exécutable du backend | `--port` | Integer | 5000 | Chemin d'accès au backend
+`--port` | Entier | 5000 | Numéro de port du backend API API | Numéro de port du backend API | Numéro de port du backend
+`--restart` | Drapeau | - | Forcer le redémarrage du backend (tue les processus existants) |
+`--version` | Drapeau | - | Afficher les informations sur la version et quitter |
+`--help` | Drapeau | - | Afficher les informations d'aide et quitter |
 
-**Exemple avec options globales:**
+**Exemple d'options globales:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
@@ -381,7 +381,7 @@ Chloros+ CLI **Échelonne automatiquement** le traitement parallèle en fonction
 
 **Comment ça marche:**
 
-* Détecte les cœurs de votre CPU et la RAM
+* Détecte les cœurs de votre processeur et la RAM
 * Alloue des travailleurs : **2× cœurs de CPU** (utilise l'hyperthreading)
 * **Maximum : 16 travailleurs parallèles** (pour la stabilité)
 
@@ -397,13 +397,13 @@ Chloros+ CLI **Échelonne automatiquement** le traitement parallèle en fonction
 **Automatic Optimization**: The CLI automatically detects your system specs and configures optimal parallel processing. No manual configuration needed!
 {% endhint %}
 
-### Méthodes de débogage
+### Méthodes Debayer
 
 Le CLI utilise **Haute qualité (plus rapide)** comme algorithme de débayerisation par défaut et recommandé :
 
-| La méthode de débayerisation utilisée est la suivante : - Méthode - Qualité - Vitesse - Description - Méthode de débayerisation - Méthode de débayerisation
+| La méthode de débayerisation est la suivante : - Méthode | Qualité | Vitesse | Description |
 | --------------------------- | ------- | ----- | ------------------------------------------- |
-| **Haute qualité (plus rapide)** ⭐ | ⭐⭐⭐⭐ | ⚡⚡⚡⚡ | Algorithme attentif aux contours (par défaut, recommandé) |
+| **Haute qualité (plus rapide)** ⭐ | ⭐⭐⭐⭐ | ⚡⚡⚡⚡ | Algorithme tenant compte des contours (par défaut, recommandé) |
 
 ### Correction de la vignette
 
@@ -416,13 +416,13 @@ Le CLI utilise **Haute qualité (plus rapide)** comme algorithme de débayerisat
 **Recommendation**: Always enable vignette correction to ensure uniform brightness across the frame.
 {% endhint %}
 
-### Calibrage de la réflectance
+### Calibration de la réflectance
 
 Convertit les valeurs brutes des capteurs en pourcentages de réflectance normalisés à l'aide de panneaux d'étalonnage.
 
 * **Activé par défaut** - Essentiel pour l'analyse de la végétation
 * Nécessite des panneaux cibles d'étalonnage dans les images
-* Utiliser `--no-reflectance` pour le désactiver
+* Utilisez `--no-reflectance` pour le désactiver
 
 {% hint style="info" %}
 **Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
@@ -434,7 +434,7 @@ Convertit les valeurs brutes des capteurs en pourcentages de réflectance normal
 
 * **Désactivé par défaut
 * Utilisez `--ppk` pour l'activer
-* Nécessite des fichiers .daq dans le dossier du projet du capteur de lumière DAQ-A-SD MAPIR.
+* Nécessite des fichiers .daq dans le dossier du projet à partir du capteur de lumière DAQ-A-SD.
 
 ### Formats de sortie
 
@@ -442,7 +442,7 @@ Convertit les valeurs brutes des capteurs en pourcentages de réflectance normal
 
 ***
 
-## Automation & Scripting
+## Automatisation et scripts
 
 ### PowerShell Batch Processing
 
@@ -453,17 +453,17 @@ Traiter automatiquement plusieurs dossiers d'ensembles de données :
 
 $datasets = Get-ChildItem "C:\Datasets\2025" -Directory
 
-foreach ([PLH:000001]datasets) {
-    Write-Host "Processing [PLH:000002]dataset.Name)..." -ForegroundColor Cyan
+foreach ($dataset in $datasets) {
+    Write-Host "Processing $($dataset.Name)..." -ForegroundColor Cyan
     
     chloros-cli process $dataset.FullName `
         --vignette `
         --reflectance
     
     if ($LASTEXITCODE -eq 0) {
-        Write-Host "✓ [PLH:000003]dataset.Name) complete" -ForegroundColor Green
+        Write-Host "✓ $($dataset.Name) complete" -ForegroundColor Green
     } else {
-        Write-Host "✗ [PLH:000004]dataset.Name) failed" -ForegroundColor Red
+        Write-Host "✗ $($dataset.Name) failed" -ForegroundColor Red
     }
 }
 
@@ -578,7 +578,7 @@ if __name__ == '__main__':
 
 ***
 
-## Processus de traitement
+## Traitement du flux de travail
 
 ### Workflow standard
 
@@ -639,7 +639,7 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
-3. Ajouter au PATH manuellement :
+3. Ajouter manuellement au PATH :
    * Ouvrir Propriétés du système → Variables d'environnement
    * Modifier la variable PATH
    * Ajouter : `C:\Program Files\Chloros\resources\cli`
@@ -657,8 +657,8 @@ Backend failed to start within 30 seconds
 
 **Solutions:**
 
-1. Vérifier si le backend est déjà en cours d'exécution (le fermer d'abord)
-2. Vérifier que Windows le pare-feu n'est pas bloqué
+1. Vérifier si le backend fonctionne déjà (le fermer d'abord)
+2. Vérifier que Windows Le pare-feu n'est pas bloqué
 3. Essayer un autre port :
 
 ```powershell
@@ -711,7 +711,7 @@ No images found in the specified folder
 **Solutions:**
 
 1. Vérifier que le dossier contient les formats supportés (.RAW, .TIF, .JPG)
-2. Vérifier que le chemin d'accès au dossier est correct (utiliser des guillemets pour les chemins d'accès avec des espaces)
+2. Vérifier que le chemin d'accès au dossier est correct (utiliser des guillemets pour les chemins d'accès comportant des espaces)
 3. Vérifiez que vous disposez des autorisations de lecture pour le dossier
 4. Vérifier que les extensions de fichiers sont correctes
 
@@ -737,7 +737,7 @@ Port 5000 is already in use
 
 **Solution:**
 
-Spécifiez un autre port :
+Spécifiez un port différent :
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
@@ -749,10 +749,10 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ### Q : Ai-je besoin d'une licence pour le CLI ?
 
-**A:** Oui ! Le CLI nécessite une licence **Chloros+ payante**.
+**A:** Oui ! La CLI nécessite une licence payante **Chloros+.
 
-* plan standard (gratuit) : CLI désactivé
-* ✅ Chloros+ (payant) : CLI activé
+* ❌ Plan standard (gratuit) : CLI désactivé
+* ✅ Chloros+ (payant) : CLI entièrement activé
 
 S'abonner à : [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
@@ -762,18 +762,18 @@ S'abonner à : [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/p
 
 **A:** Oui ! Le CLI fonctionne complètement sans interface graphique. Exigences :
 
-* Windows Serveur 2016 ou version ultérieure
+* Windows Server 2016 ou version ultérieure
 * Visual C++ Redistributable installé
 * Mémoire vive suffisante (8 Go minimum, 16 Go recommandés)
-* Activation unique de la licence GUI sur n'importe quelle machine
+* Activation unique de la licence d'interface graphique sur n'importe quelle machine
 
 ***
 
 ### Q : Où sont sauvegardées les images traitées ?
 
-**A:** Par défaut, les images traitées sont enregistrées dans le **même dossier que les données d'entrée**, dans des sous-dossiers relatifs au modèle de caméra (par exemple, `Survey3N_RGN/`).
+**A:** Par défaut, les images traitées sont enregistrées dans le **même dossier que l'entrée** dans les sous-dossiers du modèle d'appareil photo (par exemple, `Survey3N_RGN/`).
 
-Utilisez l'option `-o` pour spécifier un autre dossier de sortie :
+Utilisez l'option `-o` pour spécifier un dossier de sortie différent :
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"
@@ -783,11 +783,11 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ### Q : Puis-je traiter plusieurs dossiers à la fois ?
 
-**A:** Pas directement dans une commande, mais vous pouvez utiliser des scripts pour traiter les dossiers de manière séquentielle. Voir la section [Automation & Scripting](CLI.md#automation--scripting).
+**A:** Pas directement en une seule commande, mais vous pouvez utiliser des scripts pour traiter les dossiers de manière séquentielle. Voir la section [Automation & Scripting](CLI.md#automation--scripting).
 
 ***
 
-### Q : Comment enregistrer la sortie de CLI dans un fichier journal ?
+### Q : Comment enregistrer la sortie CLI dans un fichier journal ?
 
 **PowerShell:**
 
@@ -807,7 +807,7 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 **A:** Le CLI sera :
 
-1. Arrêtera le traitement de manière gracieuse
+1. Arrêtera le traitement avec élégance
 2. Arrêter le backend
 3. Quitter avec le code 130
 
@@ -817,11 +817,11 @@ Des images partiellement traitées peuvent rester dans le dossier de sortie.
 
 ### Q : Puis-je automatiser le traitement CLI ?
 
-**A:** Absolument ! Le CLI est conçu pour l'automatisation. Voir [Automation & Scripting](CLI.md#automation--scripting) pour les exemples PowerShell, Batch et Python.
+**A:** Absolument ! Le CLI est conçu pour être automatisé. Voir [Automation & Scripting](CLI.md#automation--scripting) pour des exemples PowerShell, Batch, et Python.
 
 ***
 
-### Q : Comment puis-je vérifier la version du CLI ?
+### Q : Comment puis-je vérifier la version CLI ?
 
 **A:**
 
@@ -841,7 +841,7 @@ Chloros CLI 1.0.2
 
 ### Aide en ligne de commande
 
-Afficher des informations d'aide directement dans le CLI :
+Affichez des informations d'aide directement dans la CLI :
 
 ```powershell
 # General help
@@ -875,7 +875,7 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ### Exemple 2 : Résultats scientifiques de haute qualité
 
-flottant 32 bits TIFF :
+flotteur 32 bits TIFF :
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -923,7 +923,7 @@ chloros-cli process "C:\Input\Raw_Images" ^
 
 ***
 
-### Exemple 6 : Flux de travail d'authentification
+### Exemple 6 : flux de travail d'authentification
 
 Flux d'authentification complet :
 
@@ -943,7 +943,7 @@ chloros-cli logout
 
 ***
 
-### Exemple 7 : Utilisation de plusieurs langues
+### Exemple 7 : Utilisation multilingue
 
 Changer la langue de l'interface :
 

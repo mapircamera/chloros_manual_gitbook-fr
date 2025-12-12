@@ -1,15 +1,15 @@
 # Couches d'images
 
-La liste déroulante des couches d'images de la visionneuse d'images Chloros vous permet de passer rapidement d'une version à l'autre de la même image - des captures originales aux sorties de réflectance traitées et aux images d'index calculées.
+La liste déroulante des couches d'images de la visionneuse d'images Chloros vous permet de passer rapidement d'une version à l'autre de la même image, qu'il s'agisse des captures originales, des sorties de réflectance traitées ou des images d'index calculées.
 
 ## Qu'est-ce qu'une couche d'image ?
 
-Dans Chloros, **les couches** font référence aux différentes sorties d'images disponibles pour une seule image source. Lorsque vous traitez des images, Chloros crée plusieurs versions :
+Dans Chloros, les **couches** désignent les différentes sorties d'image disponibles pour une seule image source. Lorsque vous traitez des images, Chloros crée plusieurs versions :
 
 * **Images originales** (fichiers JPG et RAW de votre appareil photo)
 * **Sorties calibrées en fonction de la réflectance** (si la calibration de la réflectance a été activée)
 * **Images cibles** (si l'image contient des cibles d'étalonnage)
-* **Images d'index** (NDVI, NDRE, GNDVI, etc. si les index ont été configurés)
+* **Images d'index** (NDVI, NDRE, GNDVI, etc. si des index ont été configurés)
 
 La liste déroulante **Sélecteur de couches** en haut à droite de la visionneuse d'images vous permet de passer instantanément d'une version à l'autre sans quitter la visionneuse.
 
@@ -60,14 +60,14 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 
 ### RAW (Réflectance)
 
-* L'image de sortie de la réflectance calibrée
+* L'image de sortie calibrée de la réflectance
 * Vignette corrigée (si activée lors du traitement)
 * Réflectance calibrée à l'aide de données cibles (si activée)
 * Multibande TIFF avec tous les canaux de la caméra
 * Les valeurs des pixels représentent le pourcentage de réflectance (en mode pourcentage)
-* Prêt à être manipulé avec le [Index/LUT Sandbox](index-lut-sandbox.md)
+* Prêt à être manipulé avec l'[Index/LUT Sandbox] (index-lut-sandbox.md)
 
-**Quand consulter:**
+**Quand regarder:**
 
 * Inspection des résultats calibrés
 * Vérification de la qualité de l'étalonnage
@@ -81,10 +81,10 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 ### RAW (NDVI Index)... et similaires
 
 * Image de l'indice de végétation calculé (NDVI dans cet exemple)
-* Le nom de l'index change en fonction de l'index configuré lors du traitement
+* Le nom de l'index change en fonction de l'index qui a été configuré pendant le traitement
 * Exemples : RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index), etc.
 * Image en niveaux de gris à une bande montrant les résultats du calcul de l'index
-* Une couche apparaît pour chaque index configuré dans les paramètres du projet
+* Un calque apparaît pour chaque index configuré dans les paramètres du projet
 
 **Noms d'index possibles:**
 
@@ -94,7 +94,7 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 * RAW (OSAVI Index)
 * RAW (EVI Index)
 * RAW (SAVI Index)
-* Et bien d'autres encore... (voir [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md))
+* Et bien d'autres encore... (voir [Formules d'indice multispectral](../project-settings/multispectral-index-formulas.md))
 
 **Quand voir:**
 
@@ -124,8 +124,8 @@ La liste déroulante **Sélecteur de couches** en haut à droite de la visionneu
 **Quick switching:**
 
 * La liste déroulante se souvient de votre dernière sélection
-* Lorsque vous passez à l'image suivante, Chloros tente d'afficher le même type de calque
-* Si ce calque n'existe pas sur l'image suivante, il est affiché par défaut en JPG
+* Lors du passage à l'image suivante, Chloros tente d'afficher le même type de calque
+* Si ce calque n'existe pas sur l'image suivante, il s'agit par défaut d'un JPG
 
 ### Disponibilité des calques
 
@@ -161,7 +161,7 @@ Lorsque vous naviguez vers une autre image (en utilisant les touches fléchées 
 1. Ouvrez l'image 1, passez en mode RAW (NDVI Index)
 2. Appuyez sur → pour afficher l'image 2
 3. L'image 2 affiche automatiquement la couche RAW (NDVI Index)
-4. Continuez à naviguer - toutes les images affichent la couche NDVI
+4. Continuer à naviguer - toutes les images affichent le calque NDVI
 5. Très efficace pour examiner les résultats de l'index sur de nombreuses images
 
 ***
@@ -180,12 +180,12 @@ Lorsque vous naviguez vers une autre image (en utilisant les touches fléchées 
 
 ### Flux de travail 2 : Révision de l'index
 
-**Objectif** : Examiner rapidement les résultats NDVI dans l'ensemble du jeu de données
+**Objectif** : Examiner rapidement les résultats NDVI dans l'ensemble des données
 
 1. Ouvrir la première image traitée
 2. Sélectionner **RAW (NDVI Index)** dans la liste déroulante
-3. Utiliser la touche fléchée → pour passer à l'image suivante
-4. la couche NDVI persiste automatiquement
+3. Utiliser la touche → pour passer à l'image suivante
+4. le calque NDVI persiste automatiquement
 5. Continuer à parcourir toutes les images, en vérifiant les motifs NDVI
 6. Passer à **RAW (NDRE Index)** pour comparer
 
@@ -207,7 +207,7 @@ Lorsque vous naviguez vers une autre image (en utilisant les touches fléchées 
 2. Sélectionner la couche **RAW (Réflectance)**
 3. Activer le mode **Pourcentage de pixels** (bouton dans la barre d'outils en haut à droite)
 4. Déplacer le curseur sur les zones de végétation
-5. Vérifier que les valeurs des pixels se situent dans les fourchettes attendues (30-70% pour NIR, 5-15% pour Red)
+5. Vérifier que les valeurs des pixels se situent dans les fourchettes prévues (30-70% pour NIR, 5-15% pour Red)
 6. Vérifier que les valeurs des zones de sol et d'eau sont appropriées
 
 ***
@@ -230,8 +230,8 @@ Des couches différentes affichent des plages de valeurs de pixels différentes 
 
 ### RAW (Réflectance)
 
-* **Plage** : 0-65 535 (16 bits TIFF) ou 0,0-1,0 (32 bits - pourcentage)
-* **Signification Pourcentage de réflectance calibrée
+* **Plage** : 0-65 535 (16 bits TIFF) ou 0,0-1,0 (32 bits Pourcentage)
+* **Signification Pourcentage de réflectance calibré
 * **Utilisation** : Mesures et analyses scientifiques
 
 **Pour 16-bit TIFF:** Diviser par 65,535 pour obtenir le pourcentage de réflectance **Pour 32-bit Percent:** Les valeurs représentent directement le pourcentage (0.5 = 50% de réflectance)
@@ -252,7 +252,7 @@ Des couches différentes affichent des plages de valeurs de pixels différentes 
 ### Commutation de couche efficace
 
 * **Sensibilisation aux raccourcis clavier** : Bien qu'il n'y ait pas de raccourci clavier pour les calques, les flèches de navigation (←/→) fonctionnent sur tous les calques
-* **Des flux de travail cohérents** : Choisissez une couche (par exemple, NDVI) et examinez l'ensemble du jeu de données avant de passer à une autre couche
+* **Des flux de travail cohérents** : Choisissez une couche (par exemple, NDVI) et examinez l'ensemble des données avant de passer à une autre
 * **Comparaisons rapides** : Comparaisons rapides** : basculez entre l'original et la réflectance pour vérifier la qualité du traitement
 
 ### Considérations sur les performances
@@ -312,7 +312,7 @@ Des couches différentes affichent des plages de valeurs de pixels différentes 
 1. Vérifier le journal de débogage pour les messages "Cible trouvée"
 2. Vérifier que l'image contient effectivement des cibles d'étalonnage visibles
 3. Ajuster les paramètres de détection des cibles dans les paramètres du projet
-4. Voir [Choosing Target Images](../processing-images-gui/choosing-target-images.md)
+4. Voir [Choix des images cibles](../processing-images-gui/choosing-target-images.md)
 
 ***
 
@@ -328,11 +328,11 @@ Lors de la visualisation d'un calque, vous pouvez utiliser :
 * **Flèches de navigation** : Flèches de navigation** : Déplacez-vous entre les images tout en maintenant la couche
 * **Mode pourcentage de pixels** : Basculer entre l'affichage des DN et des pourcentages
 
-Voir [Opening an Image Full Screen](opening-an-image-full-screen.md) pour la documentation complète de la visionneuse d'images.
+Voir [Ouverture d'une image en plein écran] (ouverture-an-image-full-screen.md) pour la documentation complète de la visionneuse d'images.
 
 ### Index/LUT Sandbox
 
-Pour les tests interactifs d'index et la visualisation :
+Pour le test et la visualisation interactifs de l'index :
 
 * **Calcul d'indice en temps réel** : Testez différentes formules d'index
 * **Mappage des couleurs LUT** : Appliquez des gradients de couleur à des indices en niveaux de gris
@@ -346,7 +346,7 @@ Voir [Index/LUT Sandbox](index-lut-sandbox.md) pour plus de détails.
 
 Maintenant que vous comprenez ce que sont les calques d'image :
 
-* [**Opening an Image Full Screen**](opening-an-image-full-screen.md) - Guide complet de la visionneuse d'images
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Visualisation interactive des index
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Référence des indices disponibles
-* [**Finishing the Processing**](../processing-images-gui/finishing-the-processing.md) - Comprendre les sorties traitées
+* [**Ouverture d'une image en plein écran**](opening-an-image-full-screen.md) - Guide complet de la visionneuse d'images
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Visualisation interactive de l'index
+* [**Formules d'index multispectrales**](../project-settings/multispectral-index-formulas.md) - Référence des index disponibles
+* [**Finalisation du traitement**](../processing-images-gui/finishing-the-processing.md) - Comprendre les résultats du traitement

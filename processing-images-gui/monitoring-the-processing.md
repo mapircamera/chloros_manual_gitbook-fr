@@ -4,7 +4,7 @@ Une fois que le traitement a commencé, Chloros fournit plusieurs moyens de suiv
 
 ## Vue d'ensemble de la barre de progression
 
-La barre de progression située dans l'en-tête supérieur indique l'état du traitement en temps réel et le pourcentage d'achèvement.
+La barre de progression située dans l'en-tête supérieur indique en temps réel l'état du traitement et le pourcentage d'achèvement.
 
 ### Barre de progression du mode libre
 
@@ -23,7 +23,7 @@ Pour les utilisateurs sans licence Chloros+ :
 
 ### Chloros+ Barre de progression
 
-Pour les utilisateurs de la licence Chloros+ :
+Pour les utilisateurs ayant la licence Chloros+ :
 
 **Affichage de la progression en 4 étapes:**
 
@@ -50,9 +50,9 @@ Pour les utilisateurs de la licence Chloros+ :
 * Chloros analyse les images marquées d'une case à cocher Cible
 * Des algorithmes de vision par ordinateur identifient les 4 panneaux d'étalonnage
 * Les valeurs de réflectance sont extraites de chaque panneau
-* L'horodatage des cibles est enregistré pour une programmation correcte de l'étalonnage
+* Les horodatages des cibles sont enregistrés pour une programmation correcte de l'étalonnage
 
-**Durée : **
+**Durée:**
 
 * Avec des cibles marquées : 10-60 secondes
 * Sans cibles marquées : 5-30+ minutes (balayage de toutes les images)
@@ -111,7 +111,7 @@ Pour les utilisateurs de la licence Chloros+ :
 **Comportement du traitement:**
 
 * **Mode libre** : Traite une image à la fois de manière séquentielle
-* **Mode Chloros+** : Traite jusqu'à 16 images simultanément
+* **Chloros+ mode** : Traite jusqu'à 16 images simultanément
 * **Accélération GPU** : Accélération du processeur graphique** : accélère considérablement cette étape
 
 **Ce qu'il faut surveiller:**
@@ -153,7 +153,7 @@ Le journal de débogage fournit des informations détaillées sur l'état d'avan
 
 1. Cliquez sur l'icône **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> dans la barre latérale gauche
 2. Le panneau du journal s'ouvre et affiche les messages de traitement en temps réel
-3. Défilement automatique pour afficher les derniers messages
+3. Défilement automatique pour afficher les messages les plus récents
 
 ### Comprendre les messages du journal
 
@@ -193,13 +193,13 @@ Problèmes critiques pouvant entraîner l'échec du traitement :
 
 **Action:** Arrêter le traitement, résoudre l'erreur, redémarrer
 
-### Messages communs du journal
+### Messages courants du journal
 
 | Message - Signification - Action à entreprendre
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
 | "Target detected in \[filename]" (Cible détectée dans [nom de fichier]) | "Cible détectée dans \N[nom de fichier]" | Cible d'étalonnage trouvée avec succès | Aucun - normal |
 | "Traitement de l'image X de Y"        | "Traitement de l'image X de Y" | Mise à jour de la progression en cours | Aucun - normal
-| "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Marquer les images cibles ou désactiver l'étalonnage de la réflectance | "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Aucune - normal
+| "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Marquer les images cibles ou désactiver l'étalonnage par réflectance | "Aucune cible trouvée" | "Aucune cible détectée" | Aucune - normal
 | "Espace disque insuffisant" | Espace disque insuffisant pour la sortie | Libérer de l'espace disque
 | "Skipping corrupted file" | Fichier d'image endommagé | Recopier le fichier à partir de la carte SD
 | "Données PPK appliquées" | Les corrections GPS du fichier .daq sont appliquées | Aucune - normal |
@@ -256,7 +256,7 @@ Pour copier le journal à des fins de dépannage ou d'assistance :
 
 Lorsque l'accélération GPU est activée :
 
-* Le GPU NVIDIA affiche une utilisation élevée (60-90 %)
+* Le GPU NVIDIA affiche une utilisation élevée (60-90%)
 * L'utilisation de la VRAM augmente (nécessite plus de 4 Go de VRAM)
 * L'étape d'étalonnage est nettement plus rapide
 
@@ -300,7 +300,7 @@ Lorsque l'accélération GPU est activée :
 
 **Le système ne répond plus:**
 
-* Chloros+ le mode parallèle utilise trop de ressources
+* Chloros+ Le mode parallèle utilise trop de ressources
 * Envisagez de réduire le nombre de tâches simultanées ou de mettre à niveau le matériel
 * Le mode libre est moins gourmand en ressources
 
@@ -384,9 +384,9 @@ Lorsque le traitement est terminé :
 
 Une fois le traitement terminé :
 
-1. **Examen des résultats** - Voir [Finishing the Processing](finishing-the-processing.md)
+1. **Examen des résultats** - Voir [Fin du traitement](fin-the-processing.md)
 2. **Vérifier le dossier de sortie** - Vérifier que tous les fichiers ont été exportés correctement
 3. **Consulter le journal de débogage** - Vérifier qu'il n'y a pas d'avertissement ou d'erreur
 4. **Visualiser les images traitées** - Utiliser la visionneuse d'images ou un logiciel externe
 
-Pour plus d'informations sur l'examen et l'utilisation des résultats traités, voir [Finishing the Processing](finishing-the-processing.md).
+Pour plus d'informations sur l'examen et l'utilisation des résultats traités, voir [Fin du traitement] (Fin-the-processing.md).

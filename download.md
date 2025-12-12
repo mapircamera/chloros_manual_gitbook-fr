@@ -4,16 +4,16 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
 
-# Téléchargement
+# Télécharger
 
-Téléchargez la dernière version de Chloros pour Windows afin de commencer à traiter des images multispectrales.
+Téléchargez la dernière version de Chloros pour Windows pour commencer à traiter des images multispectrales.
 
 ### Configuration requise
 
-| Exigences du système d'exploitation | Minimum | Recommandé
+| Exigences du système - Minimum - Recommandé - Exigences du système - Exigences du système - Exigences du système - Minimum - Recommandé
 | -------------------- | ------------------------------- | ------------------------------- |
-| Système d'exploitation** Windows 10 (64 bits) | Windows 11 (64 bits)
-système d'exploitation** Windows 10 (64-bit) | Windows 11 (64-bit) | **Processeur** | Intel Core i5 ou équivalent | Intel Core i7 ou mieux
+| **Système d'exploitation** | Windows 10 (64-bit) | Windows 11 (64-bit) | Windows 10 (64-bit) | Windows 11 (64-bit)
+| Système d'exploitation** - Windows 10 (64 bits) - Windows 11 (64 bits)
 | Mémoire vive (RAM)** 8 Go | 16 Go ou plus
 carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus | Carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus
 | Mémoire vive (RAM) ** 2GB | Espace libre | SSD avec 10GB+ d'espace libre
@@ -28,14 +28,14 @@ carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus
 
 ## Télécharger Chloros
 
-### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Télécharger Chloros Ici </a>
+### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Télécharger Chloros Ici</a>
 
 ### Dernière version stable
 
 **Chloros Installateur pour Windows**
 
 * **Version** : 1.0.3
-* **Date de sortie** : Décembre ?, 2025
+* **Date de sortie** : Décembre 2025
 * **Taille du fichier** : 1.6GB
 * **Type de fichier** : .exe (Windows Installateur)
 
@@ -44,12 +44,12 @@ carte graphique** | compatible DirectX 11 | GPU NVIDIA avec 4 Go de VRAM ou plus
 1. Télécharger le fichier `CHLOROS INSTALLER - CURRENT VERSION.exe`
 2. Double-cliquer sur le programme d'installation pour commencer l'installation
 3. Suivre les instructions de l'assistant d'installation
-4. Choisir le répertoire d'installation (par défaut : `C:\Program Files\Chloros\`)
-5. Terminez l'installation et lancez Chloros
+4. Choisissez le répertoire d'installation (par défaut : `C:\Program Files\Chloros\`)
+5. Terminer l'installation et lancer Chloros
 6. Connectez-vous avec votre compte MAPIR Cloud Chloros+ (ou continuez avec la version gratuite)
 
 {% hint style="success" %}
-The installer automatically adds [PLH:000005] to your system PATH for command-line access.
+The installer automatically adds `chloros-cli` to your system PATH for command-line access.
 {% endhint %}
 
 ***
@@ -76,9 +76,9 @@ L'installation Chloros comprend :
 
 * ✅ **Chloros Desktop GUI** - Interface graphique complète
 * ✅ **Chloros (Browser)** - Interface basée sur le Web pour les systèmes moins sophistiqués
-* ✅ **Chloros CLI** - Interface en ligne de commande (nécessite la licence Chloros+)
-* ✅ **Backend Engine** - Pipeline de traitement d'images
-* ✅ **Camera Profiles** - Modèles de caméra préconfigurés MAPIR
+* ✅ **Chloros CLI** - Interface en ligne de commande (nécessite une licence Chloros+)
+* ✅ **Moteur backend** - Pipeline de traitement d'images
+* ✅ **Profils de caméra** - Modèles de caméra préconfigurés MAPIR
 
 ***
 
@@ -86,14 +86,14 @@ L'installation Chloros comprend :
 
 Débloquez des fonctionnalités avancées avec un abonnement Chloros+ :
 
-* 🚀 **Traitement multithread** - Traitez les images en parallèle
+* 🚀 **Traitement multithread** - Traite les images en parallèle
 * ⚡ **GPU (CUDA) Acceleration** - Exploitez la puissance du GPU NVIDIA
 * 💻 **CLI Access** - Automatisez avec des outils de ligne de commande
 * 🐍 **Python SDK** - Accès programmatique API
-* 📱 **Multiple Devices** - Utilisation sur 2-10+ devices (plan dependent)
+* 📱 **Multiple Devices** - Utilisation sur 2-10+ appareils (en fonction du plan)
 * 🧮 **Formules personnalisées** - Créer des indices multispectraux personnalisés
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Voir Chloros+ Plans &#x26 ; Tarifs</a></p>
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Voir Chloros+ Plans &#x26 ; Pricing</a></p>
 
 ***
 
@@ -110,14 +110,14 @@ Débloquez des fonctionnalités avancées avec un abonnement Chloros+ :
 **L'application ne démarre pas
 
 * Essayer la version Chloros (Navigateur)
-* Vérifiez que Windows 10/11 (64-bit) est installé
+* Vérifier que Windows 10/11 (64-bit) est installé
 * Mettre à jour les pilotes graphiques
 * Vérifier Windows l'observateur d'événements pour les détails de l'erreur
-* Contacter le support avec les journaux d'erreurs
+* Contacter l'assistance avec les journaux d'erreurs
 
-**License activation issues:**
+**Problèmes d'activation de licence:**
 
-* Assurez-vous que la connexion Internet est active
+* S'assurer que la connexion Internet est active
 * Vérifier les informations d'identification sur [https://cloud.mapir.camera](https://cloud.mapir.camera)
 * Vérifier que le pare-feu ne bloque pas Chloros
 * Voir [Chloros+ Login](chloros+-login.md) pour des instructions détaillées
@@ -129,7 +129,7 @@ Besoin d'aide pour l'installation ou la configuration ?
 * 📧 **Email** : info@mapir.camera
 * 🌐 **Website** : [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **Documentation** : [Getting Started](./)
-* ❓ **FAQ** : [Frequently Asked Questions](faq.md)
+* ❓ **FAQ** : [Foire aux questions](faq.md)
 
 ***
 
@@ -139,7 +139,7 @@ Besoin d'aide pour l'installation ou la configuration ?
 
 <summary>Version 1.0.3</summary>
 
-### **Date de sortie** : Décembre ?, 2025
+### **Date de sortie** : Décembre ? 2025
 
 #### Nouvelles fonctionnalités
 
@@ -169,4 +169,4 @@ L'utilisation, la distribution ou la modification non autorisées sont interdite
 
 **Version gratuite** : Disponible pour un usage personnel et commercial avec des limitations de fonctionnalités
 
-**Chloros+** : Licence sur abonnement pour les fonctionnalités avancées et les déploiements commerciaux
+**Chloros+**: Licence sur abonnement pour les fonctions avancées et les déploiements commerciaux

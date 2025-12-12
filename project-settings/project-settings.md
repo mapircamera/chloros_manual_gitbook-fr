@@ -16,7 +16,7 @@ Pour accéder aux paramètres du projet :
 
 Ces paramètres contrôlent la façon dont Chloros détecte et traite les cibles d'étalonnage dans vos images.
 
-### Zone d'échantillonnage d'étalonnage minimum (px)
+### Zone minimale de l'échantillon d'étalonnage (px)
 
 * **Type** : Nombre
 * **Range** : 0 à 10 000 pixels
@@ -70,7 +70,7 @@ Ces paramètres contrôlent la façon dont Chloros traite et étalonne vos image
 * **Type** : Nombre
 * **Plage** : 0 à 3 600 secondes
 * **Par défaut** : 0 seconde
-* **Description Définit l'intervalle de temps minimum (en secondes) entre l'utilisation des cibles d'étalonnage. Lorsqu'il est réglé sur 0, Chloros utilise chaque cible de calibrage détectée. Si la valeur est plus élevée, Chloros n'utilisera que les cibles de calibration qui sont séparées d'au moins ce nombre de secondes, ce qui réduit le temps de traitement pour les ensembles de données avec des captures fréquentes de cibles de calibration.
+* **Description Définit l'intervalle de temps minimum (en secondes) entre l'utilisation des cibles d'étalonnage. Lorsqu'il est réglé sur 0, Chloros utilise chaque cible de calibrage détectée. Si la valeur est plus élevée, Chloros n'utilisera que les cibles d'étalonnage séparées d'au moins ce nombre de secondes, ce qui réduit le temps de traitement des ensembles de données avec des captures fréquentes de cibles d'étalonnage.
 * **Quand ajuster** :
   * Régler à 0 pour une précision d'étalonnage maximale lorsque les conditions d'éclairage varient
   * Augmentez la valeur (par exemple, entre 60 et 300 secondes) pour accélérer le traitement lorsque l'éclairage est constant et que les images de cibles d'étalonnage sont fréquentes
@@ -90,8 +90,8 @@ Ces paramètres contrôlent la façon dont Chloros traite et étalonne vos image
 
 * **Type** : Case à cocher
 * **Défaut** : Désactivé (non coché)
-* **Description** : Active l'utilisation des corrections cinématiques post-traitées (PPK) à partir des enregistreurs DAQ MAPIR contenant un GPS (GNSS). Lorsque cette option est activée, Chloros utilise tous les fichiers journaux .daq contenant des données d'exposition dans le répertoire de votre projet et applique des corrections de géolocalisation précises à vos images.
-* **Exigences** : un fichier journal .daq contenant des entrées d'épingles d'exposition doit être présent dans votre répertoire de projet
+* **Description** : Active l'utilisation des corrections cinématiques post-traitées (PPK) des enregistreurs DAQ MAPIR contenant un GPS (GNSS). Lorsque cette option est activée, Chloros utilise tous les fichiers journaux .daq contenant des données d'exposition dans le répertoire de votre projet et applique des corrections de géolocalisation précises à vos images.
+* **Exigences** : un fichier journal .daq contenant des entrées de pin d'exposition doit être présent dans le répertoire de votre projet
 * **Quand l'activer ? Il est recommandé de toujours activer la correction PPK si vous avez des entrées de retour d'exposition dans votre fichier journal .daq.
 
 ### Broche d'exposition 1
@@ -132,31 +132,31 @@ Ces paramètres vous permettent de configurer des indices multispectraux pour l'
 ### Ajouter un indice
 
 * **Type** : Panneau spécial de configuration d'index
-* **Description Ouvre un panneau interactif dans lequel vous pouvez sélectionner et configurer des indices de végétation multispectraux (NDVI, NDRE, EVI, etc.) à calculer pendant le traitement de l'image. Vous pouvez ajouter plusieurs indices, chacun avec ses propres paramètres de visualisation.
+* **Description** : Ouvre un panneau interactif dans lequel vous pouvez sélectionner et configurer des indices de végétation multispectraux (NDVI, NDRE, EVI, etc.) à calculer pendant le traitement de l'image. Vous pouvez ajouter plusieurs indices, chacun avec ses propres paramètres de visualisation.
 * **Indices disponibles** : Le système comprend plus de 30 indices multispectraux prédéfinis :
   * NDVI (Indice de végétation par différence normalisée)
   * NDRE (Différence normalisée RedEdge)
   * EVI (Indice de végétation amélioré)
   * GNDVI, SAVI, OSAVI, MSAVI2
-  * Et bien d'autres (voir [Multispectral Index Formulas](multispectral-index-formulas.md) pour la liste complète)
+  * Et bien d'autres encore (voir [Multispectral Index Formulas](multispectral-index-formulas.md) pour une liste complète)
 * **Caractéristiques** :
   * Sélection de formules d'index prédéfinies
   * Configurer les gradients de couleur de visualisation (LUT - Look-Up Tables)
   * Définir des valeurs seuils pour l'analyse
-  * Créer des formules d'indexation personnalisées
+  * Créer des formules d'index personnalisées
 
-### Formules personnalisées (Chloros+ Fonction)
+### Formules personnalisées (Chloros+ Fonctionnalité)
 
 * **Type** : Tableau de définitions de formules personnalisées
 * **Description Permet de créer et d'enregistrer des formules d'index multispectrales personnalisées à l'aide de la mathématique des bandes. Les formules personnalisées sont enregistrées avec les paramètres de votre projet et peuvent être utilisées comme les indices intégrés.
 * **Comment créer** :
   1. Dans le panneau de configuration de l'index, recherchez l'option de formule personnalisée
-  2. Définissez votre formule en utilisant les identifiants de bande (par exemple, NIR, Red, Green, Blue)
+  2. Définissez votre formule en utilisant des identifiants de bande (par exemple, NIR, Red, Green, Blue)
   3. Enregistrez la formule avec un nom descriptif
-* **Syntaxe de la formule** : Les opérations mathématiques standard sont prises en charge, y compris :
+* **Syntaxe de la formule** : Les opérations mathématiques standard sont prises en charge, notamment
   * Arithmétique : `+`, `-`, `*`, `/`
   * Parenthèses pour l'ordre des opérations
-  * Références de bandes : NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
+  * Références de la bande : NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
 
 ***
 
@@ -168,17 +168,17 @@ Ces paramètres contrôlent le format et la qualité des images traitées export
 
 * **Type** : Sélection déroulante
 * **Options** :
-  * **TIFF (16-bit)** - Format 16-bit non compressé TIFF
-  * **TIFF (32-bit, Percent)** - 32-bit à virgule flottante TIFF avec des valeurs de réflectance en pourcentage
-  * **PNG (8-bit)** - Format 8-bit compressé PNG **JPG (8-bit)** - Format 8-bit compressé PNG
-  * **JPG (8-bit)** - Format 8-bit compressé JPEG
+  * **TIFF (16 bits)** - Format 16 bits non compressé TIFF
+  * **TIFF (32 bits, Pourcentage)** - Format 32 bits à virgule flottante TIFF avec des valeurs de réflectance sous forme de pourcentages
+  * **PNG (8 bits)** - Format 8 bits compressé PNG
+  * **JPG (8 bits)** - Format 8 bits compressé JPEG
 * **Par défaut** : TIFF (16 bits)
 * **Description** : Sélectionne le format de fichier pour l'enregistrement des images traitées et calibrées.
 * **Recommandations de format** :
-  * **TIFF (16 bits)** : Recommandé pour les analyses scientifiques et les flux de travail professionnels. Préserve la qualité maximale des données sans artefacts de compression. Idéal pour l'analyse multispectrale et le traitement ultérieur dans un logiciel SIG.
-  * **TIFF (32-bit, Percent)** : Idéal pour les flux de travail qui nécessitent des valeurs de réflectance sous forme de pourcentages (0-100 %). Offre une précision maximale pour les mesures radiométriques.
-  * **PNG (8 bits)** : Bon pour l'affichage sur le web et la visualisation générale. Les fichiers sont plus petits grâce à la compression sans perte, mais la plage dynamique est réduite.
-  * **JPG (8 bits)** : Taille de fichier la plus petite, idéale pour les prévisualisations et l'affichage sur le web uniquement. Utilise une compression avec perte qui n'est pas adaptée à l'analyse scientifique.
+  * **TIFF (16-bit)**: Recommandé pour les analyses scientifiques et les flux de travail professionnels. Préserve la qualité maximale des données sans artefacts de compression. Idéal pour l'analyse multispectrale et le traitement ultérieur dans un logiciel SIG.
+  * **TIFF (32 bits, pourcentage)** : Idéal pour les flux de travail qui nécessitent des valeurs de réflectance sous forme de pourcentages (0-100 %). Offre une précision maximale pour les mesures radiométriques.
+  * **PNG (8-bit)**: Bon pour l'affichage sur le web et la visualisation générale. Les fichiers sont plus petits grâce à la compression sans perte, mais la plage dynamique est réduite.
+  * **JPG (8 bits)** : Fichier de taille réduite, idéal pour les prévisualisations et l'affichage sur le web. Utilise une compression avec perte qui n'est pas adaptée à l'analyse scientifique.
 
 ***
 
@@ -189,7 +189,7 @@ Cette fonction vous permet d'enregistrer les paramètres de votre projet actuel 
 * **Type** : Entrée de texte + bouton Enregistrer
 * **Description** : Saisissez un nom descriptif pour votre modèle de paramètres et cliquez sur l'icône d'enregistrement. Le modèle stocke tous les paramètres actuels du projet (détection de la cible, options de traitement, indices et format d'exportation) pour faciliter leur réutilisation dans les projets futurs.
 * **Cas d'utilisation** :
-  * Créer des modèles pour différents systèmes de caméra (RGB, multispectral, NIR)
+  * Créez des modèles pour différents systèmes de caméra (RGB, multispectral, NIR)
   * Sauvegarder des configurations standard pour des types de cultures ou des flux de travail d'analyse spécifiques
   * Partager des paramètres cohérents au sein d'une équipe
 * **Comment l'utiliser ?
@@ -208,7 +208,7 @@ Ce paramètre indique où les nouveaux projets sont enregistrés par défaut.
 * **Par défaut** : `C:\Users\[Username]\Chloros Projects`
 * **Description** : Affiche le répertoire par défaut dans lequel les nouveaux projets Chloros sont créés. Cliquez sur l'icône de modification pour sélectionner un autre répertoire.
 * **Quand changer** :
-  * Définir un lecteur réseau pour la collaboration d'équipe
+  * Définir un lecteur réseau pour la collaboration entre les membres de l'équipe
   * Changer pour un lecteur avec plus d'espace de stockage pour les grands ensembles de données
   * Organiser les projets par année, par client ou par type de projet dans des dossiers différents
 * **Remarque** : La modification de ce paramètre n'affecte que les NOUVEAUX projets. Les projets existants conservent leur emplacement d'origine.
@@ -217,7 +217,7 @@ Ce paramètre indique où les nouveaux projets sont enregistrés par défaut.
 
 ## Persistance des paramètres
 
-Tous les paramètres du projet sont automatiquement enregistrés avec votre fichier de projet (format de projet `.mapir`). Lorsque vous rouvrez un projet, tous les paramètres sont restaurés exactement comme vous les avez laissés.
+Tous les paramètres du projet sont automatiquement enregistrés avec votre fichier de projet (`.mapir` format de projet). Lorsque vous rouvrez un projet, tous les paramètres sont restaurés exactement comme vous les avez laissés.
 
 ### Hiérarchie des paramètres
 
@@ -240,11 +240,11 @@ La plupart des changements de paramètres (en particulier dans les catégories T
 
 ## Bonnes pratiques
 
-1. **Commencez par les paramètres par défaut** : Les paramètres par défaut fonctionnent bien pour la plupart des systèmes de caméras MAPIR et des flux de travail typiques.
-2. **Créez des modèles** : Une fois que vous avez optimisé les paramètres pour un flux de travail ou un appareil photo spécifique, enregistrez-les en tant que modèle pour garantir la cohérence entre les projets.
+1. **Commencez par les paramètres par défaut** : Les paramètres par défaut fonctionnent bien pour la plupart des systèmes de caméras et des flux de travail typiques.
+2. **Créer des modèles** : Une fois que vous avez optimisé les paramètres pour un flux de travail ou un appareil photo spécifique, enregistrez-les en tant que modèle pour garantir la cohérence entre les projets.
 3. **Testez avant le traitement complet** : Lorsque vous expérimentez de nouveaux paramètres, testez-les sur un petit sous-ensemble d'images avant de traiter l'ensemble de vos données.
-4. **Documentez vos paramètres** : Utilisez des noms de modèles descriptifs indiquant le système de caméra, le type de traitement et l'utilisation prévue (par exemple, "Survey3\_RGB\_NDVI\_Agriculture").
-5. **Sélection du format d'exportation** : Choisissez votre format d'exportation en fonction de l'utilisation finale :
+4. **Documentez vos paramètres** : Utilisez des noms de modèles descriptifs qui indiquent le système de caméra, le type de traitement et l'utilisation prévue (par exemple, "Survey3\_RGB\_NDVI\_Agriculture").
+5. **Sélection du format d'exportation** : Choisissez votre format d'exportation en fonction de votre utilisation finale :
    * Analyse scientifique → TIFF (16 bits ou 32 bits)
    * Traitement SIG → TIFF (16 bits)
    * Visualisation rapide → PNG (8 bits)
@@ -252,4 +252,4 @@ La plupart des changements de paramètres (en particulier dans les catégories T
 
 ***
 
-Pour plus d'informations sur les indices multispectraux dans Chloros, voir la page [Multispectral Index Formulas](multispectral-index-formulas.md).
+Pour plus d'informations sur les indices multispectraux dans Chloros, voir la page [Formules d'indices multispectraux](multispectral-index-formulas.md).

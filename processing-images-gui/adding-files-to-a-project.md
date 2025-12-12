@@ -1,6 +1,6 @@
 # Ajouter des fichiers à un projet
 
-Une fois que vous avez créé ou ouvert un projet dans Chloros, l'étape suivante consiste à ajouter vos images multispectrales pour commencer le traitement. L'onglet Navigateur de fichiers <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> facilite l'importation d'images et la gestion de votre ensemble de données.
+Une fois que vous avez créé ou ouvert un projet dans Chloros, l'étape suivante consiste à ajouter vos images multispectrales pour commencer le traitement. L'onglet File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> facilite l'importation d'images et la gestion de votre ensemble de données.
 
 ## Accès à l'explorateur de fichiers
 
@@ -60,14 +60,14 @@ Une fois les images importées, elles apparaissent dans un tableau comportant le
 ### Modèle de l'appareil photo
 
 * Détection automatique de la caméra et de la configuration du filtre
-* Exemples : Survey3W\RGN, Survey3N\_OCN, Survey3W\RGB
-* Utilisé pour appliquer les profils de traitement corrects
+* Exemples : Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
+* Utilisé pour appliquer des profils de traitement corrects
 
 ### Colonne cible (case à cocher)
 
 * Cochez cette case pour les images contenant des cibles d'étalonnage
-* Accélère considérablement la détection des cibles lors du traitement
-* Voir [Choosing Target Images](choosing-target-images.md) pour plus de détails
+* Accélère considérablement la détection des cibles pendant le traitement
+* Voir [Choix des images cibles] (choisir-target-images.md) pour plus de détails
 
 ***
 
@@ -124,10 +124,10 @@ Chloros détecte et ignore automatiquement les fichiers en double :
 
 ## Ensembles de données de caméras mixtes
 
-Si votre projet contient des images provenant de plusieurs caméras MAPIR :
+Si votre projet contient des images provenant de plusieurs MAPIR caméras :
 
 1. Chloros détecte automatiquement chaque modèle de caméra
-2. Chaque type de caméra est traité avec le profil d'étalonnage approprié
+2. Chaque type de caméra est traité avec son profil d'étalonnage approprié
 3. L'explorateur de fichiers affiche le modèle de caméra dans la colonne Modèle de caméra
 4. Le traitement applique les paramètres corrects pour chaque type de caméra
 
@@ -165,7 +165,7 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 **Causes possibles:**
 
 * Format de fichier non pris en charge (uniquement RAW+JPG et JPG des appareils photo MAPIR)
-* Les images proviennent d'appareils photo non MAPIR (voir [Supported Cameras](../supported-cameras.md))
+* Les images proviennent d'appareils photo qui ne sont pas MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
 * Corruption de fichier ou transfert incomplet depuis la carte SD
 
 **Solution** : Vérifiez la compatibilité du format de fichier et du modèle d'appareil photo
@@ -197,8 +197,8 @@ Une fois vos fichiers importés :
 
 1. **Revoir la liste des fichiers** - S'assurer que toutes les images ont été chargées correctement
 2. **Vérifier les modèles d'appareil photo** - Vérifier la détection correcte de l'appareil photo
-3. **Marquer les images cibles** - Voir [Choosing Target Images](choosing-target-images.md)
-4. **Régler les paramètres** - Configurez les options de traitement dans [Project Settings](adjusting-project-settings.md)
-5. **Lancer le traitement** - Voir [Starting the Processing](starting-the-processing.md)
+3. **Marquer les images cibles** - Voir [Choix des images cibles] (choisir-target-images.md)
+4. **Ajuster les paramètres** - Configurez les options de traitement dans [Paramètres du projet] (ajuster-project-settings.md)
+5. **Lancer le traitement** - Voir [Démarrer le traitement](démarrer-the-processing.md)
 
-Pour des informations détaillées sur la configuration du projet, voir [Adjusting Project Settings](adjusting-project-settings.md).
+Pour des informations détaillées sur la configuration du projet, voir [Ajuster les paramètres du projet](ajuster-project-settings.md).
