@@ -6,7 +6,9 @@ Le menu latéral utilisateur <img src=".gitbook/assets/icon_user.JPG" alt="" dat
 
 Une fois connecté, les détails de votre compte s&#x27;affichent :
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Connexion
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+
+## CLI Connexion
 
 Connectez-vous avec vos identifiants Chloros+ pour activer le traitement CLI.
 
@@ -28,7 +30,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Résultat :**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Expiration du forfait
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+
+### Expiration du forfait
 
 L&#x27;expiration du forfait dans l&#x27;interface graphique indique la date à laquelle votre licence deviendra invalide. Pour les abonnements mensuels récurrents, l&#x27;expiration a lieu à la fin du mois. Pour les abonnements annuels, elle a lieu un an après le début de l&#x27;abonnement. La vérification de la licence nécessite une connexion Internet mensuelle, avec un délai de grâce de 30 jours.
 
