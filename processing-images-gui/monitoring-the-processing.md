@@ -1,10 +1,10 @@
 # Suivi du traitement
 
-Une fois que le traitement a commencé, ZXZXZ000004ZXZXZX offre plusieurs moyens de suivre la progression, de vérifier les problèmes et de comprendre ce qui se passe avec votre jeu de données. Cette page explique comment suivre votre traitement et interpréter les informations fournies par ZXZXZ000005ZXZXZXXX.
+Une fois que le traitement a commencé, Chloros fournit plusieurs moyens de suivre la progression, de vérifier les problèmes et de comprendre ce qui se passe avec votre jeu de données. Cette page explique comment suivre votre traitement et interpréter les informations fournies par Chloros.
 
 ## Vue d'ensemble de la barre de progression
 
-La barre de progression située dans l'en-tête supérieur indique en temps réel l'état du traitement et le pourcentage d'achèvement.
+La barre de progression située dans l'en-tête supérieur indique l'état du traitement en temps réel et le pourcentage d'achèvement.
 
 ### Barre de progression du mode libre
 
@@ -12,7 +12,7 @@ Pour les utilisateurs sans licence Chloros+ :
 
 **Affichage de la progression en 2 étapes:**
 
-1. **Détection de cibles** - Recherche de cibles d'étalonnage dans les images
+1. **Target Detect** - Recherche de cibles d'étalonnage dans les images
 2. **Traitement** - Application des corrections et exportation
 
 **La barre de progression indique:**
@@ -23,7 +23,7 @@ Pour les utilisateurs sans licence Chloros+ :
 
 ### Chloros+ Barre de progression
 
-Pour les utilisateurs ayant la licence §§§6§§+ :
+Pour les utilisateurs de la licence Chloros+ :
 
 **Affichage de la progression en 4 étapes:**
 
@@ -47,12 +47,12 @@ Pour les utilisateurs ayant la licence §§§6§§+ :
 
 **What's happening:**
 
-* ZXZXZ000009ZXZXZXX scanne les images marquées d'une case à cocher Cible
+* Chloros analyse les images marquées d'une case à cocher Cible
 * Des algorithmes de vision par ordinateur identifient les 4 panneaux d'étalonnage
 * Les valeurs de réflectance sont extraites de chaque panneau
 * L'horodatage des cibles est enregistré pour une programmation correcte de l'étalonnage
 
-**Durée:**
+**Durée : **
 
 * Avec des cibles marquées : 10-60 secondes
 * Sans cibles marquées : 5-30+ minutes (balayage de toutes les images)
@@ -76,7 +76,7 @@ Pour les utilisateurs ayant la licence §§§6§§+ :
 * Lecture des métadonnées EXIF de l'image (horodatage, paramètres d'exposition)
 * Détermination de la stratégie d'étalonnage sur la base des horodatages cibles
 * Organisation de la file d'attente pour le traitement des images
-* Préparation des travailleurs de traitement parallèle (ZXZXZZ000010ZXZXXX+ seulement)
+* Préparation des opérateurs de traitement parallèle (Chloros+ uniquement)
 
 **Durée:** 5-30 secondes
 
@@ -111,7 +111,7 @@ Pour les utilisateurs ayant la licence §§§6§§+ :
 **Comportement du traitement:**
 
 * **Mode libre** : Traite une image à la fois de manière séquentielle
-* **Mode ZXZXZZX000011ZXZXZX+** : Traite jusqu'à 16 images simultanément
+* **Mode Chloros+** : Traite jusqu'à 16 images simultanément
 * **Accélération GPU** : Accélération du processeur graphique** : accélère considérablement cette étape
 
 **Ce qu'il faut surveiller:**
@@ -161,21 +161,35 @@ Le journal de débogage fournit des informations détaillées sur l'état d'avan
 
 Mises à jour normales du traitement :
 
-___PROTÉGÉ_0001___
+```
+[INFO] Processing started
+[INFO] Target detected in IMG_0015.RAW - 4 panels found
+[INFO] Calibrating IMG_0234.RAW
+[INFO] Exported NDVI image: IMG_0234_NDVI.tif
+[INFO] Processing complete
+```
 
 #### Messages d'avertissement (jaune)
 
 Problèmes non critiques qui n'interrompent pas le traitement :
 
-___PROTÉGÉ_0002___
+```
+[WARN] No GPS data found in IMG_0145.RAW
+[WARN] Target image timestamp gap > 30 minutes
+[WARN] Low contrast in calibration panel - results may vary
+```
 
-**Action:** Examiner les avertissements après le traitement, sans les interrompre
+**Action:** Examiner les avertissements après le traitement, mais ne pas interrompre le traitement
 
 #### Messages d'erreur (Red)
 
 Problèmes critiques pouvant entraîner l'échec du traitement :
 
-___PROTÉGÉ_0003___
+```
+[ERROR] Cannot write file - disk full
+[ERROR] Corrupted image file: IMG_0299.RAW
+[ERROR] No targets detected - enable reflectance calibration or mark target images
+```
 
 **Action:** Arrêter le traitement, résoudre l'erreur, redémarrer
 
@@ -184,9 +198,9 @@ ___PROTÉGÉ_0003___
 | Message - Signification - Action à entreprendre
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
 | "Target detected in \[filename]" (Cible détectée dans [nom de fichier]) | "Cible détectée dans \N[nom de fichier]" | Cible d'étalonnage trouvée avec succès | Aucun - normal |
-| Traitement de l'image X de Y | "Traitement de l'image X de Y" | Mise à jour de la progression en cours | Aucun - normal
-| "Aucune cible trouvée" | Marquer les images cibles ou désactiver l'étalonnage de la réflectance | "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Aucune - normal
-| Le système d'exploitation de l'entreprise a été mis à l'épreuve par le système d'exploitation de l'entreprise, qui a été mis à l'épreuve par le système d'exploitation de l'entreprise
+| "Traitement de l'image X de Y"        | "Traitement de l'image X de Y" | Mise à jour de la progression en cours | Aucun - normal
+| "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Marquer les images cibles ou désactiver l'étalonnage de la réflectance | "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Aucune - normal
+| "Espace disque insuffisant" | Espace disque insuffisant pour la sortie | Libérer de l'espace disque
 | "Skipping corrupted file" | Fichier d'image endommagé | Recopier le fichier à partir de la carte SD
 | "Données PPK appliquées" | Les corrections GPS du fichier .daq sont appliquées | Aucune - normal |
 
@@ -221,7 +235,7 @@ Pour copier le journal à des fins de dépannage ou d'assistance :
 
 * Windows Gestionnaire des tâches (Ctrl+Shift+Esc)
 * Onglet Performance → section CPU
-* Recherchez les processus "ZXZZX000013ZXZXZX" ou "chloros-backend"
+* Recherchez les processus "Chloros" ou "chloros-backend"
 
 ### Utilisation de la mémoire (RAM)
 
@@ -230,7 +244,7 @@ Pour copier le journal à des fins de dépannage ou d'assistance :
 * Petits projets (< 100 images) : 2-4 GO
 * Projets moyens (100-500 images) : 4-8 GO
 * Grands projets (500+ images) : 8-16 GO
-* le mode parallèle ChlorosX+ utilise plus de RAM
+* Chloros+ Le mode parallèle utilise plus de RAM
 
 **Si la mémoire est faible:**
 
@@ -238,11 +252,11 @@ Pour copier le journal à des fins de dépannage ou d'assistance :
 * Fermer les autres applications
 * Augmenter la RAM si vous traitez régulièrement de grands ensembles de données
 
-### Utilisation du GPU (ChlorosX+ avec CUDA)
+### Utilisation du GPU (Chloros+ avec CUDA)
 
 Lorsque l'accélération GPU est activée :
 
-* Le GPU NVIDIA affiche un taux d'utilisation élevé (60-90 %)
+* Le GPU NVIDIA affiche une utilisation élevée (60-90 %)
 * L'utilisation de la VRAM augmente (nécessite plus de 4 Go de VRAM)
 * L'étape d'étalonnage est nettement plus rapide
 
@@ -276,21 +290,21 @@ Lorsque l'accélération GPU est activée :
 
 * Vérifier le journal de débogage pour les erreurs
 * Vérifier l'espace disque disponible
-* Vérifiez dans le gestionnaire des tâches que ZXZXZ000016ZXZXZXX est en cours d'exécution
+* Vérifier dans le gestionnaire des tâches que Chloros est en cours d'exécution
 
-**Les messages d'erreur apparaissent fréquemment:**
+**Error messages appear frequently:**
 
-* Arrêtez le traitement et examinez les erreurs
+* Arrêter le traitement et examiner les erreurs
 * Causes courantes : espace disque, fichiers corrompus, problèmes de mémoire
 * Voir la section Dépannage ci-dessous
 
 **Le système ne répond plus:**
 
 * Chloros+ le mode parallèle utilise trop de ressources
-* Envisagez de réduire les tâches simultanées ou de mettre à niveau le matériel
+* Envisagez de réduire le nombre de tâches simultanées ou de mettre à niveau le matériel
 * Le mode libre est moins gourmand en ressources
 
-#### Quand arrêter le traitement
+### Quand arrêter le traitement
 
 Arrêtez le traitement si vous constatez :
 
@@ -324,7 +338,7 @@ Arrêtez le traitement si vous constatez :
 
 1. Si vous venez de démarrer et que vous êtes en phase de détection : Annuler, marquer les cibles, redémarrer
 2. Pour l'avenir : Utiliser un disque SSD, réduire les indices, mettre à niveau le matériel
-3. Envisager CLIX pour le traitement par lots de grands ensembles de données
+3. Envisager CLI pour le traitement par lots de grands ensembles de données
 
 ### Avertissements concernant l'espace disque
 
@@ -350,7 +364,7 @@ Arrêtez le traitement si vous constatez :
 
 1. Assurer une ventilation adéquate
 2. Éliminer la poussière des évents de l'ordinateur
-3. Réduisez la charge de traitement (utilisez le mode libre au lieu de ZXZXZX000018ZXZXX+)
+3. Réduire la charge de traitement (utiliser le mode libre au lieu de Chloros+)
 4. Traiter aux heures les moins chaudes de la journée
 
 ***
@@ -370,9 +384,9 @@ Lorsque le traitement est terminé :
 
 Une fois le traitement terminé :
 
-1. **Examen des résultats** - Voir [Finishing the Processing](finishing-the-processing.md)X
+1. **Examen des résultats** - Voir [Finishing the Processing](finishing-the-processing.md)
 2. **Vérifier le dossier de sortie** - Vérifier que tous les fichiers ont été exportés correctement
 3. **Consulter le journal de débogage** - Vérifier qu'il n'y a pas d'avertissement ou d'erreur
 4. **Visualiser les images traitées** - Utiliser la visionneuse d'images ou un logiciel externe
 
-Pour plus d'informations sur l'examen et l'utilisation des résultats traités, voir [Finishing the Processing](finishing-the-processing.md)X.
+Pour plus d'informations sur l'examen et l'utilisation des résultats traités, voir [Finishing the Processing](finishing-the-processing.md).

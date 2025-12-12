@@ -96,7 +96,7 @@ Cet indice est utilisé pour estimer la teneur en chlorophylle des feuilles d'un
 
 $$
 GCI = {NIR \over Green} - 1
-$$ - Green
+$$
 
 Le fait d'avoir des longueurs d'onde larges NIR et vertes permet une meilleure prédiction de la teneur en chlorophylle tout en permettant une plus grande sensibilité et un rapport signal/bruit plus élevé.
 

@@ -1,10 +1,10 @@
 # Fin du traitement
 
-Une fois le traitement de §§§20§§ terminé, il est temps d'examiner vos résultats, de vérifier la qualité de la sortie et de préparer vos images traitées pour les utiliser dans votre flux de travail. Cette page vous guide à travers les étapes finales et les actions suivantes.
+Une fois le traitement de Chloros terminé, il est temps d'examiner les résultats, de vérifier la qualité de la sortie et de préparer les images traitées pour les utiliser dans votre flux de travail. Cette page vous guide dans les étapes finales et les actions suivantes.
 
-## Traitement terminé Indication
+## Indication de traitement terminé
 
-Lorsque le traitement est terminé avec succès, plusieurs indicateurs s'affichent :
+Lorsque le traitement se termine avec succès, plusieurs indicateurs s'affichent :
 
 * ✅ **Barre de progression** : Le traitement est terminé à 100 %
 * ✅ **Journal de débogage** : Affiche le message "Traitement terminé
@@ -28,11 +28,11 @@ Lorsque le traitement est terminé avec succès, plusieurs indicateurs s'affiche
 
 ### Aperçu rapide dans l'explorateur de fichiers
 
-**WindowsX aperçu intégré:**
+**Windows aperçu intégré:**
 
-1. Naviguer vers le sous-dossier du modèle de l'appareil photo
+1. Naviguer vers le sous-dossier du modèle d'appareil photo
 2. Sélectionner un fichier image
-3. L'aperçu apparaît dans le volet d'aperçu de l'explorateur WindowsXXX
+3. L'aperçu apparaît dans le Windows volet d'aperçu de l'explorateur
 4. Utiliser les touches fléchées pour parcourir les images
 
 ### Aperçu dans les visionneuses d'images externes
@@ -40,21 +40,21 @@ Lorsque le traitement est terminé avec succès, plusieurs indicateurs s'affiche
 **Visionneurs recommandés:**
 
 * **QGIS** - Logiciel SIG gratuit (le meilleur pour l'analyse multispectrale géoréférencée)
-* **IrfanView** - Visionneuse d'images rapide et légère (prend en charge TIFF)
-* **Adobe Photoshop** - Edition professionnelle (prise en charge de TIFFX)
+* **IrfanView** - Visionneuse d'images rapide et légère (supporte TIFF)
+* **Adobe Photoshop** - Edition professionnelle (TIFF support)
 * **GIMP** - Alternative gratuite à Photoshop
-* **Photos** - Visualisation de base (peut ne pas prendre en charge TIFFX 16 bits)
+* **Windows Photos** - Visualisation de base (peut ne pas prendre en charge TIFF 16 bits)
 
-### Prévisualisation dans ChlorosXX Image Viewer
+### Aperçu dans Chloros Image Viewer
 
-Utilisez la visionneuse d'images intégrée à Chloros pour une visualisation avancée :
+Utilisez la visionneuse d'images intégrée de Chloros pour une visualisation avancée :
 
 1. Cliquez sur une vignette d'image dans le navigateur de fichiers
 2. L'image s'ouvre dans la zone de prévisualisation principale
-3. Cliquez sur l'onglet **Visionneuse d'images** ZXZXZ000002ZXZXZZXX dans la barre latérale gauche
-4. Utilisez ZXZXZ000004ZXZXZXZXX pour une analyse interactive
+3. Cliquez sur l'onglet **Visionneuse d'images** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> dans la barre latérale gauche
+4. Utiliser [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) pour une analyse interactive
 
-Voir [Image Viewer](../image-viewer-gui/page-3.md)ZXX pour des instructions détaillées.
+Voir [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) pour des instructions détaillées.
 
 ***
 
@@ -62,18 +62,18 @@ Voir [Image Viewer](../image-viewer-gui/page-3.md)ZXX pour des instructions dét
 
 ### Vérifier la présence d'avertissements ou d'erreurs
 
-1. Ouvrez l'onglet **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line">ZX
+1. Ouvrir l'onglet **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line">
 2. Faire défiler les messages
-3. Recherchez les avertissements jaunes ou les erreurs rouges
+3. Rechercher les avertissements jaunes ou les erreurs rouges
 4. Examiner les problèmes constatés
-5. Contactez le support MAPIR pour obtenir de l'aide
+5. Contacter le support MAPIR pour obtenir de l'aide
 
 ### Sauvegarde du journal
 
 Pour conserver une trace du traitement ou pour l'envoyer à l'assistance MAPIR :
 
 1. Cliquez sur le bouton **"Copier "** ou **"Télécharger "**
-2. Sauvegarder le fichier texte dans le dossier du projet
+2. Sauvegarder comme fichier texte dans le dossier du projet
 3. Inclure dans la documentation du projet
 4. Envoyer au support MAPIR si des problèmes sont rencontrés
 
@@ -102,14 +102,14 @@ Pour conserver une trace du traitement ou pour l'envoyer à l'assistance MAPIR :
 **Causes possibles:**
 
 * Correction du vignettage désactivée
-* L'appareil photo/l'objectif ne figure pas dans la base de données du profil ChlorosXX
+* L'appareil photo/l'objectif ne figure pas dans la base de données du profil Chloros
 * Vignettage extrême dépassant la capacité de correction
 
 **Solutions:**
 
 1. Vérifier que la correction du vignettage a été activée dans les paramètres du projet
 2. Vérifier que le modèle de l'appareil photo a été correctement détecté
-3. Contactez le support MAPIR si le vignettage persiste
+3. Contacter l'assistance MAPIR si le vignettage persiste
 
 ### Problème : Couleurs ou valeurs incorrectes
 
@@ -127,9 +127,9 @@ Pour conserver une trace du traitement ou pour l'envoyer à l'assistance MAPIR :
 3. Vérifier la qualité de l'image de la cible
 4. Retraiter avec les bonnes cibles marquées
 
-problème ### : NDVI Les valeurs semblent incorrectes
+### Problème : NDVI Les valeurs semblent erronées
 
-**Les plages §§§28§§ attendues:**
+**Expected NDVI ranges:**
 
 * **Eau, roches, sol** : -0,1 à 0,2
 * **Végétation clairsemée/malsaine** : 0.2 à 0,4
@@ -159,16 +159,16 @@ problème ### : NDVI Les valeurs semblent incorrectes
    * WebODM
 2. **Conserver les métadonnées EXIF** : Assurer la préservation des données GPS pour la géolocalisation
 3. **Flux de travail calibrés** : Utiliser les images de réflectance pour une précision scientifique
-4. **Traiter les mosaïques d'index** : Créez des orthomosaïques NDVIX à partir d'images d'index individuelles
-5. **Exporter des images géoréférencées ZXZXZ000056ZXZXZX** : Pour utilisation dans les applications SIG
+4. **Traiter les mosaïques d'index** : Créer des orthomosaïques NDVI à partir d'images d'index individuelles
+5. **Exporter des images géoréférencées GeoTIFF** : Pour une utilisation dans les applications SIG
 
 ### Pour l'analyse SIG
 
 **Flux de travail recommandé:**
 
 1. **Charger dans QGIS, ArcGIS, ou similaire**
-2. **Utiliser des images de réflectance 16 bits TIFFX** pour l'analyse multibande
-3. **Utiliser les images d'index** (NDVIX, NDREX) comme couches de végétation prêtes à l'emploi
+2. **Utiliser des images de réflectance 16 bits TIFF** pour l'analyse multibande
+3. **Utiliser les images d'index** (NDVI, NDRE) comme couches de végétation prêtes à l'emploi
 4. **Calculateur de trame** : Combinez les bandes pour une analyse personnalisée
 5. **Exportation** : Création de cartes de classification, de détection des changements, de cartes de santé de la végétation
 
@@ -177,7 +177,7 @@ problème ### : NDVI Les valeurs semblent incorrectes
 **Flux de travail recommandé:**
 
 1. **Utiliser les images d'index avec les couleurs LUT** pour les rapports visuels
-2. **Extraire des statistiques** : Moyenne NDVIX par champ/parcelle
+2. **Extraire des statistiques** : Moyenne NDVI par champ/parcelle
 3. **Séries temporelles** : Comparer les indices sur plusieurs sessions
 4. **Générer des rapports** : Inclure des cartes, des statistiques et des visualisations
 
@@ -224,17 +224,17 @@ Pour plusieurs sessions/ensembles de données :
 * Utiliser des paramètres de modèle cohérents
 * Traiter un projet à la fois
 
-**Option 2 : ChlorosX CLIX (ChlorosZX+ seulement)**
+**Option 2 : Chloros CLI (Chloros+ uniquement)**
 
 * Automatiser le traitement par lots
-* Traitez plusieurs dossiers à l'aide de scripts
-* Voir [CLI Documentation](../CLI.md)XX
+* Traiter plusieurs dossiers avec des scripts
+* Voir [CLI Documentation](../CLI.md)
 
-**Option 3 : PythonX ZXZZZX000045ZXZXZXX (Chloros+ seulement)**
+**Option 3 : Python SDK (Chloros+ uniquement)**
 
 * Contrôle programmatique
 * Intégration avec les pipelines d'analyse
-* Voir [API Documentation](../api-python-sdk.md)XX
+* Voir [API Documentation](../api-python-sdk.md)
 
 ***
 
@@ -245,8 +245,8 @@ Pour plusieurs sessions/ensembles de données :
 Si les résultats ne sont pas satisfaisants :
 
 1. Conserver les images originales (ne jamais les supprimer)
-2. Ouvrez le même projet dans ChlorosX
-3. Ajustez les paramètres dans le panneau "Project Settings" (paramètres du projet)
+2. Ouvrir le même projet dans Chloros
+3. Ajuster les paramètres dans le panneau Paramètres du projet
 4. Répéter l'opération - les résultats écraseront les résultats précédents
 
 ### Traitement d'un sous-ensemble d'images
@@ -263,23 +263,23 @@ Pour retraiter uniquement des images spécifiques :
 Si vous rencontrez des problèmes :
 
 * 📧 **Email** : info@mapir.camera (inclure le journal de débogage)
-* 🌐 **Support** : [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)X
-* 📚 **FAQ** : ZXZXZ000009ZXXZXX
-* 📖 **Documentation** : [Chloros Manual](../)X
+* 🌐 **Support** : [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* 📚 **FAQ** : [Frequently Asked Questions](../faq.md)
+* 📖 **Documentation** : [Chloros Manual](../)
 
 ***
 
-## Résumé : flux de travail complet
+## Summary : Complete Workflow
 
-Vous avez maintenant terminé le processus de traitement complet de ZXZXZ000036ZXZXXX :
+Vous avez maintenant terminé le processus de traitement complet Chloros :
 
-1. ✅ **Créé un projet** - Voir ZXZXZ0000ZX11ZXZXZXX
-2. ✅ **Ajout de fichiers** - Voir ZXZXZXX000012ZZXZXZXXXX
-3. ✅ **Ajustés les paramètres** - Voir ZXZXZ000012ZXZXZXX
-4. ✅ **Cibles marquées** - Voir ZXZXZ000014ZXZZXXXX
-5. ✅ **Démarrage du traitement** - Voir [Starting the Processing](starting-the-processing.md)X
-6. ✅ **Suivi des progrès** - Voir [Monitoring the Processing](monitoring-the-processing.md)XX
-7. ✅ **Suivi des progrès** - Voir ZXZXZZ000017ZXZXZXX ✅ **Résultats examinés** - Cette page
+1. ✅ **Créé un projet** - Voir [Projects](../projects.md)
+2. ✅ **Ajouté des fichiers** - Voir [Adding Files](adding-files-to-a-project.md)
+3. ✅ **Ajustés les paramètres** - Voir [Adjusting Project Settings](adjusting-project-settings.md)
+4. ✅ **Cibles marquées** - Voir [Choosing Target Images](choosing-target-images.md)
+5. ✅ **Démarrage du traitement** - Voir [Starting the Processing](starting-the-processing.md)
+6. ✅ **Suivi des progrès** - Voir [Monitoring the Processing](monitoring-the-processing.md)
+7. ✅ **Reviewed results** - Cette page
 
 **Vos images multispectrales calibrées et corrigées en fonction de la réflectance sont prêtes pour l'analyse !
 
@@ -289,18 +289,18 @@ Vous avez maintenant terminé le processus de traitement complet de ZXZXZ000036Z
 
 ### Fonctionnalités avancées
 
-* [**Image Viewer**](../image-viewer-gui/page-3.md)X - Visualisation et analyse interactives
-* [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md)X - Test d'index personnalisé
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md)X - Référence complète de l'index
+* [**Image Viewer**](../image-viewer-gui/opening-an-image-full-screen.md) - Visualisation et analyse interactives
+* [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Tests d'index personnalisés
+* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Référence complète de l'indice
 
 ### Automatisation et intégration
 
-* [**CLI Documentation**](../CLI.md)X - Traitement par lots en ligne de commande
-* [**Python SDK**](../api-python-sdk.md)X - Automatisation programmatique
-* [**Chloros+ Features**](../#chloros)X - Capacités de traitement avancées
+* [**CLI Documentation**](../CLI.md) - Traitement par lots en ligne de commande
+* [**Python SDK**](../api-python-sdk.md) - Automatisation programmatique
+* [**Chloros+ Features**](../#chloros) - Capacités de traitement avancées
 
 ### Support et apprentissage
 
-* [**FAQ**](../faq.md)XX - Réponses aux questions courantes
-* [**Calibration Targets**](../calibration-targets.md)X - Comprendre l'étalonnage de la réflectance
-* §§§18§§X - Matériel compatible
+* [**FAQ**](../faq.md) - Réponses aux questions courantes
+* [**Calibration Targets**](../calibration-targets.md) - Comprendre l'étalonnage de la réflectance
+* [**Supported Cameras**](../supported-cameras.md) - Matériel compatible

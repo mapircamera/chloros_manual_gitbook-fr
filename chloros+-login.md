@@ -1,39 +1,43 @@
-# ChlorosX+ Connexion
+# Chloros+ Login
 
-## ZXZXZX000015ZXZXZZXXX et ChlorosZX (Navigateur) Connexion
+## Chloros et Chloros (Navigateur) Connexion
 
-Le menu latéral <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line">X vous permet de vous connecter à votre compte ZXZXZ000017ZXZXZX+ et de débloquer des fonctionnalités supplémentaires.
+Le menu latéral de l'utilisateur <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> vous permet de vous connecter à votre compte Chloros+ et de débloquer des fonctions supplémentaires.
 
 Lorsque vous êtes connecté, les détails de votre compte s'affichent :
 
 <figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
-## CLIX Connexion
+## CLI Connexion
 
-Connectez-vous avec vos identifiants ZXZXZXXX000018ZXZXZXX+ pour permettre le traitement ZXZZZX000023ZXZXX.
+Connectez-vous avec vos identifiants Chloros+ pour permettre le traitement CLI.
 
 **Syntaxe:**
 
-___PROTÉGÉ_0001___
+```bash
+chloros-cli login <email> <password>
+```
 
 **Exemple:**
 
-<x id='0001'/>X
+```powershell
+chloros-cli login user@example.com 'MyP@ssw0rd123'
+```
 
 {% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like ___PROTECTED_0003___, ___PROTECTED_0004___, or spaces.
-{% endhint %}X
+**Special Characters**: Use single quotes around passwords containing characters like [PLH:000003], [PLH:000004], or spaces.
+{% endhint %}
 
 **Sortie:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
-#### Expiration du plan
+### Expiration du plan
 
 L'expiration du plan dans l'interface graphique indique la date à laquelle votre licence deviendra invalide. Pour les abonnements mensuels récurrents, l'expiration a lieu à la fin du mois. Pour les abonnements annuels, l'expiration intervient un an après le début de l'abonnement. La vérification de la licence nécessite une connexion internet mensuelle, avec un délai de grâce de 30 jours.
 
 ### Limite d'appareils
 
-Chaque plan Chloros+ offre un nombre différent d'appareils enregistrés. Chaque appareil auquel vous connectez avec un compte ZXZXZ0000X20ZXXZXX+ comptera pour votre nombre d'appareils enregistrés. Vous pouvez renommer et supprimer un appareil sur la page de votre compte ZXZXZ0000X21ZXZXZXX Cloud.
+Chaque plan Chloros+ offre un nombre différent d'appareils enregistrés. Chaque appareil auquel vous vous connectez avec un compte Chloros+ comptera pour votre nombre d'appareils enregistrés. Vous pouvez renommer et supprimer un appareil sur la page de votre compte MAPIR Cloud.
 
-___PROTÉGÉ_0005___
+<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Devices Supported</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
