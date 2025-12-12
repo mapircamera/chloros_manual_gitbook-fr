@@ -61,7 +61,7 @@ Le **menu déroulant Sélecteur de couche** en haut à droite de la visionneuse 
 ### RAW (réflectance)
 
 * Image de sortie à réflectance étalonnée
-* Vignette corrigée (si activée lors du traitement)
+* Vignette corrigée (si activée dans le traitement)
 * Réflectance calibrée à l&#x27;aide des données cibles (si activée)
 * Multibande TIFF avec tous les canaux de la caméra
 * Les valeurs de pixels représentent le pourcentage de réflectance (lorsque le mode pourcentage est utilisé)
@@ -82,18 +82,18 @@ Le **menu déroulant Sélecteur de couche** en haut à droite de la visionneuse 
 
 * Image d&#x27;indice de végétation calculée (NDVI dans cet exemple)
 * Le nom de l&#x27;indice change en fonction de l&#x27;indice configuré pendant le traitement
-* Exemples : RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index), etc.
+* Exemples : RAW (indice NDVI), RAW (indice NDRE), RAW (indice GNDVI), etc.
 * Image monochrome à bande unique montrant les résultats du calcul de l&#x27;indice
-* Un calque apparaît pour chaque indice configuré dans les paramètres du projet
+* Un calque apparaît pour chaque index configuré dans les paramètres du projet
 
 **Noms d&#x27;index possibles :**
 
-* RAW (indice NDVI)
-* RAW (indice NDRE)
-* RAW (indice GNDVI)
-* RAW (indice OSAVI)
-* RAW (indice EVI)
-* RAW (indice SAVI)
+* RAW (index NDVI)
+* RAW (index NDRE)
+* RAW (index GNDVI)
+* RAW (Indice OSAVI)
+* RAW (Indice EVI)
+* RAW (Indice SAVI)
 * Et bien d&#x27;autres encore... (voir [Formules d&#x27;indices multispectraux](../project-settings/multispectral-index-formulas.md))
 
 **Quand afficher :**
@@ -105,19 +105,19 @@ Le **menu déroulant Sélecteur de couche** en haut à droite de la visionneuse 
 
 ***
 
-## Utilisation du sélecteur de couches
+## Utilisation du sélecteur de couche
 
 ### Ouverture du menu déroulant
 
-1. Ouvrez une image en mode plein écran (cliquez sur n&#x27;importe quelle vignette dans la visionneuse d&#x27;images).
+1. Ouvrez une image en mode plein écran (cliquez sur n&#x27;importe quelle vignette dans la visionneuse d&#x27;images)
 2. Localisez le **menu déroulant des couches** dans le coin supérieur droit de la visionneuse.
-3. Le menu déroulant affiche le calque actuellement sélectionné (par exemple, « JPG »).
-4. Cliquez sur le menu déroulant pour voir tous les calques disponibles.
+3. Le menu déroulant affiche la couche actuellement sélectionnée (par exemple, « JPG »).
+4. Cliquez sur le menu déroulant pour voir toutes les couches disponibles.
 
-### Changement de calque
+### Changement de couche
 
-1. Cliquez sur le menu déroulant des calques pour ouvrir la liste.
-2. Tous les calques disponibles pour l&#x27;image actuelle s&#x27;affichent.
+1. Cliquez sur le menu déroulant des couches pour ouvrir la liste.
+2. Toutes les couches disponibles pour l&#x27;image actuelle s&#x27;affichent.
 3. Cliquez sur le nom d&#x27;un calque pour passer à cette version.
 4. L&#x27;image est immédiatement mise à jour pour afficher le calque sélectionné.
 
@@ -127,15 +127,15 @@ Le **menu déroulant Sélecteur de couche** en haut à droite de la visionneuse 
 * Lorsque vous passez à l&#x27;image suivante, Chloros tente d&#x27;afficher le même type de calque.
 * Si ce calque n&#x27;existe pas sur l&#x27;image suivante, le format JPG est utilisé par défaut.
 
-### Disponibilité des calques
+### Disponibilité des couches
 
-Tous les calques ne sont pas disponibles pour toutes les images :
+Toutes les couches ne sont pas disponibles pour toutes les images :
 
 **Toujours disponibles :**
 
 * ✅ JPG (chaque image dispose d&#x27;un aperçu JPG)
 
-**Disponible sous certaines conditions :**
+**Disponibles sous certaines conditions :**
 
 * ⚠️ RAW (original) - Uniquement si l&#x27;image a été capturée en mode RAW ou RAW+JPG
 * ⚠️ RAW (cible) - Uniquement si l&#x27;image contient des cibles d&#x27;étalonnage détectées
@@ -152,7 +152,7 @@ Lorsque vous naviguez vers une autre image (à l&#x27;aide des touches fléchée
 
 **La préférence de calque est conservée :**
 
-* Si vous affichez « RAW (réflectance) », l&#x27;image suivante affiche « RAW (réflectance) » (si disponible)
+* Si vous affichez « RAW (Réflectance) », l&#x27;image suivante affiche « RAW (Réflectance) » (si disponible)
 * Si vous affichez « RAW (NDVI Index) », l&#x27;image suivante affiche « RAW (NDVI Index) » (si disponible)
 * Si le même calque n&#x27;existe pas, le format JPG est utilisé par défaut.
 
@@ -201,7 +201,7 @@ Lorsque vous naviguez vers une autre image (à l&#x27;aide des touches fléchée
 
 ### Workflow 4 : Inspection de la valeur des pixels
 
-**Objectif** : Vérifier les valeurs de réflectance pour garantir leur exactitude scientifique.
+**Objectif** : Vérifier la précision scientifique des valeurs de réflectance.
 
 1. Ouvrez l&#x27;image traitée.
 2. Sélectionnez le calque **RAW (Réflectance)**.
@@ -241,7 +241,7 @@ Les différentes couches affichent différentes plages de valeurs de pixels :
 * **Plage** : varie selon l&#x27;indice (généralement de -1,0 à +1,0 pour les indices normalisés)
 * **Signification** : résultat du calcul de l&#x27;indice
 * **Exemples** :
-  * NDVI : -1 à +1 (végétation généralement de 0,4 à 0,9)
+  * NDVI : -1 à +1 (végétation généralement comprise entre 0,4 et 0,9)
   * NDRE : -1 à +1 (détection du stress)
   * EVI : 0 à 1 (végétation améliorée)
 
@@ -252,21 +252,21 @@ Les différentes couches affichent différentes plages de valeurs de pixels :
 ### Changement efficace de couche
 
 * **Raccourcis clavier** : bien qu&#x27;il n&#x27;existe pas de raccourci clavier pour les couches, les flèches de navigation (←/→) fonctionnent sur toutes les couches
-* **Workflows cohérents** : sélectionnez une couche (par exemple, NDVI) et examinez l&#x27;ensemble des données avant de passer à une autre
-* **Comparaisons rapides** : basculez entre Original et Réflectance pour vérifier la qualité du traitement
+* **Workflows cohérents** : choisissez une couche (par exemple, NDVI) et examinez l&#x27;ensemble des données avant de passer à une autre
+* **Comparaisons rapides** : passez de l&#x27;original à la réflectance pour vérifier la qualité du traitement
 
 ### Considérations relatives aux performances
 
-* **Le format JPG est le plus rapide à charger** : utilisez-le pour naviguer rapidement parmi de nombreuses images.
-* **Les couches RAW sont plus lentes à charger** : résolution et profondeur de bits plus élevées.
-* **Couches d&#x27;index** : vitesse similaire à celle des couches de réflectance.
-* **Le premier chargement est le plus lent** : les affichages suivants de la même couche sont mis en cache et plus rapides.
+* **Le format JPG se charge le plus rapidement** : utilisez-le pour naviguer rapidement parmi de nombreuses images
+* **Les couches RAW se chargent plus lentement** : résolution et profondeur de bits plus élevées
+* **Couches d&#x27;index** : vitesse similaire à celle des couches de réflectance
+* **Le premier chargement est le plus lent** : les affichages suivants de la même couche sont mis en cache et plus rapides
 
 ### Vérification de la qualité
 
-* **Vérifiez toujours le format RAW (original)** : Vérifiez la qualité des données sources avant de vous fier aux résultats traités.
-* **Comparez les couches** : utilisez le changement de couche pour vérifier que le traitement a fonctionné correctement.
-* **Vérifiez les plages d&#x27;index** : utilisez le mode Pourcentage de pixels avec les couches d&#x27;index pour vérifier que les valeurs sont raisonnables.
+* **Toujours vérifier le RAW (original)** : vérifiez la qualité des données sources avant de vous fier aux résultats traités
+* **Comparer les couches** : utilisez le changement de couche pour vérifier que le traitement a fonctionné correctement
+* **Vérifier les plages d&#x27;index** : utilisez le mode Pourcentage de pixels avec les couches d&#x27;index pour vérifier que les valeurs sont raisonnables
 
 ***
 
@@ -286,16 +286,16 @@ Les différentes couches affichent différentes plages de valeurs de pixels :
 **Solutions :**
 
 1. Vérifiez que l&#x27;image a été traitée (vérifiez le dossier de sortie pour les fichiers traités).
-2. Vérifiez les paramètres du projet pour confirmer que les index ont été configurés.
-3. Retraitez l&#x27;image en activant les indices souhaités.
+2. Vérifiez les paramètres du projet pour confirmer que les indices ont été configurés.
+3. Retraitez avec les indices souhaités activés.
 
 ### Couche incorrecte affichée
 
-**Problème** : l&#x27;image s&#x27;ouvre dans une couche inattendue.
+**Problème** : l&#x27;image s&#x27;ouvre dans un calque inattendu.
 
-**Cause** : les préférences de couche de l&#x27;image précédente ont été conservées, mais cette couche n&#x27;existe pas dans l&#x27;image actuelle.
+**Cause** : les préférences de calque de l&#x27;image précédente ont été conservées, mais ce calque n&#x27;existe pas dans l&#x27;image actuelle.
 
-**Solution** : Chloros revient automatiquement au format JPG lorsque la couche préférée n&#x27;est pas disponible. Il s&#x27;agit d&#x27;un comportement normal.
+**Solution** : Chloros revient automatiquement au format JPG lorsque le calque préféré n&#x27;est pas disponible. Il s&#x27;agit d&#x27;un comportement normal.
 
 ### Impossible de voir les cibles d&#x27;étalonnage
 
@@ -322,11 +322,11 @@ Les différentes couches affichent différentes plages de valeurs de pixels :
 
 Lorsque vous affichez un calque, vous pouvez utiliser :
 
-* **Commandes de zoom** : agrandissez pour inspecter les détails.
-* **Panoramique** : Cliquez et faites glisser pour vous déplacer dans l&#x27;image agrandie
+* **Commandes de zoom** : agrandissez l&#x27;image pour inspecter les détails.
+* **Panoramique** : cliquez et faites glisser pour déplacer l&#x27;image agrandie.
 * **Inspection de la valeur des pixels** : affichez les valeurs à l&#x27;emplacement du curseur
 * **Flèches de navigation** : passez d&#x27;une image à l&#x27;autre tout en conservant le calque
-* **Mode pourcentage de pixels** : basculez entre l&#x27;affichage DN et l&#x27;affichage en pourcentage
+* **Mode Pourcentage de pixels** : basculez entre l&#x27;affichage DN et l&#x27;affichage en pourcentage
 
 Consultez [Ouverture d&#x27;une image en plein écran](opening-an-image-full-screen.md) pour obtenir la documentation complète sur la visionneuse d&#x27;images.
 
@@ -334,9 +334,9 @@ Consultez [Ouverture d&#x27;une image en plein écran](opening-an-image-full-scr
 
 Pour tester et visualiser les index de manière interactive :
 
-* **Calcul d&#x27;index en temps réel** : testez différentes formules d&#x27;index.
-* **Mappage des couleurs LUT** : appliquez des dégradés de couleurs aux indices en niveaux de gris.
-* **Exporter les visualisations** : enregistrez les images d&#x27;index colorées.
+* **Calcul d&#x27;index en temps réel** : testez différentes formules d&#x27;index
+* **Mappage des couleurs LUT** : appliquez des dégradés de couleurs aux indices en niveaux de gris
+* **Exporter les visualisations** : enregistrez les images d&#x27;index colorées
 
 Consultez [Sandbox Index/LUT](index-lut-sandbox.md) pour plus de détails.
 

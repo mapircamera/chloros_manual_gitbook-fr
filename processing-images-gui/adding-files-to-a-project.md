@@ -84,7 +84,7 @@ Pour supprimer les images indésirables de votre projet :
 ### Tri et filtrage
 
 * **Trier par colonne** : cliquez sur n&#x27;importe quel en-tête de colonne pour trier les images
-* **Tri par horodatage** : utile pour organiser les séquences de capture par ordre chronologique
+* **Tri par horodatage** : utile pour organiser les séquences de capture chronologiques
 * **Filtre par modèle d&#x27;appareil photo** : regroupez les images par type d&#x27;appareil photo si vous utilisez plusieurs appareils
 
 ***
@@ -135,7 +135,7 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 
 ***
 
-## Bonnes pratiques
+## Meilleures pratiques
 
 ### Organisez-vous avant l&#x27;importation
 
@@ -164,8 +164,8 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 
 **Causes possibles :**
 
-* Format de fichier non pris en charge (uniquement RAW+JPG et JPG des appareils photo MAPIR)
-* Les images proviennent d&#x27;appareils photo autres que MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
+* Format de fichier non pris en charge (uniquement RAW+JPG et JPG provenant d&#x27;appareils photo MAPIR)
+* Les images proviennent d&#x27;appareils photo non MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
 * Fichier corrompu ou transfert incomplet depuis la carte SD
 
 **Solution** : vérifiez la compatibilité du format de fichier et du modèle d&#x27;appareil photo.
@@ -187,7 +187,7 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 * Horloge de l&#x27;appareil photo mal réglée
 * Données EXIF supprimées par un logiciel externe
 
-**Solution** : vérifiez que les paramètres de l&#x27;heure de l&#x27;appareil photo étaient corrects lors de la capture.
+**Solution** : vérifiez que les paramètres de l&#x27;horloge de l&#x27;appareil photo étaient corrects lors de la capture.
 
 ***
 
@@ -196,9 +196,9 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 Une fois vos fichiers importés :
 
 1. **Vérifiez la liste des fichiers** - Assurez-vous que toutes les images ont été chargées correctement.
-2. **Vérifiez les modèles d&#x27;appareils photo** - Vérifiez que les appareils photo ont été détectés correctement.
+2. **Vérifiez les modèles d&#x27;appareils photo** - Vérifiez que les appareils photo ont été correctement détectés.
 3. **Marquez les images cibles** - Voir [Choisir les images cibles](choosing-target-images.md)
 4. **Ajustez les paramètres** - Configurez les options de traitement dans [Paramètres du projet](adjusting-project-settings.md)
-5. **Lancez le traitement** - Consultez [Lancer le traitement](starting-the-processing.md)
+5. **Lancez le traitement** - Voir [Lancer le traitement](starting-the-processing.md)
 
-Pour plus d&#x27;informations sur la configuration du projet, consultez [Ajuster les paramètres du projet](adjusting-project-settings.md).
+Pour plus d&#x27;informations sur la configuration du projet, voir [Ajuster les paramètres du projet](adjusting-project-settings.md).

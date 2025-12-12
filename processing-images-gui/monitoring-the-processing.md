@@ -2,7 +2,7 @@
 
 Une fois le traitement lancé, Chloros offre plusieurs moyens de surveiller la progression, de vérifier les problèmes et de comprendre ce qui se passe avec votre ensemble de données. Cette page explique comment suivre votre traitement et interpréter les informations fournies par Chloros.
 
-## Aperçu de la barre de progression
+## Présentation de la barre de progression
 
 La barre de progression située dans l&#x27;en-tête supérieur affiche l&#x27;état du traitement en temps réel et le pourcentage d&#x27;achèvement.
 
@@ -29,12 +29,12 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 
 1. **Détection** - Recherche des cibles d&#x27;étalonnage
 2. **Analyse** - Examen des images et préparation du pipeline
-3. **Étalonnage** - Application des corrections de vignette et de réflectance
+3. **Étalonnage** - Application des corrections de vignettage et de réflectance
 4. **Exportation** - Enregistrement des fichiers traités
 
 **Fonctionnalités interactives :**
 
-* **Passez la souris sur** la barre de progression pour afficher le panneau détaillé en 4 étapes
+* **Passez la souris sur** la barre de progression pour afficher le panneau à 4 étapes
 * **Cliquez sur** la barre de progression pour figer/épingler le panneau détaillé
 * **Cliquez à nouveau** pour le débloquer et le masquer automatiquement lorsque vous quittez la souris
 * Chaque étape affiche la progression individuelle (0-100 %)
@@ -43,19 +43,19 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 
 ## Comprendre chaque étape du traitement
 
-### Étape 1 : Détection (détection de cible)
+### Étape 1 : Détection (détection des cibles)
 
 **Ce qui se passe :**
 
-* Chloros analyse les images cochées dans la case Cible
+* Chloros analyse les images marquées avec la case à cocher Cible
 * Les algorithmes de vision par ordinateur identifient les 4 panneaux d&#x27;étalonnage
 * Les valeurs de réflectance sont extraites de chaque panneau
 * Les horodatages des cibles sont enregistrés pour une planification correcte de l&#x27;étalonnage
 
 **Durée :**
 
-* Avec cibles cochées : 10 à 60 secondes
-* Sans cibles cochées : 5 à 30 minutes ou plus (analyse toutes les images)
+* Avec cibles marquées : 10 à 60 secondes
+* Sans cibles marquées : 5 à 30 minutes ou plus (analyse toutes les images)
 
 **Indicateur de progression :**
 
@@ -65,7 +65,7 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 
 **À surveiller :**
 
-* Le processus devrait s&#x27;achever rapidement si les cibles sont correctement marquées.
+* Le processus devrait être rapide si les cibles sont correctement marquées.
 * Si le processus prend trop de temps, il se peut que les cibles ne soient pas marquées.
 * Vérifiez le journal de débogage pour voir s&#x27;il contient des messages « Cible trouvée ».
 
@@ -76,7 +76,7 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 * Lecture des métadonnées EXIF des images (horodatages, paramètres d&#x27;exposition)
 * Détermination de la stratégie d&#x27;étalonnage en fonction des horodatages des cibles
 * Organisation de la file d&#x27;attente de traitement des images
-* Préparation des processus de traitement parallèle (Chloros+ uniquement)
+* Préparation des travailleurs de traitement parallèle (Chloros+ uniquement)
 
 **Durée :** 5 à 30 secondes
 
@@ -284,19 +284,19 @@ Lorsque l&#x27;accélération GPU est activée :
 
 ## Détection des problèmes pendant le traitement
 
-### Signaux d&#x27;alerte
+### Signes avant-coureurs
 
 **Progression bloquée (aucun changement pendant plus de 5 minutes) :**
 
-* Vérifiez le journal de débogage pour détecter d&#x27;éventuelles erreurs
-* Vérifiez l&#x27;espace disque disponible
-* Vérifiez dans le Gestionnaire des tâches que Chloros est en cours d&#x27;exécution
+* Vérifiez le journal de débogage pour détecter d&#x27;éventuelles erreurs.
+* Vérifiez l&#x27;espace disque disponible.
+* Vérifiez dans le Gestionnaire des tâches que Chloros est en cours d&#x27;exécution.
 
 **Messages d&#x27;erreur fréquents :**
 
-* Arrêtez le traitement et examinez les erreurs
-* Causes courantes : espace disque, fichiers corrompus, problèmes de mémoire
-* Consultez la section Dépannage ci-dessous
+* Arrêtez le traitement et examinez les erreurs.
+* Causes courantes : espace disque, fichiers corrompus, problèmes de mémoire.
+* Consultez la section Dépannage ci-dessous.
 
 **Le système ne répond plus :**
 
@@ -385,8 +385,8 @@ Lorsque le traitement est terminé :
 Une fois le traitement terminé :
 
 1. **Vérifiez les résultats** - Voir [Fin du traitement](finishing-the-processing.md)
-2. **Vérifiez le dossier de sortie** - Vérifiez que tous les fichiers ont été exportés correctement.
-3. **Consultez le journal de débogage** - Vérifiez s&#x27;il y a des avertissements ou des erreurs.
-4. **Prévisualisez les images traitées** - Utilisez la visionneuse d&#x27;images ou un logiciel externe.
+2. **Vérifiez le dossier de sortie** - Vérifiez que tous les fichiers ont été exportés correctement
+3. **Consultez le journal de débogage** - Vérifiez s&#x27;il y a des avertissements ou des erreurs
+4. **Prévisualisez les images traitées** - Utilisez la visionneuse d&#x27;images ou un logiciel externe
 
 Pour plus d&#x27;informations sur la consultation et l&#x27;utilisation des résultats traités, consultez [Fin du traitement](finishing-the-processing.md).

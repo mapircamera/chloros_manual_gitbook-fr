@@ -72,7 +72,7 @@ pip install chloros-sdk
 
 ## Contenu
 
-L&#x27;installation de Chloros comprend :
+L&#x27;installation Chloros comprend :
 
 * ✅ **Chloros Desktop GUI** - Interface graphique complète
 * ✅ **Chloros (navigateur)** - Interface Web pour les systèmes moins performants
@@ -99,9 +99,9 @@ Débloquez des fonctionnalités avancées avec un abonnement Chloros+ :
 
 ### Dépannage
 
-**L&#x27;installation échoue et affiche le message d&#x27;erreur suivant :**
+**L&#x27;installation échoue avec le message d&#x27;erreur suivant :**
 
-* Assurez-vous de disposer des droits d&#x27;administrateur.
+* Assurez-vous que vous disposez des droits d&#x27;administrateur.
 * Désactivez temporairement votre logiciel antivirus.
 * Vérifiez que vous disposez de la configuration minimale requise.
 

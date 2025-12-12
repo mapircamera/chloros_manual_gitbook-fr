@@ -58,7 +58,7 @@ _Référence : Becker, Sarah J., Craig S.T. Daughtry et Andrew L. Russ. « Robus
 
 ## GEMI - Indice de surveillance environnementale mondiale
 
-Cet indice de végétation non linéaire est utilisé pour la surveillance environnementale mondiale à partir d&#x27;images satellites et tente de corriger les effets atmosphériques. Il est similaire à NDVI, mais est moins sensible aux effets atmosphériques. Il est affecté par les sols nus ; par conséquent, son utilisation n&#x27;est pas recommandée dans les zones à végétation clairsemée ou modérément dense.
+Cet indice de végétation non linéaire est utilisé pour la surveillance environnementale mondiale à partir d&#x27;images satellites et tente de corriger les effets atmosphériques. Il est similaire à NDVI, mais est moins sensible aux effets atmosphériques. Il est affecté par le sol nu ; par conséquent, son utilisation n&#x27;est pas recommandée dans les zones à végétation clairsemée ou modérément dense.
 
 $$
 GEMI = eta (1 - 0.25 * eta) - {Red - 0.125 \over 1 - Red}
@@ -110,7 +110,7 @@ $$
 GLI = {(Green - Red) + (Green - Blue)  \over (2 * Green) + Red + Blue }
 $$
 
-Les valeurs GLI varient de -1 à +1. Les valeurs négatives représentent le sol et les éléments non vivants, tandis que les valeurs positives représentent les feuilles et les tiges vertes.
+Les valeurs GLI vont de -1 à +1. Les valeurs négatives représentent le sol et les éléments non vivants, tandis que les valeurs positives représentent les feuilles et les tiges vertes.
 
 _Référence : Louhaichi, M., M. Borman et D. Johnson. « Spatially Located Platform and Aerial Photography for Documentation of Grazing Impacts on Wheat » (Plateforme localisée spatialement et photographie aérienne pour la documentation des impacts du pâturage sur le blé). Geocarto International 16, n° 1 (2001) : 65-70._
 
@@ -148,7 +148,7 @@ $$
 GRVI = {NIR \over Green }
 $$
 
-_Référence : Sripada, R., et al. « Photographie aérienne infrarouge couleur pour déterminer les besoins en azote en début de saison pour le maïs ». Agronomy Journal 98 (2006) : 968-977._
+_Référence : Sripada, R., et al. « Photographie aérienne infrarouge couleur pour déterminer les besoins en azote du maïs en début de saison ». Agronomy Journal 98 (2006): 968-977._
 
 ***
 
@@ -180,7 +180,7 @@ $$
 
 Les valeurs élevées de LAI varient généralement entre environ 0 et 3,5. Cependant, lorsque la scène contient des nuages et d&#x27;autres éléments lumineux qui produisent des pixels saturés, les valeurs de LAI peuvent dépasser 3,5. Idéalement, vous devriez masquer les nuages et les éléments lumineux de votre scène avant de créer une image LAI.
 
-_Référence : Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde et A. Thomsen. « Données multispectrales aériennes pour quantifier l&#x27;indice de surface foliaire, la concentration en azote et l&#x27;efficacité photosynthétique dans l&#x27;agriculture ». Télédétection de l&#x27;environnement 81, n° 2-3 (2002) : 179-193.
+_Référence : Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde et A. Thomsen. « Données multispectrales aériennes pour quantifier l&#x27;indice de surface foliaire, la concentration en azote et l&#x27;efficacité photosynthétique dans l&#x27;agriculture ». Télédétection de l&#x27;environnement 81, n° 2-3 (2002) : 179-193._
 
 ***
 
@@ -270,7 +270,7 @@ _Référence : Rondeaux, G., M. Steven et F. Baret. « Optimisation des indices 
 
 ## RDVI - Indice de végétation par différence renormalisée
 
-Cet indice utilise la différence entre les longueurs d&#x27;onde proche infrarouge et rouge, ainsi que le NDVI, pour mettre en évidence une végétation saine. Il est insensible aux effets du sol et à la géométrie d&#x27;observation du soleil.
+Cet indice utilise la différence entre les longueurs d&#x27;onde proches infrarouges et rouges, ainsi que le NDVI, pour mettre en évidence une végétation saine. Il est insensible aux effets du sol et à la géométrie d&#x27;observation du soleil.
 
 $$
 RDVI = {(NIR- Red) \over \sqrt{(NIR + Red)}  }
@@ -312,13 +312,13 @@ $$
 VARI = {Green - Red \over Green + Red - Blue  }
 $$
 
-_Référence : Gitelson, A., et al. « Vegetation and Soil Lines in Visible Spectral Space: A Concept and Technique for Remote Estimation of Vegetation Fraction. International Journal of Remote Sensing 23 (2002) : 2537−2562._
+_Référence : Gitelson, A., et al. « Lignes de végétation et de sol dans l&#x27;espace spectral visible : un concept et une technique pour l&#x27;estimation à distance de la fraction de végétation. International Journal of Remote Sensing 23 (2002) : 2537-2562._
 
 ***
 
 ## WDRVI - Indice de végétation à large gamme dynamique
 
-Cet indice est similaire à NDVI, mais il utilise un coefficient de pondération (_a_) pour réduire la disparité entre les contributions des signaux proche infrarouge et rouge à NDVI. Le WDRVI est particulièrement efficace dans les scènes présentant une densité de végétation modérée à élevée lorsque le NDVI dépasse 0.6. Le NDVI a tendance à se stabiliser lorsque la fraction de végétation et l&#x27;indice de surface foliaire (LAI) augmentent, tandis que le WDRVI est plus sensible à une plus large gamme de fractions de végétation et aux changements dans le LAI.
+Cet indice est similaire à NDVI, mais il utilise un coefficient de pondération (_a_) pour réduire la disparité entre les contributions des signaux proche infrarouge et rouge à NDVI. Le WDRVI est particulièrement efficace dans les scènes présentant une densité de végétation modérée à élevée lorsque le NDVI dépasse 0,6. Le NDVI a tendance à se stabiliser lorsque la fraction de végétation et l&#x27;indice de surface foliaire (LAI) augmentent, tandis que le WDRVI est plus sensible à une plus large gamme de fractions de végétation et aux changements dans le LAI.
 
 $$
 WDRVI = {(\alpha * NIR- Red) \over (\alpha * NIR + Red)}

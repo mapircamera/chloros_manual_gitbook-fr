@@ -20,8 +20,8 @@ Ces paramètres contrôlent la manière dont Chloros détecte et traite les cibl
 
 * **Type** : Nombre
 * **Plage** : 0 à 10 000 pixels
-* **Par défaut** : 25 pixels
-* **Description** : Définit la zone minimale (en pixels) requise pour qu&#x27;une région détectée soit considérée comme un échantillon cible d&#x27;étalonnage valide. Des valeurs plus petites permettront de détecter des cibles plus petites, mais peuvent augmenter le nombre de faux positifs. Des valeurs plus grandes nécessitent des régions cibles plus grandes et plus claires pour la détection.
+* **Valeur par défaut** : 25 pixels
+* **Description** : Définit la zone minimale (en pixels) requise pour qu&#x27;une région détectée soit considérée comme un échantillon de cible d&#x27;étalonnage valide. Des valeurs plus petites permettront de détecter des cibles plus petites, mais peuvent augmenter le nombre de faux positifs. Des valeurs plus grandes nécessitent des régions cibles plus grandes et plus claires pour la détection.
 * **Quand ajuster** :
   * Augmentez si vous obtenez de fausses détections sur de petits artefacts d&#x27;image.
   * Diminuez si vos cibles d&#x27;étalonnage apparaissent petites dans vos images et ne sont pas détectées.
@@ -30,8 +30,8 @@ Ces paramètres contrôlent la manière dont Chloros détecte et traite les cibl
 
 * **Type** : Nombre
 * **Plage** : 0 à 100
-* **Par défaut** : 60
-* **Description** : contrôle le seuil de regroupement pour regrouper les zones de couleurs similaires lors de la détection des cibles d&#x27;étalonnage. Des valeurs plus élevées nécessitent que des couleurs plus similaires soient regroupées, ce qui se traduit par une détection plus conservatrice des cibles. Des valeurs plus faibles permettent une plus grande variation de couleurs au sein d&#x27;un groupe cible.
+* **Valeur par défaut** : 60
+* **Description** : Contrôle le seuil de regroupement pour regrouper les zones de couleur similaire lors de la détection des cibles d&#x27;étalonnage. Des valeurs plus élevées nécessitent que des couleurs plus similaires soient regroupées, ce qui se traduit par une détection plus conservatrice des cibles. Des valeurs plus faibles permettent une plus grande variation de couleurs au sein d&#x27;un groupe de cibles.
 * **Quand ajuster** :
   * Augmentez si les cibles d&#x27;étalonnage sont divisées en plusieurs détections.
   * Diminuez si les cibles d&#x27;étalonnage présentant des variations de couleur ne sont pas entièrement détectées.
@@ -40,7 +40,7 @@ Ces paramètres contrôlent la manière dont Chloros détecte et traite les cibl
 
 ## Traitement
 
-Ces paramètres contrôlent la manière dont Chloros traite et calibre vos images.
+Ces paramètres contrôlent la manière dont Chloros traite et étalonne vos images.
 
 ### Correction du vignettage
 
@@ -52,9 +52,9 @@ Ces paramètres contrôlent la manière dont Chloros traite et calibre vos image
 ### Calibrage de la réflectance / balance des blancs
 
 * **Type** : case à cocher
-* **Par défaut** : activé (cochée)
-* **Description** : active l&#x27;étalonnage automatique de la réflectance à l&#x27;aide des cibles d&#x27;étalonnage détectées dans vos images. Cela normalise les valeurs de réflectance dans l&#x27;ensemble de vos données et garantit des mesures cohérentes quelles que soient les conditions d&#x27;éclairage.
-* **Quand désactiver** : désactivez uniquement si vous souhaitez traiter des images brutes non étalonnées ou si vous utilisez un autre flux de travail d&#x27;étalonnage.
+* **Par défaut** : activé (coché)
+* **Description** : active le calibrage automatique de la réflectance à l&#x27;aide des cibles de calibrage détectées dans vos images. Cela normalise les valeurs de réflectance dans votre ensemble de données et garantit des mesures cohérentes quelles que soient les conditions d&#x27;éclairage.
+* **Quand désactiver** : désactivez uniquement si vous souhaitez traiter des images brutes non calibrées ou si vous utilisez un autre flux de travail de calibrage.
 
 ### Méthode de débayérisation
 
@@ -62,18 +62,18 @@ Ces paramètres contrôlent la manière dont Chloros traite et calibre vos image
 * **Options** :
   * Haute qualité (plus rapide) - Actuellement la seule option disponible
 * **Par défaut** : Haute qualité (plus rapide)
-* **Description** : Sélectionne l&#x27;algorithme de démosaïquage utilisé pour convertir les données brutes du capteur à motif Bayer en images en couleur. La méthode « Haute qualité (plus rapide) » offre un équilibre optimal entre la vitesse de traitement et la qualité d&#x27;image.
-* **Remarque** : d&#x27;autres méthodes de débayérisation pourraient être ajoutées dans les prochaines versions de Chloros.
+* **Description** : Sélectionne l&#x27;algorithme de dématriçage utilisé pour convertir les données brutes du capteur à motif Bayer en images en couleur. La méthode « Haute qualité (plus rapide) » offre un équilibre optimal entre la vitesse de traitement et la qualité d&#x27;image.
+* **Remarque** : D&#x27;autres méthodes de débayérisation pourraient être ajoutées dans les prochaines versions de Chloros.
 
 ### Intervalle minimum de recalibrage
 
-* **Type** : nombre
+* **Type** : Nombre
 * **Plage** : 0 à 3 600 secondes
 * **Par défaut** : 0 seconde
 * **Description** : définit l&#x27;intervalle de temps minimum (en secondes) entre l&#x27;utilisation des cibles d&#x27;étalonnage. Lorsqu&#x27;il est défini sur 0, Chloros utilise toutes les cibles d&#x27;étalonnage détectées. Lorsqu&#x27;il est défini sur une valeur plus élevée, Chloros utilise uniquement les cibles d&#x27;étalonnage séparées par au moins ce nombre de secondes, ce qui réduit le temps de traitement des ensembles de données avec des captures fréquentes de cibles d&#x27;étalonnage.
 * **Quand ajuster** :
   * Réglez sur 0 pour une précision d&#x27;étalonnage maximale lorsque les conditions d&#x27;éclairage varient.
-  * Augmentez (par exemple, à 60-300 secondes) pour un traitement plus rapide lorsque l&#x27;éclairage est constant et que vous avez des images de cibles d&#x27;étalonnage fréquentes.
+  * Augmentez (par exemple, à 60-300 secondes) pour un traitement plus rapide lorsque l&#x27;éclairage est constant et que vous disposez fréquemment d&#x27;images de cibles d&#x27;étalonnage.
 
 ### Décalage horaire du capteur de lumière
 
@@ -89,18 +89,18 @@ Ces paramètres contrôlent la manière dont Chloros traite et calibre vos image
 ### Appliquer les corrections PPK
 
 * **Type** : case à cocher
-* **Par défaut** : désactivé (décoché)
-* **Description** : active l&#x27;utilisation des corrections cinématiques post-traitées (PPK) provenant des enregistreurs DAQ MAPIR contenant un GPS (GNSS). Lorsque cette option est activée, Chloros utilisera tous les fichiers journaux .daq contenant des données d&#x27;exposition dans votre répertoire de projet et appliquera des corrections de géolocalisation précises à vos images.
+* **Par défaut** : désactivé (non coché)
+* **Description** : active l&#x27;utilisation des corrections cinématiques post-traitées (PPK) provenant des enregistreurs DAQ MAPIR contenant un GPS (GNSS). Lorsque cette option est activée, Chloros utilise tous les fichiers journaux .daq contenant des données d&#x27;exposition dans votre répertoire de projet et applique des corrections de géolocalisation précises à vos images.
 * **Exigence** : un fichier journal .daq contenant des entrées d&#x27;exposition doit être présent dans votre répertoire de projet
-* **Quand l&#x27;activer** : il est recommandé de toujours activer la correction PPK si votre fichier journal .daq contient des entrées de retour d&#x27;exposition.
+* **Quand activer** : il est recommandé de toujours activer la correction PPK si votre fichier journal .daq contient des entrées de retour d&#x27;exposition.
 
 ### Broche d&#x27;exposition 1
 
-* **Type** : sélection dans un menu déroulant
+* **Type** : sélection dans le menu déroulant
 * **Visibilité** : visible uniquement lorsque « Appliquer les corrections PPK » est activé ET que les données d&#x27;exposition sont disponibles pour la broche 1
 * **Options** :
   * Noms des modèles d&#x27;appareils photo détectés dans le projet
-  * « Ne pas utiliser » : ignore cette broche d&#x27;exposition
+  * « Ne pas utiliser » - Ignorer cette broche d&#x27;exposition
 * **Par défaut** : sélection automatique en fonction de la configuration du projet
 * **Description** : attribue une caméra spécifique à la broche d&#x27;exposition 1 pour la synchronisation temporelle PPK. La broche d&#x27;exposition enregistre le moment exact où l&#x27;obturateur de la caméra est déclenché, ce qui est essentiel pour une géolocalisation PPK précise.
 * **Comportement de sélection automatique** :
@@ -118,7 +118,7 @@ Ces paramètres contrôlent la manière dont Chloros traite et calibre vos image
 * **Par défaut** : sélection automatique en fonction de la configuration du projet
 * **Description** : attribue une caméra spécifique à la broche d&#x27;exposition 2 pour la synchronisation temporelle PPK lors de l&#x27;utilisation d&#x27;une configuration à deux caméras.
 * **Comportement de sélection automatique** :
-  * Caméra unique + broche unique : la broche 2 est automatiquement réglée sur « Ne pas utiliser »
+  * Caméra unique + broche unique : la broche 2 est automatiquement définie sur « Ne pas utiliser »
   * Caméra unique + deux broches : la broche 2 est automatiquement réglée sur « Ne pas utiliser »
   * Plusieurs caméras : sélection manuelle requise
 * **Remarque** : la même caméra ne peut pas être attribuée simultanément à la broche 1 et à la broche 2.
@@ -135,20 +135,20 @@ Ces paramètres vous permettent de configurer des indices multispectraux pour l&
 * **Description** : ouvre un panneau interactif dans lequel vous pouvez sélectionner et configurer des indices de végétation multispectraux (NDVI, NDRE, EVI, etc.) à calculer pendant le traitement de l&#x27;image. Vous pouvez ajouter plusieurs indices, chacun avec ses propres paramètres de visualisation.
 * **Indices disponibles** : le système comprend plus de 30 indices multispectraux prédéfinis, notamment :
   * NDVI (indice de végétation par différence normalisée)
-  * NDRE (Différence normalisée RedEdge)
-  * EVI (Indice de végétation amélioré)
+  * NDRE (différence normalisée RedEdge)
+  * EVI (indice de végétation amélioré)
   * GNDVI, SAVI, OSAVI, MSAVI2
   * Et bien d&#x27;autres encore (voir [Formules d&#x27;indices multispectraux](multispectral-index-formulas.md) pour la liste complète)
 * **Caractéristiques** :
-  * Sélectionnez parmi des formules d&#x27;indices prédéfinies.
+  * Sélectionnez parmi des formules d&#x27;indice prédéfinies.
   * Configurez les dégradés de couleurs de visualisation (LUT - Look-Up Tables).
   * Définissez des valeurs seuils pour l&#x27;analyse.
-  * Créez des formules d&#x27;indices personnalisées.
+  * Créez des formules d&#x27;indice personnalisées.
 
-### Formules personnalisées (Fonctionnalité Chloros+)
+### Formules personnalisées (fonctionnalité Chloros+)
 
-* **Type** : Tableau de définitions de formules personnalisées
-* **Description** : Vous permet de créer et d&#x27;enregistrer des formules d&#x27;indice multispectral personnalisées à l&#x27;aide de calculs mathématiques sur les bandes. Les formules personnalisées sont enregistrées avec les paramètres de votre projet et peuvent être utilisées comme des indices intégrés.
+* **Type** : tableau de définitions de formules personnalisées
+* **Description** : vous permet de créer et d&#x27;enregistrer des formules d&#x27;indice multispectral personnalisées à l&#x27;aide de calculs mathématiques sur les bandes. Les formules personnalisées sont enregistrées avec les paramètres de votre projet et peuvent être utilisées comme des indices intégrés.
 * **Comment créer** :
   1. Dans le panneau de configuration de l&#x27;indice, recherchez l&#x27;option de formule personnalisée.
   2. Définissez votre formule à l&#x27;aide des identifiants de bande (par exemple, NIR, Red, Green, Blue).
@@ -176,15 +176,15 @@ Ces paramètres contrôlent le format et la qualité des images traitées export
 * **Description** : sélectionne le format de fichier pour enregistrer les images traitées et calibrées.
 * **Recommandations de format** :
   * **TIFF (16 bits)** : recommandé pour les analyses scientifiques et les flux de travail professionnels. Préserve une qualité maximale des données sans artefacts de compression. Idéal pour l&#x27;analyse multispectrale et le traitement ultérieur dans un logiciel SIG.
-  * **TIFF (32 bits, pourcentage)** : idéal pour les flux de travail qui nécessitent des valeurs de réflectance sous forme de pourcentages (0-100 %). Offre une précision maximale pour les mesures radiométriques.
-  * **PNG (8 bits)** : convient pour la visualisation sur le Web et la visualisation générale. Fichiers de taille réduite avec compression sans perte, mais plage dynamique réduite.
-  * **JPG (8 bits)** : fichiers de taille minimale, idéal pour les aperçus et l&#x27;affichage sur le Web uniquement. Utilise une compression avec perte qui ne convient pas à l&#x27;analyse scientifique.
+  * **TIFF (32 bits, pourcentage)** : idéal pour les flux de travail qui nécessitent des valeurs de réflectance en pourcentage (0-100 %). Offre une précision maximale pour les mesures radiométriques.
+* **PNG (8 bits)** : Idéal pour la visualisation sur le Web et la visualisation générale. Fichiers de taille réduite avec compression sans perte, mais plage dynamique réduite.
+  * **JPG (8 bits)** : Fichiers de taille minimale, idéal pour les aperçus et l&#x27;affichage sur le Web uniquement. Utilise une compression avec perte qui ne convient pas à l&#x27;analyse scientifique.
 
 ***
 
 ## Enregistrer le modèle de projet
 
-Cette fonctionnalité vous permet d&#x27;enregistrer les paramètres actuels de votre projet sous forme de modèle réutilisable.
+Cette fonctionnalité vous permet d&#x27;enregistrer les paramètres de votre projet actuel sous forme de modèle réutilisable.
 
 * **Type** : saisie de texte + bouton Enregistrer
 * **Description** : entrez un nom descriptif pour votre modèle de paramètres et cliquez sur l&#x27;icône Enregistrer. Le modèle enregistrera tous les paramètres actuels de votre projet (détection de cible, options de traitement, indices et format d&#x27;exportation) afin de pouvoir les réutiliser facilement dans de futurs projets.
@@ -194,9 +194,9 @@ Cette fonctionnalité vous permet d&#x27;enregistrer les paramètres actuels de 
   * Partager des paramètres cohérents au sein d&#x27;une équipe
 * **Mode d&#x27;emploi** :
   1. Configurez tous les paramètres de projet souhaités
-  2. Entrez un nom de modèle (par exemple, « RedEdge Survey3 NDVI Standard »).
-  3. Cliquez sur l&#x27;icône Enregistrer.
-  4. Le modèle peut désormais être chargé lors de la création de nouveaux projets.
+  2. Entrez un nom de modèle (par exemple, « RedEdge Survey3 NDVI Standard »)
+  3. Cliquez sur l&#x27;icône d&#x27;enregistrement
+  4. Le modèle peut désormais être chargé lors de la création de nouveaux projets
 
 ***
 

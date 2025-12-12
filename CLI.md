@@ -77,7 +77,7 @@ chloros-cli [global-options] <command> [command-options]
 
 ### `process` - Traiter les images
 
-Traite les images d&#x27;un dossier avec calibrage.
+Traiter les images d&#x27;un dossier avec calibrage.
 
 **Syntaxe :**
 
@@ -339,7 +339,7 @@ chloros-cli get-project-folder
 
 ### `reset-project-folder` - Réinitialiser les paramètres par défaut
 
-Réinitialise le dossier du projet à son emplacement par défaut.
+Réinitialise l&#x27;emplacement du dossier du projet à l&#x27;emplacement par défaut.
 
 **Syntaxe :**
 
@@ -601,7 +601,7 @@ Temps de traitement type pour 100 images (12 MP chacune) :
 | Mode              | Temps      | Matériel                                     |
 | ----------------- | --------- | -------------------------------------------- |
 | **Mode parallèle** | 5-10 min  | i7/Ryzen 7, 16 Go de RAM, SSD (jusqu&#x27;à 16 travailleurs) |
-| **Mode parallèle** | 10-15 min | i5/Ryzen 5, 8 Go de RAM, disque dur (jusqu&#x27;à 8 travailleurs)   |
+| **Mode parallèle** | 10 à 15 min | i5/Ryzen 5, 8 Go de RAM, disque dur (jusqu&#x27;à 8 processeurs)   |
 
 {% hint style=&quot;info&quot; %}
 **Conseil de performance** : le temps de traitement varie en fonction du nombre d&#x27;images, de la résolution et des spécifications de l&#x27;ordinateur.
@@ -667,7 +667,7 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### Problèmes de licence / d&#x27;authentification
+### Problèmes de licence/authentification
 
 **Erreur :**
 
@@ -706,12 +706,12 @@ No images found in the specified folder
 
 1. Vérifiez que le dossier contient des formats pris en charge (.RAW, .TIF, .JPG).
 2. Vérifiez que le chemin d&#x27;accès au dossier est correct (utilisez des guillemets pour les chemins contenant des espaces).
-3. Assurez-vous que vous disposez des droits d&#x27;accès en lecture pour le dossier.
-4. Vérifiez que les extensions de fichiers sont correctes.
+3. Assurez-vous que vous disposez des autorisations de lecture pour le dossier.
+4. Vérifiez que les extensions de fichier sont correctes.
 
 ***
 
-### Le traitement se bloque ou se fige
+### Le traitement se bloque ou se suspend.
 
 **Solutions :**
 
@@ -745,7 +745,7 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 **R :** Oui ! Le CLI nécessite une licence payante **Chloros+**.
 
-* ❌ Formule Standard (gratuite) : CLI désactivé
+* ❌ Forfait standard (gratuit) : CLI désactivé
 * ✅ Formules Chloros+ (payantes) : CLI entièrement activé
 
 Abonnez-vous à : [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)

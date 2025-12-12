@@ -11,7 +11,7 @@ La manière la plus courante d&#x27;ouvrir une image dans la visionneuse d&#x27;
 1. Assurez-vous que vous êtes dans l&#x27;onglet **Navigateur de fichiers** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
 2. Cliquez sur n&#x27;importe quelle **miniature d&#x27;image** dans la grille d&#x27;images
 3. L&#x27;image s&#x27;ouvre dans la **zone d&#x27;aperçu principale** (au centre de l&#x27;écran)
-4. L&#x27;image est maintenant chargée et prête à être affichée en plein écran
+4. L&#x27;image est maintenant chargée et prête à être visualisée en plein écran
 
 ### Ouverture de l&#x27;onglet Image Viewer
 
@@ -29,7 +29,7 @@ Une fois qu&#x27;une image est chargée dans la zone d&#x27;aperçu :
 
 La plus grande partie de l&#x27;écran affiche votre image :
 
-* **Résolution maximale** : les images sont affichées à leur résolution native
+* **Résolution maximale** : images affichées à leur résolution native
 * **Zoomable** : utilisez les commandes ou la molette de la souris pour zoomer
 * **Déplaçable** : cliquez et faites glisser pour vous déplacer lorsque vous zoomez
 * **Rapport d&#x27;aspect conservé** : les images sont redimensionnées proportionnellement
@@ -72,14 +72,14 @@ Ajustez le grossissement pour inspecter les détails de l&#x27;image :
 
 #### Panoramique lors du zoom
 
-Lorsque vous zoomez au-delà de la taille de l&#x27;écran :
+Lorsque le zoom dépasse la taille de l&#x27;écran :
 
 1. Déplacez le curseur de la souris sur l&#x27;image
 2. Cliquez et **maintenez le bouton gauche de la souris enfoncé**
 3. **Faites glisser** pour déplacer l&#x27;image
-4. Relâchez pour arrêter le déplacement
+4. Relâchez pour arrêter le panoramique
 
-**Alternative** : utilisez les touches fléchées pour déplacer l&#x27;image par petits incréments
+**Alternative** : utilisez les touches fléchées pour effectuer un panoramique par petits incréments
 
 ***
 
@@ -104,8 +104,8 @@ Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs des
 
 **Images RAW + JPG provenant de l&#x27;appareil photo :**
 
-* Affiche les données RAW telles qu&#x27;elles sont prévisualisées
-* Affiche les valeurs originales non corrigées
+* Affichage des données RAW telles qu&#x27;elles sont prévisualisées
+* Affichage des valeurs originales non corrigées
 * Utile pour vérifier la qualité de l&#x27;image avant le traitement
 
 ### Images de réflectance calibrées
@@ -121,7 +121,7 @@ Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs des
 
 **NDVI, NDRE, GNDVI, etc. (fichiers \_NDVI.tif) :**
 
-* Images monochromes en niveaux de gris
+* Images monochromes à échelle de gris
 * Les valeurs de pixels représentent les résultats du calcul de l&#x27;indice
 * Plage généralement comprise entre -1 et +1 pour les indices normalisés
 * Possibilité d&#x27;appliquer des tables de conversion des couleurs (LUT) pour la visualisation
@@ -222,15 +222,15 @@ Vérifiez que les indices ont été calculés correctement :
 **Causes possibles :**
 
 * Affichage d&#x27;une image incorrecte (originale ou traitée)
-* Le calibrage n&#x27;a pas été appliqué correctement
-* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée
-* Le mode pourcentage a été activé de manière incorrecte
+* Le calibrage n&#x27;a pas été appliqué correctement.
+* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée.
+* Le mode pourcentage a été activé de manière incorrecte.
 
 **Solutions :**
 
-1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier)
-2. Vérifiez l&#x27;état du bouton du mode pourcentage
-3. Comparez avec des images connues pour être correctes provenant du même ensemble de données
+1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier).
+2. Vérifiez l&#x27;état du bouton du mode pourcentage.
+3. Comparez avec des images connues pour être correctes provenant du même ensemble de données.
 
 ***
 

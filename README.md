@@ -16,7 +16,7 @@ Chloros est disponible en 4 modes d&#x27;application :
 
 ## Chloros (navigateur) : interface GUI basée sur le Web
 
-Fonctionne dans votre navigateur Web (Chrome/Edge). Idéal pour les ordinateurs moins performants avec moins de 4 Go de VRAM.
+Fonctionne dans votre navigateur Web (Chrome/Edge). Idéal pour les ordinateurs lents avec moins de 4 Go de VRAM.
 
 ## [Chloros CLI : interface en ligne de commande](CLI.md)
 
@@ -24,7 +24,7 @@ Traitement par lots en ligne de commande. Parfait pour l&#x27;automatisation, le
 
 ## [Chloros API : Python SDK](api-python-sdk.md)
 
-Interface Python programmatique pour l&#x27;automatisation et les flux de travail personnalisés. Idéale pour les pipelines de recherche, l&#x27;intégration avec les applications Python existantes et la création d&#x27;outils personnalisés. _L&#x27;API nécessite une licence Chloros+ pour y accéder._
+Interface Python programmatique pour l&#x27;automatisation et les flux de travail personnalisés. Parfaite pour les pipelines de recherche, l&#x27;intégration avec les applications Python existantes et la création d&#x27;outils personnalisés. _L&#x27;API nécessite une licence Chloros+ pour y accéder._
 
 ***
 
