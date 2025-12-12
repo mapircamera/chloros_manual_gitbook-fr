@@ -2,7 +2,7 @@
 
 Le **Chloros Python SDK** fournit un accès programmatique au moteur de traitement d&#x27;images Chloros, permettant l&#x27;automatisation, la personnalisation des flux de travail et une intégration transparente avec vos applications Python et vos pipelines de recherche.
 
-### Principales fonctionnalités
+### Caractéristiques principales
 
 * 🐍 **Python natif** - API propre et pythonesque pour le traitement d&#x27;images
 * 🔧 **Accès complet à API** - Contrôle total du traitement Chloros
@@ -11,9 +11,9 @@ Le **Chloros Python SDK** fournit un accès programmatique au moteur de traiteme
 * 📊 **Prêt pour la recherche** - Parfait pour les pipelines d&#x27;analyse scientifique
 * ⚡ **Traitement parallèle** - S&#x27;adapte à vos cœurs de processeur (Chloros+)
 
-### Configuration requise
+### Exigences
 
-| Configuration requise          | Détails                                                             |
+| Exigence          | Détails                                                             |
 | -------------------- | ------------------------------------------------------------------- |
 | **Chloros Desktop**  | Doit être installé localement                                           |
 | **Licence**          | Chloros+ ([forfait payant requis](https://cloud.mapir.camera/pricing)) |
@@ -98,7 +98,7 @@ Avant d&#x27;installer SDK, assurez-vous que vous disposez des éléments suivan
 pip install chloros-sdk
 ```
 
-**Avec prise en charge du suivi de progression :**
+**Avec prise en charge du suivi de la progression :**
 
 ```bash
 pip install chloros-sdk[progress]
@@ -172,13 +172,13 @@ ChlorosLocal(
 
 **Paramètres :**
 
-| Paramètre                 | Type | Valeur par défaut                   | Description                           |
+| Paramètre                 | Type | Par défaut                   | Description                           |
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
 | `api_url`                 | str  | `"http://localhost:5000"` | URL du backend local Chloros          |
 | `auto_start_backend`      | bool | `True`                    | Démarrer automatiquement le backend si nécessaire |
 | `backend_exe`             | str  | `None` (détection automatique)      | Chemin d&#x27;accès à l&#x27;exécutable du backend            |
 | `timeout`                 | int  | `30`                      | Délai d&#x27;attente de la requête en secondes            |
-| `backend_startup_timeout` | int  | `60`                      | Délai d&#x27;expiration pour le démarrage du backend (en secondes) |
+| `backend_startup_timeout` | int  | `60`                      | Délai d&#x27;attente pour le démarrage du backend (en secondes) |
 
 **Exemples :**
 
@@ -211,7 +211,7 @@ Créer un nouveau projet Chloros.
 | `project_name` | str  | Oui      | Nom du projet                                     |
 | `camera`       | str  | Non       | Modèle de caméra (par exemple, « Survey3N\_RGN », « Survey3W\_OCN ») |
 
-**Retourne :** `dict` - Réponse de création du projet
+**Renvoie :** `dict` - Réponse de création de projet
 
 **Exemple :**
 
@@ -227,7 +227,7 @@ chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 
 #### `import_images(folder_path, recursive=False)`
 
-Importe les images d&#x27;un dossier.
+Importez des images à partir d&#x27;un dossier.
 
 **Paramètres :**
 
@@ -252,7 +252,7 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 #### `configure(**settings)`
 
-Configure les paramètres de traitement.
+Configurer les paramètres de traitement.
 
 **Paramètres :**
 
@@ -310,7 +310,7 @@ Traiter les images du projet.
 | ------------------- | -------- | ------------ | ----------------------------------------- |
 | `mode`              | str      | `"parallel"` | Mode de traitement : « parallel » ou « serial »   |
 | `wait`              | bool     | `True`       | Attendre la fin                       |
-| `progress_callback` | callable | `None`       | Fonction de rappel de progression (progress, msg) |
+| `progress_callback` | callable | `None`       | Fonction de rappel de progression (progression, msg) |
 | `poll_interval`     | float    | `2.0`        | Intervalle d&#x27;interrogation pour la progression (secondes)   |
 
 **Renvoie :** `dict` - Résultats du traitement
@@ -394,17 +394,17 @@ Fonction pratique en une ligne pour traiter un dossier.
 
 | Paramètre                 | Type     | Par défaut         | Description                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Chemin | Obligatoire        | Chemin vers le dossier contenant les images     |
+| `folder_path`             | str/Path | Obligatoire        | Chemin d&#x27;accès au dossier contenant les images     |
 | `project_name`            | str      | Généré automatiquement  | Nom du projet                   |
 | `camera`                  | str      | `None`          | Modèle de caméra                |
-| `indices`                 | liste     | `["NDVI"]`      | Indices à calculer           |
+| `indices`                 | list     | `["NDVI"]`      | Indices à calculer           |
 | `vignette_correction`     | bool     | `True`          | Activer la correction du vignettage     |
 | `reflectance_calibration` | bool     | `True`          | Activer l&#x27;étalonnage de la réflectance |
 | `export_format`           | str      | « TIFF (16 bits) » | Format de sortie                  |
 | `mode`                    | str      | `"parallel"`    | Mode de traitement                |
 | `progress_callback`       | callable | `None`          | Rappel de progression              |
 
-**Retours :** `dict` - Résultats du traitement
+**Renvoie :** `dict` - Résultats du traitement
 
 **Exemple :**
 
@@ -710,7 +710,7 @@ else:
 
 ***
 
-### Exemple 7 : outil en ligne de commande
+### Exemple 7 : Outil en ligne de commande
 
 Créez un outil CLI personnalisé avec SDK :
 
@@ -785,7 +785,7 @@ python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
 
 ## Gestion des exceptions
 
-Le SDK fournit des classes d&#x27;exception spécifiques pour différents types d&#x27;erreurs :
+SDK fournit des classes d&#x27;exception spécifiques pour différents types d&#x27;erreurs :
 
 ### Hiérarchie des exceptions
 
@@ -828,7 +828,7 @@ except ChlorosError as e:
 
 ### Configuration personnalisée du backend
 
-Utilisez un emplacement ou une configuration personnalisés pour le backend :
+Utilisez un emplacement ou une configuration de backend personnalisé :
 
 ```python
 chloros = ChlorosLocal(
@@ -863,7 +863,7 @@ print("Processing complete!")
 
 ### Gestion de la mémoire
 
-Pour les ensembles de données volumineux, traitez par lots :
+Pour les ensembles de données volumineux, effectuez le traitement par lots :
 
 ```python
 from pathlib import Path
@@ -904,7 +904,7 @@ backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backen
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. Vérifiez que Windows le pare-feu ne bloque pas
+2. Vérifiez que le pare-feu Windows ne bloque pas le programme.
 3. Essayez le chemin d&#x27;accès manuel au backend :
 
 ```python
@@ -915,7 +915,7 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 
 ### Licence non détectée
 
-**Problème :** SDK avertit qu&#x27;il manque une licence.
+**Problème :** SDK affiche un message d&#x27;avertissement indiquant que la licence est manquante.
 
 **Solutions :**
 
@@ -957,25 +957,25 @@ python -c "import sys; print(sys.path)"
 
 ### Délai d&#x27;attente de traitement
 
-**Problème :** Le délai d&#x27;attente de traitement expire.
+**Problème :** Délai d&#x27;attente de traitement
 
 **Solutions :**
 
-1. Augmentez le délai d&#x27;attente :
+1. Augmenter le délai d&#x27;expiration :
 
 ```python
 chloros = ChlorosLocal(timeout=120)  # 2 minutes
 ```
 
-2. Traitez des lots plus petits.
-3. Vérifiez l&#x27;espace disque disponible.
-4. Surveillez les ressources système.
+2. Traiter des lots plus petits
+3. Vérifier l&#x27;espace disque disponible
+4. Surveiller les ressources système
 
 ***
 
 ### Port déjà utilisé
 
-**Problème :** port backend 5000 occupé.
+**Problème :** Port backend 5000 occupé
 
 **Solutions :**
 
@@ -995,15 +995,15 @@ Get-NetTCPConnection -LocalPort 5000
 
 ## Conseils de performance
 
-### Optimiser la vitesse de traitement
+### Optimisez la vitesse de traitement
 
-1. **Utiliser le mode parallèle** (nécessite Chloros+)
+1. **Utilisez le mode parallèle** (nécessite Chloros+)
 
 ```python
 chloros.process(mode="parallel")  # Up to 16 workers
 ```
 
-2. **Réduire la résolution de sortie** (si cela est acceptable)
+2. **Réduisez la résolution de sortie** (si cela est acceptable)
 
 ```python
 chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
@@ -1181,7 +1181,7 @@ Project_Path/
 
 ***
 
-### Q : Puis-je traiter des images à partir de scripts Python s&#x27;exécutant selon un calendrier ?
+### Q : Puis-je traiter des images à partir de scripts Python s&#x27;exécutant selon un calendrier défini ?
 
 **R :** Oui ! Utilisez le planificateur de tâches Windows avec les scripts Python :
 

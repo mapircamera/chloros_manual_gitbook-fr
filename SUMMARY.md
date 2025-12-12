@@ -31,4 +31,4 @@
 
 * [Ouverture d&#x27;une image en plein écran](image-viewer-gui/opening-an-image-full-screen.md)
 * [Calques d&#x27;image](image-viewer-gui/image-layers.md)
-* [Sandbox d&#x27;indice/LUT](image-viewer-gui/index-lut-sandbox.md)
+* [Sandbox d&#x27;index/LUT](image-viewer-gui/index-lut-sandbox.md)

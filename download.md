@@ -72,7 +72,7 @@ pip install chloros-sdk
 
 ## Contenu
 
-L&#x27;installation Chloros comprend :
+L&#x27;installation de Chloros comprend :
 
 * ✅ **Chloros Desktop GUI** - Interface graphique complète
 * ✅ **Chloros (navigateur)** - Interface Web pour les systèmes moins performants

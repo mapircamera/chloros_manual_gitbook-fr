@@ -1,8 +1,6 @@
 # CLI : Ligne de commande
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
-
-Le **Chloros CLI** fournit un accès puissant par ligne de commande au moteur de traitement d&#x27;images Chloros, permettant l&#x27;automatisation, la création de scripts et le fonctionnement sans affichage pour vos flux de travail d&#x27;imagerie.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>Le **Chloros CLI** fournit un accès puissant en ligne de commande au moteur de traitement d&#x27;images Chloros, permettant l&#x27;automatisation, la création de scripts et le fonctionnement sans affichage pour vos flux de travail d&#x27;imagerie.
 
 ### Principales fonctionnalités
 
@@ -23,7 +21,7 @@ Le **Chloros CLI** fournit un accès puissant par ligne de commande au moteur de
 | **Espace disque**       | Varie en fonction de la taille du projet                                              |
 
 {% hint style=&quot;warning&quot; %}
-**Exigence de licence** : CLI nécessite un abonnement payant à Chloros+. Les forfaits standard (gratuits) ne donnent pas accès à CLI. Rendez-vous sur [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) pour passer à un forfait supérieur.
+**Exigences en matière de licence** : CLI nécessite un abonnement payant à Chloros+. Les forfaits standard (gratuits) ne donnent pas accès à CLI. Rendez-vous sur [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) pour passer à un forfait supérieur.
 {% endhint %}
 
 ## Démarrage rapide
@@ -106,7 +104,7 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `--no-reflectance`    | Indicateur    | -              | Désactiver l&#x27;étalonnage de la réflectance                                                        |
 | `--ppk`               | Indicateur    | Désactivé       | Appliquer les corrections PPK à partir des données du capteur de lumière .daq                                      |
 | `--format`            | Choix  | TIFF (16 bits)  | Format de sortie : `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Entier | Auto           | Taille minimale cible en pixels pour la détection du panneau d&#x27;étalonnage                          |
+| `--min-target-size`   | Entier | Auto           | Taille minimale de la cible en pixels pour la détection du panneau d&#x27;étalonnage                          |
 | `--target-clustering` | Entier | Auto           | Seuil de regroupement des cibles (0-100)                                                    |
 | `--exposure-pin-1`    | Chaîne  | Aucun           | Verrouillage de l&#x27;exposition pour le modèle de caméra (broche 1)                                                 |
 | `--exposure-pin-2`    | Chaîne  | Aucun           | Verrouillage de l&#x27;exposition pour le modèle de caméra (broche 2)                                                 |
@@ -139,9 +137,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
-### `logout` - Effacer les identifiants
+### `logout` - Effacer les informations d&#x27;identification
 
-Effacez les identifiants enregistrés et déconnectez-vous de votre compte.
+Effacez les informations d&#x27;identification enregistrées et déconnectez-vous de votre compte.
 
 **Syntaxe :**
 
@@ -603,7 +601,7 @@ Temps de traitement type pour 100 images (12 MP chacune) :
 | Mode              | Temps      | Matériel                                     |
 | ----------------- | --------- | -------------------------------------------- |
 | **Mode parallèle** | 5-10 min  | i7/Ryzen 7, 16 Go de RAM, SSD (jusqu&#x27;à 16 travailleurs) |
-| **Mode parallèle** | 10 à 15 min | i5/Ryzen 5, 8 Go de RAM, disque dur (jusqu&#x27;à 8 processeurs)   |
+| **Mode parallèle** | 10-15 min | i5/Ryzen 5, 8 Go de RAM, HDD (jusqu&#x27;à 8 travailleurs)   |
 
 {% hint style=&quot;info&quot; %}
 **Conseil de performance** : le temps de traitement varie en fonction du nombre d&#x27;images, de la résolution et des spécifications de l&#x27;ordinateur.
@@ -707,7 +705,7 @@ No images found in the specified folder
 **Solutions :**
 
 1. Vérifiez que le dossier contient des formats pris en charge (.RAW, .TIF, .JPG).
-2. Vérifiez que le chemin d&#x27;accès au dossier est correct (utilisez des guillemets pour les chemins contenant des espaces).
+2. Vérifiez que le chemin d&#x27;accès au dossier est correct (utilisez des guillemets pour les chemins d&#x27;accès contenant des espaces).
 3. Assurez-vous que vous disposez des autorisations de lecture pour le dossier.
 4. Vérifiez que les extensions de fichier sont correctes.
 
@@ -719,7 +717,7 @@ No images found in the specified folder
 
 1. Vérifiez l&#x27;espace disque disponible (assurez-vous qu&#x27;il est suffisant pour la sortie).
 2. Fermez les autres applications pour libérer de la mémoire.
-3. Réduisez le nombre d&#x27;images (traitez-les par lots).
+3. Réduisez le nombre d&#x27;images (traitez par lots).
 
 ***
 
@@ -767,7 +765,7 @@ Abonnez-vous à : [https://cloud.mapir.camera/pricing](https://cloud.mapir.camer
 
 ### Q : Où sont enregistrées les images traitées ?
 
-**R :** Par défaut, les images traitées sont enregistrées dans le **même dossier que les images d&#x27;entrée**, dans des sous-dossiers correspondant au modèle d&#x27;appareil photo (par exemple, `Survey3N_RGN/`).
+**R :** Par défaut, les images traitées sont enregistrées dans le **même dossier que les images d&#x27;entrée**, dans des sous-dossiers correspondant au modèle de caméra (par exemple, `Survey3N_RGN/`).
 
 Utilisez l&#x27;option `-o` pour spécifier un autre dossier de sortie :
 
@@ -837,7 +835,7 @@ Chloros CLI 1.0.2
 
 ### Aide en ligne de commande
 
-Affichez les informations d&#x27;aide directement dans CLI :
+Consultez les informations d&#x27;aide directement dans CLI :
 
 ```powershell
 # General help
