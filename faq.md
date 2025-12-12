@@ -9,64 +9,64 @@ metaLinks:
 
 <details>
 
-<summary>Puis-je traiter des images provenant d'appareils photo qui ne sont pas de MAPIR marque Chloros?</summary>
+<summary>Puis-je traiter des images provenant de caméras qui ne sont pas de la marque MAPIR avec Chloros ?</summary>
 
-Non, Chloros ne prend en charge que le traitement des images d'appareils photo MAPIR. Veuillez consulter la liste des [modèles d'appareils photo pris en charge] (supported-cameras.md) pour plus d'informations. Nous proposons le traitement d'autres caméras sur MAPIR Cloud, voir la liste complète [ici](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
-
-</details>
-
-<details>
-
-<summary>Puis-je calibrer mes images pour la réflectance sans cible d'étalonnage ? </summary>
-
-Non. Sans une image de la cible d'étalonnage capturée à peu près au moment où les images sans cible sont capturées, vous ne serez pas en mesure de relier les valeurs des pixels de l'image à un pourcentage de réflectance connu. Si vous n'incluez pas non plus le journal d'un capteur de lumière MAPIR, le spectre de la lumière ambiante ne sera pas mesuré et les résultats de la réflectance ne seront pas exacts.
+Non, Chloros ne prend en charge que le traitement des images provenant d&#x27;appareils photo MAPIR. Veuillez consulter la liste des [modèles d&#x27;appareils photo pris en charge](supported-cameras.md) pour plus d&#x27;informations. Nous proposons le traitement d&#x27;autres appareils photo sur MAPIR Cloud, consultez la liste complète [ici](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
 <details>
 
-<summary>Puis-je éditer mes images avant le traitement dans Chloros?</summary>
+<summary>Puis-je calibrer mes images pour la réflectance sans cible de calibrage ?</summary>
 
-Non. Chloros suppose que les données d'entrée n'ont pas été modifiées. Ne changez pas les noms de fichiers.
-
-</details>
-
-<details>
-
-<summary>Puis-je régler mes MAPIR Survey3 caméras sur l'exposition automatique et traiter les images en Chloros?</summary>
-
-Non. Les ensembles d'images Survey3 doivent avoir une exposition fixe/verrouillée, donc pas de vitesse d'obturation automatique ni d'ISO automatique. Toutes les images du même modèle d'appareil photo doivent avoir une vitesse d'obturation et une sensibilité ISO (exposition) identiques.
+Non. Sans une image de la cible d&#x27;étalonnage capturée au moment où les images non ciblées sont capturées, vous ne pourrez pas relier les valeurs de pixels de l&#x27;image à un pourcentage de réflectance connu. Si vous n&#x27;incluez pas non plus le journal d&#x27;un capteur de lumière MAPIR, le spectre de la lumière ambiante ne sera pas mesuré et les résultats de réflectance ne seront pas précis.
 
 </details>
 
 <details>
 
-<summary>Peut-on Chloros traiter ou analyser des images orthomosaïques ? </summary>
+<summary>Puis-je modifier mes images avant de les traiter dans Chloros ?</summary>
 
-Non. Seules les images individuelles des MAPIR caméras sont prises en charge, et non les images assemblées comme une carte orthomosaïque.
-
-</details>
-
-<details>
-
-<summary>Comment puis-je accélérer l'étape de détection de la cible de Chloros?</summary>
-
-Dans le tableau du navigateur de fichiers, la présélection des images cibles dans la colonne de droite indiquera à Chloros de ne rechercher des cibles d'étalonnage que dans ces images, ce qui accélérera considérablement le traitement.
+Non. Chloros part du principe que les données d&#x27;entrée n&#x27;ont pas été modifiées. Ne modifiez pas les noms de fichiers.
 
 </details>
 
 <details>
 
-<summary> Si je télécharge mes images sur <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> dois-je les traiter dans Chloros avant de les télécharger ? </summary>
+<summary>Puis-je régler mes appareils photo MAPIR Survey3 sur l&#x27;exposition automatique et traiter les images dans Chloros ?</summary>
 
-Si vous prévoyez de télécharger vers notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant de les télécharger. Cloud effectuera tous les mêmes traitements et plus encore.
+Non. Les ensembles de données d&#x27;images Survey3 doivent avoir une exposition fixe/verrouillée, donc pas de vitesse d&#x27;obturation automatique ni d&#x27;ISO automatique. Toutes les images du même modèle de caméra doivent avoir une vitesse d&#x27;obturation et un ISO (exposition) identiques.
 
 </details>
 
 <details>
 
-<summary> Est-ce que MAPIR supportera un jour la fonction X ? J'aimerais vraiment que MAPIR propose X.</summary>
+<summary>Chloros peut-il traiter ou analyser des images orthomosaïques ?</summary>
 
-Nous sommes toujours intéressés par les commentaires sur nos produits. Si vous rencontrez un problème avec nos produits ou si vous avez une suggestion sur la manière dont nous pouvons les améliorer, veuillez [NOUS CONTACTER] (https://www.mapir.camera/community/contact) pour nous faire part de vos réflexions. La plupart de nos recherches sont guidées par l'écoute des besoins les plus importants de nos clients.
+Non. Seules les images individuelles MAPIR sont prises en charge, et non les images assemblées telles que les cartes orthomosaïques.
+
+</details>
+
+<details>
+
+<summary>Comment puis-je accélérer l&#x27;étape de détection des cibles de Chloros ?</summary>
+
+Dans le tableau du navigateur de fichiers, présélectionnez les images cibles dans la colonne de droite pour indiquer à Chloros de rechercher uniquement les cibles d&#x27;étalonnage dans ces images, ce qui accélère considérablement le traitement.
+
+</details>
+
+<details>
+
+<summary>Si je télécharge mes images sur <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> dois-je les traiter dans Chloros avant de les télécharger ?</summary>
+
+Si vous prévoyez de télécharger vos images sur notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant le téléchargement. Cloud effectuera le même traitement, voire plus.
+
+</details>
+
+<details>
+
+<summary>MAPIR prendra-t-il un jour en charge la fonctionnalité X ? J&#x27;aimerais vraiment que MAPIR propose X.</summary>
+
+Nous sommes toujours intéressés par vos commentaires sur nos produits. Si vous rencontrez un problème avec nos produits ou si vous avez des suggestions pour les améliorer, n&#x27;hésitez pas à [NOUS CONTACTER](https://www.mapir.camera/community/contact) pour nous faire part de vos réflexions. La plupart de nos activités de R&amp;D sont guidées par l&#x27;écoute des besoins les plus importants de nos clients.
 
 </details>

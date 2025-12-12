@@ -1,29 +1,29 @@
 # Chloros Traduction manuelle avec DeepL API
 
-Ce répertoire contient des scripts permettant de traduire automatiquement le manuel Chloros en plus de 30 langues à l'aide de DeepL API, qui fournit une traduction automatique de qualité professionnelle.
+Ce répertoire contient des scripts permettant de traduire automatiquement le manuel Chloros dans plus de 30 langues à l&#x27;aide de DeepL API, qui fournit une traduction automatique de qualité professionnelle.
 
-## 🚀 Quick Start
+## 🚀 Démarrage rapide
 
 ### Conditions préalables
 - Python 3.8 ou supérieur
-- DeepL API clé (déjà configurée dans le script)
-- Dépôts Git clonés pour chaque langue cible
+- Clé DeepL API (déjà configurée dans le script)
+- Référentiels Git clonés pour chaque langue cible
 
 ### Installation
 
-1. Installer les dépendances Python :
+1. Installez les dépendances Python :
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Utilisation
 
-#### Option 1 : Traduire toutes les langues (Windows)
+#### Option 1 : traduire toutes les langues (Windows)
 ```bash
 translate-deepl.bat
 ```
 
-#### Option 2 : Traduire une langue spécifique (Windows)
+#### Option 2 : traduire une langue spécifique (Windows)
 ```bash
 translate-deepl.bat es     # Spanish
 translate-deepl.bat fr     # French
@@ -32,130 +32,130 @@ translate-deepl.bat de     # German
 
 #### Option 3 : utiliser directement Python
 
-**Traduire toutes les langues:**
+**Traduire toutes les langues :**
 ```bash
 python translate_with_deepl.py .
 ```
 
-**Traduire une langue spécifique:**
+**Traduire une langue spécifique :**
 ```bash
 python translate_with_deepl.py . --lang es
 ```
 
-**Traduire plusieurs langues spécifiques:**
+**Traduire plusieurs langues spécifiques :**
 ```bash
 python translate_with_deepl.py . --langs es fr de it
 ```
 
-**Vérifier l'utilisation de DeepL API:**
+**Vérifier l&#x27;utilisation de DeepL API :**
 ```bash
 python translate_with_deepl.py . --usage
 ```
 
-**Liste de toutes les langues supportées:**
+**Lister toutes les langues prises en charge :**
 ```bash
 python translate_with_deepl.py . --list
 ```
 
-## 🌍 Langues supportées
+## 🌍 Langues prises en charge
 
 DeepL API prend en charge les langues suivantes de notre liste :
 
-| Code | Langue | DeepL Code |
+| Code | Langue | Code DeepL |
 |------|----------|------------|
-| ES | espagnol | ES | pt | portugais (Portugal)
-| pt | portugais (Portugal) | PT-PT | pt-BR | portugais (Portugal) | PT-PT | pt-BR | portugais (Portugal)
-pt-BR | Portugais (Brésil) | PT-BR | pt-BR | Portugais (Brésil) | PT-BR | pt-BR | Portugais (Brésil) | PT-PT
-| pt-BR | portugais (Brésil) | PT-BR | pt-BR | portugais (Brésil) | PT-BR
-| français | FR | de | allemand | DE | it | italien | IT
-| it | Italien | IT | Ja | Japonais | JA
-| JA | Japonais | JA | Japonais | JA | Japonais
+| es | Espagnol | ES |
+| pt | Portugais (Portugal) | PT-PT |
+| pt-BR | Portugais (Brésil) | PT-BR |
+| fr | Français | FR |
+| de | Allemand | DE |
+| it | Italien | IT |
+| ja | Japonais | JA |
 | ko | Coréen | KO |
-| ZH* - zh-CN - chinois simplifié - ZH* - zh-TW - chinois traditionnel - ZH* - ZH* - ZH* - ZH* - ZH
-| zh-TW | chinois (traditionnel) | ZH* | zh-CN | chinois (simplifié) | ZH
-zh-CN | Chinois (simplifié) | ZH | zh-TW | Chinois (traditionnel) | ZH* | ru | Russe | RU
-| nl | néerlandais | NL | ar | arabe | AR | AR
-| ar | Arabe | AR | pl | Polonais | PL
-| pl | Polonais | PL | tr | Turc | TR | TR
-| tr | turc | TR | id | indonésien | ID
-| id | indonésien | ID | bg | bulgare | BG
-bg | Bulgare | BG | bg | Bulgare | BG | bg | Bulgare | BG | bg | Bulgare
-bg | Bulgare | BG | cs | Tchèque | CS
-| DA | danois | DA | bg | bulgare | BG | cs | tchèque | CS | cs | danois | DA
-| EL | Grec | EL | EL | EL | EL | EL | EL | EL | EL | EL | EL | EL | EL | EL
-| et | Estonien | ET
-| fi | finnois | FI
-| HU | HU | HU | HU | HU | HU | HU | HU | HU | HU | HU | HU | HU | HU | HU | HU
-lv | letton | LV | lt | lituanien | LT | lt
-lt | Lituanien | LT | lv | Letton | LV
-| ro | Roumain | RO | sk | Slovaque | SK | SK
-| sk | slovaque | SK | lt | lituanien | LT | ro | roumain | RO
-sl | slovène | SL | sv | suédois | SV
-| sv | Suédois | SV
-ukrainien | UK | ukrainien | UK | ukrainien | UK
-nb | norvégien | NB | anglais | français | anglais
+| zh-CN | Chinois (simplifié) | ZH |
+| zh-TW | Chinois (traditionnel) | ZH* |
+| ru | Russe | RU |
+| nl | Néerlandais | NL |
+| ar | Arabe | AR |
+| pl | Polonais | PL |
+| tr | Turc | TR |
+| id | Indonésien | ID |
+| bg | Bulgare | BG |
+| cs | Tchèque | CS |
+| da | Danois | DA |
+| el | Grec | EL |
+| et | Estonien | ET |
+| fi | Finnois | FI |
+| hu | Hongrois | HU |
+| lv | Letton | LV |
+| lt | Lituanien | LT |
+| ro | Roumain | RO |
+| sk | Slovaque | SK |
+| sl | Slovène | SL |
+| sv | Suédois | SV |
+| uk | Ukrainien | UK |
+| nb | Norvégien | NB |
 
-\* Note : DeepL ne prend en charge que le chinois simplifié (ZH). Le chinois traditionnel utilise le même code mais peut nécessiter un post-traitement.
+\* Remarque : DeepL ne prend en charge que le chinois simplifié (ZH). Le chinois traditionnel utilise le même code, mais peut nécessiter un post-traitement.
 
 ### ⚠️ Langues NON prises en charge par DeepL
 
-Les langues suivantes nécessitent des méthodes de traduction alternatives :
+Les langues suivantes nécessitent d&#x27;autres méthodes de traduction :
 - **hi** (hindi)
-- **vi** (vietnamien)
-- **th** (thaïlandais)
+- **vi** (vietnamien)  
+- **th** (thaï)
 
 Pour ces langues, vous devrez :
-1. Utiliser Google Translate API (qualité moindre mais couverture plus large)
+1. Utiliser Google Translate API (qualité inférieure mais couverture plus large)
 2. Utiliser des services de traduction manuelle
-3. Ne pas les utiliser pour l'instant et ajouter des avis "Coming Soon" (bientôt disponible)
+3. Les ignorer pour l&#x27;instant et ajouter des mentions « Bientôt disponible »
 
-## 🛡️ Caractéristiques de protection
+## 🛡️ Fonctions de protection
 
 Le script de traduction protège automatiquement :
 
-✅ **Noms de produits** : Chloros, MAPIR
-✅ **Termes techniques** : RGB, NDVI, NDRE, toutes les formules d'indexation
-✅ **Code Blocks** : blocs ` ```code``` ` et blocs inline `code`
-✅ **Liens** : `[text](url)` et `![alt](image.png)`
+✅ **Noms de produits** : Chloros, MAPIR  
+✅ **Termes techniques** : RGB, NDVI, NDRE, toutes les formules d&#x27;indice  
+✅ **Blocs de code** : blocs ` ```code``` ` et `code` en ligne  
+✅ **Liens** : `[text](url)` et `![alt](image.png)`  
 ✅ **Balises HTML** : `<div>`, `<figure>`, etc.  
-✅ **Chemins d'accès aux fichiers** : `supported-languages.md`, etc.  
-✅ **GitBook Syntaxe** : `{% hint %}`, `{% embed %}`, etc.  
-✅ **URLs & Emails** : Toutes les adresses web et les adresses électroniques
+✅ **Chemins d&#x27;accès aux fichiers** : `supported-languages.md`, etc.  
+✅ **Syntaxe GitBook** : `{% hint %}`, `{% embed %}`, etc.  
+✅ **URL et e-mails** : toutes les adresses Web et adresses e-mail  
 
-## 📊 API Utilisation et limites
+## 📊 Utilisation et limites de API
 
-### DeepL Niveau gratuit
+### Offre gratuite DeepL
 - **Limite** : 500 000 caractères/mois
-- **Coût** : Gratuit
+- **Coût** : gratuit
 
-### DeepL Pro Tier
-- **Limite** : Basé sur votre plan
-- **Coût** : ~5.49$/mois pour 1M de caractères
+### Offre DeepL Pro
+- **Limite** : en fonction de votre forfait
+- **Coût** : environ 5,49 $/mois pour 1 million de caractères
 
-### Utilisation estimée pour le manuel <!--PLHDR000081
-Chaque traduction linguistique utilise environ **50 000 à 100 000 caractères** en fonction de la taille du manuel.
+### Estimation de l&#x27;utilisation pour Chloros Manuel
+Chaque traduction linguistique utilise environ **50 000 à 100 000 caractères**, selon la taille du manuel.
 
-- Traduction complète (30 langues) : ~2-3 millions de caractères
-- Avec le niveau gratuit : Peut traduire ~5-10 langues/mois
-- Avec la version Pro : Possibilité de traduire toutes les langues à la fois
+- Traduction complète (30 langues) : environ 2 à 3 millions de caractères
+- Avec le niveau gratuit : possibilité de traduire environ 5 à 10 langues par mois
+- Avec le niveau Pro : possibilité de traduire toutes les langues en une seule fois
 
-**Vérifiez votre utilisation actuelle:**
+**Vérifiez votre utilisation actuelle :**
 ```bash
 python translate_with_deepl.py . --usage
 ```
 
-## 🔧 How It Works
+## 🔧 Comment ça marche
 
-1. **Découverte de fichiers** : Trouve tous les fichiers `.md` dans le répertoire de langues
-2. **Protection du contenu** : Remplace le code, les liens et les termes protégés par des caractères de remplacement
-3. **Découpage** : Divise les fichiers volumineux en morceaux compatibles API
-4. **Traduction** : Envoi à DeepL API avec préservation du formatage
-5. **Restauration** : Restaure tous les éléments protégés
-6. **Writing** : Enregistre le contenu traduit dans le fichier
+1. **Recherche de fichiers** : recherche tous les fichiers `.md` dans le référentiel de langues
+2. **Protection du contenu** : remplace le code, les liens et les termes protégés par des espaces réservés
+3. **Découpage** : divise les fichiers volumineux en morceaux compatibles avec API
+4. **Traduction** : envoie à DeepL API en conservant la mise en forme
+5. **Restauration** : restaure tous les éléments protégés
+6. **Écriture** : enregistre le contenu traduit dans le fichier
 
 ## 📁 Structure du répertoire
 
-Le script attend cette structure :
+Le script attend la structure suivante :
 
 ```
 current_directory/
@@ -171,24 +171,24 @@ current_directory/
 
 ## 🔍 Fichiers ignorés
 
-Le script saute automatiquement :
+Le script ignore automatiquement :
 - `TRANSLATION-PROJECT-README.md`
 - `TRANSLATION-PROJECT-QUICKSTART.md`
 - `MANUAL-REPO-CREATION-INSTRUCTIONS.md`
 - `language-repos-list.md`
 - Tous les fichiers dans les répertoires `.git`
-- Tous les fichiers dans les dépôts de langues imbriqués
+- Tous les fichiers dans les répertoires de langues imbriqués
 
 ## ⚙️ Configuration avancée
 
-### Changement du point de terminaison API
+### Modification du point de terminaison API
 
 Pour les comptes DeepL Pro, mettez à jour la ligne 21 dans `translate_with_deepl.py` :
 ```python
 DEEPL_API_URL = "https://api.deepl.com/v2/translate"  # Pro endpoint
 ```
 
-### Ajout de termes protégés
+### Ajout de termes protégés supplémentaires
 
 Modifiez la liste `PROTECTED_TERMS` dans `translate_with_deepl.py` (ligne 68) :
 ```python
@@ -199,30 +199,30 @@ PROTECTED_TERMS = [
 ]
 ```
 
-### Ajustement de la limitation du taux
+### Ajuster la limitation du débit
 
-Modifier les temps de sommeil dans le script :
-- Ligne 399 : entre les morceaux (actuellement 0,5 seconde)
-- Ligne 459 : Entre les dépôts (actuellement 2 secondes)
+Modifiez les temps de veille dans le script :
+- Ligne 399 : entre les blocs (actuellement 0,5 seconde)
+- Ligne 459 : entre les dépôts (actuellement 2 secondes)
 
-## 🐛 Résolution des problèmes
+## 🐛 Dépannage
 
-### "DeepL API quota dépassé"
-- Vous avez atteint votre limite mensuelle
-- Attendez le mois prochain ou passez à la version Pro
-- Vérifiez l'utilisation : `python translate_with_deepl.py . --usage`
+### « Quota DeepL API dépassé »
+- Vous avez atteint votre limite mensuelle.
+- Attendez le mois prochain ou passez à la version Pro.
+- Vérifiez votre utilisation : `python translate_with_deepl.py . --usage`
 
-### "Dépôt non trouvé"
-- S'assurer que les dépôts de langues sont clonés dans le répertoire actuel
-- Vérifier le nom du dépôt : doit être `chloros_manual_gitbook-{lang_code}`
+### « Référentiel introuvable »
+- Assurez-vous que les référentiels de langue sont clonés dans le répertoire actuel
+- Vérifiez le nom du référentiel : il doit être `chloros_manual_gitbook-{lang_code}`
 
-### "Aucun fichier markdown trouvé"
-- Vérifier que le dépôt de langue contient des fichiers `.md`
-- Vérifier que les fichiers ne sont pas ignorés par les filtres
+### « Aucun fichier Markdown trouvé »
+- Vérifiez que le référentiel de langue contient des fichiers `.md`
+- Vérifiez que les fichiers ne sont pas ignorés par les filtres
 
-### Problèmes de qualité de la traduction
-- Certains termes ont été mal traduits ? Ajoutez-les à `PROTECTED_TERMS`
-- Blocs de code traduits ? Vérifier que ``` markers are properly closed
+### Problèmes de qualité de traduction
+- Certains termes sont-ils mal traduits ? Ajoutez-les à `PROTECTED_TERMS`.
+- Les blocs de code sont-ils traduits ? Vérifiez que ``` markers are properly closed
 - Links broken? Verify markdown link syntax is correct
 
 ## 📝 After Translation
@@ -237,36 +237,36 @@ After running translations, you should:
 
 ### Example Workflow:
 ```bash
-# Traduire l'espagnol
+# Traduire en espagnol
 python translate_with_deepl.py . --lang es
 
-# Aller dans le repo espagnol
+# Accédez au dépôt espagnol
 cd chloros_manual_gitbook-es
 
-# Réviser les changements
+# Vérifiez les modifications
 git diff
 
-# Commencer et pousser
+# Validez et envoyez
 git add -A
-git commit -m "Traduction professionnelle vers l'espagnol en utilisant DeepL API"
+git commit -m « Traduction professionnelle vers l&#x27;espagnol à l&#x27;aide de DeepL API »
 git push origin main
 
 # GitBook se synchronisera automatiquement !
 ```
 
-## 📞 Support
+## 📞 Assistance
 
 Si vous rencontrez des problèmes :
-1. Consultez la section de dépannage ci-dessus
-2. Consultez la documentation de DeepL API : https://www.deepl.com/docs-api
-3. Contact : info@mapir.camera
+1. Consultez la section Dépannage ci-dessus.
+2. Consultez la documentation DeepL API : https://www.deepl.com/docs-api.
+3. Contactez : info@mapir.camera.
 
 ## 📜 Licence
 
 Ce script de traduction fait partie du projet de manuel Chloros.
-© MAPIR Caméra. Tous droits réservés.
+© MAPIR Camera. Tous droits réservés.
 
 ---
 
-**Lancez `translate-deepl.bat` et regardez la magie opérer ! ✨
+**Prêt à traduire ?** Lancez `translate-deepl.bat` et regardez la magie opérer ! ✨
 

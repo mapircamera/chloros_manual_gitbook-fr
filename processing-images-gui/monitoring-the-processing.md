@@ -1,163 +1,163 @@
-# Suivi du traitement
+# Surveillance du traitement
 
-Une fois que le traitement a commencé, Chloros fournit plusieurs moyens de suivre la progression, de vérifier les problèmes et de comprendre ce qui se passe avec votre jeu de données. Cette page explique comment suivre votre traitement et interpréter les informations fournies par Chloros.
+Une fois le traitement lancé, Chloros offre plusieurs moyens de surveiller la progression, de vérifier les problèmes et de comprendre ce qui se passe avec votre ensemble de données. Cette page explique comment suivre votre traitement et interpréter les informations fournies par Chloros.
 
-## Vue d'ensemble de la barre de progression
+## Aperçu de la barre de progression
 
-La barre de progression située dans l'en-tête supérieur indique en temps réel l'état du traitement et le pourcentage d'achèvement.
+La barre de progression située dans l&#x27;en-tête supérieur affiche l&#x27;état du traitement en temps réel et le pourcentage d&#x27;achèvement.
 
-### Barre de progression du mode libre
+### Barre de progression en mode gratuit
 
-Pour les utilisateurs sans licence Chloros+ :
+Pour les utilisateurs ne disposant pas d&#x27;une licence Chloros+ :
 
-**Affichage de la progression en 2 étapes:**
+**Affichage de la progression en deux étapes :**
 
-1. **Target Detect** - Recherche de cibles d'étalonnage dans les images
+1. **Détection de la cible** - Recherche des cibles d&#x27;étalonnage dans les images
 2. **Traitement** - Application des corrections et exportation
 
-**La barre de progression indique:**
+**La barre de progression affiche :**
 
-* Le pourcentage d'achèvement global (0-100%)
-* Le nom de l'étape en cours
-* Visualisation simple de la barre horizontale
+* Le pourcentage d&#x27;achèvement global (0-100 %)
+* Le nom de l&#x27;étape en cours
+* Une visualisation simple sous forme de barre horizontale
 
-### Chloros+ Barre de progression
+### Barre de progression Chloros+
 
-Pour les utilisateurs ayant la licence Chloros+ :
+Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 
-**Affichage de la progression en 4 étapes:**
+**Affichage de la progression en 4 étapes :**
 
-1. **Détection** - Recherche de cibles d'étalonnage
+1. **Détection** - Recherche des cibles d&#x27;étalonnage
 2. **Analyse** - Examen des images et préparation du pipeline
-3. **Calibrage** - Application des corrections de vignette et de réflectance
+3. **Étalonnage** - Application des corrections de vignette et de réflectance
 4. **Exportation** - Enregistrement des fichiers traités
 
-**Fonctionnalités interactives:**
+**Fonctionnalités interactives :**
 
-* **Passez la souris sur la barre de progression pour voir le panneau élargi en 4 étapes
-* **Cliquez sur la barre de progression pour figer/épingler le panneau élargi
-* **Cliquez à nouveau** pour libérer le panneau et le masquer automatiquement lorsque vous quittez la souris
-* Chaque étape montre la progression individuelle (0-100%)
+* **Passez la souris sur** la barre de progression pour afficher le panneau détaillé en 4 étapes
+* **Cliquez sur** la barre de progression pour figer/épingler le panneau détaillé
+* **Cliquez à nouveau** pour le débloquer et le masquer automatiquement lorsque vous quittez la souris
+* Chaque étape affiche la progression individuelle (0-100 %)
 
 ***
 
-## Comprendre chaque étape de traitement
+## Comprendre chaque étape du traitement
 
-### Étape 1 : Détection (détection de la cible)
+### Étape 1 : Détection (détection de cible)
 
-**What's happening:**
+**Ce qui se passe :**
 
-* Chloros analyse les images marquées d'une case à cocher Cible
-* Des algorithmes de vision par ordinateur identifient les 4 panneaux d'étalonnage
+* Chloros analyse les images cochées dans la case Cible
+* Les algorithmes de vision par ordinateur identifient les 4 panneaux d&#x27;étalonnage
 * Les valeurs de réflectance sont extraites de chaque panneau
-* Les horodatages des cibles sont enregistrés pour une programmation correcte de l'étalonnage
+* Les horodatages des cibles sont enregistrés pour une planification correcte de l&#x27;étalonnage
 
-**Durée:**
+**Durée :**
 
-* Avec des cibles marquées : 10-60 secondes
-* Sans cibles marquées : 5-30+ minutes (balayage de toutes les images)
+* Avec cibles cochées : 10 à 60 secondes
+* Sans cibles cochées : 5 à 30 minutes ou plus (analyse toutes les images)
 
-**Indicateur de progression:**
+**Indicateur de progression :**
 
-* Détection : 0% → 100%
-* Nombre d'images scannées
+* Détection : 0 % → 100 %
+* Nombre d&#x27;images scannées
 * Nombre de cibles trouvées
 
-**Ce qu'il faut surveiller:**
+**À surveiller :**
 
-* L'opération devrait s'achever rapidement si les cibles sont correctement marquées
-* Si cela prend trop de temps, il se peut que les cibles ne soient pas marquées
-* Vérifier le journal de débogage pour les messages "Cible trouvée"
+* Le processus devrait s&#x27;achever rapidement si les cibles sont correctement marquées.
+* Si le processus prend trop de temps, il se peut que les cibles ne soient pas marquées.
+* Vérifiez le journal de débogage pour voir s&#x27;il contient des messages « Cible trouvée ».
 
 ### Étape 2 : Analyse
 
-**What's happening:*
+**Ce qui se passe :**
 
-* Lecture des métadonnées EXIF de l'image (horodatage, paramètres d'exposition)
-* Détermination de la stratégie d'étalonnage sur la base des horodatages cibles
-* Organisation de la file d'attente pour le traitement des images
-* Préparation des opérateurs de traitement parallèle (Chloros+ uniquement)
+* Lecture des métadonnées EXIF des images (horodatages, paramètres d&#x27;exposition)
+* Détermination de la stratégie d&#x27;étalonnage en fonction des horodatages des cibles
+* Organisation de la file d&#x27;attente de traitement des images
+* Préparation des processus de traitement parallèle (Chloros+ uniquement)
 
-**Durée:** 5-30 secondes
+**Durée :** 5 à 30 secondes
 
-**Indicateur de progression:**
+**Indicateur de progression :**
 
-* Analyse : 0% → 100%
+* Analyse : 0 % → 100 %
 * Étape rapide, généralement terminée rapidement
 
-**Ce qu'il faut surveiller:**
+**À surveiller :**
 
-* La progression doit être régulière et sans pause
-* Des avertissements concernant les métadonnées manquantes apparaîtront dans le journal de débogage
+* La progression doit être régulière, sans pause.
+* Des avertissements concernant les métadonnées manquantes apparaîtront dans le journal de débogage.
 
-### Étape 3 : Étalonnage
+### Étape 3 : Calibrage
 
-**What's happening:**
+**Ce qui se passe :**
 
-* **Débayage** : Conversion du motif Bayer RAW en 3 canaux
-* **Correction de la vignette** : Suppression de l'assombrissement des bords de l'objectif
-* **Calibrage de la réflectance** : Étalonnage de la réflectance** : normalisation avec des valeurs cibles
-* **Calcul de l'indice** : Calcul des indices multispectraux
-* Traitement de chaque image par le pipeline complet
+* **Débayérisation** : conversion du motif Bayer RAW en 3 canaux
+* **Correction du vignettage** : suppression du noircissement des bords de l&#x27;objectif
+* **Calibrage de la réflectance** : normalisation avec les valeurs cibles
+* **Calcul de l&#x27;indice** : calcul des indices multispectraux
+* Traitement de chaque image via le pipeline complet
 
-**Durée:** Majorité du temps de traitement total (60-80%)
+**Durée :** la majeure partie du temps de traitement total (60 à 80 %)
 
-**Indicateur de progrès:**
+**Indicateur de progression :**
 
-* Étalonnage : 0% → 100%
+* Calibrage : 0 % → 100 %
 * Image en cours de traitement
-* Images terminées / Total des images
+* Images terminées / Nombre total d&#x27;images
 
-**Comportement du traitement:**
+**Comportement du traitement :**
 
-* **Mode libre** : Traite une image à la fois de manière séquentielle
-* **Chloros+ mode** : Traite jusqu'à 16 images simultanément
-* **Accélération GPU** : Accélération du processeur graphique** : accélère considérablement cette étape
+* **Mode libre** : traite une image à la fois de manière séquentielle
+* **Mode Chloros+** : traite jusqu&#x27;à 16 images simultanément
+* **Accélération GPU** : accélère considérablement cette étape
 
-**Ce qu'il faut surveiller:**
+**À surveiller :**
 
-* Progression régulière du nombre d'images
-* Vérifier le journal de débogage pour les messages d'achèvement par image
-* Avertissements concernant la qualité de l'image ou les problèmes d'étalonnage
+* Progression régulière du nombre d&#x27;images
+* Vérifiez le journal de débogage pour les messages de fin de traitement par image
+* Avertissements concernant la qualité de l&#x27;image ou les problèmes d&#x27;étalonnage
 
 ### Étape 4 : Exportation
 
-**What's happening:**
+**Ce qui se passe :**
 
 * Écriture des images calibrées sur le disque dans le format sélectionné
-* Exportation d'images d'index multispectrales avec des couleurs LUT
-* Création de sous-dossiers de modèles de caméras
-* Préservation des noms de fichiers originaux avec les suffixes appropriés
+* Exportation des images d&#x27;index multispectral avec les couleurs LUT
+* Création de sous-dossiers pour les modèles d&#x27;appareils photo
+* Conservation des noms de fichiers d&#x27;origine avec les suffixes appropriés
 
-**Durée:** 10-20% du temps total de traitement
+**Durée :** 10 à 20 % du temps de traitement total
 
-**Indicateur de progression:**
+**Indicateur de progression :**
 
-* Exportation : 0% → 100%
-* Fichiers en cours d'écriture
-* Format d'exportation et destination
+* Exportation : 0 % → 100 %
+* Fichiers en cours d&#x27;écriture
+* Format d&#x27;exportation et destination
 
-**Ce qu'il faut surveiller:**
+**À surveiller :**
 
-* Avertissements concernant l'espace disque
-* Erreurs d'écriture de fichier
+* Avertissements d&#x27;espace disque
+* Erreurs d&#x27;écriture de fichiers
 * Achèvement de toutes les sorties configurées
 
 ***
 
-## Onglet Debug Log
+## Onglet Journal de débogage
 
-Le journal de débogage fournit des informations détaillées sur l'état d'avancement du traitement et sur les problèmes rencontrés.
+Le journal de débogage fournit des informations détaillées sur la progression du traitement et les problèmes rencontrés.
 
 ### Accès au journal de débogage
 
-1. Cliquez sur l'icône **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> dans la barre latérale gauche
-2. Le panneau du journal s'ouvre et affiche les messages de traitement en temps réel
-3. Défilement automatique pour afficher les messages les plus récents
+1. Cliquez sur l&#x27;icône **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> dans la barre latérale gauche.
+2. Le panneau du journal s&#x27;ouvre et affiche les messages de traitement en temps réel.
+3. Défilement automatique pour afficher les derniers messages.
 
 ### Comprendre les messages du journal
 
-#### Messages d'information (blanc/gris)
+#### Messages d&#x27;information (blanc/gris)
 
 Mises à jour normales du traitement :
 
@@ -169,9 +169,9 @@ Mises à jour normales du traitement :
 [INFO] Processing complete
 ```
 
-#### Messages d'avertissement (jaune)
+#### Messages d&#x27;avertissement (jaune)
 
-Problèmes non critiques qui n'interrompent pas le traitement :
+Problèmes non critiques qui n&#x27;interrompent pas le traitement :
 
 ```
 [WARN] No GPS data found in IMG_0145.RAW
@@ -179,11 +179,11 @@ Problèmes non critiques qui n'interrompent pas le traitement :
 [WARN] Low contrast in calibration panel - results may vary
 ```
 
-**Action:** Examiner les avertissements après le traitement, mais ne pas interrompre le traitement
+**Action :** Vérifiez les avertissements après le traitement, mais n&#x27;interrompez pas celui-ci.
 
-#### Messages d'erreur (Red)
+#### Messages d&#x27;erreur (Red)
 
-Problèmes critiques susceptibles de faire échouer le traitement :
+Problèmes critiques pouvant entraîner l&#x27;échec du traitement :
 
 ```
 [ERROR] Cannot write file - disk full
@@ -191,202 +191,202 @@ Problèmes critiques susceptibles de faire échouer le traitement :
 [ERROR] No targets detected - enable reflectance calibration or mark target images
 ```
 
-**Action:** Arrêter le traitement, résoudre l'erreur, redémarrer
+**Action :** Arrêter le traitement, résoudre l&#x27;erreur, redémarrer.
 
 ### Messages courants du journal
 
-| Message - Signification - Action à entreprendre
+| Message                          | Signification                                | Action requise                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| "Target detected in \[filename]" (Cible détectée dans [nom de fichier]) | "Cible détectée dans \N[nom de fichier]" | Cible d'étalonnage trouvée avec succès | Aucun - normal |
-| "Traitement de l'image X de Y"        | "Traitement de l'image X de Y" | Mise à jour de la progression en cours | Aucun - normal
-| "Aucune cible trouvée" | Aucune cible d'étalonnage détectée | Marquer les images cibles ou désactiver l'étalonnage de la réflectance | "Aucune cible trouvée" | Aucune cible d'étalonnage détectée
-| "Espace disque insuffisant" | Espace disque insuffisant pour la sortie | Libérer de l'espace disque
-| "Skipping corrupted file" | Fichier d'image endommagé | Recopier le fichier à partir de la carte SD
-| "Données PPK appliquées" | Les corrections GPS du fichier .daq sont appliquées | Aucune - normal |
+| « Cible détectée dans \[nom de fichier] » | Cible d&#x27;étalonnage trouvée avec succès  | Aucune - normal                                         |
+| « Traitement de l&#x27;image X sur Y »        | Mise à jour de la progression actuelle                | Aucune - normal                                         |
+| « Aucune cible trouvée »               | Aucune cible d&#x27;étalonnage détectée        | Marquer les images cibles ou désactiver l&#x27;étalonnage de la réflectance |
+| « Espace disque insuffisant »        | Espace de stockage insuffisant pour la sortie          | Libérer de l&#x27;espace disque                                    |
+| « Ignorer le fichier corrompu »        | Le fichier image est endommagé                  | Recopier le fichier depuis la carte SD                             |
+| « Données PPK appliquées »               | Corrections GPS du fichier .daq appliquées | Aucune - normal                                         |
 
 ### Copie des données du journal
 
-Pour copier le journal à des fins de dépannage ou d'assistance :
+Pour copier le journal à des fins de dépannage ou d&#x27;assistance :
 
-1. Ouvrez le panneau Debug Log
-2. Cliquez sur le bouton **"Copier le journal "** (ou cliquez avec le bouton droit de la souris → Tout sélectionner)
-3. Coller dans un fichier texte ou dans un courriel
-4. Envoyer au support MAPIR si nécessaire
+1. Ouvrez le panneau Journal de débogage.
+2. Cliquez sur le bouton **« Copier le journal »** (ou cliquez avec le bouton droit de la souris → Sélectionner tout).
+3. Collez dans un fichier texte ou un e-mail.
+4. Envoyez à l&#x27;assistance MAPIR si nécessaire.
 
 ***
 
-## Surveillance des ressources du système
+## Surveillance des ressources système
 
-### Utilisation de l'unité centrale
+### Utilisation du processeur
 
-**Free Mode:**
+**Mode libre :**
 
-* 1 cœur de CPU à \~100%
-* Les autres cœurs sont inactifs ou disponibles
+* 1 cœur de processeur à environ 100 %
+* Autres cœurs inactifs ou disponibles
 * Le système reste réactif
 
-**Chloros+ Mode parallèle:**
+**Chloros+ Mode parallèle :**
 
-* Plusieurs cœurs à 80-100% (jusqu'à 16 cœurs)
-* Utilisation globale élevée de l'unité centrale
+* Plusieurs cœurs à 80-100 % (jusqu&#x27;à 16 cœurs)
+* Utilisation globale élevée du processeur
 * Le système peut sembler moins réactif
 
-**To monitor:**
+**Pour surveiller :**
 
-* Windows Gestionnaire des tâches (Ctrl+Shift+Esc)
-* Onglet Performance → section CPU
-* Rechercher les processus "Chloros" ou "chloros-backend"
+* Windows Gestionnaire de tâches (Ctrl+Maj+Échap)
+* Onglet Performances → section CPU
+* Recherchez les processus « Chloros » ou « chloros-backend »
 
 ### Utilisation de la mémoire (RAM)
 
-**Utilisation typique:**
+**Utilisation type :**
 
-* Petits projets (< 100 images) : 2-4 GO
-* Projets moyens (100-500 images) : 4-8 GO
-* Grands projets (500+ images) : 8-16 GO
-* Chloros+ Le mode parallèle utilise plus de RAM
+* Petits projets (&lt; 100 images) : 2 à 4 Go
+* Projets de taille moyenne (100 à 500 images) : 4 à 8 Go
+* Grands projets (plus de 500 images) : 8 à 16 Go
+* Le mode parallèle Chloros+ utilise davantage de RAM
 
-**Si la mémoire est faible:**
+**Si la mémoire est insuffisante :**
 
-* Traiter des lots plus petits
-* Fermer les autres applications
-* Augmenter la RAM si vous traitez régulièrement de grands ensembles de données
+* Traitez des lots plus petits
+* Fermez les autres applications
+* Augmentez la RAM si vous traitez régulièrement de grands ensembles de données
 
 ### Utilisation du GPU (Chloros+ avec CUDA)
 
-Lorsque l'accélération GPU est activée :
+Lorsque l&#x27;accélération GPU est activée :
 
-* Le GPU NVIDIA affiche une utilisation élevée (60-90%)
-* L'utilisation de la VRAM augmente (nécessite plus de 4 Go de VRAM)
-* L'étape d'étalonnage est nettement plus rapide
+* Le GPU NVIDIA affiche une utilisation élevée (60-90 %)
+* L&#x27;utilisation de la VRAM augmente (nécessite 4 Go+ de VRAM)
+* La phase de calibrage est nettement plus rapide
 
-**To monitor:**
+**Pour surveiller :**
 
-* Icône de la barre d'état système de NVIDIA
-* Gestionnaire des tâches → Performances → GPU
+* Icône NVIDIA dans la barre d&#x27;état système
+* Gestionnaire de tâches → Performances → GPU
 * GPU-Z ou outil de surveillance similaire
 
 ### E/S disque
 
-**Ce à quoi il faut s'attendre:**
+**À quoi s&#x27;attendre :**
 
-* Nombre élevé de lectures sur le disque pendant la phase d'analyse
-* Nombre élevé d'écritures sur le disque pendant la phase d'exportation
-* Les disques SSD sont nettement plus rapides que les disques durs
+* Lecture disque élevée pendant la phase d&#x27;analyse
+* Écriture disque élevée pendant la phase d&#x27;exportation
+* SSD nettement plus rapide que HDD
 
-**Conseil de performance:**
+**Conseil de performance :**
 
-* Utiliser un disque SSD pour le dossier du projet lorsque c'est possible
-* Éviter les lecteurs réseau pour les grands ensembles de données
-* S'assurer que le disque n'est pas proche de sa capacité (affecte la vitesse d'écriture)
+* Utilisez un SSD pour le dossier du projet lorsque cela est possible
+* Évitez les lecteurs réseau pour les ensembles de données volumineux
+* Assurez-vous que le disque n&#x27;est pas proche de sa capacité maximale (ce qui affecte la vitesse d&#x27;écriture)
 
 ***
 
-## Détection des problèmes en cours de traitement
+## Détection des problèmes pendant le traitement
 
-### Signes d'alerte
+### Signaux d&#x27;alerte
 
-**La progression est bloquée (pas de changement pendant plus de 5 minutes):**
+**Progression bloquée (aucun changement pendant plus de 5 minutes) :**
 
-* Vérifier le journal de débogage pour les erreurs
-* Vérifier l'espace disque disponible
-* Vérifier dans le gestionnaire des tâches que Chloros est en cours d'exécution
+* Vérifiez le journal de débogage pour détecter d&#x27;éventuelles erreurs
+* Vérifiez l&#x27;espace disque disponible
+* Vérifiez dans le Gestionnaire des tâches que Chloros est en cours d&#x27;exécution
 
-**Error messages appear frequently:**
+**Messages d&#x27;erreur fréquents :**
 
-* Arrêter le traitement et examiner les erreurs
+* Arrêtez le traitement et examinez les erreurs
 * Causes courantes : espace disque, fichiers corrompus, problèmes de mémoire
-* Voir la section Dépannage ci-dessous
+* Consultez la section Dépannage ci-dessous
 
-**Le système ne répond plus:**
+**Le système ne répond plus :**
 
-* Chloros+ Le mode parallèle utilise trop de ressources
-* Envisagez de réduire le nombre de tâches simultanées ou de mettre à niveau le matériel
-* Le mode libre est moins gourmand en ressources
+* Le mode parallèle Chloros+ utilise trop de ressources.
+* Envisagez de réduire le nombre de tâches simultanées ou de mettre à niveau le matériel.
+* Le mode libre est moins gourmand en ressources.
 
 ### Quand arrêter le traitement
 
 Arrêtez le traitement si vous constatez :
 
-* ❌ des erreurs "Disque plein" ou "Impossible d'écrire un fichier"
-* ❌ Erreurs répétées de corruption du fichier image
-* ❌ Le système est complètement bloqué (ne répond pas)
-* ❌ Réalisation que des paramètres erronés ont été configurés
-* mauvaises images importées
+* ❌ Des erreurs « Disque plein » ou « Impossible d&#x27;écrire le fichier »
+* ❌ Erreurs répétées de corruption de fichiers image
+* ❌ Système complètement bloqué (ne répond pas)
+* ❌ Configuration incorrecte des paramètres
+* ❌ Importation d&#x27;images incorrectes
 
-**How to stop:**
+**Comment arrêter :**
 
-1. Cliquez sur le bouton **Arrêter/Annuler** (remplace le bouton Démarrer)
-2. Le traitement s'arrête, la progression est perdue
-3. Corriger les problèmes et recommencer depuis le début
+1. Cliquez sur le **bouton Arrêter/Annuler** (remplace le bouton Démarrer)
+2. Le traitement s&#x27;arrête, la progression est perdue
+3. Corrigez les problèmes et recommencez depuis le début
 
 ***
 
-## Dépannage en cours de traitement
+## Dépannage pendant le traitement
 
 ### Le traitement est très lent
 
-**Causes possibles:**
+**Causes possibles :**
 
-* Images cibles non marquées (balayage de toutes les images)
-* Disque dur au lieu d'un disque SSD
+* Images cibles non marquées (numérisation de toutes les images)
+* Stockage sur disque dur au lieu de SSD
 * Ressources système insuffisantes
-* Nombreux indices configurés
+* Nombreux index configurés
 * Accès au lecteur réseau
 
-**Solutions:**
+**Solutions :**
 
-1. Si vous venez de démarrer et que vous êtes en phase de détection : Annuler, marquer les cibles, redémarrer
-2. Pour l'avenir : Utiliser un disque SSD, réduire les indices, mettre à niveau le matériel
-3. Envisager CLI pour le traitement par lots de grands ensembles de données
+1. Si le traitement vient de démarrer et est en phase de détection : annuler, marquer les cibles, redémarrer
+2. Pour l&#x27;avenir : utiliser un SSD, réduire les index, mettre à niveau le matériel
+3. Envisager l&#x27;utilisation de CLI pour le traitement par lots de grands ensembles de données
 
-### Avertissements concernant l'espace disque
+### Avertissements « Espace disque »
 
-**Solutions:**
+**Solutions :**
 
-1. Libérer immédiatement de l'espace disque
-2. Déplacer le projet vers un disque disposant de plus d'espace
-3. Réduire le nombre d'indices à exporter
-4. Utiliser le format JPG au lieu de TIFF (fichiers plus petits)
+1. Libérer immédiatement de l&#x27;espace disque
+2. Déplacer le projet vers un lecteur disposant de plus d&#x27;espace
+3. Réduire le nombre d&#x27;index à exporter.
+4. Utiliser le format JPG au lieu de TIFF (fichiers plus petits).
 
-### Messages fréquents "Fichier corrompu"
+### Messages fréquents « Fichier corrompu »
 
-**Solutions:**
+**Solutions :**
 
-1. Recopier les images de la carte SD pour en assurer l'intégrité
-2. Tester la carte SD pour vérifier qu'il n'y a pas d'erreurs
-3. Supprimer les fichiers corrompus du projet
-4. Poursuivre le traitement des images restantes
+1. Recopier les images depuis la carte SD pour garantir leur intégrité.
+2. Tester la carte SD pour détecter d&#x27;éventuelles erreurs.
+3. Supprimer les fichiers corrompus du projet.
+4. Continuer le traitement des images restantes.
 
-### Surchauffe du système / étranglement
+### Surchauffe / ralentissement du système
 
-**Solutions:**
+**Solutions :**
 
-1. Assurer une ventilation adéquate
-2. Éliminer la poussière des évents de l'ordinateur
-3. Réduire la charge de traitement (utiliser le mode libre au lieu de Chloros+)
-4. Traiter aux heures les moins chaudes de la journée
+1. Assurez-vous que la ventilation est suffisante.
+2. Nettoyez la poussière des évents de l&#x27;ordinateur.
+3. Réduisez la charge de traitement (utilisez le mode Free au lieu de Chloros+).
+4. Effectuez le traitement pendant les périodes les plus fraîches de la journée.
 
 ***
 
-## Avis de fin de traitement
+## Notification de fin de traitement
 
 Lorsque le traitement est terminé :
 
-* La barre de progression atteint 100 %
-* **Le message "Traitement terminé "** apparaît dans le journal de débogage
-* Le bouton Démarrer est à nouveau activé
-* Tous les fichiers de sortie se trouvent dans le sous-dossier du modèle de l'appareil photo
+* La barre de progression atteint 100 %.
+* Le message **« Traitement terminé »** s&#x27;affiche dans le journal de débogage.
+* Le bouton Démarrer redevient actif.
+* Tous les fichiers de sortie se trouvent dans le sous-dossier du modèle d&#x27;appareil photo.
 
 ***
 
-## Prochaines étapes
+## Étapes suivantes
 
 Une fois le traitement terminé :
 
-1. **Examen des résultats** - Voir [Fin du traitement](Fin du traitement.md)
-2. **Vérifier le dossier de sortie** - Vérifier que tous les fichiers ont été exportés correctement
-3. **Consulter le journal de débogage** - Vérifier qu'il n'y a pas d'avertissement ou d'erreur
-4. **Visualiser les images traitées** - Utiliser la visionneuse d'images ou un logiciel externe
+1. **Vérifiez les résultats** - Voir [Fin du traitement](finishing-the-processing.md)
+2. **Vérifiez le dossier de sortie** - Vérifiez que tous les fichiers ont été exportés correctement.
+3. **Consultez le journal de débogage** - Vérifiez s&#x27;il y a des avertissements ou des erreurs.
+4. **Prévisualisez les images traitées** - Utilisez la visionneuse d&#x27;images ou un logiciel externe.
 
-Pour plus d'informations sur l'examen et l'utilisation des résultats traités, voir [Fin du traitement] (Fin du traitement.md).
+Pour plus d&#x27;informations sur la consultation et l&#x27;utilisation des résultats traités, consultez [Fin du traitement](finishing-the-processing.md).

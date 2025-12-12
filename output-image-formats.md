@@ -4,21 +4,21 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
 
-# Formats des images de sortie
+# Formats d&#x27;image de sortie
 
 ### TIFF (16 bits)
 
-format de sortie 16 bits (nombre numérique de pixels 0 - 65535) TIFF (.tif).
+Sortie au format 16 bits (numéro numérique de pixel 0 - 65535) TIFF (.tif).
 
 ### TIFF (32 bits, pourcentage %)
 
-sortie au format 32 bits (pixel float 0.0 - 1.0) TIFF (.tif). Les valeurs des pixels représentent des pourcentages de réflectance où 0,0 = 0 % et 1,0 = 100 %.
+Sortie au format TIFF (.tif) 32 bits (flottant pixel 0,0 - 1,0). Les valeurs des pixels représentent les pourcentages de réflectance où 0,0 = 0 % et 1,0 = 100 %.
 
-### **JPG (8-bit)**
+### **JPG (8 bits)**
 
-sortie au format JPG (.jpg) 8 bits (nombre numérique de pixels 0 -255).
+Sortie au format JPG (.jpg) 8 bits (numéro numérique de pixel 0 -255).
 
-### **PNG (8-bit)**
+### **PNG (8 bits)**
 
-sortie au format 8 bits (nombre numérique de pixels 0 - 255) PNG (.png). Compression sans perte adaptée à l'affichage et à la visualisation sur le web.
+Sortie au format PNG (.png) 8 bits (numéro numérique de pixel 0 - 255). Compression sans perte adaptée à la visualisation sur le Web.
 

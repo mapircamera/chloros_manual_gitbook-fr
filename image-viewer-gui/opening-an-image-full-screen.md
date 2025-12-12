@@ -1,144 +1,144 @@
-# Ouverture d'une image en plein écran
+# Ouverture d&#x27;une image en plein écran
 
-La Chloros visionneuse d'images offre une interface plein écran dédiée à la visualisation, à l'analyse et à la manipulation de vos images multispectrales. Qu'il s'agisse d'images originales ou de sorties traitées, la visionneuse d'images offre des outils puissants pour l'inspection et l'analyse.
+La visionneuse d&#x27;images Chloros fournit une interface plein écran dédiée à la visualisation, l&#x27;analyse et la manipulation de vos images multispectrales. Que vous visualisiez des images originales ou des résultats traités, la visionneuse d&#x27;images offre des outils puissants pour l&#x27;inspection et l&#x27;analyse.
 
-## Accès à la visionneuse d'images
+## Accéder à la visionneuse d&#x27;images
 
-### Depuis le navigateur de fichiers
+### À partir du navigateur de fichiers
 
-La façon la plus courante d'ouvrir une image dans la visionneuse d'images :
+La manière la plus courante d&#x27;ouvrir une image dans la visionneuse d&#x27;images :
 
-1. Assurez-vous d'être dans l'onglet **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Cliquez sur n'importe quelle **vignette d'image** dans la grille d'images
-3. L'image s'ouvre dans la **zone de prévisualisation principale** (au centre de l'écran)
-4. L'image est maintenant chargée et prête à être visualisée en plein écran
+1. Assurez-vous que vous êtes dans l&#x27;onglet **Navigateur de fichiers** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Cliquez sur n&#x27;importe quelle **miniature d&#x27;image** dans la grille d&#x27;images
+3. L&#x27;image s&#x27;ouvre dans la **zone d&#x27;aperçu principale** (au centre de l&#x27;écran)
+4. L&#x27;image est maintenant chargée et prête à être affichée en plein écran
 
-### Ouverture de l'onglet de la visionneuse d'images
+### Ouverture de l&#x27;onglet Image Viewer
 
-Une fois l'image chargée dans la zone de prévisualisation :
+Une fois qu&#x27;une image est chargée dans la zone d&#x27;aperçu :
 
-1. Cliquez sur l'icône **Visionneuse d'images** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> dans la barre latérale gauche
-2. L'onglet Visionneuse d'images s'ouvre et affiche l'image sélectionnée en plein écran
-3. Des outils avancés de visualisation et d'analyse sont disponibles dans la barre latérale gauche
-
-***
-
-## Vue d'ensemble de l'interface de la visionneuse d'images
-
-### Zone d'affichage principale
-
-La plus grande partie de l'écran affiche votre image :
-
-* **Résolution complète** : Images affichées à la résolution native
-* **Zoomable** : Utilisez les commandes ou la molette de la souris pour zoomer
-* **Possibilité de cliquer et de faire glisser la souris pour se déplacer lorsque l'on fait un zoom Cliquez et faites glisser pour vous déplacer lorsque le zoom est effectué
-* **Le rapport d'aspect est maintenu : Les images sont mises à l'échelle de manière proportionnelle
+1. Cliquez sur l&#x27;icône **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> dans la barre latérale gauche
+2. L&#x27;onglet Visionneuse d&#x27;images s&#x27;ouvre et affiche l&#x27;image sélectionnée en plein écran
+3. Des outils avancés de visualisation et d&#x27;analyse sont disponibles dans la barre latérale gauche
 
 ***
 
-## Options de visualisation
+## Présentation de l&#x27;interface de la visionneuse d&#x27;images
+
+### Zone d&#x27;affichage principale
+
+La plus grande partie de l&#x27;écran affiche votre image :
+
+* **Résolution maximale** : les images sont affichées à leur résolution native
+* **Zoomable** : utilisez les commandes ou la molette de la souris pour zoomer
+* **Déplaçable** : cliquez et faites glisser pour vous déplacer lorsque vous zoomez
+* **Rapport d&#x27;aspect conservé** : les images sont redimensionnées proportionnellement
+
+***
+
+## Options d&#x27;affichage
 
 ### Navigation de base dans les images
 
 #### Parcourir les images
 
-Naviguez dans votre série d'images à l'aide de raccourcis clavier ou de boutons :
+Naviguez dans votre ensemble d&#x27;images à l&#x27;aide des raccourcis clavier ou des boutons :
 
-* **Image suivante** : Cliquez sur le bouton → ou appuyez sur la touche **→** (flèche droite)
-* image précédente** : Cliquez sur le bouton → ou appuyez sur la touche **←** (flèche droite) : Cliquez sur le bouton ← ou appuyez sur la touche **←** (flèche gauche)
-* **Sauter à une image spécifique** : Retournez au navigateur de fichiers et cliquez sur la vignette souhaitée
+* **Image suivante** : cliquez sur le bouton → ou appuyez sur la touche **→** (flèche droite)
+* **Image précédente** : cliquez sur le bouton ← ou appuyez sur la touche **←** (flèche gauche)
+* **Aller à une image spécifique** : retournez dans le navigateur de fichiers et cliquez sur la vignette souhaitée
 
 #### Commandes de zoom
 
-Ajuster l'agrandissement pour inspecter les détails de l'image :
+Ajustez le grossissement pour inspecter les détails de l&#x27;image :
 
-**Zoom In:**
+**Zoom avant :**
 
-* Cliquez sur le bouton **+** (Plus)
+* Cliquez sur le bouton **+** (plus)
 * Appuyez sur la touche **+** ou **=**
-* Faire défiler la molette de la souris **vers le haut**
+* Faites défiler la molette de la souris **vers le haut**
 
-**Zoom arrière:**
+**Zoom arrière :**
 
-* Cliquez sur le bouton **-** (Moins)
-* Appuyer sur la touche **-** (Moins)
-* Faire défiler la molette de la souris **vers le bas**
+* Cliquez sur le bouton **−** (moins)
+* Appuyez sur la touche **−** (moins)
+* Faites défiler la molette de la souris **vers le bas**
 
-**Adaptation à l'écran:**
+**Ajuster à l&#x27;écran :**
 
 * Cliquez sur le bouton **↔** (Ajuster)
 * Appuyez sur la touche **0** (Zéro)
-* Double-cliquez sur l'image
+* Double-cliquez sur l&#x27;image
 
-#### Panoramique en cas de zoom
+#### Panoramique lors du zoom
 
-Lorsque l'image est agrandie au-delà de la taille de l'écran :
+Lorsque vous zoomez au-delà de la taille de l&#x27;écran :
 
-1. Déplacer le curseur de la souris sur l'image
-2. Cliquer et **maintenir le bouton gauche de la souris**
-3. **Glisser** pour déplacer l'image
-4. Relâcher pour arrêter le panoramique
+1. Déplacez le curseur de la souris sur l&#x27;image
+2. Cliquez et **maintenez le bouton gauche de la souris enfoncé**
+3. **Faites glisser** pour déplacer l&#x27;image
+4. Relâchez pour arrêter le déplacement
 
-**Alternative** : Utilisez les touches fléchées pour effectuer un panoramique par petits incréments
+**Alternative** : utilisez les touches fléchées pour déplacer l&#x27;image par petits incréments
 
 ***
 
-## Inspection de la valeur du pixel
+## Inspection de la valeur des pixels
 
-### Visualisation des valeurs de pixels au niveau du curseur
+### Affichage des valeurs des pixels au niveau du curseur
 
-Lorsque vous déplacez le curseur de votre souris sur l'image, les valeurs des pixels s'affichent en temps réel :
+Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs des pixels s&#x27;affichent en temps réel :
 
-**L'emplacement de l'affichage de la valeur:**
+**Emplacement d&#x27;affichage des valeurs :**
 
-* **Nombre flottant et ligne rouge dans la légende du gradient de la LUT de l'index de droite
-* **En cas d'agrandissement, valeur flottante près du curseur et du pixel en surbrillance**
-* Affiche les valeurs pour le pixel **sous le curseur ou en surbrillance**
+* **Nombre flottant et ligne rouge dans la légende du gradient LUT de l&#x27;index droit**
+* **Lorsque vous zoomez davantage, valeur flottante près du curseur et pixel mis en surbrillance**
+* Affiche les valeurs des pixels **sous le curseur ou mis en surbrillance**
 * Se met à jour lorsque vous déplacez la souris
 
 ***
 
-## Types d'images que vous pouvez visualiser
+## Types d&#x27;images que vous pouvez afficher
 
-### Images originales (prétraitement)
+### Images originales (pré-traitement)
 
-**Images RAW + JPG de l'appareil photo:**
+**Images RAW + JPG provenant de l&#x27;appareil photo :**
 
-* Afficher les données RAW sous forme de prévisualisation
-* Afficher les valeurs originales non corrigées
-* Utile pour vérifier la qualité de l'image avant le traitement
+* Affiche les données RAW telles qu&#x27;elles sont prévisualisées
+* Affiche les valeurs originales non corrigées
+* Utile pour vérifier la qualité de l&#x27;image avant le traitement
 
 ### Images de réflectance calibrées
 
-**Après traitement:**
+**Après traitement :**
 
 * Vignette corrigée
 * Réflectance calibrée
-* Multi-bandes TIFF (Red, Green, NIR, etc.)
-* Données scientifiques prêtes à être analysées
+* Multibande TIFF (Red, Green, NIR, etc.)
+* Données scientifiques prêtes pour l&#x27;analyse
 
-### Index Images
+### Images d&#x27;index
 
-**NDVI, NDRE, GNDVI, etc. (fichiers \_NDVI.tif):**
+**NDVI, NDRE, GNDVI, etc. (fichiers \_NDVI.tif) :**
 
-* Images en niveaux de gris à une bande
-* Les valeurs des pixels représentent les résultats du calcul de l'indice
-* Plage typique de -1 à +1 pour les indices normalisés
-* Possibilité d'appliquer des LUT de couleur pour la visualisation
+* Images monochromes en niveaux de gris
+* Les valeurs de pixels représentent les résultats du calcul de l&#x27;indice
+* Plage généralement comprise entre -1 et +1 pour les indices normalisés
+* Possibilité d&#x27;appliquer des tables de conversion des couleurs (LUT) pour la visualisation
 
 ***
 
-## Application d'indices et de LUT
+## Application des indices et des LUT
 
-Appliquer des indices multispectraux et des tables de correspondance des couleurs :
+Appliquez des indices multispectraux et des tables de conversion des couleurs :
 
-1. Localiser **Index/LUT Sandbox** dans **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
-2. Sélectionner l'indice de végétation (NDVI, NDRE, etc.)
-3. Sélectionnez une formule multispectrale ou créez-en une personnalisée (Chloros+ uniquement)
-4. Appliquer le gradient de la LUT de couleur pour la visualisation
-5. Ajuster les plages de valeurs et les seuils
+1. Localisez **Index/LUT Sandbox** dans la <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> dans la barre latérale
+2. Sélectionnez l&#x27;indice de végétation (NDVI, NDRE, etc.)
+3. Sélectionnez une formule multispectrale ou créez votre propre formule personnalisée (Chloros+ uniquement)
+4. Appliquez un dégradé de table de correspondance des couleurs pour la visualisation
+5. Ajustez les plages de valeurs et les seuils
 
-Voir [Index/LUT Sandbox](index-lut-sandbox.md) pour des instructions détaillées.
+Consultez [Index/LUT Sandbox](index-lut-sandbox.md) pour obtenir des instructions détaillées.
 
 ***
 
@@ -146,102 +146,102 @@ Voir [Index/LUT Sandbox](index-lut-sandbox.md) pour des instructions détaillée
 
 ### Navigation
 
-* **→** (flèche droite) : Image suivante
-* **←** (flèche gauche) : Image précédente
-* **Home** : Première image de la liste
-* **Fin** : Dernière image de la liste
+* **→** (flèche droite) : image suivante
+* **←** (flèche gauche) : image précédente
+* **Accueil** : première image de la liste
+* **Fin** : dernière image de la liste
 
 ### Zoom
 
-* **+** ou **=** : Zoom avant
-* **-** : Zoom arrière
-* **0** (Zéro) : Ajuster à l'écran
-* **Molette de la souris** : Zoom avant/arrière
+* **+** ou **=** : zoom avant
+* **−** : zoom arrière
+* **0** (zéro) : ajustement à l&#x27;écran
+* **Molette de la souris** : zoom avant/arrière
 
-### Contrôles d'affichage
+### Commandes d&#x27;affichage
 
-* **P** : Basculer le mode pourcentage de pixels
-* **L** : Basculer le panneau des calques
-* **Esc** : Fermer le plein écran ou revenir au navigateur de fichiers
+* **P** : basculer en mode pourcentage de pixels
+* **L** : basculer le panneau des calques
+* **Esc** : fermer le mode plein écran ou revenir au navigateur de fichiers
 
 ### Autres
 
-* **Ctrl+S** : Enregistrer l'image actuelle
-* **F** : Mode plein écran (si disponible)
+* **Ctrl+S** : enregistrer l&#x27;image actuelle
+* **F** : mode plein écran (si disponible)
 
 ***
 
-### Vérification des calculs d'indices
+### Vérification des calculs d&#x27;indice
 
-Vérifier que les indices ont été calculés correctement :
+Vérifiez que les indices ont été calculés correctement :
 
-1. Ouvrir NDVI ou une autre image d'index
-2. Vérifier les zones de végétation :
-   * **NDVI**: Doit afficher 0,4-0,9 pour les plantes saines
-   * **NDRE**: Des valeurs plus élevées pour une croissance vigoureuse
-   * **GNDVI**: Similaire à NDVI mais sensible à la chlorophylle
-3. Vérifier la non-végétation :
-   * **Sol** : Sol** : proche de 0 ou légèrement négatif
-   * **Eau** : Valeurs négatives (-0,5 à 0)
+1. Ouvrez NDVI ou une autre image d&#x27;indice
+2. Vérifiez les zones de végétation :
+   * **NDVI** : doit afficher 0,4-0,9 pour les plantes saines
+   * **NDRE** : valeurs plus élevées pour une croissance vigoureuse
+   * **GNDVI** : similaire à NDVI mais sensible à la chlorophylle
+3. Vérifiez les zones non végétalisées :
+   * **Sol** : proche de 0 ou légèrement négatif
+   * **Eau** : valeurs négatives (-0,5 à 0)
 
 ***
 
-## Résolution des problèmes de visualisation
+## Dépannage des problèmes d&#x27;affichage
 
-### L'image ne s'ouvre pas
+### L&#x27;image ne s&#x27;ouvre pas
 
-**Causes possibles:**
+**Causes possibles :**
 
 * Fichier corrompu pendant le traitement
 * Format de fichier non pris en charge
-* Mémoire insuffisante pour une image de grande taille
+* Mémoire insuffisante pour une image volumineuse
 
-**Solutions:**
+**Solutions :**
 
-1. Essayer d'ouvrir l'image dans une visionneuse externe pour vérifier l'intégrité du fichier
-2. Vérifier que le format du fichier correspond au type attendu
-3. Fermer les autres applications pour libérer de la mémoire
-4. Essayer une image plus petite/différente
+1. Essayez d&#x27;ouvrir le fichier dans une visionneuse externe pour vérifier son intégrité.
+2. Vérifiez que le format du fichier correspond au type attendu.
+3. Fermez les autres applications pour libérer de la mémoire.
+4. Essayez une image plus petite/différente.
 
-### Affichage d'une image en noir ou blanc
+### Affichage d&#x27;une image en noir et blanc
 
-**Causes possibles:**
+**Causes possibles :**
 
-* Plage de valeurs en dehors de la capacité d'affichage
-* image flottante 32 bits avec des valeurs inhabituelles
-* Erreur de calcul de l'index
+* Plage de valeurs hors des capacités d&#x27;affichage.
+* Image flottante 32 bits avec des valeurs inhabituelles.
+* Erreur de calcul d&#x27;index.
 
-**Solutions:**
+**Solutions :**
 
-1. Vérifier les valeurs des pixels - si elles sont toutes très basses ou très hautes, ajuster la plage d'affichage
-2. Essayer d'ouvrir le fichier dans QGIS ou un logiciel similaire avec ajustement automatique de la plage d'affichage
-3. Vérifier le journal de débogage du traitement pour les erreurs
+1. Vérifiez les valeurs des pixels : si elles sont toutes très faibles ou très élevées, ajustez la plage d&#x27;affichage.
+2. Essayez d&#x27;ouvrir le fichier dans QGIS ou un logiciel similaire avec réglage automatique de la plage.
+3. Vérifiez le journal de débogage du traitement pour détecter d&#x27;éventuelles erreurs.
 
-### Les valeurs des pixels semblent erronées
+### Les valeurs des pixels semblent incorrectes
 
-**Causes possibles:**
+**Causes possibles :**
 
-* Visualisation d'une mauvaise image (originale ou traitée)
-* L'étalonnage n'a pas été appliqué correctement
-* Les données du capteur de lumière n'ont pas été incluses dans l'entrée
-* Le mode pourcentage n'a pas été basculé correctement
+* Affichage d&#x27;une image incorrecte (originale ou traitée)
+* Le calibrage n&#x27;a pas été appliqué correctement
+* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée
+* Le mode pourcentage a été activé de manière incorrecte
 
-**Solutions:**
+**Solutions :**
 
-1. Vérifiez que vous visualisez bien la sortie traitée (vérifiez le suffixe du nom de fichier)
-2. Vérifier l'état du bouton du mode pourcentage
-3. Comparer avec des images connues du même jeu de données
+1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier)
+2. Vérifiez l&#x27;état du bouton du mode pourcentage
+3. Comparez avec des images connues pour être correctes provenant du même ensemble de données
 
 ***
 
-## Prochaines étapes
+## Étapes suivantes
 
-Vous pouvez maintenant afficher les images en plein écran :
+Maintenant que vous pouvez afficher les images en plein écran :
 
-* [**Calques d'images**](image-layers.md) - Découvrez la visualisation multibande
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Appliquez des indices et des cartographies de couleurs personnalisés
-* [Formules d'indices multi-spectraux**](../project-settings/multispectral-index-formulas.md) - Comprendre les indices disponibles
+* [**Couches d&#x27;images**](image-layers.md) - En savoir plus sur la visualisation multibande
+* [**Sandbox Index/LUT**](index-lut-sandbox.md) - Appliquer des indices personnalisés et un mappage des couleurs
+* [**Formules d&#x27;index multispectral**](../project-settings/multispectral-index-formulas.md) - Comprendre les indices disponibles
 
-Pour le processus de traitement, voir :
+Pour le flux de travail de traitement, voir :
 
-* [**Traitement des images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Guide de traitement complet
+* [**Traitement des images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Guide complet de traitement

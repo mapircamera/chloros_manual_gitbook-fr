@@ -1,17 +1,13 @@
-# GUI : Projets
+# Interface graphique : Projets
 
-Chloros permet de créer des projets qui pourront être rouverts dans le futur.
+Chloros vous permet de créer des projets qui peuvent être rouverts ultérieurement.
 
 ## Nouveau projet
 
-<figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>Sélectionnez « Nouveau projet » dans le menu principal et entrez un nom unique pour votre projet.
 
-Sélectionnez "Nouveau projet" dans le menu principal et saisissez un nom unique pour votre projet.
+## Ouvrir un projet
 
-## Ouvrir le projet
+<figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>Sélectionnez « Ouvrir un projet » pour afficher la liste des projets existants dans le dossier Projet. Si aucun projet n&#x27;existe, le menu latéral secondaire ne s&#x27;ouvrira pas. Vous pouvez voir certains projets créés par l&#x27;interface graphique (t1, t2, t3) répertoriés dans la photo ci-dessus. Les projets DATE\_TIME ont été créés par CLI à l&#x27;aide du schéma de nommage par défaut des projets. Cliquez sur le nom d&#x27;un projet pour l&#x27;ouvrir.
 
-<figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>
-
-Sélectionnez "Ouvrir un projet" pour afficher la liste des projets existants dans le dossier de projet. Si aucun projet n'existe, le menu secondaire ne s'ouvrira pas. Vous pouvez voir certains projets créés par l'interface graphique (t1, t2, t3) dans la photo ci-dessus. Les projets DATE_TIME ont été créés par le CLI en utilisant le schéma de dénomination par défaut. Un clic sur n'importe quel nom de projet l'ouvrira.
-
-En cliquant sur le bouton "Ouvrir le dossier du projet", vous ouvrez l'explorateur de fichiers de votre ordinateur au niveau du chemin d'accès du projet. Vous pouvez modifier le chemin d'accès au projet dans [Project Settings] (project-settings/project-settings.md).
+Cliquez sur le bouton « Ouvrir le dossier du projet » pour ouvrir l&#x27;explorateur de fichiers de votre ordinateur à l&#x27;emplacement du projet. Vous pouvez modifier l&#x27;emplacement du projet dans les [Paramètres du projet](project-settings/project-settings.md).
