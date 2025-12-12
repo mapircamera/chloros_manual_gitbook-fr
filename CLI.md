@@ -1,6 +1,8 @@
 # CLI : Ligne de commande
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>Le **Chloros CLI** fournit un accès puissant par ligne de commande au moteur de traitement d&#x27;images Chloros, permettant l&#x27;automatisation, la création de scripts et le fonctionnement sans affichage pour vos flux de travail d&#x27;imagerie.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+
+Le **Chloros CLI** fournit un accès puissant par ligne de commande au moteur de traitement d&#x27;images Chloros, permettant l&#x27;automatisation, la création de scripts et le fonctionnement sans affichage pour vos flux de travail d&#x27;imagerie.
 
 ### Principales fonctionnalités
 
