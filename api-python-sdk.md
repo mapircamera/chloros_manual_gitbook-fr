@@ -2,7 +2,7 @@
 
 Le **Chloros Python SDK** fournit un accès programmatique au moteur de traitement d&#x27;images Chloros, permettant l&#x27;automatisation, la personnalisation des flux de travail et une intégration transparente avec vos applications Python et vos pipelines de recherche.
 
-### Caractéristiques principales
+### Principales fonctionnalités
 
 * 🐍 **Python natif** - API propre et pythonesque pour le traitement d&#x27;images
 * 🔧 **Accès complet à API** - Contrôle total du traitement Chloros
@@ -53,7 +53,7 @@ results = process_folder("C:\\DroneImages\\Flight001")
 
 ### Contrôle total
 
-Pour les workflows avancés :
+Pour les flux de travail avancés :
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -98,7 +98,7 @@ Avant d&#x27;installer SDK, assurez-vous que vous disposez des éléments suivan
 pip install chloros-sdk
 ```
 
-**Avec prise en charge du suivi de la progression :**
+**Avec prise en charge du suivi de progression :**
 
 ```bash
 pip install chloros-sdk[progress]
@@ -178,7 +178,7 @@ ChlorosLocal(
 | `auto_start_backend`      | bool | `True`                    | Démarrer automatiquement le backend si nécessaire |
 | `backend_exe`             | str  | `None` (détection automatique)      | Chemin d&#x27;accès à l&#x27;exécutable du backend            |
 | `timeout`                 | int  | `30`                      | Délai d&#x27;attente de la requête en secondes            |
-| `backend_startup_timeout` | int  | `60`                      | Délai d&#x27;attente pour le démarrage du backend (en secondes) |
+| `backend_startup_timeout` | int  | `60`                      | Délai d&#x27;attente pour le démarrage du backend (secondes) |
 
 **Exemples :**
 
@@ -211,7 +211,7 @@ Créer un nouveau projet Chloros.
 | `project_name` | str  | Oui      | Nom du projet                                     |
 | `camera`       | str  | Non       | Modèle de caméra (par exemple, « Survey3N\_RGN », « Survey3W\_OCN ») |
 
-**Renvoie :** `dict` - Réponse de création de projet
+**Retourne :** `dict` - Réponse de création de projet
 
 **Exemple :**
 
@@ -227,14 +227,14 @@ chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 
 #### `import_images(folder_path, recursive=False)`
 
-Importez des images à partir d&#x27;un dossier.
+Importe des images à partir d&#x27;un dossier.
 
 **Paramètres :**
 
 | Paramètre     | Type     | Obligatoire | Description                        |
 | ------------- | -------- | -------- | ---------------------------------- |
 | `folder_path` | str/Path | Oui      | Chemin d&#x27;accès au dossier contenant les images         |
-| `recursive`   | bool     | Non       | Rechercher dans les sous-dossiers (par défaut : Faux) |
+| `recursive`   | bool     | Non       | Rechercher dans les sous-dossiers (par défaut : False) |
 
 **Renvoie :** `dict` - Résultats de l&#x27;importation avec nombre de fichiers
 
@@ -252,7 +252,7 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 #### `configure(**settings)`
 
-Configurer les paramètres de traitement.
+Configure les paramètres de traitement.
 
 **Paramètres :**
 
@@ -261,7 +261,7 @@ Configurer les paramètres de traitement.
 | `debayer`                 | str  | « Haute qualité (plus rapide) » | Méthode de débayérisation                  |
 | `vignette_correction`     | bool | `True`                  | Activer la correction du vignettage      |
 | `reflectance_calibration` | bool | `True`                  | Activer l&#x27;étalonnage de la réflectance  |
-| `indices`                 | list | `None`                  | Indices de végétation à calculer |
+| `indices`                 | liste | `None`                  | Indices de végétation à calculer |
 | `export_format`           | str  | « TIFF (16 bits) »         | Format de sortie                   |
 | `ppk`                     | bool | `False`                 | Activer les corrections PPK          |
 | `custom_settings`         | dict | `None`                  | Paramètres personnalisés avancés        |
@@ -358,7 +358,7 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Obtenir les informations sur l&#x27;état du backend.
+Récupère les informations d&#x27;état du backend.
 
 **Renvoie :** `dict` - État du backend
 
@@ -388,16 +388,16 @@ chloros.shutdown_backend()
 
 #### `process_folder(folder_path, **options)`
 
-Fonction pratique en une ligne pour traiter un dossier.
+Fonction pratique d&#x27;une ligne pour traiter un dossier.
 
 **Paramètres :**
 
 | Paramètre                 | Type     | Par défaut         | Description                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Path | Obligatoire        | Chemin d&#x27;accès au dossier contenant les images     |
+| `folder_path`             | str/Chemin | Obligatoire        | Chemin vers le dossier contenant les images     |
 | `project_name`            | str      | Généré automatiquement  | Nom du projet                   |
 | `camera`                  | str      | `None`          | Modèle de caméra                |
-| `indices`                 | list     | `["NDVI"]`      | Indices à calculer           |
+| `indices`                 | liste     | `["NDVI"]`      | Indices à calculer           |
 | `vignette_correction`     | bool     | `True`          | Activer la correction du vignettage     |
 | `reflectance_calibration` | bool     | `True`          | Activer l&#x27;étalonnage de la réflectance |
 | `export_format`           | str      | « TIFF (16 bits) » | Format de sortie                  |
@@ -957,25 +957,25 @@ python -c "import sys; print(sys.path)"
 
 ### Délai d&#x27;attente de traitement
 
-**Problème :** Délai d&#x27;attente de traitement
+**Problème :** Le traitement expire
 
 **Solutions :**
 
-1. Augmenter le délai d&#x27;expiration :
+1. Augmentez le délai d&#x27;expiration :
 
 ```python
 chloros = ChlorosLocal(timeout=120)  # 2 minutes
 ```
 
-2. Traiter des lots plus petits
-3. Vérifier l&#x27;espace disque disponible
-4. Surveiller les ressources système
+2. Traitez des lots plus petits
+3. Vérifiez l&#x27;espace disque disponible
+4. Surveillez les ressources système
 
 ***
 
 ### Port déjà utilisé
 
-**Problème :** Port backend 5000 occupé
+**Problème :** Le port backend 5000 est occupé
 
 **Solutions :**
 
@@ -995,7 +995,7 @@ Get-NetTCPConnection -LocalPort 5000
 
 ## Conseils de performance
 
-### Optimisez la vitesse de traitement
+### Optimiser la vitesse de traitement
 
 1. **Utilisez le mode parallèle** (nécessite Chloros+)
 
@@ -1022,7 +1022,7 @@ chloros.configure(indices=["NDVI"])  # Not all indices
 
 ### Optimisation de la mémoire
 
-Pour les ensembles de données volumineux :
+Pour les grands ensembles de données :
 
 ```python
 # Process in batches instead of all at once
@@ -1139,7 +1139,7 @@ chloros.process(progress_callback=notebook_progress)
 
 ### Q : Quelle est la différence entre Desktop, CLI et SDK ?
 
-| Fonctionnalité         | Interface graphique Desktop | CLI Ligne de commande | Python SDK  |
+| Fonctionnalité         | Interface graphique Desktop | Ligne de commande CLI | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
 | **Interface**   | Point-clic | Commande          | Python API  |
 | **Idéal pour**    | Travail visuel | Scripting        | Intégration |
@@ -1153,8 +1153,8 @@ chloros.process(progress_callback=notebook_progress)
 
 **R :** Le code SDK peut être intégré à vos applications, mais :
 
-* Les utilisateurs finaux doivent avoir installé Chloros.
-* Les utilisateurs finaux doivent disposer de licences Chloros+ actives.
+* Les utilisateurs finaux doivent avoir installé Chloros
+* Les utilisateurs finaux doivent disposer de licences Chloros+ actives
 * La distribution commerciale nécessite une licence OEM.
 
 Contactez info@mapir.camera pour toute question relative aux licences OEM.

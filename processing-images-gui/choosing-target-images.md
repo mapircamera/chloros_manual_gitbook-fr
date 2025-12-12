@@ -46,7 +46,7 @@ Parcourez les images importées dans le navigateur de fichiers et identifiez cel
 Pour chaque image contenant une cible d&#x27;étalonnage :
 
 1. Localisez l&#x27;image dans le tableau du navigateur de fichiers.
-2. Recherchez la colonne **Cible** (colonne la plus à droite).
+2. Trouvez la colonne **Cible** (colonne la plus à droite).
 3. Cochez la case dans la colonne Cible pour cette image.
 4. Répétez l&#x27;opération pour toutes les images contenant des cibles.
 
@@ -55,12 +55,12 @@ Pour chaque image contenant une cible d&#x27;étalonnage :
 Avant le traitement, vérifiez :
 
 * [ ] Toutes les images avec des cibles d&#x27;étalonnage sont cochées.
-* [ ] Aucune image non cible n&#x27;est cochée par inadvertance.
+* [ ] Aucune image sans cible n&#x27;est cochée par erreur.
 * [ ] Les cibles sont clairement visibles dans les images cochées.
 
 ***
 
-## Meilleures pratiques pour les images cibles
+## Bonnes pratiques pour les images cibles
 
 ### Consignes de capture des cibles
 
@@ -139,8 +139,8 @@ Si Chloros ne détecte pas correctement vos cibles, réglez ces paramètres dans
 **Regroupement minimal des cibles :**
 
 * **Par défaut** : 60
-* **Augmentez-le** si les cibles sont divisées en plusieurs détections.
-* **Diminuez-le** si les cibles présentant des variations de couleur ne sont pas entièrement détectées.
+* **Augmentez** si les cibles sont divisées en plusieurs détections.
+* **Diminuez** si les cibles présentant des variations de couleur ne sont pas entièrement détectées.
 
 ***
 
@@ -150,8 +150,8 @@ Si Chloros ne détecte pas correctement vos cibles, réglez ces paramètres dans
 
 **Causes possibles :**
 
-* Images cibles non marquées dans le navigateur de fichiers
-* Cible trop petite dans le cadre (&lt; 30 % de l&#x27;image)
+* Images cibles non marquées dans le navigateur de fichiers.
+* Cible trop petite dans le cadre (&lt; 30 % de l&#x27;image).
 * Mauvais éclairage (ombres, reflets)
 * Paramètres de détection des cibles trop stricts
 
@@ -172,10 +172,10 @@ Si Chloros ne détecte pas correctement vos cibles, réglez ces paramètres dans
 
 **Solutions :**
 
-1. Marquez uniquement les images cibles réelles afin de limiter la portée de la détection.
-2. Augmentez la zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage.
-3. Augmentez la valeur minimale de regroupement des cibles.
-4. Assurez-vous que les images cibles ne montrent que la cible (encombrement minimal de l&#x27;arrière-plan).
+1. Ne marquer que les images cibles réelles afin de limiter la portée de la détection
+2. Augmenter la zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage
+3. Augmenter la valeur minimale de regroupement des cibles
+4. S&#x27;assurer que les images cibles ne montrent que la cible (encombrement minimal de l&#x27;arrière-plan)
 
 ***
 
@@ -215,7 +215,7 @@ Bien que cela ne soit pas recommandé pour les travaux scientifiques, vous pouve
 Une fois que vous avez marqué vos images cibles :
 
 1. **Vérifiez vos paramètres** - Voir [Ajuster les paramètres du projet](adjusting-project-settings.md)
-2. **Lancez le traitement** - Voir [Démarrer le traitement](starting-the-processing.md)
-3. **Surveillez la progression** - Voir [Surveiller le traitement](monitoring-the-processing.md)
+2. **Lancez le traitement** - Voir [Démarrage du traitement](starting-the-processing.md)
+3. **Suivez la progression** - Voir [Suivi du traitement](monitoring-the-processing.md)
 
 Pour plus d&#x27;informations sur les cibles d&#x27;étalonnage elles-mêmes, voir [Cibles d&#x27;étalonnage](../calibration-targets.md).

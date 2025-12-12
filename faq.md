@@ -59,7 +59,7 @@ Dans le tableau du navigateur de fichiers, présélectionnez les images cibles d
 
 <summary>Si je télécharge mes images sur <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> dois-je les traiter dans Chloros avant de les télécharger ?</summary>
 
-Si vous prévoyez de télécharger vos images sur notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant le téléchargement. Cloud effectuera le même traitement, voire plus.
+Si vous prévoyez de télécharger vos images sur notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant le téléchargement. Cloud effectuera tous les mêmes traitements et bien plus encore.
 
 </details>
 

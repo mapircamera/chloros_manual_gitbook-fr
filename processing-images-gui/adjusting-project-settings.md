@@ -39,8 +39,8 @@ Contrôle la manière dont Chloros identifie les cibles d&#x27;étalonnage dans 
 
 **Paramètres clés :**
 
-* **Zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage** : seuil de taille pour la détection des cibles (valeur par défaut : 25 pixels)
-* **Regroupement minimal des cibles** : seuil de similarité pour le regroupement des zones cibles (valeur par défaut : 60)
+* **Zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage** : seuil de taille pour la détection des cibles (par défaut : 25 pixels)
+* **Regroupement minimal des cibles** : seuil de similarité pour le regroupement des zones cibles (par défaut : 60)
 
 **Quand ajuster :**
 
@@ -57,7 +57,7 @@ Options principales de traitement et d&#x27;étalonnage des images.
 * **Correction du vignettage** : compense l&#x27;assombrissement de l&#x27;objectif sur les bords ✅ Recommandé
 * **Étalonnage de la réflectance** : normalise les valeurs à l&#x27;aide de cibles d&#x27;étalonnage ✅ Recommandé
 * **Méthode de débayérisation** : algorithme de conversion du format RAW en multispectral à 3 canaux
-* **Intervalle minimum de recalibrage** : temps entre l&#x27;utilisation des cibles de calibrage (0 = toutes utiliser)
+* **Intervalle minimum de recalibrage** : temps entre l&#x27;utilisation des cibles de calibrage (0 = utiliser toutes)
 
 **Paramètres avancés :**
 
@@ -74,7 +74,7 @@ Configurez les indices de végétation à calculer et à exporter.
 1. Cliquez sur le bouton **« Ajouter un indice »**
 2. Sélectionnez un indice dans le menu déroulant (NDVI, NDRE, GNDVI, etc.)
 3. Configurez les paramètres de visualisation (couleurs LUT, plages de valeurs)
-4. Ajoutez plusieurs indices selon vos besoins
+4. Ajoutez plusieurs indices si nécessaire
 
 **Indices populaires :**
 
@@ -87,7 +87,7 @@ Configurez les indices de végétation à calculer et à exporter.
 **Formules personnalisées (Chloros+ uniquement) :**
 
 * Créez des formules d&#x27;indice multispectral personnalisées
-* Utilisez des calculs mathématiques sur toutes les bandes d&#x27;image
+* Utilisez des calculs mathématiques avec toutes les bandes d&#x27;image
 * Enregistrez les formules personnalisées pour les réutiliser
 
 Pour connaître tous les indices et formules disponibles, consultez [Formules d&#x27;indice multispectral](../project-settings/multispectral-index-formulas.md).
@@ -107,7 +107,7 @@ Contrôle le format et la qualité du fichier de sortie.
 
 ## Enregistrement et chargement des paramètres
 
-### Enregistrer un modèle de projet
+### Enregistrer le modèle de projet
 
 Créez des modèles réutilisables pour des flux de travail cohérents :
 

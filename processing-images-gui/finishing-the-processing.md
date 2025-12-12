@@ -1,6 +1,6 @@
 # Fin du traitement
 
-Une fois que Chloros a terminé le traitement, il est temps d&#x27;examiner vos résultats, de vérifier la qualité du résultat et de préparer vos images traitées pour les utiliser dans votre flux de travail. Cette page vous guide à travers les dernières étapes et les actions suivantes.
+Une fois que Chloros a terminé le traitement, il est temps d&#x27;examiner vos résultats, de vérifier la qualité de la sortie et de préparer vos images traitées pour les utiliser dans votre flux de travail. Cette page vous guide à travers les dernières étapes et les actions suivantes.
 
 ## Indication de fin de traitement
 
@@ -24,7 +24,7 @@ Lorsque le traitement est terminé, plusieurs indicateurs s&#x27;affichent :
 
 ***
 
-## Vérification des images traitées
+## Examiner les images traitées
 
 ### Aperçu rapide dans l&#x27;explorateur de fichiers
 
@@ -43,7 +43,7 @@ Lorsque le traitement est terminé, plusieurs indicateurs s&#x27;affichent :
 * **IrfanView** - Visionneuse d&#x27;images rapide et légère (prend en charge TIFF)
 * **Adobe Photoshop** - Édition professionnelle (prise en charge de TIFF)
 * **GIMP** - Alternative gratuite à Photoshop
-* **Windows Photos** - Visualisation de base (peut ne pas prendre en charge TIFF 16 bits)
+* **Windows Photos** - Visualisation de base (peut ne pas prendre en charge le format 16 bits TIFF)
 
 ### Aperçu dans Chloros Image Viewer
 
@@ -92,10 +92,10 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 
 **Solutions :**
 
-1. Vérifiez le journal de débogage pour les messages d&#x27;erreur/de saut.
+1. Vérifiez le journal de débogage pour voir s&#x27;il contient des messages d&#x27;erreur ou de saut.
 2. Vérifiez que l&#x27;espace disque était suffisant.
-3. Comptez les fichiers : ils doivent correspondre à (nombre d&#x27;origine - nombre cible) × (indices + 1)
-4. Réimportez et retraitement les fichiers manquants.
+3. Comptez les fichiers : le nombre doit correspondre à (nombre d&#x27;origine - nombre cible) × (indices + 1)
+4. Réimportez et retraitement tous les fichiers manquants.
 
 ### Problème : bords sombres ou clairs (vignettage toujours visible)
 
@@ -159,7 +159,7 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
    * WebODM
 2. **Conservez les métadonnées EXIF** : assurez-vous que les données GPS sont conservées pour le géomarquage.
 3. **Flux de travail calibrés** : utilisez des images de réflectance pour une précision scientifique.
-4. **Traitez les mosaïques d&#x27;index** : Créez des orthomosaïques NDVI à partir d&#x27;images index individuelles
+4. **Traitez les mosaïques d&#x27;index** : Créez des orthomosaïques NDVI à partir d&#x27;images d&#x27;index individuelles
 5. **Exportez les GeoTIFF géoréférencés** : pour une utilisation dans des applications SIG
 
 ### Pour l&#x27;analyse SIG
@@ -170,16 +170,16 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 2. **Utiliser des images de réflectance 16 bits TIFF** pour l&#x27;analyse multibande
 3. **Utiliser des images d&#x27;index** (NDVI, NDRE) comme couches de végétation prêtes à l&#x27;emploi
 4. **Calculateur raster** : combiner les bandes pour une analyse personnalisée
-5. **Exporter** : créer des cartes de classification, détecter les changements, créer des cartes de santé de la végétation
+5. **Exportation** : créez des cartes de classification, détectez les changements, créez des cartes de santé de la végétation
 
 ### Pour l&#x27;analyse directe / la création de rapports
 
 **Workflow recommandé :**
 
-1. **Utiliser des images d&#x27;index avec des couleurs LUT** pour les rapports visuels
-2. **Extraire des statistiques** : moyenne NDVI par champ/parcelle
+1. **Utilisez des images d&#x27;index avec des couleurs LUT** pour les rapports visuels
+2. **Extrayez des statistiques** : moyenne NDVI par champ/parcelle
 3. **Séries chronologiques** : comparez les indices sur plusieurs sessions
-4. **Génération de rapports** : incluez des cartes, des statistiques et des visualisations
+4. **Générez des rapports** : incluez des cartes, des statistiques et des visualisations
 
 ***
 
@@ -199,7 +199,7 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 
 * **Sauvegarde immédiate** : disque dur externe
 * **Archivage à long terme** : stockage dans le cloud (Google Drive, Dropbox, etc.)
-* **Données critiques** : conserver 2 à 3 copies à différents emplacements
+* **Données critiques** : conservez 2 à 3 copies à différents emplacements
 
 ***
 
@@ -207,11 +207,11 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 
 ### Réutilisation des paramètres du projet
 
-Si vous devez traiter des ensembles de données similaires à l&#x27;avenir :
+Si vous traitez des ensembles de données similaires à l&#x27;avenir :
 
 1. **Enregistrez le modèle de projet** (si ce n&#x27;est déjà fait)
 2. **Créez un nouveau projet** à l&#x27;aide du modèle enregistré
-3. **Importez les nouvelles images**
+3. **Importez de nouvelles images**
 4. **Traitez** avec des paramètres identiques pour plus de cohérence
 
 ### Traitement par lots de plusieurs sessions
@@ -247,14 +247,14 @@ Si les résultats ne sont pas satisfaisants :
 1. Conservez les images originales (ne les supprimez jamais)
 2. Ouvrez le même projet dans Chloros
 3. Ajustez les paramètres dans le panneau Paramètres du projet
-4. Traitez à nouveau - les résultats remplaceront les résultats précédents
+4. Traitez à nouveau - les résultats écraseront les résultats précédents
 
 ### Traitement d&#x27;un sous-ensemble d&#x27;images
 
-Pour retraiter uniquement certaines images :
+Pour retraiter uniquement des images spécifiques :
 
 1. Créez un nouveau projet
-2. Importez uniquement les images qui doivent être retraitées
+2. Importez uniquement les images nécessitant un nouveau traitement
 3. Utilisez le même modèle de paramètres
 4. Traitez un ensemble de données plus petit
 

@@ -77,9 +77,9 @@ Lorsque le zoom dépasse la taille de l&#x27;écran :
 1. Déplacez le curseur de la souris sur l&#x27;image
 2. Cliquez et **maintenez le bouton gauche de la souris enfoncé**
 3. **Faites glisser** pour déplacer l&#x27;image
-4. Relâchez pour arrêter le panoramique
+4. Relâchez pour arrêter le déplacement
 
-**Alternative** : utilisez les touches fléchées pour effectuer un panoramique par petits incréments
+**Alternative** : utilisez les touches fléchées pour déplacer l&#x27;image par petits incréments
 
 ***
 
@@ -104,8 +104,8 @@ Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs des
 
 **Images RAW + JPG provenant de l&#x27;appareil photo :**
 
-* Affichage des données RAW telles qu&#x27;elles sont prévisualisées
-* Affichage des valeurs originales non corrigées
+* Affiche les données RAW telles qu&#x27;elles sont prévisualisées
+* Affiche les valeurs originales non corrigées
 * Utile pour vérifier la qualité de l&#x27;image avant le traitement
 
 ### Images de réflectance calibrées
@@ -121,7 +121,7 @@ Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs des
 
 **NDVI, NDRE, GNDVI, etc. (fichiers \_NDVI.tif) :**
 
-* Images monochromes à échelle de gris
+* Images monochromes en niveaux de gris
 * Les valeurs de pixels représentent les résultats du calcul de l&#x27;indice
 * Plage généralement comprise entre -1 et +1 pour les indices normalisés
 * Possibilité d&#x27;appliquer des tables de conversion des couleurs (LUT) pour la visualisation
@@ -213,7 +213,7 @@ Vérifiez que les indices ont été calculés correctement :
 
 **Solutions :**
 
-1. Vérifiez les valeurs des pixels : si elles sont toutes très faibles ou très élevées, ajustez la plage d&#x27;affichage.
+1. Vérifiez les valeurs des pixels. Si elles sont toutes très faibles ou très élevées, ajustez la plage d&#x27;affichage.
 2. Essayez d&#x27;ouvrir le fichier dans QGIS ou un logiciel similaire avec réglage automatique de la plage.
 3. Vérifiez le journal de débogage du traitement pour détecter d&#x27;éventuelles erreurs.
 
@@ -222,15 +222,15 @@ Vérifiez que les indices ont été calculés correctement :
 **Causes possibles :**
 
 * Affichage d&#x27;une image incorrecte (originale ou traitée)
-* Le calibrage n&#x27;a pas été appliqué correctement.
-* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée.
-* Le mode pourcentage a été activé de manière incorrecte.
+* Le calibrage n&#x27;a pas été appliqué correctement
+* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée
+* Le mode pourcentage a été activé de manière incorrecte
 
 **Solutions :**
 
-1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier).
-2. Vérifiez l&#x27;état du bouton du mode pourcentage.
-3. Comparez avec des images connues pour être correctes provenant du même ensemble de données.
+1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier)
+2. Vérifiez l&#x27;état du bouton du mode pourcentage
+3. Comparez avec des images connues pour être correctes provenant du même ensemble de données
 
 ***
 

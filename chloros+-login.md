@@ -6,7 +6,7 @@ Le menu latéral utilisateur <img src=".gitbook/assets/icon_user.JPG" alt="" dat
 
 Une fois connecté, les détails de votre compte s&#x27;affichent :
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Connexion
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## Connexion à CLI
 
 Connectez-vous avec vos identifiants Chloros+ pour activer le traitement CLI.
 

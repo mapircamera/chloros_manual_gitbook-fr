@@ -67,11 +67,11 @@ Une fois les images importées, elles apparaissent dans un tableau comportant le
 
 * Cochez cette case pour les images qui contiennent des cibles d&#x27;étalonnage
 * Accélère considérablement la détection des cibles pendant le traitement
-* Voir [Choisir les images cibles](choosing-target-images.md) pour plus de détails
+* Voir [Choix des images cibles](choosing-target-images.md) pour plus de détails
 
 ***
 
-## Gérer les fichiers dans votre projet
+## Gestion des fichiers dans votre projet
 
 ### Suppression de fichiers
 
@@ -84,8 +84,8 @@ Pour supprimer les images indésirables de votre projet :
 ### Tri et filtrage
 
 * **Trier par colonne** : cliquez sur n&#x27;importe quel en-tête de colonne pour trier les images
-* **Tri par horodatage** : utile pour organiser les séquences de capture chronologiques
-* **Filtre par modèle d&#x27;appareil photo** : regroupez les images par type d&#x27;appareil photo si vous utilisez plusieurs appareils
+* **Tri par horodatage** : utile pour organiser les séquences de capture par ordre chronologique.
+* **Filtre par modèle d&#x27;appareil photo** : regroupez les images par type d&#x27;appareil photo si vous utilisez plusieurs appareils.
 
 ***
 
@@ -95,8 +95,8 @@ Pour supprimer les images indésirables de votre projet :
 
 Cliquez sur n&#x27;importe quelle vignette d&#x27;image dans le navigateur de fichiers pour l&#x27;afficher dans la zone d&#x27;aperçu principale :
 
-1. L&#x27;image apparaît dans le panneau d&#x27;aperçu central
-2. Utilisez les commandes de zoom pour inspecter les détails de l&#x27;image
+1. L&#x27;image apparaît dans le panneau d&#x27;aperçu central.
+2. Utilisez les commandes de zoom pour inspecter les détails de l&#x27;image.
 3. Naviguez entre les images à l&#x27;aide des touches fléchées
 
 ### Navigation rapide
@@ -135,7 +135,7 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 
 ***
 
-## Meilleures pratiques
+## Bonnes pratiques
 
 ### Organisez-vous avant l&#x27;importation
 
@@ -165,7 +165,7 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 **Causes possibles :**
 
 * Format de fichier non pris en charge (uniquement RAW+JPG et JPG provenant d&#x27;appareils photo MAPIR)
-* Les images proviennent d&#x27;appareils photo non MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
+* Les images proviennent d&#x27;appareils photo autres que MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
 * Fichier corrompu ou transfert incomplet depuis la carte SD
 
 **Solution** : vérifiez la compatibilité du format de fichier et du modèle d&#x27;appareil photo.

@@ -8,7 +8,7 @@ De gauche à droite, l&#x27;en-tête supérieur contient :
 
 ### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> Menu principal
 
-À partir du menu principal, vous pouvez démarrer un nouveau projet, ouvrir un projet existant ou ouvrir le dossier du projet.
+Depuis le menu principal, vous pouvez démarrer un nouveau projet, ouvrir un projet existant ou ouvrir le dossier du projet.
 
 ### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Bouton Lecture/Démarrer
 
@@ -16,7 +16,7 @@ Lorsqu&#x27;il est activé, le bouton de démarrage du traitement lance le pipel
 
 ### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Barre de progression <img src=".gitbook/assets/image (5).png" alt="" data-size="line">Dans le mode gratuit Chloros, qui traite tous les fichiers de manière séquentielle, la barre de progression affiche 2 étapes : Détection de la cible et Traitement.
 
-Dans le mode payant Chloros+ sous licence, qui traite tous les fichiers simultanément, la barre de progression affiche 4 étapes : Détection, Analyse, Calibrage, Exportation. Si vous passez le curseur de votre souris sur la barre de progression Chloros+, un panneau déroulant avec quatre barres de progression s&#x27;affiche pour vous permettre de suivre la progression. Cliquez sur la barre de progression supérieure pour figer le panneau déroulant, puis cliquez à nouveau pour le débloquer.
+Dans le mode payant Chloros+ sous licence, qui traite tous les fichiers simultanément, la barre de progression affiche 4 étapes : Détection, Analyse, Calibrage, Exportation. Si vous passez le curseur de votre souris sur la barre de progression Chloros+, un panneau déroulant avec 4 barres de progression s&#x27;affiche pour vous permettre de suivre la progression. Cliquez sur la barre de progression supérieure pour figer le panneau déroulant, puis cliquez à nouveau pour le débloquer.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 

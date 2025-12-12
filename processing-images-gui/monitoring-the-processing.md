@@ -17,9 +17,9 @@ Pour les utilisateurs ne disposant pas d&#x27;une licence Chloros+ :
 
 **La barre de progression affiche :**
 
-* Le pourcentage d&#x27;achèvement global (0-100 %)
-* Le nom de l&#x27;étape en cours
-* Une visualisation simple sous forme de barre horizontale
+* Pourcentage d&#x27;achèvement global (0-100 %)
+* Nom de l&#x27;étape en cours
+* Visualisation simple sous forme de barre horizontale
 
 ### Barre de progression Chloros+
 
@@ -34,7 +34,7 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 
 **Fonctionnalités interactives :**
 
-* **Passez la souris sur** la barre de progression pour afficher le panneau à 4 étapes
+* **Passez la souris sur** la barre de progression pour afficher le panneau détaillé en 4 étapes
 * **Cliquez sur** la barre de progression pour figer/épingler le panneau détaillé
 * **Cliquez à nouveau** pour le débloquer et le masquer automatiquement lorsque vous quittez la souris
 * Chaque étape affiche la progression individuelle (0-100 %)
@@ -47,7 +47,7 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 
 **Ce qui se passe :**
 
-* Chloros analyse les images marquées avec la case à cocher Cible
+* Chloros scanne les images marquées avec la case à cocher Cible
 * Les algorithmes de vision par ordinateur identifient les 4 panneaux d&#x27;étalonnage
 * Les valeurs de réflectance sont extraites de chaque panneau
 * Les horodatages des cibles sont enregistrés pour une planification correcte de l&#x27;étalonnage
@@ -55,7 +55,7 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 **Durée :**
 
 * Avec cibles marquées : 10 à 60 secondes
-* Sans cibles marquées : 5 à 30 minutes ou plus (analyse toutes les images)
+* Sans cibles marquées : 5 à 30 minutes ou plus (scanne toutes les images)
 
 **Indicateur de progression :**
 
@@ -76,7 +76,7 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 * Lecture des métadonnées EXIF des images (horodatages, paramètres d&#x27;exposition)
 * Détermination de la stratégie d&#x27;étalonnage en fonction des horodatages des cibles
 * Organisation de la file d&#x27;attente de traitement des images
-* Préparation des travailleurs de traitement parallèle (Chloros+ uniquement)
+* Préparation des processus de traitement parallèle (Chloros+ uniquement)
 
 **Durée :** 5 à 30 secondes
 
@@ -179,7 +179,7 @@ Problèmes non critiques qui n&#x27;interrompent pas le traitement :
 [WARN] Low contrast in calibration panel - results may vary
 ```
 
-**Action :** Vérifiez les avertissements après le traitement, mais n&#x27;interrompez pas celui-ci.
+**Action :** examinez les avertissements après le traitement, mais n&#x27;interrompez pas celui-ci.
 
 #### Messages d&#x27;erreur (Red)
 
@@ -284,7 +284,7 @@ Lorsque l&#x27;accélération GPU est activée :
 
 ## Détection des problèmes pendant le traitement
 
-### Signes avant-coureurs
+### Signaux d&#x27;alerte
 
 **Progression bloquée (aucun changement pendant plus de 5 minutes) :**
 
@@ -300,15 +300,15 @@ Lorsque l&#x27;accélération GPU est activée :
 
 **Le système ne répond plus :**
 
-* Le mode parallèle Chloros+ utilise trop de ressources.
-* Envisagez de réduire le nombre de tâches simultanées ou de mettre à niveau le matériel.
-* Le mode libre est moins gourmand en ressources.
+* Chloros+ en mode parallèle utilise trop de ressources
+* Envisagez de réduire le nombre de tâches simultanées ou de mettre à niveau le matériel
+* Le mode libre est moins gourmand en ressources
 
 ### Quand arrêter le traitement
 
 Arrêtez le traitement si vous constatez :
 
-* ❌ Des erreurs « Disque plein » ou « Impossible d&#x27;écrire le fichier »
+* ❌ Erreurs « Disque plein » ou « Impossible d&#x27;écrire le fichier »
 * ❌ Erreurs répétées de corruption de fichiers image
 * ❌ Système complètement bloqué (ne répond pas)
 * ❌ Configuration incorrecte des paramètres

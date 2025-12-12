@@ -99,7 +99,7 @@ Débloquez des fonctionnalités avancées avec un abonnement Chloros+ :
 
 ### Dépannage
 
-**L&#x27;installation échoue avec le message d&#x27;erreur suivant :**
+**L&#x27;installation échoue et affiche le message d&#x27;erreur suivant :**
 
 * Assurez-vous que vous disposez des droits d&#x27;administrateur.
 * Désactivez temporairement votre logiciel antivirus.
@@ -110,7 +110,7 @@ Débloquez des fonctionnalités avancées avec un abonnement Chloros+ :
 * Essayez la version Chloros (navigateur)
 * Vérifiez que Windows 10/11 (64 bits) est installé
 * Mettez à jour les pilotes graphiques
-* Vérifiez les détails de l&#x27;erreur dans l&#x27;Observateur d&#x27;événements Windows
+* Vérifiez l&#x27;observateur d&#x27;événements Windows pour obtenir des détails sur l&#x27;erreur
 * Contactez le support technique avec les journaux d&#x27;erreurs
 
 **Problèmes d&#x27;activation de la licence :**
