@@ -1,10 +1,9 @@
 ---
-description: Frequently Asked Questions
+description: Foire aux questions
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
 ---
-
 # FAQ
 
 <details>
@@ -17,7 +16,7 @@ Non, Chloros ne prend en charge que le traitement des images provenant d&#x27;ap
 
 <details>
 
-<summary>Puis-je calibrer mes images pour la réflectance sans cible de calibrage ?</summary>
+<summary>Puis-je calibrer mes images pour la réflectance sans cible de calibration ?</summary>
 
 Non. Sans une image de la cible d&#x27;étalonnage capturée au moment où les images non ciblées sont capturées, vous ne pourrez pas relier les valeurs de pixels de l&#x27;image à un pourcentage de réflectance connu. Si vous n&#x27;incluez pas non plus le journal d&#x27;un capteur de lumière MAPIR, le spectre de la lumière ambiante ne sera pas mesuré et les résultats de réflectance ne seront pas précis.
 
@@ -59,7 +58,7 @@ Dans le tableau du navigateur de fichiers, présélectionnez les images cibles d
 
 <summary>Si je télécharge mes images sur <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> dois-je les traiter dans Chloros avant de les télécharger ?</summary>
 
-Si vous prévoyez de télécharger vos images sur notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant le téléchargement. Cloud effectuera tous les mêmes traitements et bien plus encore.
+Si vous prévoyez de télécharger vos images sur notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant le téléchargement. Cloud effectuera le même traitement, voire plus.
 
 </details>
 
