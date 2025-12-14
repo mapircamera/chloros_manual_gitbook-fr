@@ -55,12 +55,12 @@ Pour chaque image contenant une cible d&#x27;étalonnage :
 Avant le traitement, vérifiez :
 
 * [ ] Toutes les images avec des cibles d&#x27;étalonnage sont cochées.
-* [ ] Aucune image sans cible n&#x27;est cochée par erreur.
+* [ ] Aucune image non cible n&#x27;est cochée par erreur.
 * [ ] Les cibles sont clairement visibles dans les images cochées.
 
 ***
 
-## Bonnes pratiques pour les images cibles
+## Meilleures pratiques pour les images cibles
 
 ### Consignes de capture des cibles
 
@@ -108,7 +108,7 @@ Si vous utilisez deux caméras MAPIR simultanément (par exemple, Survey3W RGN +
 
 1. Capturez les images cibles avec **les deux caméras** en même temps.
 2. Utilisez la **même cible physique** pour les deux caméras.
-3. Marquez les images cibles pour **les deux types de caméras** dans le navigateur de fichiers.
+3. Marquez les images cibles pour les **deux types de caméras** dans le navigateur de fichiers.
 4. Chloros utilisera les cibles appropriées pour l&#x27;étalonnage de chaque caméra.
 
 ### Colonne Modèle de caméra
@@ -139,8 +139,8 @@ Si Chloros ne détecte pas correctement vos cibles, réglez ces paramètres dans
 **Regroupement minimal des cibles :**
 
 * **Par défaut** : 60
-* **Augmentez** si les cibles sont divisées en plusieurs détections.
-* **Diminuez** si les cibles présentant des variations de couleur ne sont pas entièrement détectées.
+* **Augmentez-le** si les cibles sont divisées en plusieurs détections.
+* **Diminuez-le** si les cibles présentant des variations de couleur ne sont pas entièrement détectées.
 
 ***
 
@@ -150,8 +150,8 @@ Si Chloros ne détecte pas correctement vos cibles, réglez ces paramètres dans
 
 **Causes possibles :**
 
-* Images cibles non marquées dans le navigateur de fichiers.
-* Cible trop petite dans le cadre (&lt; 30 % de l&#x27;image).
+* Images cibles non marquées dans le navigateur de fichiers
+* Cible trop petite dans le cadre (&lt; 30 % de l&#x27;image)
 * Mauvais éclairage (ombres, reflets)
 * Paramètres de détection des cibles trop stricts
 
@@ -189,7 +189,7 @@ Avant de commencer le traitement, vérifiez votre sélection d&#x27;images cible
 * [ ] Cibles clairement visibles dans l&#x27;aperçu lorsque vous cliquez dessus
 * [ ] Les 4 panneaux d&#x27;étalonnage sont visibles dans chaque image cible
 * [ ] Aucune ombre ni obstruction sur les cibles
-* [ ] Pour les appareils à double caméra : cibles marquées pour les deux types de caméra
+* [ ] Pour les appareils photo à double objectif : cibles marquées pour les deux types d&#x27;appareils photo
 
 ***
 

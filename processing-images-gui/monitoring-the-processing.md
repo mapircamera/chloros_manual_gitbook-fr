@@ -2,7 +2,7 @@
 
 Une fois le traitement lancé, Chloros offre plusieurs moyens de surveiller la progression, de vérifier les problèmes et de comprendre ce qui se passe avec votre ensemble de données. Cette page explique comment suivre votre traitement et interpréter les informations fournies par Chloros.
 
-## Présentation de la barre de progression
+## Aperçu de la barre de progression
 
 La barre de progression située dans l&#x27;en-tête supérieur affiche l&#x27;état du traitement en temps réel et le pourcentage d&#x27;achèvement.
 
@@ -47,7 +47,7 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 
 **Ce qui se passe :**
 
-* Chloros scanne les images marquées avec la case à cocher Cible
+* Chloros analyse les images marquées avec la case à cocher Cible
 * Les algorithmes de vision par ordinateur identifient les 4 panneaux d&#x27;étalonnage
 * Les valeurs de réflectance sont extraites de chaque panneau
 * Les horodatages des cibles sont enregistrés pour une planification correcte de l&#x27;étalonnage
@@ -55,19 +55,19 @@ Pour les utilisateurs disposant d&#x27;une licence Chloros+ :
 **Durée :**
 
 * Avec cibles marquées : 10 à 60 secondes
-* Sans cibles marquées : 5 à 30 minutes ou plus (scanne toutes les images)
+* Sans cibles marquées : 5 à 30 minutes ou plus (analyse toutes les images)
 
 **Indicateur de progression :**
 
 * Détection : 0 % → 100 %
-* Nombre d&#x27;images scannées
+* Nombre d&#x27;images analysées
 * Nombre de cibles trouvées
 
 **À surveiller :**
 
-* Le processus devrait être rapide si les cibles sont correctement marquées.
-* Si le processus prend trop de temps, il se peut que les cibles ne soient pas marquées.
-* Vérifiez le journal de débogage pour voir s&#x27;il contient des messages « Cible trouvée ».
+* Le processus devrait s&#x27;achever rapidement si les cibles sont correctement marquées.
+* Si le processus prend trop de temps, il est possible que les cibles ne soient pas marquées.
+* Vérifiez le journal de débogage pour voir si des messages « Cible trouvée » apparaissent.
 
 ### Étape 2 : Analyse
 
@@ -153,7 +153,7 @@ Le journal de débogage fournit des informations détaillées sur la progression
 
 1. Cliquez sur l&#x27;icône **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> dans la barre latérale gauche.
 2. Le panneau du journal s&#x27;ouvre et affiche les messages de traitement en temps réel.
-3. Défilement automatique pour afficher les derniers messages.
+3. Le défilement automatique affiche les derniers messages.
 
 ### Comprendre les messages du journal
 
@@ -179,7 +179,7 @@ Problèmes non critiques qui n&#x27;interrompent pas le traitement :
 [WARN] Low contrast in calibration panel - results may vary
 ```
 
-**Action :** examinez les avertissements après le traitement, mais n&#x27;interrompez pas celui-ci.
+**Action :** Vérifiez les avertissements après le traitement, mais n&#x27;interrompez pas celui-ci.
 
 #### Messages d&#x27;erreur (Red)
 
@@ -193,7 +193,7 @@ Problèmes critiques pouvant entraîner l&#x27;échec du traitement :
 
 **Action :** Arrêter le traitement, résoudre l&#x27;erreur, redémarrer.
 
-### Messages courants du journal
+### Messages de journal courants
 
 | Message                          | Signification                                | Action requise                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
@@ -288,27 +288,27 @@ Lorsque l&#x27;accélération GPU est activée :
 
 **Progression bloquée (aucun changement pendant plus de 5 minutes) :**
 
-* Vérifiez le journal de débogage pour détecter d&#x27;éventuelles erreurs.
-* Vérifiez l&#x27;espace disque disponible.
-* Vérifiez dans le Gestionnaire des tâches que Chloros est en cours d&#x27;exécution.
+* Vérifiez le journal de débogage pour détecter les erreurs
+* Vérifiez l&#x27;espace disque disponible
+* Vérifiez dans le Gestionnaire des tâches que Chloros est en cours d&#x27;exécution
 
 **Messages d&#x27;erreur fréquents :**
 
-* Arrêtez le traitement et examinez les erreurs.
-* Causes courantes : espace disque, fichiers corrompus, problèmes de mémoire.
-* Consultez la section Dépannage ci-dessous.
+* Arrêtez le traitement et examinez les erreurs
+* Causes courantes : espace disque, fichiers corrompus, problèmes de mémoire
+* Consultez la section Dépannage ci-dessous
 
 **Le système ne répond plus :**
 
-* Chloros+ en mode parallèle utilise trop de ressources
-* Envisagez de réduire le nombre de tâches simultanées ou de mettre à niveau le matériel
-* Le mode libre est moins gourmand en ressources
+* Le mode parallèle Chloros+ utilise trop de ressources.
+* Envisagez de réduire le nombre de tâches simultanées ou de mettre à niveau le matériel.
+* Le mode libre est moins gourmand en ressources.
 
 ### Quand arrêter le traitement
 
 Arrêtez le traitement si vous constatez :
 
-* ❌ Erreurs « Disque plein » ou « Impossible d&#x27;écrire le fichier »
+* ❌ Des erreurs « Disque plein » ou « Impossible d&#x27;écrire le fichier ».
 * ❌ Erreurs répétées de corruption de fichiers image
 * ❌ Système complètement bloqué (ne répond pas)
 * ❌ Configuration incorrecte des paramètres
@@ -356,7 +356,7 @@ Arrêtez le traitement si vous constatez :
 1. Recopier les images depuis la carte SD pour garantir leur intégrité.
 2. Tester la carte SD pour détecter d&#x27;éventuelles erreurs.
 3. Supprimer les fichiers corrompus du projet.
-4. Continuer le traitement des images restantes.
+4. Poursuivre le traitement des images restantes.
 
 ### Surchauffe / ralentissement du système
 

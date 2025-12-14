@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
-
 # Téléchargement
 
 Téléchargez la dernière version de Chloros pour Windows afin de commencer à utiliser le traitement d&#x27;images multispectrales.
@@ -72,7 +71,7 @@ pip install chloros-sdk
 
 ## Contenu
 
-L&#x27;installation de Chloros comprend :
+L&#x27;installation Chloros comprend :
 
 * ✅ **Chloros Desktop GUI** - Interface graphique complète
 * ✅ **Chloros (navigateur)** - Interface Web pour les systèmes moins performants
@@ -87,7 +86,7 @@ L&#x27;installation de Chloros comprend :
 Débloquez des fonctionnalités avancées avec un abonnement Chloros+ :
 
 * 🚀 **Traitement multithread** - Traitez les images en parallèle
-* ⚡ **Accélération GPU (CUDA)** - Tirez parti de la puissance du GPU NVIDIA
+* ⚡ **Accélération GPU (CUDA)** - Tirez parti de la puissance des GPU NVIDIA
 * 💻 **Accès CLI** - Automatisez avec des outils en ligne de commande
 * 🐍 **Python SDK** - Accès programmatique API
 * 📱 **Plusieurs appareils** - Utilisation sur 2 à 10 appareils ou plus (selon le forfait)
@@ -110,7 +109,7 @@ Débloquez des fonctionnalités avancées avec un abonnement Chloros+ :
 * Essayez la version Chloros (navigateur)
 * Vérifiez que Windows 10/11 (64 bits) est installé
 * Mettez à jour les pilotes graphiques
-* Vérifiez l&#x27;observateur d&#x27;événements Windows pour obtenir des détails sur l&#x27;erreur
+* Vérifiez le journal des événements Windows pour obtenir des détails sur l&#x27;erreur
 * Contactez le support technique avec les journaux d&#x27;erreurs
 
 **Problèmes d&#x27;activation de la licence :**
@@ -166,3 +165,5 @@ Toute utilisation, distribution ou modification non autorisée est interdite.
 **Version gratuite** : disponible pour un usage personnel et commercial avec des fonctionnalités limitées.
 
 **Chloros+** : licence par abonnement pour des fonctionnalités avancées et des déploiements commerciaux.
+
+<figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption></figcaption></figure>

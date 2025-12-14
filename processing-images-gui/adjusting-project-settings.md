@@ -39,12 +39,12 @@ Contrôle la manière dont Chloros identifie les cibles d&#x27;étalonnage dans 
 
 **Paramètres clés :**
 
-* **Zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage** : seuil de taille pour la détection des cibles (par défaut : 25 pixels)
-* **Regroupement minimal des cibles** : seuil de similarité pour le regroupement des zones cibles (par défaut : 60)
+* **Zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage** : seuil de taille pour la détection des cibles (valeur par défaut : 25 pixels)
+* **Regroupement minimal des cibles** : seuil de similarité pour le regroupement des zones cibles (valeur par défaut : 60)
 
 **Quand ajuster :**
 
-* Augmentez la zone d&#x27;échantillonnage si vous obtenez de fausses détections.
+* Augmentez la zone d&#x27;échantillonnage si vous obtenez des détections erronées.
 * Diminuez-la si les cibles ne sont pas détectées.
 * Ajustez le regroupement si les cibles sont divisées en plusieurs détections.
 
@@ -87,7 +87,7 @@ Configurez les indices de végétation à calculer et à exporter.
 **Formules personnalisées (Chloros+ uniquement) :**
 
 * Créez des formules d&#x27;indice multispectral personnalisées
-* Utilisez des calculs mathématiques avec toutes les bandes d&#x27;image
+* Utilisez des calculs mathématiques sur toutes les bandes d&#x27;image
 * Enregistrez les formules personnalisées pour les réutiliser
 
 Pour connaître tous les indices et formules disponibles, consultez [Formules d&#x27;indice multispectral](../project-settings/multispectral-index-formulas.md).
@@ -107,7 +107,7 @@ Contrôle le format et la qualité du fichier de sortie.
 
 ## Enregistrement et chargement des paramètres
 
-### Enregistrer le modèle de projet
+### Enregistrer un modèle de projet
 
 Créez des modèles réutilisables pour des flux de travail cohérents :
 
@@ -227,8 +227,8 @@ Avant de commencer le traitement, vérifiez les paramètres clés suivants :
 
 Une fois vos paramètres configurés :
 
-1. **Marquez les images cibles d&#x27;étalonnage** - Voir [Choisir les images cibles](choosing-target-images.md)
-2. **Lancez le traitement** - Voir [Lancer le traitement](starting-the-processing.md)
+1. **Marquez les images cibles d&#x27;étalonnage** - Voir [Choix des images cibles](choosing-target-images.md)
+2. **Lancez le traitement** - Voir [Lancement du traitement](starting-the-processing.md)
 3. **Surveillez la progression** - Voir [Surveiller le traitement](monitoring-the-processing.md)
 
 Pour plus de détails sur tous les paramètres disponibles, consultez la documentation de référence [Paramètres du projet](../project-settings/project-settings.md).

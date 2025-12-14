@@ -1,6 +1,6 @@
 # Fin du traitement
 
-Une fois que Chloros a terminé le traitement, il est temps d&#x27;examiner vos résultats, de vérifier la qualité de la sortie et de préparer vos images traitées pour les utiliser dans votre flux de travail. Cette page vous guide à travers les dernières étapes et les actions suivantes.
+Une fois que Chloros a terminé le traitement, il est temps d&#x27;examiner vos résultats, de vérifier la qualité du rendu et de préparer vos images traitées pour les utiliser dans votre flux de travail. Cette page vous guide à travers les dernières étapes et les actions suivantes.
 
 ## Indication de fin de traitement
 
@@ -60,7 +60,7 @@ Consultez [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) po
 
 ## Examen du journal de débogage
 
-### Vérifier les avertissements ou les erreurs
+### Vérification des avertissements ou des erreurs
 
 1. Ouvrez l&#x27;onglet **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> .
 2. Faites défiler les messages.
@@ -88,14 +88,14 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 * Les fichiers ne répondaient pas aux critères de traitement.
 * Images cibles uniquement (exclues de l&#x27;exportation).
 * Espace disque insuffisant pendant l&#x27;exportation.
-* Fichiers corrompus pendant le traitement.
+* Fichier corrompu pendant le traitement.
 
 **Solutions :**
 
 1. Vérifiez le journal de débogage pour voir s&#x27;il contient des messages d&#x27;erreur ou de saut.
 2. Vérifiez que l&#x27;espace disque était suffisant.
 3. Comptez les fichiers : le nombre doit correspondre à (nombre d&#x27;origine - nombre cible) × (indices + 1)
-4. Réimportez et retraitement tous les fichiers manquants.
+4. Réimportez et retraitement les fichiers manquants.
 
 ### Problème : bords sombres ou clairs (vignettage toujours visible)
 
@@ -170,14 +170,14 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 2. **Utiliser des images de réflectance 16 bits TIFF** pour l&#x27;analyse multibande
 3. **Utiliser des images d&#x27;index** (NDVI, NDRE) comme couches de végétation prêtes à l&#x27;emploi
 4. **Calculateur raster** : combiner les bandes pour une analyse personnalisée
-5. **Exportation** : créez des cartes de classification, détectez les changements, créez des cartes de santé de la végétation
+5. **Exporter** : créer des cartes de classification, détecter les changements, créer des cartes de santé de la végétation
 
 ### Pour l&#x27;analyse directe / la création de rapports
 
 **Workflow recommandé :**
 
-1. **Utilisez des images d&#x27;index avec des couleurs LUT** pour les rapports visuels
-2. **Extrayez des statistiques** : moyenne NDVI par champ/parcelle
+1. **Utiliser des images d&#x27;index avec des couleurs LUT** pour les rapports visuels
+2. **Extraire des statistiques** : moyenne NDVI par champ/parcelle
 3. **Séries chronologiques** : comparez les indices sur plusieurs sessions
 4. **Générez des rapports** : incluez des cartes, des statistiques et des visualisations
 
@@ -199,7 +199,7 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 
 * **Sauvegarde immédiate** : disque dur externe
 * **Archivage à long terme** : stockage dans le cloud (Google Drive, Dropbox, etc.)
-* **Données critiques** : conservez 2 à 3 copies à différents emplacements
+* **Données critiques** : conserver 2 à 3 copies à différents emplacements
 
 ***
 
@@ -207,11 +207,11 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 
 ### Réutilisation des paramètres du projet
 
-Si vous traitez des ensembles de données similaires à l&#x27;avenir :
+Si vous devez traiter des ensembles de données similaires à l&#x27;avenir :
 
 1. **Enregistrez le modèle de projet** (si ce n&#x27;est déjà fait)
 2. **Créez un nouveau projet** à l&#x27;aide du modèle enregistré
-3. **Importez de nouvelles images**
+3. **Importez les nouvelles images**
 4. **Traitez** avec des paramètres identiques pour plus de cohérence
 
 ### Traitement par lots de plusieurs sessions
@@ -233,7 +233,7 @@ Pour plusieurs sessions/ensembles de données :
 **Option 3 : Python SDK (Chloros+ uniquement)**
 
 * Contrôle programmatique
-* Intégration avec des pipelines d&#x27;analyse
+* Intégration avec les pipelines d&#x27;analyse
 * Voir [Documentation API](../api-python-sdk.md)
 
 ***
@@ -274,10 +274,10 @@ Si vous rencontrez des problèmes :
 Vous avez maintenant terminé le flux de travail complet de traitement Chloros :
 
 1. ✅ **Projet créé** - Voir [Projets](../projects.md)
-2. ✅ **Fichiers ajoutés** - Voir [Ajouter des fichiers](adding-files-to-a-project.md)
-3. ✅ **Paramètres ajustés** - Voir [Ajuster les paramètres du projet](adjusting-project-settings.md)
-4. ✅ **Cibles marquées** - Voir [Choisir les images cibles](choosing-target-images.md)
-5. ✅ **Lancement du traitement** - Voir [Lancement du traitement](starting-the-processing.md)
+2. ✅ **Ajout de fichiers** - Voir [Ajouter des fichiers](adding-files-to-a-project.md)
+3. ✅ **Réglage des paramètres** - Voir [Régler les paramètres du projet](adjusting-project-settings.md)
+4. ✅ **Cibles marquées** - Voir [Choix des images cibles](choosing-target-images.md)
+5. ✅ **Traitement lancé** - Voir [Lancement du traitement](starting-the-processing.md)
 6. ✅ **Suivi de la progression** - Voir [Suivi du traitement](monitoring-the-processing.md)
 7. ✅ **Résultats examinés** - Cette page
 
@@ -291,7 +291,7 @@ Vous avez maintenant terminé le flux de travail complet de traitement Chloros :
 
 * [**Visionneuse d&#x27;images**](../image-viewer-gui/opening-an-image-full-screen.md) - Visualisation et analyse interactives
 * [**Sandbox d&#x27;index/LUT**](../image-viewer-gui/index-lut-sandbox.md) - Test d&#x27;index personnalisé
-* [**Formules d&#x27;index multispectral**](../project-settings/multispectral-index-formulas.md) - Référence complète des index
+* [**Formules d&#x27;indice multispectral**](../project-settings/multispectral-index-formulas.md) - Référence complète des indices
 
 ### Automatisation et intégration
 

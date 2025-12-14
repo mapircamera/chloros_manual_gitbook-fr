@@ -1,7 +1,6 @@
 ---
 metaLinks: {}
 ---
-
 # Pour commencer
 
 <div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
@@ -38,8 +37,8 @@ Bien que Chloros soit gratuit pour la plupart des tâches, vous souhaiterez peut
 * **Accélération GPU (CUDA)** : tirez parti des options de mémoire GPU plus élevées d&#x27;aujourd&#x27;hui pour accélérer encore davantage le pipeline de traitement d&#x27;images. Nous recommandons 4 Go ou plus de VRAM pour obtenir les meilleurs résultats.
 * **Chloros+** [**CLI**](CLI.md) **Accès** : exécutez Chloros+ à partir de la ligne de commande pour automatiser et intégrer le logiciel à votre propre logiciel.
 * **Chloros+** [**API**](api-python-sdk.md) **Accès :** exécutez Chloros+ à partir de Python pour un contrôle programmatique, permettant une intégration transparente avec vos pipelines de recherche, vos flux de travail d&#x27;analyse de données et vos applications personnalisées.
-* **Utilisation de plusieurs appareils** : chaque licence Chloros+ permet d&#x27;enregistrer plus de deux appareils. Utilisez votre compte MAPIR Cloud pour gérer les appareils enregistrés. Ajoutez la prise en charge d&#x27;autres appareils en mettant à niveau votre licence Chloros+.
-* **Formules d&#x27;indices multispectraux personnalisés :** saisissez des indices multispectraux personnalisés dans les calculateurs raster Chloros, à la fois pour le traitement et le bac à sable de visualisation d&#x27;images.
+* **Utilisation sur plusieurs appareils** : chaque licence Chloros+ permet d&#x27;enregistrer au moins deux appareils. Utilisez votre compte MAPIR Cloud pour gérer les appareils enregistrés. Ajoutez la prise en charge d&#x27;autres appareils en mettant à niveau votre licence Chloros+.
+* **Formules d&#x27;indices multispectraux personnalisées :** saisissez des indices multispectraux personnalisés dans les calculateurs raster Chloros, à la fois pour le traitement et le bac à sable de visualisation d&#x27;images.
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Tarifs et inscription</a></p>
 
