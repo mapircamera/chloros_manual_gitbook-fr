@@ -29,6 +29,8 @@
 
 ## VISUALISEUR D&#x27;IMAGES (GUI)
 
-* [Ouverture d&#x27;une image en plein écran](image-viewer-gui/opening-an-image-full-screen.md)
+* [Grille d&#x27;images](image-viewer-gui/image-grid.md)
+* [Ouvrir une image en plein écran](image-viewer-gui/opening-an-image-full-screen.md)
 * [Calques d&#x27;image](image-viewer-gui/image-layers.md)
 * [Sandbox d&#x27;index/LUT](image-viewer-gui/index-lut-sandbox.md)
+* [Marqueurs de carte](image-viewer-gui/map-markers.md)

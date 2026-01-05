@@ -22,40 +22,33 @@ Il existe deux méthodes principales pour ajouter des images à votre projet :
 
 Utilisez cette option pour importer des fichiers image individuels ou une petite sélection de fichiers.
 
-1. Cliquez sur le bouton **« Ajouter des fichiers »** en haut du panneau Navigateur de fichiers.
-2. Accédez au dossier contenant vos images.
-3. Sélectionnez un ou plusieurs fichiers image (maintenez la touche **Ctrl** enfoncée pour sélectionner plusieurs fichiers).
-4. Cliquez sur **« Ouvrir »** pour importer les fichiers sélectionnés.
+1. Cliquez sur le bouton **« Ajouter des fichiers »** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> en haut du panneau Navigateur de fichiers
+2. Accédez au dossier contenant vos images
+3. Sélectionnez un ou plusieurs fichiers image (maintenez la touche **Ctrl** enfoncée pour sélectionner plusieurs fichiers)
+4. Cliquez sur **« Ouvrir »** pour importer les fichiers sélectionnés
 
-### Méthode 2 : ajouter un dossier
+### Méthode 2 : Ajouter un dossier
 
 Utilisez cette option pour importer toutes les images d&#x27;un dossier en une seule fois.
 
-1. Cliquez sur le bouton **« Ajouter un dossier »** en haut du panneau Navigateur de fichiers.
+1. Cliquez sur le bouton **« Ajouter un dossier »** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> en haut du panneau du navigateur de fichiers.
 2. Accédez au dossier contenant les images de votre session de capture et sélectionnez-le.
-3. Cliquez sur **« Sélectionner le dossier »** pour importer toutes les images prises en charge à partir de ce dossier.
-
-***
+3. Cliquez sur **« Sélectionner le dossier »** pour importer toutes les images prises en charge à partir de ce dossier.***
 
 ## Comprendre le tableau du navigateur de fichiers
 
 Une fois les images importées, elles apparaissent dans un tableau comportant les colonnes suivantes :
 
-### Vignette
-
-* Petit aperçu de chaque image.
-* Cliquez sur la vignette pour afficher l&#x27;image en entier dans la zone d&#x27;aperçu principale.
-
 ### Nom du fichier
 
-* Nom de fichier d&#x27;origine provenant de l&#x27;appareil photo.
-* Conserve la convention de nommage de l&#x27;appareil photo (par exemple, IMG\_0001.RAW).
+* Nom de fichier d&#x27;origine provenant de l&#x27;appareil photo
+* Conserve la convention de nommage de l&#x27;appareil photo (par exemple, IMG\_0001.RAW)
 
 ### Horodatage
 
-* Date et heure de la capture de l&#x27;image.
-* Extrait des métadonnées EXIF de l&#x27;image.
-* Utilisé pour la synchronisation PPK et la détection des cibles d&#x27;étalonnage
+* Date et heure de capture de l&#x27;image
+* Extrait des métadonnées EXIF de l&#x27;image
+* Utilisé pour la synchronisation PPK et la détection de la cible d&#x27;étalonnage
 
 ### Modèle d&#x27;appareil photo
 
@@ -78,16 +71,14 @@ Une fois les images importées, elles apparaissent dans un tableau comportant le
 Pour supprimer les images indésirables de votre projet :
 
 1. Sélectionnez une ou plusieurs images dans le tableau du navigateur de fichiers
-2. Cliquez sur le bouton **« Supprimer la sélection »**
-3. Confirmez la suppression (les fichiers ne sont pas supprimés du disque, mais uniquement du projet)
+2. Cliquez sur le bouton **« Supprimer la sélection »** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> .
+3. Confirmez la suppression (les fichiers ne sont pas supprimés du disque, mais uniquement du projet).
 
-### Tri et filtrage
+### Trier et filtrer
 
-* **Trier par colonne** : cliquez sur n&#x27;importe quel en-tête de colonne pour trier les images
-* **Tri par horodatage** : utile pour organiser les séquences de capture par ordre chronologique.
-* **Filtre par modèle d&#x27;appareil photo** : regroupez les images par type d&#x27;appareil photo si vous utilisez plusieurs appareils.
-
-***
+* **Trier par colonne** : cliquez sur n&#x27;importe quel en-tête de colonne pour trier les images.
+* **Trier par horodatage** : utile pour organiser les séquences de capture par ordre chronologique.
+* **Filtre par modèle d&#x27;appareil photo** : regroupez les images par type d&#x27;appareil photo si vous utilisez plusieurs appareils.***
 
 ## Aperçu des images
 
@@ -97,16 +88,14 @@ Cliquez sur n&#x27;importe quelle vignette d&#x27;image dans le navigateur de fi
 
 1. L&#x27;image apparaît dans le panneau d&#x27;aperçu central.
 2. Utilisez les commandes de zoom pour inspecter les détails de l&#x27;image.
-3. Naviguez entre les images à l&#x27;aide des touches fléchées
+3. Naviguez entre les images à l&#x27;aide des touches fléchées.
 
 ### Navigation rapide
 
 * **Image précédente** : cliquez sur la flèche gauche ou appuyez sur la touche ←
 * **Image suivante** : cliquez sur la flèche droite ou appuyez sur la touche →
 * **Zoom avant/arrière** : utilisez la molette de la souris ou les boutons de zoom
-* **Panoramique** : cliquez et faites glisser sur l&#x27;image lorsque vous zoomez
-
-***
+* **Panoramique** : cliquez et faites glisser sur l&#x27;image lorsque vous zoomez***
 
 ## Gestion des fichiers en double
 
@@ -131,11 +120,9 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 3. Le navigateur de fichiers affiche le modèle de caméra dans la colonne Modèle de caméra.
 4. Le traitement applique les paramètres corrects pour chaque type de caméra.
 
-**Exemple de scénario** : configuration à deux caméras Survey3W RGN + Survey3N OCN.
+**Exemple de scénario** : configuration à deux caméras Survey3W RGN + Survey3N OCN.***
 
-***
-
-## Bonnes pratiques
+## Meilleures pratiques
 
 ### Organisez-vous avant l&#x27;importation
 
@@ -165,7 +152,7 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 **Causes possibles :**
 
 * Format de fichier non pris en charge (uniquement RAW+JPG et JPG provenant d&#x27;appareils photo MAPIR)
-* Les images proviennent d&#x27;appareils photo autres que MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
+* Les images proviennent d&#x27;appareils photo non MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
 * Fichier corrompu ou transfert incomplet depuis la carte SD
 
 **Solution** : vérifiez la compatibilité du format de fichier et du modèle d&#x27;appareil photo.
@@ -187,9 +174,7 @@ Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 * Horloge de l&#x27;appareil photo mal réglée
 * Données EXIF supprimées par un logiciel externe
 
-**Solution** : vérifiez que les paramètres de l&#x27;horloge de l&#x27;appareil photo étaient corrects lors de la capture.
-
-***
+**Solution** : vérifiez que les paramètres de l&#x27;horloge de l&#x27;appareil photo étaient corrects lors de la capture.***
 
 ## Étapes suivantes
 

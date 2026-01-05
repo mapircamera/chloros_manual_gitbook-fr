@@ -26,8 +26,8 @@ Avant de cliquer sur le bouton Démarrer, vérifiez que tout est prêt :
 Le bouton Démarrer/Lecture se trouve dans la barre d&#x27;en-tête supérieure de Chloros :
 
 * Position : en haut au centre de la fenêtre
-* Icône : **bouton Lecture/Démarrer** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
-* État : le bouton est activé (lumineux) lorsqu&#x27;il est prêt à traiter
+* Icône : **bouton Lecture/Démarrer** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
+* Statut : le bouton est activé (lumineux) lorsqu&#x27;il est prêt à traiter
 
 ### Cliquez pour démarrer
 
@@ -58,10 +58,8 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 
 **La barre de progression affiche 2 étapes :**
 
-1. **Détection de la cible** - Recherche des cibles d&#x27;étalonnage.
-2. **Traitement** - Application de l&#x27;étalonnage et exportation des images.
-
-**Durée du traitement :**
+1.**Détection de la cible** - Recherche des cibles d&#x27;étalonnage.
+2. **Traitement** - Application de l&#x27;étalonnage et exportation des images.**Durée du traitement :**
 
 * Beaucoup plus lent que le mode parallèle Chloros+
 * Convient aux ensembles de données de petite à moyenne taille (&lt; 200 images)
@@ -79,18 +77,12 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 
 **La barre de progression affiche 4 étapes :**
 
-1. **Détection** - Recherche des cibles d&#x27;étalonnage
+1.**Détection** - Recherche des cibles d&#x27;étalonnage
 2. **Analyse** - Examen des métadonnées de l&#x27;image et préparation du pipeline
 3. **Calibrage** - Application des corrections et des calibrages
-4. **Exportation** - Enregistrement des images et des indices traités
-
-**Interaction avec la barre de progression :**
-
-* **Passez la souris** sur la barre pour afficher le panneau déroulant détaillé en 4 étapes
+4. **Exportation** - Enregistrement des images et des index traités**Interaction avec la barre de progression :*** **Passez la souris** sur la barre pour afficher le panneau déroulant détaillé en 4 étapes
 * **Cliquez** sur la barre de progression pour figer le panneau déroulant
-* **Cliquez à nouveau** pour débloquer et masquer le panneau
-
-**Temps de traitement :**
+* **Cliquez à nouveau** pour débloquer et masquer le panneau**Temps de traitement :**
 
 * Nettement plus rapide que le mode libre
 * Évolutif en fonction du nombre de cœurs du processeur
@@ -127,9 +119,7 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 
 ### Étape 3 : Calibrage
 
-**Ce que fait Chloros :**
-
-* **Correction du vignettage** : supprime le noircissement des bords de l&#x27;objectif
+**Ce que fait Chloros :*** **Correction du vignettage** : supprime l&#x27;assombrissement des bords de l&#x27;objectif
 * **Calibrage de la réflectance** : normalise à l&#x27;aide des valeurs de réflectance cibles
 * Applique des corrections sur toutes les bandes/canaux
 * Utilise une cible de calibrage appropriée pour chaque image en fonction de l&#x27;horodatage
@@ -151,13 +141,11 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 **Ce que fait Chloros :**
 
 * Enregistre les images calibrées dans le format sélectionné
-* Exporte les images d&#x27;index avec les couleurs LUT configurées
+* Exporte les images d&#x27;indice avec les couleurs LUT configurées
 * Écrit les fichiers dans les sous-dossiers du modèle d&#x27;appareil photo
 * Conserve les noms de fichiers d&#x27;origine avec les suffixes
 
-**Durée :** varie en fonction du format d&#x27;exportation et de la taille du fichier
-
-***
+**Durée :** varie en fonction du format d&#x27;exportation et de la taille du fichier***
 
 ## Comportement du traitement
 
@@ -182,10 +170,10 @@ Une fois lancé, l&#x27;ensemble du pipeline s&#x27;exécute automatiquement :
 * Utilisation élevée du processeur (multithread, jusqu&#x27;à 16 cœurs)
 * Avec accélération GPU : utilisation élevée du GPU
 * L&#x27;ordinateur peut être moins réactif pendant le traitement
-* Évitez de lancer d&#x27;autres tâches gourmandes en ressources processeur
+* Évitez de lancer d&#x27;autres tâches gourmandes en CPU
 
 {% hint style=&quot;warning&quot; %}
-**Conseil de performance** : pour obtenir les meilleures performances de Chloros+, fermez les autres applications et laissez Chloros utiliser toutes les ressources du système.
+**Conseil de performance** : pour obtenir les meilleures performances Chloros+, fermez les autres applications et laissez Chloros utiliser toutes les ressources du système.
 {% endhint %}
 
 ### Le traitement ne peut pas être mis en pause
@@ -195,11 +183,9 @@ Une fois lancé, l&#x27;ensemble du pipeline s&#x27;exécute automatiquement :
 * Une fois lancé, le traitement ne peut pas être mis en pause.
 * Vous pouvez annuler le traitement, mais la progression sera perdue.
 * Les résultats partiels ne sont pas enregistrés.
-* En cas d&#x27;annulation, vous devrez recommencer depuis le début.
+* Si vous annulez, vous devrez recommencer depuis le début.
 
-**Conseil de planification :** pour les projets très volumineux, envisagez de traiter par lots ou d&#x27;utiliser CLI pour un meilleur contrôle.
-
-***
+**Conseil de planification :** pour les projets très volumineux, envisagez de traiter par lots ou d&#x27;utiliser CLI pour un meilleur contrôle.***
 
 ## Surveillance de votre traitement
 
@@ -247,7 +233,7 @@ Si vous devez arrêter le traitement :
 
 ***
 
-## Estimations du temps de traitement
+## Estimation du temps de traitement
 
 Le temps de traitement réel varie considérablement en fonction des éléments suivants :
 
@@ -307,7 +293,7 @@ Le temps de traitement réel varie considérablement en fonction des éléments 
 
 1. Vérifiez le journal de débogage <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> pour voir s&#x27;il y a des messages d&#x27;erreur
 2. Vérifiez l&#x27;espace disque disponible
-3. Essayez de traiter un sous-ensemble plus petit d&#x27;images
+3. Essayez de traiter un sous-ensemble d&#x27;images plus petit
 4. Vérifiez que les images ne sont pas corrompues
 
 ### Avertissement « Aucune cible détectée »
@@ -332,7 +318,7 @@ Le temps de traitement réel varie considérablement en fonction des éléments 
 ### Avant de commencer
 
 1. **Testez d&#x27;abord avec un petit sous-ensemble** - Traitez 10 à 20 images pour vérifier les paramètres.
-2. **Vérifiez l&#x27;espace disque disponible** - Assurez-vous de disposer d&#x27;un espace libre équivalent à 2 ou 3 fois la taille de l&#x27;ensemble de données.
+2. **Vérifiez l&#x27;espace disque disponible** - Assurez-vous de disposer de 2 à 3 fois la taille du jeu de données.
 3. **Fermez les applications inutiles** - Libérez des ressources système.
 4. **Vérifiez les images cibles** - Prévisualisez les cibles marquées pour vous assurer de leur qualité.
 5. **Enregistrez le projet** - Le projet est enregistré automatiquement, mais il est recommandé de l&#x27;enregistrer manuellement.
@@ -341,7 +327,7 @@ Le temps de traitement réel varie considérablement en fonction des éléments 
 
 1. **Évitez la mise en veille du système** - Désactivez les modes d&#x27;économie d&#x27;énergie.
 2. **Gardez Chloros au premier plan** - Ou au moins visible dans la barre des tâches.
-3. **Vérifiez régulièrement la progression** - Vérifiez s&#x27;il y a des avertissements ou des erreurs.
+3. **Vérifiez régulièrement la progression** - Vérifiez les avertissements ou les erreurs.
 4. **Ne chargez pas d&#x27;autres applications lourdes** - En particulier avec le mode parallèle Chloros+.
 
 ### Accélération GPU Chloros+
@@ -350,8 +336,8 @@ Si vous utilisez l&#x27;accélération GPU NVIDIA :
 
 1. Mettez à jour les pilotes NVIDIA vers la dernière version.
 2. Assurez-vous que le GPU dispose d&#x27;au moins 4 Go de VRAM.
-3. Fermez les applications gourmandes en ressources GPU (jeux, montage vidéo)
-4. Surveillez la température du GPU (assurez-vous qu&#x27;il est suffisamment refroidi)
+3. Fermez les applications gourmandes en ressources GPU (jeux, montage vidéo).
+4. Surveillez la température du GPU (assurez-vous qu&#x27;il est suffisamment refroidi).
 
 ***
 

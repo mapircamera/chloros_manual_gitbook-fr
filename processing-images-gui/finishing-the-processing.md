@@ -1,6 +1,6 @@
 # Fin du traitement
 
-Une fois que Chloros a terminé le traitement, il est temps d&#x27;examiner vos résultats, de vérifier la qualité du rendu et de préparer vos images traitées pour les utiliser dans votre flux de travail. Cette page vous guide à travers les dernières étapes et les actions suivantes.
+Une fois que Chloros a terminé le traitement, il est temps d&#x27;examiner vos résultats, de vérifier la qualité du résultat et de préparer vos images traitées pour les utiliser dans votre flux de travail. Cette page vous guide à travers les dernières étapes et les actions suivantes.
 
 ## Indication de fin de traitement
 
@@ -9,22 +9,21 @@ Lorsque le traitement est terminé, plusieurs indicateurs s&#x27;affichent :
 * ✅ **Barre de progression** : atteint 100 %
 * ✅ **Journal de débogage** : affiche le message « Traitement terminé »
 * ✅ **Bouton Démarrer** : redevient actif (prêt pour le prochain traitement)
-* ✅ **Fichiers de sortie** : toutes les images traitées sont enregistrées dans le sous-dossier du modèle d&#x27;appareil photo
-
-***
+* ✅ **Fichiers de sortie** : toutes les images traitées sont enregistrées dans le sous-dossier du modèle d&#x27;appareil photo***
 
 ## Localisation de vos images traitées
 
 ### Ouverture du dossier de sortie
 
-1. Cliquez sur l&#x27;icône **Menu principal** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (en haut à gauche)
+1. Cliquez sur l&#x27;icône **Menu principal** <img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> (en haut à gauche)
 2. Sélectionnez **« Ouvrir le dossier du projet »**
+
 3. Votre explorateur de fichiers s&#x27;ouvre sur le répertoire du projet
 4. Localisez votre projet par son nom
 
 ***
 
-## Examiner les images traitées
+## Vérification des images traitées
 
 ### Aperçu rapide dans l&#x27;explorateur de fichiers
 
@@ -37,9 +36,7 @@ Lorsque le traitement est terminé, plusieurs indicateurs s&#x27;affichent :
 
 ### Aperçu dans des visionneuses d&#x27;images externes
 
-**Visionneuses recommandées :**
-
-* **QGIS** - Logiciel SIG gratuit (idéal pour l&#x27;analyse multispectrale géoréférencée)
+**Visionneuses recommandées :*** **QGIS** - Logiciel SIG gratuit (idéal pour l&#x27;analyse multispectrale géoréférencée)
 * **IrfanView** - Visionneuse d&#x27;images rapide et légère (prend en charge TIFF)
 * **Adobe Photoshop** - Édition professionnelle (prise en charge de TIFF)
 * **GIMP** - Alternative gratuite à Photoshop
@@ -58,9 +55,9 @@ Consultez [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) po
 
 ***
 
-## Examen du journal de débogage
+## Vérification du journal de débogage
 
-### Vérification des avertissements ou des erreurs
+### Vérifier les avertissements ou les erreurs
 
 1. Ouvrez l&#x27;onglet **Journal de débogage** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> .
 2. Faites défiler les messages.
@@ -72,7 +69,7 @@ Consultez [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) po
 
 Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistance MAPIR :
 
-1. Cliquez sur le bouton **« Copier »** ou **« Télécharger »**.
+1. Cliquez sur le bouton **« Copier »**ou**« Télécharger »**.
 2. Enregistrez le fichier au format texte dans le dossier du projet.
 3. Joignez-le à la documentation du projet.
 4. Envoyez-le au support MAPIR si vous rencontrez des problèmes.
@@ -88,13 +85,13 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 * Les fichiers ne répondaient pas aux critères de traitement.
 * Images cibles uniquement (exclues de l&#x27;exportation).
 * Espace disque insuffisant pendant l&#x27;exportation.
-* Fichier corrompu pendant le traitement.
+* Fichiers corrompus pendant le traitement.
 
 **Solutions :**
 
-1. Vérifiez le journal de débogage pour voir s&#x27;il contient des messages d&#x27;erreur ou de saut.
+1. Vérifiez le journal de débogage pour les messages d&#x27;erreur/de saut.
 2. Vérifiez que l&#x27;espace disque était suffisant.
-3. Comptez les fichiers : le nombre doit correspondre à (nombre d&#x27;origine - nombre cible) × (indices + 1)
+3. Comptez les fichiers : ils doivent correspondre à (nombre d&#x27;origine - nombre cible) × (indices + 1)
 4. Réimportez et retraitement les fichiers manquants.
 
 ### Problème : bords sombres ou clairs (vignettage toujours visible)
@@ -129,19 +126,15 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 
 ### Problème : les valeurs NDVI semblent incorrectes
 
-**Plages NDVI attendues :**
-
-* **Eau, roches, sol** : -0,1 à 0,2
+**Plages NDVI attendues :*** **Eau, roches, sol** : -0,1 à 0,2
 * **Végétation clairsemée/en mauvaise santé** : 0,2 à 0,4
 * **Végétation modérée** : 0,4 à 0,6
-* **Végétation dense et en bonne santé** : 0,6 à 0,9
-
-**Si les valeurs sont en dehors de ces plages :**
+* **Végétation dense et en bonne santé** : 0,6 à 0,9**Si les valeurs sont en dehors de ces plages :**
 
 1. Vérifiez que l&#x27;étalonnage de la réflectance a été appliqué.
 2. Vérifiez que le journal du capteur de lumière a été inclus.
 3. Vérifiez que les cibles d&#x27;étalonnage ont été détectées.
-4. Assurez-vous que le modèle d&#x27;appareil photo correct a été détecté.
+4. Assurez-vous que le modèle de caméra correct a été détecté.
 5. Vérifiez le moment et les conditions de capture de l&#x27;image cible.
 
 ***
@@ -152,22 +145,23 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 
 **Workflow recommandé :**
 
-1. **Importez les images de réflectance calibrées** dans un logiciel de photogrammétrie :
+1.**Importez les images de réflectance calibrées** dans un logiciel de photogrammétrie :
    * Pix4Dmapper
    * Agisoft Metashape
    * DroneDeploy
    * WebODM
 2. **Conservez les métadonnées EXIF** : assurez-vous que les données GPS sont conservées pour le géomarquage.
 3. **Flux de travail calibrés** : utilisez des images de réflectance pour une précision scientifique.
-4. **Traitez les mosaïques d&#x27;index** : Créez des orthomosaïques NDVI à partir d&#x27;images d&#x27;index individuelles
+4. **Traitez les mosaïques d&#x27;index** : Créez des orthomosaïques NDVI à partir d&#x27;images index individuelles
 5. **Exportez les GeoTIFF géoréférencés** : pour une utilisation dans des applications SIG
 
 ### Pour l&#x27;analyse SIG
 
 **Workflow recommandé :**
 
-1. **Chargez dans QGIS, ArcGIS ou similaire**
-2. **Utiliser des images de réflectance 16 bits TIFF** pour l&#x27;analyse multibande
+1.**Chargez dans QGIS, ArcGIS ou similaire**
+
+2.**Utiliser des images de réflectance 16 bits TIFF** pour l&#x27;analyse multibande
 3. **Utiliser des images d&#x27;index** (NDVI, NDRE) comme couches de végétation prêtes à l&#x27;emploi
 4. **Calculateur raster** : combiner les bandes pour une analyse personnalisée
 5. **Exporter** : créer des cartes de classification, détecter les changements, créer des cartes de santé de la végétation
@@ -176,32 +170,22 @@ Pour conserver une trace du traitement ou pour l&#x27;envoyer à l&#x27;assistan
 
 **Workflow recommandé :**
 
-1. **Utiliser des images d&#x27;index avec des couleurs LUT** pour les rapports visuels
+1.**Utiliser des images d&#x27;index avec des couleurs LUT** pour les rapports visuels
 2. **Extraire des statistiques** : moyenne NDVI par champ/parcelle
 3. **Séries chronologiques** : comparez les indices sur plusieurs sessions
-4. **Générez des rapports** : incluez des cartes, des statistiques et des visualisations
-
-***
+4. **Génération de rapports** : incluez des cartes, des statistiques et des visualisations***
 
 ## Archivage et sauvegarde
 
 ### Stratégie de sauvegarde recommandée
 
-**À sauvegarder :**
-
-* ✅ **Images RAW/JPG originales** - Archivez-les sur un disque/cloud séparé
+**À sauvegarder :*** ✅ **Images RAW/JPG originales** - Archivez-les sur un disque/cloud séparé
 * ✅ **Résultats traités** - Conserver les images calibrées et les indices
 * ✅ **Fichier de projet** - Contient tous les paramètres pour un nouveau traitement si nécessaire
 * ✅ **Journal de débogage** - Documente les détails du traitement
-* ✅ **Images cibles de calibrage** - Pour vérification et nouveau traitement
-
-**Recommandations de stockage :**
-
-* **Sauvegarde immédiate** : disque dur externe
+* ✅ **Images cibles de calibrage** - Pour vérification et nouveau traitement**Recommandations de stockage :*** **Sauvegarde immédiate** : disque dur externe
 * **Archivage à long terme** : stockage dans le cloud (Google Drive, Dropbox, etc.)
-* **Données critiques** : conserver 2 à 3 copies à différents emplacements
-
-***
+* **Données critiques** : conserver 2 à 3 copies à différents emplacements***
 
 ## Prochains traitements
 
@@ -212,13 +196,12 @@ Si vous devez traiter des ensembles de données similaires à l&#x27;avenir :
 1. **Enregistrez le modèle de projet** (si ce n&#x27;est déjà fait)
 2. **Créez un nouveau projet** à l&#x27;aide du modèle enregistré
 3. **Importez les nouvelles images**
-4. **Traitez** avec des paramètres identiques pour plus de cohérence
+
+4.**Traitez**avec des paramètres identiques pour plus de cohérence
 
 ### Traitement par lots de plusieurs sessions
 
-Pour plusieurs sessions/ensembles de données :
-
-**Option 1 : GUI - Projets multiples**
+Pour plusieurs sessions/ensembles de données :**Option 1 : GUI - Projets multiples**
 
 * Créez un projet distinct pour chaque session.
 * Utilisez des paramètres de modèle cohérents.
@@ -233,7 +216,7 @@ Pour plusieurs sessions/ensembles de données :
 **Option 3 : Python SDK (Chloros+ uniquement)**
 
 * Contrôle programmatique
-* Intégration avec les pipelines d&#x27;analyse
+* Intégration avec des pipelines d&#x27;analyse
 * Voir [Documentation API](../api-python-sdk.md)
 
 ***
@@ -251,10 +234,10 @@ Si les résultats ne sont pas satisfaisants :
 
 ### Traitement d&#x27;un sous-ensemble d&#x27;images
 
-Pour retraiter uniquement des images spécifiques :
+Pour retraiter uniquement certaines images :
 
 1. Créez un nouveau projet
-2. Importez uniquement les images nécessitant un nouveau traitement
+2. Importez uniquement les images qui doivent être retraitées
 3. Utilisez le même modèle de paramètres
 4. Traitez un ensemble de données plus petit
 
@@ -265,23 +248,19 @@ Si vous rencontrez des problèmes :
 * 📧 **E-mail** : info@mapir.camera (inclure le journal de débogage)
 * 🌐 **Assistance** : [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ** : [Foire aux questions](../faq.md)
-* 📖 **Documentation** : [Manuel Chloros](../)
-
-***
+* 📖 **Documentation** : [Manuel Chloros](../)***
 
 ## Résumé : workflow complet
 
 Vous avez maintenant terminé le flux de travail complet de traitement Chloros :
 
 1. ✅ **Projet créé** - Voir [Projets](../projects.md)
-2. ✅ **Ajout de fichiers** - Voir [Ajouter des fichiers](adding-files-to-a-project.md)
-3. ✅ **Réglage des paramètres** - Voir [Régler les paramètres du projet](adjusting-project-settings.md)
-4. ✅ **Cibles marquées** - Voir [Choix des images cibles](choosing-target-images.md)
-5. ✅ **Traitement lancé** - Voir [Lancement du traitement](starting-the-processing.md)
+2. ✅ **Fichiers ajoutés** - Voir [Ajouter des fichiers](adding-files-to-a-project.md)
+3. ✅ **Paramètres ajustés** - Voir [Ajuster les paramètres du projet](adjusting-project-settings.md)
+4. ✅ **Cibles marquées** - Voir [Choisir les images cibles](choosing-target-images.md)
+5. ✅ **Lancement du traitement** - Voir [Lancement du traitement](starting-the-processing.md)
 6. ✅ **Suivi de la progression** - Voir [Suivi du traitement](monitoring-the-processing.md)
-7. ✅ **Résultats examinés** - Cette page
-
-**Vos images multispectrales calibrées et corrigées en termes de réflectance sont prêtes à être analysées !**
+7. ✅ **Résultats examinés** - Cette page**Vos images multispectrales calibrées et corrigées en termes de réflectance sont prêtes à être analysées !**
 
 ***
 
@@ -291,7 +270,7 @@ Vous avez maintenant terminé le flux de travail complet de traitement Chloros :
 
 * [**Visionneuse d&#x27;images**](../image-viewer-gui/opening-an-image-full-screen.md) - Visualisation et analyse interactives
 * [**Sandbox d&#x27;index/LUT**](../image-viewer-gui/index-lut-sandbox.md) - Test d&#x27;index personnalisé
-* [**Formules d&#x27;indice multispectral**](../project-settings/multispectral-index-formulas.md) - Référence complète des indices
+* [**Formules d&#x27;index multispectral**](../project-settings/multispectral-index-formulas.md) - Référence complète des index
 
 ### Automatisation et intégration
 
