@@ -88,7 +88,7 @@ L&#x27;onglet Carte prend en charge deux fournisseurs de tuiles pour les images 
 
 Vous pouvez choisir le type de couche cartographique (de gauche à droite) :
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terrain
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terrain
 
 Affiche les profils d&#x27;élévation et les tuiles cartographiques avec des détails (routes, etc.)
 
