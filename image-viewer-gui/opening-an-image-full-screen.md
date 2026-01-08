@@ -64,51 +64,47 @@ Ajustez le grossissement pour inspecter les détails de l&#x27;image :
 * Appuyez sur la touche **−** (moins)
 * Faites défiler la molette de la souris **vers le bas**
 
-**Ajuster à l&#x27;écran :**
-
-* Cliquez sur le bouton **↔** (Ajuster)
-* Appuyez sur la touche **0** (Zéro)
-* Double-cliquez sur l&#x27;image
-
 #### Panoramique lors du zoom
 
-Lorsque le zoom dépasse la taille de l&#x27;écran :
+Lorsque vous zoomez au-delà de la taille de l&#x27;écran :
 
-1. Déplacez le curseur de la souris sur l&#x27;image
-2. Cliquez et **maintenez le bouton gauche de la souris enfoncé**
-3. **Faites glisser** pour déplacer l&#x27;image
-4. Relâchez pour arrêter le déplacement
+1. Déplacez le curseur de la souris sur l&#x27;image.
+2. Cliquez et **maintenez le bouton gauche de la souris enfoncé**.
+3. **Faites glisser** pour déplacer l&#x27;image.
+4. Relâchez pour arrêter le panoramique.
 
-**Alternative** : utilisez les touches fléchées pour déplacer l&#x27;image par petits incréments
+**Alternative** : utilisez les touches fléchées pour effectuer un panoramique par petits incréments.
 
 ***
 
 ## Inspection de la valeur des pixels
 
-### Affichage des valeurs des pixels au niveau du curseur
+### Affichage des valeurs de pixels au niveau du curseur
 
-Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs des pixels s&#x27;affichent en temps réel :
+Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs de pixels s&#x27;affichent en temps réel :
 
 **Emplacement d&#x27;affichage des valeurs :**
 
 * **Nombre flottant et ligne rouge dans la légende du gradient LUT de l&#x27;index droit**
 * **Lorsque vous zoomez davantage, valeur flottante près du curseur et pixel mis en surbrillance**
 * Affiche les valeurs des pixels **sous le curseur ou mis en surbrillance**
-* Se met à jour lorsque vous déplacez la souris
+* Mise à jour lorsque vous déplacez la souris
 
 ***
 
 ## Types d&#x27;images que vous pouvez afficher
 
-### Images originales (pré-traitement)
+### JPG
 
-**Images RAW + JPG provenant de l&#x27;appareil photo :**
+**Images JPG provenant de l&#x27;appareil photo :**
 
-* Affiche les données RAW telles qu&#x27;elles sont prévisualisées
-* Affiche les valeurs originales non corrigées
+* Affichage des données JPG telles qu&#x27;elles ont été prévisualisées
+* Affichage des valeurs originales non corrigées
 * Utile pour vérifier la qualité de l&#x27;image avant le traitement
 
-### Images de réflectance calibrées
+### RAW (original)
+
+### RAW (réflectance)
 
 **Après traitement :**
 
@@ -117,11 +113,11 @@ Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs des
 * Multibande TIFF (Red, Green, NIR, etc.)
 * Données scientifiques prêtes pour l&#x27;analyse
 
-### Images d&#x27;index
+### RAW (Index)
 
 **NDVI, NDRE, GNDVI, etc. (fichiers \_NDVI.tif) :**
 
-* Images monochromes en niveaux de gris
+* Images monochromes à échelle de gris
 * Les valeurs de pixels représentent les résultats du calcul de l&#x27;indice
 * Plage généralement comprise entre -1 et +1 pour les indices normalisés
 * Possibilité d&#x27;appliquer des tables de conversion des couleurs (LUT) pour la visualisation
@@ -135,7 +131,7 @@ Appliquez des indices multispectraux et des tables de conversion des couleurs :
 1. Localisez **Index/LUT Sandbox** dans la <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> dans la barre latérale
 2. Sélectionnez l&#x27;indice de végétation (NDVI, NDRE, etc.)
 3. Sélectionnez une formule multispectrale ou créez votre propre formule personnalisée (Chloros+ uniquement)
-4. Appliquez un dégradé de table de correspondance des couleurs pour la visualisation
+4. Appliquez un dégradé de table de conversion des couleurs pour la visualisation
 5. Ajustez les plages de valeurs et les seuils
 
 Consultez [Index/LUT Sandbox](index-lut-sandbox.md) pour obtenir des instructions détaillées.
@@ -155,19 +151,7 @@ Consultez [Index/LUT Sandbox](index-lut-sandbox.md) pour obtenir des instruction
 
 * **+** ou **=** : zoom avant
 * **−** : zoom arrière
-* **0** (zéro) : ajustement à l&#x27;écran
 * **Molette de la souris** : zoom avant/arrière
-
-### Commandes d&#x27;affichage
-
-* **P** : basculer en mode pourcentage de pixels
-* **L** : basculer le panneau des calques
-* **Esc** : fermer le mode plein écran ou revenir au navigateur de fichiers
-
-### Autres
-
-* **Ctrl+S** : enregistrer l&#x27;image actuelle
-* **F** : mode plein écran (si disponible)
 
 ***
 
@@ -179,7 +163,7 @@ Vérifiez que les indices ont été calculés correctement :
 2. Vérifiez les zones de végétation :
    * **NDVI** : doit afficher 0,4-0,9 pour les plantes saines
    * **NDRE** : valeurs plus élevées pour une croissance vigoureuse
-   * **GNDVI** : similaire à NDVI mais sensible à la chlorophylle
+   * **GNDVI** : similaire à NDVI, mais sensible à la chlorophylle
 3. Vérifiez les zones non végétalisées :
    * **Sol** : proche de 0 ou légèrement négatif
    * **Eau** : valeurs négatives (-0,5 à 0)
@@ -213,7 +197,7 @@ Vérifiez que les indices ont été calculés correctement :
 
 **Solutions :**
 
-1. Vérifiez les valeurs des pixels. Si elles sont toutes très faibles ou très élevées, ajustez la plage d&#x27;affichage.
+1. Vérifiez les valeurs des pixels : si elles sont toutes très faibles ou très élevées, ajustez la plage d&#x27;affichage.
 2. Essayez d&#x27;ouvrir le fichier dans QGIS ou un logiciel similaire avec réglage automatique de la plage.
 3. Vérifiez le journal de débogage du traitement pour détecter d&#x27;éventuelles erreurs.
 
@@ -222,15 +206,15 @@ Vérifiez que les indices ont été calculés correctement :
 **Causes possibles :**
 
 * Affichage d&#x27;une image incorrecte (originale ou traitée)
-* Le calibrage n&#x27;a pas été appliqué correctement
-* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée
-* Le mode pourcentage a été activé de manière incorrecte
+* Le calibrage n&#x27;a pas été appliqué correctement.
+* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée.
+* Le mode pourcentage a été activé de manière incorrecte.
 
 **Solutions :**
 
-1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier)
-2. Vérifiez l&#x27;état du bouton du mode pourcentage
-3. Comparez avec des images connues pour être correctes provenant du même ensemble de données
+1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier).
+2. Vérifiez l&#x27;état du bouton du mode pourcentage.
+3. Comparez avec des images connues pour être correctes provenant du même ensemble de données.
 
 ***
 
