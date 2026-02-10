@@ -27,15 +27,13 @@ Utilisez cette option pour importer des fichiers image individuels ou une petite
 3. Sélectionnez un ou plusieurs fichiers image (maintenez la touche **Ctrl** enfoncée pour sélectionner plusieurs fichiers).
 4. Cliquez sur **« Ouvrir »** pour importer les fichiers sélectionnés.
 
-### Méthode 2 : Ajouter un dossier
+### Méthode 2 : ajouter un dossier
 
 Utilisez cette option pour importer toutes les images d&#x27;un dossier en une seule fois.
 
 1. Cliquez sur le bouton **« Ajouter un dossier »** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> en haut du panneau du navigateur de fichiers.
 2. Accédez au dossier contenant les images de votre session de capture et sélectionnez-le.
-3. Cliquez sur **« Sélectionner le dossier »** pour importer toutes les images prises en charge à partir de ce dossier.
-
-***
+3. Cliquez sur **« Sélectionner le dossier »** pour importer toutes les images prises en charge à partir de ce dossier.***
 
 ## Comprendre le tableau du navigateur de fichiers
 
@@ -43,14 +41,14 @@ Une fois les images importées, elles apparaissent dans un tableau comportant le
 
 ### Nom du fichier
 
-* Nom de fichier d&#x27;origine provenant de l&#x27;appareil photo.
-* Conserve la convention de nommage de l&#x27;appareil photo (par exemple, IMG\_0001.RAW).
+* Nom de fichier d&#x27;origine provenant de l&#x27;appareil photo
+* Respecte la convention de nommage de l&#x27;appareil photo (par exemple, IMG\_0001.RAW)
 
 ### Horodatage
 
-* Date et heure de la capture de l&#x27;image.
-* Extrait des métadonnées EXIF de l&#x27;image.
-* Utilisé pour la synchronisation PPK et la détection de la cible d&#x27;étalonnage.
+* Date et heure de capture de l&#x27;image
+* Extrait des métadonnées EXIF de l&#x27;image
+* Utilisé pour la synchronisation PPK et la détection de la cible d&#x27;étalonnage
 
 ### Modèle d&#x27;appareil photo
 
@@ -62,7 +60,7 @@ Une fois les images importées, elles apparaissent dans un tableau comportant le
 
 * Cochez cette case pour les images qui contiennent des cibles d&#x27;étalonnage
 * Accélère considérablement la détection des cibles pendant le traitement
-* Voir [Choix des images cibles](choosing-target-images.md) pour plus de détails
+* Voir [Choisir les images cibles](choosing-target-images.md) pour plus de détails
 
 ### Affichage des métadonnées de l&#x27;image
 
@@ -86,11 +84,9 @@ Pour supprimer les images indésirables de votre projet :
 
 * **Trier par colonne** : cliquez sur n&#x27;importe quel en-tête de colonne pour trier les images.
 * **Trier par horodatage** : utile pour organiser les séquences de capture par ordre chronologique.
-* **Filtre par modèle d&#x27;appareil photo** : regroupez les images par type d&#x27;appareil photo si vous utilisez plusieurs appareils.
+* **Filtre par modèle d&#x27;appareil photo** : regroupez les images par type d&#x27;appareil photo si vous utilisez plusieurs appareils.***
 
-***
-
-## Aperçu des images
+## Aperçu de l&#x27;image
 
 ### Affichage de l&#x27;image complète
 
@@ -105,16 +101,14 @@ Cliquez sur n&#x27;importe quelle vignette d&#x27;image dans le navigateur de fi
 * **Image précédente** : cliquez sur la flèche gauche ou appuyez sur la touche ←.
 * **Image suivante** : cliquez sur la flèche droite ou appuyez sur la touche →.
 * **Zoom avant/arrière** : utilisez la molette de la souris ou les boutons de zoom.
-* **Panoramique** : cliquez et faites glisser sur l&#x27;image lorsque vous zoomez.
-
-***
+* **Panoramique** : cliquez et faites glisser sur l&#x27;image lorsque vous zoomez.***
 
 ## Gestion des fichiers en double
 
 Chloros détecte et ignore automatiquement les fichiers en double :
 
 * Les fichiers portant des noms identiques sont ignorés
-* Évite le double traitement accidentel
+* Empêche le double traitement accidentel
 * Un message d&#x27;avertissement s&#x27;affiche lorsque des doublons sont détectés
 
 {% hint style="warning" %}
@@ -132,9 +126,7 @@ Si votre projet contient des images provenant de plusieurs appareils photo MAPIR
 3. Le navigateur de fichiers affiche le modèle de caméra dans la colonne Modèle de caméra
 4. Le traitement applique les paramètres corrects pour chaque type de caméra
 
-**Exemple de scénario** : Survey3W RGN + Survey3N OCN configuration à double caméra
-
-***
+**Exemple de scénario** : Survey3W RGN + Survey3N OCN configuration à double caméra***
 
 ## Bonnes pratiques
 
@@ -188,9 +180,7 @@ Si votre projet contient des images provenant de plusieurs appareils photo MAPIR
 * Horloge de l&#x27;appareil photo mal réglée
 * Données EXIF supprimées par un logiciel externe
 
-**Solution** : vérifiez que les paramètres horaires de l&#x27;appareil photo étaient corrects lors de la capture.
-
-***
+**Solution** : vérifiez que les paramètres horaires de l&#x27;appareil photo étaient corrects lors de la capture.***
 
 ## Étapes suivantes
 

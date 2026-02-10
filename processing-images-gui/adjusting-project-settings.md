@@ -1,6 +1,6 @@
 # Réglage des paramètres du projet
 
-Avant de traiter vos images, il est important de configurer les paramètres de votre projet en fonction des exigences de votre flux de travail. Le panneau Paramètres du projet <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> vous permettent de contrôler de manière exhaustive le calibrage, les options de traitement, les indices multispectraux et les formats d&#x27;exportation.
+Avant de traiter vos images, il est important de configurer les paramètres de votre projet en fonction des exigences de votre flux de travail. Le panneau Paramètres du projet <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> vous permettent de contrôler de manière exhaustive l&#x27;étalonnage, les options de traitement, les indices multispectraux et les formats d&#x27;exportation.
 
 ## Accéder aux paramètres du projet
 
@@ -8,7 +8,7 @@ Avant de traiter vos images, il est important de configurer les paramètres de v
 2. Cliquez sur l&#x27;icône **Paramètres du projet** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> dans la barre latérale gauche
 3. Le panneau Paramètres du projet affiche toutes les options de configuration
 
-{% hint style=&quot;info&quot; %}
+{% hint style="info" %}
 **Les paramètres sont enregistrés automatiquement** avec votre projet. Lorsque vous rouvrez un projet, tous les paramètres sont restaurés.
 {% endhint %}
 
@@ -18,14 +18,14 @@ Avant de traiter vos images, il est important de configurer les paramètres de v
 
 ### Paramètres par défaut (recommandés pour la plupart des utilisateurs)
 
-Pour les flux de travail typiques avec une caméra MAPIR Survey3, les paramètres par défaut fonctionnent bien :
+Pour les flux de travail typiques des caméras MAPIR Survey3, les paramètres par défaut fonctionnent bien :
 
 * ✅ **Correction du vignettage** : activée
 * ✅ **Calibrage de la réflectance** : activé (nécessite des images de cibles MAPIR)
-* ✅ **Méthode de débayérisation** : haute qualité (plus rapide)
+* ✅ **Méthode de débayérisation** : Standard (rapide, qualité moyenne)
 * ✅ **Format d&#x27;exportation** : TIFF (16 bits)
 
-Il vous suffit d&#x27;importer vos images et de lancer le traitement avec ces paramètres par défaut.
+Il suffit d&#x27;importer vos images et de lancer le traitement avec ces paramètres par défaut.
 
 ***
 
@@ -37,73 +37,68 @@ Le panneau Paramètres du projet est organisé en plusieurs catégories. Vous tr
 
 Contrôle la manière dont Chloros identifie les cibles d&#x27;étalonnage dans vos images.
 
-**Paramètres clés :**
+**Paramètres clés :*** **Zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage** : seuil de taille pour la détection des cibles (valeur par défaut : 25 pixels)
+* **Regroupement minimal des cibles** : seuil de similarité pour le regroupement des zones cibles (valeur par défaut : 60)**Quand ajuster :**
 
-* **Zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage** : seuil de taille pour la détection des cibles (valeur par défaut : 25 pixels)
-* **Regroupement minimal des cibles** : seuil de similarité pour le regroupement des zones cibles (valeur par défaut : 60)
-
-**Quand ajuster :**
-
-* Augmentez la zone d&#x27;échantillonnage si vous obtenez des détections erronées.
-* Diminuez-la si les cibles ne sont pas détectées.
-* Ajustez le regroupement si les cibles sont divisées en plusieurs détections.
+* Augmentez la zone d&#x27;échantillonnage si vous obtenez de fausses détections
+* Diminuez-la si les cibles ne sont pas détectées
+* Ajustez le regroupement si les cibles sont divisées en plusieurs détections
 
 ### Traitement
 
 Options principales de traitement et d&#x27;étalonnage des images.
 
-**Paramètres clés :**
-
-* **Correction du vignettage** : compense l&#x27;assombrissement de l&#x27;objectif sur les bords ✅ Recommandé
+**Paramètres clés :*** **Correction du vignettage** : compense l&#x27;assombrissement de l&#x27;objectif sur les bords ✅ Recommandé
 * **Étalonnage de la réflectance** : normalise les valeurs à l&#x27;aide de cibles d&#x27;étalonnage ✅ Recommandé
-* **Méthode de débayérisation** : algorithme de conversion du format RAW en multispectral à 3 canaux
-* **Intervalle minimum de recalibrage** : temps entre l&#x27;utilisation des cibles de calibrage (0 = utiliser toutes)
+* **Méthode Debayer** : algorithme de conversion RAW en multispectral 3 canaux
+* **Intervalle minimum de recalibrage** : temps entre l&#x27;utilisation des cibles de calibrage (0 = utiliser toutes)**Paramètres avancés :*** **Décalage horaire du capteur de lumière** : pour la synchronisation horaire PPK (par défaut : 0)
+* **Appliquer les corrections PPK** : utilise les données GPS/pin d&#x27;exposition des fichiers .daq
+* **Pin d&#x27;exposition 1/2** : attribue les caméras aux pins d&#x27;exposition pour les configurations à double caméra
 
-**Paramètres avancés :**
+### Méthode Debayer
 
-* **Décalage horaire du capteur de lumière** : pour la synchronisation horaire PPK (par défaut : 0)
-* **Appliquer les corrections PPK** : utilise les données GPS/exposition des fichiers .daq
-* **Broche d&#x27;exposition 1/2** : affecte les caméras aux broches d&#x27;exposition pour les configurations à deux caméras
+Nous proposons actuellement 2 méthodes de débayérisation dans Chloros :
 
-### Indice (indices multispectraux)
+#### Standard (rapide, qualité moyenne)
+
+Le débayérisation standard est rapide, mais génère un bruit de couleur, ce qui se traduit par des images moins précises et plus bruitées.
+
+#### Texture Aware (lent, qualité optimale) \[Chloros+ uniquement]
+
+Texture Aware utilise un débayérisation de haute qualité sensible aux contours, associé à un modèle de débruitage AI/ML qui élimine la quasi-totalité du bruit de débayérisation. Le modèle Texture Aware nécessite de la mémoire GPU (VRAM) pour fonctionner. Nous vous recommandons de l&#x27;utiliser lorsque vous disposez de plus de 4 Go de VRAM pour un traitement plus rapide.
+
+### Index (indices multispectraux)
 
 Configurez les indices de végétation à calculer et à exporter.
 
 **Comment ajouter des indices :**
 
-1. Cliquez sur le bouton **« Ajouter un indice »**
+1. Cliquez sur le bouton**« Ajouter un indice »**
+
 2. Sélectionnez un indice dans le menu déroulant (NDVI, NDRE, GNDVI, etc.)
 3. Configurez les paramètres de visualisation (couleurs LUT, plages de valeurs)
 4. Ajoutez plusieurs indices si nécessaire
 
-**Indices populaires :**
-
-* **NDVI** : santé générale de la végétation (le plus courant)
+**Indices populaires :*** **NDVI** : santé générale de la végétation (le plus courant)
 * **NDRE** : détection précoce du stress avec RedEdge
 * **GNDVI** : sensible à la concentration en chlorophylle
 * **OSAVI** : fonctionne bien avec les sols visibles
-* **EVI** : régions à indice de surface foliaire élevé (LAI)
-
-**Formules personnalisées (Chloros+ uniquement) :**
+* **EVI** : régions à indice de surface foliaire élevé (LAI)**Formules personnalisées (Chloros+ uniquement) :**
 
 * Créez des formules d&#x27;indice multispectral personnalisées
-* Utilisez des calculs mathématiques sur toutes les bandes d&#x27;image
+* Utilisez des calculs de bande avec tous les canaux d&#x27;image
 * Enregistrez les formules personnalisées pour les réutiliser
 
-Pour connaître tous les indices et formules disponibles, consultez [Formules d&#x27;indice multispectral](../project-settings/multispectral-index-formulas.md).
+Pour tous les indices et formules disponibles, consultez [Formules d&#x27;indice multispectral](../project-settings/multispectral-index-formulas.md).
 
 ### Exporter
 
 Contrôle le format et la qualité du fichier de sortie.
 
-**Formats disponibles :**
-
-* **TIFF (16 bits)** : recommandé pour les SIG et les analyses scientifiques (plage de 0 à 65 535)
+**Formats disponibles :*** **TIFF (16 bits)** : recommandé pour les SIG et les analyses scientifiques (plage de 0 à 65 535)
 * **TIFF (32 bits, pourcentage)** : valeurs de réflectance à virgule flottante (plage de 0,0 à 1,0)
 * **PNG (8 bits)** : compression sans perte pour la visualisation (plage 0-255)
-* **JPG (8 bits)** : fichiers les plus petits, compression avec perte (plage 0-255)
-
-***
+* **JPG (8 bits)** : fichiers les plus petits, compression avec perte (plage 0-255)***
 
 ## Enregistrement et chargement des paramètres
 
@@ -137,7 +132,7 @@ Le paramètre **« Enregistrer le dossier du projet »** spécifie l&#x27;emplac
 
 * **Emplacement par défaut** : `C:\Users\[Username]\Chloros Projects`
 * **Modifier l&#x27;emplacement** : cliquez sur l&#x27;icône Modifier et sélectionnez un nouveau dossier
-* **Quand modifier** :
+* **Quand changer** :
   * Lecteur réseau pour la collaboration en équipe
   * Lecteur différent avec plus d&#x27;espace de stockage
   * Structure de dossiers organisée par année/client
@@ -150,26 +145,23 @@ Si vous utilisez des enregistreurs DAQ MAPIR avec GPS pour une géolocalisation 
 
 ### Conditions préalables
 
-* DAQ MAPIR avec module GPS (GNSS)
-* Fichier journal .daq avec entrées de broches d&#x27;exposition
+* MAPIR DAQ avec module GPS (GNSS)
+* Fichier journal .daq avec entrées des broches d&#x27;exposition
 * Caméra connectée aux broches d&#x27;exposition DAQ pendant la session de capture
 
 ### Étapes de configuration
 
-1. Placez le fichier journal .daq dans votre dossier de projet.
-2. Dans les paramètres du projet, cochez la case **« Appliquer les corrections PPK »**.
-3. Définissez le **« décalage horaire du capteur de lumière »** si nécessaire (par défaut : 0 pour UTC).
+1. Placez le fichier journal .daq dans votre dossier de projet
+2. Dans les paramètres du projet, cochez la case **« Appliquer les corrections PPK »**
+
+3. Définissez le**« décalage horaire du capteur de lumière »** si nécessaire (par défaut : 0 pour UTC)
 4. Attribuez les caméras aux broches d&#x27;exposition :
-   * **Caméra unique** : Attribuée automatiquement à la broche 1
-   * **Deux caméras** : attribuez manuellement chaque caméra à la broche appropriée
-
-**Attribution des broches d&#x27;exposition :**
-
-* **Broche d&#x27;exposition 1** : sélectionnez le modèle de caméra dans le menu déroulant
+   * **Caméra unique** : attribuée automatiquement à la broche 1
+   * **Caméras doubles** : attribuez manuellement chaque caméra à la broche appropriée**Attribution des broches d&#x27;exposition :*** **Broche d&#x27;exposition 1** : sélectionnez le modèle de caméra dans le menu déroulant
 * **Broche d&#x27;exposition 2** : sélectionnez la deuxième caméra ou « Ne pas utiliser »
-* Une même caméra ne peut pas être attribuée aux deux broches
+* La même caméra ne peut pas être attribuée aux deux broches
 
-{% hint style=&quot;warning&quot; %}
+{% hint style="warning" %}
 **Important** : les broches d&#x27;exposition doivent être correctement attribuées à leurs caméras respectives. Une attribution incorrecte entraînera des données de géolocalisation erronées.
 {% endhint %}
 
@@ -183,12 +175,12 @@ Lors du traitement d&#x27;images provenant de plusieurs caméras MAPIR dans un m
 
 1. Chloros détecte automatiquement chaque modèle de caméra
 2. Chaque caméra obtient le profil de traitement approprié
-3. PPK : attribuez manuellement à chaque caméra la broche d&#x27;exposition correcte
+3. PPK : attribuez manuellement chaque caméra à la broche d&#x27;exposition correcte
 4. Toutes les caméras utilisent le même format d&#x27;exportation et les mêmes indices
 
 **Exemple** : Survey3W RGN + Survey3N OCN double caméra
 
-### Levés en accéléré ou sur plusieurs dates
+### Levés à intervalles réguliers ou sur plusieurs dates
 
 Pour les levés répétés d&#x27;une même zone au fil du temps :
 
@@ -227,8 +219,8 @@ Avant de commencer le traitement, vérifiez les paramètres clés suivants :
 
 Une fois vos paramètres configurés :
 
-1. **Marquez les images cibles d&#x27;étalonnage** - Voir [Choix des images cibles](choosing-target-images.md)
-2. **Lancez le traitement** - Voir [Lancement du traitement](starting-the-processing.md)
-3. **Surveillez la progression** - Voir [Surveiller le traitement](monitoring-the-processing.md)
+1. **Marquez les images cibles d&#x27;étalonnage** - Voir [Choisir les images cibles](choosing-target-images.md)
+2. **Lancez le traitement** - Voir [Lancer le traitement](starting-the-processing.md)
+3. **Surveillez la progression** - Voir [Surveillance du traitement](monitoring-the-processing.md)
 
 Pour plus de détails sur tous les paramètres disponibles, consultez la documentation de référence [Paramètres du projet](../project-settings/project-settings.md).

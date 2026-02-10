@@ -29,12 +29,10 @@ Une fois qu&#x27;une image est chargée dans la zone d&#x27;aperçu :
 
 La plus grande partie de l&#x27;écran affiche votre image :
 
-* **Résolution maximale** : images affichées à leur résolution native
+* **Pleine résolution** : images affichées à leur résolution native
 * **Zoomable** : utilisez les commandes ou la molette de la souris pour zoomer
 * **Déplaçable** : cliquez et faites glisser pour vous déplacer lorsque vous zoomez
-* **Rapport d&#x27;aspect conservé** : les images sont redimensionnées proportionnellement
-
-***
+* **Rapport d&#x27;aspect conservé** : les images sont redimensionnées proportionnellement***
 
 ## Options d&#x27;affichage
 
@@ -44,23 +42,18 @@ La plus grande partie de l&#x27;écran affiche votre image :
 
 Naviguez dans votre ensemble d&#x27;images à l&#x27;aide des raccourcis clavier ou des boutons :
 
-* **Image suivante** : cliquez sur le bouton → ou appuyez sur la touche **→** (flèche droite)
-* **Image précédente** : cliquez sur le bouton ← ou appuyez sur la touche **←** (flèche gauche)
+* **Image suivante**: cliquez sur le bouton → ou appuyez sur la touche**→** (flèche droite)
+* **Image précédente**: cliquez sur le bouton ← ou appuyez sur la touche**←** (flèche gauche)
 * **Aller à une image spécifique** : retournez dans le navigateur de fichiers et cliquez sur la vignette souhaitée
 
 #### Commandes de zoom
 
 Ajustez le grossissement pour inspecter les détails de l&#x27;image :
 
-**Zoom avant :**
+**Zoom avant :*** Cliquez sur le bouton **+** (plus)
+* Appuyez sur la touche **+**ou**=*** Faites défiler la molette de la souris **vers le haut**
 
-* Cliquez sur le bouton **+** (plus)
-* Appuyez sur la touche **+** ou **=**
-* Faites défiler la molette de la souris **vers le haut**
-
-**Zoom arrière :**
-
-* Cliquez sur le bouton **−** (moins)
+**Zoom arrière :*** Cliquez sur le bouton **−** (moins)
 * Appuyez sur la touche **−** (moins)
 * Faites défiler la molette de la souris **vers le bas**
 
@@ -73,22 +66,13 @@ Lorsque vous zoomez au-delà de la taille de l&#x27;écran :
 3. **Faites glisser** pour déplacer l&#x27;image.
 4. Relâchez pour arrêter le panoramique.
 
-**Alternative** : utilisez les touches fléchées pour effectuer un panoramique par petits incréments.
-
-***
+**Alternative** : utilisez les touches fléchées pour effectuer un panoramique par petits incréments.***
 
 ## Inspection de la valeur des pixels
 
 ### Affichage des valeurs de pixels au niveau du curseur
 
-Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs de pixels s&#x27;affichent en temps réel :
-
-**Emplacement d&#x27;affichage des valeurs :**
-
-* **Nombre flottant et ligne rouge dans la légende du gradient LUT de l&#x27;index droit**
-* **Lorsque vous zoomez davantage, valeur flottante près du curseur et pixel mis en surbrillance**
-* Affiche les valeurs des pixels **sous le curseur ou mis en surbrillance**
-* Mise à jour lorsque vous déplacez la souris
+Lorsque vous déplacez le curseur de la souris sur l&#x27;image, les valeurs de pixels s&#x27;affichent en temps réel :**Emplacement d&#x27;affichage des valeurs :*** **Nombre flottant et ligne rouge dans la légende du gradient LUT de l&#x27;index droit*** **Lorsque vous zoomez davantage, valeur flottante près du curseur et pixel mis en surbrillance*** Affiche les valeurs des pixels **sous le curseur ou mis en surbrillance*** Mise à jour lorsque vous déplacez la souris
 
 ***
 
@@ -149,11 +133,9 @@ Consultez [Index/LUT Sandbox](index-lut-sandbox.md) pour obtenir des instruction
 
 ### Zoom
 
-* **+** ou **=** : zoom avant
+* **+**ou**=** : zoom avant
 * **−** : zoom arrière
-* **Molette de la souris** : zoom avant/arrière
-
-***
+* **Molette de la souris** : zoom avant/arrière***
 
 ### Vérification des calculs d&#x27;indice
 
@@ -166,9 +148,7 @@ Vérifiez que les indices ont été calculés correctement :
    * **GNDVI** : similaire à NDVI, mais sensible à la chlorophylle
 3. Vérifiez les zones non végétalisées :
    * **Sol** : proche de 0 ou légèrement négatif
-   * **Eau** : valeurs négatives (-0,5 à 0)
-
-***
+   * **Eau** : valeurs négatives (-0,5 à 0)***
 
 ## Dépannage des problèmes d&#x27;affichage
 
@@ -206,15 +186,15 @@ Vérifiez que les indices ont été calculés correctement :
 **Causes possibles :**
 
 * Affichage d&#x27;une image incorrecte (originale ou traitée)
-* Le calibrage n&#x27;a pas été appliqué correctement.
-* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée.
-* Le mode pourcentage a été activé de manière incorrecte.
+* Le calibrage n&#x27;a pas été appliqué correctement
+* Les données du capteur de lumière n&#x27;ont pas été incluses dans l&#x27;entrée
+* Le mode pourcentage a été activé de manière incorrecte
 
 **Solutions :**
 
-1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier).
-2. Vérifiez l&#x27;état du bouton du mode pourcentage.
-3. Comparez avec des images connues pour être correctes provenant du même ensemble de données.
+1. Vérifiez que vous visualisez bien le résultat traité (vérifiez l&#x27;extension du nom de fichier)
+2. Vérifiez l&#x27;état du bouton du mode pourcentage
+3. Comparez avec des images connues pour être correctes provenant du même ensemble de données
 
 ***
 
