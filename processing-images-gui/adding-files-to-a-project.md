@@ -1,6 +1,6 @@
 # Ajouter des fichiers à un projet
 
-Une fois que vous avez créé ou ouvert un projet dans Chloros, l&#x27;étape suivante consiste à ajouter vos images multispectrales pour commencer le traitement. L&#x27;onglet Navigateur de fichiers<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> facilite l&#x27;importation d&#x27;images et la gestion de votre ensemble de données.
+Une fois que vous avez créé ou ouvert un projet dans Chloros, l&#x27;étape suivante consiste à ajouter vos images multispectrales pour commencer le traitement. L&#x27;onglet « File Browser »<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> facilite l&#x27;importation d&#x27;images et la gestion de votre ensemble de données.
 
 ## Accéder au navigateur de fichiers
 
@@ -9,7 +9,7 @@ Une fois que vous avez créé ou ouvert un projet dans Chloros, l&#x27;étape su
 3. Le panneau Navigateur de fichiers affiche la liste des fichiers de votre projet
 
 {% hint style="info" %}
-**Types de fichiers pris en charge** : Chloros prend en charge les fichiers image RAW+JPG et JPG provenant des appareils photo MAPIR Survey3W et Survey3N. Seuls les fichiers RAW+JPG sont recommandés.
+**Types de fichiers pris en charge** : Chloros prend en charge les fichiers image RAW+JPG et JPG provenant des appareils photo MAPIR, Survey3W et Survey3N. Seuls les fichiers RAW+JPG sont recommandés.
 {% endhint %}
 
 ***
@@ -22,18 +22,18 @@ Il existe deux méthodes principales pour ajouter des images à votre projet :
 
 Utilisez cette option pour importer des fichiers image individuels ou une petite sélection de fichiers.
 
-1. Cliquez sur le bouton **« Ajouter des fichiers »** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> en haut du panneau Navigateur de fichiers.
-2. Accédez au dossier contenant vos images.
-3. Sélectionnez un ou plusieurs fichiers image (maintenez la touche **Ctrl** enfoncée pour sélectionner plusieurs fichiers).
-4. Cliquez sur **« Ouvrir »** pour importer les fichiers sélectionnés.
+1. Cliquez sur le bouton **« Ajouter des fichiers »** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> situé en haut du panneau Navigateur de fichiers
+2. Accédez au dossier contenant vos images
+3. Sélectionnez un ou plusieurs fichiers image (maintenez la touche **Ctrl** enfoncée pour sélectionner plusieurs fichiers)
+4. Cliquez sur **« Ouvrir »** pour importer les fichiers sélectionnés
 
-### Méthode 2 : ajouter un dossier
+### Méthode 2 : Ajouter un dossier
 
 Utilisez cette option pour importer toutes les images d&#x27;un dossier en une seule fois.
 
-1. Cliquez sur le bouton **« Ajouter un dossier »** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> en haut du panneau du navigateur de fichiers.
-2. Accédez au dossier contenant les images de votre session de capture et sélectionnez-le.
-3. Cliquez sur **« Sélectionner le dossier »** pour importer toutes les images prises en charge à partir de ce dossier.***
+1. Cliquez sur le bouton **« Ajouter un dossier »** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> situé en haut du panneau Navigateur de fichiers
+2. Accédez au dossier contenant les images de votre session de capture et sélectionnez-le
+3. Cliquez sur **« Sélectionner le dossier »** pour importer toutes les images prises en charge à partir de ce dossier***
 
 ## Comprendre le tableau du navigateur de fichiers
 
@@ -48,23 +48,23 @@ Une fois les images importées, elles apparaissent dans un tableau comportant le
 
 * Date et heure de capture de l&#x27;image
 * Extrait des métadonnées EXIF de l&#x27;image
-* Utilisé pour la synchronisation PPK et la détection de la cible d&#x27;étalonnage
+* Utilisé pour la synchronisation PPK et la détection des cibles de calibrage
 
 ### Modèle d&#x27;appareil photo
 
 * Configuration de l&#x27;appareil photo et du filtre détectée automatiquement
 * Exemples : Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* Utilisé pour appliquer les profils de traitement corrects
+* Utilisé pour appliquer les profils de traitement appropriés
 
 ### Colonne Cible (case à cocher)
 
-* Cochez cette case pour les images qui contiennent des cibles d&#x27;étalonnage
+* Cochez cette case pour les images contenant des cibles d&#x27;étalonnage
 * Accélère considérablement la détection des cibles pendant le traitement
-* Voir [Choisir les images cibles](choosing-target-images.md) pour plus de détails
+* Voir [Choix des images cibles](choosing-target-images.md) pour plus de détails
 
 ### Affichage des métadonnées de l&#x27;image
 
-Cliquez sur le bouton bascule dans le coin supérieur droit au-dessus du tableau pour afficher les métadonnées de l&#x27;image sélectionnée dans la zone de la grille d&#x27;images.
+Cliquer sur le bouton bascule situé dans le coin supérieur droit au-dessus du tableau affiche les métadonnées de l&#x27;image sélectionnée dans la zone de la grille d&#x27;images.
 
 <figure><img src="../.gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
 
@@ -74,34 +74,34 @@ Cliquez sur le bouton bascule dans le coin supérieur droit au-dessus du tableau
 
 ### Suppression de fichiers
 
-Pour supprimer les images indésirables de votre projet :
+Pour supprimer des images indésirables de votre projet :
 
 1. Sélectionnez une ou plusieurs images dans le tableau du navigateur de fichiers
 2. Cliquez sur le bouton **« Supprimer la sélection »** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> .
-3. Confirmez la suppression (les fichiers ne sont pas supprimés du disque, mais uniquement du projet).
+3. Confirmez la suppression (les fichiers ne sont pas supprimés du disque, mais uniquement retirés du projet).
 
-### Trier et filtrer
+### Tri et filtrage
 
-* **Trier par colonne** : cliquez sur n&#x27;importe quel en-tête de colonne pour trier les images.
-* **Trier par horodatage** : utile pour organiser les séquences de capture par ordre chronologique.
+* **Tri par colonne** : cliquez sur l&#x27;en-tête d&#x27;une colonne pour trier les images.
+* **Tri par date et heure** : utile pour organiser les séquences de capture par ordre chronologique.
 * **Filtre par modèle d&#x27;appareil photo** : regroupez les images par type d&#x27;appareil photo si vous utilisez plusieurs appareils.***
 
-## Aperçu de l&#x27;image
+## Aperçu des images
 
-### Affichage de l&#x27;image complète
+### Affichage de l&#x27;image en entier
 
 Cliquez sur n&#x27;importe quelle vignette d&#x27;image dans le navigateur de fichiers pour l&#x27;afficher dans la zone d&#x27;aperçu principale :
 
-1. L&#x27;image apparaît dans le panneau d&#x27;aperçu central.
-2. Utilisez les commandes de zoom pour inspecter les détails de l&#x27;image.
-3. Naviguez entre les images à l&#x27;aide des touches fléchées.
+1. L&#x27;image apparaît dans le panneau d&#x27;aperçu central
+2. Utilisez les commandes de zoom pour examiner les détails de l&#x27;image
+3. Naviguez entre les images à l&#x27;aide des touches fléchées
 
 ### Navigation rapide
 
-* **Image précédente** : cliquez sur la flèche gauche ou appuyez sur la touche ←.
-* **Image suivante** : cliquez sur la flèche droite ou appuyez sur la touche →.
-* **Zoom avant/arrière** : utilisez la molette de la souris ou les boutons de zoom.
-* **Panoramique** : cliquez et faites glisser sur l&#x27;image lorsque vous zoomez.***
+* **Image précédente** : cliquez sur la flèche gauche ou appuyez sur la touche ←
+* **Image suivante** : cliquez sur la flèche droite ou appuyez sur la touche →
+* **Zoom avant/arrière** : utilisez la molette de la souris ou les boutons de zoom
+* **Panoramique** : cliquez et faites glisser sur l&#x27;image lorsque vous êtes en mode zoom avant***
 
 ## Gestion des fichiers en double
 
@@ -112,42 +112,42 @@ Chloros détecte et ignore automatiquement les fichiers en double :
 * Un message d&#x27;avertissement s&#x27;affiche lorsque des doublons sont détectés
 
 {% hint style="warning" %}
-**Important** : ne renommez pas et ne modifiez pas vos fichiers image originaux avant de les importer. Chloros s&#x27;appuie sur les noms de fichiers et les métadonnées d&#x27;origine pour un traitement correct.
+**Important** : ne renommez pas et ne modifiez pas vos fichiers image d&#x27;origine avant l&#x27;importation. Chloros s&#x27;appuie sur les noms de fichiers et les métadonnées d&#x27;origine pour un traitement correct.
 {% endhint %}
 
 ***
 
-## Ensembles de données provenant de plusieurs appareils photo
+## Ensembles de données provenant de plusieurs caméras
 
-Si votre projet contient des images provenant de plusieurs appareils photo MAPIR :
+Si votre projet contient des images provenant de plusieurs caméras MAPIR :
 
-1. Chloros détecte automatiquement chaque modèle d&#x27;appareil photo
-2. Chaque type d&#x27;appareil photo est traité avec son profil d&#x27;étalonnage approprié
-3. Le navigateur de fichiers affiche le modèle de caméra dans la colonne Modèle de caméra
+1. Chloros détecte automatiquement chaque modèle de caméra
+2. Chaque type de caméra est traité avec son profil d&#x27;étalonnage approprié
+3. Le navigateur de fichiers affiche le modèle de caméra dans la colonne « Modèle de caméra »
 4. Le traitement applique les paramètres corrects pour chaque type de caméra
 
-**Exemple de scénario** : Survey3W RGN + Survey3N OCN configuration à double caméra***
+**Exemple de scénario** : configuration à deux caméras Survey3W + RGN + Survey3N + OCN***
 
 ## Bonnes pratiques
 
-### Organisez-vous avant l&#x27;importation
+### Organisation avant l&#x27;importation
 
-* Conservez les images cibles d&#x27;étalonnage dans le même dossier que les images de levé.
-* Conservez la structure de dossiers d&#x27;origine de votre appareil photo/carte SD.
-* Ne mélangez pas les ensembles de données provenant de différentes sessions dans un même projet.
+* Conservez les images de cibles d&#x27;étalonnage dans le même dossier que les images de levé
+* Conservez la structure de dossiers d&#x27;origine de votre appareil photo/carte SD
+* Ne mélangez pas les ensembles de données provenant de sessions différentes dans un même projet
 
 ### Nommage des fichiers
 
-* Conservez les noms de fichiers d&#x27;origine de l&#x27;appareil photo (IMG\_0001.RAW, etc.).
-* Ne renommez pas les fichiers avant l&#x27;importation.
-* Les noms d&#x27;origine contiennent des métadonnées importantes.
+* Conservez les noms de fichiers d&#x27;origine de l&#x27;appareil photo (IMG\_0001.RAW, etc.)
+* Ne renommez pas les fichiers avant l&#x27;importation
+* Les noms d&#x27;origine contiennent des métadonnées importantes
 
-### Images cibles d&#x27;étalonnage
+### Images de cibles d&#x27;étalonnage
 
-* Incluez toujours 1 à 2 images cibles d&#x27;étalonnage par session.
-* Capturez les cibles avant et après la session de capture.
-* Placez les cibles dans les mêmes conditions d&#x27;éclairage que la zone de capture.
-* Marquez les images cibles à l&#x27;aide de la case à cocher Cible pour accélérer le traitement.
+* Incluez toujours 1 à 2 images de cibles d&#x27;étalonnage par session
+* Capturez les cibles avant et après la session de capture
+* Placez les cibles dans les mêmes conditions d&#x27;éclairage que la zone de capture
+* Marquez les images de cibles à l&#x27;aide de la case à cocher « Cible » pour accélérer le traitement
 
 ***
 
@@ -157,11 +157,11 @@ Si votre projet contient des images provenant de plusieurs appareils photo MAPIR
 
 **Causes possibles :**
 
-* Format de fichier non pris en charge (uniquement RAW+JPG et JPG des appareils photo MAPIR)
-* Les images proviennent d&#x27;appareils photo non MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
+* Format de fichier non pris en charge (uniquement RAW+JPG et JPG provenant d&#x27;appareils photo MAPIR)
+* Les images proviennent d&#x27;appareils photo autres que MAPIR (voir [Appareils photo pris en charge](../supported-cameras.md))
 * Fichier corrompu ou transfert incomplet depuis la carte SD
 
-**Solution** : vérifiez la compatibilité du format de fichier et du modèle d&#x27;appareil photo
+**Solution** : Vérifiez la compatibilité du format de fichier et du modèle d&#x27;appareil photo
 
 ### Modèle d&#x27;appareil photo non détecté
 
@@ -171,7 +171,7 @@ Si votre projet contient des images provenant de plusieurs appareils photo MAPIR
 * Images modifiées dans un logiciel externe
 * Transfert de fichiers incomplet
 
-**Solution** : réimportez les fichiers originaux non modifiés depuis l&#x27;appareil photo/la carte SD
+**Solution** : Réimportez les fichiers originaux non modifiés depuis l&#x27;appareil photo/la carte SD
 
 ### Horodatages manquants
 
@@ -180,16 +180,16 @@ Si votre projet contient des images provenant de plusieurs appareils photo MAPIR
 * Horloge de l&#x27;appareil photo mal réglée
 * Données EXIF supprimées par un logiciel externe
 
-**Solution** : vérifiez que les paramètres horaires de l&#x27;appareil photo étaient corrects lors de la capture.***
+**Solution** : Vérifiez que les paramètres d&#x27;heure de l&#x27;appareil photo étaient corrects lors de la capture***
 
 ## Étapes suivantes
 
 Une fois vos fichiers importés :
 
-1. **Vérifiez la liste des fichiers** - Assurez-vous que toutes les images ont été chargées correctement.
-2. **Vérifiez les modèles d&#x27;appareil photo** - Vérifiez que l&#x27;appareil photo a été correctement détecté
+1. **Vérifiez la liste des fichiers** - Assurez-vous que toutes les images ont été chargées correctement
+2. **Vérifiez les modèles d&#x27;appareils photo** - Vérifiez que la détection des appareils photo est correcte
 3. **Marquez les images cibles** - Voir [Choisir les images cibles](choosing-target-images.md)
 4. **Ajustez les paramètres** - Configurez les options de traitement dans [Paramètres du projet](adjusting-project-settings.md)
-5. **Lancez le traitement** - Voir [Lancer le traitement](starting-the-processing.md)
+5. **Lancez le traitement** - Voir [Lancement du traitement](starting-the-processing.md)
 
-Pour plus d&#x27;informations sur la configuration du projet, voir [Ajuster les paramètres du projet](adjusting-project-settings.md).
+Pour plus d&#x27;informations sur la configuration du projet, consultez [Réglage des paramètres du projet](adjusting-project-settings.md).

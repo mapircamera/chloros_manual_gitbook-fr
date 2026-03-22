@@ -1,12 +1,12 @@
 # Langues prises en charge
 
-Chloros offre une prise en charge complète de l&#x27;interface dans **38 langues à travers le monde**, ce qui le rend accessible aux utilisateurs du monde entier. Vous pouvez changer de langue instantanément sur toutes les interfaces : bureau, navigateur, CLI et Python SDK.
+Chloros offre une prise en charge complète de l&#x27;interface dans **38 langues à travers le monde**, ce qui le rend accessible aux utilisateurs du monde entier. Vous pouvez changer de langue instantanément sur toutes les interfaces : Bureau, Navigateur, CLI et Python SDK.
 
 Chloros prend en charge les langues suivantes :
 
-| # | Langue | Nom natif | Code CLI |
+| # | Langue | Nom dans la langue d&#x27;origine | Code CLI |
 |---|----------|-------------|----------|
-| 1 | 🇺🇸 Anglais | Anglais | `en` |
+| 1 | 🇺🇸 Anglais | English | `en` |
 | 2 | 🇪🇸 Espagnol | Español | `es` |
 | 3 | 🇵🇹 Portugais | Português | `pt` |
 | 4 | 🇫🇷 Français | Français | `fr` |
@@ -47,12 +47,12 @@ Chloros prend en charge les langues suivantes :
 
 ## Comment changer de langue
 
-### Dans Chloros Desktop/Browser
+### Sur le bureau/navigateur Chloros
 
-1. Ouvrez les paramètres de l&#x27;application.
-2. Accédez au menu de sélection de la langue.
-3. Choisissez votre langue préférée dans la liste.
-4. L&#x27;interface sera mise à jour instantanément.
+1. Ouvrez les paramètres de l&#x27;application
+2. Accédez au menu de sélection de la langue
+3. Choisissez votre langue préférée dans la liste
+4. L&#x27;interface s&#x27;actualisera instantanément
 
 ### Dans Chloros CLI
 
@@ -87,7 +87,7 @@ Les 38 langues sont entièrement prises en charge dans :
 
 * **Chloros Desktop** - Traduction complète de l&#x27;interface graphique
 * **Chloros Browser** - Interface Web dans toutes les langues
-* **Chloros CLI** - Interface de ligne de commande et messages de sortie
-* **Chloros Python SDK** - Messages et documentation API
+* **Chloros CLI** - Interface en ligne de commande et messages de sortie
+* **Chloros Python SDK** - Messages et documentation
 
-La prise en charge linguistique garantit que les utilisateurs du monde entier peuvent travailler efficacement dans leur langue maternelle sans aucune barrière.
+La prise en charge linguistique garantit que les utilisateurs du monde entier peuvent travailler efficacement dans leur langue maternelle, sans aucune barrière.

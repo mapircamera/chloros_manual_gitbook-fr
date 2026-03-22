@@ -1,43 +1,43 @@
-# Démarrage du traitement
+# Lancement du traitement
 
-Une fois que vous avez importé vos images, marqué vos cibles d&#x27;étalonnage et configuré les paramètres de votre projet, vous êtes prêt à commencer le traitement. Cette page vous guide tout au long du processus de traitement Chloros.
+Une fois que vous avez importé vos images, marqué vos cibles d&#x27;étalonnage et configuré les paramètres de votre projet, vous êtes prêt à commencer le traitement. Cette page vous guide dans le lancement du pipeline de traitement Chloros.
 
 ## Liste de contrôle avant le traitement
 
 Avant de cliquer sur le bouton Démarrer, vérifiez que tout est prêt :
 
 * [ ] **Fichiers importés** - Toutes les images apparaissent dans le navigateur de fichiers
-* [ ] **Images cibles marquées** - Colonne Cible cochée pour les images d&#x27;étalonnage
-* [ ] **Modèles d&#x27;appareils photo détectés** - La colonne Modèle d&#x27;appareil photo affiche les appareils photo corrects
-* [ ] **Paramètres configurés** - Paramètres du projet vérifiés et ajustés
+* [ ] **Images cibles marquées** - La colonne Cible est cochée pour les images d&#x27;étalonnage
+* [ ] **Modèles de caméra détectés** - La colonne Modèle de caméra affiche les caméras correctes
+* [ ] **Paramètres configurés** - Les paramètres du projet ont été vérifiés et ajustés
 * [ ] **Indices sélectionnés** - Indices multispectraux souhaités ajoutés (si nécessaire)
 * [ ] **Format d&#x27;exportation choisi** - Format de sortie adapté à votre flux de travail
 
-{% hint style=&quot;info&quot; %}
-**Conseil** : cliquez sur quelques images dans le navigateur de fichiers pour vérifier qu&#x27;elles se sont chargées correctement avant le traitement.
+{% hint style="info" %}
+**Astuce** : Parcourez quelques images dans le navigateur de fichiers pour vérifier qu&#x27;elles se sont chargées correctement avant le traitement.
 {% endhint %}
 
 ***
 
-## Démarrer le traitement
+## Lancer le traitement
 
 ### Localiser le bouton Démarrer
 
 Le bouton Démarrer/Lecture se trouve dans la barre d&#x27;en-tête supérieure de Chloros :
 
-* Position : en haut au centre de la fenêtre
+* Emplacement : en haut au centre de la fenêtre
 * Icône : **bouton Lecture/Démarrer** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
-* Statut : le bouton est activé (lumineux) lorsqu&#x27;il est prêt à traiter
+* État : le bouton est activé (allumé) lorsqu&#x27;il est prêt à traiter
 
 ### Cliquez pour démarrer
 
 1. Cliquez sur le **bouton Lecture/Démarrer** dans l&#x27;en-tête supérieur
 2. Le traitement commence immédiatement
-3. Le bouton est désactivé (grisé) pendant le traitement
+3. Le bouton devient inactif (grisé) pendant le traitement
 4. La barre de progression s&#x27;actualise, indiquant l&#x27;état du traitement
 
-{% hint style=&quot;success&quot; %}
-**Traitement lancé** : une fois cliqué, Chloros gère automatiquement toutes les étapes du traitement : détection de la cible, débayérisation, calibrage, calcul de l&#x27;index et exportation.
+{% hint style="success" %}
+**Traitement lancé** : une fois cliqué, Chloros gère automatiquement toutes les étapes du traitement : détection de la cible, débayérisation, étalonnage, calcul de l&#x27;indice et exportation.
 {% endhint %}
 
 ***
@@ -52,14 +52,14 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 
 **Fonctionnement :**
 
-* Traite les images une par une, de manière séquentielle.
-* Fonctionnement à thread unique.
-* Utilisation réduite de la mémoire.
+* Traite les images une par une, de manière séquentielle
+* Fonctionnement monothread
+* Utilisation réduite de la mémoire
 
 **La barre de progression affiche 2 étapes :**
 
-1.**Détection de la cible** - Recherche des cibles d&#x27;étalonnage.
-2. **Traitement** - Application de l&#x27;étalonnage et exportation des images.**Durée du traitement :**
+1.**Détection des cibles** - Recherche des cibles d&#x27;étalonnage
+2. **Traitement** - Application de l&#x27;étalonnage et exportation des images**Durée du traitement :**
 
 * Beaucoup plus lent que le mode parallèle Chloros+
 * Convient aux ensembles de données de petite à moyenne taille (&lt; 200 images)
@@ -70,82 +70,82 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 
 **Fonctionnement :**
 
-* Traite plusieurs images simultanément
-* Fonctionnement multithread (jusqu&#x27;à 16 processus parallèles)
-* Utilise plusieurs cœurs de processeur
-* Accélération GPU (CUDA) en option avec les cartes graphiques NVIDIA
+* Traite plusieurs images simultanément à l&#x27;aide d&#x27;un [pipeline de traitement à 4 threads](../processing-architecture/processing-pipeline.md)
+* L&#x27;[adaptation dynamique des calculs](../processing-architecture/dynamic-compute-adaptation.md) sélectionne automatiquement la stratégie optimale pour votre matériel
+* Accélération GPU (CUDA) avec les cartes graphiques NVIDIA (ordinateurs de bureau et Jetson)
+* Évolutif d&#x27;un Jetson Nano (1 worker) à un ordinateur de bureau avec un GPU de 12 Go ou plus (3-4 workers)
 
-**La barre de progression affiche 4 étapes :**
+**La barre de progression affiche 4 étapes** (correspondant aux 4 threads du pipeline) :
 
-1.**Détection** - Recherche des cibles d&#x27;étalonnage
-2. **Analyse** - Examen des métadonnées de l&#x27;image et préparation du pipeline
-3. **Calibrage** - Application des corrections et des calibrages
-4. **Exportation** - Enregistrement des images et des index traités**Interaction avec la barre de progression :*** **Passez la souris** sur la barre pour afficher le panneau déroulant détaillé en 4 étapes
+1. **Détection** (Thread 1) - Recherche des cibles de calibrage
+2. **Analyse** (Thread 2) - Examen des métadonnées de l&#x27;image et calcul du calibrage
+3. **Calibrage** (thread 3) - Débayérisation GPU, correction du vignettage, calcul de l&#x27;indice
+4. **Exportation** (thread 4) - Enregistrement des images traitées et des indices**Interaction avec la barre de progression :*** **Passez la souris** sur la barre pour afficher le panneau déroulant détaillé en 4 étapes
 * **Cliquez** sur la barre de progression pour figer le panneau déroulant
 * **Cliquez à nouveau** pour débloquer et masquer le panneau**Temps de traitement :**
 
-* Nettement plus rapide que le mode libre
+* Nettement plus rapide que le mode gratuit
 * Évolutif en fonction du nombre de cœurs du processeur
 * L&#x27;accélération GPU améliore encore la vitesse
 
-{% hint style=&quot;info&quot; %}
-**Chloros+ Vitesse** : le traitement parallèle peut être 5 à 10 fois plus rapide que le mode séquentiel pour les grands ensembles de données. Un projet de 500 images qui prend 2 heures en mode gratuit peut être réalisé en 15 à 20 minutes avec Chloros+.
+{% hint style="info" %}
+**Chloros+ Vitesse** : le traitement parallèle peut être 5 à 10 fois plus rapide que le mode séquentiel pour les grands ensembles de données. Un projet de 500 images qui prend 2 heures en mode gratuit peut être terminé en 15 à 20 minutes avec Chloros+.
 {% endhint %}
 
 ***
 
 ## Que se passe-t-il pendant le traitement ?
 
-### Étape 1 : Détection de la cible
+### Étape 1 : Détection des cibles
 
 **Ce que fait Chloros :**
 
-* Scanne les images cibles marquées (ou toutes les images si aucune n&#x27;est marquée)
+* Analyse les images de cibles marquées (ou toutes les images si aucune n&#x27;est marquée)
 * Identifie les 4 panneaux d&#x27;étalonnage dans chaque cible
-* Extrait les valeurs de réflectance des panneaux cibles
+* Extrait les valeurs de réflectance des panneaux de cibles
 * Enregistre les horodatages des cibles pour la planification de l&#x27;étalonnage
 
-**Durée :** 1 à 30 secondes (avec cibles marquées), 5 à 30 minutes ou plus (sans cibles marquées)
+**Durée :** 1 à 30 secondes (avec des cibles marquées), 5 à 30 minutes ou plus (sans cibles marquées)
 
-### Étape 2 : Débayérisation (conversion RAW)
+### Étape 2 : Démosaïquage (conversion RAW)
 
 **Ce que fait Chloros :**
 
-* Convertit les données RAW du motif Bayer en images RGB complètes
+* Convertit les données RAW au format Bayer en images RGB complètes
 * Applique un algorithme de démosaïquage de haute qualité
-* Préserve une qualité d&#x27;image et des détails optimaux
+* Préserve au maximum la qualité et les détails de l&#x27;image
 
-**Durée :** varie en fonction du nombre d&#x27;images et de la vitesse du processeur
+**Durée :** Varie en fonction du nombre d&#x27;images et de la vitesse du processeur
 
-### Étape 3 : Calibrage
+### Étape 3 : Étalonnage
 
-**Ce que fait Chloros :*** **Correction du vignettage** : supprime l&#x27;assombrissement des bords de l&#x27;objectif
-* **Calibrage de la réflectance** : normalise à l&#x27;aide des valeurs de réflectance cibles
+**Fonctionnalités de Chloros :*** **Correction de la vignettage** : supprime l&#x27;assombrissement des bords dû à l&#x27;objectif
+* **Calibrage de la réflectance** : normalise à l&#x27;aide de valeurs de réflectance cibles
 * Applique des corrections sur toutes les bandes/canaux
 * Utilise une cible de calibrage appropriée pour chaque image en fonction de l&#x27;horodatage
 
 **Durée :** la majeure partie du temps de traitement
 
-### Étape 4 : Calcul de l&#x27;indice
+### Étape 4 : Calcul des indices
 
-**Ce que fait Chloros :**
+**Fonctionnalités de Chloros :**
 
 * Calcule les indices multispectraux configurés (NDVI, NDRE, etc.)
-* Applique des calculs mathématiques aux images calibrées
+* Applique des opérations mathématiques sur les bandes aux images calibrées
 * Génère des images d&#x27;indice pour chaque indice sélectionné
 
 **Durée :** Quelques secondes par image
 
 ### Étape 5 : Exportation
 
-**Ce que fait Chloros :**
+**Fonctionnalités de Chloros :**
 
 * Enregistre les images calibrées dans le format sélectionné
 * Exporte les images d&#x27;indice avec les couleurs LUT configurées
-* Écrit les fichiers dans les sous-dossiers du modèle d&#x27;appareil photo
-* Conserve les noms de fichiers d&#x27;origine avec les suffixes
+* Enregistre les fichiers dans les sous-dossiers correspondant aux modèles de caméra
+* Conserve les noms de fichiers d&#x27;origine avec des suffixes
 
-**Durée :** varie en fonction du format d&#x27;exportation et de la taille du fichier***
+**Durée :** Varie en fonction du format d&#x27;exportation et de la taille des fichiers***
 
 ## Comportement du traitement
 
@@ -155,7 +155,7 @@ Une fois lancé, l&#x27;ensemble du pipeline s&#x27;exécute automatiquement :
 
 * Aucune interaction de l&#x27;utilisateur n&#x27;est nécessaire
 * Toutes les étapes configurées s&#x27;exécutent dans l&#x27;ordre
-* Les mises à jour de la progression sont affichées en temps réel
+* Les mises à jour de progression s&#x27;affichent en temps réel
 
 ### Utilisation de l&#x27;ordinateur pendant le traitement
 
@@ -163,36 +163,36 @@ Une fois lancé, l&#x27;ensemble du pipeline s&#x27;exécute automatiquement :
 
 * Utilisation relativement faible du processeur (monothread)
 * L&#x27;ordinateur reste réactif pour d&#x27;autres tâches
-* Vous pouvez minimiser Chloros et travailler dans d&#x27;autres applications en toute sécurité
+* Vous pouvez réduire Chloros en arrière-plan et travailler dans d&#x27;autres applications en toute sécurité
 
 **Chloros+ Mode parallèle :**
 
 * Utilisation élevée du processeur (multithread, jusqu&#x27;à 16 cœurs)
 * Avec accélération GPU : utilisation élevée du GPU
 * L&#x27;ordinateur peut être moins réactif pendant le traitement
-* Évitez de lancer d&#x27;autres tâches gourmandes en CPU
+* Évitez de lancer d&#x27;autres tâches gourmandes en ressources CPU
 
-{% hint style=&quot;warning&quot; %}
-**Conseil de performance** : pour obtenir les meilleures performances Chloros+, fermez les autres applications et laissez Chloros utiliser toutes les ressources du système.
+{% hint style="warning" %}
+**Conseil de performance** : pour des performances optimales, fermez les autres applications et laissez Chloros utiliser toutes les ressources du système.
 {% endhint %}
 
 ### Le traitement ne peut pas être mis en pause
 
-**Limitations importantes :**
+**Restrictions importantes :**
 
-* Une fois lancé, le traitement ne peut pas être mis en pause.
-* Vous pouvez annuler le traitement, mais la progression sera perdue.
-* Les résultats partiels ne sont pas enregistrés.
-* Si vous annulez, vous devrez recommencer depuis le début.
+* Une fois lancé, le traitement ne peut pas être mis en pause
+* Vous pouvez annuler le traitement, mais la progression sera perdue
+* Les résultats partiels ne sont pas enregistrés
+* Il faut recommencer depuis le début en cas d&#x27;annulation
 
-**Conseil de planification :** pour les projets très volumineux, envisagez de traiter par lots ou d&#x27;utiliser CLI pour un meilleur contrôle.***
+**Conseil de planification :** Pour les très grands projets, envisagez de traiter par lots ou d&#x27;utiliser CLI pour un meilleur contrôle.***
 
-## Surveillance de votre traitement
+## Suivi de votre traitement
 
-Pendant le traitement, vous pouvez :
+Pendant l&#x27;exécution du traitement, vous pouvez :
 
 * **Observer la barre de progression** - Voir le pourcentage global d&#x27;achèvement
-* **Afficher l&#x27;étape en cours** - Détection, analyse, calibrage ou exportation
+* **Afficher l&#x27;étape en cours** - Détection, analyse, étalonnage ou exportation
 * **Consulter l&#x27;onglet Journal** - Voir les messages et avertissements détaillés relatifs au traitement
 * **Prévisualiser les images terminées** - Certains fichiers d&#x27;exportation peuvent apparaître pendant le traitement
 
@@ -202,11 +202,11 @@ Pour plus d&#x27;informations sur la surveillance, consultez [Surveillance du tr
 
 ## Annulation du traitement
 
-Si vous devez arrêter le traitement :
+Si vous devez interrompre le traitement :
 
 ### Comment annuler
 
-1. Localisez le **bouton Arrêter/Annuler** (qui remplace le bouton Démarrer pendant le traitement)
+1. Repérez le **bouton Arrêter/Annuler** (qui remplace le bouton Démarrer pendant le traitement)
 2. Cliquez sur le bouton Arrêter
 3. Le traitement s&#x27;arrête immédiatement
 4. Les résultats partiels sont supprimés
@@ -218,33 +218,33 @@ Si vous devez arrêter le traitement :
 * Vous vous êtes rendu compte que des paramètres incorrects ont été utilisés
 * Vous avez oublié de marquer les images cibles
 * Des images incorrectes ont été importées
-* Le système est trop lent ou ne répond pas
+* Le système est trop lent ou ne répond plus
 
 **Après l&#x27;annulation :**
 
 * Vérifiez et corrigez les éventuels problèmes
 * Ajustez les paramètres si nécessaire
 * Redémarrez le traitement depuis le début
-* Pour une expérience optimale, fermez complètement Chloros et redémarrez.
+* Pour une expérience optimale, fermez complètement Chloros et redémarrez
 
-{% hint style=&quot;warning&quot; %}
-**Aucun résultat partiel** : l&#x27;annulation supprime toute la progression. Chloros n&#x27;enregistre pas les images partiellement traitées.
+{% hint style="warning" %}
+**Pas de résultats partiels** : l&#x27;annulation supprime toute la progression. Chloros n&#x27;enregistre pas les images partiellement traitées.
 {% endhint %}
 
 ***
 
-## Estimation du temps de traitement
+## Estimations du temps de traitement
 
-Le temps de traitement réel varie considérablement en fonction des éléments suivants :
+Le temps de traitement réel varie considérablement en fonction des facteurs suivants :
 
 * Nombre d&#x27;images
 * Résolution des images
 * Format d&#x27;entrée RAW ou JPG
 * Mode de traitement (Free ou Chloros+)
-* La vitesse du processeur et le nombre de cœurs
-* La disponibilité du processeur graphique (Chloros+ uniquement)
-* Le nombre d&#x27;indices à calculer
-* La complexité du format d&#x27;exportation
+* Vitesse du processeur et nombre de cœurs
+* Disponibilité d&#x27;un GPU (Chloros+ uniquement)
+* Nombre d&#x27;index à calculer
+* Complexité du format d&#x27;exportation
 
 ### Estimations approximatives (Chloros+, images 12 MP, processeur moderne)
 
@@ -253,11 +253,11 @@ Le temps de traitement réel varie considérablement en fonction des éléments 
 | 50 images   | 15-20 min | 5-8 min        | 3-5 min        |
 | 100 images  | 30-40 min | 10-15 min      | 5-8 min        |
 | 200 images  | 1-1,5 h | 20-30 min      | 10-15 min      |
-| 500 images  | 2-3 heures   | 45-60 min      | 20-30 min      |
-| 1000 images | 4-6 heures   | 1,5-2 heures      | 40-60 min      |
+| 500 images  | 2 à 3 heures   | 45 à 60 min      | 20 à 30 min      |
+| 1 000 images | 4 à 6 heures   | 1 h 30 à 2 heures      | 40 à 60 min      |
 
-{% hint style=&quot;info&quot; %}
-**Première exécution** : le traitement initial peut prendre plus de temps, car Chloros crée des caches et des profils. Le traitement ultérieur d&#x27;ensembles de données similaires sera plus rapide.
+{% hint style="info" %}
+**Première exécution** : le traitement initial peut prendre plus de temps car Chloros crée des caches et des profils. Les traitements suivants de jeux de données similaires seront plus rapides.
 {% endhint %}
 
 ***
@@ -269,16 +269,16 @@ Le temps de traitement réel varie considérablement en fonction des éléments 
 **Causes possibles :**
 
 * Aucune image importée
-* Backend pas complètement démarré
-* Traitement précédent toujours en cours
-* Projet pas complètement chargé
+* Le backend n&#x27;est pas entièrement démarré
+* Le traitement précédent est toujours en cours
+* Le projet n&#x27;est pas entièrement chargé
 
 **Solutions :**
 
-1. Attendez que le backend soit complètement initialisé (vérifiez l&#x27;icône du menu principal)
-2. Vérifiez que les images sont importées dans le navigateur de fichiers
+1. Attendez que le backend s&#x27;initialise complètement (vérifiez l&#x27;icône du menu principal)
+2. Vérifiez que les images sont bien importées dans le navigateur de fichiers
 3. Redémarrez Chloros si le bouton reste désactivé
-4. Vérifiez le journal de débogage pour voir s&#x27;il y a des messages d&#x27;erreur
+4. Consultez le journal de débogage pour les messages d&#x27;erreur
 
 ### Le traitement démarre puis échoue immédiatement
 
@@ -291,9 +291,9 @@ Le temps de traitement réel varie considérablement en fonction des éléments 
 
 **Solutions :**
 
-1. Vérifiez le journal de débogage <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> pour voir s&#x27;il y a des messages d&#x27;erreur
+1. Vérifiez le journal de débogage <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> pour vérifier s&#x27;il contient des messages d&#x27;erreur
 2. Vérifiez l&#x27;espace disque disponible
-3. Essayez de traiter un sous-ensemble d&#x27;images plus petit
+3. Essayez de traiter un sous-ensemble plus petit d&#x27;images
 4. Vérifiez que les images ne sont pas corrompues
 
 ### Avertissement « Aucune cible détectée »
@@ -317,27 +317,27 @@ Le temps de traitement réel varie considérablement en fonction des éléments 
 
 ### Avant de commencer
 
-1. **Testez d&#x27;abord avec un petit sous-ensemble** - Traitez 10 à 20 images pour vérifier les paramètres.
-2. **Vérifiez l&#x27;espace disque disponible** - Assurez-vous de disposer de 2 à 3 fois la taille du jeu de données.
-3. **Fermez les applications inutiles** - Libérez des ressources système.
-4. **Vérifiez les images cibles** - Prévisualisez les cibles marquées pour vous assurer de leur qualité.
-5. **Enregistrez le projet** - Le projet est enregistré automatiquement, mais il est recommandé de l&#x27;enregistrer manuellement.
+1. **Testez d&#x27;abord avec un petit sous-ensemble** - Traitez 10 à 20 images pour vérifier les paramètres
+2. **Vérifiez l&#x27;espace disque disponible** - Assurez-vous de disposer d&#x27;un espace libre équivalent à 2 à 3 fois la taille de l&#x27;ensemble de données
+3. **Fermez les applications inutiles** - Libérez des ressources système
+4. **Vérifiez les images cibles** - Prévisualisez les cibles marquées pour vous assurer de leur qualité
+5. **Enregistrez le projet** - Le projet est enregistré automatiquement, mais il est recommandé de l&#x27;enregistrer manuellement
 
 ### Pendant le traitement
 
-1. **Évitez la mise en veille du système** - Désactivez les modes d&#x27;économie d&#x27;énergie.
-2. **Gardez Chloros au premier plan** - Ou au moins visible dans la barre des tâches.
-3. **Vérifiez régulièrement la progression** - Vérifiez les avertissements ou les erreurs.
-4. **Ne chargez pas d&#x27;autres applications lourdes** - En particulier avec le mode parallèle Chloros+.
+1. **Évitez la mise en veille du système** - Désactivez les modes d&#x27;économie d&#x27;énergie
+2. **Gardez Chloros au premier plan** - Ou au moins visible dans la barre des tâches
+3. **Surveillez la progression de temps à autre** - Vérifiez s&#x27;il y a des avertissements ou des erreurs
+4. **Ne chargez pas d&#x27;autres applications lourdes** - En particulier avec le mode parallèle Chloros+
 
-### Accélération GPU Chloros+
+### Chloros+ Accélération GPU
 
 Si vous utilisez l&#x27;accélération GPU NVIDIA :
 
-1. Mettez à jour les pilotes NVIDIA vers la dernière version.
-2. Assurez-vous que le GPU dispose d&#x27;au moins 4 Go de VRAM.
-3. Fermez les applications gourmandes en ressources GPU (jeux, montage vidéo).
-4. Surveillez la température du GPU (assurez-vous qu&#x27;il est suffisamment refroidi).
+1. Mettez à jour les pilotes NVIDIA vers la dernière version
+2. Assurez-vous que le GPU dispose d&#x27;au moins 4 Go de VRAM
+3. Fermez les applications gourmandes en ressources GPU (jeux, montage vidéo)
+4. Surveillez la température du GPU (assurez-vous que le refroidissement est adéquat)
 
 ***
 
@@ -346,7 +346,7 @@ Si vous utilisez l&#x27;accélération GPU NVIDIA :
 Une fois le traitement lancé :
 
 1. **Surveillez la progression** - Voir [Surveillance du traitement](monitoring-the-processing.md)
-2. **Attendez la fin du traitement** - Le traitement s&#x27;exécute automatiquement.
-3. **Vérifiez les résultats** - Voir [Fin du traitement](finishing-the-processing.md).
+2. **Attendez la fin du traitement** - Le traitement s&#x27;exécute automatiquement
+3. **Vérifiez les résultats** - Voir [Fin du traitement](finishing-the-processing.md)
 
-Pour plus d&#x27;informations sur ce qu&#x27;il faut faire pendant le traitement, consultez [Surveillance du traitement](monitoring-the-processing.md).
+Pour savoir comment procéder pendant le traitement, consultez [Surveillance du traitement](monitoring-the-processing.md).
