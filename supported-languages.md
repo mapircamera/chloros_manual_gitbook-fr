@@ -1,6 +1,6 @@
 # Langues prises en charge
 
-Chloros offre une prise en charge complète de l&#x27;interface dans **38 langues à travers le monde**, ce qui le rend accessible aux utilisateurs du monde entier. Vous pouvez changer de langue instantanément sur toutes les interfaces : Bureau, Navigateur, CLI et Python SDK.
+Chloros offre une prise en charge complète de l&#x27;interface dans **38 langues à travers le monde**, ce qui le rend accessible aux utilisateurs du monde entier. Vous pouvez changer de langue instantanément aussi bien dans l&#x27;interface graphique de bureau que dans CLI.
 
 Chloros prend en charge les langues suivantes :
 
@@ -47,7 +47,7 @@ Chloros prend en charge les langues suivantes :
 
 ## Comment changer de langue
 
-### Sur le bureau/navigateur Chloros
+### Dans Chloros Desktop
 
 1. Ouvrez les paramètres de l&#x27;application
 2. Accédez au menu de sélection de la langue
@@ -77,17 +77,13 @@ chloros-cli language --list
 
 Pour plus de détails, consultez la [documentation CLI](CLI.md).
 
-### Dans Chloros Python SDK
-
-Définissez le paramètre de langue lors de l&#x27;initialisation de SDK pour obtenir les messages et les sorties dans la langue de votre choix.
-
 ## Couverture
 
 Les 38 langues sont entièrement prises en charge dans :
 
-* **Chloros Desktop** - Traduction complète de l&#x27;interface graphique
-* **Chloros Browser** - Interface Web dans toutes les langues
+* **Chloros Desktop** - Traduction complète de l’interface graphique
 * **Chloros CLI** - Interface en ligne de commande et messages de sortie
-* **Chloros Python SDK** - Messages et documentation
 
-La prise en charge linguistique garantit que les utilisateurs du monde entier peuvent travailler efficacement dans leur langue maternelle, sans aucune barrière.
+Python, SDK, API et sa [documentation de référence](reference/sdk-reference.md) sont fournis en anglais.
+
+La prise en charge multilingue garantit aux utilisateurs du monde entier de pouvoir travailler efficacement dans leur langue maternelle, sans aucune barrière.

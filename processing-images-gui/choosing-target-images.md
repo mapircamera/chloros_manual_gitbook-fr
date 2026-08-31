@@ -1,29 +1,27 @@
 # Sélection des images cibles
 
-Le marquage des images contenant des cibles d&#x27;étalonnage est une étape cruciale qui accélère considérablement le traitement par Chloros. En présélectionnant les images cibles, vous évitez à Chloros d&#x27;avoir à analyser chaque image de votre ensemble de données à la recherche de cibles d&#x27;étalonnage.
+En indiquant quelles images contiennent des cibles d’étalonnage, vous indiquez précisément à Chloros où les rechercher. Lorsqu’au moins une image est cochée dans la colonne « Cible », Chloros analyse **uniquement les images cochées** — le fait de marquer les cibles permet donc à la fois d’accélérer le traitement et d’éviter que des images de levé ne soient confondues avec une cible.
+
+<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 ## Pourquoi marquer les images cibles ?
 
-### Vitesse de traitement
-
-Sans marquage des images cibles, Chloros doit :
-
-* Analyser chaque image de votre projet
-* Exécuter des algorithmes de détection des cibles sur chaque image
-* Vérifier inutilement des centaines ou des milliers d&#x27;images
-
-**Résultat** : le traitement peut prendre beaucoup plus de temps, en particulier pour les grands ensembles de données.
-
-### Avec des images cibles marquées
+### Le marquage contrôle l’analyse
 
 Lorsque vous cochez la colonne « Cible » pour des images spécifiques :
 
 * Chloros analyse uniquement les images cochées à la recherche de cibles
-* La détection des cibles s&#x27;effectue beaucoup plus rapidement
-* La durée totale du traitement est considérablement réduite
+* La détection des cibles s’effectue beaucoup plus rapidement
+* Les images d’étude ne peuvent pas générer de fausses détections de cibles
+
+Si **aucune** image n’est cochée, Chloros passe en mode de balayage de toutes les images du projet :
+
+* Les algorithmes de détection des cibles s’appliquent à chaque image
+* Des centaines, voire des milliers d’images sont analysées inutilement
+* Le traitement prend beaucoup plus de temps, en particulier pour les grands ensembles de données
 
 {% hint style="success" %}
-**Gain de vitesse** : marquer 2 à 3 images cibles dans un ensemble de données de 500 images peut réduire le temps de détection des cibles de plus de 30 minutes à moins d&#x27;une minute.
+**Amélioration des performances** : le marquage de 2 à 3 images cibles dans un ensemble de données de 500 images peut réduire le temps de détection des cibles de plus de 30 minutes à moins d’une minute.
 {% endhint %}
 
 ***
@@ -32,67 +30,84 @@ Lorsque vous cochez la colonne « Cible » pour des images spécifiques :
 
 ### Étape 1 : Identifiez vos images cibles
 
-Parcourez vos images importées dans le navigateur de fichiers et identifiez celles qui contiennent des cibles d&#x27;étalonnage.
+Parcourez vos images importées dans le navigateur de fichiers et identifiez celles qui contiennent des cibles d’étalonnage.
 
 **Scénarios courants :*** **Cible pré-capture** : capturée avant le début de la session
 * **Cible post-capture** : capturée après la fin de la session
 * **Cibles sur le terrain** : cibles placées dans la zone de capture
-* **Cibles multiples** : 2 à 3 images cibles par session (recommandé)
+* **Cibles multiples** : 2 à 3 images de cibles par session (recommandé)
 
-### Étape 2 : Vérifiez la colonne « Cible »
+### Étape 2 : Vérifier l’<img src="../.gitbook/assets/image (33).png" alt="" data-size="original"> de la colonne « Cible »
 
-Pour chaque image contenant une cible d&#x27;étalonnage :
+Pour chaque image contenant une cible d’étalonnage :
 
-1. Localisez l&#x27;image dans le tableau du navigateur de fichiers
+1. Localisez l’image dans le tableau du navigateur de fichiers
 2. Repérez la colonne **Cible** (colonne la plus à droite)
-3. Cochez la case dans la colonne « Cible » pour cette image
-4. Répétez l&#x27;opération pour toutes les images contenant des cibles
+3. Cochez la case de la colonne « Cible » correspondant à cette image
+4. Répétez l’opération pour toutes les images contenant des cibles
 
 ### Étape 3 : Vérifiez votre sélection
 
-Avant le traitement, vérifiez bien :
+Avant le traitement, vérifiez bien que :
 
-* [ ] Toutes les images comportant des cibles d&#x27;étalonnage sont cochées
-* [ ] Aucune image ne contenant pas de cible n&#x27;est cochée par erreur
+* [ ] Toutes les images comportant des cibles d’étalonnage sont cochées
+* [ ] Aucune image ne contenant pas de cible n’est cochée par erreur
 * [ ] Les cibles sont clairement visibles dans les images cochées
 
 ***
 
-## Bonnes pratiques pour les images de cibles
+## LATTICE : les cibles sont facultatives lorsqu&#x27;un système d&#x27;acquisition de données (DAQ) enregistre
 
-### Consignes de capture des cibles
+Pour les caméras multispectrales LATTICE, une cible d&#x27;étalonnage intégrée à l&#x27;image est **l&#x27;une des deux** références de réflectance possibles :
+
+* **Cible intégrée à l’image**: lorsqu’une image de cible marquée passe les filtres de qualité (QA) d’Chloros, la cible devient la**référence de réflectance absolue** pour les images qui l’entourent.
+* **Rayonnement descendant du DAQ**: lorsqu’aucune cible n’est présente (ou que le contrôle qualité échoue), Chloros calcule alors la réflectance à partir de l’irradiance descendante du capteur de lumière du DAQ (ρ = π·L/E). Si un enregistrement `.daq` ou DAQ-M `.csv` couvre vos captures, vous obtenez une réflectance calibrée**sans aucune image cible**.
+
+Ce comportement automatique est le comportement par défaut. Dans le fichier CLI / SDK, cela correspond à `--reflectance-source auto` ; vous pouvez également forcer `target` (strict — aucune substitution par le DAQ) ou `daq` (priorité au DAQ). Consultez la [Référence CLI](../reference/cli-reference.md#per-product-export-toggles-lattice-multispectral).
+
+**Géométries des cibles LATTICE**: outre la détection classique par panneau utilisée pour l’Survey3, le traitement LATTICE prend en charge les**cibles marquées ArUco**, les**cibles à zone d’intérêt fixe**et les**cibles en bande**, configurées par projet. Des balayages de réflectance**mesurés** par unité de cible peuvent être fournis par numéro de série (CLI : `--target-reflectance-dir`, un `<serial>.csv` par unité de cible), avec les spectres T3/T4P nominaux comme solution de secours.
+
+{% hint style="info" %}
+**Module F988** : la réflectance du F988 est étalonnée à l’aide d’un panneau de réflectance intégré à la scène : la bande se situant au-delà de la plage d’étalonnage du capteur de lumière DAQ, Chloros utilise votre dernière capture de panneau et la conserve entre deux relevés du panneau. Si un module F988 est traité uniquement avec le DAQ, Chloros refuse la réflectance basée sur le DAQ pour cette bande (motif d’exclusion `dls-uncalibrated-band-988`) — le flux de travail avec la plaque est la méthode prise en charge.
+{% endhint %}
+
+***
+
+## Bonnes pratiques pour les images de cible
+
+### Consignes de capture de la cible
 
 **Calendrier :**
 
-* Capturez les images de cibles immédiatement avant et tout au long de votre session de capture
-* Dans les mêmes conditions d&#x27;éclairage que votre capteur de lumière DAQ
-* Idéalement, capturez des images de cibles aussi souvent que possible pour obtenir les meilleurs résultats. Sinon, les données du capteur de lumière seront utilisées pour ajuster l&#x27;étalonnage au fil du temps.
+* Capturez les images de cible immédiatement avant et tout au long de votre session de capture
+* Dans les mêmes conditions d’éclairage que celles de votre capteur de lumière DAQ
+* Idéalement, capturez des images de la cible aussi souvent que possible pour obtenir les meilleurs résultats. Sinon, les données du capteur de lumière seront utilisées pour ajuster l’étalonnage au fil du temps.
 
 **Position de la caméra :**
 
-* Tenez la caméra au-dessus de la cible de manière à ce qu&#x27;elle soit centrée et occupe environ 40 à 60 % du centre de l&#x27;image.
-* Maintenez la caméra parallèle/nadirale par rapport à la surface de la cible
+* Tenez la caméra au-dessus de la cible de manière à ce qu’elle soit centrée et occupe environ 40 à 60 % du centre de l’image.
+* Maintenez l’appareil photo parallèle ou dans la position nadirale par rapport à la surface de la cible
 
 **Éclairage :**
 
-* Même éclairage ambiant que celui de votre capteur de lumière DAQ
-* Évitez les ombres sur les surfaces cibles
+* Utilisez le même éclairage ambiant que celui de votre capteur de lumière DAQ
+* Évitez les ombres sur les surfaces de la cible
 * Ne bloquez pas votre source lumineuse avec votre corps, votre véhicule ou la végétation
-* Les conditions de ciel couvert fournissent les résultats les plus constants
+* Un ciel couvert offre les résultats les plus constants
 
 **État de la cible :**
 
-* Veillez à ce que les panneaux cibles soient propres et secs
-* Les 4 panneaux doivent être clairement visibles et dégagés
-* Placez les cibles perpendiculairement/au nadir par rapport à la source lumineuse si possible
+* Veillez à ce que les panneaux de la cible soient propres et secs.
+* Tous les panneaux de votre cible (par exemple, les 4 d’un T4) doivent être clairement visibles et dégagés.
+* Si possible, placez les cibles perpendiculairement ou à la verticale de la source lumineuse.
 
-### Combien d&#x27;images de la cible ?
+### Combien d’images de la cible ?
 
 **Minimum :**1 image de cible par session.**Recommandé :** 3 à 5 images de cible par session.**Calendrier recommandé :**
 
-* 3 à 5 images capturées peu après le début de l&#x27;enregistrement du capteur de lumière
-* Faites pivoter la caméra entre chaque capture pour obtenir les meilleurs résultats
-* Facultatif : périodiquement en cours de session si les conditions d&#x27;éclairage changent constamment
+* 3 à 5 images capturées peu après le début de l’enregistrement du capteur de lumière
+* Faites pivoter la caméra entre chaque prise de vue pour obtenir les meilleurs résultats
+* Facultatif : périodiquement en cours de session si les conditions d’éclairage changent constamment
 
 ***
 
@@ -100,23 +115,24 @@ Avant le traitement, vérifiez bien :
 
 ### Configurations à deux caméras
 
-Si vous utilisez deux caméras MAPIR simultanément (par exemple, Survey3W RGN + Survey3N OCN) :
+Si vous utilisez simultanément deux caméras MAPIR (par exemple, Survey3W RGN + Survey3N OCN) :
 
-1. Capturez les images de la cible avec **les deux caméras** en même temps
+1. Capturez des images cibles avec **les deux caméras** en même temps
 2. Utilisez la **même cible physique** pour les deux caméras
-3. Marquez les images de la cible pour **les deux types de caméras** dans le navigateur de fichiers
+3. Marquez les images de la cible pour les **deux types de caméras** dans le navigateur de fichiers
 4. Chloros utilisera les cibles appropriées pour l&#x27;étalonnage de chaque caméra
 
 ### Colonne « Modèle de caméra »
 
-La colonne **Modèle de caméra** permet d&#x27;identifier quelles images proviennent de quelle caméra :
+La colonne **« Modèle de caméra »** permet d’identifier quelles images proviennent de quelle caméra :
 
 * Survey3W\_RGN
 * Survey3N\_OCN
-* Survey3W\_RGB
+* LATT-M3M-L41-F550
+* LATT-M3C-L87-FRGN
 * etc.
 
-Utilisez cette colonne pour vérifier que vous avez bien marqué les cibles pour chaque type de caméra dans votre projet.
+Utilisez cette colonne pour vérifier que vous avez marqué des cibles pour chaque type de caméra dans votre projet.
 
 ***
 
@@ -124,11 +140,17 @@ Utilisez cette colonne pour vérifier que vous avez bien marqué les cibles pour
 
 ### Réglage de la sensibilité de détection
 
-Si Chloros ne détecte pas correctement vos cibles, ajustez ces paramètres dans [Paramètres du projet](adjusting-project-settings.md) :**Zone d&#x27;échantillonnage minimale pour l&#x27;étalonnage :*** **Par défaut** : 25 pixels
+Si Chloros ne détecte pas correctement vos cibles, modifiez ces paramètres dans [Paramètres du projet](adjusting-project-settings.md) :**Surface minimale de l&#x27;échantillon d&#x27;étalonnage (px) :*** **Par défaut** : 25 pixels
 * **Augmentez** cette valeur si vous obtenez de fausses détections sur de petits artefacts
-* **Réduisez** cette valeur si les cibles ne sont pas détectées**Regroupement minimal des cibles :*** **Par défaut** : 60
-* **Augmentez** cette valeur si les cibles sont divisées en plusieurs détections
-* **Réduisez** si les cibles présentant des variations de couleur ne sont pas entièrement détectées***
+* **Réduisez** cette valeur si les cibles ne sont pas détectées**Regroupement minimal des cibles (0-100) :*** **Par défaut** : 60
+* **Augmentez** cette valeur si les cibles sont fractionnées en plusieurs détections
+* **Réduisez** cette valeur si les cibles présentant des variations de couleur ne sont pas entièrement détectées
+
+{% hint style="info" %}
+**Astuce CLI** : `chloros-cli process` accepte les mêmes paramètres (`--min-target-size`, `--target-clustering`), et son indicateur `--target`/`--targets` permet de marquer un dossier d’entrée entier comme étant réservé au panneau des cibles. Consultez la [Référence CLI](../reference/cli-reference.md).
+{% endhint %}
+
+***
 
 ## Problèmes courants liés aux images cibles
 
@@ -136,16 +158,16 @@ Si Chloros ne détecte pas correctement vos cibles, ajustez ces paramètres dans
 
 **Causes possibles :**
 
-* Images cibles non marquées dans le navigateur de fichiers
-* Cible trop petite dans le cadre (&lt; 30 % de l&#x27;image)
+* Images cibles non cochées dans l’explorateur de fichiers
+* Cible trop petite dans le cadre (&lt; 30 % de l’image)
 * Mauvais éclairage (ombres, reflets)
 * Paramètres de détection des cibles trop stricts
 
 **Solutions :**
 
 1. Vérifiez que la colonne « Cible » est cochée pour les images correctes
-2. Vérifiez la qualité de l&#x27;image de la cible dans l&#x27;aperçu
-3. Recaptez les cibles si la qualité est médiocre
+2. Vérifiez la qualité de l’image cible dans l’aperçu
+3. Recaptez les cibles si la qualité est insuffisante
 4. Ajustez les paramètres de détection des cibles si nécessaire
 
 ### Problème : fausses détections de cibles
@@ -158,40 +180,49 @@ Si Chloros ne détecte pas correctement vos cibles, ajustez ces paramètres dans
 
 **Solutions :**
 
-1. Ne marquez que les images de cibles réelles pour limiter la portée de la détection
-2. Augmentez la surface minimale de l&#x27;échantillon d&#x27;étalonnage
+1. Ne marquez que les images de cibles réelles — seules les images cochées sont analysées
+2. Augmentez la surface minimale de l’échantillon d’étalonnage
 3. Augmentez la valeur minimale de regroupement des cibles
-4. Assurez-vous que les images de cibles ne montrent que la cible (encombrement minimal de l&#x27;arrière-plan)
+4. Assurez-vous que les images de cibles ne montrent que la cible (encombrement minimal de l’arrière-plan)
 
 ***
 
 ## Liste de contrôle de vérification
 
-Avant de commencer le traitement, vérifiez votre sélection d&#x27;images de cibles :
+Avant de lancer le traitement, vérifiez votre sélection d’images de cibles :
 
-* [ ] Au moins 1 image de cible marquée par session
+* [ ] Au moins 1 image de cible marquée par session (ou, pour LATTICE, un enregistrement `.daq`/`.csv` couvrant la session)
 * [ ] Les cases à cocher de la colonne « Cible » sont cochées pour toutes les images de cibles
-* [ ] Images de cibles capturées au cours de la même période que l&#x27;étude
-* [ ] Cibles clairement visibles dans l&#x27;aperçu lorsque l&#x27;on clique dessus
-* [ ] Les 4 panneaux d&#x27;étalonnage sont visibles dans chaque image de cible
-* [ ] Pas d&#x27;ombres ni d&#x27;obstacles sur les cibles
-* [ ] Pour les systèmes à double caméra : cibles marquées pour les deux types de caméra
+* [ ] Les images de cibles ont été capturées pendant la même période que l’étude
+* [ ] Les cibles sont clairement visibles dans l’aperçu lorsque l’on clique dessus
+* [ ] Tous les panneaux d’étalonnage sont visibles sur chaque image de cible
+* [ ] Aucune ombre ni obstruction sur les cibles
+* [ ] Pour les systèmes à double caméra : les cibles sont marquées pour les deux types de caméra
 
 ***
 
-## Traitement sans cibles
+## Traitement sans cible
 
-### Traitement sans cibles d&#x27;étalonnage
+### LATTICE : avec un enregistrement DAQ
 
-Bien que cela ne soit pas recommandé pour les travaux scientifiques, vous pouvez effectuer le traitement sans cibles :
+Si un capteur de lumière DAQ a enregistré l’irradiance descendante pendant vos captures LATTICE, aucune cible n’est nécessaire :
+
+1. Importez le fichier `.daq` (ou DAQ-M `.csv`) contenant les images
+2. Laissez la colonne « Cible » décochée
+3. La réflectance est calculée automatiquement à partir de la référence d&#x27;irradiation descendante du DAQ
+4. La radiance ne nécessite jamais de cible ni de DAQ — elle provient uniquement de l’étalonnage radiométrique d’usine de la caméra
+
+### Traitement sans aucune référence
+
+Vous pouvez également effectuer le traitement sans cibles et sans DAQ :
 
 1. Laissez toutes les cases à cocher de la colonne « Cible » décochées
-2. **Désactivez** « Étalonnage de la réflectance » dans les paramètres du projet
-3. La correction de vignettage sera toujours appliquée
-4. Le résultat ne sera pas étalonné pour la réflectance absolue
+2. **Désactivez** « Étalonnage de la réflectance / balance des blancs » dans les paramètres du projet — la détection des cibles est alors entièrement ignorée
+3. La correction du vignetage sera tout de même appliquée
+4. La sortie ne sera pas étalonnée pour la réflectance absolue (LATTICE multispectral exporte toujours les produits débayérés, d&#x27;aperçu et de radiance)
 
 {% hint style="warning" %}
-**Non recommandé** : sans étalonnage de la réflectance, les valeurs des pixels ne représentent que la luminosité relative, et non des mesures scientifiques de réflectance. Utilisez des cibles d&#x27;étalonnage pour obtenir des résultats précis et reproductibles.
+**Non recommandé pour les travaux scientifiques Survey3** : sans étalonnage de la réflectance, les valeurs de pixels d’Survey3 ne représentent qu’une luminosité relative, et non des mesures scientifiques de réflectance. Utilisez des cibles d’étalonnage (ou, pour LATTICE, un capteur de lumière DAQ) pour obtenir des résultats précis et reproductibles.
 {% endhint %}
 
 ***
@@ -201,7 +232,7 @@ Bien que cela ne soit pas recommandé pour les travaux scientifiques, vous pouve
 Une fois que vous avez marqué vos images cibles :
 
 1. **Vérifiez vos paramètres** - Voir [Réglage des paramètres du projet](adjusting-project-settings.md)
-2. **Lancez le traitement** - Voir [Lancement du traitement](starting-the-processing.md)
-3. **Suivez la progression** - Voir [Suivi du traitement](monitoring-the-processing.md)
+2. **Lancez le traitement** – Voir [Lancer le traitement](starting-the-processing.md)
+3. **Suivez la progression** – Voir [Suivi du traitement](monitoring-the-processing.md)
 
-Pour plus d&#x27;informations sur les cibles d&#x27;étalonnage elles-mêmes, voir [Cibles d&#x27;étalonnage](../calibration-targets.md).
+Pour plus d’informations sur les cibles d’étalonnage elles-mêmes, voir [Cibles d’étalonnage](../calibration-targets.md).
