@@ -1,15 +1,15 @@
-# CLI Guide de démarrage rapide (pool-*)
+# Guide de démarrage rapide de l&#x27;CLI (pool-*)
 
-Le `chloros-cli` fourni pilote les capteurs DAQ via la famille de commandes **`daq pool-*`** — des clients légers HTTP qui pilotent le capteur via le pool de capteurs persistants du backend Chloros. Le backend gère le transport ; ainsi, l’interface graphique, le script CLI et le script SDK partagent tous un même descripteur actif au lieu de se disputer le port. Tout ce dont un client a besoin est accessible via `pool-*` : se connecter, diffuser en continu, enregistrer des fichiers `.daq` calibrés et changer de profil de condensateur.
+Le pilote `chloros-cli` fourni gère les capteurs DAQ via la famille de commandes **`daq pool-*`** — des clients HTTP « légers » qui pilotent le capteur via le pool de capteurs persistants du backend Chloros. Le backend gère le transport ; ainsi, l’interface graphique, la CLI et les scripts SDK partagent tous un même descripteur actif au lieu de se disputer le port. Tout ce dont un client a besoin est accessible via `pool-*` : se connecter, diffuser en continu, enregistrer des fichiers `.daq` calibrés et échanger des profils de capteurs.
 
-`pool-*` est également la **seule** interface DAQ dans les versions publiées. `chloros-cli daq --help` répertorie les sous-commandes `pool-*`, et l’appel d’une sous-commande DAQ à accès direct au matériel sur une version distribuée se termine par une erreur explicite indiquant le paquet manquant et vous renvoyant vers `pool-*` — rien ne se passe en silence. (Les commandes d&#x27;acquisition de données directement sur le matériel ne s&#x27;exécutent qu&#x27;à partir d&#x27;un checkout du code source MAPIR ; `pip install chloros-sdk` ne les fournit pas non plus.)
+`pool-*` est l’interface DAQ prise en charge dans les versions publiées. `chloros-cli daq --help` répertorie les sous-commandes `pool-*`, et `daq discover` / `daq list` exécutent le même balayage que `pool-discover`. Lorsqu’une sous-commande DAQ accédant directement au matériel n’est pas disponible, le programme se termine par une erreur explicite indiquant le paquet manquant et vous renvoyant vers `pool-*` — aucune erreur ne se produit en silence. (`pip install chloros-sdk` ne fournit pas non plus de commandes matérielles directes.)
 
 ***
 
 ## Prérequis
 
-* **Le backend Chloros doit être en cours d’exécution** — les commandes `pool-*` sont des clients HTTP, et non des pilotes matériels. Sur Windows, lancez l’application de bureau Chloros (elle démarre le backend). Sur un Linux/Jetson sans interface graphique, activez le service : `sudo systemctl enable --now chloros-backend.service`.
-* **Connexion à Chloros+ (niveau payant)** : exécutez d’abord `chloros-cli login`. La validation s’effectue côté serveur : sans connexion, les commandes échouent avec le code d’erreur `401 AUTH_REQUIRED` ; sur la formule gratuite (Iron), elles échouent avec le code d’erreur `403 PLAN_UPGRADE_REQUIRED`.
+* **Le backend Chloros doit être en cours d’exécution** — les commandes `pool-*` sont des clients HTTP, et non des pilotes matériels. Sous Windows, lancez l’application de bureau Chloros (elle démarre le backend). Sur un système Linux/Jetson sans interface graphique, activez le service en tant qu’utilisateur : `sudo systemctl enable --now chloros-backend@$USER.service` (voir [Installation sous Linux](../linux/linux-installation.md#always-on-ptp-for-headless-hosts)).
+* **Connexion à Chloros+ (formule payante)** : exécutez d’abord la commande `chloros-cli login`. La validation s&#x27;effectue côté serveur : sans connexion, les commandes échouent avec `401 AUTH_REQUIRED` ; sur le forfait gratuit (Iron), elles échouent avec `403 PLAN_UPGRADE_REQUIRED`.
 * Les commandes ciblent `http://127.0.0.1:5000` par défaut ; la famille `daq pool-*` prend en compte la variable d’environnement `CHLOROS_BACKEND_URL` si votre backend s’exécute ailleurs.
 
 ***
@@ -22,6 +22,7 @@ chloros-cli daq pool-connect                                  # smart-detect any
 chloros-cli daq pool-connect --port COM3                      # DAQ-U on a specific COM port
 chloros-cli daq pool-connect --mac AA:BB:CC:DD:EE:FF          # DAQ-M by BLE MAC
 chloros-cli daq pool-connect --eth-host daq-e-def330.local    # DAQ-E by hostname (reliable)
+#    (a DAQ-M's BLE MAC is not printed anywhere: find it with `chloros-cli daq pool-discover --only ble`)
 
 # 2. List the pool — this shows the sensor_id used by every command below
 chloros-cli daq pool-list
@@ -56,22 +57,36 @@ Indicateurs de réglage, tous facultatifs :
 | --- | --- |
 | `--integration-time MS` / `-t MS` | Temps d&#x27;intégration manuel en millisecondes. |
 | `--frame-avg N` / `-f N` | Nombre moyen de trames par spectre rapporté. |
-| `--no-ae` | Désactiver l&#x27;exposition automatique (l&#x27;AE est activée par défaut). |
+| `--no-ae` | Désactiver l&#x27;exposition automatique (AE est activée par défaut). |
 | `--no-stream` | Se connecter sans démarrer le flux (reprendre plus tard avec `pool-stream --start`). |
 | `--cap-id CAP` | Profil de correction Cap ; la valeur par défaut du backend est `sunshine_cosine`. Voir [`pool-set-cap`](#pool-set-cap-declare-the-fitted-cap). |
 
+La connexion d’un DAQ-E déjà présent dans le pool sous une autre de ses adresses — son nom d’hôte `daq-e-<id>.local` ou son adresse IP — renvoie l’entrée existante du pool au lieu d’ouvrir l’unité une deuxième fois.
+
 {% hint style="warning" %}
-**Remarque concernant la détection automatique de `--eth`.** Sur un hôte multi-homed (disposant de plusieurs interfaces réseau actives), le *premier* `pool-connect --eth` après le démarrage peut s&#x27;avérer vide même si le capteur est en bon état — la recherche de découverte peut ne pas détecter l&#x27;interface du capteur tant que le cache ARP n&#x27;est pas encore alimenté. Si `--eth` ne trouve rien, réessayez, ou ignorez complètement la détection en utilisant `--eth-host <ip-or-hostname>`, qui constitue la méthode fiable sur les machines multi-homed. Le nom d’hôte du DAQ-E est `daq-e-<id>.local` (par exemple `daq-e-def330.local`) ; son adresse IP simple fonctionne également.
+**Remarque concernant la détection automatique `--eth`.** Sur un hôte multi-homed (disposant de plusieurs interfaces réseau actives), le *premier* `pool-connect --eth` après le démarrage peut ne rien renvoyer même si le capteur est en bon état — la recherche de découverte peut ne pas détecter l’interface du capteur tant que le cache ARP est vide. Si `--eth` ne trouve rien, réessayez, ou ignorez complètement la détection en utilisant `--eth-host <ip-or-hostname>`, qui constitue la méthode fiable sur les machines multi-homed. Le nom d’hôte du DAQ-E est `daq-e-<id>.local` (par exemple `daq-e-def330.local`) ; son adresse IP brute fonctionne également.
 {% endhint %}
 
-## `pool-list` — afficher les périphériques connectés
+## `pool-discover` — analyse sans connexion
 
-Affiche tous les capteurs du pool de backend, y compris le `sensor_id` requis par toutes les autres commandes :
+```bash
+chloros-cli daq pool-discover                  # USB, BLE and Ethernet
+chloros-cli daq pool-discover --only ble       # BLE only: this is how you find a DAQ-M's MAC
+chloros-cli daq pool-discover --json           # machine-readable
+```
 
-| Modèle | Format `sensor_id` | Exemple |
+Recherche les capteurs auxquels vous pourriez vous connecter et affiche l’adresse à utiliser pour la connexion, sans établir de connexion. `--only` prend un sous-ensemble séparé par des virgules de `usb,ble,eth` ; `--timeout SEC` définit la durée de balayage par transport (par défaut 5 s, comprise entre 1 et 20 s). Les capteurs déjà ouverts dans le pool ne sont pas répertoriés (un DAQ-M connecté cesse de s’annoncer) — utilisez `pool-list` pour ceux-ci. Dans une version livrée, `chloros-cli daq discover` et `daq list` exécutent ce même balayage.
+
+## `pool-list` — afficher les appareils connectés
+
+Affiche tous les capteurs du pool backend, y compris le `sensor_id` requis par toutes les autres commandes :
+
+| Modèle | Forme `sensor_id` | Exemple |
 | --- | --- | --- |
 | DAQ-U / DAQ-M | 5 octets séparés par des tirets | `CB-7C-A8-2E-5F` |
 | DAQ-E | `daq-e-<6 hex digits>` | `daq-e-def330` |
+
+Un DAQ-E dont le PTP a été désactivé (le réglage est enregistré sur l&#x27;appareil) est signalé dans `pool-list` avec `!! PTP is switched OFF on this unit (saved in its flash): its timestamps are not PTP-synced.` et la commande qui le réactive — voir [`pool-enable-ptp`](#pool-enable-ptp-switch-a-daq-es-ptp-back-on).
 
 ## `pool-latest` — lecture des trames de spectre
 
@@ -79,9 +94,9 @@ Affiche tous les capteurs du pool de backend, y compris le `sensor_id` requis pa
 chloros-cli daq pool-latest --sensor-id daq-e-def330 --recent 10 --json
 ```
 
-Renvoie la trame la plus récente, ou les trames `--recent N` les plus récentes ; `--json` génère une sortie lisible par machine pour les scripts. Les trames correspondent à l’irradiance spectrale (W/m²/nm) calibrée radiométriquement sur une grille de 135 points, comprise entre 340 et 1 010 nm, avec le profil de capuchon du capteur déjà appliqué. Pour obtenir des valeurs d’irradiance quantitatives, faites la moyenne d’au moins 15 secondes d’images — il s’agit d’une caractéristique de l’instrument, et non d’un défaut.
+Renvoie la trame la plus récente, ou les trames les plus récentes `--recent N` ; `--json` génère une sortie lisible par machine pour la création de scripts. Les trames correspondent à l’irradiance spectrale (W/m²/nm) calibrée radiométriquement sur une grille de 135 points, comprise entre 340 et 1 010 nm, avec le profil de capuchon du capteur déjà appliqué. Pour obtenir des valeurs d’irradiance quantitatives, effectuez une moyenne sur au moins 15 secondes d’images — il s’agit d’une caractéristique de l’instrument, et non d’un défaut.
 
-## `pool-stream` — mettre en pause ou reprendre la diffusion en continu
+## `pool-stream` — mettre en pause ou reprendre la transmission en continu
 
 ```bash
 chloros-cli daq pool-stream --sensor-id daq-e-def330 --stop    # pause
@@ -99,12 +114,14 @@ chloros-cli daq pool-record --sensor-id daq-e-def330 --stop
 | Indicateur | Valeur par défaut | Signification |
 | --- | --- | --- |
 | `--duration SEC` / `-d SEC` | `0` | Durée d’enregistrement en secondes ; `0` signifie « s&#x27;exécuter jusqu&#x27;à ce que vous lanciez `--stop` ». |
-| `--output DIR` / `-o DIR` | `~/Documents/DAQ Live View/` | Répertoire de sortie, déterminé **sur la machine exécutant le backend**. |
-| `--device-name NAME` | — | Étiquette stockée avec l&#x27;enregistrement. |
-| `--stop` | — | Arrête un enregistrement en cours. |
+| `--output DIR` / `-o DIR` | `~/Documents/DAQ Live View/` | Répertoire de sortie. Avec le backend sur cet ordinateur, un chemin relatif est résolu par rapport au dossier dans lequel vous avez exécuté la commande ; avec un backend distant, le chemin est résolu **sur la machine exécutant le backend**. |
+| `--device-name NAME` | — | Étiquette enregistrée avec l&#x27;enregistrement. |
+| `--stop` | — | Arrêter un enregistrement en cours. |
+| `--confirm-after SEC` | `20` | Après le démarrage, attendre jusqu’à ce délai pour que la première ligne soit écrite, et émettre un avertissement sonore (`!! WARNING: no rows written after …s. This recording is producing an EMPTY file.`) si aucune n’arrive. `0` désactive cette vérification. |
+| `--heartbeat SEC` | `30` | Avec `--duration`, affiche le nombre de lignes toutes les SEC secondes et signale un avertissement s’il cesse d’augmenter. `0` la désactive. |
 
 {% hint style="info" %}
-L&#x27;enregistrement s&#x27;effectue dans le backend, le fichier `.daq` se retrouve donc sur le système de fichiers de la **machine du backend** — par défaut dans `~/Documents/DAQ Live View/` à cet emplacement, et pas nécessairement là où vous avez exécuté CLI. Les noms de fichiers comprennent l’identifiant du capteur et un horodatage.
+L&#x27;enregistrement s&#x27;effectue en arrière-plan, le fichier `.daq` se retrouve donc sur le système de fichiers de la **machine backend** — par défaut dans `~/Documents/DAQ Live View/` à cet emplacement, et pas nécessairement là où vous avez exécuté la CLI. Les noms de fichiers comprennent l’identifiant du capteur et un horodatage.
 {% endhint %}
 
 ## `pool-set-cap` — Déclarer le capuchon installé
@@ -113,16 +130,16 @@ L&#x27;enregistrement s&#x27;effectue dans le backend, le fichier `.daq` se retr
 chloros-cli daq pool-set-cap --sensor-id daq-e-def330 --cap-id sunshine_cosine
 ```
 
-L’identifiant du capuchon sélectionne le profil de correction mesuré en usine appliqué à chaque spectre, et il **doit correspondre au capuchon physiquement monté sur le capteur** — ni le capteur ni le logiciel ne peuvent détecter le capuchon par eux-mêmes, et cette sélection est enregistrée dans chaque fichier `.daq`. La valeur par défaut partout est `sunshine_cosine` (chaque DAQ est livré avec le capuchon de correction cosinus « Sunshine » installé, offrant une atténuation d’environ 12× par conception — un changement de capuchon non déclaré entraîne une correction erronée des spectres d’un facteur proche de celui-ci).
+L’identifiant du capuchon sélectionne le profil de correction mesuré en usine appliqué à chaque spectre, et il **doit correspondre au capuchon physiquement monté sur le capteur** — ni le capteur ni le logiciel ne peuvent détecter le capuchon par eux-mêmes, et cette sélection est enregistrée dans chaque fichier `.daq`. La valeur par défaut partout est `sunshine_cosine` (chaque DAQ est livré avec le capuchon de correction cosinus Sunshine installé, offrant une atténuation d’environ 12× par conception — un changement de capuchon non déclaré entraîne une correction erronée des spectres d’un facteur proche de celui-ci).
 
 | `--cap-id` | Disponible sur |
 | --- | --- |
 | `sunshine_cosine` (par défaut) | DAQ-U, DAQ-M, DAQ-E |
 | `fov_15`, `fov_45`, `fov_90` | DAQ-U, DAQ-E |
 | `fov_30`, `fov_60` | DAQ-U uniquement |
-| `none` | DAQ-E uniquement — voir remarque |
+| `none` | DAQ-E uniquement — voir la remarque |
 
-Un identifiant de capuchon ne figurant pas dans le jeu défini pour le capteur est refusé lors de la connexion et génère une erreur explicite. `none` (DAQ-E) signifie que le capuchon a été physiquement retiré — il applique toujours un profil géométrique d&#x27;usine pour le diffuseur en verre encastré du DAQ-E ; il ne s&#x27;agit donc pas d&#x27;une opération sans effet, et un DAQ-E « nu » correspond à une configuration de laboratoire, et non à une configuration de terrain prise en charge. (Un DAQ-U nu est véritablement « nu » et ne nécessite aucun profil de correction ; le DAQ-M s’utilise avec son capuchon Sunshine.)
+Un identifiant de capuchon ne faisant pas partie de l&#x27;ensemble prévu pour le capteur est refusé lors de la connexion et génère une erreur claire. `none` (DAQ-E) signifie que le capuchon est physiquement retiré — il applique toujours un profil géométrique d&#x27;usine pour le diffuseur en verre encastré du DAQ-E ; il ne s&#x27;agit donc pas d&#x27;une opération sans effet, et un DAQ-E « nu » correspond à une configuration de laboratoire, et non à une configuration de terrain prise en charge. (Un DAQ-U nu est véritablement nu et ne nécessite aucun profil de correction ; le DAQ-M s’utilise avec son capuchon Sunshine.)
 
 ## `pool-disconnect` — libération des capteurs
 
@@ -131,28 +148,60 @@ chloros-cli daq pool-disconnect --sensor-id daq-e-def330   # one sensor
 chloros-cli daq pool-disconnect --all                      # everything in the pool
 ```
 
-***
+`pool-disconnect` libère un capteur quelle que soit la personne qui l’a ouvert ; il libère donc également un capteur laissé dans le pool par un script qui a planté (à condition qu’un enregistrement en cours sur ce capteur soit d’abord terminé). Un capteur qui ne se trouve pas dans le pool n’a rien à libérer : la commande affiche `<sensor-id>: already released (not in the pool)` et se termine par `0`. Une libération refusée ou non confirmée par le backend se termine par `1`.
+
+## `pool-enable-ptp` — réactiver le PTP d’un DAQ-E
+
+```bash
+chloros-cli daq pool-enable-ptp --sensor-id daq-e-def330
+```
+
+Un DAQ-E conserve son paramètre d’activation/désactivation du PTP dans sa propre mémoire ; ainsi, un appareil dont le PTP a été désactivé reste désactivé — et ses horodatages ne sont pas synchronisés via PTP — jusqu’à ce qu’il soit réactivé. `pool-list` signale un tel appareil et affiche cette commande pour celui-ci. Chloros ne réactive jamais un appareil de lui-même, car la désactivation peut être intentionnelle. Nouveauté de la version 1.3.0.
+
+## Paramètres des appareils DAQ-E
+
+```bash
+chloros-cli daq pool-info --sensor-id daq-e-def330
+chloros-cli daq pool-set-network --sensor-id daq-e-def330 \
+  --static 192.168.1.50 --gateway 192.168.1.1
+chloros-cli daq pool-set-network --sensor-id daq-e-def330 --auto
+chloros-cli daq pool-set-auto-stream --sensor-id daq-e-def330 --on
+chloros-cli daq pool-reboot --sensor-id daq-e-def330
+chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
+```
+
+`pool-info` affiche le micrologiciel du capteur (et indique si cette version de Chloros en propose un plus récent), son adresse et la manière dont il l’a obtenue, les paramètres réseau enregistrés lorsqu’ils diffèrent de ceux actuellement utilisés, la diffusion en continu à la mise sous tension et le PTP. `pool-set-network` redémarre le capteur pour appliquer la modification et le reconnecte avec les paramètres qu’il avait auparavant ; `--no-reboot` se contente de les enregistrer. Une adresse statique doit exister sur le réseau de cet ordinateur, sinon Chloros la refuse ; `--force` passe outre cette restriction, uniquement pour un ordinateur qui sera réadressé ou acheminé vers cette adresse. Les redémarrages sont refusés pendant que le capteur enregistre. `pool-update-firmware` correspond à la commande **Update to \<version\>**</version\> de l’interface graphique <version\>pour la ligne de commande, et permet de mettre à jour un DAQ-E sous Linux qui ne dispose pas d’interface graphique. Nouveauté de la version 1.3.0.***
 
 ## Résumé des commandes
 
 | Commande | Objectif |
 | --- | --- |
-| `daq pool-connect [--port P \| --ble \| --mac M \| --eth \| --eth-host H] [-t MS] [-f N] [--no-ae] [--no-stream] [--cap-id CAP]` | Ouvrir un capteur dans le pool backend. |
-| `daq pool-list` | Afficher tous les capteurs du pool avec leur `sensor_id`. |
+| `daq pool-connect [--port P \| --ble \| --mac M \| --eth \| --eth-host H] [-t MS] [-f N] [--no-ae] [--no-stream] [--cap-id CAP]` | Ouvrir un capteur dans le pool du backend. |
+| `daq pool-discover [--only usb,ble,eth] [--timeout SEC] [--json]` | Rechercher des capteurs sans se connecter (retrouve l&#x27;adresse MAC BLE d&#x27;un DAQ-M). |
+| `daq pool-list` | Affiche tous les capteurs du pool avec leur `sensor_id`. |
 | `daq pool-latest --sensor-id ID [--recent N] [--json]` | Les N dernières trames de spectre calibrées. |
-| `daq pool-stream --sensor-id ID [--start \| --stop]` | Reprendre / mettre en pause le streaming. |
-| `daq pool-record --sensor-id ID [-d SEC] [-o DIR] [--device-name NAME] [--stop]` | Démarrer / arrêter un enregistrement `.daq` (côté backend). |
-| `daq pool-set-cap --sensor-id ID --cap-id CAP` | Changer le profil de correction de crête pendant l&#x27;exécution. |
-| `daq pool-disconnect --sensor-id ID [--all]` | Libérer un capteur ou tous les capteurs. |
+| `daq pool-stream --sensor-id ID [--start \| --stop]` | Reprendre / mettre en pause la diffusion en continu. |
+| `daq pool-record --sensor-id ID [-d SEC] [-o DIR] [--device-name NAME] [--confirm-after SEC] [--heartbeat SEC] [--stop]` | Démarrer / arrêter un enregistrement `.daq` (côté backend). |
+| `daq pool-set-cap --sensor-id ID --cap-id CAP` | Changer le profil de correction de crête en cours d’exécution. |
+| `daq pool-disconnect --sensor-id ID [--all]` | Libérer un capteur, ou tous les capteurs. |
+| `daq pool-enable-ptp --sensor-id ID` | Réactiver le PTP pour un DAQ-E dont le PTP est désactivé. |
+| `daq pool-info --sensor-id ID [--json]` | Le micrologiciel, l&#x27;adresse, les paramètres réseau enregistrés, la diffusion à la mise sous tension et le PTP d&#x27;un DAQ-E. |
+| `daq pool-set-network --sensor-id ID (--auto \| --static IP [--mask M] [--gateway G]) [--no-reboot] [--force]` | DHCP ou adresse statique ; redémarre et reconnecte le capteur. |
+| `daq pool-set-auto-stream --sensor-id ID (--on \| --off)` | Diffusion à la mise sous tension. |
+| `daq pool-reboot --sensor-id ID` | Redémarre un DAQ-E et le reconnecte. |
+| `daq pool-update-firmware --sensor-id ID` | Installe le micrologiciel DAQ-E de cette version sur un capteur plus ancien. |
 
 ***
 
-## Dépannage d&#x27;une première connexion DAQ-E
+## Dépannage d’une première connexion DAQ-E
 
-1. Le DAQ-E ne dispose pas de LED d&#x27;état — vérifiez qu&#x27;il est alimenté via le voyant PoE/liaison sur le commutateur ou le port de l&#x27;injecteur, et attendez quelques secondes après la mise sous tension pour qu&#x27;il démarre et se connecte au réseau.
+1. Le DAQ-E ne dispose pas de LED d’état — vérifiez qu’il est sous tension via le voyant PoE/liaison sur le commutateur ou le port de l’injecteur, et patientez quelques secondes après la mise sous tension pour qu’il démarre et se connecte au réseau.
 2. La machine backend doit se trouver sur le **même domaine de diffusion** que le capteur — le protocole mDNS ne traverse pas les routeurs.
-3. Sur Windows, acceptez l&#x27;invite du pare-feu Defender lors du premier démarrage (mDNS UDP 5353, données DAQ-E UDP 5002, PTP UDP 319/320).
-4. Toujours rien de la part de `--eth` ? Utilisez `--eth-host` avec le nom d’hôte de l’appareil (`daq-e-<id>.local`) ou son adresse IP — c’est la méthode la plus fiable, en particulier sur les hôtes multi-homés.
+3. Un pare-feu doit autoriser le passage du protocole mDNS (UDP 5353), des données DAQ-E (UDP 5002) et du protocole PTP (UDP 319/320). Le programme d’installation Windows ajoute une règle à cet effet, et le programme d’installation Linux `.deb` les ouvre dans un `ufw` / `firewalld` qui était actif au moment de l’installation ; un pare-feu tiers, ou un pare-feu activé ultérieurement, doit les autoriser.
+4. Toujours rien de la part de `--eth` ? Utilisez `--eth-host` avec le nom d&#x27;hôte (`daq-e-<id>.local`) ou l&#x27;adresse IP de l&#x27;appareil, ce qui permet d&#x27;éviter la phase de découverte.
 
-***{% hint style="info" %}**Astuce pour les assistants IA.** Chaque page de ce manuel est fournie au format Markdown brut — ajoutez `.md` à la balise (slug) en minuscules d&#x27;une page, URL (cette page : `https://mapir.gitbook.io/chloros/daq/cli-quick-start.md`) ; l’index lisible par machine est alors `https://mapir.gitbook.io/chloros/llms.txt`. Pour consulter la documentation complète sur les options de `chloros-cli daq` et de toutes les autres familles de commandes, consultez la [Référence CLI](../reference/cli-reference.md) (`https://mapir.gitbook.io/chloros/reference/cli-reference.md`) ; le chemin d’accès de Python est `chloros_sdk.connect_daq_sensor()` dans la [Référence SDK](../reference/sdk-reference.md).
+***
+{% hint style="info" %}
+**Astuce pour les assistants IA.** Chaque page de ce manuel est fournie au format Markdown brut — ajoutez `.md` à la partie en minuscules de l&#x27;URL de la page (cette page : `https://mapir.gitbook.io/chloros/daq/cli-quick-start.md`) ; l’index lisible par machine est `https://mapir.gitbook.io/chloros/llms.txt`. Pour consulter la documentation complète au niveau des options de `chloros-cli daq` et de toutes les autres familles de commandes, consultez la [Référence CLI](../reference/cli-reference.md) (`https://mapir.gitbook.io/chloros/reference/cli-reference.md`) ; le chemin d&#x27;accès Python est `chloros_sdk.connect_daq_sensor()` dans la [Référence SDK](../reference/sdk-reference.md).
 {% endhint %}
+</version\>
