@@ -1,6 +1,6 @@
 # Capteurs de lumière DAQ
 
-> **Vous cherchez des informations sur le matériel ?**Les capteurs eux-mêmes — modèles, montage, capuchons, ports, alimentation et l&#x27;application SCANNER — sont décrits dans le**[manuel d&#x27;utilisation DAQ](https://mapir.gitbook.io/daq)**. Ce chapitre traite de leur utilisation depuis Chloros. Les capteurs de lumière**DAQ** d’
+> **Vous cherchez des informations sur le matériel ?**Les capteurs eux-mêmes — modèles, montage, capuchons, ports, alimentation et l'application SCANNER — sont décrits dans le**[manuel d'utilisation DAQ](https://mapir.gitbook.io/daq)**. Ce chapitre traite de leur utilisation depuis Chloros. Les capteurs de lumière**DAQ** d’
 
 MAPIR mesurent la lumière ambiante sous forme de spectres étalonnés radiométriquement. Dans Chloros, ils remplissent deux rôles :
 
@@ -51,10 +51,10 @@ Chaque DAQ communique un identifiant de capteur stable. Son format varie selon l
 | DAQ-M | 5 octets séparés par des tirets | `CB-74-02-30-6B` |
 | DAQ-E | `daq-e-<6 hex digits>` | `daq-e-def330` |
 
-L&#x27;identifiant du capteur est :
+L'identifiant du capteur est :
 
-* gravé dans chaque fichier `.daq` qu&#x27;il enregistre,
-* la clé utilisée par Chloros pour récupérer le pack d&#x27;étalonnage d&#x27;usine de cet appareil,
+* gravé dans chaque fichier `.daq` qu'il enregistre,
+* la clé utilisée par Chloros pour récupérer le pack d'étalonnage d'usine de cet appareil,
 * la valeur que vous transmettez à `--sensor-id` dans les commandes CLI `pool-*`, et
 * pour le DAQ-E, également son nom d’hôte mDNS (`daq-e-def330.local`) — la valeur que `--eth-host` accepte.
 
@@ -84,7 +84,7 @@ Chaque nom de fichier `.daq` comprend l’identifiant du capteur et un horodatag
 
 ## Dans ce chapitre
 
-* [**L&#x27;onglet DAQ dans Chloros**](gui.md) — présentation complète de l&#x27;interface graphique : connexion de chaque modèle, paramètres par capteur, graphiques spectraux, données colorimétriques en temps réel, réflectance à double capteur et enregistrement.
+* [**L'onglet DAQ dans Chloros**](gui.md) — présentation complète de l'interface graphique : connexion de chaque modèle, paramètres par capteur, graphiques spectraux, données colorimétriques en temps réel, réflectance à double capteur et enregistrement.
 * [**Guide de démarrage rapide de la CLI (pool-\*)**](cli-quick-start.md) — pilotage des capteurs DAQ à partir de `chloros-cli daq pool-*`, le chemin d’accès en ligne de commande pris en charge.
 * [**Profils de capteurs et plage étalonnée**](caps-and-range.md) — quels capteurs existent pour chaque modèle, comment les déclarer et la plage spectrale étalonnée en détail.
 * [**Enregistrement et format .daq**](recording.md) — le format SQLite `.daq` et les workflows d’enregistrement.

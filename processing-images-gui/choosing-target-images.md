@@ -56,9 +56,9 @@ Avant le traitement, vérifiez bien que :
 
 ***
 
-## LATTICE : les cibles sont facultatives lorsqu&#x27;un système d&#x27;acquisition de données (DAQ) enregistre
+## LATTICE : les cibles sont facultatives lorsqu'un système d'acquisition de données (DAQ) enregistre
 
-Pour les caméras multispectrales LATTICE, une cible d&#x27;étalonnage intégrée à l&#x27;image est **l&#x27;une des deux** références de réflectance possibles :
+Pour les caméras multispectrales LATTICE, une cible d'étalonnage intégrée à l'image est **l'une des deux** références de réflectance possibles :
 
 * **Cible intégrée à l’image**: lorsqu’une image de cible marquée passe les filtres de qualité (QA) d’Chloros, la cible devient la**référence de réflectance absolue** pour les images qui l’entourent.
 * **Rayonnement descendant du DAQ**: lorsqu’aucune cible n’est présente (ou que le contrôle qualité échoue), Chloros calcule alors la réflectance à partir de l’irradiance descendante du capteur de lumière du DAQ (ρ = π·L/E). Si un enregistrement `.daq` ou DAQ-M `.csv` couvre vos captures, vous obtenez une réflectance calibrée**sans aucune image cible**.
@@ -120,7 +120,7 @@ Si vous utilisez simultanément deux caméras MAPIR (par exemple, Survey3W RGN +
 1. Capturez des images cibles avec **les deux caméras** en même temps
 2. Utilisez la **même cible physique** pour les deux caméras
 3. Marquez les images de la cible pour les **deux types de caméras** dans le navigateur de fichiers
-4. Chloros utilisera les cibles appropriées pour l&#x27;étalonnage de chaque caméra
+4. Chloros utilisera les cibles appropriées pour l'étalonnage de chaque caméra
 
 ### Colonne « Modèle de caméra »
 
@@ -140,7 +140,7 @@ Utilisez cette colonne pour vérifier que vous avez marqué des cibles pour chaq
 
 ### Réglage de la sensibilité de détection
 
-Si Chloros ne détecte pas correctement vos cibles, modifiez ces paramètres dans [Paramètres du projet](adjusting-project-settings.md) :**Surface minimale de l&#x27;échantillon d&#x27;étalonnage (px) :*** **Par défaut** : 25 pixels
+Si Chloros ne détecte pas correctement vos cibles, modifiez ces paramètres dans [Paramètres du projet](adjusting-project-settings.md) :**Surface minimale de l'échantillon d'étalonnage (px) :*** **Par défaut** : 25 pixels
 * **Augmentez** cette valeur si vous obtenez de fausses détections sur de petits artefacts
 * **Réduisez** cette valeur si les cibles ne sont pas détectées**Regroupement minimal des cibles (0-100) :*** **Par défaut** : 60
 * **Augmentez** cette valeur si les cibles sont fractionnées en plusieurs détections
@@ -159,7 +159,7 @@ Si Chloros ne détecte pas correctement vos cibles, modifiez ces paramètres dan
 **Causes possibles :**
 
 * Images cibles non cochées dans l’explorateur de fichiers
-* Cible trop petite dans le cadre (&lt; 30 % de l’image)
+* Cible trop petite dans le cadre (< 30 % de l’image)
 * Mauvais éclairage (ombres, reflets)
 * Paramètres de détection des cibles trop stricts
 
@@ -209,7 +209,7 @@ Si un capteur de lumière DAQ a enregistré l’irradiance descendante pendant v
 
 1. Importez le fichier `.daq` (ou DAQ-M `.csv`) contenant les images
 2. Laissez la colonne « Cible » décochée
-3. La réflectance est calculée automatiquement à partir de la référence d&#x27;irradiation descendante du DAQ
+3. La réflectance est calculée automatiquement à partir de la référence d'irradiation descendante du DAQ
 4. La radiance ne nécessite jamais de cible ni de DAQ — elle provient uniquement de l’étalonnage radiométrique d’usine de la caméra
 
 ### Traitement sans aucune référence
@@ -219,7 +219,7 @@ Vous pouvez également effectuer le traitement sans cibles et sans DAQ :
 1. Laissez toutes les cases à cocher de la colonne « Cible » décochées
 2. **Désactivez** « Étalonnage de la réflectance / balance des blancs » dans les paramètres du projet — la détection des cibles est alors entièrement ignorée
 3. La correction du vignetage sera tout de même appliquée
-4. La sortie ne sera pas étalonnée pour la réflectance absolue (LATTICE multispectral exporte toujours les produits débayérés, d&#x27;aperçu et de radiance)
+4. La sortie ne sera pas étalonnée pour la réflectance absolue (LATTICE multispectral exporte toujours les produits débayérés, d'aperçu et de radiance)
 
 {% hint style="warning" %}
 **Non recommandé pour les travaux scientifiques Survey3** : sans étalonnage de la réflectance, les valeurs de pixels d’Survey3 ne représentent qu’une luminosité relative, et non des mesures scientifiques de réflectance. Utilisez des cibles d’étalonnage (ou, pour LATTICE, un capteur de lumière DAQ) pour obtenir des résultats précis et reproductibles.

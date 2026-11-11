@@ -1,12 +1,8 @@
 # Paramètres des caméras
 
-L&#x27;onglet **Caméras** est la surface de contrôle en direct d&#x27;Chloros
+L'onglet **Caméras** est la surface de contrôle en direct d'Chloros pour les caméras LATTICE : une zone d'affichage principale présentant chaque caméra connectée sous forme de vignette en direct, et une barre latérale permettant de basculer entre trois pages — la **liste des caméras**, un**volet de paramètres**(paramètres par caméra, par réseau ou de capture — un à la fois), et le**Calculateur d’index**. Cette page documente chaque commande de la liste des caméras, du volet des paramètres par caméra et du volet des paramètres du réseau. Les modes de capture, la sélection du type d’exportation et le flux « Capture All » se trouvent sur la page associée [Paramètres et modes de capture](capture.md).
 
-pour les caméras LATTICE : une zone d&#x27;affichage principale présentant chaque caméra connectée sous forme de vignette en direct, et une barre latérale permettant de basculer entre trois pages — la **liste des caméras**, un**volet de paramètres**(paramètres par caméra, par réseau ou de capture — un à la fois), et le**Calculateur d’index**. Cette page documente chaque commande de la liste des caméras, du volet des paramètres par caméra et du volet des paramètres du réseau. Les modes de capture, la sélection du type d’exportation et le flux « Capture All » se trouvent sur la page associée [Paramètres et modes de capture](capture.md).
-
-L’onglet « Caméras » apparaît dans la barre latérale dès que le backend Chloros
-
-est prêt. Toutes les commandes ci-dessous communiquent avec le backend local via `127.0.0.1:5000` ; les modifications s’appliquent immédiatement à la caméra en direct, sauf indication contraire.
+L’onglet « Caméras » apparaît dans la barre latérale dès que le backend Chloros est prêt. Toutes les commandes ci-dessous communiquent avec le backend local via `127.0.0.1:5000` ; les modifications s’appliquent immédiatement à la caméra en direct, sauf indication contraire.
 
 ## Types de caméras utilisés sur cette page
 
@@ -14,38 +10,12 @@ Les commandes s’affichent ou se masquent en fonction du type de caméra sélec
 
 | Terme | Signification | Canaux de filtre |
 | --- | --- | --- |
-| **Caméra RGB** | LATTICE M3C avec filtre FRGB (modèle contenant `-FRGB`) | Red
-
-/ Green
-
-/ Blue
-
-|
-| **Multispectrale Bayer** | LATTICE M3C avec FRGN, FOCN ou FNGB | FRGN : Red
-
-/ Green
-
-/ NIR
-
-· FOCN : Orange
-
-/ Cyan
-
-/ NIR
-
-· FNGB : NIR
-
-/ Green
-
-/ Blue
-
-|
+| **Caméra RGB** | LATTICE M3C avec filtre FRGB (modèle contenant `-FRGB`) | Red / Green / Blue |
+| **Multispectrale Bayer** | LATTICE M3C avec FRGN, FOCN ou FNGB | FRGN : Red / Green / NIR · FOCN : Orange / Cyan / NIR · FNGB : NIR / Green / Blue |
 | **Mono (M3M)** | LATTICE M3M — un filtre à bande étroite, une bande calibrée | Bande unique |
 | **Élément de réseau** | Une caméra connectée au sein d’un réseau synchronisé (affichage combiné ou séparé) | Selon son filtre |
 
-Les caméras RGB
-
-bénéficient d’un traitement photométrique (balance des blancs, profils de couleur, gamma) ; les caméras multispectrales et mono bénéficient de la chaîne radiométrique et ne passent pas par les contrôles photométriques. Les éléments du réseau transmettent les paramètres au niveau du flux (format de pixel, résolution, binning, déclenchement, fréquence d’images) au réseau — ces lignes deviennent alors en lecture seule dans le volet dédié à chaque caméra et sont déplacées vers le volet des paramètres du réseau.
+Les caméras RGB bénéficient d’un traitement photométrique (balance des blancs, profils de couleur, gamma) ; les caméras multispectrales et mono bénéficient de la chaîne radiométrique et ne passent pas par les contrôles photométriques. Les éléments du réseau transmettent les paramètres au niveau du flux (format de pixel, résolution, binning, déclenchement, fréquence d’images) au réseau — ces lignes deviennent alors en lecture seule dans le volet dédié à chaque caméra et sont déplacées vers le volet des paramètres du réseau.
 
 ## La zone principale du flux
 
@@ -53,9 +23,7 @@ bénéficient d’un traitement photométrique (balance des blancs, profils de c
 
 <!-- SCREENSHOT-NEEDED: Cameras tab with 2+ cameras connected in grid view — live tiles visible with name and fps overlays, sidebar camera list open on the right. -->
 
-En l’absence de caméras connectées, la zone du flux affiche un écran d’accueil **« Connectez une caméra pour commencer »**avec deux boutons :**Connecter une caméra**(vert, ouvre la boîte de dialogue de connexion d’une seule caméra) et**Connecter un réseau** (bleu, ouvre la boîte de dialogue de connexion d’un réseau). Les boîtes de dialogue de connexion sont décrites dans [Connexion des caméras](connecting.md) ; les concepts relatifs aux réseaux (synchronisation, niveaux, bande passante) dans [Réseaux multicaméras](arrays.md). Lorsque vous ouvrez un projet enregistré contenant des caméras, l’écran d’accueil affiche à la place une icône tournante accompagnée du message « Réouverture de N caméras enregistrées… » pendant qu’Chloros
-
-restaure les flux de la dernière session.
+En l’absence de caméras connectées, la zone du flux affiche un écran d’accueil **« Connectez une caméra pour commencer »**avec deux boutons :**Connecter une caméra**(vert, ouvre la boîte de dialogue de connexion d’une seule caméra) et**Connecter un réseau** (bleu, ouvre la boîte de dialogue de connexion d’un réseau). Les boîtes de dialogue de connexion sont décrites dans [Connexion des caméras](connecting.md) ; les concepts relatifs aux réseaux (synchronisation, niveaux, bande passante) dans [Réseaux multicaméras](arrays.md). Lorsque vous ouvrez un projet enregistré contenant des caméras, l’écran d’accueil affiche à la place une icône tournante accompagnée du message « Réouverture de N caméras enregistrées… » pendant qu’Chloros restaure les flux de la dernière session.
 
 <!-- SCREENSHOT-NEEDED: Cameras tab empty state — the "Connect a camera to get started" splash with the green Connect Camera and blue Connect Array buttons. -->
 
@@ -120,15 +88,11 @@ Ouvrez-le à l’aide de l’**icône en forme d’engrenage** située sur une l
 
 ### Histogramme en temps réel
 
-En haut du volet se trouve un histogramme de luminance en temps réel calculé à partir de l’aperçu JPEG
+En haut du volet se trouve un histogramme de luminance en temps réel calculé à partir de l’aperçu JPEG à environ 8 Hz. La moyenne est pondérée selon le principe de Bayer — (R+2G+B)/4 — afin de correspondre à la mesure AE propre à la caméra.
 
-à environ 8 Hz. La moyenne est pondérée selon le principe de Bayer — (R+2G+B)/4 — afin de correspondre à la mesure AE propre à la caméra.
-
-* **Ligne pointillée Orange**= la cible de l&#x27;exposition automatique. **Faites-la glisser horizontalement pour redéfinir la cible** — une commande est envoyée lorsque vous relâchez le curseur, et le glissement bascule le mode de cible d&#x27;exposition automatique en mode manuel.
-* **Ligne continue Green** = la luminance moyenne réelle (ce que l&#x27;exposition automatique fournit actuellement).
-* **Bouton RGB** (en haut à droite) : active/désactive les histogrammes superposés par bande, colorés selon le filtre de l’appareil photo (par exemple, sur FRGN : gris pour le NIR
-
-, vert, rouge). Sur les appareils photo mono (M3M), le bouton affiche « MONO » et est désactivé — le mode mono affiche toujours l’histogramme de luminance à bande unique.
+* **Ligne pointillée Orange**= la cible de l'exposition automatique. **Faites-la glisser horizontalement pour redéfinir la cible** — une commande est envoyée lorsque vous relâchez le curseur, et le glissement bascule le mode de cible d'exposition automatique en mode manuel.
+* **Ligne continue Green** = la luminance moyenne réelle (ce que l'exposition automatique fournit actuellement).
+* **Bouton RGB** (en haut à droite) : active/désactive les histogrammes superposés par bande, colorés selon le filtre de l’appareil photo (par exemple, sur FRGN : gris pour le NIR, vert, rouge). Sur les appareils photo mono (M3M), le bouton affiche « MONO » et est désactivé — le mode mono affiche toujours l’histogramme de luminance à bande unique.
 * Les étiquettes de l’axe X suivent la profondeur de bits du capteur du format de pixel actuel : 0..255, 0..1023, 0..4095 ou 0..65535.
 
 ### Lignes
@@ -140,52 +104,22 @@ d’informations sur la caméra
 | Ligne | Comportement |
 | --- | --- |
 | **Modèle** | En lecture seule (par ex. `LATT-M3C-L87-FRGN`). |
-| **Étalonnage radiométrique** | Badge Green**« Actif »**avec une légende indiquant le niveau d’étalonnage, le hachage, la date d’étalonnage et la liste des bandes, chargés à partir du pack d’étalonnage de la caméra (voir [Étalonnage radiométrique d’usine](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**Masqué pour les caméras RGB
-
-** — celles-ci disposent d’un étalonnage photométrique de la balance des blancs, et non d’une radiance par bande. |
-| **Rapport d’étalonnage**| Bouton**Télécharger** — ouvre le certificat d’étalonnage NIST propre à chaque numéro de série de la caméra au format PDF dans la visionneuse de votre système d’exploitation. Si le certificat n’est pas encore mis en cache, Chloros
-
-affiche un message d’aide à la place. |
+| **Étalonnage radiométrique** | Badge Green**« Actif »**avec une légende indiquant le niveau d’étalonnage, le hachage, la date d’étalonnage et la liste des bandes, chargés à partir du pack d’étalonnage de la caméra (voir [Étalonnage radiométrique d’usine](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**Masqué pour les caméras RGB** — celles-ci disposent d’un étalonnage photométrique de la balance des blancs, et non d’une radiance par bande. |
+| **Rapport d’étalonnage**| Bouton**Télécharger** — ouvre le certificat d’étalonnage NIST propre à chaque numéro de série de la caméra au format PDF dans la visionneuse de votre système d’exploitation. Si le certificat n’est pas encore mis en cache, Chloros affiche un message d’aide à la place. |
 | **Numéro de série** | En lecture seule. |
-| **Micrologiciel**| Affiche la version actuelle, puis recherche la version disponible pour ce modèle (mise en cache par modèle — un réseau de N caméras effectue une seule vérification sur le serveur). États : « Vérification en cours… » → bouton**« Mettre à jour vers X »**→ « Mise à jour en cours… » → « Mis à jour de A vers B » / « Échec : … » / « Ignoré : … » /**« À jour »** en vert. Info-bulle du bouton de mise à jour : « Réinitialisation d&#x27;usine + flashage + reprogrammation de UserSet1. ~2 à 3 minutes ; ne pas déconnecter. » |
+| **Micrologiciel**| Affiche la version actuelle, puis recherche la version disponible pour ce modèle (mise en cache par modèle — un réseau de N caméras effectue une seule vérification sur le serveur). États : « Vérification en cours… » → bouton**« Mettre à jour vers X »**→ « Mise à jour en cours… » → « Mis à jour de A vers B » / « Échec : … » / « Ignoré : … » /**« À jour »** en vert. Info-bulle du bouton de mise à jour : « Réinitialisation d'usine + flashage + reprogrammation de UserSet1. ~2 à 3 minutes ; ne pas déconnecter. » |
 | **IP** | En lecture seule. |
 | **Température** | En lecture seule, actualisée toutes les 3 s. Passe à l’orange à partir de 65 °C et au rouge avec un ⚠ à partir de 75 °C. |
-| **Cible d’étalonnage** | Active la détection de la cible de réflectance ArUco avec un tableau de validation NDVI
-
-par panneau situé sous le flux en direct (vue en liste) — voir [le tableau des cibles d’étalonnage](#the-calibration-target-table). Valable uniquement pour la session — s’ouvre toujours désactivée. |
+| **Cible d’étalonnage** | Active la détection de la cible de réflectance ArUco avec un tableau de validation NDVI par panneau situé sous le flux en direct (vue en liste) — voir [le tableau des cibles d’étalonnage](#the-calibration-target-table). Valable uniquement pour la session — s’ouvre toujours désactivée. |
 | Menu déroulant **Capteur de lumière** | Associe un capteur de lumière DAQ (DAQ-E/M/U, issu de la liste de l’onglet « Capteurs de lumière ») à cette caméra pour la correction de l’éclairage par lumière descendante (DLS) et l’exposition automatique prédictive. «« Aucun » annule l’association. Si aucun capteur n’est connecté, le menu déroulant affiche « (aucun capteur connecté — ouvrir l’onglet DAQ) ». L’association est enregistrée avec le projet. |
 
 #### Le tableau « Cible d’étalonnage »
 
 Ce tableau est un **affichage de validation uniquement** (« validation uniquement — ne modifie pas l’étalonnage »). Son en-tête indique le numéro de série de la caméra, le filtre, le numéro de la cible et la taille du marqueur en pixels, et il comporte une ligne par panneau :
 
-* **Panneau**, puis une colonne par bande avec la valeur du panneau — une caméra Bayer affiche ses trois bandes par nom et longueur d’onde (par ex. FRGN : Red
-
-660 nm / Green
-
-550 nm / NIR
-
-850 nm) ; une **caméra mono (M3M) affiche sa bande unique** (par exemple `F750`) et ne comporte pas de colonnes NDVI
-
-.
+* **Panneau**, puis une colonne par bande avec la valeur du panneau — une caméra Bayer affiche ses trois bandes par nom et longueur d’onde (par ex. FRGN : Red 660 nm / Green 550 nm / NIR 850 nm) ; une **caméra mono (M3M) affiche sa bande unique** (par exemple `F750`) et ne comporte pas de colonnes NDVI.
 * **Sat** — la proportion de pixels du panneau qui sont saturés (orange à partir de 1 %, rouge à partir de 5 %).
-* **NDVI
-
-Meas**,**NDVI
-
-Theo** (NDVI
-
-de réflectance de référence du panneau) et **Δ**— caméras multispectrales Bayer uniquement. Une petite marque après « NDVI
-
-Meas » indique à partir de quoi l’NDVI
-
-mesuré a été calculé :**ρ**(réflectance — une lecture du capteur de lumière est disponible),**L**(radiance — aucune lecture du capteur de lumière) ou**DN** (valeurs brutes de la caméra). Seul un NDVI**ρ** est comparable à l’NDVI
-
-théorique : pour L et DN, la colonne Δ est grisée et une note l’indique (« Aucune mesure du capteur de lumière : le NDVI
-
-est calculé à partir de la radiance, donc Δ ne constitue pas un contrôle d’étalonnage » / « Le NDVI
-
-est calculé à partir des valeurs brutes de la caméra, donc Δ ne constitue pas un contrôle d’étalonnage »). Avec ρ, Δ est vert en dessous de 0,02, orange en dessous de 0,05, rouge dans les autres cas.
+* **NDVI Meas**,**NDVI Theo** (NDVI de réflectance de référence du panneau) et **Δ**— caméras multispectrales Bayer uniquement. Une petite marque après « NDVI Meas » indique à partir de quoi l’NDVI mesuré a été calculé :**ρ**(réflectance — une lecture du capteur de lumière est disponible),**L**(radiance — aucune lecture du capteur de lumière) ou**DN** (valeurs brutes de la caméra). Seul un NDVI**ρ** est comparable à l’NDVI théorique : pour L et DN, la colonne Δ est grisée et une note l’indique (« Aucune mesure du capteur de lumière : le NDVI est calculé à partir de la radiance, donc Δ ne constitue pas un contrôle d’étalonnage » / « Le NDVI est calculé à partir des valeurs brutes de la caméra, donc Δ ne constitue pas un contrôle d’étalonnage »). Avec ρ, Δ est vert en dessous de 0,02, orange en dessous de 0,05, rouge dans les autres cas.
 
 <!-- SCREENSHOT-NEEDED: a 1.3.0 Calibration Target table under a live feed in list view — a Bayer camera's table showing the band columns, Sat, and "NDVI Meas ρ" / NDVI Theo / Δ; ideally next to a mono camera's single-band table with no NDVI columns. -->
 
@@ -193,34 +127,24 @@ est calculé à partir des valeurs brutes de la caméra, donc Δ ne constitue pa
 
 <!-- SCREENSHOT-NEEDED: per-camera Exposure & Gain section — Exposure (us) and Gain (dB) rows with Auto/Manual toggles, AE Target Brightness, AE Smoothing slider, AE Region of Interest row with the Aim button, and (on an array camera) AE Tune Speed and Highlight Protection rows. -->
 
-Toutes les entrées numériques ici utilisent des curseurs à maintien pour l’accélération : tapoter = ±1, maintenir &gt; 1,5 s = ±10, maintenir &gt; 3 s = ±100. La valeur est envoyée à la caméra lorsque vous relâchez le doigt.
+Toutes les entrées numériques ici utilisent des curseurs à maintien pour l’accélération : tapoter = ±1, maintenir > 1,5 s = ±10, maintenir > 3 s = ±100. La valeur est envoyée à la caméra lorsque vous relâchez le doigt.
 
-| Commande | Plage / choix | Par défaut | S&#x27;applique à | Fonction |
+| Commande | Plage / choix | Par défaut | S'applique à | Fonction |
 | --- | --- | --- | --- | --- |
 | **Exposition (us)**| Min./max. en temps réel de la caméra | Auto | Tout | Durée d’exposition en microsecondes, avec un bouton**Auto/Manuel**. Auto = exposition automatique continue côté caméra. Le réglage d’une exposition manuelle laisse le**Gain** sur Auto s’il l’était, permettant d’utiliser toute la plage de gain de la caméra, jusqu’à ce que vous modifiiez le gain ou que vous le régliez sur Manuel. |
 | **Gain (dB)**| Plages minimale et maximale en temps réel de la caméra (par ex. jusqu’à 48 dB) | Manuel (désactivé) | Tout | Gain analogique/numérique avec son propre commutateur**Auto/Manuel**. |
 | **Luminosité cible AE**| 0–255 | 80, mode**Auto**| Tout (modifiable lorsque l’AE ou le gain automatique est activé) | Luminosité visée par l’AE. En**Auto**(réglage par défaut), un contrôleur interne basé sur l’histogramme sélectionne lui-même la valeur cible, en maintenant l’exposition entre 60 et 75 % de la valeur maximale du capteur. La saisie d’une valeur ou le glissement de la ligne orange de l’histogramme bascule le mode en**Manuel**. |
-| **Lissage AE** | 0,5–40, par pas de 0,1 | 8,0 | Tout | Amortissement de l&#x27;AE. Info-bulle : «Plus la valeur est faible, plus l’AE réagit rapidement (peut provoquer des saccades à des fréquences d’images élevées). Plus la valeur est élevée, plus la réaction est douce et lente. » Des valeurs bien inférieures à la valeur par défaut peuvent provoquer des saccades de l’AE et déstabiliser le streaming à des fréquences d’images élevées ; 8,0 est la valeur par défaut stable. |
+| **Lissage AE** | 0,5–40, par pas de 0,1 | 8,0 | Tout | Amortissement de l'AE. Info-bulle : «Plus la valeur est faible, plus l’AE réagit rapidement (peut provoquer des saccades à des fréquences d’images élevées). Plus la valeur est élevée, plus la réaction est douce et lente. » Des valeurs bien inférieures à la valeur par défaut peuvent provoquer des saccades de l’AE et déstabiliser le streaming à des fréquences d’images élevées ; 8,0 est la valeur par défaut stable. |
 | **Zone d’intérêt de l’AE**| Case à cocher « Activer » + bouton**Viser**| Désactivé | Tout | Lorsque cette option est activée, AE mesure uniquement la zone verte en pointillés au lieu de l’image entière.**Cibler** active le placement par clic sur le flux en direct : un clic centre une zone à 30 % de l’image ; cliquer-glisser trace un rectangle personnalisé (minimum 5 % × 5 %). La fonction « Aim » se désactive automatiquement après un placement. La zone est remappée aux coordonnées natives de la caméra en fonction de toute rotation ou réflexion que vous avez définie, et est enregistrée avec le projet. |
 | **Vitesse de réglage AE** | 0,1–5, par pas de 0,1 | 1,0 | Réservé aux membres du tableau | Vitesse à laquelle la cible AE automatique suit les changements de luminosité de la scène ; 1,0× effectue une nouvelle vérification toutes les 2,5 s. |
 | **Protection des hautes lumières** | Stricte (1 %) / Normale (5 %) / Souplesse (15 %) | Stricte | Caméras permettant de régler ce paramètre | Pourcentage de l’image pouvant être écrêté en blanc avant que l’exposition automatique n’assombrisse l’image. |
 
 {% hint style="info" %}
-**Exigences en matière de luminosité pour les caméras multispectrales Bayer (RGN
-
-/ OCN
-
-/ NGB
-
-) :** la scène doit être suffisamment éclairée sur les trois canaux, sinon l&#x27;étalonnage ne fonctionne pas correctement — une seule exposition du capteur couvre les trois spectres. Utilisez un capteur de lumière DAQ pour mesurer votre luminosité, ou passez en mode entièrement mono (M3M) afin que chaque bande bénéficie de sa propre exposition. Si une capture ne respecte pas cette condition, Chloros
-
-le détecte et vous avertit (notification « unmix-clamp »). En temps réel, une mosaïque de séparation des canaux affiche **« Données de bande à faible confiance · N % »** lorsque le démixage a limité cette bande sur 25 % ou plus de ses pixels.
+**Exigences en matière de luminosité pour les caméras multispectrales Bayer (RGN / OCN / NGB) :** la scène doit être suffisamment éclairée sur les trois canaux, sinon l'étalonnage ne fonctionne pas correctement — une seule exposition du capteur couvre les trois spectres. Utilisez un capteur de lumière DAQ pour mesurer votre luminosité, ou passez en mode entièrement mono (M3M) afin que chaque bande bénéficie de sa propre exposition. Si une capture ne respecte pas cette condition, Chloros le détecte et vous avertit (notification « unmix-clamp »). En temps réel, une mosaïque de séparation des canaux affiche **« Données de bande à faible confiance · N % »** lorsque le démixage a limité cette bande sur 25 % ou plus de ses pixels.
 {% endhint %}
 
 {% hint style="info" %}
-**Comment l’exposition automatique gère l’exposition et le gain (1.3.0).** Lorsque le gain est en mode « Auto », Chloros
-
-maintient le gain à 0 dB jusqu’à ce que l’exposition ait atteint la valeur maximale autorisée (la limite supérieure de l’exposition automatique, la période de déclenchement d’un réseau ou le plafond d’exposition du DAQ) ; ce n’est qu’alors que le gain augmente. Dans un réseau, la fréquence de déclenchement est prioritaire : l’exposition automatique remplit la période définie par cette fréquence, puis augmente le gain ; ainsi, une scène qui s&#x27;assombrit ne réduit plus la fréquence de déclenchement en mode Auto (ce qui était le cas dans la version 1.2.0). Une exposition **manuelle**sur un élément du réseau dont la durée est supérieure à la période de déclenchement ralentit la fréquence de déclenchement du réseau pour s&#x27;y adapter ; le taux d’exposition automatique est rétabli dès que chaque élément qui l’avait ralenti est revenu en exposition automatique. Lorsque les paramètres**Exposition**et**Luminosité cible AE** sont tous deux réglés sur Auto et qu’un capteur de lumière DAQ fournit une mesure, l’exposition de chaque caméra est maintenue une fois que l’exposition automatique s’est stabilisée, tant que la lumière mesurée reste dans une fourchette d’environ ±25 % ; un changement de luminosité important et prolongé, une réinitialisation des paramètres (par exemple un changement de zone d’intérêt) ou une modification de l’exposition de votre part le réactive.
+**Comment l’exposition automatique gère l’exposition et le gain (1.3.0).** Lorsque le gain est en mode « Auto », Chloros maintient le gain à 0 dB jusqu’à ce que l’exposition ait atteint la valeur maximale autorisée (la limite supérieure de l’exposition automatique, la période de déclenchement d’un réseau ou le plafond d’exposition du DAQ) ; ce n’est qu’alors que le gain augmente. Dans un réseau, la fréquence de déclenchement est prioritaire : l’exposition automatique remplit la période définie par cette fréquence, puis augmente le gain ; ainsi, une scène qui s'assombrit ne réduit plus la fréquence de déclenchement en mode Auto (ce qui était le cas dans la version 1.2.0). Une exposition **manuelle**sur un élément du réseau dont la durée est supérieure à la période de déclenchement ralentit la fréquence de déclenchement du réseau pour s'y adapter ; le taux d’exposition automatique est rétabli dès que chaque élément qui l’avait ralenti est revenu en exposition automatique. Lorsque les paramètres**Exposition**et**Luminosité cible AE** sont tous deux réglés sur Auto et qu’un capteur de lumière DAQ fournit une mesure, l’exposition de chaque caméra est maintenue une fois que l’exposition automatique s’est stabilisée, tant que la lumière mesurée reste dans une fourchette d’environ ±25 % ; un changement de luminosité important et prolongé, une réinitialisation des paramètres (par exemple un changement de zone d’intérêt) ou une modification de l’exposition de votre part le réactive.
 {% endhint %}
 
 {% hint style="info" %}
@@ -259,38 +183,22 @@ Tout ce qui se trouve dans cette section concerne **uniquement l’affichage**�
 
 
 
-| Commande | Plage / choix | Par défaut | S&#x27;applique à | Fonction |
+| Commande | Plage / choix | Par défaut | S'applique à | Fonction |
 | --- | --- | --- | --- | --- |
 | **Résolution de rendu** | 360p (la plus rapide) / 480p / 720p / 1080p / Résolution native du capteur (la plus lente) | 720p | Tout | La hauteur à laquelle le backend exécute la chaîne de prévisualisation radiométrique. Une valeur plus faible permet d’augmenter la fréquence d’images sans modifier le champ de vision. |
-| **Index**| Case à cocher « Activer » + roue dentée | Désactivé | Multispectral Bayer uniquement,**pas** les membres à matrice combinée | Prévisualisation en direct de l’indice de végétation. L&#x27;icône en forme d&#x27;engrenage ouvre le [Calculateur d&#x27;indice](#index-calculator-pane) partagé, préchargé avec les bandes naturelles du filtre de la caméra (par ex. `Red_660_RGN`, `Green_550_RGN`, `NIR_850_RGN`). L’expression personnalisée ainsi que la table de conversion (LUT) (activée/désactivée, niveau par défaut 7 stops, min par défaut 0,2, max par défaut 1) est calculée à chaque image de prévisualisation. Les membres de l’array combiné masquent cette ligne — l’array possède un seul indice partagé. |
-| **Balance des blancs** | Désactivé / Une fois / Continu + un bouton de recapture | Continu | RGB
-
-uniquement | Balance des blancs en temps réel. Le bouton de rafraîchissement relance la mesure de la balance des blancs à partir du spectre DLS actuel (désactivé lorsque le mode est désactivé). |
-| **Gamma** | Activé / Désactivé | Activé | RGB
-
-uniquement | Affichage du gamma (γ = 2,2 LUT) sur l’aperçu en direct. Les captures enregistrées restent linéaires. |
+| **Index**| Case à cocher « Activer » + roue dentée | Désactivé | Multispectral Bayer uniquement,**pas** les membres à matrice combinée | Prévisualisation en direct de l’indice de végétation. L'icône en forme d'engrenage ouvre le [Calculateur d'indice](#index-calculator-pane) partagé, préchargé avec les bandes naturelles du filtre de la caméra (par ex. `Red_660_RGN`, `Green_550_RGN`, `NIR_850_RGN`). L’expression personnalisée ainsi que la table de conversion (LUT) (activée/désactivée, niveau par défaut 7 stops, min par défaut 0,2, max par défaut 1) est calculée à chaque image de prévisualisation. Les membres de l’array combiné masquent cette ligne — l’array possède un seul indice partagé. |
+| **Balance des blancs** | Désactivé / Une fois / Continu + un bouton de recapture | Continu | RGB uniquement | Balance des blancs en temps réel. Le bouton de rafraîchissement relance la mesure de la balance des blancs à partir du spectre DLS actuel (désactivé lorsque le mode est désactivé). |
+| **Gamma** | Activé / Désactivé | Activé | RGB uniquement | Affichage du gamma (γ = 2,2 LUT) sur l’aperçu en direct. Les captures enregistrées restent linéaires. |
 | **Réduction du bruit** | Case à cocher + intensité 0–100 | Désactivé / 50 | Tout (par caméra, même au sein des matrices) | Filtre bilatéral sur l’aperçu en direct. Plus la valeur est élevée, plus l’image est lisse, mais les détails sont moins nets. |
 | **Netteté** | Case à cocher + intensité 0–100 | Désactivé / 30 | Tout | Masque de netteté sur l’aperçu en direct, appliqué en dernier. Peut amplifier le bruit. Aperçu uniquement. |
-| **Vignettage**| Case à cocher + intensité 0–100 | Désactivé / 0 | Tout | Suppression manuelle du vignettage résiduel (éclaircit les coins), superposée à l&#x27;estimation du vignettage intelligent du réseau.**Radiométrique — affecte la vue en direct ET les exportations**, contrairement au débruitage et à la netteté. |
-| **Profil de couleur** | Raw / Linéaire / Naturel / Amélioré / Température personnalisée | Naturel | RGB
-
-uniquement | Voir ci-dessous. |
-| **Température de couleur** | 2 000–10 000 K, par pas de 100 | 5 500 K | RGB
-
-uniquement, profil de température personnalisé uniquement | Fixe la balance des blancs à une température de couleur corrélée fixe (entrée DLS ignorée). La dernière valeur en Kelvin sélectionnée est mémorisée lors des changements de profil. |
-| **Hautes lumières** | De −100 à 0, par pas de 1 | 0 (désactivé) | RGB
-
-uniquement | Nouveauté de la version 1.3.0. Assombrit les zones les plus lumineuses et les plus blanches de l’image (0 = inchangé, −100 = intensité maximale). S’applique à l’aperçu en direct **et aux captures au niveau de l’affichage (Aperçu)**, qui enregistrent le paramètre (`Chloros:DisplayHighlights`) ; les exportations de radiance et de réflectance ne sont jamais affectées. Cette fonction ne permet pas de récupérer les données du capteur qui ont été écrêtées — réduisez l’exposition pour y remédier. La superposition zébrée suit l’image assombrie. Désactivée avec le profil de couleur Raw (« Non appliqué avec le profil de couleur Raw. »). |
-| **Saturation** | 0–200 (100 = neutre) | 100 | RGB
-
-uniquement | Saturation HSV sur l’aperçu en direct. |
-| **Contraste** | 0–200 (100 = neutre) | 100 | RGB
-
-uniquement | Contraste linéaire autour du gris moyen dans l’aperçu en direct. |
+| **Vignettage**| Case à cocher + intensité 0–100 | Désactivé / 0 | Tout | Suppression manuelle du vignettage résiduel (éclaircit les coins), superposée à l'estimation du vignettage intelligent du réseau.**Radiométrique — affecte la vue en direct ET les exportations**, contrairement au débruitage et à la netteté. |
+| **Profil de couleur** | Raw / Linéaire / Naturel / Amélioré / Température personnalisée | Naturel | RGB uniquement | Voir ci-dessous. |
+| **Température de couleur** | 2 000–10 000 K, par pas de 100 | 5 500 K | RGB uniquement, profil de température personnalisé uniquement | Fixe la balance des blancs à une température de couleur corrélée fixe (entrée DLS ignorée). La dernière valeur en Kelvin sélectionnée est mémorisée lors des changements de profil. |
+| **Hautes lumières** | De −100 à 0, par pas de 1 | 0 (désactivé) | RGB uniquement | Nouveauté de la version 1.3.0. Assombrit les zones les plus lumineuses et les plus blanches de l’image (0 = inchangé, −100 = intensité maximale). S’applique à l’aperçu en direct **et aux captures au niveau de l’affichage (Aperçu)**, qui enregistrent le paramètre (`Chloros:DisplayHighlights`) ; les exportations de radiance et de réflectance ne sont jamais affectées. Cette fonction ne permet pas de récupérer les données du capteur qui ont été écrêtées — réduisez l’exposition pour y remédier. La superposition zébrée suit l’image assombrie. Désactivée avec le profil de couleur Raw (« Non appliqué avec le profil de couleur Raw. »). |
+| **Saturation** | 0–200 (100 = neutre) | 100 | RGB uniquement | Saturation HSV sur l’aperçu en direct. |
+| **Contraste** | 0–200 (100 = neutre) | 100 | RGB uniquement | Contraste linéaire autour du gris moyen dans l’aperçu en direct. |
 | **Miroir H / Miroir V** | Cases à cocher | Désactivé | Tout | Retourner l’aperçu horizontalement / verticalement. |
-| **Rotation**| 0° / 90° / 180° / 270° | 0° | Tout | Faire pivoter l’aperçu. L’orientation est appliquée à la fin de la chaîne de prévisualisation du backend.**Captures enregistrées (1.3.0) :**les produits « Preview », « Radiance », « Reflectance » et « Index » d’une caméra autonome sont retournés par les fonctions « Miroir » et « Rotation », tandis que**les fichiers « Raw » et « Debayered » conservent l’orientation native de la caméra**; chaque fichier de capture enregistre ce paramètre dans son XMP, de sorte que le traitement ultérieur d’un fichier « Raw » l’applique de la même manière.**Les fichiers membres d’un tableau conservent leur orientation native** (le paramètre est enregistré, mais non appliqué), et les vues composites du tableau l’ignorent. |**Sémantique des profils de couleur** (caméras RGB
-
-) :
+| **Rotation**| 0° / 90° / 180° / 270° | 0° | Tout | Faire pivoter l’aperçu. L’orientation est appliquée à la fin de la chaîne de prévisualisation du backend.**Captures enregistrées (1.3.0) :**les produits « Preview », « Radiance », « Reflectance » et « Index » d’une caméra autonome sont retournés par les fonctions « Miroir » et « Rotation », tandis que**les fichiers « Raw » et « Debayered » conservent l’orientation native de la caméra**; chaque fichier de capture enregistre ce paramètre dans son XMP, de sorte que le traitement ultérieur d’un fichier « Raw » l’applique de la même manière.**Les fichiers membres d’un tableau conservent leur orientation native** (le paramètre est enregistré, mais non appliqué), et les vues composites du tableau l’ignorent. |**Sémantique des profils de couleur** (caméras RGB) :
 
 * **Raw** — contourne entièrement la chaîne de traitement.
 * **Linéaire** — signal sombre + champ plat + balance des blancs ; pas de matrice de couleur, pas de gamma.
@@ -299,7 +207,7 @@ uniquement | Contraste linéaire autour du gris moyen dans l’aperçu en direct
 * ****Température personnalisée** — « Naturel » avec la balance des blancs fixée à la valeur en Kelvin de votre choix.
 
 {% hint style="warning" %}
-Pour les modes « Naturel », « Amélioré » et « Température personnalisée », le volet affiche une remarque sur la tonalité : les images sont éclaircies en fonction de leur propre scène, de sorte que les images *d&#x27;affichage* enregistrées ne sont pas comparables d&#x27;une image à l&#x27;autre. **Exportez la radiance ou la réflectance pour les mesures.**
+Pour les modes « Naturel », « Amélioré » et « Température personnalisée », le volet affiche une remarque sur la tonalité : les images sont éclaircies en fonction de leur propre scène, de sorte que les images *d'affichage* enregistrées ne sont pas comparables d'une image à l'autre. **Exportez la radiance ou la réflectance pour les mesures.**
 {% endhint %}
 
 ### Superpositions d’affichage (dessinées par-dessus le flux en direct)
@@ -311,24 +219,16 @@ Ces superpositions sont propres à l’interface utilisateur : elles sont dessin
 | Superposition | Commandes | Par défaut | Fonction |
 | --- | --- | --- | --- |
 | **Zébré** | Case à cocher + seuil 200–255 | Désactivé / 250 | Bandes diagonales magenta sur les pixels écrêtés. |
-| **Réticule** | Case à cocher | Désactivé | Repère au centre de l&#x27;image. |
+| **Réticule** | Case à cocher | Désactivé | Repère au centre de l'image. |
 | **Grille** | Désactivée / 3 × 3 / 9 × 9 | Désactivée | Grille de composition. |
 | **Histogramme** | Case à cocher + largeur 0,10–0,90 de l’image | Désactivée / 0,25 | Bande d’histogramme sur le flux. |
 | **Focus Peak** | Case à cocher + seuil 20–200 + échantillon de couleur | Désactivé / 80 / `#ff5722` | Mise en évidence des contours par l’algorithme de Sobel pour la mise au point. |
-| **Séparation des canaux** | Bouton « Afficher les séparations (Red
-
-/ Green
-
-/ NIR
-
-) » / Bouton « Masquer les séparations » | Masqué | Ajoute trois vignettes indépendantes en niveaux de gris, une par canal, à côté de l’image composite (le libellé du bouton correspond aux canaux de filtre de la caméra). Chaque vignette séparée est déplaçable et reprend la couleur de bordure de la caméra. Non disponible sur les caméras monochromes. Enregistré avec le projet. |
+| **Séparation des canaux** | Bouton « Afficher les séparations (Red / Green / NIR) » / Bouton « Masquer les séparations » | Masqué | Ajoute trois vignettes indépendantes en niveaux de gris, une par canal, à côté de l’image composite (le libellé du bouton correspond aux canaux de filtre de la caméra). Chaque vignette séparée est déplaçable et reprend la couleur de bordure de la caméra. Non disponible sur les caméras monochromes. Enregistré avec le projet. |
 
 ### Posemètre ponctuel
 
 * Case à cocher **Cliquer pour échantillonner**: cliquez sur le flux en direct pour échantillonner un seul pixel (un réticule en croix le marque), ou cliquez et faites glisser pour sélectionner une zone et obtenir une moyenne des pixels.**Effacer**supprime l’échantillon et le réticule. Fonction mutuellement exclusive avec le mode**Viser** de l’AE-ROI.
-**Menu déroulant **Afficher**:**Brut (profondeur de bits)**— valeurs numériques natives à la profondeur de bits du capteur (par ex. 12 bits → 0..4095) — ou**Affichage (8 bits)** (par défaut). Lorsqu’un indice en temps réel est actif, l’option Affichage affiche à la place la valeur de l’indice calculée (par ex. NDVI
-
-).
+**Menu déroulant **Afficher**:**Brut (profondeur de bits)**— valeurs numériques natives à la profondeur de bits du capteur (par ex. 12 bits → 0..4095) — ou**Affichage (8 bits)** (par défaut). Lorsqu’un indice en temps réel est actif, l’option Affichage affiche à la place la valeur de l’indice calculée (par ex. NDVI).
 * Le panneau d’affichage répertorie les coordonnées des pixels, la taille de l’image, le format des pixels, la profondeur de bits et un tableau des canaux (Chan / Valeur / %) avec les libellés des bandes et les longueurs d’onde ; les paires vertes Bayer sont moyennées ; les échantillons de région affichent « N px avg ».
 
 L’état du posemètre ponctuel est valable uniquement pour la session en cours.
@@ -350,18 +250,10 @@ Cette section n’apparaît que lorsqu’**au moins un capteur de lumière DAQ e
 | **Réflectance de la scène**| Bouton**Recalibrer ρ** | — | Réévalue le facteur de réflectance de la scène utilisé par le solveur. |
 
 {% hint style="info" %}
-**La connexion en réseau désactive l’exposition automatique prédictive par défaut** — pour les réseaux, l’exposition automatique intelligente d’Chloros
-
-ainsi que l’exposition automatique côté appareil photo gèrent l’exposition (avec protection contre la saturation) et l’estimation de la réflectance d’une seule scènen’est pas fiable dans des scènes mixtes. Vous pouvez la réactiver ici pour chaque caméra si vous souhaitez spécifiquement une exposition radiométrique pilotée par DLS.
+**La connexion en réseau désactive l’exposition automatique prédictive par défaut** — pour les réseaux, l’exposition automatique intelligente d’Chloros ainsi que l’exposition automatique côté appareil photo gèrent l’exposition (avec protection contre la saturation) et l’estimation de la réflectance d’une seule scènen’est pas fiable dans des scènes mixtes. Vous pouvez la réactiver ici pour chaque caméra si vous souhaitez spécifiquement une exposition radiométrique pilotée par DLS.
 {% endhint %}
 
-**Plafond d’exposition piloté par DAQ et AE indexée sur la lumière incidente.** Indépendamment de la case à cocher ci-dessus, lorsqu’un capteur de lumière DAQ est attribué à une caméra RGB
-
-, Chloros
-
-calcule — à partir de l’irradiance descendante absolue mesurée — l’exposition × gain maximal auquel une surface à 100 % de réflectance reste en dessous du seuil de clipping, et l’applique comme **plafond**de l’exposition automatique. Depuis la version 1.3.0, ce plafond ne s’applique que lorsqu’une cible d’étalonnage se trouve dans le champ de vision de cette caméra (apparue dans son cadre au cours des 10 dernières secondes) ; en l’absence de cible dans le champ de vision, c’est l’exposition automatique habituelle de la caméra, dotée de sa propre protection contre les surexpositions, qui prend le relais, afin que le reste de la scène ne soit pas assombri plus que nécessaire. Tant que la limite est active, la caméra est**verrouillée sur la lumière incidente** : elle fonctionne en boucle ouverte à l’exposition mesurée en lumière incidente avec un gain à 0 dB — l’exposition suit la lumière mesurée, et non le contenu de la scène. Comme la limite maximale ne peut que raccourcir l’exposition, elle ne peut pas en soi provoquer d’écrêtage. Depuis la version 1.3.0, le plafond est calculé à partir de la constante d’exposition propre à la caméra, issue de son pack d’étalonnage (une valeur moyenne du parc n’est utilisée que lorsque le pack n’en contient pas). Le plafond se désactive automatiquement — et l’exposition automatique normale de la scène reprend — dès qu’aucune cible d’étalonnage n’est dans le champ de vision, que la lecture DAQ est manquante, périmée (&gt; 30 s), ou sombre, ou si ≥ 15 % de l’image est écrêtée à l’exposition fixée (ce qui signifie que le capteur et la caméra perçoivent un éclairage différent). Il n’y a pas de commutateur dans l’interface graphique ; il s’agit d’un comportement standard dès lors qu’une caméra RGB
-
-est liée à un DAQ.
+**Plafond d’exposition piloté par DAQ et AE indexée sur la lumière incidente.** Indépendamment de la case à cocher ci-dessus, lorsqu’un capteur de lumière DAQ est attribué à une caméra RGB, Chloros calcule — à partir de l’irradiance descendante absolue mesurée — l’exposition × gain maximal auquel une surface à 100 % de réflectance reste en dessous du seuil de clipping, et l’applique comme **plafond**de l’exposition automatique. Depuis la version 1.3.0, ce plafond ne s’applique que lorsqu’une cible d’étalonnage se trouve dans le champ de vision de cette caméra (apparue dans son cadre au cours des 10 dernières secondes) ; en l’absence de cible dans le champ de vision, c’est l’exposition automatique habituelle de la caméra, dotée de sa propre protection contre les surexpositions, qui prend le relais, afin que le reste de la scène ne soit pas assombri plus que nécessaire. Tant que la limite est active, la caméra est**verrouillée sur la lumière incidente** : elle fonctionne en boucle ouverte à l’exposition mesurée en lumière incidente avec un gain à 0 dB — l’exposition suit la lumière mesurée, et non le contenu de la scène. Comme la limite maximale ne peut que raccourcir l’exposition, elle ne peut pas en soi provoquer d’écrêtage. Depuis la version 1.3.0, le plafond est calculé à partir de la constante d’exposition propre à la caméra, issue de son pack d’étalonnage (une valeur moyenne du parc n’est utilisée que lorsque le pack n’en contient pas). Le plafond se désactive automatiquement — et l’exposition automatique normale de la scène reprend — dès qu’aucune cible d’étalonnage n’est dans le champ de vision, que la lecture DAQ est manquante, périmée (> 30 s), ou sombre, ou si ≥ 15 % de l’image est écrêtée à l’exposition fixée (ce qui signifie que le capteur et la caméra perçoivent un éclairage différent). Il n’y a pas de commutateur dans l’interface graphique ; il s’agit d’un comportement standard dès lors qu’une caméra RGB est liée à un DAQ.
 
 ### Acquisition et déclenchement
 
@@ -373,7 +265,7 @@ Les membres du réseau affichent en outre des lignes en lecture seule : **Rôle*
 | --- | --- | --- | --- |
 | **Mode de déclenchement** | Désactivé / Activé | Activé | Désactivé pour les éléments du tableau (le tableau gère le déclenchement). |
 | **Source de déclenchement** | Logiciel / Ligne 0 (M8) / Ligne 1 / Ligne 2 | Ligne 0 | Masquée lorsque le mode de déclenchement est désactivé ; désactivée pour les membres du réseau. La ligne 0 correspond à l’entrée de déclenchement externe opto-isolée M8. |
-| **Fréquence d’images**| Auto / Manuel + valeur | Auto |**Auto**: la limite de fréquence d&#x27;images de la caméra est désactivée — l&#x27;exposition détermine le nombre d&#x27;images par seconde, et la fenêtre affiche la fréquence réelle en direct.**Manuel** : vous limitez le nombre d’images par seconde à l’aide d’un curseur (de 1 jusqu’au maximum autorisé par la bande passante), en vous basant sur la fréquence réelle actuelle. Les membres du réseau voient s’afficher une valeur en lecture seule « N images par seconde (en direct) » avec la mention « Définir dans les paramètres du réseau ». |
+| **Fréquence d’images**| Auto / Manuel + valeur | Auto |**Auto**: la limite de fréquence d'images de la caméra est désactivée — l'exposition détermine le nombre d'images par seconde, et la fenêtre affiche la fréquence réelle en direct.**Manuel** : vous limitez le nombre d’images par seconde à l’aide d’un curseur (de 1 jusqu’au maximum autorisé par la bande passante), en vous basant sur la fréquence réelle actuelle. Les membres du réseau voient s’afficher une valeur en lecture seule « N images par seconde (en direct) » avec la mention « Définir dans les paramètres du réseau ». |
 
 ### Réseau / Transport
 
@@ -411,11 +303,7 @@ Affiché pour les réseaux combinés et séparés :
 
 Son propre groupe se trouve juste après le capteur de lumière ambiante, tant pour les réseaux combinés que séparés :
 
-* Case à cocher **Activer** — « Détecter la cible ArUco MAPIR
-
-et valider la LUT NDVI
-
-par rapport à la réflectance du panneau » ; détermine la superposition de la cible et les tables de validation de la mosaïque combinée. Sur un réseau **séparé**, elle active la [table de cible d’étalonnage](#the-calibration-target-table) de chaque élément (une par ligne de caméra dans la vue en liste).
+* Case à cocher **Activer** — « Détecter la cible ArUco MAPIR et valider la LUT NDVI par rapport à la réflectance du panneau » ; détermine la superposition de la cible et les tables de validation de la mosaïque combinée. Sur un réseau **séparé**, elle active la [table de cible d’étalonnage](#the-calibration-target-table) de chaque élément (une par ligne de caméra dans la vue en liste).
 
 ### Capture — paramètres de capteur uniformes
 
@@ -426,9 +314,9 @@ Affiché pour les matrices combinées et séparées (l’en-tête du groupe indi
 | Commande | Choix / plage | Fonction |
 | --- | --- | --- |
 | **Format de pixel** | 8 bits / 10 bits / 12 bits / 16 bits | Profondeur de bits uniforme pour tous les membres ; chaque caméra adopte le format correspondant à cette profondeur pour son propre capteur. |
-| **Binning** | 1x1 / 2x2 / 4x4 | Binning matériel — conserve le champ de vision complet tout en améliorant le rapport signal/bruit et la fréquence d&#x27;images. Sa modification réinitialise les champs de la zone d’intérêt (ROI) en fonction du nouveau champ de vision complet. |
+| **Binning** | 1x1 / 2x2 / 4x4 | Binning matériel — conserve le champ de vision complet tout en améliorant le rapport signal/bruit et la fréquence d'images. Sa modification réinitialise les champs de la zone d’intérêt (ROI) en fonction du nouveau champ de vision complet. |
 | Préréglage **Résolution** | Pleine / Moitié / Quart | Par rapport au regroupement de pixels ; remplit les champs de la zone d’intérêt (ROI) avec un recadrage centré. |
-| **Recadrage ROI (px)**| Bouton bascule**ROI activé / désactivé**, bouton**Sélectionner**, champs L / H / X / Y, carte du capteur complet | Recadrage du capteur — voir [L&#x27;éditeur ROI](#the-roi-editor). La largeur et la hauteur s&#x27;alignent sur des multiples de 16 (minimum 64) ; les décalages s&#x27;alignent sur des multiples de 4. Une indication « max LxH » indique la limite supérieure et**Réinitialiser** ramène les champs au champ de vision complet. Pendant l’édition, le cadre de recadrage orange suit chaque modification de champ sur la carte et sur la tuile du capteur. |
+| **Recadrage ROI (px)**| Bouton bascule**ROI activé / désactivé**, bouton**Sélectionner**, champs L / H / X / Y, carte du capteur complet | Recadrage du capteur — voir [L'éditeur ROI](#the-roi-editor). La largeur et la hauteur s'alignent sur des multiples de 16 (minimum 64) ; les décalages s'alignent sur des multiples de 4. Une indication « max LxH » indique la limite supérieure et**Réinitialiser** ramène les champs au champ de vision complet. Pendant l’édition, le cadre de recadrage orange suit chaque modification de champ sur la carte et sur la tuile du capteur. |
 | **Fréquence de déclenchement**| Bouton bascule Auto / Manuel + fps 0,5–10, pas de 0,5 |**Auto**(par défaut) : le backend détermine la fréquence de déclenchement en fonction de la résolution et de la bande passante — le champ de saisie est désactivé et affiche la valeur calculée.**Manuel** : fixe votre valeur lorsque vous cliquez sur « Appliquer ». Une fréquence fixée qu’une nouvelle taille d’image ne peut pas prendre en charge est maintenue à la fréquence la plus rapide autorisée par cette taille, puis revient à la valeur initiale dès que la taille d’image le permet à nouveau. |
 
 Remarque dans le volet : « Les changements de format/résolution redémarrent brièvement toutes les caméras. La fréquence de déclenchement s’applique en temps réel. » Les boutons **Appliquer / Annuler** se trouvent au bas du volet.
@@ -438,7 +326,7 @@ Remarque dans le volet : « Les changements de format/résolution redémarrent b
 Nouveauté de la version 1.3.0. La ligne de recadrage de la zone d’intérêt (ROI) et la carte située en dessous fonctionnent conjointement :
 
 * **ROI activée / ROI désactivée**— active ou désactive**immédiatement**le recadrage du capteur (les caméras redémarrent brièvement ; la mosaïque affiche « Application des paramètres… »).**Désactivé**lit l’intégralité du capteur et**mémorise votre recadrage**— les champs continuent de l’afficher ;**Activé** l’applique à nouveau. Activer la zone d’intérêt sans recadrage défini applique un recadrage centré de moitié (« Aucun recadrage n’a été défini, un recadrage centré de moitié a donc été appliqué. Ajustez-le à l’aide des champs. »).
-* **Sélectionner**— dessine le recadrage sur la carte : faites glisser le curseur dessus ou cliquez sur deux coins opposés (Esc annule). Le rectangle s’affiche dans les champs L/H/X/Y, en s&#x27;alignant sur les étapes ci-dessus ; rien n’est appliqué tant que vous n’avez pas cliqué sur**Appliquer**, ce qui vous permet d’affiner le réglage à l’aide des flèches des champs au préalable. Un rectangle par pression sur Sélectionner.
+* **Sélectionner**— dessine le recadrage sur la carte : faites glisser le curseur dessus ou cliquez sur deux coins opposés (Esc annule). Le rectangle s’affiche dans les champs L/H/X/Y, en s'alignant sur les étapes ci-dessus ; rien n’est appliqué tant que vous n’avez pas cliqué sur**Appliquer**, ce qui vous permet d’affiner le réglage à l’aide des flèches des champs au préalable. Un rectangle par pression sur Sélectionner.
 * **La carte**affiche le recadrage sur l’ensemble du capteur, ce qui vous permet de l’élargir à nouveau : « Capteur complet, en direct » lorsque les caméras lisent le capteur complet, ou « Instantané plein format à {heure}. Les caméras ne lisent que le recadrage. » lorsqu’elles sont recadrées. Si le réseau n’a jamais diffusé que des flux recadrés, la carte indique « Pas encore de vue plein format : ce réseau n’a diffusé que des flux recadrés.» avec un bouton**Afficher le plein format**, qui désactive la zone d’intérêt (ROI). L’étiquette `W×H @ X,Y` du cadrage se trouve à l’extérieur du cadre (au-dessus de celui-ci, ou en dessous lorsque le cadre touche le haut), sur la carte et sur la vignette en direct.
 * **Appliquer**valide les champs : un recadrage active la zone d’intérêt ; le plein format (après**Réinitialiser**) la désactive tout en conservant en mémoire le recadrage précédent ; une zone d’intérêt désactivée dont les champs affichent toujours le recadrage mémorisé reste désactivée lorsque vous appliquez une autre modification (format, binning, fréquence).
 * **Sur un réseau aligné, la fenêtre de recadrage de chaque caméra est positionnée par l’alignement**, de sorte que chaque caméra cadre la même partie de la scène. Un réseau recadré avant même d’avoir été aligné est d’abord aligné sur l’intégralité du capteur (le recadrage est supprimé, l’alignement effectué, puis le recadrage rétabli avec des fenêtres spécifiques à chaque caméra).
@@ -489,7 +377,7 @@ Un panneau en lecture seule actualisé toutes les 5 s :
 * **État de la trame** : « x,xx % incomplète » — vert en dessous de 1 %, orange en dessous de 5 %, rouge à partir de 5 %.
 * **Ligne de liaison** : « NIC {mbps} Mbps - débit soutenu {MB/s} MB/s ».
 
-Il s&#x27;agit du budget de bande passante en temps réel du réseau de caméras. Pour en savoir plus sur le modèle de réseau et le nombre d’images par seconde (fps) sous-jacent — ainsi que sur les modifications à apporter lorsque le niveau passe à l’orange ou au rouge —, consultez [Réseaux multicaméras](arrays.md) et la [Référence CLI](../reference/cli-reference.md).
+Il s'agit du budget de bande passante en temps réel du réseau de caméras. Pour en savoir plus sur le modèle de réseau et le nombre d’images par seconde (fps) sous-jacent — ainsi que sur les modifications à apporter lorsque le niveau passe à l’orange ou au rouge —, consultez [Réseaux multicaméras](arrays.md) et la [Référence CLI](../reference/cli-reference.md).
 
 <!-- SCREENSHOT-NEEDED: array settings Capabilities panel showing a green "Simultaneous capture" tier, the frame-health percentage, and the NIC/sustained-throughput line. -->
 

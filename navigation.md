@@ -4,7 +4,7 @@ Lorsque vous lancez Chloros pour la première fois, le moteur de traitement se m
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-De gauche à droite, l&#x27;en-tête supérieur contient :
+De gauche à droite, l'en-tête supérieur contient :
 
 ### <img src=".gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> Menu principal
 
@@ -12,38 +12,24 @@ De gauche à droite, l&#x27;en-tête supérieur contient :
 
 <figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>Depuis le menu principal, vous pouvez :
 
-* **Nouveau projet**— créer un nouveau projet. Si vous avez enregistré des modèles de projet, un menu déroulant**Sélectionner un modèle** s&#x27;affiche afin que le nouveau projet reprenne les paramètres d&#x27;un modèle.
+* **Nouveau projet**— créer un nouveau projet. Si vous avez enregistré des modèles de projet, un menu déroulant**Sélectionner un modèle** s'affiche afin que le nouveau projet reprenne les paramètres d'un modèle.
 * **Ouvrir un projet**— ouvrir un projet existant. La liste comprend un bouton**Ouvrir le dossier du projet** qui ouvre le dossier des projets dans votre explorateur de fichiers.
 * **Dupliquer le projet** — copier le projet actuellement ouvert sous un nouveau nom (un nom libre tel que « MonProjet (2) » est suggéré) et ouvrir la copie. _(visible une fois le projet ouvert)_
 * **Ajouter des fichiers** — ajoute des fichiers image individuels au projet en cours _(visible une fois le projet ouvert)_
 * **Ajouter un dossier** — ajoute un ou plusieurs dossiers d’images au projet en cours _(visible une fois le projet ouvert)_
 * **Démarrer le traitement / Arrêter le traitement** — démarre ou arrête le pipeline de traitement d’images _(disponible une fois les fichiers ajoutés)_
 * **Se connecter à une caméra** — accède à l’[onglet Caméras](lattice/) pour connecter une caméra ou un réseau de caméras LATTICE. Fonctionne sans projet ouvert.
-* **Se connecter à un capteur de lumière** — accède à l&#x27;[onglet Capteurs de lumière](daq/) pour connecter un capteur de lumière DAQ. Fonctionne sans projet ouvert.
+* **Se connecter à un capteur de lumière** — accède à l'[onglet Capteurs de lumière](daq/) pour connecter un capteur de lumière DAQ. Fonctionne sans projet ouvert.
 
 {% hint style="info" %}
-**Windows
-
-uniquement** : l’interface graphique Chloros
-
-Desktop est disponible sous Windows
-
-. Les utilisateurs de Linux
-
-doivent consulter la documentation relative à la [CLI
-
-](CLI.md) et au [Python
-
-SDK
-
-](api-python-sdk.md) pour le traitement en mode headless.
+**Windows uniquement** : l’interface graphique Chloros Desktop est disponible sous Windows. Les utilisateurs de Linux doivent consulter la documentation relative à la [CLI](CLI.md) et au [Python SDK](api-python-sdk.md) pour le traitement en mode headless.
 {% endhint %}
 
 ### <img src=".gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
 
 Bouton Lecture/Démarrer
 
-Lorsqu&#x27;il est activé, le bouton de démarrage du traitement lance le pipeline de traitement d&#x27;images.
+Lorsqu'il est activé, le bouton de démarrage du traitement lance le pipeline de traitement d'images.
 
 ### <img src=".gitbook/assets/image (4).png" alt="" data-size="line">
 
@@ -51,15 +37,9 @@ Barre de progression <img src=".gitbook/assets/image (5).png" alt="" data-size="
 
 
 
-En mode gratuit Chloros
+En mode gratuit Chloros, qui traite tous les fichiers de manière séquentielle, la barre de progression affiche deux étapes : « Détection de cibles » et « Traitement ».
 
-, qui traite tous les fichiers de manière séquentielle, la barre de progression affiche deux étapes : « Détection de cibles » et « Traitement ».
-
-En mode payant Chloros
-
-+, sous licence, qui traite tous les fichiers simultanément, la barre de progression affiche quatre étapes : « Détection », « Analyse », « Calibrage » et « Exportation ». Si vous passez le curseur de votre souris sur la barre de progression « Chloros
-
-+ », un panneau déroulant contenant les 4 étapes s’affiche pour vous permettre de suivre l’avancement. Un clic sur la barre de progression supérieure fige le panneau déroulant ; un nouveau clic le débloque.
+En mode payant Chloros+, sous licence, qui traite tous les fichiers simultanément, la barre de progression affiche quatre étapes : « Détection », « Analyse », « Calibrage » et « Exportation ». Si vous passez le curseur de votre souris sur la barre de progression « Chloros+ », un panneau déroulant contenant les 4 étapes s’affiche pour vous permettre de suivre l’avancement. Un clic sur la barre de progression supérieure fige le panneau déroulant ; un nouveau clic le débloque.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -99,4 +79,4 @@ Nouveauté de la version 1.3.0 : l’icône de bug en haut de l’onglet « Jour
 
 #### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [Connexion utilisateur](chloros+-login.md)
 
-La barre latérale de connexion utilisateur vous permet de vous connecter à votre compte Chloros+ pour débloquer des fonctionnalités avancées. Vous pouvez également consulter la version actuelle de l&#x27;application, ainsi que modifier la langue du texte affiché dans l&#x27;interface graphique et la CLI de Chloros.
+La barre latérale de connexion utilisateur vous permet de vous connecter à votre compte Chloros+ pour débloquer des fonctionnalités avancées. Vous pouvez également consulter la version actuelle de l'application, ainsi que modifier la langue du texte affiché dans l'interface graphique et la CLI de Chloros.

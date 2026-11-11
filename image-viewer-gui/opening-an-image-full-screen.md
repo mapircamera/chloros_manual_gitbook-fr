@@ -45,7 +45,7 @@ Cliquez sur l’image avec le bouton gauche de la souris, maintenez-le enfoncé 
 
 ### Inspection pixel par pixel à fort grossissement
 
-Dès que le grossissement effectif dépasse **60×**, Chloros affiche un cadre de mise en évidence autour du pixel affiché sous le curseur, ainsi qu&#x27;une valeur flottante à côté de celui-ci.
+Dès que le grossissement effectif dépasse **60×**, Chloros affiche un cadre de mise en évidence autour du pixel affiché sous le curseur, ainsi qu'une valeur flottante à côté de celui-ci.
 
 Le grossissement « effectif » tient compte de la taille du bloc GSD : avec une taille de bloc de 8, la surbrillance apparaît à un grossissement de 7,5× plutôt qu’à 60×, car un pixel affiché correspond déjà à 8 × 8 pixels source. Si vous réduisez le zoom en dessous du seuil, la surbrillance disparaît.
 
@@ -55,7 +55,7 @@ Le grossissement « effectif » tient compte de la taille du bloc GSD : avec une
 | ------------------------------- | ----------- | ----------------------------------- |
 | **→**                           | Plein écran | Image suivante                          |
 | **←**                           | Plein écran | Image précédente                      |
-| **Ctrl + R**                    | Plein écran | Réinitialiser l&#x27;index/le bac à sable LUT         |
+| **Ctrl + R**                    | Plein écran | Réinitialiser l'index/le bac à sable LUT         |
 | **Ctrl + `+`**/**Ctrl + `=`** | Grille        | Vignettes plus grandes (4 px par pression)  |
 | **Ctrl + `−`**                  | Grille        | Vignettes plus petites (4 px par pression) |***
 
@@ -64,7 +64,7 @@ Le grossissement « effectif » tient compte de la taille du bloc GSD : avec une
 Passez le curseur sur l’image et le panneau **Valeurs du curseur** affiche la valeur de chaque canal situé en dessous.
 
 {% hint style="success" %}
-**Ce sont les nombres réels du fichier.** La zone d&#x27;affichage à l&#x27;écran est un aperçu étiré de 8 bits qui ne peut pas les fournir ; c&#x27;est pourquoi Chloros échantillonne le fichier produit réel pour l&#x27;affichage. C&#x27;est pourquoi une image brute de 12 bits affiche des valeurs supérieures à 255, et qu’un calque de radiance de type float32 affiche des unités physiques.
+**Ce sont les nombres réels du fichier.** La zone d'affichage à l'écran est un aperçu étiré de 8 bits qui ne peut pas les fournir ; c'est pourquoi Chloros échantillonne le fichier produit réel pour l'affichage. C'est pourquoi une image brute de 12 bits affiche des valeurs supérieures à 255, et qu’un calque de radiance de type float32 affiche des unités physiques.
 {% endhint %}
 
 ### Signification des colonnes
@@ -73,14 +73,14 @@ Le panneau s’adapte au calque que vous visualisez :
 
 | Calque visualisé              | Colonnes affichées    | Remarques                                                                                           |
 | ---------------------------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
-| Réflectance                        | **DN**et**%** | Le pourcentage est calculé selon l&#x27;échelle propre à ce fichier — voir ci-dessous                                      |
+| Réflectance                        | **DN**et**%** | Le pourcentage est calculé selon l'échelle propre à ce fichier — voir ci-dessous                                      |
 | Radiance                           | **W/m²/sr/nm**   | Valeurs physiques en nombre à virgule flottante ; pas de colonne DN, car un DN n’a pas de sens ici                           |
 | Brute / Débayérisée / Aperçu / JPG    | **DN**           | Nombres numériques entiers                                                                         |
 | Exportations de réflectance en pourcentage 32 bits | **%** uniquement       | La valeur à virgule flottante stockée n’est pas un DN ; l’arrondir à un entier afficherait donc une valeur dénuée de sens telle que `0` ou `1` |
 
 Chaque ligne est identifiée par le nom du canal correspondant au filtre de votre appareil photo — `Red / Green / NIR` pour RGN, `Orange / Cyan / NIR` pour OCN, `NIR / Green / Blue` pour NGB, `Red / Green / Blue` pour RGB, et le nom de la bande unique pour les caméras RE, NIR et mono M3M. Chaque étiquette comporte un point de couleur correspondant aux cercles de canal utilisés dans l’éditeur de formule d’index.
 
-Les images **d’index et de LUT** enregistrées constituent un cas particulier : elles contiennent des composants de carte de couleurs plutôt que des bandes spectrales ; leurs lignes sont donc libellées `Red / Green / Blue` (ou `Index` pour un fichier d&#x27;index monocanal) plutôt qu’avec les noms de filtres de la caméra.
+Les images **d’index et de LUT** enregistrées constituent un cas particulier : elles contiennent des composants de carte de couleurs plutôt que des bandes spectrales ; leurs lignes sont donc libellées `Red / Green / Blue` (ou `Index` pour un fichier d'index monocanal) plutôt qu’avec les noms de filtres de la caméra.
 
 Lorsqu’un index est actif dans le bac à sable, une ligne supplémentaire apparaît sous les canaux, indiquant la **valeur d’index** au niveau du curseur, avec le nom de l’index et un point blanc qui correspond à son repère sur l’histogramme.
 
@@ -93,7 +93,7 @@ Lorsqu’un index est actif dans le bac à sable, une ligne supplémentaire appa
 | Source                  | DN correspondant à une réflectance de 1,0 | Comment il est identifié                                                                                                                               |
 | ----------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **LATTICE**(M3C / M3M) |**32768**                      | Balise XMP `Chloros:PixelScale=32768` intégrée à chaque exportation de réflectance LATTICE. La marge de 2× permet au fichier de contenir des valeurs de ρ supérieures à 1,0 sans écrêtage |
-| **Survey3**|**65535**                      | Pas de balise d&#x27;échelle XMP Chloros — l&#x27;étalonnage Survey3 écrit ρ × dtype-max et écrête à 1,0                                                               |
+| **Survey3**|**65535**                      | Pas de balise d'échelle XMP Chloros — l'étalonnage Survey3 écrit ρ × dtype-max et écrête à 1,0                                                               |
 
 La visionneuse, le bac à sable d’index/LUT et l’exportation d’index déterminent tous l’échelle via la même implémentation unique ; ainsi, une valeur que vous lisez au niveau du curseur est la même que celle utilisée par les calculs de l’index.
 
@@ -104,26 +104,26 @@ Deux conséquences à connaître :
 
 ## L’histogramme du calque
 
-Sous les lignes du curseur se trouve un histogramme en temps réel du calque que vous visualisez, en **256 classes**. Par défaut, il trace une courbe combinée, pondérée selon `(R + 2G + B) / 4` — le même espace de mesure que celui utilisé par les histogrammes de la caméra LATTICE. L&#x27;activation de**RGB**, il est remplacé par des courbes par canal dans les couleurs des canaux, mélangées de manière additive afin que les chevauchements restent lisibles. Les couches monochromes affichent toujours la courbe unique.
+Sous les lignes du curseur se trouve un histogramme en temps réel du calque que vous visualisez, en **256 classes**. Par défaut, il trace une courbe combinée, pondérée selon `(R + 2G + B) / 4` — le même espace de mesure que celui utilisé par les histogrammes de la caméra LATTICE. L'activation de**RGB**, il est remplacé par des courbes par canal dans les couleurs des canaux, mélangées de manière additive afin que les chevauchements restent lisibles. Les couches monochromes affichent toujours la courbe unique.
 
 L’axe horizontal est exprimé dans l’unité propre à la couche :
 
 | Calque       | Unité de l’axe  | Maximum de l’axe                                               |
 | ----------- | ---------- | ---------------------------------------------------------- |
 | Réflectance | pourcentage    | 125 % — la marge de la caméra permet une ρ supérieure à 1,0           |
-| Radiance    | W/m²/sr/nm | Le pic propre à l&#x27;image, arrondi à deux chiffres significatifs |
+| Radiance    | W/m²/sr/nm | Le pic propre à l'image, arrondi à deux chiffres significatifs |
 | Données 8 bits | DN         | 255                                                        |
 | Données 12 bits | DN         | 4095                                                       |
 | Données 16 bits | DN         | 65535                                                      |
 
-Lorsque l&#x27;axe est en DN et atteint l&#x27;un de ces trois plafonds, Chloros connaît également la profondeur de bits de ce que vous visualisez.
+Lorsque l'axe est en DN et atteint l'un de ces trois plafonds, Chloros connaît également la profondeur de bits de ce que vous visualisez.
 
-Trois boutons se trouvent au-dessus de l&#x27;histogramme :
+Trois boutons se trouvent au-dessus de l'histogramme :
 
 | Bouton     | Par défaut | Effet                                                                                                                                                                                                                                                                                   |
 | ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **CURSEUR** | Activé      | Trace des lignes de repère sur l&#x27;histogramme aux valeurs exactes indiquées dans les lignes ci-dessus, afin que vous puissiez voir où se situe le pixel sous votre curseur dans la distribution de l&#x27;image. En mode RGB, il y a un repère par canal, chacun dans sa propre couleur ; sinon, un seul repère blanc apparaît à la valeur combinée |
-| **INDEX**| Activé      | N&#x27;apparaît que lorsqu&#x27;un index est actif. Fait basculer l&#x27;histogramme des bandes sources vers la**distribution des valeurs d&#x27;index**, les deux seuils de coupure étant représentés par des lignes pointillées orange et la valeur d&#x27;index du curseur par une ligne blanche                                                          |
+| **CURSEUR** | Activé      | Trace des lignes de repère sur l'histogramme aux valeurs exactes indiquées dans les lignes ci-dessus, afin que vous puissiez voir où se situe le pixel sous votre curseur dans la distribution de l'image. En mode RGB, il y a un repère par canal, chacun dans sa propre couleur ; sinon, un seul repère blanc apparaît à la valeur combinée |
+| **INDEX**| Activé      | N'apparaît que lorsqu'un index est actif. Fait basculer l'histogramme des bandes sources vers la**distribution des valeurs d'index**, les deux seuils de coupure étant représentés par des lignes pointillées orange et la valeur d'index du curseur par une ligne blanche                                                          |
 | **RGB**| Désactivé     | Passe de la courbe combinée aux courbes par canal. Sur un capteur monochrome, ce bouton affiche**MONO** et est désactivé — il n’y a qu’un seul canal à afficher                                                                                                                                  |
 
 L’histogramme est calculé à partir des **blocs visibles**, et non des pixels sources situés derrière eux : modifiez la taille de bloc GSD et la distribution est recalculée, de sorte que l’histogramme, le marqueur du curseur et l’image affichée concordent toujours.***
@@ -137,10 +137,10 @@ Il grossit l’image _affichée_ en calculant la moyenne d’un bloc N × N de p
 * Cela affecte **l’affichage en plein écran, les vignettes de la grille, l’affichage du curseur et les deux histogrammes** — tout ce qui affiche l’image utilise la même résolution au sol.
 * Ce paramètre concerne **uniquement l’affichage**. Le traitement et l’exportation ne sont pas affectés. La seule exception est intentionnelle : l’exportation via [Index/LUT Sandbox](index-lut-sandbox.md) enregistre ce que vous voyez à l’écran ; elle conserve donc la taille de bloc actuelle, et le panneau d’exportation vous avertit lorsque la taille de bloc est supérieure à 1.
 * La valeur est stockée **par projet** sous le nom `viewer_display.gsd_bin` dans `project.json` ; elle est donc conservée lors de la fermeture et de la réouverture du logiciel.
-* L&#x27;affichage du curseur indique la valeur du bloc, et non celle du pixel source, dès que la taille du bloc est supérieure à 1 — la valeur affichée correspond à la moyenne du bloc situé sous votre curseur.
+* L'affichage du curseur indique la valeur du bloc, et non celle du pixel source, dès que la taille du bloc est supérieure à 1 — la valeur affichée correspond à la moyenne du bloc situé sous votre curseur.
 
 {% hint style="info" %}
-**Pourquoi « taille de bloc » et non pas centimètres par pixel ?** Une valeur en cm/px nécessite une hauteur au-dessus du sol. Les données EXIF d’une image unique indiquent l’altitude GPS au-dessus du niveau moyen de la mer, et non au-dessus du terrain vers lequel l&#x27;appareil était orienté ; par conséquent, Chloros n&#x27;affichera pas de distance au sol qu&#x27;il ne peut pas calculer avec précision. La taille de bloc en pixels source constitue la même solution de repli que celle utilisée par les outils de traitement des nuages MAPIR lorsque la distance d&#x27;échantillonnage au sol est inconnue.
+**Pourquoi « taille de bloc » et non pas centimètres par pixel ?** Une valeur en cm/px nécessite une hauteur au-dessus du sol. Les données EXIF d’une image unique indiquent l’altitude GPS au-dessus du niveau moyen de la mer, et non au-dessus du terrain vers lequel l'appareil était orienté ; par conséquent, Chloros n'affichera pas de distance au sol qu'il ne peut pas calculer avec précision. La taille de bloc en pixels source constitue la même solution de repli que celle utilisée par les outils de traitement des nuages MAPIR lorsque la distance d'échantillonnage au sol est inconnue.
 {% endhint %}
 
 ***
@@ -151,7 +151,7 @@ Le menu déroulant des calques en haut à droite de la visionneuse répertorie t
 
 ### Survey3
 
-* **JPG** — le fichier d&#x27;aperçu propre à la caméra
+* **JPG** — le fichier d'aperçu propre à la caméra
 * **RAW (Original)** — le fichier source `.RAW`, débayérisé pour l’affichage, sans corrections
 * **RAW (Cible)** — une image identifiée comme contenant une cible d’étalonnage
 * **RAW (réflectance)** — le produit de réflectance calibré (65535 = ρ 1,0)
@@ -165,10 +165,10 @@ Les captures LATTICE utilisent le même menu déroulant, avec les noms des nivea
 
 | Calque                 | Contenu                                                        |
 | --------------------- | -------------------------------------------------------------------- |
-| **RAW (Original)**    | L&#x27;image brute source telle qu&#x27;elle a été capturée                                     |
-| **RAW (Débayérisée)**   | L&#x27;image linéaire débayérisée                                           |
-| **RAW (Aperçu)**     | L&#x27;aperçu à l&#x27;écran — étirement en fausses couleurs pour les caméras multispectrales |
-| **Balance des blancs**    | L&#x27;aperçu à l&#x27;écran pour les caméras principales RGB (balance des blancs + gamma)   |
+| **RAW (Original)**    | L'image brute source telle qu'elle a été capturée                                     |
+| **RAW (Débayérisée)**   | L'image linéaire débayérisée                                           |
+| **RAW (Aperçu)**     | L'aperçu à l'écran — étirement en fausses couleurs pour les caméras multispectrales |
+| **Balance des blancs**    | L'aperçu à l'écran pour les caméras principales RGB (balance des blancs + gamma)   |
 | **RAW (radiance)**    | Radiance spectrale en Float32, en W/m²/sr/nm                              |
 | **RAW (réflectance)** | Réflectance en uint16, 32768 = ρ 1,0                                    |
 
@@ -189,7 +189,7 @@ Appliquez des indices multispectraux et des tables de correspondance (LUT) de co
 
 ## Dépannage
 
-### L&#x27;image ne s&#x27;ouvre pas
+### L'image ne s'ouvre pas
 
 **Causes possibles** : le fichier a été déplacé ou supprimé après l’importation ; le produit n’a jamais été enregistré ; mémoire insuffisante pour une image très volumineuse.**Que faire** :
 

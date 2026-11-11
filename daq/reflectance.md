@@ -2,14 +2,12 @@
 
 Un capteur de lumière DAQ convertit l’imagerie radiométrique en réflectance. Il existe deux flux de travail distincts :
 
-1. **Capteur unique** — un capteur DAQ mesure l’irradiance descendante pendant qu’une caméra effectue la prise de vue, et Chloros
-divise la radiance de la caméra par cette valeur de référence.
+1. **Capteur unique** — un capteur DAQ mesure l’irradiance descendante pendant qu’une caméra effectue la prise de vue, et Chloros divise la radiance de la caméra par cette valeur de référence.
 2. **Double capteur** — deux capteurs DAQ, l’un orienté vers le ciel et l’autre vers un objet, produisent une courbe de réflectance spectrale en temps réel sans intervention d’une caméra.
 
 ## Capteur unique + caméra (référence descendante)
 
-Le DAQ fait office de capteur de lumière descendante (DLS) : la caméra mesure la radiance ascendante **L**(W/m²/sr/nm), le DAQ mesure l’irradiance descendante**E** (W/m²/nm), et Chloros
-calcule la réflectance par bande selon la formule suivante :
+Le DAQ fait office de capteur de lumière descendante (DLS) : la caméra mesure la radiance ascendante **L**(W/m²/sr/nm), le DAQ mesure l’irradiance descendante**E** (W/m²/nm), et Chloros calcule la réflectance par bande selon la formule suivante :
 
 > ρ = π · L / E
 
@@ -30,8 +28,7 @@ Deux comportements à connaître :
 
 ### Traitement des images enregistrées
 
-Pour le traitement post-vol, enregistrez un fichier `.daq` pendant la session et conservez-le avec les images — le pipeline résout automatiquement les données descendantes dont l’horodatage correspond, en récupérant tout étalonnage d’usine manquant depuis le cloud d’MAPIR
-lors de la première utilisation. Les enregistrements de l’interface graphique sont automatiquement ajoutés au projet ouvert lorsqu’ils s’arrêtent.
+Pour le traitement post-vol, enregistrez un fichier `.daq` pendant la session et conservez-le avec les images — le pipeline résout automatiquement les données descendantes dont l’horodatage correspond, en récupérant tout étalonnage d’usine manquant depuis le cloud d’MAPIR lors de la première utilisation. Les enregistrements de l’interface graphique sont automatiquement ajoutés au projet ouvert lorsqu’ils s’arrêtent.
 
 La référence de réflectance est sélectionnable au moment du traitement — `--reflectance-source` sur `chloros-cli process`, ou le paramètre de source de réflectance dans les « Paramètres du projet » de l’interface graphique :
 
@@ -41,21 +38,15 @@ La référence de réflectance est sélectionnable au moment du traitement — `
 | `daq` | DAQ faisant autorité |
 | `target` | Cible stricte « in-frame » ; pas de substitution par le DAQ |
 
-Voir [Cibles d’étalonnage](../calibration-targets.md) pour les workflows des cibles et le [chapitre LATTICE](../lattice/README.md) ainsi que la [référence CLI
-](../reference/cli-reference.md) pour le pipeline de traitement complet. Lors de la lecture des pixels de réflectance exportés, utilisez l’échelle indiquée (LATTICE : 32768 = ρ 1,0, XMP `Chloros:PixelScale` ; Survey3
-: 65535) — voir [Formats d’images de sortie](../output-image-formats.md).
+Voir [Cibles d’étalonnage](../calibration-targets.md) pour les workflows des cibles et le [chapitre LATTICE](../lattice/README.md) ainsi que la [référence CLI](../reference/cli-reference.md) pour le pipeline de traitement complet. Lors de la lecture des pixels de réflectance exportés, utilisez l’échelle indiquée (LATTICE : 32768 = ρ 1,0, XMP `Chloros:PixelScale` ; Survey3 : 65535) — voir [Formats d’images de sortie](../output-image-formats.md).
 
 ### Bandes situées en dehors de la plage étalonnée du DAQ
 
-La plage étalonnée radiométriquement du DAQ est d’environ 374–974 nm. Chloros
--refuse la réflectance issue du DAQ pour toute bande de caméra dont moins de la moitié de la pondération spectrale se situe dans cette plage, en indiquant le motif de rejet `dls-uncalibrated-band-<nm>`. Parmi les références commercialisées, cela ne concerne que la F988 : la réflectance de la F988 est étalonnée à l’aide d’un panneau de réflectance intégré à la scène ; la bande se situant au-delà de la plage étalonnée du capteur de lumière du DAQ, Chloros
-utilise votre dernière capture du panneau et la conserve entre deux observations du panneau. Si une caméra F988 fonctionne en mode DAQ uniquement, Chloros
-refuse la réflectance basée sur le DAQ pour cette bande avec le motif de saut `dls-uncalibrated-band-988` — le workflow avec panneau est la méthode prise en charge.
+La plage étalonnée radiométriquement du DAQ est d’environ 374–974 nm. Chloros-refuse la réflectance issue du DAQ pour toute bande de caméra dont moins de la moitié de la pondération spectrale se situe dans cette plage, en indiquant le motif de rejet `dls-uncalibrated-band-<nm>`. Parmi les références commercialisées, cela ne concerne que la F988 : la réflectance de la F988 est étalonnée à l’aide d’un panneau de réflectance intégré à la scène ; la bande se situant au-delà de la plage étalonnée du capteur de lumière du DAQ, Chloros utilise votre dernière capture du panneau et la conserve entre deux observations du panneau. Si une caméra F988 fonctionne en mode DAQ uniquement, Chloros refuse la réflectance basée sur le DAQ pour cette bande avec le motif de saut `dls-uncalibrated-band-988` — le workflow avec panneau est la méthode prise en charge.
 
 ## Double capteur (lumière ambiante + objet)
 
-Deux capteurs DAQ — n’importe quelle paire, sur n’importe quel support — fournissent un spectre de réflectance en temps réel sans caméra : un capteur est orienté vers le ciel (**Source de lumière ambiante**), l’autre vers le sujet (**Scanner d’objet**), et Chloros
-effectue le calcul par longueur d’onde :
+Deux capteurs DAQ — n’importe quelle paire, sur n’importe quel support — fournissent un spectre de réflectance en temps réel sans caméra : un capteur est orienté vers le ciel (**Source de lumière ambiante**), l’autre vers le sujet (**Scanner d’objet**), et Chloros effectue le calcul par longueur d’onde :
 
 > R(λ) = objet(λ) / ambiante(λ)
 
@@ -70,24 +61,11 @@ Une fois les deux capteurs connectés dans l’onglet « Capteurs de lumière »
 <!-- SCREENSHOT-NEEDED: A live Apparent Reflectance chart from an Ambient+Object DAQ pair in list view, with the vegetation-index table visible below the chart (NDVI etc. showing live values). -->
 
 
-Sous le graphique de réflectance (vue en liste), un **tableau d’indices de végétation** en temps réel calcule les indices à partir de la courbe en utilisant les centres de bande à 450 nm (bleu), 550 nm (vert), 670 nm (rouge) et 800 nm (NIR
-). Les indices basés sur des rapports qui annulent l’échelle absolue (NDVI
-, GNDVI
-, ENDVI, WDRVI
-, GRVI
-, CVI
-, GCI
-, MSR) sont toujours affichés ; les indices nécessitant une réflectance absolue (EVI
-, SAVI
-, OSAVI
-, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI
-, NLI, MNLI, FCI, GEMI
-) n’apparaissent que lorsque les deux capteurs sont des modèles calibrés en puissance.
+Sous le graphique de réflectance (vue en liste), un **tableau d’indices de végétation** en temps réel calcule les indices à partir de la courbe en utilisant les centres de bande à 450 nm (bleu), 550 nm (vert), 670 nm (rouge) et 800 nm (NIR). Les indices basés sur des rapports qui annulent l’échelle absolue (NDVI, GNDVI, ENDVI, WDRVI, GRVI, CVI, GCI, MSR) sont toujours affichés ; les indices nécessitant une réflectance absolue (EVI, SAVI, OSAVI, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI, NLI, MNLI, FCI, GEMI) n’apparaissent que lorsque les deux capteurs sont des modèles calibrés en puissance.
 
 ### Apparente vs relative — la règle d’étiquetage
 
-Chloros
-étiquette la sortie du double capteur en fonction de ce que la paire de capteurs peut réellement revendiquer :
+Chloros étiquette la sortie du double capteur en fonction de ce que la paire de capteurs peut réellement revendiquer :
 
 | Paire de capteurs | Étiquette |
 | --- | --- |
@@ -99,8 +77,4 @@ Les trois modèles sont radiométriques : une fois que le jeu d’étalonnage d�
 ### Depuis Python
 
 
-Il n’existe pas d’appel dédié aux deux capteurs dans l’interface SDK
-: ouvrez deux sessions avec `chloros_sdk.connect_daq_sensor()` et calculez vous-même le rapport entre leurs spectres `latest()`, en appliquant la même convention de nommage. (Un outil d’enregistrement à double capteur existe également dans l’interface matérielle directe interne d’MAPIR
-, répertorié dans la [Référence CLI
-](../reference/cli-reference.md) par souci d’exhaustivité — il ne fait pas partie de la CLI
-fournie ; le workflow via l’interface graphique ci-dessus est la méthode prise en charge.)
+Il n’existe pas d’appel dédié aux deux capteurs dans l’interface SDK : ouvrez deux sessions avec `chloros_sdk.connect_daq_sensor()` et calculez vous-même le rapport entre leurs spectres `latest()`, en appliquant la même convention de nommage. (Un outil d’enregistrement à double capteur existe également dans l’interface matérielle directe interne d’MAPIR, répertorié dans la [Référence CLI](../reference/cli-reference.md) par souci d’exhaustivité — il ne fait pas partie de la CLI fournie ; le workflow via l’interface graphique ci-dessus est la méthode prise en charge.)

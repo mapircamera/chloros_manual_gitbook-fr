@@ -4,16 +4,16 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
 
-# Formats d&#x27;image de sortie
+# Formats d'image de sortie
 
-Chloros exporte les produits traités dans quatre formats de fichier. Sélectionnez le format dans les paramètres du projet (interface graphique), à l&#x27;aide de `--format` (CLI) ou de `export_format` (SDK). La CLI et le SDK acceptent les chaînes de caractères exactes ci-dessous.
+Chloros exporte les produits traités dans quatre formats de fichier. Sélectionnez le format dans les paramètres du projet (interface graphique), à l'aide de `--format` (CLI) ou de `export_format` (SDK). La CLI et le SDK acceptent les chaînes de caractères exactes ci-dessous.
 
 | Chaîne de format | Extension | Type de pixel | Plage de pixels | Remarques |
 | --- | --- | --- | --- | --- |
 | `TIFF (16-bit)` *(par défaut)* | `.tif` | nombre binaire uint16 | 0 – 65535 | Recommandé pour la photogrammétrie / les SIG. |
-| `TIFF (8-bit)` | `.tif` | nombre numérique uint8 | 0 – 255 | Pour toutes les captures en 8 bits, qui ne proposent que les formats 8 bits : Chloros n&#x27;augmente pas la profondeur de bits. |
+| `TIFF (8-bit)` | `.tif` | nombre numérique uint8 | 0 – 255 | Pour toutes les captures en 8 bits, qui ne proposent que les formats 8 bits : Chloros n'augmente pas la profondeur de bits. |
 | `TIFF (32-bit, Percent)` | `.tif` | float32 | 0,0 – 1,0 | 1,0 = réflectance de 100 %. Certaines applications ne peuvent pas lire les fichiers TIFF en virgule flottante ; les fichiers sont plus volumineux. |
-| `PNG (8-bit)` | `.png` | nombre numérique uint8 | 0 – 255 | Compression sans perte, adaptée à l&#x27;affichage sur le Web et à la visualisation. |
+| `PNG (8-bit)` | `.png` | nombre numérique uint8 | 0 – 255 | Compression sans perte, adaptée à l'affichage sur le Web et à la visualisation. |
 | `JPG (8-bit)` | `.jpg` | nombre numérique uint8 | 0 – 255 | Compression avec perte, fichiers les plus petits. |
 
 ## Emplacement des fichiers de sortie
@@ -41,10 +41,10 @@ Une image brute LATTICE est déclinée en tous les produits demandés en un seul
 | Niveau | Contenu | Type de données |
 | --- | --- | --- |
 | `raw` | Données Bayer provenant directement du capteur (caméras monochromes : la bande unique). Le traitement part toujours des données brutes. | Telles que capturées |
-| `debayered` | Démosaïquage linéaire — 3 canaux pour le M3C, 1 canal en niveaux de gris pour le M3M : le décalage de noir du pack d&#x27;étalonnage est supprimé, puis un démosaïquage tenant compte des contours est effectué, sans correction de linéarité, sans correction de champ plat ni démixage. Une exportation `process` génère le même fichier qu’une capture à ce niveau, quel que soit le mode de traitement. | DN linéaire |
+| `debayered` | Démosaïquage linéaire — 3 canaux pour le M3C, 1 canal en niveaux de gris pour le M3M : le décalage de noir du pack d'étalonnage est supprimé, puis un démosaïquage tenant compte des contours est effectué, sans correction de linéarité, sans correction de champ plat ni démixage. Une exportation `process` génère le même fichier qu’une capture à ce niveau, quel que soit le mode de traitement. | DN linéaire |
 | `radiance` | Radiance spectrale absolue issue de la chaîne radiométrique complète, en **W/m²/sr/nm**. Toujours enregistré au format TIFF 32 bits (`tiff32/Radiance_Images/`), quel que soit le format d’exportation sélectionné. | float32 |
 | `reflectance` | Réflectance ρ, où **DN 32768 = ρ 1,0 (100 %)** avec une marge jusqu’à ρ 2,0. Compatible Pix4D. | uint16 |
-| `preview` | Rendu prêt à l&#x27;affichage : RGB = balance des blancs + gamma ; multispectral = étirement en fausses couleurs. | affichage 8 bits |
+| `preview` | Rendu prêt à l'affichage : RGB = balance des blancs + gamma ; multispectral = étirement en fausses couleurs. | affichage 8 bits |
 
 ### Orientation
 

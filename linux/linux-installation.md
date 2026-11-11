@@ -1,6 +1,6 @@
 # Installation sous Linux
 
-Chloros est distribué pour Linux sous forme de paquets `.deb` qui installent l&#x27;interface CLI, le serveur backend et le SDK Python pour Python (pour le système `python3`, ainsi qu&#x27;un fichier « wheel » adapté à la version pour les environnements virtuels).
+Chloros est distribué pour Linux sous forme de paquets `.deb` qui installent l'interface CLI, le serveur backend et le SDK Python pour Python (pour le système `python3`, ainsi qu'un fichier « wheel » adapté à la version pour les environnements virtuels).
 
 Les noms de fichiers des paquets indiquent la version et l’architecture : `chloros_1.3.0_amd64.deb` pour x86_64, et `chloros_1.3.0_arm64_jp6.deb` pour arm64 (NVIDIA Jetson, JetPack 6). Remplacez le nom du fichier que vous avez effectivement téléchargé dans les commandes ci-dessous.
 
@@ -35,7 +35,7 @@ sudo apt install ./chloros_1.3.0_amd64.deb
 ```
 
 {% hint style="info" %}
-**Utilisez `apt install ./…`, et non `dpkg -i`.** `apt` résout les dépendances du paquet et installe également ce qu’il recommande : les prérequis du SDK Python, `python3-numpy` et `python3-requests`. `dpkg -i` n&#x27;installe ni l&#x27;un ni l&#x27;autre. L’interface CLI et le backend sont autonomes et fonctionnent sans ces éléments, mais `import chloros_sdk` en a besoin ; la sortie de l’installation indique ceux qui manquent. Conservez le fichier `./`, afin que `apt` installe le fichier plutôt que de rechercher un paquet portant ce nom. Le paquet déclare également `libgl1`, que l’OpenCV fourni charge et qui peut manquer dans une image de serveur minimale.
+**Utilisez `apt install ./…`, et non `dpkg -i`.** `apt` résout les dépendances du paquet et installe également ce qu’il recommande : les prérequis du SDK Python, `python3-numpy` et `python3-requests`. `dpkg -i` n'installe ni l'un ni l'autre. L’interface CLI et le backend sont autonomes et fonctionnent sans ces éléments, mais `import chloros_sdk` en a besoin ; la sortie de l’installation indique ceux qui manquent. Conservez le fichier `./`, afin que `apt` installe le fichier plutôt que de rechercher un paquet portant ce nom. Le paquet déclare également `libgl1`, que l’OpenCV fourni charge et qui peut manquer dans une image de serveur minimale.
 {% endhint %}
 
 Vérifiez l’installation :
@@ -67,7 +67,7 @@ sudo apt install ./chloros_1.3.0_arm64_jp6.deb
 chloros-cli --version
 ```
 
-Même configuration que l’amd64 `.deb` (Python SDK, tampons de réception et services backend inclus), pour Jetson Orin / Orin NX / Orin Nano sur **JetPack 6** (L4T R36). Son PyTorch est la version CUDA de JetPack 6 pour Orin ; ainsi, le traitement GPU, y compris le débayériseur Texture Aware, s&#x27;exécute sur le GPU du Jetson. Le paquet ne contient pas CUDA en soi : il utilise les bibliothèques CUDA et cuDNN installées par JetPack 6 (`sudo apt install nvidia-jetpack` sur une image qui ne les contient pas). Lorsqu’aucun GPU CUDA n’est disponible, le traitement s’effectue sur le CPU et `--debayer texture-aware` utilise le débayeur standard (le backend enregistre une ligne `[DEBAYER] … needs a CUDA GPU …` expliquant pourquoi). Pour en savoir plus sur le comportement du Jetson en matière de mémoire, de gestion thermique et de déploiement sur le terrain, consultez le [Guide NVIDIA Jetson](nvidia-jetson-guide.md).***
+Même configuration que l’amd64 `.deb` (Python SDK, tampons de réception et services backend inclus), pour Jetson Orin / Orin NX / Orin Nano sur **JetPack 6** (L4T R36). Son PyTorch est la version CUDA de JetPack 6 pour Orin ; ainsi, le traitement GPU, y compris le débayériseur Texture Aware, s'exécute sur le GPU du Jetson. Le paquet ne contient pas CUDA en soi : il utilise les bibliothèques CUDA et cuDNN installées par JetPack 6 (`sudo apt install nvidia-jetpack` sur une image qui ne les contient pas). Lorsqu’aucun GPU CUDA n’est disponible, le traitement s’effectue sur le CPU et `--debayer texture-aware` utilise le débayeur standard (le backend enregistre une ligne `[DEBAYER] … needs a CUDA GPU …` expliquant pourquoi). Pour en savoir plus sur le comportement du Jetson en matière de mémoire, de gestion thermique et de déploiement sur le terrain, consultez le [Guide NVIDIA Jetson](nvidia-jetson-guide.md).***
 
 ## Installation du Python SDK (tous les systèmes Linux)**Le `.deb` installe le SDK pour vous.** Les deux paquets (amd64 et Jetson) l’installent pour le système `python3` ; ainsi, `import chloros_sdk` fonctionne immédiatement après l’installation, sans pip ni connexion réseau. Ses paquets (`chloros_sdk`, `lattice_sdk`, `lattice_cam`, `arena_api` et les chargeurs de projet) sont placés dans `/usr/lib/python3/dist-packages`, qui appartient au paquet : une mise à jour les remplace, et la suppression du paquet les supprime. La version correspond toujours à l’interface CLI et au backend que vous avez installés.
 
@@ -106,7 +106,7 @@ Le SDK Python Python communique avec le backend que `.deb` installe via une HTTP
 
 ### 1. Connexion
 
-L&#x27;accès à l&#x27;CLI et au SDK nécessite un forfait Chloros+ payant (**Copper** ou supérieur), contrôlé côté serveur : un appelant déconnecté obtient `401 AUTH_REQUIRED`, et un appelant du forfait gratuit (Iron) obtient `403 PLAN_UPGRADE_REQUIRED`.
+L'accès à l'CLI et au SDK nécessite un forfait Chloros+ payant (**Copper** ou supérieur), contrôlé côté serveur : un appelant déconnecté obtient `401 AUTH_REQUIRED`, et un appelant du forfait gratuit (Iron) obtient `403 PLAN_UPGRADE_REQUIRED`.
 
 ```bash
 chloros-cli login your@email.com 'your-password'
@@ -136,15 +136,15 @@ Sept vérifications s’exécutent dans l’ordre, et la commande renvoie un cod
 
 | # | Vérification | Ce qu’elle vérifie |
 | --- | --- | --- |
-| 1 | **Version** | L&#x27;CLI indique sa version (`v1.3.0`). |
+| 1 | **Version** | L'CLI indique sa version (`v1.3.0`). |
 | 2 | **Port disponible** | Le port 5000 est libre, *ou* déjà occupé par un backend Chloros en bon état de fonctionnement (ce qui est considéré comme une réussite). |
 | 3 | **Démarrage du backend** | Le binaire du backend se lance. |
-| 4 | **Test de l&#x27;API (`/api/test`)** | Le backend répond `status: ok`. |
+| 4 | **Test de l'API (`/api/test`)** | Le backend répond `status: ok`. |
 | 5 | **Informations système** | Affiche `GPU: <name>, CUDA: <bool>, PyTorch: <version>` à partir de `/api/system-info`. |
 | 6 | **Modèles de débruitage** | Trouve des modèles `*.pth.enc` (sous Linux : `/usr/lib/chloros/models`). |
 | 7 | **CUDA + Dénoyauteur**| La fonctionnalité « Texture Aware » est effectivement utilisable — nécessite CUDA**et** au moins un fichier de modèle. |
 
-L&#x27;exécution se termine par `N/7 checks passed`, qui répertorie les éventuels échecs par nom.
+L'exécution se termine par `N/7 checks passed`, qui répertorie les éventuels échecs par nom.
 
 ### 4. Traitez votre premier ensemble de données
 
@@ -164,8 +164,8 @@ Chloros conserve ses identifiants et sa configuration CLI dans un répertoire un
 | --- | --- |
 | `~/.chloros/user_session.json` | Cache de session de connexion créé par `chloros-cli login` (conservé lors des mises à jour du paquet ; effacé lorsque le paquet est supprimé) |
 | `~/.chloros/working_directory.txt` | Remplacement par défaut du dossier de projet (`chloros-cli set-project-folder` / `get-project-folder` / `reset-project-folder`) |
-| `~/.chloros/cli_language.json` | Préférence de langue de l&#x27;interface CLI (`chloros-cli language <code>`) |
-| `~/.chloros/user.json` | Paramètre de langue partagé avec l&#x27;interface graphique Windows — une valeur `language` ici a priorité sur `cli_language.json` |
+| `~/.chloros/cli_language.json` | Préférence de langue de l'interface CLI (`chloros-cli language <code>`) |
+| `~/.chloros/user.json` | Paramètre de langue partagé avec l'interface graphique Windows — une valeur `language` ici a priorité sur `cli_language.json` |
 | `~/.chloros/update_cache.json` | Cache d’une heure pour la vérification des mises à jour au démarrage sous Linux/Jetson |
 | `~/.chloros/backend.log` | Journal du backend lorsque celui-ci a été lancé par la CLI |
 | `~/.chloros/camera_cal/<serial>/<bundle_sha>/` | Paquets de calibrage LATTICE mis en cache par caméra, indexés par numéro de série et hachage du lot |
@@ -174,12 +174,12 @@ Chloros conserve ses identifiants et sa configuration CLI dans un répertoire un
 | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` | Journaux du serveur backend, un fichier par lancement |
 | `~/Documents/MAPIR/Chloros Projects/` | Dossier de projet par défaut lorsqu’aucune modification n’est définie |
 
-### À l&#x27;échelle du système
+### À l'échelle du système
 
 | Chemin | Objectif |
 | --- | --- |
-| `/usr/bin/chloros-cli` | Script d&#x27;encapsulation — définit `LD_LIBRARY_PATH` pour les bibliothèques natives intégrées (et `TMPDIR` à `/mnt/ssd/tmp` lorsque ce dossier existe), puis exécute le binaire réel |
-| `/usr/bin/chloros-backend` | Script d&#x27;encapsulation — identique pour le backend, qu’il marque comme une version de production installée |
+| `/usr/bin/chloros-cli` | Script d'encapsulation — définit `LD_LIBRARY_PATH` pour les bibliothèques natives intégrées (et `TMPDIR` à `/mnt/ssd/tmp` lorsque ce dossier existe), puis exécute le binaire réel |
+| `/usr/bin/chloros-backend` | Script d'encapsulation — identique pour le backend, qu’il marque comme une version de production installée |
 | `/usr/lib/chloros/cli/`, `/usr/lib/chloros/backend/` | L’interface CLI et le backend compilés, installés sans décompression (nouveauté de la version 1.3.0) ; les programmes sont `cli/chloros-cli` et `backend/chloros-backend` |
 | `/usr/lib/chloros/chloros-cli`, `/usr/lib/chloros/chloros-backend` | Scripts de lancement de deux lignes qui démarrent les programmes réels ci-dessus — conservés à ces emplacements car le SDK, la CLI et les anciens scripts les recherchent ici |
 | `/usr/lib/chloros/arena_runtime/` | Environnement d’exécution Arena SDK requis par les caméras LATTICE |
@@ -189,13 +189,13 @@ Chloros conserve ses identifiants et sa configuration CLI dans un répertoire un
 | `/usr/lib/chloros/exiftool` | Lanceur ExifTool intégré (lié par un lien symbolique à `/usr/local/bin/exiftool` uniquement si aucun exiftool système n’existe). À partir de la version 1.3.0, le script ExifTool est fourni avec sa propre bibliothèque Perl dans `/usr/lib/chloros/exiftool-dist/`, il fonctionne donc sans le paquet système `libimage-exiftool-perl` |
 | `/etc/chloros/update.conf` | Configuration du canal de mise à jour lue par `chloros-cli update` |
 | `/etc/sysctl.d/60-chloros-ptp.conf` | Définit `net.ipv4.ip_unprivileged_port_start = 319` afin que le backend puisse se lier aux ports PTP sans droits root |
-| `/etc/sysctl.d/60-chloros-gige.conf` | Augmente la taille des tampons de réception des sockets du noyau (`net.core.rmem_max`, `net.core.rmem_default`) à 32 Mo pour les flux de caméras LATTICE, et les applique lors de l&#x27;installation (une valeur déjà définie à un niveau supérieur n’est pas modifiée). Avec les paramètres par défaut du noyau, les paquets des caméras sont rejetés par le noyau et un réseau de caméras perd des images et subit une baisse de la fréquence d’images ; `chloros-cli lattice network` signale les tampons lorsqu’ils sont faibles. Voir [Hôtes Linux — tampons de réception des sockets](../reference/cli-reference.md#linux-hosts--socket-receive-buffers) |
+| `/etc/sysctl.d/60-chloros-gige.conf` | Augmente la taille des tampons de réception des sockets du noyau (`net.core.rmem_max`, `net.core.rmem_default`) à 32 Mo pour les flux de caméras LATTICE, et les applique lors de l'installation (une valeur déjà définie à un niveau supérieur n’est pas modifiée). Avec les paramètres par défaut du noyau, les paquets des caméras sont rejetés par le noyau et un réseau de caméras perd des images et subit une baisse de la fréquence d’images ; `chloros-cli lattice network` signale les tampons lorsqu’ils sont faibles. Voir [Hôtes Linux — tampons de réception des sockets](../reference/cli-reference.md#linux-hosts--socket-receive-buffers) |
 | `/etc/ld.so.conf.d/Arena_SDK.conf` | Dirige le chargeur dynamique vers `/usr/lib/chloros/arena_runtime` |
 | `/lib/udev/rules.d/70-chloros-daq.rules` | Accorde à l’utilisateur connecté l’accès au pont série USB DAQ-U (CP2102N, `10c4:ea60`) |
-| `/lib/systemd/system/chloros-backend@.service` | Service backend « toujours actif » à activer manuellement, qui exécute le backend sous l&#x27;identité de l&#x27;utilisateur que vous désignez (installé, **non activé**) — c&#x27;est celui-ci qu&#x27;il faut activer ; voir [PTP toujours actif](#always-on-ptp-for-headless-hosts) |
+| `/lib/systemd/system/chloros-backend@.service` | Service backend « toujours actif » à activer manuellement, qui exécute le backend sous l'identité de l'utilisateur que vous désignez (installé, **non activé**) — c'est celui-ci qu'il faut activer ; voir [PTP toujours actif](#always-on-ptp-for-headless-hosts) |
 | `/lib/systemd/system/chloros-backend.service` | Le même service exécutant le backend en tant que **root**(installé,**non activé**), conservé afin qu’une machine sur laquelle il a été activé continue de fonctionner |
 | `/var/log/chloros/` | Le journal détaillé du service root, accessible au groupe `adm` (supprimé lors de la purge du paquet) |
-| `/usr/share/applications/chloros-cli.desktop` | Entrée de menu de l&#x27;application « Chloros CLI » qui ouvre un terminal |
+| `/usr/share/applications/chloros-cli.desktop` | Entrée de menu de l'application « Chloros CLI » qui ouvre un terminal |
 
 **Pare-feu (nouveau dans la version 1.3.0).** Si `ufw` ou `firewalld` est actif au moment de l’installation, le paquet ouvre les ports UDP `5002` (données DAQ-E), `5353` (découverte mDNS), `319` et `320` (PTP), et supprime ces règles lorsque le paquet est désinstallé. Si un pare-feu est installé mais inactif, le package n’ajoute rien et affiche la liste des ports à autoriser au cas où vous le mettriez en service ultérieurement. Il n’ouvre aucun port TCP : une mise à jour du micrologiciel DAQ-E, au cours de laquelle le capteur se reconnecte à cet ordinateur via TCP pour récupérer l’image, échoue avec le code d’erreur `… device never connected back on TCP <port> …` si un pare-feu actif bloque cette connexion.
 
@@ -223,7 +223,7 @@ Les familles de commandes « live-hardware » fonctionnent toutes sous Linux (am
 * **`chloros-cli lattice`** — détecte, connecte, configure et capture à partir des caméras LATTICE et des réseaux synchronisés. La commande `.deb` intègre le runtime Arena SDK dont elles ont besoin et l’enregistre auprès du chargeur dynamique.
 * **`chloros-cli daq pool-*`** — permet de connecter des capteurs de lumière DAQ-U/M/E via le pool de backend, de diffuser des spectres calibrés, d’enregistrer des fichiers `.daq` et d’échanger des profils de capteur ; pour un DAQ-E, il permet également de modifier ses paramètres réseau, de le redémarrer et de mettre à jour son micrologiciel. `chloros-cli daq discover` recherche les capteurs que vous pouvez connecter, et `chloros-cli daq --help` répertorie les sous-commandes `pool-*`.
 * **`chloros-cli project`** — exécute un projet enregistré (ses caméras, ses capteurs et ses paramètres de traitement) en mode sans interface graphique.
-* **`chloros-cli time-sync`** — inspecter le « grandmaster » PTP sur lequel le backend Chloros s&#x27;exécute pour les caméras LATTICE et les capteurs DAQ-E.
+* **`chloros-cli time-sync`** — inspecter le « grandmaster » PTP sur lequel le backend Chloros s'exécute pour les caméras LATTICE et les capteurs DAQ-E.
 
 ```bash
 # DAQ-E at a known address — the reliable path on multi-homed hosts
@@ -240,7 +240,7 @@ chloros-cli daq pool-latest --sensor-id daq-e-a1b2c3 --json
 `--sensor-id` est requis par `pool-latest`, `pool-stream`, `pool-record` et `pool-set-cap` ; `pool-list` affiche les identifiants actuellement présents dans le pool.
 
 {% hint style="info" %}
-**`--eth-host` ignore la phase de découverte.** `pool-connect --eth` détecte un DAQ-E via mDNS, avec une solution de secours ARP fonctionnant à partir d&#x27;un cache ARP vide ; en transmettant l&#x27;adresse IP ou le nom d&#x27;hôte du capteur avec `--eth-host`, la connexion s&#x27;établit directement.
+**`--eth-host` ignore la phase de découverte.** `pool-connect --eth` détecte un DAQ-E via mDNS, avec une solution de secours ARP fonctionnant à partir d'un cache ARP vide ; en transmettant l'adresse IP ou le nom d'hôte du capteur avec `--eth-host`, la connexion s'établit directement.
 {% endhint %}
 
 **Les autorisations série du DAQ-U** sont gérées par la règle udev installée (`uaccess` + groupe `dialout`). Si un capteur déjà branché reste inaccessible, rechargez les règles ou rebranchez-le :
@@ -327,7 +327,7 @@ Il existe exactement quatre valeurs `--format` valides, et elles contiennent des
 0 2 * ** /usr/bin/chloros-cli process /data/incoming --output /data/processed >> /var/log/chloros.log 2>&1
 ```
 
-### Exemple d&#x27;SDK Python
+### Exemple d'SDK Python
 
 ```python
 from chloros_sdk import process_folder
@@ -344,7 +344,7 @@ result = process_folder(
 
 ## Dépannage
 
-### CLI introuvable après l&#x27;installation
+### CLI introuvable après l'installation
 
 ```bash
 # Check if the binary exists
@@ -365,9 +365,9 @@ sudo chmod +x /usr/bin/chloros-cli
 sudo chmod +x /usr/lib/chloros/chloros-backend /usr/lib/chloros/backend/chloros-backend
 ```
 
-### Le backend ne démarre pas après l&#x27;ajout de capacités de fichiers
+### Le backend ne démarre pas après l'ajout de capacités de fichiers
 
-N&#x27;exécutez pas `setcap` sur le backend. À partir de la version 1.3.0, le paquet ne définit aucune capacité de fichier, et les ports 319/320 de PTP proviennent du paramètre `sysctl` décrit dans la section [Comment PTP obtient ses ports](#always-on-ptp-for-headless-hosts). Une capacité de fichier place le backend décompressé en mode d’exécution sécurisée, dans lequel il ne peut pas trouver ses propres bibliothèques, ce qui l’empêche de démarrer. Si vous en avez ajouté une, supprimez-la :
+N'exécutez pas `setcap` sur le backend. À partir de la version 1.3.0, le paquet ne définit aucune capacité de fichier, et les ports 319/320 de PTP proviennent du paramètre `sysctl` décrit dans la section [Comment PTP obtient ses ports](#always-on-ptp-for-headless-hosts). Une capacité de fichier place le backend décompressé en mode d’exécution sécurisée, dans lequel il ne peut pas trouver ses propres bibliothèques, ce qui l’empêche de démarrer. Si vous en avez ajouté une, supprimez-la :
 
 ```bash
 sudo setcap -r /usr/lib/chloros/backend/chloros-backend
@@ -391,7 +391,7 @@ chloros-cli time-sync peers
 
 ### Les commandes `lattice` échouent avec le message « Pilotes de caméra LATTICE introuvables »
 
-Le backend n’a pas pu charger le runtime de la caméra LATTICE avec lequel il est installé. Toutes les commandes `lattice` s’exécutent sur le backend ; l’CLI elle-même ne contient aucun pilote de caméra. Réinstallez Chloros (`sudo apt install --reinstall ./chloros_1.3.0_<arch>.deb`): la commande `.deb` installe le runtime à côté du backend, dans `/usr/lib/chloros/arena_runtime`, et l&#x27;enregistre auprès du chargeur dynamique. Pour vérifier cet enregistrement :
+Le backend n’a pas pu charger le runtime de la caméra LATTICE avec lequel il est installé. Toutes les commandes `lattice` s’exécutent sur le backend ; l’CLI elle-même ne contient aucun pilote de caméra. Réinstallez Chloros (`sudo apt install --reinstall ./chloros_1.3.0_<arch>.deb`): la commande `.deb` installe le runtime à côté du backend, dans `/usr/lib/chloros/arena_runtime`, et l'enregistre auprès du chargeur dynamique. Pour vérifier cet enregistrement :
 
 ```bash
 cat /etc/ld.so.conf.d/Arena_SDK.conf     # expect /usr/lib/chloros/arena_runtime
@@ -411,7 +411,7 @@ kill $(lsof -t -i :5000)
 chloros-cli --port 5001 process ~/datasets/flight001
 ```
 
-Les journaux du backend relatifs à l&#x27;échec du lancement se trouvent dans `~/.cache/chloros/logs/`. Si le port 5000 appartient à un service backend (`systemctl status chloros-backend@$USER.service`), redémarrez le service plutôt que de tuer son processus.
+Les journaux du backend relatifs à l'échec du lancement se trouvent dans `~/.cache/chloros/logs/`. Si le port 5000 appartient à un service backend (`systemctl status chloros-backend@$USER.service`), redémarrez le service plutôt que de tuer son processus.
 
 ### CUDA non détecté
 
@@ -441,7 +441,7 @@ ldd /usr/lib/chloros/backend/chloros-backend | grep "not found"
 
 ### Démarrage lent sur les systèmes à carte SD
 
-À partir de la version 1.3.0, le backend et l&#x27;CLI sont installés sous forme décompressée ; ils ne s&#x27;extractent donc plus dans un répertoire temporaire à chaque lancement. Les fichiers temporaires sont automatiquement placés dans `/mnt/ssd/tmp` si ce dossier existe ; sinon, vous pouvez les rediriger vers un système de fichiers rapide :
+À partir de la version 1.3.0, le backend et l'CLI sont installés sous forme décompressée ; ils ne s'extractent donc plus dans un répertoire temporaire à chaque lancement. Les fichiers temporaires sont automatiquement placés dans `/mnt/ssd/tmp` si ce dossier existe ; sinon, vous pouvez les rediriger vers un système de fichiers rapide :
 
 ```bash
 export TMPDIR=/mnt/nvme/tmp
@@ -449,7 +449,7 @@ export TMPDIR=/mnt/nvme/tmp
 
 ***
 
-## Mise à jour d&#x27;Chloros sous Linux
+## Mise à jour d'Chloros sous Linux
 
 La commande `update` est réservée à Linux/Jetson. Elle vérifie la version publiée dans le canal de mise à jour configuré dans `/etc/chloros/update.conf` et propose de télécharger et d’installer la version correspondante `.deb` :
 
@@ -481,4 +481,4 @@ La désinstallation arrête et désactive tous les services backend, rétablit l
 * [CLI : ligne de commande](../CLI.md) — le guide de l’interface de ligne de commande
 * [API : Python SDK](../api-python-sdk.md) — le guide du SDK
 * [Référence CLI](../reference/cli-reference.md) et [Référence SDK](../reference/sdk-reference.md) — listes exhaustives des commandes et des API pour la version 1.3.0
-* [Adaptation dynamique des ressources de calcul](../processing-architecture/dynamic-compute-adaptation.md) — comment Chloross s&#x27;adapte à votre matériel
+* [Adaptation dynamique des ressources de calcul](../processing-architecture/dynamic-compute-adaptation.md) — comment Chloross s'adapte à votre matériel

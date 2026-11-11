@@ -1,6 +1,6 @@
 # Pipeline de traitement
 
-Chloros 1.3.0 utilise un pipeline de traitement à 4 threads qui fonctionne comme une chaîne de montage par étapes. Chaque thread gère une phase distincte du flux de travail, ce qui permet à plusieurs images d&#x27;être en cours de traitement à différentes étapes simultanément.
+Chloros 1.3.0 utilise un pipeline de traitement à 4 threads qui fonctionne comme une chaîne de montage par étapes. Chaque thread gère une phase distincte du flux de travail, ce qui permet à plusieurs images d'être en cours de traitement à différentes étapes simultanément.
 
 <figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
@@ -47,8 +47,8 @@ Un thread de calcul dépendant du processeur. Lors d’une exécution Survey3 ou
   * Standard (rapide, qualité moyenne) — par défaut, `--debayer standard`
   * Texture Aware (lent, qualité maximale) — Chloros+ uniquement, `--debayer texture-aware`, utilise un modèle de débruitage basé sur l’IA/ML
   * Les captures LATTICE mono (M3M) sont monobandes : les étapes de dématriçage et de balance des blancs sont ignorées pour celles-ci (avec un message de journal d’une ligne), tandis que toutes les images M3C/Bayer du même cycle en bénéficient toujours
-* **Correction du vignettage** : applique une correction du vignettage de l&#x27;objectif sur l&#x27;ensemble de l&#x27;image
-* **Étalonnage de la réflectance** : applique des coefficients d&#x27;étalonnage pour convertir les valeurs en réflectance
+* **Correction du vignettage** : applique une correction du vignettage de l'objectif sur l'ensemble de l'image
+* **Étalonnage de la réflectance** : applique des coefficients d'étalonnage pour convertir les valeurs en réflectance
 * **Calcul des indices** : calcule les indices de végétation (NDVI, NDRE, GNDVI, …)
 * Résultats : données d’image traitées prêtes à être exportées
 
@@ -137,7 +137,7 @@ print(f"Export: {status['export']['percent']}% - Phase: {status['export']['phase
 Le traitement est terminé lorsque le thread 4 atteint 100 %.
 
 {% hint style="info" %}
-**Une exécution qui n&#x27;écrit aucune image est considérée comme un échec.**En cas de réussite, `chloros-cli process` indique le nombre de produits d&#x27;image écrits (`Image products written: N`). Si des produits ont été demandés et qu’**aucun**n’a été écrit — uniquement `project.json` et `calibration_data.json` —, l’CLI affiche `Processing finished but wrote no image products.` et**se termine avec un code de sortie différent de zéro**, en indiquant le nom du dossier du projet et les causes habituelles (le dossier d’entrée n’a pas été reconnu comme une capture — vérifiez la configuration et `--input-level` — ou tous les produits demandés n’étaient pas applicables à ces caméras). Les scripts peuvent s’appuyer sur le code de sortie.
+**Une exécution qui n'écrit aucune image est considérée comme un échec.**En cas de réussite, `chloros-cli process` indique le nombre de produits d'image écrits (`Image products written: N`). Si des produits ont été demandés et qu’**aucun**n’a été écrit — uniquement `project.json` et `calibration_data.json` —, l’CLI affiche `Processing finished but wrote no image products.` et**se termine avec un code de sortie différent de zéro**, en indiquant le nom du dossier du projet et les causes habituelles (le dossier d’entrée n’a pas été reconnu comme une capture — vérifiez la configuration et `--input-level` — ou tous les produits demandés n’étaient pas applicables à ces caméras). Les scripts peuvent s’appuyer sur le code de sortie.
 {% endhint %}
 
 ***
@@ -150,7 +150,7 @@ Le traitement est terminé lorsque le thread 4 atteint 100 %.
 * **`GPU_SINGLE`** : le thread 3 sérialise l’accès au GPU à l’aide d’un sémaphore tandis que les processus de travail chevauchent les E/S, en utilisant `fused_gpu` ou le pipeline `tiled_gpu`, plus économe en mémoire
 * **`CPU_PARALLEL`** : le thread 3 utilise un traitement basé sur le CPU avec un parallélisme multithread
 
-L&#x27;allocation de mémoire GPU du thread 3 augmente également à mesure que les threads 1 et 2 se terminent — voir [Allocation dynamique de mémoire GPU](dynamic-compute-adaptation.md#dynamic-gpu-memory-allocation).
+L'allocation de mémoire GPU du thread 3 augmente également à mesure que les threads 1 et 2 se terminent — voir [Allocation dynamique de mémoire GPU](dynamic-compute-adaptation.md#dynamic-gpu-memory-allocation).
 
 ***
 
@@ -159,4 +159,4 @@ L&#x27;allocation de mémoire GPU du thread 3 augmente également à mesure que 
 * [Adaptation dynamique du calcul](dynamic-compute-adaptation.md) — Comment Chloros sélectionne la stratégie optimale pour votre matériel
 * [Guide NVIDIA Jetson](../linux/nvidia-jetson-guide.md) — Comportement du pipeline spécifique à la plateforme sur Jetson
 * [Surveillance du traitement](../processing-images-gui/monitoring-the-processing.md) — Suivi de la progression via l’interface graphique
-* [Référence de l&#x27;interface CLI](../reference/cli-reference.md) — `process`, `export-status`, codes de sortie et structure de la sortie
+* [Référence de l'interface CLI](../reference/cli-reference.md) — `process`, `export-status`, codes de sortie et structure de la sortie

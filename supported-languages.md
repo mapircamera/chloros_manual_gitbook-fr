@@ -1,10 +1,10 @@
 # Langues prises en charge
 
-Chloros offre une prise en charge complète de l&#x27;interface dans **38 langues à travers le monde**, ce qui le rend accessible aux utilisateurs du monde entier. Vous pouvez changer de langue instantanément aussi bien dans l&#x27;interface graphique de bureau que dans CLI.
+Chloros offre une prise en charge complète de l'interface dans **38 langues à travers le monde**, ce qui le rend accessible aux utilisateurs du monde entier. Vous pouvez changer de langue instantanément aussi bien dans l'interface graphique de bureau que dans CLI.
 
 Chloros prend en charge les langues suivantes :
 
-| # | Langue | Nom dans la langue d&#x27;origine | Code CLI |
+| # | Langue | Nom dans la langue d'origine | Code CLI |
 |---|----------|-------------|----------|
 | 1 | 🇺🇸 Anglais | English | `en` |
 | 2 | 🇪🇸 Espagnol | Español | `es` |
@@ -49,14 +49,14 @@ Chloros prend en charge les langues suivantes :
 
 ### Dans Chloros Desktop
 
-1. Ouvrez les paramètres de l&#x27;application
+1. Ouvrez les paramètres de l'application
 2. Accédez au menu de sélection de la langue
 3. Choisissez votre langue préférée dans la liste
-4. L&#x27;interface s&#x27;actualisera instantanément
+4. L'interface s'actualisera instantanément
 
 ### Dans Chloros CLI
 
-Utilisez la commande `language` pour afficher ou modifier la langue de l&#x27;interface CLI :
+Utilisez la commande `language` pour afficher ou modifier la langue de l'interface CLI :
 
 ```bash
 # View current language

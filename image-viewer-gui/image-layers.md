@@ -4,11 +4,7 @@ Le **menu déroulant des calques** situé en haut à droite de la visionneuse d�
 
 ## Que sont les couches d’images ?
 
-Dans Chloros
-
-, une « couche » correspond à un **fichier de produit**associé à une image source. L’importation vous fournit les fichiers sources ; le traitement ajoute une couche pour chaque produit généré par la session. Les fichiers exportés conservent le nom du fichier source : c’est le**dossier** qui identifie le produit, et le nom du calque correspond à l’étiquette attribuée par Chloros
-
-à ce dossier.
+Dans Chloros, une « couche » correspond à un **fichier de produit**associé à une image source. L’importation vous fournit les fichiers sources ; le traitement ajoute une couche pour chaque produit généré par la session. Les fichiers exportés conservent le nom du fichier source : c’est le**dossier** qui identifie le produit, et le nom du calque correspond à l’étiquette attribuée par Chloros à ce dossier.
 
 <!-- SCREENSHOT-NEEDED: Image Viewer full screen with the layer dropdown open on a processed LATTICE multispectral image, showing the full list: TIFF base, RAW (Original), RAW (Debayered), RAW (Preview), RAW (Radiance), RAW (Reflectance), and one RAW (NDVI Index) entry. -->
 
@@ -20,17 +16,7 @@ Dans Chloros
 
 | Calque | Description |
 | --- | --- |
-| **JPG**(ou**PNG
-
-**/**TIFF
-
-**) | Le fichier de base issu de la capture. Survey3
-
-importe un fichier `.JPG` à côté de chaque `.RAW` ; les captures LATTICE fournissent un aperçu d’affichage au format PNG
-
-ou TIFF
-
-. Étiqueté en fonction de ce qui a été réellement importé |
+| **JPG**(ou**PNG**/**TIFF**) | Le fichier de base issu de la capture. Survey3 importe un fichier `.JPG` à côté de chaque `.RAW` ; les captures LATTICE fournissent un aperçu d’affichage au format PNG ou TIFF. Étiqueté en fonction de ce qui a été réellement importé |
 | **RAW (Original)** | L’image brute source, débayérisée pour l’affichage sans aucune correction appliquée. Disponible dès l’importation — elle ne nécessite aucun traitement |
 
 Une capture LATTICE dont le fichier de base **est** son image brute ne dispose pas d’entrée de base distincte : `RAW (Original)` la couvre déjà.
@@ -43,8 +29,8 @@ Une capture LATTICE dont le fichier de base **est** son image brute ne dispose p
 | --- | --- | --- |
 | **RAW (Cible)** | — | L’image a été identifiée comme contenant une cible d’étalonnage |
 | **RAW (Réflectance)** | `Reflectance_Calibrated_Images/` | L’étalonnage de la réflectance s’est déroulé avec succès sur cette image |
-| **Correction de la vignette**| `Vignette_Corrected_Images/` | L&#x27;image n&#x27;a pas pu faire l&#x27;objet d&#x27;un étalonnage de réflectance**et** la *correction de la vignette* était activée |
-| **Réponse du capteur**| `Sensor_Response_Images/` | L&#x27;image n&#x27;a pas pu être étalonnée en réflectance**et** la *correction de vignettage* était désactivée |
+| **Correction de la vignette**| `Vignette_Corrected_Images/` | L'image n'a pas pu faire l'objet d'un étalonnage de réflectance**et** la *correction de la vignette* était activée |
+| **Réponse du capteur**| `Sensor_Response_Images/` | L'image n'a pas pu être étalonnée en réflectance**et** la *correction de vignettage* était désactivée |
 | **Balance des blancs** | `White_Balanced_Images/` | Un produit avec balance des blancs a été généré |
 
 {% hint style="info" %}
@@ -55,33 +41,21 @@ Une capture LATTICE dont le fichier de base **est** son image brute ne dispose p
 
 LATTICE capture le fan-out dans ces niveaux en un seul passage de traitement. Ceux qui existent dépendent des options d’exportation par produit dans les Paramètres du projet et de ce qui s’applique à l’appareil photo.
 
-| Calque | Enregistré dans | S&#x27;applique à |
+| Calque | Enregistré dans | S'applique à |
 | --- | --- | --- |
-| **RAW (débayérisé)** | `Debayered_Images/` | RGB
-
-et multispectral |
+| **RAW (débayérisé)** | `Debayered_Images/` | RGB et multispectral |
 | **RAW (Aperçu)** | `Preview_Images/` | Multispectrales (étirement en fausses couleurs) |
-| **Balance des blancs** | `Preview_Images/` | Caméras principales RGB
-
-— l’aperçu RGB
-
-est enregistré sous ce nom afin de correspondre à la couche Survey3
-
-du même nom |
+| **Balance des blancs** | `Preview_Images/` | Caméras principales RGB — l’aperçu RGB est enregistré sous ce nom afin de correspondre à la couche Survey3 du même nom |
 | **RAW (radiance)** | `Radiance_Images/` | Multispectral uniquement |
 | **RAW (réflectance)** | `Reflectance_Calibrated_Images/` | Multispectral uniquement, et uniquement lorsqu’un enregistrement descendant `.daq` correspondant ou une cible intégrée à l’image ayant passé le contrôle qualité couvre l’image |
 
-Les caméras principales RGB
-
-ne disposent pas de radiométrie par bande ; par conséquent, la radiance et la réflectance sont ignorées pour celles-ci car **non applicables** — le journal l&#x27;indique clairement plutôt que de générer une erreur silencieuse.
+Les caméras principales RGB ne disposent pas de radiométrie par bande ; par conséquent, la radiance et la réflectance sont ignorées pour celles-ci car **non applicables** — le journal l'indique clairement plutôt que de générer une erreur silencieuse.
 
 {% hint style="info" %}
 **Les couches brutes et débayérisées s’alignent avec les produits (nouveauté de la version 1.3.0).**Les fichiers bruts et débayérisés LATTICE sont enregistrés dans l’orientation native du capteur et consignent dans le fichier XMP l’orientation qui leur est propre ; les autres produits sont enregistrés avec cette orientation déjà appliquée. La visionneuse et la grille d’images basent l’affichage des couches**RAW (Original)**et**RAW (Débayérisé)** sur cette information, de sorte que l’image ne se retourne plus lorsque vous passez d’une couche de produit à une couche brute. Il s’agit uniquement d’un affichage — les fichiers ne sont jamais réécrits. Les fichiers sans enregistrement d’orientation (capturés avant la version 1.3.0 ou créés par d’autres logiciels) sont affichés tels qu’ils ont été enregistrés. Voir [Formats d’image de sortie](../output-image-formats.md#orientation).
 {% endhint %}
 
-Les masques de limitation (`*_clampmask.tif` dans un dossier `clamp_masks/`) ne sont pas des calques : Chloros
-
-les ignore lors de l’importation. Voir [Formats d’image de sortie](../output-image-formats.md#clamp-masks).
+Les masques de limitation (`*_clampmask.tif` dans un dossier `clamp_masks/`) ne sont pas des calques : Chloros les ignore lors de l’importation. Voir [Formats d’image de sortie](../output-image-formats.md#clamp-masks).
 
 ### Calques d’index, de LUT et de zone de test
 
@@ -89,7 +63,7 @@ les ignore lors de l’importation. Voir [Formats d’image de sortie](../output
 | --- | --- | --- |
 | **RAW (`<INDEX>` Index)** | `RAW (NDVI Index)` | Un par index configuré dans les paramètres du projet, calculé lors du traitement |
 | **`<INDEX>` LUT** | `NDVI LUT` | La version avec mappage des couleurs d’un index |
-| **Sandbox (`<Name>` `<Index\|LUT>` `<NNN>`)** | `Sandbox (NDVI LUT 003)` | Un par exécution d&#x27;exportation [Index/LUT Sandbox](index-lut-sandbox.md) |
+| **Sandbox (`<Name>` `<Index\|LUT>` `<NNN>`)** | `Sandbox (NDVI LUT 003)` | Un par exécution d'exportation [Index/LUT Sandbox](index-lut-sandbox.md) |
 
 Si le même nom d’index est configuré plusieurs fois avec des paramètres différents, le deuxième et les suivants se voient attribuer un numéro dans leur nom (`RAW (NDVI2 Index)`) afin que les calques restent identifiables.
 
@@ -124,48 +98,26 @@ Le [panneau « Valeurs du curseur »](opening-an-image-full-screen.md#cursor-val
 
 | Couche | Unité indiquée | Remarques |
 | --- | --- | --- |
-| Base (aperçu JPG / PNG
-
-/ TIFF
-
-) | DN, 0–255 | Valeurs d’affichage, corrigées en gamma sur le RGB
-
-. À des fins d’inspection visuelle uniquement |
+| Base (aperçu JPG / PNG / TIFF) | DN, 0–255 | Valeurs d’affichage, corrigées en gamma sur le RGB. À des fins d’inspection visuelle uniquement |
 | RAW (original) | DN | Valeurs numériques brutes du capteur. L’axe de l’histogramme indique la profondeur : 255 (8 bits), 4 095 (12 bits) ou 65 535 (16 bits) |
 | RAW (débayérisé) | DN | Linéaire, sans étirement à l’affichage |
 | RAW (aperçu) / Balance des blancs | DN | Produit d’affichage — étiré ou corrigé en gamma. Ne convient pas à la mesure |
 | RAW (radiance) | **W/m²/sr/nm** | Radiance physique en Float32. Pas de colonne DN |
-| RAW (réflectance) | DN **et %** | Pourcentage calculé selon l&#x27;échelle propre au fichier — voir ci-dessous |
-| Exportations d’index / LUT / sandbox | Valeur d’index, ou composantes RGB
-
-| Un fichier d’index monocanal indique la valeur d’index ; un fichier LUT avec mappage des couleurs indique les composantes Red
-
-/Green
-
-/Blue
-
-|
+| RAW (réflectance) | DN **et %** | Pourcentage calculé selon l'échelle propre au fichier — voir ci-dessous |
+| Exportations d’index / LUT / sandbox | Valeur d’index, ou composantes RGB | Un fichier d’index monocanal indique la valeur d’index ; un fichier LUT avec mappage des couleurs indique les composantes Red /Green /Blue |
 
 ### Réflectance : l’échelle est propre à chaque fichier
 
 {% hint style="warning" %}
-**« Diviser par 65 535 » n’est correct que pour Survey3
-
-.** La réflectance LATTICE est stockée à une échelle différente, et mélanger les deux diviseurs est le moyen le plus courant d’obtenir des valeurs de réflectance qui correspondent exactement à la moitié de ce qu’elles devraient être.
+**« Diviser par 65 535 » n’est correct que pour Survey3.** La réflectance LATTICE est stockée à une échelle différente, et mélanger les deux diviseurs est le moyen le plus courant d’obtenir des valeurs de réflectance qui correspondent exactement à la moitié de ce qu’elles devraient être.
 {% endhint %}
 
 | Source | DN correspondant à une réflectance de 1,0 | Identifié par |
 | --- | --- | --- |
 | **LATTICE**(M3C / M3M) |**32768** | La balise XMP « `Chloros:PixelScale=32768` » intégrée à chaque exportation de réflectance LATTICE. La marge de 2× permet de représenter des valeurs de ρ supérieures à 1,0 au lieu de les écrêter |
-| **Survey3**| **65535** | Pas de balise d&#x27;échelle XMP Chloros
+| **Survey3**| **65535** | Pas de balise d'échelle XMP Chloros — l'étalonnage Survey3 enregistre ρ × dtype-max et écrête à 1,0 |
 
-— l&#x27;étalonnage Survey3
-
-enregistre ρ × dtype-max et écrête à 1,0 |
-
-Pour les SIG et les scripts : lisez la valeur `Chloros:PixelScale` dans le fichier et divisez par celle-ci. Si la balise est absente, le fichier est à l’échelle Survey3
-
-(65535). La visionneuse, le bac à sable d’index/LUT et l’exportation d’index interprètent tous l’échelle de cette même manière ; ainsi, la valeur affichée au niveau du curseur correspond à celle utilisée par les calculs de l’index.
+Pour les SIG et les scripts : lisez la valeur `Chloros:PixelScale` dans le fichier et divisez par celle-ci. Si la balise est absente, le fichier est à l’échelle Survey3 (65535). La visionneuse, le bac à sable d’index/LUT et l’exportation d’index interprètent tous l’échelle de cette même manière ; ainsi, la valeur affichée au niveau du curseur correspond à celle utilisée par les calculs de l’index.
 
 Stockage spécifique au format en plus de cette échelle :
 
@@ -177,30 +129,10 @@ Stockage spécifique au format en plus de cette échelle :
 
 | Famille d’indices | Plage typique | Valeur |
 | --- | --- | --- |
-| Différence normalisée (NDVI
-
-, GNDVI
-
-, NDRE
-
-, ENDVI…) | de −1 à +1 | Végétation saine généralement comprise entre 0,4 et 0,9 ; sol nu proche de 0 ; valeur négative pour l’eau |
-| Ajustés au sol (SAVI
-
-, OSAVI
-
-, MSAVI2…) | environ de −1 à +1,5 | Valeurs similaires à celles du NDVI
-
-, mais avec suppression du fond lié au sol |
-| Rapports (GRVI
-
-, GCI
-
-, MSR, CIRE…) | illimités vers le haut | Les rapports augmentent sans limite lorsque la bande du dénominateur tend vers zéro |
-| EVI
-
-/ LAI
-
-| de 0 à ~1, de 0 à ~3,5 | Les nuages et autres pixels saturés font sortir ces deux indices de leur plage — il faut d’abord les masquer |
+| Différence normalisée (NDVI, GNDVI, NDRE, ENDVI…) | de −1 à +1 | Végétation saine généralement comprise entre 0,4 et 0,9 ; sol nu proche de 0 ; valeur négative pour l’eau |
+| Ajustés au sol (SAVI, OSAVI, MSAVI2…) | environ de −1 à +1,5 | Valeurs similaires à celles du NDVI, mais avec suppression du fond lié au sol |
+| Rapports (GRVI, GCI, MSR, CIRE…) | illimités vers le haut | Les rapports augmentent sans limite lorsque la bande du dénominateur tend vers zéro |
+| EVI / LAI | de 0 à ~1, de 0 à ~3,5 | Les nuages et autres pixels saturés font sortir ces deux indices de leur plage — il faut d’abord les masquer |
 
 Consultez [Formules des indices multispectraux](../project-settings/multispectral-index-formulas.md) pour connaître la formule exacte derrière chaque préréglage.
 
@@ -232,9 +164,7 @@ Consultez [Formules des indices multispectraux](../project-settings/multispectra
 1. Sélectionnez **RAW (Réflectance)**
 
 2. Lisez la colonne**%** dans le panneau « Valeurs du curseur » — elle est déjà correctement mise à l’échelle pour ce fichier
-3. Vérifiez la cohérence par rapport aux matériaux connus présents dans l’image : une végétation saine présente des valeurs élevées en NIR
-
-et faibles en rouge ; une cible d’étalonnage devrait afficher une valeur proche de sa réflectance publiée
+3. Vérifiez la cohérence par rapport aux matériaux connus présents dans l’image : une végétation saine présente des valeurs élevées en NIR et faibles en rouge ; une cible d’étalonnage devrait afficher une valeur proche de sa réflectance publiée
 
 ***
 
@@ -246,25 +176,19 @@ et faibles en rouge ; une cible d’étalonnage devrait afficher une valeur proc
 
 * L’image n’a jamais été traitée — seules les couches « base » et « `RAW (Original)` » existent
 * L’option d’exportation du produit n’est pas cochée dans les paramètres du projet
-* Le produit ne s’applique pas à cette caméra (radiance et réflectance sur une caméra maître RGB
-
-; tout indice sur une caméra mono M3M à bande unique)
+* Le produit ne s’applique pas à cette caméra (radiance et réflectance sur une caméra maître RGB ; tout indice sur une caméra mono M3M à bande unique)
 * L’étalonnage de la réflectance n’avait aucune donnée sur laquelle s’appuyer — aucune couverture descendante `.daq` et aucune cible dans l’image ayant passé le contrôle qualité — ; l’image est donc revenue au mode « Vignette Corrected » (correction de la vignette) ou « Sensor Response » (réponse du capteur)
 
 **Que faire ?**
 
-1. Vérifiez le journal de l’exécution : Chloros
-
-indique quand un produit d’exportation demandé était impossible à générer et pourquoi
+1. Vérifiez le journal de l’exécution : Chloros indique quand un produit d’exportation demandé était impossible à générer et pourquoi
 2. Vérifiez les cases à cocher d’exportation par produit dans [Paramètres du projet](../project-settings/project-settings.md)
 3. Vérifiez que le dossier du produit existe bien dans l’arborescence de sortie du projet
 4. Relancez le traitement en activant le produit
 
 ### La liste des couches semble obsolète
 
-Pendant qu’une exécution est en cours, Chloros
-
-réanalyse les dossiers de produits du projet et corrige les enregistrements de couches manquants à partir de ce qui se trouve réellement sur le disque ; ainsi, une couche dont l’exportation s’est terminée normalement apparaît d’elle-même lors d’une interrogation. Quitter puis revenir sur l’image force une nouvelle résolution.
+Pendant qu’une exécution est en cours, Chloros réanalyse les dossiers de produits du projet et corrige les enregistrements de couches manquants à partir de ce qui se trouve réellement sur le disque ; ainsi, une couche dont l’exportation s’est terminée normalement apparaît d’elle-même lors d’une interrogation. Quitter puis revenir sur l’image force une nouvelle résolution.
 
 ### Les valeurs de réflectance semblent être la moitié de ce qu’elles devraient être
 

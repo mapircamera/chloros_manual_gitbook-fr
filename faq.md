@@ -9,9 +9,9 @@ metaLinks:
 
 <details>
 
-<summary>Puis-je traiter avec Chloros des images provenant d&#x27;appareils photo d&#x27;autres marques que MAPIR ?</summary>
+<summary>Puis-je traiter avec Chloros des images provenant d'appareils photo d'autres marques que MAPIR ?</summary>
 
-Non, Chloros ne prend en charge que le traitement des images provenant des caméras MAPIR, à savoir les gammes Survey3 et LATTICE. Veuillez consulter la liste des [modèles de caméras pris en charge](supported-cameras.md) pour plus d&#x27;informations. Nous proposons toutefois le traitement d&#x27;images provenant d&#x27;autres caméras sur MAPIR Cloud ; consultez la liste complète [ici](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+Non, Chloros ne prend en charge que le traitement des images provenant des caméras MAPIR, à savoir les gammes Survey3 et LATTICE. Veuillez consulter la liste des [modèles de caméras pris en charge](supported-cameras.md) pour plus d'informations. Nous proposons toutefois le traitement d'images provenant d'autres caméras sur MAPIR Cloud ; consultez la liste complète [ici](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
@@ -27,15 +27,9 @@ Oui. Chloros 1.3.0 prend en charge de bout en bout les modules de caméra LATTIC
 
 <summary>Puis-je calibrer mes images en réflectance sans cible d’étalonnage ?</summary>
 
-**Survey3
+**Survey3 :** Non. Sans une image de la cible d’étalonnage capturée au moment de la prise de vue des images hors cible, vous ne pourrez pas établir de correspondance entre les valeurs des pixels de l’image et un pourcentage de réflectance connu. Si vous n’incluez pas non plus le journal d’un capteur de lumière MAPIR, le spectre de la lumière ambiante ne sera pas mesuré et les résultats de réflectance ne seront pas précis.
 
-:** Non. Sans une image de la cible d’étalonnage capturée au moment de la prise de vue des images hors cible, vous ne pourrez pas établir de correspondance entre les valeurs des pixels de l’image et un pourcentage de réflectance connu. Si vous n’incluez pas non plus le journal d’un capteur de lumière MAPIR
-
-, le spectre de la lumière ambiante ne sera pas mesuré et les résultats de réflectance ne seront pas précis.
-
-**LATTICE :** Oui. La réflectance peut être rapportée à l’irradiance descendante mesurée par un capteur de lumière DAQ plutôt que par un panneau (ρ = π·L/E). Lorsqu’une cible dans le cadre ayant passé le contrôle qualité *est* présente, elle devient par défaut la référence absolue (`--reflectance-source auto`), sauf si elle est validée avec un indicateur, auquel cas la cible et les chaînes DAQ se font concurrence sur le score mesuré. Une exception : « La réflectance F988 est calibrée à l’aide d’un panneau de réflectance présent dans la scène : la bande se situant au-delà de la plage calibrée du capteur de lumière du DAQ, Chloros
-
-utilise votre dernière capture du panneau et la conserve entre deux observations du panneau. » Voir [Cibles d’étalonnage](calibration-targets.md).
+**LATTICE :** Oui. La réflectance peut être rapportée à l’irradiance descendante mesurée par un capteur de lumière DAQ plutôt que par un panneau (ρ = π·L/E). Lorsqu’une cible dans le cadre ayant passé le contrôle qualité *est* présente, elle devient par défaut la référence absolue (`--reflectance-source auto`), sauf si elle est validée avec un indicateur, auquel cas la cible et les chaînes DAQ se font concurrence sur le score mesuré. Une exception : « La réflectance F988 est calibrée à l’aide d’un panneau de réflectance présent dans la scène : la bande se situant au-delà de la plage calibrée du capteur de lumière du DAQ, Chloros utilise votre dernière capture du panneau et la conserve entre deux observations du panneau. » Voir [Cibles d’étalonnage](calibration-targets.md).
 
 </details>
 
@@ -43,9 +37,7 @@ utilise votre dernière capture du panneau et la conserve entre deux observation
 
 <summary>Ai-je besoin d’un capteur de lumière DAQ ?</summary>
 
-Pas pour la radiance : les exportations de radiance LATTICE proviennent de l’étalonnage radiométrique d’usine de chaque caméra et ne nécessitent ni capteur DAQ ni cible. Pour la **réflectance**, vous avez besoin d’une référence pour la lumière ambiante — soit une mesure descendante d’un capteur de lumière DAQ, soit une cible d’étalonnage intégrée à l’image. Un capteur DAQ vous permet de produire une réflectance étalonnée**sans placer aucun panneau dans la scène**. Les fichiers `.daq` enregistrés sont automatiquement associés à vos images grâce à leur horodatage. Consultez la page [Cibles d’étalonnage](calibration-targets.md) et la [Référence CLI
-
-](reference/cli-reference.md).
+Pas pour la radiance : les exportations de radiance LATTICE proviennent de l’étalonnage radiométrique d’usine de chaque caméra et ne nécessitent ni capteur DAQ ni cible. Pour la **réflectance**, vous avez besoin d’une référence pour la lumière ambiante — soit une mesure descendante d’un capteur de lumière DAQ, soit une cible d’étalonnage intégrée à l’image. Un capteur DAQ vous permet de produire une réflectance étalonnée**sans placer aucun panneau dans la scène**. Les fichiers `.daq` enregistrés sont automatiquement associés à vos images grâce à leur horodatage. Consultez la page [Cibles d’étalonnage](calibration-targets.md) et la [Référence CLI](reference/cli-reference.md).
 
 </details>
 
@@ -56,7 +48,7 @@ Pas pour la radiance : les exportations de radiance LATTICE proviennent de l’�
 Oui — ce manuel ainsi que la CLI et le SDK sont conçus à cet effet :
 
 * L’index complet du manuel est accessible à l’adresse `https://mapir.gitbook.io/chloros/llms.txt` afin que les assistants IA puissent découvrir chaque page.
-* Le code Markdown brut de chaque page est disponible à l&#x27;URL de la page en minuscules, suivie de `.md` (par exemple `https://mapir.gitbook.io/chloros/reference/cli-reference.md`).
+* Le code Markdown brut de chaque page est disponible à l'URL de la page en minuscules, suivie de `.md` (par exemple `https://mapir.gitbook.io/chloros/reference/cli-reference.md`).
 * La [Référence CLI](reference/cli-reference.md) et la [Référence SDK](reference/sdk-reference.md) sont rédigées pour être utilisées par les modèles de langage (LLM) : indicateurs exacts, valeurs par défaut, sémantique de sortie et commandes copiables-collables.
 
 Consultez la section [Assistants IA](ai-assistants.md) pour savoir comment configurer votre assistant pour qu’il utilise Chloros.
@@ -115,7 +107,7 @@ Non. Chloros part du principe que les données d’entrée n’ont pas été mod
 
 <details>
 
-<summary>Puis-je régler mes caméras MAPIR Survey3 sur l&#x27;exposition automatique et traiter les images dans Chloros ?</summary>
+<summary>Puis-je régler mes caméras MAPIR Survey3 sur l'exposition automatique et traiter les images dans Chloros ?</summary>
 
 Non. Les jeux d’images Survey3 doivent avoir une exposition fixe/verrouillée ; il ne faut donc pas utiliser de vitesse d’obturation automatique ni de sensibilité ISO automatique. Toutes les images prises avec le même modèle de caméra doivent avoir une vitesse d’obturation et une sensibilité ISO (exposition) identiques.
 
@@ -143,17 +135,15 @@ Dans le tableau du navigateur de fichiers, présélectionner les images cibles d
 
 <summary>Si je prévois de télécharger mes images sur <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> dois-je les traiter dans Chloros avant le téléchargement ?</summary>
 
-Si vous prévoyez de les télécharger sur notre plateforme de traitement en ligne [MAPIR
-
-Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant le téléchargement. Le Cloud effectuera tout le traitement nécessaire, et bien plus encore.
+Si vous prévoyez de les télécharger sur notre plateforme de traitement en ligne [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ne modifiez pas les images avant le téléchargement. Le Cloud effectuera tout le traitement nécessaire, et bien plus encore.
 
 </details>
 
 <details>
 
-<summary>MAPIR prendra-t-il un jour en charge la fonctionnalité X ? J&#x27;aimerais vraiment que MAPIR propose X.</summary>
+<summary>MAPIR prendra-t-il un jour en charge la fonctionnalité X ? J'aimerais vraiment que MAPIR propose X.</summary>
 
-Nous sommes toujours intéressés par vos retours sur nos produits. Si vous rencontrez un problème avec nos produits ou si vous avez une suggestion pour les améliorer, n’hésitez pas à [NOUS CONTACTER](https://www.mapir.camera/community/contact) pour nous faire part de vos remarques. La majeure partie de notre R&amp;D s&#x27;appuie sur l&#x27;écoute des besoins les plus importants de nos clients.
+Nous sommes toujours intéressés par vos retours sur nos produits. Si vous rencontrez un problème avec nos produits ou si vous avez une suggestion pour les améliorer, n’hésitez pas à [NOUS CONTACTER](https://www.mapir.camera/community/contact) pour nous faire part de vos remarques. La majeure partie de notre R&D s'appuie sur l'écoute des besoins les plus importants de nos clients.
 
 </details>
 
@@ -175,7 +165,7 @@ Oui ! Chloros prend en charge la **gamme Orin** de NVIDIA Jetson — Orin Nano, 
 
 <details>
 
-<summary>Chloros s&#x27;adapte-t-il automatiquement à mon matériel ?</summary>
+<summary>Chloros s'adapte-t-il automatiquement à mon matériel ?</summary>
 
 Oui ! Chloros intègre la [fonctionnalité « Dynamic Compute Adaptation »](processing-architecture/dynamic-compute-adaptation.md) qui détecte automatiquement votre CPU, votre GPU, votre mémoire vive et (sur Jetson) vos capteurs thermiques. Il sélectionne ensuite la stratégie de traitement optimale — allant de `GPU_PARALLEL` sur les GPU à grande capacité de mémoire à `GPU_SINGLE` sur les plus petits, en passant par `CPU_PARALLEL` sur les systèmes dépourvus d’un GPU CUDA utilisable par PyTorch. Aucune configuration manuelle n’est nécessaire.
 
@@ -185,9 +175,7 @@ Oui ! Chloros intègre la [fonctionnalité « Dynamic Compute Adaptation »](pro
 
 <summary>Qu’est-ce que le pipeline de traitement à 4 threads ?</summary>
 
-Chloros
-utilise une architecture en pipeline à 4 threads pour les utilisateurs de Chloros
-+ : Le thread 1 (Détection) charge les images et détecte les cibles d’étalonnage, le thread 2 (Étalonnage) calcule l’étalonnage de réflectance, le thread 3 (Traitement) effectue le débayérage accéléré par GPU et le calcul de l’indice, et le thread 4 (Exportation) écrit les fichiers de sortie. Plusieurs images peuvent être traitées simultanément dans différents threads pour un débit maximal. Voir [Pipeline de traitement](processing-architecture/processing-pipeline.md) pour plus de détails.
+Chloros utilise une architecture en pipeline à 4 threads pour les utilisateurs de Chloros+ : Le thread 1 (Détection) charge les images et détecte les cibles d’étalonnage, le thread 2 (Étalonnage) calcule l’étalonnage de réflectance, le thread 3 (Traitement) effectue le débayérage accéléré par GPU et le calcul de l’indice, et le thread 4 (Exportation) écrit les fichiers de sortie. Plusieurs images peuvent être traitées simultanément dans différents threads pour un débit maximal. Voir [Pipeline de traitement](processing-architecture/processing-pipeline.md) pour plus de détails.
 
 </details>
 

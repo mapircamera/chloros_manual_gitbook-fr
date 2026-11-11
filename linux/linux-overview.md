@@ -14,15 +14,15 @@ Chloros 1.3.0 offre une prise en charge native sous Linux de la **CLI**et du**Py
 | **Interface graphique de bureau** | Oui | N/A | Non | Non |
 | **Interface CLI** (`chloros-cli`) | Oui | Oui | Oui | Oui |
 | **SDK Python** (`chloros-sdk`) | Oui | Oui | Oui | Oui |
-| **Pipeline de traitement d&#x27;images** | Oui | Oui | Oui | Oui |
+| **Pipeline de traitement d'images** | Oui | Oui | Oui | Oui |
 | **Contrôle des caméras LATTICE (en direct)** | Oui (onglet « Caméras ») | Oui (`chloros-cli lattice`, SDK) | Oui | Oui |
 | **Capteurs de lumière DAQ (en direct)** | Oui (onglet « Capteurs de lumière ») | Oui (`chloros-cli daq pool-*`, SDK) | Oui | Oui |
-| **Synchronisation temporelle PTP (l&#x27;hôte est le « grand maître »)** | Oui | Oui (`chloros-cli time-sync`) | Oui | Oui |
+| **Synchronisation temporelle PTP (l'hôte est le « grand maître »)** | Oui | Oui (`chloros-cli time-sync`) | Oui | Oui |
 | **Accélération GPU (CUDA)** | Oui | Oui | Oui | Oui (JetPack 6) |
 | **Débayérisation sensible aux textures** (nécessite un GPU CUDA) | Oui (Chloros+) | Oui (Chloros+) | Oui (Chloros+) | Oui (Chloros+) |
 | **Adaptation dynamique des calculs** | Oui | Oui | Oui | Oui |
 | **Backend en tant que service système** (`chloros-backend@<user>.service`) | Non | Non | Oui (activation optionnelle) | Oui (activation optionnelle) |
-| **Mise à jour sur place** (`chloros-cli update`) | Non (exécuter le programme d&#x27;installation) | Non (exécuter le programme d&#x27;installation) | Oui | Oui |***
+| **Mise à jour sur place** (`chloros-cli update`) | Non (exécuter le programme d'installation) | Non (exécuter le programme d'installation) | Oui | Oui |***
 
 ## Architectures prises en charge
 
@@ -71,7 +71,7 @@ L’accès à la CLI et au SDK nécessite un **forfait Chloros+ payant — Coppe
 
 ## Mise en route sous Linux
 
-1. **Installez Chloros** — consultez [Installation sous Linux](linux-installation.md) pour l&#x27;installation de `.deb`
+1. **Installez Chloros** — consultez [Installation sous Linux](linux-installation.md) pour l'installation de `.deb`
 2. **Vérification** — `chloros-cli --version` affiche `Chloros CLI 1.3.0` ; `chloros-cli selftest` exécute le diagnostic en 7 étapes
 3. **Vérifiez le SDK Python** — l’installation de `.deb` le fournit : `python3 -c "import chloros_sdk; print(chloros_sdk.__version__)"` (dans un virtualenv, `pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl`)
 4. **Connectez-vous** — `chloros-cli login your@email.com 'your-password'` (une fois par machine ; les mises à jour du paquet conservent les identifiants de connexion, la suppression du paquet les efface)
@@ -85,11 +85,11 @@ Pour NVIDIA Jetson, consultez le [Guide NVIDIA Jetson](nvidia-jetson-guide.md) d
 
 * [Installation sous Linux](linux-installation.md) — installation détaillée, emplacements des fichiers et dépannage pour amd64 et arm64
 * [Guide NVIDIA Jetson](nvidia-jetson-guide.md) — configuration spécifique à Jetson, comportement en matière de mémoire et de gestion thermique, déploiement sur le terrain
-* [CLI : ligne de commande](../CLI.md) — le guide de l&#x27;interface de ligne de commande
+* [CLI : ligne de commande](../CLI.md) — le guide de l'interface de ligne de commande
 * [API : Python SDK](../api-python-sdk.md) — le guide du SDK
 * [Référence CLI](../reference/cli-reference.md) et [Référence SDK](../reference/sdk-reference.md) — listes exhaustives des commandes et des API pour la version 1.3.0
-* [Adaptation dynamique des ressources de calcul](../processing-architecture/dynamic-compute-adaptation.md) — comment Chloross s&#x27;adapte à votre matériel
+* [Adaptation dynamique des ressources de calcul](../processing-architecture/dynamic-compute-adaptation.md) — comment Chloross s'adapte à votre matériel
 
 {% hint style="info" %}
-**Lecture de ce manuel par programmation.** Chaque page est également disponible au format Markdown brut à son propre URL, à laquelle s&#x27;ajoute `.md` (par exemple `https://mapir.gitbook.io/chloros/linux/linux-installation.md`), et un index de l&#x27;ensemble du manuel est publié à l&#x27;adresse [`https://mapir.gitbook.io/chloros/llms.txt`](https://mapir.gitbook.io/chloros/llms.txt).
+**Lecture de ce manuel par programmation.** Chaque page est également disponible au format Markdown brut à son propre URL, à laquelle s'ajoute `.md` (par exemple `https://mapir.gitbook.io/chloros/linux/linux-installation.md`), et un index de l'ensemble du manuel est publié à l'adresse [`https://mapir.gitbook.io/chloros/llms.txt`](https://mapir.gitbook.io/chloros/llms.txt).
 {% endhint %}

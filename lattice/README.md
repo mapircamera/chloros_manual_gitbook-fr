@@ -19,7 +19,7 @@ Les captures LATTICE sont des fichiers standard `.tif`/`.tiff`, et Chloros les t
 | Configuration | Capteur       | Filtre                                | Ce que fournit une caméra                                          |
 | ------------- | ------------ | ------------------------------------- | ----------------------------------------------------------------- |
 | **M3C**| Couleur Bayer | filtre passe-bande triple                |**Trois bandes calibrées à partir d’une seule exposition**                 |
-| **M3M**| Monochrome   | filtre d&#x27;interférence à bande étroite unique |**Une bande calibrée** ; combinez plusieurs caméras M3M pour obtenir des indices |
+| **M3M**| Monochrome   | filtre d'interférence à bande étroite unique |**Une bande calibrée** ; combinez plusieurs caméras M3M pour obtenir des indices |
 
 Comme une caméra M3M est monochrome derrière un filtre unique, chaque bande bénéficie de sa propre exposition. Une caméra M3C couvre ses trois bandes avec une seule exposition du capteur.
 
@@ -31,7 +31,7 @@ Chaque caméra stocke son identité dans GenICam sous la forme d’une chaîne d
 <sensor>-<lens>-F<filter>       e.g.  M3C-L41-FRGN,  M3M-L87-F450
 ```
 
-Chloros l&#x27;affiche avec le préfixe `LATT-` (par exemple `LATT-M3M-L87-F450`). La même chaîne `LATT-…` est inscrite dans la balise EXIF `Model` de chaque exportation et sert de nom au dossier de sortie de l’appareil photo dans les projets traités.
+Chloros l'affiche avec le préfixe `LATT-` (par exemple `LATT-M3M-L87-F450`). La même chaîne `LATT-…` est inscrite dans la balise EXIF `Model` de chaque exportation et sert de nom au dossier de sortie de l’appareil photo dans les projets traités.
 
 | Composant | Valeurs                                                   | Signification                                                                                            |
 | --------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -39,7 +39,7 @@ Chloros l&#x27;affiche avec le préfixe `LATT-` (par exemple `LATT-M3M-L87-F450`
 | Objectif      | `L41` / `L87`                                            | Ce nombre correspond au **champ de vision horizontal en degrés** : L41 = étroit (41°), L87 = large (87°)    |
 | Filtre    | `FRGB` / `FRGN` / `FOCN` / `FNGB` (M3C) ou `F<nm>` (M3M) | Voir [Filtres et bandes spectrales](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands) |
 
-La chaîne de modèle détermine tout ce qui suit : Chloros détermine le profil du capteur, la disposition des bandes et l&#x27;étalonnage d&#x27;usine à partir de `DeviceUserID` + `DeviceSerialNumber`. Il n’y a rien à configurer au niveau de chaque caméra — voir [Connexion des caméras](connecting.md).
+La chaîne de modèle détermine tout ce qui suit : Chloros détermine le profil du capteur, la disposition des bandes et l'étalonnage d'usine à partir de `DeviceUserID` + `DeviceSerialNumber`. Il n’y a rien à configurer au niveau de chaque caméra — voir [Connexion des caméras](connecting.md).
 
 ## Filtres et bandes
 
@@ -61,4 +61,4 @@ Du point de vue logiciel, ce qui importe, c’est qu’Chloros détermine le bon
 * [Réseaux multicaméras](arrays.md) — l’assistant de connexion du réseau, la sonde du câble de synchronisation, la bande passante, le protocole PTP et la vue en direct du réseau.
 * [Caméras mono et indices de végétation](mono-indices.md) — Caméras M3M et flux de travail alignement → empilement → indice.
 
-L&#x27;interface de commande complète est disponible dans la [Référence CLI](../reference/cli-reference.md) et la [Référence SDK](../reference/sdk-reference.md).
+L'interface de commande complète est disponible dans la [Référence CLI](../reference/cli-reference.md) et la [Référence SDK](../reference/sdk-reference.md).

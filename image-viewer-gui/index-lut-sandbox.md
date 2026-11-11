@@ -1,6 +1,6 @@
 # Espace de test Index/LUT
 
-L&#x27;espace de test Index/LUT est l&#x27;espace de travail interactif situé dans la barre latérale de la visionneuse d&#x27;images Chloros. Vous sélectionnez une formule, vous y associez les canaux de votre caméra, vous lui appliquez un dégradé de couleurs et vous ajustez la plage de valeurs — et l’image se met à jour en temps réel au fur et à mesure que vous effectuez ces modifications. Depuis la version 1.2.0, vous pouvez également **enregistrer ce que vous avez créé**, pour une seule image ou pour l’ensemble du projet, sans avoir à relancer le traitement.
+L'espace de test Index/LUT est l'espace de travail interactif situé dans la barre latérale de la visionneuse d'images Chloros. Vous sélectionnez une formule, vous y associez les canaux de votre caméra, vous lui appliquez un dégradé de couleurs et vous ajustez la plage de valeurs — et l’image se met à jour en temps réel au fur et à mesure que vous effectuez ces modifications. Depuis la version 1.2.0, vous pouvez également **enregistrer ce que vous avez créé**, pour une seule image ou pour l’ensemble du projet, sans avoir à relancer le traitement.
 
 ## À quoi sert la Sandbox ?
 
@@ -32,7 +32,7 @@ La barre latérale affiche, de haut en bas :
 * le panneau **Valeurs du curseur** avec la lecture, l’histogramme et le contrôle GSD
 
 {% hint style="warning" %}
-**Non disponible pour les caméras monochromes.** Sur une image LATTICE M3M monobande, les deux cases à cocher sont désactivées, avec l’info-bulle _« Non disponible pour les capteurs monochromes (M3M) »_ — un indice multibande n’est pas défini sur une seule bande. Pour calculer des indices à partir de caméras M3M, combinez-en au moins deux en une pile multibande alignée et utilisez le moteur d&#x27;indexation LATTICE.
+**Non disponible pour les caméras monochromes.** Sur une image LATTICE M3M monobande, les deux cases à cocher sont désactivées, avec l’info-bulle _« Non disponible pour les capteurs monochromes (M3M) »_ — un indice multibande n’est pas défini sur une seule bande. Pour calculer des indices à partir de caméras M3M, combinez-en au moins deux en une pile multibande alignée et utilisez le moteur d'indexation LATTICE.
 {% endhint %}
 
 ***
@@ -99,7 +99,7 @@ Passez la souris sur la **barre de dégradé**pour ouvrir la liste des prérégl
 | 4 | Noir → Violet → Rose → Jaune pâle | Séquentiel, du foncé au clair                                           |
 | 5 | Red → Jaune → Blue                 | Divergent autour d’un point médian clair                                   |
 | 6 | Violet → Blue → Green → Jaune      | Séquentiel, du foncé au clair                                           |
-| 7 | Orange → Blanc → Violet             | Divergence autour d&#x27;un point médian clair                                   |
+| 7 | Orange → Blanc → Violet             | Divergence autour d'un point médian clair                                   |
 
 Un dégradé **divergent**place une couleur neutre au milieu de votre fenêtre, ce qui est particulièrement adapté lorsque le point médian a une signification particulière (un seuil, une date de référence). Un dégradé**séquentiel** va de foncé à clair de manière monotone, ce qui convient bien à une quantité qui ne comporte que les notions de « plus » et « moins ».
 
@@ -131,7 +131,7 @@ Exemple de fenêtres NDVI :
 | Objectif                                    | Min  | Max |
 | --------------------------------------- | ---- | --- |
 | Tout afficher                         | −1,0 | 1,0 |
-| Végétation uniquement, exclure le sol et l&#x27;eau | 0,2  | 0,9 |
+| Végétation uniquement, exclure le sol et l'eau | 0,2  | 0,9 |
 | Végétation saine uniquement                 | 0,5  | 0,9 |
 | Mettre l’accent sur le stress                | 0,2  | 0,5 |
 
@@ -146,14 +146,14 @@ Lorsque la valeur d’index d’un pixel se situe en dehors de la plage min/max,
 | **Minimum et maximum** (par défaut) | `clip`            | La couleur d’extrémité la plus proche du dégradé — les valeurs inférieures au minimum prennent la première couleur, celles supérieures au maximum prennent la dernière |
 | **Arrière-plan transparent**      | `transparent`     | Entièrement transparent (alpha réel)                                                                                                  |
 | **Arrière-plan indexé**| `indexColor`      | Niveaux de gris, étendu sur**toute** la plage d’index de l’image, de sorte que les structures hors plage restent visibles en gris                |
-| **Arrière-plan d&#x27;origine**         | `backgroundColor` | L&#x27;image sous-jacente elle-même, de sorte que la superposition de couleurs se superpose à la scène réelle                                                |
+| **Arrière-plan d'origine**         | `backgroundColor` | L'image sous-jacente elle-même, de sorte que la superposition de couleurs se superpose à la scène réelle                                                |
 
 | Mode                       | Idéal pour                               | Aspect                                      |
 | -------------------------- | -------------------------------------- | ----------------------------------------- |
 | **Minimum et maximum**      | Affichage complet des données, analyse scientifique | Chaque pixel est coloré                      |
 | **Arrière-plan transparent** | Superpositions SIG, isolation d’une plage de valeurs   | Couleur à l’intérieur de la fenêtre, rien à l’extérieur |
-| **Arrière-plan indexé**       | Mise en évidence tout en conservant le contexte des données    | Couleur à l&#x27;intérieur, gris à l&#x27;extérieur               |
-| **Arrière-plan d&#x27;origine**    | Rapports et présentations              | Couleur à l&#x27;intérieur, photographie à l&#x27;extérieur         |
+| **Arrière-plan indexé**       | Mise en évidence tout en conservant le contexte des données    | Couleur à l'intérieur, gris à l'extérieur               |
+| **Arrière-plan d'origine**    | Rapports et présentations              | Couleur à l'intérieur, photographie à l'extérieur         |
 
 {% hint style="info" %}
 **Les pixels sans données sont toujours transparents, quel que soit le mode.** Un pixel dont l’indice n’est pas fini (division par 0) ou est exactement égal à −1,0 ou +1,0 (sentinelles de saturation, résultant du fait qu’une bande affiche zéro tandis que l’autre ne le fait pas) est traité comme une absence de données plutôt que comme une valeur extrême. Cela permet d’exclure les hautes lumières brûlées et les ombres noires de votre échelle de couleurs, au lieu de les représenter comme les valeurs les plus extrêmes de l’image. La même règle définit quels pixels alimentent les seuils AUTO et l’histogramme d’index, de sorte que les trois s’accordent.
@@ -194,7 +194,7 @@ Tout ce qui précède n’est qu’un aperçu en temps réel tant que vous ne l�
 | **Barre de gradient d’index/LUT**      | Enregistre également une image de légende distincte par exportation, avec la plage de valeurs indiquée                                                                     |
 | **Histogramme d’index**             | Enregistre également une image d’histogramme distincte par exportation, indiquant les valeurs minimales et maximales des données ainsi que les seuils de coupure                                               |
 
-Si la **taille de bloc GSD** de l&#x27;onglet de l&#x27;image est supérieure à 1, le volet vous en informe avant que vous ne validiez : l&#x27;exportation enregistre ce que vous voyez, moyennage par bloc inclus. Remettez d&#x27;abord le paramètre GSD à 1 si vous souhaitez la pleine résolution.
+Si la **taille de bloc GSD** de l'onglet de l'image est supérieure à 1, le volet vous en informe avant que vous ne validiez : l'exportation enregistre ce que vous voyez, moyennage par bloc inclus. Remettez d'abord le paramètre GSD à 1 si vous souhaitez la pleine résolution.
 
 ### Emplacement des fichiers
 
@@ -214,7 +214,7 @@ Exemples : `Sandbox_Exports/NDVI_LUT_001/`, puis `Sandbox_Exports/NDVI_LUT_002/`
 | `<source name>_<IndexName>_<Index\|LUT>_legend.png`    | Le fichier d’accompagnement de la barre de dégradé, si demandé                     |
 | `<source name>_<IndexName>_<Index\|LUT>_histogram.png` | Le fichier d’accompagnement de l’histogramme d’index, si demandé                  |
 
-Les deux fichiers d&#x27;accompagnement sont toujours enregistrés en **pleine résolution**, même lorsque l&#x27;image principale est moyennée par blocs : la taille d&#x27;un bloc correspond à la résolution d&#x27;affichage, et les deux fichiers d&#x27;accompagnement contiennent les valeurs d&#x27;index réelles par pixel. Elles affichent également davantage d’informations que les versions à l’écran : elles indiquent à la fois la fenêtre d’étirement _et_ les valeurs minimales et maximales réelles des données, ce qui permet de consulter une légende enregistrée plusieurs mois plus tard sans avoir à ouvrir le projet.
+Les deux fichiers d'accompagnement sont toujours enregistrés en **pleine résolution**, même lorsque l'image principale est moyennée par blocs : la taille d'un bloc correspond à la résolution d'affichage, et les deux fichiers d'accompagnement contiennent les valeurs d'index réelles par pixel. Elles affichent également davantage d’informations que les versions à l’écran : elles indiquent à la fois la fenêtre d’étirement _et_ les valeurs minimales et maximales réelles des données, ce qui permet de consulter une légende enregistrée plusieurs mois plus tard sans avoir à ouvrir le projet.
 
 ### Progression et résultats
 
@@ -254,7 +254,7 @@ Squared ratio:                  (y/x)^2
 ```
 
 {% hint style="warning" %}
-**Les formules personnalisées sont disponibles uniquement via l&#x27;interface graphique.** L’option CLI/SDK `--indices` étend les 22 noms de préréglages intégrés et ignore silencieusement tout le reste, y compris vos formules personnalisées. Pour traiter une formule personnalisée par lots, configurez-la dans les paramètres du projet et lancez le traitement, ou utilisez la fonction d&#x27;exportation « Appliquer à toutes les images du projet » de la Sandbox.
+**Les formules personnalisées sont disponibles uniquement via l'interface graphique.** L’option CLI/SDK `--indices` étend les 22 noms de préréglages intégrés et ignore silencieusement tout le reste, y compris vos formules personnalisées. Pour traiter une formule personnalisée par lots, configurez-la dans les paramètres du projet et lancez le traitement, ou utilisez la fonction d'exportation « Appliquer à toutes les images du projet » de la Sandbox.
 {% endhint %}
 
 ***

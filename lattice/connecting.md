@@ -1,24 +1,18 @@
 # Connexion des caméras
 
-<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption><p>L&#x27;onglet « Caméras » avant toute connexion</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption><p>L'onglet « Caméras » avant toute connexion</p></figcaption></figure>
 
-Chloros
-détecte automatiquement les caméras LATTICE sur le réseau — depuis l’onglet « Caméras » de l’interface graphique, depuis `chloros-cli lattice` ou depuis le SDK
-Python Python
-. La chaîne de caractères indiquant le modèle de la caméra détermine toutes les étapes en aval : Chloros
-détermine le profil du capteur, la configuration des bandes et l’étalonnage d’usine à partir des fichiers `DeviceUserID` et `DeviceSerialNumber` de la caméra. Il n’y a donc **rien à configurer pour chaque caméra**.
+Chloros détecte automatiquement les caméras LATTICE sur le réseau — depuis l’onglet « Caméras » de l’interface graphique, depuis `chloros-cli lattice` ou depuis le SDK Python Python. La chaîne de caractères indiquant le modèle de la caméra détermine toutes les étapes en aval : Chloros détermine le profil du capteur, la configuration des bandes et l’étalonnage d’usine à partir des fichiers `DeviceUserID` et `DeviceSerialNumber` de la caméra. Il n’y a donc **rien à configurer pour chaque caméra**.
 
 Avant la connexion, assurez-vous que le réseau hôte est correctement configuré : adressage local de liaison, trames jumbo et, pour les réseaux de caméras, paramètres du tampon de réception de la carte réseau. Il s’agit de la configuration matérielle, décrite dans le manuel LATTICE : [**Configuration réseau**](https://mapir.gitbook.io/lattice-camera/setup/network-setup).
 
 ## Connexion depuis l’interface graphique
 
-Ouvrez l’onglet **Caméras** dans la barre latérale d’Chloros
-(les onglets matériels apparaissent une fois que le backend a fini de démarrer), ou utilisez le menu principal → **Se connecter à une caméra**. Ces deux options ouvrent la boîte de dialogue**Connecter une ou plusieurs caméras**.
+Ouvrez l’onglet **Caméras** dans la barre latérale d’Chloros (les onglets matériels apparaissent une fois que le backend a fini de démarrer), ou utilisez le menu principal → **Se connecter à une caméra**. Ces deux options ouvrent la boîte de dialogue**Connecter une ou plusieurs caméras**.
 
 ### La boîte de dialogue **Connecter une ou plusieurs caméras**Dès son ouverture (« Analyse du réseau... »), la boîte de dialogue analyse le réseau et répertorie toutes les caméras détectées. Chaque ligne affiche le**modèle**de la caméra (par exemple `LATT-M3M-L41-F550`), son**numéro de série**et son**adresse IP**.
 
-* **Cliquez sur une ligne pour la sélectionner**(mise en surbrillance en vert). Vous pouvez sélectionner**plusieurs caméras** et les connecter en une seule fois — Chloros
-les connecte les unes après les autres.
+* **Cliquez sur une ligne pour la sélectionner**(mise en surbrillance en vert). Vous pouvez sélectionner**plusieurs caméras** et les connecter en une seule fois — Chloros les connecte les unes après les autres.
 * Les lignes portant la mention **« Connectée »** sont déjà connectées et ne peuvent pas être resélectionnées.
 * Les lignes portant la mention **« Dans un réseau »** appartiennent à un réseau de caméras actuellement connecté. Déconnectez d’abord le groupe pour utiliser cette caméra de manière autonome.
 * **Connecter** — connecte la ou les caméras sélectionnées ; le bouton affiche un nombre, par exemple « Connecter (3) », lorsque plusieurs caméras sont sélectionnées.
@@ -30,8 +24,7 @@ les connecte les unes après les autres.
 
 ### Première connexion : téléchargement du pack d’étalonnage
 
-La **première fois** qu’une caméra donnée est connectée à un ordinateur, Chloros
-récupère le pack d’étalonnage d’usine de la caméra (\~3,8 Mo) directement depuis la caméra via GigE. Pendant cette opération, la boîte de dialogue affiche un panneau vert **« Téléchargement des données d’étalonnage depuis la caméra »**avec une barre de progression par numéro de série — comptez environ**70 secondes** par caméra. S’il y a plus de six caméras, les lignes de progression défilent à l’intérieur du panneau. Le pack étant mis en cache sur l’hôte, les connexions ultérieures de la même caméra ignorent complètement le téléchargement (et le panneau ne s’affiche jamais).
+La **première fois** qu’une caméra donnée est connectée à un ordinateur, Chloros récupère le pack d’étalonnage d’usine de la caméra (\~3,8 Mo) directement depuis la caméra via GigE. Pendant cette opération, la boîte de dialogue affiche un panneau vert **« Téléchargement des données d’étalonnage depuis la caméra »**avec une barre de progression par numéro de série — comptez environ**70 secondes** par caméra. S’il y a plus de six caméras, les lignes de progression défilent à l’intérieur du panneau. Le pack étant mis en cache sur l’hôte, les connexions ultérieures de la même caméra ignorent complètement le téléchargement (et le panneau ne s’affiche jamais).
 
 ### Analyser le système
 
@@ -47,19 +40,12 @@ Lancez cet outil dès que la détection ou la diffusion en continu présente un 
 
 ### Connexion d’un ensemble
 
-Pour connecter deux caméras ou plus en tant qu’**ensemble synchronisé**, utilisez plutôt l’assistant de connexion d’ensemble (**Connecter un ensemble de caméras**) : il vous guide à travers la sélection maître/esclave (préremplie par une détection du câble de synchronisation — toute caméra câblée peut être maître, et la caméra RGB
-`-FRGB` est présélectionnée lorsqu’elle est câblée), le choix du mode d’affichage (mosaïque séparée ou combinée), ainsi qu’une scène de configuration du réseau avec une projection en temps réel du nombre d’images par seconde (fps) et de la bande passante disponible avant de valider. L’assistant et les workflows de réseau de caméras sont décrits dans la section consacrée aux réseaux de caméras multiples de ce manuel ; l’équivalent en CLI
-est le « Workflow de première connexion des caméras LATTICE » dans la [Référence CLI
-](../reference/cli-reference.md).
+Pour connecter deux caméras ou plus en tant qu’**ensemble synchronisé**, utilisez plutôt l’assistant de connexion d’ensemble (**Connecter un ensemble de caméras**) : il vous guide à travers la sélection maître/esclave (préremplie par une détection du câble de synchronisation — toute caméra câblée peut être maître, et la caméra RGB `-FRGB` est présélectionnée lorsqu’elle est câblée), le choix du mode d’affichage (mosaïque séparée ou combinée), ainsi qu’une scène de configuration du réseau avec une projection en temps réel du nombre d’images par seconde (fps) et de la bande passante disponible avant de valider. L’assistant et les workflows de réseau de caméras sont décrits dans la section consacrée aux réseaux de caméras multiples de ce manuel ; l’équivalent en CLI est le « Workflow de première connexion des caméras LATTICE » dans la [Référence CLI](../reference/cli-reference.md).
 
-## Connexion depuis la CLI
-et le SDK
+## Connexion depuis la CLI et le SDK
 L’accès à la
 
-CLI
-et au SDK
-nécessite un forfait Chloros
-+ payant et une connexion ; cette condition est appliquée côté serveur (`401 AUTH_REQUIRED` en l’absence de connexion, `403 PLAN_UPGRADE_REQUIRED` sur le forfait gratuit).
+CLI et au SDK nécessite un forfait Chloros+ payant et une connexion ; cette condition est appliquée côté serveur (`401 AUTH_REQUIRED` en l’absence de connexion, `403 PLAN_UPGRADE_REQUIRED` sur le forfait gratuit).
 
 ```bash
 # List cameras on the network (vendor, model, serial, IP, MAC)
@@ -84,21 +70,15 @@ with chloros_sdk.connect_array(["213800234", "214000533"]) as array:
     ...
 ```
 
-Signatures complètes, options et workflows de capture : [Référence CLI
-](../reference/cli-reference.md) § `chloros-cli lattice`, [Référence SDK
-](../reference/sdk-reference.md) § `connect_camera()` / `connect_array()`.
+Signatures complètes, options et workflows de capture : [Référence CLI](../reference/cli-reference.md) § `chloros-cli lattice`, [Référence SDK](../reference/sdk-reference.md) § `connect_camera()` / `connect_array()`.
 
 ## Comment l’étalonnage est-il effectué lors de la connexion ?
 
-Chaque caméra LATTICE intègre son pack d’étalonnage d’usine **en local**, et Chloros
-vérifie également le cloud d’MAPIR
-lorsque la caméra se connecte :
+Chaque caméra LATTICE intègre son pack d’étalonnage d’usine **en local**, et Chloros vérifie également le cloud d’MAPIR lorsque la caméra se connecte :
 
-| Situation   | Ce qu’utilise Chloros
-                                                                                                                                                                                                          |
+| Situation   | Ce qu’utilise Chloros                                                                                                                                                                                                           |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **En ligne**| Le**dernier étalonnage publié pour ce numéro de série** — la copie du cloud prévaut sur celle intégrée à la caméra. Une caméra qui a été réétalonnée ou mise à jour par MAPIR
-se met donc automatiquement à jour ; aucune intervention de l’utilisateur n’est nécessaire. |
+| **En ligne**| Le**dernier étalonnage publié pour ce numéro de série** — la copie du cloud prévaut sur celle intégrée à la caméra. Une caméra qui a été réétalonnée ou mise à jour par MAPIR se met donc automatiquement à jour ; aucune intervention de l’utilisateur n’est nécessaire. |
 | **Hors ligne**| Le**pack intégré à l’appareil photo**, tel quel. Les flux de travail entièrement hors ligne continuent de fonctionner ; ils ne prennent simplement pas en compte les calibrations plus récentes tant que l’appareil photo n’est pas connecté une fois (ou réinitialisé aux paramètres d’usine).                                                  |
 
 Au moment de la capture, les coefficients effectivement appliqués sont **enregistrés de manière définitive dans les métadonnées XMP de chaque image**. Une mise à jour ultérieure de l’étalonnage ne modifie jamais en silence les images que vous avez déjà capturées — le retraitement d’une ancienne capture utilise les coefficients enregistrés dans ses métadonnées XMP, et non les plus récents à ce jour.

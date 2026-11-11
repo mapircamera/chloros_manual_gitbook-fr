@@ -6,9 +6,9 @@ metaLinks:
       https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/multispectral-index-formulas
 ---
 
-# Formules d&#x27;indices multispectraux
+# Formules d'indices multispectraux
 
-Les formules d&#x27;indices ci-dessous utilisent une combinaison des plages de transmission moyennes des filtres d&#x27;Survey3 :
+Les formules d'indices ci-dessous utilisent une combinaison des plages de transmission moyennes des filtres d'Survey3 :
 
 <table><thead><tr><th align="center">Couleur du filtre Survey3</th><th width="196.199951171875" align="center">Nom du filtre Survey3</th><th width="159.800048828125" align="center">Plage de transmission (FWHM)</th><th align="center">Transmission moyenne</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476-512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543-558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598-640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653-668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re-RedEdge</td><td align="center">712-735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835-865 nm</td><td align="center">850 nm</td></tr></tbody></table>
 
@@ -64,7 +64,7 @@ Le mappage prévu pour chacune d’entre elles est indiqué dans une section dis
 
 ### 2. CLI / SDK : expansion des noms `--indices` — 22 préréglages
 
-L&#x27;option `chloros-cli process --indices` (et le paramètre SDK `indices`) accepte les noms de préréglages suivants :
+L'option `chloros-cli process --indices` (et le paramètre SDK `indices`) accepte les noms de préréglages suivants :
 
 `NDVI, GNDVI, NDRE, OSAVI, SAVI, MSAVI2, EVI, MSR, TDVI, LAI, GCI, GRVI, GSAVI, GOSAVI, NLI, MNLI, RDVI, WDRVI, CVI, ENDVI, GLI, VARI`
 
@@ -80,7 +80,7 @@ La correspondance des noms ne tient pas compte de la casse après suppression de
 
 Formules exactes telles qu’elles sont implémentées (les symboles `x`/`y`/`z` correspondent à des emplacements de bandes ; le mappage par défaut est indiqué pour chaque préréglage) :
 
-| Préréglage | Formule (telle qu&#x27;implémentée) | Filtre par défaut | Emplacements (x, y, z) |
+| Préréglage | Formule (telle qu'implémentée) | Filtre par défaut | Emplacements (x, y, z) |
 | --- | --- | --- | --- |
 | NDVI | `(y-x)/(y+x)` | RGN | Red, NIR |
 | GNDVI | `(y-x)/(y+x)` | RGN | Green, NIR |
@@ -116,7 +116,7 @@ Lorsque vous transmettez un nom nu tel que `NDVI`, Chloros doit déterminer quel
 | RE | RE 0 |
 | NIR | NIR 0 |
 
-Le **filtre par défaut** du préréglage (colonne « Filtre par défaut » ci-dessus) est utilisé lorsque le projet contient des images avec ce filtre. Si ce n&#x27;est pas le cas, Chloros passe en revue les filtres effectivement présents dans le projet dans l&#x27;ordre `RGN, OCN, NGB, RGB, RE, NIR` et sélectionne le premier capable de fournir tous les canaux requis par le préréglage. Si aucun ne le permet, le préréglage est ignoré pour cette exécution. C’est pourquoi le filtre `NDVI` demandé sur un ensemble de données exclusivement composé d’images OCN produit tout de même un résultat pertinent : il se lie aux positions Orange et NIR de l’OCN.
+Le **filtre par défaut** du préréglage (colonne « Filtre par défaut » ci-dessus) est utilisé lorsque le projet contient des images avec ce filtre. Si ce n'est pas le cas, Chloros passe en revue les filtres effectivement présents dans le projet dans l'ordre `RGN, OCN, NGB, RGB, RE, NIR` et sélectionne le premier capable de fournir tous les canaux requis par le préréglage. Si aucun ne le permet, le préréglage est ignoré pour cette exécution. C’est pourquoi le filtre `NDVI` demandé sur un ensemble de données exclusivement composé d’images OCN produit tout de même un résultat pertinent : il se lie aux positions Orange et NIR de l’OCN.
 
 Les chaînes de modèle LATTICE M3C comportent le filtre avec un préfixe `F` (`LATT-M3C-L41-FRGN`), mais ce préfixe est supprimé lorsque le code du filtre est lu à partir de l’image ; ainsi, une caméra FRGN est prise en charge via la ligne `RGN` ci-dessus et ne nécessite aucun traitement particulier.
 
@@ -161,9 +161,9 @@ $$
 CVI = NIR * {Red \over Green^{2}}
 $$
 
-Dans l’interface graphique et dans la liste des préréglages CLI/SDK, il s’agit de la formule de symbole `(z/y)*(x/y)` avec x = Red, y = Green, z = NIR (les bandes d&#x27;une caméra RGN) ; le préréglage du moteur d&#x27;indice LATTICE est `nir * red / green**2`. Chaque surface calcule le même indice.
+Dans l’interface graphique et dans la liste des préréglages CLI/SDK, il s’agit de la formule de symbole `(z/y)*(x/y)` avec x = Red, y = Green, z = NIR (les bandes d'une caméra RGN) ; le préréglage du moteur d'indice LATTICE est `nir * red / green**2`. Chaque surface calcule le même indice.
 
-_Référence : Vincini, M., E. Frazzi et P. D&#x27;Alessio. « A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale ». Precision Agriculture 9 (2008) : 303-319._
+_Référence : Vincini, M., E. Frazzi et P. D'Alessio. « A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale ». Precision Agriculture 9 (2008) : 303-319._
 
 ***
 
@@ -205,7 +205,7 @@ $$
 
 Les zones boisées présenteront des valeurs d’FCI1 plus faibles en raison de la réflectance plus faible des arbres et de la présence d’ombres au sein de la canopée.
 
-_Référence : Becker, Sarah J., Craig S.T. Daughtry et Andrew L. Russ. « Robust forest cover indices for multispectral images. » Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018) : 505-512._
+_Référence : Becker, Sarah J., Craig S.T. Daughtry et Andrew L. Russ. « Robust forest cover indices for multispectral images. » Photogrammetric Engineering & Remote Sensing 84.8 (2018) : 505-512._
 
 ***
 
@@ -221,7 +221,7 @@ $$
 
 Les zones boisées présenteront des valeurs d’FCI2 plus faibles en raison de la réflectance plus faible des arbres et de la présence d’ombres au sein de la canopée.
 
-_Référence : Becker, Sarah J., Craig S.T. Daughtry et Andrew L. Russ. « Robust forest cover indices for multispectral images. » Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018) : 505-512._
+_Référence : Becker, Sarah J., Craig S.T. Daughtry et Andrew L. Russ. « Robust forest cover indices for multispectral images. » Photogrammetric Engineering & Remote Sensing 84.8 (2018) : 505-512._
 
 ***
 
@@ -269,7 +269,7 @@ $$
 GCI = {NIR \over Green} - 1
 $$
 
-L&#x27;utilisation d&#x27;un large spectre de longueurs d&#x27;onde dans le NIR et le vert permet une meilleure prédiction de la teneur en chlorophylle, tout en offrant une plus grande sensibilité et un rapport signal/bruit plus élevé.
+L'utilisation d'un large spectre de longueurs d'onde dans le NIR et le vert permet une meilleure prédiction de la teneur en chlorophylle, tout en offrant une plus grande sensibilité et un rapport signal/bruit plus élevé.
 
 _Référence : Gitelson, A., Y. Gritz et M. Merzlyak. « Relations entre la teneur en chlorophylle des feuilles et la réflectance spectrale, et algorithmes pour l’évaluation non destructive de la chlorophylle dans les feuilles des plantes supérieures. » Journal of Plant Physiology 160 (2003) : 271-282._
 
@@ -487,7 +487,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Référence : Bannari, A., H. Asalhi et P. Teillet. « Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping » Dans les Actes du Symposium sur les géosciences et la télédétection, IGARSS &#x27;02, IEEE International, volume 5 (2002)._
+_Référence : Bannari, A., H. Asalhi et P. Teillet. « Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping » Dans les Actes du Symposium sur les géosciences et la télédétection, IGARSS '02, IEEE International, volume 5 (2002)._
 
 ***
 

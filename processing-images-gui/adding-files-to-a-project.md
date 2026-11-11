@@ -1,6 +1,6 @@
 # Ajouter des fichiers à un projet
 
-Une fois que vous avez créé ou ouvert un projet dans Chloros, l&#x27;étape suivante consiste à ajouter vos images multispectrales afin de commencer le traitement. L&#x27;onglet « File Browser » <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> vous permet d&#x27;importer facilement des images et de gérer votre ensemble de données.
+Une fois que vous avez créé ou ouvert un projet dans Chloros, l'étape suivante consiste à ajouter vos images multispectrales afin de commencer le traitement. L'onglet « File Browser » <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> vous permet d'importer facilement des images et de gérer votre ensemble de données.
 
 ## Accéder au « File Browser »
 
@@ -94,7 +94,7 @@ Une fois les images importées, elles apparaissent dans un tableau comportant le
 
 ### Affichage des métadonnées des images
 
-Cliquer sur le bouton bascule situé dans le coin supérieur droit, au-dessus du tableau, affiche les métadonnées de l&#x27;image sélectionnée dans la zone de la grille d&#x27;images.
+Cliquer sur le bouton bascule situé dans le coin supérieur droit, au-dessus du tableau, affiche les métadonnées de l'image sélectionnée dans la zone de la grille d'images.
 
 <figure><img src="../.gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
 
@@ -228,9 +228,9 @@ Si des fichiers source ont été déplacés ou supprimés depuis la dernière ou
 Une fois vos fichiers importés :
 
 1. **Vérifiez la liste des fichiers** - Assurez-vous que toutes les images ont été chargées correctement
-2. **Vérifiez les modèles d&#x27;appareils photo** - Vérifiez que la détection des appareils photo est correcte
+2. **Vérifiez les modèles d'appareils photo** - Vérifiez que la détection des appareils photo est correcte
 3. **Marquez les images cibles** – Voir [Choix des images cibles](choosing-target-images.md)
 4. **Ajustez les paramètres** – Configurez les options de traitement dans [Paramètres du projet](adjusting-project-settings.md)
 5. **Lancez le traitement** - Voir [Lancer le traitement](starting-the-processing.md)
 
-Pour plus d&#x27;informations sur la configuration du projet, consultez [Réglage des paramètres du projet](adjusting-project-settings.md).
+Pour plus d'informations sur la configuration du projet, consultez [Réglage des paramètres du projet](adjusting-project-settings.md).

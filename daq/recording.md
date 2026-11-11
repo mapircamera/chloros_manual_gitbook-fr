@@ -1,8 +1,6 @@
 # Enregistrement et format .daq
 
-Un fichier `.daq` correspond au format d&#x27;enregistrement des capteurs de lumière d&#x27;Chloros
-
-: une **base de données SQLite** contenant des images spectrales calibrées provenant d&#x27;un capteur DAQ. Enregistrez-en un lors d’une session de capture et le pipeline de réflectance pourra ensuite diviser chaque image par l’irradiance descendante mesurée à ce moment précis.
+Un fichier `.daq` correspond au format d'enregistrement des capteurs de lumière d'Chloros : une **base de données SQLite** contenant des images spectrales calibrées provenant d'un capteur DAQ. Enregistrez-en un lors d’une session de capture et le pipeline de réflectance pourra ensuite diviser chaque image par l’irradiance descendante mesurée à ce moment précis.
 
 ## Contenu d’un fichier .daq
 
@@ -16,15 +14,11 @@ Un fichier `.daq` correspond au format d&#x27;enregistrement des capteurs de lum
 
 Le format est identique pour les modèles DAQ-U, DAQ-M, DAQ-E et DAQ-E-S ; le traitement en aval ne tient donc pas compte du périphérique de transport qui a effectué l’enregistrement. Un enregistrement DAQ-E-S stocke également l’inclinaison, le roulis et le tangage de l’appareil à côté de chaque spectre.
 
-**Les enregistrements survivent à une coupure de courant (1.3.0).**Un enregistrement en direct est écrit avec un journal et une synchronisation complète du disque à chaque validation ; ainsi, une coupure de courant ou l’arrêt forcé d’un processus ne fait perdre que les 3 dernières secondes, et non le fichier. Un enregistrement interrompu en cours d’écriture peut laisser un fichier `<name>.daq-journal` à côté du fichier `.daq` :**conservez et copiez les deux ensemble.** Chloros
-
-effectue un retour en arrière du journal lors de la première lecture du fichier. Un disque saturé retarde l’écriture du fichier, mais jamais les mesures du capteur.
+**Les enregistrements survivent à une coupure de courant (1.3.0).**Un enregistrement en direct est écrit avec un journal et une synchronisation complète du disque à chaque validation ; ainsi, une coupure de courant ou l’arrêt forcé d’un processus ne fait perdre que les 3 dernières secondes, et non le fichier. Un enregistrement interrompu en cours d’écriture peut laisser un fichier `<name>.daq-journal` à côté du fichier `.daq` :**conservez et copiez les deux ensemble.** Chloros effectue un retour en arrière du journal lors de la première lecture du fichier. Un disque saturé retarde l’écriture du fichier, mais jamais les mesures du capteur.
 
 **Un DAQ-E qui cesse de transmettre est reconnecté (1.3.0).** Lorsqu’un flux DAQ-E s’interrompt (redémarrage de son commutateur, perte de connexion), le backend le reconnecte avec ses paramètres précédents, et l’enregistrement se poursuit dans le même fichier `.daq`, l’interruption étant signalée dans le fichier.
 
-L’enregistrement calibré nécessite le pack d’étalonnage d’usine du capteur. Pour les DAQ-U et DAQ-M, le backend récupère le pack depuis le cloud d’MAPIR
-
-à l’aide de l’identifiant du capteur (l’enregistrement est refusé s’il n’y parvient pas) ; les unités DAQ-E font exception car elles conservent leur étalonnage sur l’appareil.
+L’enregistrement calibré nécessite le pack d’étalonnage d’usine du capteur. Pour les DAQ-U et DAQ-M, le backend récupère le pack depuis le cloud d’MAPIR à l’aide de l’identifiant du capteur (l’enregistrement est refusé s’il n’y parvient pas) ; les unités DAQ-E font exception car elles conservent leur étalonnage sur l’appareil.
 
 ## Enregistrement depuis l’interface graphique
 
@@ -45,11 +39,7 @@ Les fichiers sont enregistrés au format `<project>/light_sensor/`, et lorsqu’
 
 
 
-L’CLI
-
-effectue l’enregistrement via le pool de capteurs du backend (le backend doit être en cours d’exécution — ces commandes sont des clients HTTP
-
-légers) :
+L’CLI effectue l’enregistrement via le pool de capteurs du backend (le backend doit être en cours d’exécution — ces commandes sont des clients HTTP légers) :
 
 ```bash
 # Connect the sensor into the backend pool
@@ -69,41 +59,23 @@ Récupère la valeur `--sensor-id` à partir de `chloros-cli daq pool-list`. Deu
 | Option | Valeur par défaut |
 | --- | --- |
 | `--duration` | `0` — enregistrer jusqu’à `pool-record --stop` |
-| `--output` / `-o` | `~/Documents/DAQ Live View/` sur le système de fichiers du **backend**, et non celui de l’CLI
+| `--output` / `-o` | `~/Documents/DAQ Live View/` sur le système de fichiers du **backend**, et non celui de l’CLI |
 
-|
-
-La distinction entre les répertoires de sortie est importante lorsque la CLI
-
-cible un backend situé sur une autre machine : le fichier est enregistré à l’emplacement où le backend s’exécute. Lorsque le backend se trouve sur le même ordinateur, un chemin relatif `-o` (tel que `./out` ci-dessus) est résolu par rapport au dossier dans lequel vous avez exécuté la commande.
+La distinction entre les répertoires de sortie est importante lorsque la CLI cible un backend situé sur une autre machine : le fichier est enregistré à l’emplacement où le backend s’exécute. Lorsque le backend se trouve sur le même ordinateur, un chemin relatif `-o` (tel que `./out` ci-dessus) est résolu par rapport au dossier dans lequel vous avez exécuté la commande.
 
 ## Enregistrement depuis Python
 
-`DAQSensorSession` (renvoyé par `chloros_sdk.connect_daq_sensor()`) expose le même enregistrement mis en commun : `record_start(output_dir=None, device_name=None)` renvoie le chemin d’accès au fichier, `record_stop()` renvoie `{path, rows}`. Consultez la [Référence du SDK
-
-](../reference/sdk-reference.md) pour l’API
-
-complète de la session. Les classes de gestion directe du matériel du SDK
-
-(installations sur ordinateur de bureau uniquement) écrivent les enregistrements dans `~/Documents/DAQ/` par défaut ; pour les versions publiées, le chemin de stockage groupé ci-dessus est la méthode prise en charge.
+`DAQSensorSession` (renvoyé par `chloros_sdk.connect_daq_sensor()`) expose le même enregistrement mis en commun : `record_start(output_dir=None, device_name=None)` renvoie le chemin d’accès au fichier, `record_stop()` renvoie `{path, rows}`. Consultez la [Référence du SDK](../reference/sdk-reference.md) pour l’API complète de la session. Les classes de gestion directe du matériel du SDK (installations sur ordinateur de bureau uniquement) écrivent les enregistrements dans `~/Documents/DAQ/` par défaut ; pour les versions publiées, le chemin de stockage groupé ci-dessus est la méthode prise en charge.
 
 ## Utilisation d’un fichier .daq lors du traitement
 
-Pour calculer la réflectance à partir d’images, Chloros
-
-a besoin d’une irradiance descendante correspondant à chaque exposition :
+Pour calculer la réflectance à partir d’images, Chloros a besoin d’une irradiance descendante correspondant à chaque exposition :
 
 * **Conservez le fichier `.daq` avec les images.**Au moment du traitement, le pipeline détermine automatiquement l’**irradiance descendante correspondant à l’horodatage** à partir d’un fichier `.daq` enregistré (quel que soit le modèle de DAQ) — ou à partir d’un fichier `.csv` natif de DAQ-M — se trouvant à côté des images. Les enregistrements via l’interface graphique satisfont automatiquement à cette condition, puisqu’ils sont ajoutés au projet dès qu’ils s’arrêtent.
-* **L’étalonnage est récupéré à la demande.** Si un ensemble d’étalonnages d’usine par caméra ou par DAQ n’est pas déjà mis en cache localement, Chloros
-
-le récupère automatiquement depuis le cloud d’MAPIR
-
-lors de la première utilisation (connexion Internet requise une seule fois ; mis en cache sous `~/.chloros/`).
+* **L’étalonnage est récupéré à la demande.** Si un ensemble d’étalonnages d’usine par caméra ou par DAQ n’est pas déjà mis en cache localement, Chloros le récupère automatiquement depuis le cloud d’MAPIR lors de la première utilisation (connexion Internet requise une seule fois ; mis en cache sous `~/.chloros/`).
 * **Les captures en direct créent leur propre fichier sidecar.** Pour toute image de réflectance capturée en direct, la valeur DAQ effectivement utilisée est enregistrée sous la forme d’un fichier `.daq` dans le dossier `daq/` des captures, ce qui permet de retraiter la capture ultérieurement sans l’enregistrement d’origine.
-* **Enregistrements provenant des enregistreurs `chloros_scripts` (1.3.0).**Un fichier `.daq` généré par les enregistreurs publics [`chloros_scripts`](https://github.com/mapircamera/chloros_scripts) est répertorié comme le modèle DAQ à l’origine de cet enregistrement, et sa limite peut être définie dans**Paramètres du projet → Capteur de lumière DAQ**, comme pour tout autre enregistrement. Ces enregistreurs consignent les comptages bruts du capteur ; Chloros
-
-récupère l’étalonnage d’usine du capteur via la liaison série et l’applique.
-* **À qui appartient cette mesure (1.3.0).**À côté de chaque capture `.daq`, un `.daq.cameras.json` identifie la ou les caméras dont les images correspondent à cette lecture, et le traitement l&#x27;associe**uniquement aux images provenant de ces caméras**. Une caméra autonome ne disposant pas de son propre capteur de luminosité n’emprunte donc plus la mesure d’une autre caméra : il faut lui associer un capteur ou en enregistrer une. Un enregistrement réalisé avec le DAQ lui-même (Enregistrement via l’interface graphique, `daq pool-record`), ainsi que tout fichier `.daq` ne contenant pas ce fichier (y compris les captures plus anciennes), continue de servir toutes les caméras.
+* **Enregistrements provenant des enregistreurs `chloros_scripts` (1.3.0).**Un fichier `.daq` généré par les enregistreurs publics [`chloros_scripts`](https://github.com/mapircamera/chloros_scripts) est répertorié comme le modèle DAQ à l’origine de cet enregistrement, et sa limite peut être définie dans**Paramètres du projet → Capteur de lumière DAQ**, comme pour tout autre enregistrement. Ces enregistreurs consignent les comptages bruts du capteur ; Chloros récupère l’étalonnage d’usine du capteur via la liaison série et l’applique.
+* **À qui appartient cette mesure (1.3.0).**À côté de chaque capture `.daq`, un `.daq.cameras.json` identifie la ou les caméras dont les images correspondent à cette lecture, et le traitement l'associe**uniquement aux images provenant de ces caméras**. Une caméra autonome ne disposant pas de son propre capteur de luminosité n’emprunte donc plus la mesure d’une autre caméra : il faut lui associer un capteur ou en enregistrer une. Un enregistrement réalisé avec le DAQ lui-même (Enregistrement via l’interface graphique, `daq pool-record`), ainsi que tout fichier `.daq` ne contenant pas ce fichier (y compris les captures plus anciennes), continue de servir toutes les caméras.
 
 ## Récupérer l’irradiance
 
@@ -111,9 +83,7 @@ Le traitement d’un projet exporte également tous les enregistrements de capte
 dossier `Light Sensor/` à côté des produits d’image. Cela ne nécessite **pas** d’images : un
 capteur de lumière enregistré seul constitue une capture complète, et un dossier ne contenant que des fichiers `.daq`
 est une entrée valide. Un projet ne contenant que des enregistrements de capteurs de lumière les répertorie et
-les traite aussi bien depuis l’application que depuis l’CLI
-
-, et ils restent répertoriés après l’exécution. L’exécution
+les traite aussi bien depuis l’application que depuis l’CLI, et ils restent répertoriés après l’exécution. L’exécution
 indique le nombre de produits de capteurs de lumière qu’elle a générés.
 
 | Produit | Description |
@@ -132,9 +102,7 @@ rien n’est mis en cache localement.
 Le **DAQ-A** est antérieur au système de fichier d’étalonnage par numéro de série et ne dispose d’aucun fichier à
 récupérer. Ce n’est pas un oubli : un DAQ-A est étalonné sur le terrain à l’aide d’une
 cible de réflectance, et l’étalonnage basé sur une cible ne nécessite que la réponse *relative*
-du capteur — ce qui correspond exactement à ses comptages bruts. Chloros
-
-procède aujourd’hui à l’étalonnage à l’aide de ces derniers.
+du capteur — ce qui correspond exactement à ses comptages bruts. Chloros procède aujourd’hui à l’étalonnage à l’aide de ces derniers.
 
 Ainsi, un enregistrement DAQ-A s’exporte, mais sous un nom différent :
 
@@ -153,12 +121,8 @@ que pour l’irradiance réelle — puissance totale, lux, PPFD — sont laissé
 calculées à partir des comptages.
 
 Les anciens enregistrements DAQ-A-SD (schéma v1.01 / v1.02) n’enregistrent que l’heure d’écriture du fichier, et non un
-horodatage par lecture. Chloros
-
-ne fera pas correspondre les images à ces données — associer une image à une
+horodatage par lecture. Chloros ne fera pas correspondre les images à ces données — associer une image à une
 heure d’écriture serait erroné sans pour autant paraître faux — mais l’exportation les lit correctement et
-le fichier CSV
-
-indique de quelle horloge il s’agit.
+le fichier CSV indique de quelle horloge il s’agit.
 
 Pour tout savoir sur la réflectance — capteur unique avec une caméra, et double capteur ambiant/objet —, consultez [Workflows de réflectance](reflectance.md).

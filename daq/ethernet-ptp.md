@@ -1,8 +1,6 @@
 # Mise en réseau et synchronisation horaire du DAQ-E
 
-> La configuration physique du réseau pour le capteur — câblage, PoE, attribution d&#x27;adresse IP et paramètres réseau propres à l&#x27;appareil — est décrite dans le **[manuel d&#x27;utilisation du DAQ](https://mapir.gitbook.io/daq/daq-e/network-setup)**. Cette page traite des aspects liés à Chloros
-
-: connexion, synchronisation horaire et marche à suivre en cas d’échec de la détection.
+> La configuration physique du réseau pour le capteur — câblage, PoE, attribution d'adresse IP et paramètres réseau propres à l'appareil — est décrite dans le **[manuel d'utilisation du DAQ](https://mapir.gitbook.io/daq/daq-e/network-setup)**. Cette page traite des aspects liés à Chloros : connexion, synchronisation horaire et marche à suivre en cas d’échec de la détection.
 
 Le DAQ-E est le membre « Ethernet » de la famille DAQ : alimenté par PoE, détecté via mDNS (service `_daq-e._tcp`) et accessible par un nom d’hôte dérivé de son identifiant de capteur — `daq-e-<6 hex>.local`, par exemple `daq-e-def330.local`. Cette page explique comment il transfère les données sur le réseau et comment il participe à la synchronisation temporelle PTP.
 
@@ -10,38 +8,20 @@ Le DAQ-E est le membre « Ethernet » de la famille DAQ : alimenté par PoE, dé
 
 | Mode | Point d’extrémité | Utilisateurs | Remarques |
 | --- | --- | --- | --- |
-| **Multidiffusion** (par défaut) | UDP `239.10.10.10:5002` | N&#x27;importe quel appareil sur le même réseau local reçoit le même flux | Chaque datagramme est validé par CRC-16/CCITT |
+| **Multidiffusion** (par défaut) | UDP `239.10.10.10:5002` | N'importe quel appareil sur le même réseau local reçoit le même flux | Chaque datagramme est validé par CRC-16/CCITT |
 | **Brut** | Port TCP `5000` | Un seul client (exclusif) | Compatibilité octet à octet avec DAQ-U |
 
-Chloros
-
-utilise la multidiffusion par défaut, ce qui permet à l’interface graphique, à la CLI
-
-et au SDK
-
-de surveiller tous ensemble un même capteur.
+Chloros utilise la multidiffusion par défaut, ce qui permet à l’interface graphique, à la CLI et au SDK de surveiller tous ensemble un même capteur.
 
 ## Configuration réseau requise
 
-* **Même domaine de diffusion.** La machine exécutant Chloros
-
-doit se trouver sur le même segment de réseau de couche 2 que le capteur — la découverte mDNS ne traverse pas les routeurs.
-* **Pare-feu.** Sous Windows
-
-, le programme d’installation ajoute la règle de pare-feu **Chloros
-
-Backend (UDP-In)**pour le backend, sur chaque profil réseau, qui couvre les données DAQ-E (UDP 5002), le mDNS (UDP 5353) et le PTP (UDP 319/320), ainsi qu’une règle**« Chloros
-
-Backend (TCP-In) »**, limitée au sous-réseau local, pour la connexion que le DAQ-E établit vers l’ordinateur lors d’une mise à jour du micrologiciel. Sous Linux
-
-, le fichier `.deb` ouvre les ports UDP dans `ufw` ou `firewalld` lorsque ce pare-feu est actif au moment de l’installation. Un pare-feu tiers, ou un pare-feu activé ultérieurement, nécessite que ces mêmes ports soient autorisés.
+* **Même domaine de diffusion.** La machine exécutant Chloros doit se trouver sur le même segment de réseau de couche 2 que le capteur — la découverte mDNS ne traverse pas les routeurs.
+* **Pare-feu.** Sous Windows, le programme d’installation ajoute la règle de pare-feu **Chloros Backend (UDP-In)**pour le backend, sur chaque profil réseau, qui couvre les données DAQ-E (UDP 5002), le mDNS (UDP 5353) et le PTP (UDP 319/320), ainsi qu’une règle**« Chloros Backend (TCP-In) »**, limitée au sous-réseau local, pour la connexion que le DAQ-E établit vers l’ordinateur lors d’une mise à jour du micrologiciel. Sous Linux, le fichier `.deb` ouvre les ports UDP dans `ufw` ou `firewalld` lorsque ce pare-feu est actif au moment de l’installation. Un pare-feu tiers, ou un pare-feu activé ultérieurement, nécessite que ces mêmes ports soient autorisés.
 * **Alimentation PoE, pas de LED d’état.** Le DAQ-E ne dispose pas de LED propre — vérifiez l’alimentation via le voyant « Link/PoE » du commutateur ou du port de l’injecteur, et patientez quelques secondes après la mise sous tension pour qu’il démarre et se connecte au réseau.
 
 ## Connexion
 
-**Interface graphique :** Onglet « Capteurs de lumière » → « Connecter un capteur » → Type d’appareil « DAQ-E (Ethernet) ». La détection ne s’effectue que tant que la boîte de dialogue de connexion est affichée à l’écran (recherche mDNS et balayage ARP sous Windows
-
-), et se répète toutes les 15 secondes ; le bouton « Actualiser » relance immédiatement la recherche. Les capteurs détectés apparaissent dans la liste déroulante ; le premier capteur détecté est sélectionné automatiquement.
+**Interface graphique :** Onglet « Capteurs de lumière » → « Connecter un capteur » → Type d’appareil « DAQ-E (Ethernet) ». La détection ne s’effectue que tant que la boîte de dialogue de connexion est affichée à l’écran (recherche mDNS et balayage ARP sous Windows), et se répète toutes les 15 secondes ; le bouton « Actualiser » relance immédiatement la recherche. Les capteurs détectés apparaissent dans la liste déroulante ; le premier capteur détecté est sélectionné automatiquement.
 
 <!-- SCREENSHOT-NEEDED: DAQ connect dialog with Device Type set to "DAQ-E (Ethernet)" and at least one discovered sensor listed in the Hostname/IP dropdown (e.g. daq-e-xxxxxx.local), Connect button enabled. -->
 
@@ -67,23 +47,9 @@ chloros-cli daq pool-connect --eth-host daq-e-def330.local
 
 ## Paramètres de l’appareil et micrologiciel
 
-Le capteur conserve ses propres paramètres réseau : DHCP (réglage d’usine, avec repli sur une adresse locale de liaison 169.254.x.x en l’absence de réponse d’un serveur DHCP) ou une adresse statique. Il conserve également l’option indiquant s’il commence la diffusion dès la mise sous tension. Modifiez ces paramètres dans l’interface graphique (icône en forme d’engrenage des paramètres du capteur, **Réseau**:**Modifier…**,**Diffusion à la mise sous tension**,**Redémarrer le capteur** ; voir [L’onglet DAQ](gui.md)), ou depuis l’CLI
+Le capteur conserve ses propres paramètres réseau : DHCP (réglage d’usine, avec repli sur une adresse locale de liaison 169.254.x.x en l’absence de réponse d’un serveur DHCP) ou une adresse statique. Il conserve également l’option indiquant s’il commence la diffusion dès la mise sous tension. Modifiez ces paramètres dans l’interface graphique (icône en forme d’engrenage des paramètres du capteur, **Réseau**:**Modifier…**,**Diffusion à la mise sous tension**,**Redémarrer le capteur** ; voir [L’onglet DAQ](gui.md)), ou depuis l’CLI et le SDK avec `pool-set-network`, `pool-set-auto-stream` et `pool-reboot` (`DAQSensorSession.set_network()`, `set_auto_stream()`, `reboot()` ; voir la [Référence CLI](../reference/cli-reference.md#daq-e-device-settings)). Le capteur redémarre pour appliquer une modification du réseau, et Chloros le reconnecte. Une adresse statique doit figurer sur le réseau de l’ordinateur exécutant Chloros : Chloros refuse toute adresse qu’il n’a pas pu atteindre après le redémarrage. L’ID du capteur et son nom d’hôte `daq-e-<id>.local` ne changent jamais. Nouveauté de la version 1.3.0.
 
-et le SDK
-
-avec `pool-set-network`, `pool-set-auto-stream` et `pool-reboot` (`DAQSensorSession.set_network()`, `set_auto_stream()`, `reboot()` ; voir la [Référence CLI
-
-](../reference/cli-reference.md#daq-e-device-settings)). Le capteur redémarre pour appliquer une modification du réseau, et Chloros
-
-le reconnecte. Une adresse statique doit figurer sur le réseau de l’ordinateur exécutant Chloros
-
-: Chloros
-
-refuse toute adresse qu’il n’a pas pu atteindre après le redémarrage. L’ID du capteur et son nom d’hôte `daq-e-<id>.local` ne changent jamais. Nouveauté de la version 1.3.0.
-
-**Les mises à jour du micrologiciel sont intégrées à l’interface graphique.** Lorsqu’un DAQ-E connecté utilise une version du micrologiciel antérieure à celle fournie avec votre version d’Chloros
-
-, la ligne correspondant à son capteur affiche une pastille orange **Mise à jour disponible**, et la fenêtre modale des paramètres (icône en forme d’engrenage) propose un <version>bouton</version>
+**Les mises à jour du micrologiciel sont intégrées à l’interface graphique.** Lorsqu’un DAQ-E connecté utilise une version du micrologiciel antérieure à celle fournie avec votre version d’Chloros, la ligne correspondant à son capteur affiche une pastille orange **Mise à jour disponible**, et la fenêtre modale des paramètres (icône en forme d’engrenage) propose un <version>bouton</version>
 
 « Mettre à jour vers <version>». La mise à jour s’effectue via le réseau en environ 30 secondes ; le capteur redémarre et se reconnecte automatiquement, et une interruption du transfert laisse le micrologiciel actuel intact. Depuis la CLI ou le SDK, et sous Linux (qui ne dispose pas d’interface graphique), exécutez `chloros-cli daq pool-update-firmware --sensor-id <id>` (`DAQSensorSession.update_firmware()`).
 
@@ -102,7 +68,7 @@ Vérifiez la synchronisation depuis l’CLI :
 | `chloros-cli time-sync cameras` | État de santé PTP par caméra (`PtpStatus`, `PtpOffsetFromMaster`, `PtpMeanPathDelay`) |
 | `chloros-cli time-sync restart` | Redémarrer le processus « grandmaster » |
 
-Dans l’interface graphique, la fenêtre modale des paramètres DAQ-E affiche une ligne **PTP Sync** en temps réel indiquant l’état PTP actuel du capteur.**Un DAQ-E dont le PTP est désactivé reste désactivé.** L&#x27;appareil conserve son paramètre d&#x27;activation/désactivation du PTP dans sa propre mémoire ; ainsi, un appareil dont le PTP a été désactivé reste désactivé après une reconnexion ou un redémarrage, et ses horodatages ne sont pas synchronisés via PTP. `chloros-cli daq pool-list` signale un tel appareil (`!! PTP is switched OFF on this unit …`) et affiche la commande permettant de le corriger :
+Dans l’interface graphique, la fenêtre modale des paramètres DAQ-E affiche une ligne **PTP Sync** en temps réel indiquant l’état PTP actuel du capteur.**Un DAQ-E dont le PTP est désactivé reste désactivé.** L'appareil conserve son paramètre d'activation/désactivation du PTP dans sa propre mémoire ; ainsi, un appareil dont le PTP a été désactivé reste désactivé après une reconnexion ou un redémarrage, et ses horodatages ne sont pas synchronisés via PTP. `chloros-cli daq pool-list` signale un tel appareil (`!! PTP is switched OFF on this unit …`) et affiche la commande permettant de le corriger :
 
 ```bash
 chloros-cli daq pool-enable-ptp --sensor-id daq-e-def330

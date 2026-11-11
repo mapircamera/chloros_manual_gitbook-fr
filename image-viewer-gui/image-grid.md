@@ -7,7 +7,7 @@ Une fois les images importées dans un projet, elles s’affichent sous forme de
 Utilisez le curseur de zoom en haut à droite pour ajuster la taille des vignettes. Le curseur va de **64 px à 1 200 px**.
 
 * **Ctrl + molette de la souris** permet également de redimensionner les vignettes.
-* **Ctrl + `+`**/**Ctrl + `=`**et**Ctrl + `−`** modifient la taille par incréments de 4 px à chaque pression. La plage de réglage s&#x27;arrête à 64 px à la plus petite valeur et, à la plus grande valeur, à la taille permettant d&#x27;afficher exactement deux vignettes par ligne dans la fenêtre actuelle.
+* **Ctrl + `+`**/**Ctrl + `=`**et**Ctrl + `−`** modifient la taille par incréments de 4 px à chaque pression. La plage de réglage s'arrête à 64 px à la plus petite valeur et, à la plus grande valeur, à la taille permettant d'afficher exactement deux vignettes par ligne dans la fenêtre actuelle.
 * La taille que vous choisissez est enregistrée avec le projet (`UI → Grid thumbnail size` dans `project.json`, par défaut `160`) ; ainsi, la rouvrir permet de la rétablir.
 
 <figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>La *résolution* des vignettes est un paramètre distinct de la *taille* des vignettes : voir **Affichage → Résolution des vignettes d’image** dans [Paramètres du projet](../project-settings/project-settings.md) (par défaut 512 px sur le côté le plus long). La taille correspond à la dimension de la tuile affichée ; la résolution correspond au niveau de détail utilisé pour la remplir.***
@@ -38,9 +38,9 @@ Le bouton d’exportation situé à l’extrême gauche indique **ce que vous av
 | --- | --- |
 | Survey3 RAW+JPG | `JPG` |
 | Captures LATTICE avec un aperçu à l’écran à côté de l’image brute | `PNG` ou `TIFF`, selon les aperçus |
-| Captures LATTICE où le fichier de base **est** l&#x27;image RAW | *pas de bouton* — `RAW (Original)` affiche déjà ce fichier |
+| Captures LATTICE où le fichier de base **est** l'image RAW | *pas de bouton* — `RAW (Original)` affiche déjà ce fichier |
 
-Dans un projet mixte, le libellé correspond à l&#x27;extension utilisée par la plupart des images.
+Dans un projet mixte, le libellé correspond à l'extension utilisée par la plupart des images.
 
 ### Boutons de produit
 
@@ -53,7 +53,7 @@ Dans un projet mixte, le libellé correspond à l&#x27;extension utilisée par l
 | **Réponse du capteur** | La solution de secours non calibrée basée sur la réponse du capteur | Idem, mais avec la *correction de vignettage* désactivée |
 | **`RAW (<INDEX> Index)`** | Un bouton par indice calculé | Après une session avec des indices configurés |
 | **`<INDEX> LUT`** | Un bouton par indice avec mappage de couleurs | Après une exécution avec une table de conversion (LUT) configurée |
-| **`<Index> <Index\|LUT> <NNN>`** | Un bouton par exécution d&#x27;exportation [Index/LUT Sandbox](index-lut-sandbox.md) | Dès la fin d&#x27;une exportation Sandbox |
+| **`<Index> <Index\|LUT> <NNN>`** | Un bouton par exécution d'exportation [Index/LUT Sandbox](index-lut-sandbox.md) | Dès la fin d'une exportation Sandbox |
 
 ### Boutons de niveau LATTICE
 
@@ -61,7 +61,7 @@ Les projets contenant des captures LATTICE ajoutent ces boutons, libellés par l
 
 | Bouton | Niveau |
 | --- | --- |
-| **RAW (Original)** | L&#x27;image brute source, telle qu&#x27;elle a été importée |
+| **RAW (Original)** | L'image brute source, telle qu'elle a été importée |
 | **RAW (Radiance)** | Radiance spectrale en Float32, W/m²/sr/nm |
 | **RAW (Réflectance)** | Réflectance en uint16, 32768 = ρ 1,0 |
 
@@ -89,7 +89,7 @@ Les captures en matrice produisent plusieurs images d’un même instant provena
 
 ### Par caméra (par défaut)
 
-Un groupe par module de caméra. L&#x27;en-tête affiche le modèle et le numéro de série de la caméra (`LATT-M3M — <serial>`) ainsi que le nombre de photos. Les vignettes à l&#x27;intérieur d&#x27;un groupe sont classées par ordre chronologique selon l&#x27;événement de capture.
+Un groupe par module de caméra. L'en-tête affiche le modèle et le numéro de série de la caméra (`LATT-M3M — <serial>`) ainsi que le nombre de photos. Les vignettes à l'intérieur d'un groupe sont classées par ordre chronologique selon l'événement de capture.
 
 Dans ce mode, la barre d’outils comporte également un **bouton de filtrage par caméra**, libellé `MODEL (SERIAL)`. Toutes les caméras sont sélectionnées par défaut ; cliquer sur un bouton désélectionne cette caméra et supprime son groupe de la grille. C’est le moyen le plus rapide de passer en revue une bande sur l’ensemble d’un vol.
 

@@ -1,13 +1,13 @@
 # Lancement du traitement
 
-Une fois que vous avez importé vos images, marqué vos cibles d&#x27;étalonnage et configuré les paramètres de votre projet, vous êtes prêt à commencer le traitement. Cette page vous guide dans le lancement du pipeline de traitement d&#x27;Chloros.
+Une fois que vous avez importé vos images, marqué vos cibles d'étalonnage et configuré les paramètres de votre projet, vous êtes prêt à commencer le traitement. Cette page vous guide dans le lancement du pipeline de traitement d'Chloros.
 
 ## Liste de contrôle avant le traitement
 
 Avant de cliquer sur le bouton « Démarrer », vérifiez que tout est prêt :
 
-* [ ] **Fichiers importés** - Toutes les images apparaissent dans l&#x27;explorateur de fichiers
-* [ ] **Images cibles marquées** - Colonne « Cible » cochée pour les images d&#x27;étalonnage (ou un enregistrement `.daq` importé pour LATTICE)
+* [ ] **Fichiers importés** - Toutes les images apparaissent dans l'explorateur de fichiers
+* [ ] **Images cibles marquées** - Colonne « Cible » cochée pour les images d'étalonnage (ou un enregistrement `.daq` importé pour LATTICE)
 * [ ] **Modèles de caméras détectés** – La colonne « Modèle de caméra » affiche les caméras correctes
 * [ ] **Paramètres configurés** – Paramètres du projet vérifiés et ajustés
 * [ ] **Indices sélectionnés** – Indices multispectraux souhaités ajoutés (si nécessaire)
@@ -23,18 +23,18 @@ Avant de cliquer sur le bouton « Démarrer », vérifiez que tout est prêt :
 
 ### Localiser le bouton Démarrer
 
-Le bouton Démarrer/Lecture se trouve dans la barre d&#x27;en-tête supérieure d&#x27;Chloros :
+Le bouton Démarrer/Lecture se trouve dans la barre d'en-tête supérieure d'Chloros :
 
 * Emplacement : en haut au centre de la fenêtre
 * Icône : **bouton Lecture/Démarrer** <img src="../.gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
-* État : le bouton est activé (allumé) lorsqu&#x27;il est prêt à traiter
+* État : le bouton est activé (allumé) lorsqu'il est prêt à traiter
 
 ### Cliquez pour démarrer
 
-1. Cliquez sur le **bouton Lecture/Démarrer** dans la barre d&#x27;en-tête supérieure
+1. Cliquez sur le **bouton Lecture/Démarrer** dans la barre d'en-tête supérieure
 2. Le traitement commence immédiatement
 3. Le bouton devient un bouton **Arrêt** pendant le traitement
-4. La barre de progression s&#x27;actualise, indiquant l&#x27;état du traitement
+4. La barre de progression s'actualise, indiquant l'état du traitement
 
 {% hint style="success" %}
 **Traitement lancé** : une fois que vous avez cliqué, Chloros gère automatiquement toutes les étapes du traitement : détection des cibles, débayérisation, étalonnage, calcul de l’indice et exportation. Il détecte automatiquement si votre projet est de type Survey3, LATTICE ou un mélange des deux, et applique le pipeline adapté à chaque caméra.
@@ -62,7 +62,7 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 2. **Traitement** - Application de l’étalonnage et exportation des images**Durée de traitement :**
 
 * Beaucoup plus lent que le mode parallèle d’Chloros+
-* Convient aux ensembles de données de petite à moyenne taille (&lt; 200 images)
+* Convient aux ensembles de données de petite à moyenne taille (< 200 images)
 
 ### Mode Chloros+ (traitement parallèle)
 
@@ -73,17 +73,17 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 * Traite plusieurs images simultanément à l’aide d’un [pipeline de traitement à 4 threads](../processing-architecture/processing-pipeline.md)
 * L’[adaptation dynamique des calculs](../processing-architecture/dynamic-compute-adaptation.md) sélectionne automatiquement la stratégie optimale pour votre matériel au démarrage
 * Accélération GPU (CUDA) avec les cartes graphiques NVIDIA
-* **Le nombre de workers s&#x27;adapte au matériel**: les stratégies GPU exécutent**2 à 4 workers simultanés** (en fonction de la VRAM — 3 sur un GPU de 2 à 12 Go, 2 à 4 sur un GPU de 12 Go ou plus) ; les systèmes équipés uniquement d’un CPU exécutent un worker par cœur physique, moins un**La barre de progression affiche 4 étapes** (correspondant aux 4 threads du pipeline) :
+* **Le nombre de workers s'adapte au matériel**: les stratégies GPU exécutent**2 à 4 workers simultanés** (en fonction de la VRAM — 3 sur un GPU de 2 à 12 Go, 2 à 4 sur un GPU de 12 Go ou plus) ; les systèmes équipés uniquement d’un CPU exécutent un worker par cœur physique, moins un**La barre de progression affiche 4 étapes** (correspondant aux 4 threads du pipeline) :
 
 1. **Détection** (Thread 1) – Recherche des cibles d’étalonnage
 2. **Analyse** (thread 2) – Examen des métadonnées de l’image et calcul de l’étalonnage
 3. **Étalonnage** (thread 3) – Débayérisation, correction du vignettage, étalonnage, calcul de l’indice
 4. **Exportation** (thread 4) – Enregistrement des images traitées et des indices**Interaction avec la barre de progression :*** **Passez la souris** sur la barre pour afficher le menu déroulant détaillé des 4 étapes
-* **Cliquez** sur la barre de progression pour figer le menu déroulant à l&#x27;écran
+* **Cliquez** sur la barre de progression pour figer le menu déroulant à l'écran
 * **Cliquez à nouveau** pour débloquer et masquer le menu**Temps de traitement :**
 
 * Nettement plus rapide que le mode gratuit
-* L&#x27;accélération GPU améliore encore la vitesse
+* L'accélération GPU améliore encore la vitesse
 
 {% hint style="info" %}
 **Vitesse de Chloros+** : le traitement parallèle peut être 5 à 10 fois plus rapide que le mode séquentiel pour les grands ensembles de données. Un projet de 500 images qui prend 2 heures en mode gratuit peut être terminé en 15 à 20 minutes avec Chloros+.
@@ -165,14 +165,14 @@ Une fois lancé, l’ensemble du pipeline s’exécute automatiquement :
 
 * Utilisation élevée du processeur au sein du pool de travailleurs de la stratégie
 * Avec accélération GPU : utilisation élevée du GPU
-* L&#x27;ordinateur peut être moins réactif pendant le traitement
-* Évitez de lancer d&#x27;autres tâches gourmandes en ressources processeur
+* L'ordinateur peut être moins réactif pendant le traitement
+* Évitez de lancer d'autres tâches gourmandes en ressources processeur
 
 {% hint style="warning" %}
 **Conseil de performance** : pour optimiser les performances de Chloros+, fermez les autres applications et laissez Chloros utiliser toutes les ressources du système.
 {% endhint %}
 
-### Le traitement ne peut pas être mis en pause (mais l&#x27;arrêt est propre)
+### Le traitement ne peut pas être mis en pause (mais l'arrêt est propre)
 
 * Une fois lancé, le traitement ne peut pas être mis en pause puis repris ultérieurement
 * Cliquer sur **Arrêter** interrompt proprement l’exécution dès le premier clic
@@ -237,7 +237,7 @@ Le temps de traitement réel varie considérablement en fonction :
 
 ### Estimations approximatives (Chloros+, images de 12 MP, processeur moderne)
 
-| Nombre d&#x27;images | Mode gratuit | Chloros+ (processeur) | Chloros+ (carte graphique) |
+| Nombre d'images | Mode gratuit | Chloros+ (processeur) | Chloros+ (carte graphique) |
 | ----------- | --------- | -------------- | -------------- |
 | 50 images   | 15 à 20 min | 5 à 8 min        | 3 à 5 min        |
 | 100 images  | 30 à 40 min | 10 à 15 min      | 5 à 8 min        |
@@ -305,7 +305,7 @@ Consultez [la référence de la CLI](../reference/cli-reference.md#a-run-that-wr
 **Solutions :**
 
 1. Placez les projets dans un dossier plus court — modifiez le**répertoire de travail** dans [Paramètres du projet](../project-settings/project-settings.md) et recréez le projet, ou
-2. Activez les chemins d’accès longs sous Windows et redémarrez Chloros : relancez le programme d’installation de Chloros en cochant la case **Activer les chemins d’accès longs sous Windows** (celle-ci est cochée par défaut), ou utilisez la stratégie de groupe : *Configuration de l’ordinateur &gt; Modèles d’administration &gt; Système &gt; Système de fichiers &gt; Activer les chemins d’accès longs Win32*.
+2. Activez les chemins d’accès longs sous Windows et redémarrez Chloros : relancez le programme d’installation de Chloros en cochant la case **Activer les chemins d’accès longs sous Windows** (celle-ci est cochée par défaut), ou utilisez la stratégie de groupe : *Configuration de l’ordinateur > Modèles d’administration > Système > Système de fichiers > Activer les chemins d’accès longs Win32*.
 
 ### Avertissement « Aucune cible détectée »
 
@@ -357,7 +357,7 @@ Si vous utilisez l’accélération GPU NVIDIA :
 Une fois le traitement lancé :
 
 1. **Surveillez la progression** - Voir [Surveillance du traitement](monitoring-the-processing.md)
-2. **Attendez la fin du traitement** - Le traitement s&#x27;exécute automatiquement
+2. **Attendez la fin du traitement** - Le traitement s'exécute automatiquement
 3. **Vérifiez les résultats** – Voir [Fin du traitement](finishing-the-processing.md)
 
 Pour savoir comment procéder pendant le traitement, consultez [Surveillance du traitement](monitoring-the-processing.md).

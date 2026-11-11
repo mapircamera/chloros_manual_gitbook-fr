@@ -1,14 +1,14 @@
 # API : SDK pour Python
 
 {% hint style="info" %}
-**Vous recherchez l&#x27;API complète ?** Cette page est un tutoriel pratique. Toutes les classes publiques, méthodes, signatures exactes et exemples copiables-collables se trouvent dans la [Référence SDK](reference/sdk-reference.md), optimisée pour les assistants IA.**Vous travaillez avec un assistant IA ?** Collez cette URL dans le chat pour qu’il dispose de l’API complète et à jour de Chloros 1.3.0 :
+**Vous recherchez l'API complète ?** Cette page est un tutoriel pratique. Toutes les classes publiques, méthodes, signatures exactes et exemples copiables-collables se trouvent dans la [Référence SDK](reference/sdk-reference.md), optimisée pour les assistants IA.**Vous travaillez avec un assistant IA ?** Collez cette URL dans le chat pour qu’il dispose de l’API complète et à jour de Chloros 1.3.0 :
 
 `https://mapir.gitbook.io/chloros/reference/sdk-reference.md`
 
 Chaque page de ce manuel est disponible au format Markdown brut sous la forme de son slug en minuscules + `.md`, et l’intégralité du manuel est indexée à l’adresse `https://mapir.gitbook.io/chloros/llms.txt`.
 {% endhint %}
 
-Le **Chloros Python SDK** (`chloros-sdk` sur PyPI) permet de contrôler toutes les fonctionnalités de l’application de bureau depuis Python : traitement d’images par lots, contrôle en temps réel des caméras LATTICE et des réseaux de caméras, sessions d’acquisition de données (DAQ) avec capteurs de lumière, et automatisation des projets enregistrés. Il s&#x27;agit d&#x27;une couche mince superposée au même backend local que celui utilisé par l&#x27;interface graphique et la CLI (HTTP sur `127.0.0.1:5000`), de sorte que le comportement est identique sur les trois interfaces.
+Le **Chloros Python SDK** (`chloros-sdk` sur PyPI) permet de contrôler toutes les fonctionnalités de l’application de bureau depuis Python : traitement d’images par lots, contrôle en temps réel des caméras LATTICE et des réseaux de caméras, sessions d’acquisition de données (DAQ) avec capteurs de lumière, et automatisation des projets enregistrés. Il s'agit d'une couche mince superposée au même backend local que celui utilisé par l'interface graphique et la CLI (HTTP sur `127.0.0.1:5000`), de sorte que le comportement est identique sur les trois interfaces.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Le SDK est fourni avec le package de bureau Chloros, qui fournit également le b
 
 * **Windows :** le programme d’installation installe le fichier « wheel » du SDK fourni dans votre Python système (si Python n’est pas installé, cette étape est ignorée).
 * **Linux :** le paquet `.deb` installe le SDK correspondant au système `python3`, dans `/usr/lib/python3/dist-packages`. Ses prérequis, `python3-numpy` et `python3-requests`, sont recommandés par le paquet : `apt install` les inclut, contrairement à `dpkg -i`.
-* **Un virtualenv** ne voit pas les paquets du système ; installez-y le fichier wheel fourni : `pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl` sous Linux, ou le fichier `chloros_sdk-*.whl` situé dans le dossier `sdk` du dossier d&#x27;installation Windows (`C:\Program Files\Chloros\sdk\` par défaut).
+* **Un virtualenv** ne voit pas les paquets du système ; installez-y le fichier wheel fourni : `pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl` sous Linux, ou le fichier `chloros_sdk-*.whl` situé dans le dossier `sdk` du dossier d'installation Windows (`C:\Program Files\Chloros\sdk\` par défaut).
 
 ```bash
 python3 -c "import chloros_sdk; print(chloros_sdk.__version__)"   # Windows: py -c "…"
@@ -36,14 +36,14 @@ Les identifiants sont mis en cache dans `~/.chloros/` (sur les deux plateformes)
 
 | Exigence | Détails |
 | --- | --- |
-| **Chloros installé** | Windows : programme d&#x27;installation de bureau ; Linux : paquet `.deb` (fournit le binaire du backend et le SDK) |
+| **Chloros installé** | Windows : programme d'installation de bureau ; Linux : paquet `.deb` (fournit le binaire du backend et le SDK) |
 | **Python** | 3.7 ou version ultérieure (développé/testé sur la version 3.10) |
 | **Système d’exploitation** | Windows 10/11 64 bits, Ubuntu 22.04 LTS ou version plus récente, ou NVIDIA Jetson (JetPack 6) |
-| **Licence** | Compte Chloros+ actif, n&#x27;importe quel niveau payant (Copper ou supérieur) |
+| **Licence** | Compte Chloros+ actif, n'importe quel niveau payant (Copper ou supérieur) |
 
 ## Le gain en 60 secondes
 
-Un seul appel permet de créer un projet, d&#x27;importer un dossier, de configurer le traitement et d&#x27;exécuter le pipeline — en démarrant automatiquement le backend s&#x27;il n&#x27;est pas déjà en cours d&#x27;exécution :
+Un seul appel permet de créer un projet, d'importer un dossier, de configurer le traitement et d'exécuter le pipeline — en démarrant automatiquement le backend s'il n'est pas déjà en cours d'exécution :
 
 ```python
 import chloros_sdk
@@ -170,7 +170,7 @@ with chloros_sdk.connect_camera("213800234") as cam:
 
 ### Tableau synchronisé — `connect_array`
 
-`connect_array` est le point d’entrée recommandé pour les installations multi-caméras. Il exécute le même flux de préparation intelligente que l’interface graphique : analyse du réseau, sélection automatique du niveau de synchronisation, synchronisation temporelle PTP, sélection du format de pixel par caméra, initialisation de l’exposition automatique (AE) et armement du déclencheur GPIO. La **première caméra en série est la caméra maître** (c&#x27;est elle qui émet l&#x27;impulsion de déclenchement matériel) ; les autres sont des caméras esclaves.
+`connect_array` est le point d’entrée recommandé pour les installations multi-caméras. Il exécute le même flux de préparation intelligente que l’interface graphique : analyse du réseau, sélection automatique du niveau de synchronisation, synchronisation temporelle PTP, sélection du format de pixel par caméra, initialisation de l’exposition automatique (AE) et armement du déclencheur GPIO. La **première caméra en série est la caméra maître** (c'est elle qui émet l'impulsion de déclenchement matériel) ; les autres sont des caméras esclaves.
 
 ```python
 with chloros_sdk.connect_array(
@@ -242,7 +242,7 @@ Autres clients : [Utilisation de Chloros avec les assistants IA](ai-assistants.m
 
 ## Conditions de licence
 
-L’accès au SDK nécessite un compte Chloros+ actif sur n’importe quel niveau payant — **Copper ou supérieur**(Copper / Bronze / Silver / Gold) ; le niveau gratuit « Iron » ne donne pas accès au SDK ni à la CLI. La validation s&#x27;effectue**côté serveur** : chaque requête SDK doit être associée à la fois à une session active et à un forfait payant, sinon le backend renvoie les codes d&#x27;erreur `403` / `PLAN_UPGRADE_REQUIRED` (générées sous la forme `ChlorosLicenseError` par `ChlorosLocal`, et sous la forme `ChlorosConnectError` par les fonctions d’aide `connect_*`). Un appelant déconnecté obtient `401` / `AUTH_REQUIRED` (`ChlorosAuthenticationError`) — relancer `chloros-cli login` résout le premier cas, mais pas le second.
+L’accès au SDK nécessite un compte Chloros+ actif sur n’importe quel niveau payant — **Copper ou supérieur**(Copper / Bronze / Silver / Gold) ; le niveau gratuit « Iron » ne donne pas accès au SDK ni à la CLI. La validation s'effectue**côté serveur** : chaque requête SDK doit être associée à la fois à une session active et à un forfait payant, sinon le backend renvoie les codes d'erreur `403` / `PLAN_UPGRADE_REQUIRED` (générées sous la forme `ChlorosLicenseError` par `ChlorosLocal`, et sous la forme `ChlorosConnectError` par les fonctions d’aide `connect_*`). Un appelant déconnecté obtient `401` / `AUTH_REQUIRED` (`ChlorosAuthenticationError`) — relancer `chloros-cli login` résout le premier cas, mais pas le second.
 
 L’utilisation hors ligne fonctionne pendant la période de grâce du forfait : le niveau d’accès est lu à partir du cache de validation du serveur (5 minutes) ou du cache de licences signées et liées à la machine (30 jours pour les forfaits mensuels ; jusqu’à l’expiration de l’abonnement pour les forfaits annuels). Une fois le délai de grâce écoulé, le forfait passe en version gratuite et l’accès au SDK est interrompu jusqu’à ce que la machine se connecte au serveur au moins une fois. `chloros-cli status` reste accessible dans le niveau gratuit, ce qui permet de toujours voir la raison du problème. Voir [Connexion à Chloros+](chloros+-login.md).
 
@@ -263,11 +263,11 @@ except chloros_sdk.ChlorosError as e:
     print(f"Chloros error: {e}")
 ```
 
-Toutes les exceptions de pipeline (`ChlorosBackendError`, `ChlorosConnectionError`, `ChlorosLicenseError`, `ChlorosAuthenticationError`, `ChlorosConfigurationError`, `ChlorosProcessingError`) dérivent de `ChlorosError`. Une précision : `ChlorosConnectError` — n&#x27;est déclenché que par `connect_camera` / `connect_array` / `connect_daq_sensor` — provient de l&#x27;exception `Exception`, **et non** de `ChlorosError` ; par conséquent, `except ChlorosError` ne la détectera pas. La hiérarchie complète se trouve dans la [Référence SDK](reference/sdk-reference.md#exceptions).
+Toutes les exceptions de pipeline (`ChlorosBackendError`, `ChlorosConnectionError`, `ChlorosLicenseError`, `ChlorosAuthenticationError`, `ChlorosConfigurationError`, `ChlorosProcessingError`) dérivent de `ChlorosError`. Une précision : `ChlorosConnectError` — n'est déclenché que par `connect_camera` / `connect_array` / `connect_daq_sensor` — provient de l'exception `Exception`, **et non** de `ChlorosError` ; par conséquent, `except ChlorosError` ne la détectera pas. La hiérarchie complète se trouve dans la [Référence SDK](reference/sdk-reference.md#exceptions).
 
 ## Voir aussi
 
-* [Référence SDK](reference/sdk-reference.md) — l&#x27;ensemble complet de l&#x27;API, optimisé pour les assistants IA.
+* [Référence SDK](reference/sdk-reference.md) — l'ensemble complet de l'API, optimisé pour les assistants IA.
 * [Référence CLI](reference/cli-reference.md) — chaque sous-commande CLI correspond à un appel SDK.
 * [Utilisation d’Chloros avec les assistants IA](ai-assistants.md) — recettes de configuration et d’invite de commande `chloros-mcp`.
-* [Téléchargement](download.md) — programmes d&#x27;installation pour Windows et Linux.
+* [Téléchargement](download.md) — programmes d'installation pour Windows et Linux.

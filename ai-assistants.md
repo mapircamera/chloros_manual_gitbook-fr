@@ -1,6 +1,6 @@
 # Utilisation d’Chloros avec des assistants IA
 
-Ce manuel s&#x27;adresse à deux publics : les humains et les assistants IA avec lesquels les humains travaillent de plus en plus souvent. Chaque page présente des valeurs exactes, des paramètres par défaut et des commandes copiables-collables afin qu&#x27;un assistant (Claude, ChatGPT, Copilot, un agent de codage, etc.) puisse créer une automatisation Chloros fonctionnelle dès le premier essai.
+Ce manuel s'adresse à deux publics : les humains et les assistants IA avec lesquels les humains travaillent de plus en plus souvent. Chaque page présente des valeurs exactes, des paramètres par défaut et des commandes copiables-collables afin qu'un assistant (Claude, ChatGPT, Copilot, un agent de codage, etc.) puisse créer une automatisation Chloros fonctionnelle dès le premier essai.
 
 Version de Chloros : **
 
@@ -11,14 +11,14 @@ Version de Chloros : **
 | Ressource | URL | À quoi cela sert |
 | --- | --- | --- |
 | **llms.txt** | `https://mapir.gitbook.io/chloros/llms.txt` | Index lisible par machine de toutes les pages de ce manuel. |
-| **Référence CLI** | `https://mapir.gitbook.io/chloros/reference/cli-reference` | L&#x27;ensemble complet des commandes `chloros-cli` : chaque commande, indicateur, valeur par défaut, code de sortie et règle relative au dossier de sortie. Rédigé pour être utilisé par un LLM. |
-| **Référence SDK** | `https://mapir.gitbook.io/chloros/reference/sdk-reference` | L&#x27;API Python complète de `chloros_sdk` : classes, signatures, exceptions et exemples concrets. Rédigée pour être utilisée par les LLM. |
-| **N&#x27;importe quelle page au format Markdown brut** | ajoutez `.md` à l&#x27;URL de la page | par exemple, `https://mapir.gitbook.io/chloros/reference/sdk-reference.md` renvoie la page au format Markdown brut — idéal pour la coller dans une fenêtre de contexte ou la récupérer depuis un agent. |
+| **Référence CLI** | `https://mapir.gitbook.io/chloros/reference/cli-reference` | L'ensemble complet des commandes `chloros-cli` : chaque commande, indicateur, valeur par défaut, code de sortie et règle relative au dossier de sortie. Rédigé pour être utilisé par un LLM. |
+| **Référence SDK** | `https://mapir.gitbook.io/chloros/reference/sdk-reference` | L'API Python complète de `chloros_sdk` : classes, signatures, exceptions et exemples concrets. Rédigée pour être utilisée par les LLM. |
+| **N'importe quelle page au format Markdown brut** | ajoutez `.md` à l'URL de la page | par exemple, `https://mapir.gitbook.io/chloros/reference/sdk-reference.md` renvoie la page au format Markdown brut — idéal pour la coller dans une fenêtre de contexte ou la récupérer depuis un agent. |
 
 Liens dans le manuel : [Référence CLI](reference/cli-reference.md) · [Référence SDK](reference/sdk-reference.md).
 
 {% hint style="info" %}
-Ces deux pages de référence sont autonomes : un assistant qui en a lu une n&#x27;a pas besoin du reste du manuel pour écrire un script correct.
+Ces deux pages de référence sont autonomes : un assistant qui en a lu une n'a pas besoin du reste du manuel pour écrire un script correct.
 {% endhint %}
 
 ## Laissez votre assistant exécuter Chloros directement : `chloros-mcp`
@@ -43,7 +43,7 @@ Les outils du serveur couvrent les fonctionnalités du [Python SDK](api-python-s
 claude mcp add chloros -- chloros-mcp
 ```
 
-**Claude Desktop :**ajoutez ceci à `claude_desktop_config.json` (**Paramètres &gt; Développeur &gt; Modifier la configuration**permet d’y accéder), puis redémarrez Claude Desktop.**Cursor** utilise la même entrée dans `~/.cursor/mcp.json`.
+**Claude Desktop :**ajoutez ceci à `claude_desktop_config.json` (**Paramètres > Développeur > Modifier la configuration**permet d’y accéder), puis redémarrez Claude Desktop.**Cursor** utilise la même entrée dans `~/.cursor/mcp.json`.
 
 ```json
 {
@@ -55,7 +55,7 @@ claude mcp add chloros -- chloros-mcp
 
 Si le client indique que le serveur n’a pas pu démarrer, `chloros-mcp` ne figure probablement pas dans le fichier `PATH` qu’il détecte : indiquez plutôt le chemin d’accès complet (`where chloros-mcp` sous Windows, `which chloros-mcp` sous Linux).
 
-Chloros doit être installé sur le même ordinateur et vous devez y être connecté, soit via l&#x27;application, soit via `chloros-cli login`, avec un abonnement Chloros+ payant (Copper ou supérieur). Le serveur ne peut pas se connecter à votre place.
+Chloros doit être installé sur le même ordinateur et vous devez y être connecté, soit via l'application, soit via `chloros-cli login`, avec un abonnement Chloros+ payant (Copper ou supérieur). Le serveur ne peut pas se connecter à votre place.
 
 {% hint style="info" %}
 Configuration client pour chaque application, options, chaque outil et comportement d’une exécution : [Serveur MCP (assistants IA)](reference/sdk-reference.md#mcp-server-ai-assistants) dans la référence SDK.
@@ -100,7 +100,7 @@ a reflectance image set into <output/> every 10 seconds for one hour, and
 disconnects cleanly when done (use the context-manager form).
 ```
 
-### 4. Enregistrer les spectres d&#x27;un capteur de lumière DAQ
+### 4. Enregistrer les spectres d'un capteur de lumière DAQ
 
 ```
 
@@ -133,4 +133,4 @@ Une asymétrie qu’un assistant doit connaître : la commande `process()` de l�
 * **Connexion Chloros+ requise.**L’CLI et le SDK nécessitent un niveau d’abonnement**payant** à Chloros+, contrôlé côté serveur : les requêtes échouent avec l’erreur `401 AUTH_REQUIRED` si vous n’êtes pas connecté et avec l’erreur `403 PLAN_UPGRADE_REQUIRED` sur le niveau gratuit. Exécutez `chloros-cli login` une fois par machine avant d’exécuter les scripts générés. Voir [Connexion à Chloros+](chloros+-login.md).
 * **Les commandes de capture pilotent du matériel physique.** Les commandes `lattice` / `daq` / `project`, les objets de session du SDK et les outils de `chloros-mcp` permettent de se connecter à des caméras et capteurs physiques, de diffuser des flux et de les déclencher. Vérifiez un script généré avant sa première exécution, puis exécutez-le en présence du matériel.
 * **Effectuez des contrôles ponctuels des résultats.** Vérifiez les dossiers de sortie et quelques valeurs de pixels avant de publier les résultats. En particulier, les fichiers TIFF de réflectance sont mis à l’échelle par source — consultez la balise XMP `Chloros:PixelScale` (les fichiers LATTICE la contiennent : 32768 = réflectance 1,0 ; ce n’est pas le cas des fichiers Survey3, qui utilisent 65535 = 1,0) au lieu de supposer un diviseur. Les deux pages de référence documentent cela sous la rubrique « Lecture des pixels de réflectance ».
-* **Petits pièges qui peuvent perturber le code généré :**`pool-record` écrit sur le système de fichiers de l’**hôte backend** (par défaut `~/Documents/DAQ Live View/`) ; sur les machines disposant de plusieurs interfaces réseau, privilégiez `daq pool-connect --eth-host <ip-or-hostname>` plutôt que la détection automatique ; utilisez `http://127.0.0.1:5000` (jamais `localhost`) partout où apparaît une URL de backend ; un script parcourant l&#x27;arborescence de sortie d&#x27;un projet doit ignorer les dossiers `clamp_masks/` (leurs fichiers `*_clampmask.tif` sont des masques, pas des images — voir [Formats d&#x27;images de sortie](output-image-formats.md#clamp-masks)) ; et sous Windows, lorsque les chemins d&#x27;accès longs sont désactivés, veillez à ce que les noms de dossiers de projet restent courts — un dossier de projet dont le nom dépasse environ 130 caractères est rejeté avant le début du traitement.
+* **Petits pièges qui peuvent perturber le code généré :**`pool-record` écrit sur le système de fichiers de l’**hôte backend** (par défaut `~/Documents/DAQ Live View/`) ; sur les machines disposant de plusieurs interfaces réseau, privilégiez `daq pool-connect --eth-host <ip-or-hostname>` plutôt que la détection automatique ; utilisez `http://127.0.0.1:5000` (jamais `localhost`) partout où apparaît une URL de backend ; un script parcourant l'arborescence de sortie d'un projet doit ignorer les dossiers `clamp_masks/` (leurs fichiers `*_clampmask.tif` sont des masques, pas des images — voir [Formats d'images de sortie](output-image-formats.md#clamp-masks)) ; et sous Windows, lorsque les chemins d'accès longs sont désactivés, veillez à ce que les noms de dossiers de projet restent courts — un dossier de projet dont le nom dépasse environ 130 caractères est rejeté avant le début du traitement.

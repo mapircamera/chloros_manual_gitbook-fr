@@ -1,6 +1,6 @@
-# L&#x27;onglet « DAQ » dans Chloros
+# L'onglet « DAQ » dans Chloros
 
-L&#x27;onglet « DAQ » — intitulé **Capteurs de lumière** dans la barre latérale de Chloros — constitue l&#x27;interface de contrôle en temps réel des [capteurs de lumière DAQ-U, DAQ-M et DAQ-E](README.md) : connectez des capteurs via n&#x27;importe quel protocole de transport, observez les spectres étalonnés en temps réel, calculez la réflectance en direct à partir d&#x27;une paire de capteurs et enregistrez des fichiers `.daq` directement dans votre projet.
+L'onglet « DAQ » — intitulé **Capteurs de lumière** dans la barre latérale de Chloros — constitue l'interface de contrôle en temps réel des [capteurs de lumière DAQ-U, DAQ-M et DAQ-E](README.md) : connectez des capteurs via n'importe quel protocole de transport, observez les spectres étalonnés en temps réel, calculez la réflectance en direct à partir d'une paire de capteurs et enregistrez des fichiers `.daq` directement dans votre projet.
 
 Cet onglet devient disponible dès que le backend d’Chloros a fini de se lancer. Les graphiques de l’onglet sont alimentés par le service DAQ d’Chloros via une connexion en direct qui se reconnecte automatiquement (délai de 2 à 10 s) en cas d’interruption ; tant que le service est inaccessible, la ligne « État » d’un capteur affiche **Aucun serveur**.
 
@@ -21,12 +21,12 @@ Cliquez sur **Connecter un capteur** en haut de la barre latérale. La boîte de
 | **↻ Actualiser** | Relance immédiatement la recherche du mode de transport sélectionné (désactivé en cours de recherche BLE/Ethernet). |
 | **Connecter le capteur** | Activé une fois qu’un appareil est sélectionné ; le nom s’affiche alors sous la forme `Connecting...` pendant l’établissement de la connexion. |
 
-La détection ne s&#x27;exécute que **lorsque la boîte de dialogue de connexion est affichée à l&#x27;écran** et se répète toutes les 15 secondes pour le transport sélectionné uniquement — le simple fait d&#x27;ouvrir l&#x27;onglet ne lance pas la recherche. En cas d&#x27;échec, la boîte de dialogue affiche : *« Échec de la connexion. Essayez de débrancher puis de rebrancher le capteur, puis cliquez à nouveau sur Connecter. »*
+La détection ne s'exécute que **lorsque la boîte de dialogue de connexion est affichée à l'écran** et se répète toutes les 15 secondes pour le transport sélectionné uniquement — le simple fait d'ouvrir l'onglet ne lance pas la recherche. En cas d'échec, la boîte de dialogue affiche : *« Échec de la connexion. Essayez de débrancher puis de rebrancher le capteur, puis cliquez à nouveau sur Connecter. »*
 
-La barre latérale s&#x27;ouvre automatiquement lorsque votre premier capteur se connecte.
+La barre latérale s'ouvre automatiquement lorsque votre premier capteur se connecte.
 
 {% hint style="info" %}
-**Le DAQ-E n&#x27;apparaît pas ?**Le DAQ-E ne dispose pas de LED d&#x27;état — vérifiez le voyant PoE/liaison sur le commutateur ou le port de l&#x27;injecteur auquel il est branché, et patientez quelques secondes après la mise sous tension pour qu&#x27;il démarre. La machine Chloros doit se trouver sur le même domaine de diffusion (le mDNS ne traverse pas les routeurs). La règle de pare-feu**« Chloros Backend (UDP-In) »** du programme d’installation autorise le mDNS (UDP 5353), les données du DAQ-E (UDP 5002) et le PTP (UDP 319/320) ; un pare-feu tiers doit autoriser les mêmes ports. Deux unités DAQ-E sur un même réseau local sont détectées séparément, chacune sous son propre nom d’hôte `daq-e-<id>.local`.
+**Le DAQ-E n'apparaît pas ?**Le DAQ-E ne dispose pas de LED d'état — vérifiez le voyant PoE/liaison sur le commutateur ou le port de l'injecteur auquel il est branché, et patientez quelques secondes après la mise sous tension pour qu'il démarre. La machine Chloros doit se trouver sur le même domaine de diffusion (le mDNS ne traverse pas les routeurs). La règle de pare-feu**« Chloros Backend (UDP-In) »** du programme d’installation autorise le mDNS (UDP 5353), les données du DAQ-E (UDP 5002) et le PTP (UDP 319/320) ; un pare-feu tiers doit autoriser les mêmes ports. Deux unités DAQ-E sur un même réseau local sont détectées séparément, chacune sous son propre nom d’hôte `daq-e-<id>.local`.
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/v120-daq-device-type.png" alt=""><figcaption>Le type de périphérique propose les options DAQ-U (USB), DAQ-M (Bluetooth) et DAQ-E (Ethernet)</figcaption></figure>
@@ -42,10 +42,8 @@ Chaque capteur connecté dispose d’une ligne (plus une ligne par groupe « Amb
 | Bordure gauche colorée | La couleur du graphique du capteur. |
 | Badge de transport | `DAQ-U` / `DAQ-M` / `DAQ-E`, ou un badge vert `REF` pour un groupe de réflectance « Ambient+Object ». |
 | Nom de l’appareil | Par défaut, il s’agit du numéro de série du capteur (son identifiant stable pour l’étalonnage, les noms de fichiers `.daq` et la correspondance lors de l’importation) ; les noms personnalisés sont conservés pour chaque projet. |
-| Icône **Étalonné** (verte) | S&#x27;affiche lorsque le pack d&#x27;étalonnage d&#x27;usine du capteur est chargé, c&#x27;est-à-dire que les spectres sont exprimés en W/m²/nm. |
-| Icône **Mise à jour disponible** (orange, DAQ-E uniquement) | Le micrologiciel en cours d’exécution est plus ancien que l’image fournie avec cette version d’Chloros
-
-. Pendant une mise à jour, elle affiche la progression en temps réel (`Flashing… N%`, `Restarting sensor…`, puis `Updated X → Y` ou `Failed`). |
+| Icône **Étalonné** (verte) | S'affiche lorsque le pack d'étalonnage d'usine du capteur est chargé, c'est-à-dire que les spectres sont exprimés en W/m²/nm. |
+| Icône **Mise à jour disponible** (orange, DAQ-E uniquement) | Le micrologiciel en cours d’exécution est plus ancien que l’image fournie avec cette version d’Chloros. Pendant une mise à jour, elle affiche la progression en temps réel (`Flashing… N%`, `Restarting sensor…`, puis `Updated X → Y` ou `Failed`). |
 | Œil | Active ou désactive l’affichage de ce capteur sur son graphique. |
 | Roue dentée | Ouvre la fenêtre modale des paramètres propres à chaque capteur (ci-dessous). |
 | ✕ (rouge) | Déconnecte le capteur ou supprime un groupe « Ambient+Object ». |
@@ -84,15 +82,9 @@ Ouvrez-la à l’aide de l’icône en forme de roue dentée sur une ligne de ca
 
 bouton</version\>
 
-**Mettre à jour vers \<version\>** apparaît lorsque cette version d’Chloros
-
-intègre une image de micrologiciel DAQ-E plus récente. La mise à jour s’effectue via le réseau en environ 30 secondes ; le capteur redémarre et se reconnecte automatiquement, et une interruption du transfert laisse le micrologiciel actuel intact. La progression s’affiche en temps réel (`Flashing… N%` → `Restarting sensor…` → `Updated X → Y`), et la cellule indique `Up to date` lorsqu’elle est à jour.
-* **Synchronisation PTP** — l’état PTP en temps réel (revient à `unknown`). Le micrologiciel DAQ-E v1.2.0+ participe au protocole IEEE 1588 PTPv2 en tant qu’horloge esclave uniquement ; le backend de l’hôte Chloros
-
-est le grand maître PTP, et chaque caméra DAQ-E et LATTICE sur le réseau local lui est asservie dans le domaine 0, ce qui permet de maintenir les horodatages à environ 1 ms près.
-* **Réseau**— l’adresse sous laquelle l’appareil fonctionne et la manière dont il l’a obtenue (DHCP, locale de liaison ou statique), ainsi qu’un paramètre enregistré qui s’applique après un redémarrage.**Modifier…**ouvre un formulaire :**Automatique (DHCP)**ou**IP statique**avec une adresse IP, un masque de sous-réseau et une passerelle facultative.**Appliquer et redémarrer** enregistre les modifications, redémarre le capteur et le reconnecte. Une adresse statique en dehors du réseau de cet ordinateur est refusée, car Chloros
-
-ne pourrait pas atteindre le capteur après le redémarrage ; une boîte de dialogue permettant de l’autoriser quand même apparaît alors, pour un ordinateur qui sera réadressé ou acheminé vers ce réseau. **Diffusion à la mise sous tension**permet de définir si le capteur commence à diffuser dès qu’il est mis sous tension, avant que tout logiciel ne se connecte.**Redémarrer le capteur** le redémarre et le reconnecte avec ses paramètres actuels. Un redémarrage est refusé tant que le capteur est en cours d’enregistrement. Nouveauté de la version 1.3.0.
+**Mettre à jour vers \<version\>** apparaît lorsque cette version d’Chloros intègre une image de micrologiciel DAQ-E plus récente. La mise à jour s’effectue via le réseau en environ 30 secondes ; le capteur redémarre et se reconnecte automatiquement, et une interruption du transfert laisse le micrologiciel actuel intact. La progression s’affiche en temps réel (`Flashing… N%` → `Restarting sensor…` → `Updated X → Y`), et la cellule indique `Up to date` lorsqu’elle est à jour.
+* **Synchronisation PTP** — l’état PTP en temps réel (revient à `unknown`). Le micrologiciel DAQ-E v1.2.0+ participe au protocole IEEE 1588 PTPv2 en tant qu’horloge esclave uniquement ; le backend de l’hôte Chloros est le grand maître PTP, et chaque caméra DAQ-E et LATTICE sur le réseau local lui est asservie dans le domaine 0, ce qui permet de maintenir les horodatages à environ 1 ms près.
+* **Réseau**— l’adresse sous laquelle l’appareil fonctionne et la manière dont il l’a obtenue (DHCP, locale de liaison ou statique), ainsi qu’un paramètre enregistré qui s’applique après un redémarrage.**Modifier…**ouvre un formulaire :**Automatique (DHCP)**ou**IP statique**avec une adresse IP, un masque de sous-réseau et une passerelle facultative.**Appliquer et redémarrer** enregistre les modifications, redémarre le capteur et le reconnecte. Une adresse statique en dehors du réseau de cet ordinateur est refusée, car Chloros ne pourrait pas atteindre le capteur après le redémarrage ; une boîte de dialogue permettant de l’autoriser quand même apparaît alors, pour un ordinateur qui sera réadressé ou acheminé vers ce réseau. **Diffusion à la mise sous tension**permet de définir si le capteur commence à diffuser dès qu’il est mis sous tension, avant que tout logiciel ne se connecte.**Redémarrer le capteur** le redémarre et le reconnecte avec ses paramètres actuels. Un redémarrage est refusé tant que le capteur est en cours d’enregistrement. Nouveauté de la version 1.3.0.
 
 Pour un groupe « Ambient+Object », la fenêtre modale en forme d’engrenage affiche uniquement les capteurs sources du groupe, le nom de l’appareil et la couleur de la ligne du graphique.
 
@@ -102,9 +94,7 @@ Pour un groupe « Ambient+Object », la fenêtre modale en forme d’engrenage a
 
 ### Sélection du capuchon
 
-Le menu déroulant **Cap** indique à Chloros
-
-quel capuchon physique est monté sur le diffuseur du capteur, et applique à chaque spectre le profil de correction mesuré en usine pour ce capuchon. Les choix dépendent du modèle :
+Le menu déroulant **Cap** indique à Chloros quel capuchon physique est monté sur le diffuseur du capteur, et applique à chaque spectre le profil de correction mesuré en usine pour ce capuchon. Les choix dépendent du modèle :
 
 | Modèle | Choix de capuchons |
 | --- | --- |
@@ -112,9 +102,7 @@ quel capuchon physique est monté sur le diffuseur du capteur, et applique à ch
 | DAQ-M | Aucun (capteur nu), Sunshine (correcteur cosinus) |
 | DAQ-E | Aucun (capteur nu), champ de vision (FOV) 15°, champ de vision (FOV) 45°, champ de vision (FOV) 90°, Sunshine (correcteur cosinus) |
 
-**Le réglage par défaut pour tous les modèles est « Sunshine » (correcteur cosinus)** — MAPIR
-
-livre chaque DAQ avec le capuchon « Sunshine » installé ; il s’agit de la configuration standard pour une utilisation en extérieur : une vue hémisphérique à 180° avec une erreur de cosinus ≤ ±4 % jusqu&#x27;à 60° et ≤ ±4,5 % jusqu&#x27;à 70° (non recommandé en dessous d&#x27;une élévation solaire d&#x27;environ 15°), avec une atténuation par conception (~12×). Votre sélection est conservée dans le projet.
+**Le réglage par défaut pour tous les modèles est « Sunshine » (correcteur cosinus)** — MAPIR livre chaque DAQ avec le capuchon « Sunshine » installé ; il s’agit de la configuration standard pour une utilisation en extérieur : une vue hémisphérique à 180° avec une erreur de cosinus ≤ ±4 % jusqu'à 60° et ≤ ±4,5 % jusqu'à 70° (non recommandé en dessous d'une élévation solaire d'environ 15°), avec une atténuation par conception (~12×). Votre sélection est conservée dans le projet.
 
 {% hint style="warning" %}
 **Le choix du capuchon doit correspondre au capuchon physiquement installé.**Ni le capteur ni le logiciel ne peuvent détecter quel capuchon est en place. Ce choix détermine à la fois la correction en temps réel et la mention inscrite dans chaque fichier `.daq` — l’atténuation d’environ 12× du capuchon « Sunshine » un changement de capuchon non déclaré entraîne une correction erronée des spectres d’environ ce facteur. (Le retrait puis le remontage du même capuchon se répète à environ 1,5 %.) Ne choisissez**Aucun (capteur nu)** que lorsque le capuchon est physiquement retiré ; sur un DAQ-E, « Aucun » applique toujours un profil géométrique d’usine pour son diffuseur en verre encastré — ce n’est pas une opération nulle — et un DAQ-E nu correspond à une configuration de laboratoire, et non à une configuration de terrain prise en charge.
@@ -152,13 +140,7 @@ La **saturation** n’est pas indiquée sur le graphique lui-même : un capteur 
 Sous le graphique, en vue en liste, actualisé toutes les 500 ms :
 
 * **Tous les modèles** : Échantillon de couleur de la lumière (sRGB à partir de CIE XYZ), Saturé (Oui/Non), CIE 1931 X/Y/Z, Chromaticité x/y, CIE u′/v′, CCT (K), IRC (Ra), longueur d’onde dominante (nm), longueur d’onde de crête (nm), pureté d’excitation, Duv, CIE L\*/a\*/b\* et Munsell H/V/C.
-* **Capteurs étalonnés uniquement**(n&#x27;importe lequel parmi DAQ-U / DAQ-M / DAQ-E une fois que son ensemble d&#x27;étalonnage d&#x27;usine est chargé — le badge vert**Étalonné** sur la ligne du capteur en est l&#x27;indicateur) : Puissance totale (W/m²), Lux photopique (lx), Lux scotopique (lx), rapport S/P, PPFD et PPFD Red
-
-/Green
-
-/Blue
-
-(µmol/m²/s), ainsi que les irradiances opiques — cône S, mélanopique, rhodopique, cône M, cône L (toutes en W/m²).
+* **Capteurs étalonnés uniquement**(n'importe lequel parmi DAQ-U / DAQ-M / DAQ-E une fois que son ensemble d'étalonnage d'usine est chargé — le badge vert**Étalonné** sur la ligne du capteur en est l'indicateur) : Puissance totale (W/m²), Lux photopique (lx), Lux scotopique (lx), rapport S/P, PPFD et PPFD Red /Green /Blue (µmol/m²/s), ainsi que les irradiances opiques — cône S, mélanopique, rhodopique, cône M, cône L (toutes en W/m²).
 
 <!-- SCREENSHOT-NEEDED: list view live data table for a DAQ-E showing both the colorimetric rows and the power-calibrated rows (Total Power, Photopic/Scotopic Lux, PPFD, opic irradiances) -->
 
@@ -171,9 +153,7 @@ Deux capteurs connectés peuvent être combinés pour afficher la réflectance e
 1. En vue en grille, cliquez sur **+**sur une tuile de graphique et choisissez**Combiner ambiant + objet**.
 2. Sélectionnez un capteur **Source de lumière ambiante**et un capteur**Scanner d’objet**(deux capteurs distincts), puis cliquez sur**Créer**.
 
-Chloros
-
-calcule R(λ) = objet(λ) / ambiant(λ) par longueur d’onde à partir des deux flux en temps réel (0 lorsque l’ambiant est ≤ 0). Le libellé du groupe dépend de la classe d’étalonnage des capteurs :
+Chloros calcule R(λ) = objet(λ) / ambiant(λ) par longueur d’onde à partir des deux flux en temps réel (0 lorsque l’ambiant est ≤ 0). Le libellé du groupe dépend de la classe d’étalonnage des capteurs :
 
 * Les deux capteurs sont étalonnés (ensemble chargé) → **« Réflectance apparente »**.
 * L’un des capteurs n’est pas étalonné → **« Réflectance relative »**.
@@ -188,34 +168,10 @@ Le menu **+**propose également l’option**Ajouter un nouveau capteur** avec tr
 
 ### Tableau des indices de végétation
 
-En mode liste, un tableau des indices de végétation apparaît sous le graphique d’un groupe de réflectance ; ces indices sont calculés à partir de la réflectance en temps réel aux centres de bande **bleu 450 / vert 550 / rouge 670 / NIR
+En mode liste, un tableau des indices de végétation apparaît sous le graphique d’un groupe de réflectance ; ces indices sont calculés à partir de la réflectance en temps réel aux centres de bande **bleu 450 / vert 550 / rouge 670 / NIR 800 nm** (valeurs à 4 décimales, `---` lorsque le calcul est impossible ; survolez le nom d’un indice pour afficher son nom complet) :
 
-800 nm** (valeurs à 4 décimales, `---` lorsque le calcul est impossible ; survolez le nom d’un indice pour afficher son nom complet) :
-
-* **Toujours affichés** (invariants d’échelle, quelle que soit la combinaison de capteurs) : NDVI
-
-, GNDVI
-
-, ENDVI, WDRVI
-
-, GRVI
-
-, CVI
-
-, GCI
-
-, MSR.
-* **Uniquement lorsque les deux capteurs sont étalonnés en puissance** (les deux ensembles chargés) : EVI
-
-, SAVI
-
-, OSAVI
-
-, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI
-
-, NLI, MNLI, FCI, GEMI
-
-.
+* **Toujours affichés** (invariants d’échelle, quelle que soit la combinaison de capteurs) : NDVI, GNDVI, ENDVI, WDRVI, GRVI, CVI, GCI, MSR.
+* **Uniquement lorsque les deux capteurs sont étalonnés en puissance** (les deux ensembles chargés) : EVI, SAVI, OSAVI, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI, NLI, MNLI, FCI, GEMI.
 
 <!-- SCREENSHOT-NEEDED: an Ambient+Object reflectance group in list view — reflectance chart labeled "Apparent Reflectance" with the vegetation index table below it showing live NDVI etc. -->
 
@@ -239,13 +195,9 @@ Pour obtenir des valeurs quantitatives d’irradiance, il faut calculer la moyen
 ## Disposition multisenseurs et persistance des projets
 
 * Combinez plusieurs capteurs sur un même graphique (axes partagés), conservez des graphiques distincts (disposition en grille automatique), déplacez les capteurs d’un graphique à l’autre, réorganisez les lignes/tuiles par glisser-déposer et masquez des capteurs individuels à l’aide de l’icône en forme d’œil.
-* Pour chaque projet, Chloros
-
-conserve : les noms des périphériques, les couleurs des graphiques, la taille des graphiques, le mode d’affichage et les paramètres de chaque capteur (temps d’intégration, moyennage des images, état AE, sélection du capuchon).
+* Pour chaque projet, Chloros conserve : les noms des périphériques, les couleurs des graphiques, la taille des graphiques, le mode d’affichage et les paramètres de chaque capteur (temps d’intégration, moyennage des images, état AE, sélection du capuchon).
 * **La réouverture d’un projet reconnecte automatiquement ses capteurs** par adresse — port COM pour DAQ-U, périphérique BLE pour DAQ-M, nom d’hôte mDNS pour DAQ-E (résolu même si l’adresse IP de l’appareil a changé) — et réapplique le profil de capteur enregistré, le moyennage des images, l’état AE et le temps d’intégration manuel de chaque capteur.***
 
 ## Appairage de la caméra (DLS)
 
-Il n’y a rien à coupler. Contrairement aux flux de travail DLS des drones qui associent un capteur de lumière à une caméra en amont, Chloros
-
-fait correspondre les données DAQ aux images en aval : au moment de l’importation/du traitement, les mesures `.daq` sont interpolées à l’horodatage d’exposition de chaque capture. Enregistrez avec n’importe quel capteur connecté (le `.daq` s’ajoute automatiquement au projet), et le traitement de la réflectance détermine les valeurs appropriées en fonction de l’heure — consultez la section [Capteurs de lumière DAQ](README.md) pour savoir comment les données de rayonnement descendant sont utilisées. Pour les captures LATTICE **en direct**, sélectionnez plutôt le capteur dans le menu déroulant**Capteur de lumière** de l’onglet Caméras ; chaque capture enregistre alors la mesure utilisée, associée uniquement aux caméras de cette capture (voir [Workflows de réflectance](reflectance.md)).</version\>
+Il n’y a rien à coupler. Contrairement aux flux de travail DLS des drones qui associent un capteur de lumière à une caméra en amont, Chloros fait correspondre les données DAQ aux images en aval : au moment de l’importation/du traitement, les mesures `.daq` sont interpolées à l’horodatage d’exposition de chaque capture. Enregistrez avec n’importe quel capteur connecté (le `.daq` s’ajoute automatiquement au projet), et le traitement de la réflectance détermine les valeurs appropriées en fonction de l’heure — consultez la section [Capteurs de lumière DAQ](README.md) pour savoir comment les données de rayonnement descendant sont utilisées. Pour les captures LATTICE **en direct**, sélectionnez plutôt le capteur dans le menu déroulant**Capteur de lumière** de l’onglet Caméras ; chaque capture enregistre alors la mesure utilisée, associée uniquement aux caméras de cette capture (voir [Workflows de réflectance](reflectance.md)).</version\>
