@@ -107,7 +107,7 @@ Pour les projets contenant des captures LATTICE, chaque image LATTICE importée 
 * Le traitement *Survey3
 
 * n’est pas affecté par ces quatre commutateurs.
-* Les produits de radiance et de réflectance des caméras multispectrales M3C peuvent également écrire un ****masque de limitation** par pixel dans un dossier `clamp_masks/` situé à côté des dossiers de produits, en enregistrant les endroits où le démixage des bandes a écrêté une valeur négative à zéro. Voir [Formats d’images de sortie](../output-image-formats.md#clamp-masks).
+* Les produits de radiance et de réflectance des caméras multispectrales M3C peuvent également écrire un **masque de limitation** par pixel dans un dossier `clamp_masks/` situé à côté des dossiers de produits, en enregistrant les endroits où le démixage des bandes a écrêté une valeur négative à zéro. Voir [Formats d’images de sortie](../output-image-formats.md#clamp-masks).
 
 Ces quatre commutateurs existent également en mode sans interface graphique sous le nom `chloros-cli process --debayered / --preview / --radiance / --reflectance`. Ils ont remplacé l’ancien indicateur CLI `--radiometric-output`, qui n’existe plus.
 

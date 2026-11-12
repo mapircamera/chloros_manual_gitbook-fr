@@ -206,7 +206,7 @@ Les surfaces de capture des réseaux se divisent clairement en **niveau surveill
 
 | Flux de travail | Niveau | Ce qu’il enregistre | Interface graphique | Interface CLI |
 | --- | --- | --- | --- | --- |
-| **Capture**(images fixes) | Analyse | Un groupe d’images synchronisées par passage ; fichiers par caméra à chaque niveau d’exportation sélectionné (brut/débayérisé/radiance/réflectance/aperçu/index) + fichier sidecar `.daq` | Bouton****Capturer tout** + Paramètres de capture | `lattice array-capture` |
+| **Capture**(images fixes) | Analyse | Un groupe d’images synchronisées par passage ; fichiers par caméra à chaque niveau d’exportation sélectionné (brut/débayérisé/radiance/réflectance/aperçu/index) + fichier sidecar `.daq` | Bouton**Capturer tout** + Paramètres de capture | `lattice array-capture` |
 | **Enregistrer la vidéo d’index** | Surveillance | Le composite d’index combiné en direct tel qu’affiché — 8 bits, résolution d’aperçu, LUT intégrée. Depuis l’CLI, sans interface graphique ouverte, le backend effectue le rendu de l’NDVI (ou `--expr`) du réseau de capteurs une fois celui-ci aligné ; un enregistrement qui n’écrit aucune image échoue | ● Enregistrement d’une vidéo d’index (matrices combinées) | `lattice array-record` |
 | **Série brute → création d’une vidéo**| Analyse | Images brutes du capteur à la fréquence d’acquisition maximale + manifeste + `.daq`, puis reconstruction hors ligne en vidéo calibrée de radiance / réflectance / indice, synchronisée avec les relevés DAQ | ⦿ Enregistrement d’une série brute →**Création d’une vidéo** | `lattice array-burst` → `lattice array-build-video` |
 
