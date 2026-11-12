@@ -34,7 +34,9 @@ dans la barre latérale gauche
 * **Options** : `Default (512 px)`, `1024 px`, `2048 px`, `Full resolution`
 * **Par défaut** : Par défaut (512 px)
 * **Description** : Résolution (côté le plus long, en pixels) à laquelle les vignettes de la grille d'images sont affichées. Des valeurs plus élevées offrent un rendu plus net lors du zoom, mais ralentissent le chargement et consomment davantage de mémoire. La résolution maximale correspond à la taille d'origine de l'image.
-* **Remarque** : Affichage uniquement — cela n’affecte jamais le traitement ni les fichiers exportés.***
+* **Remarque** : Affichage uniquement — cela n’affecte jamais le traitement ni les fichiers exportés.
+
+***
 
 ## Détection des cibles
 
@@ -188,7 +190,9 @@ Les analyses de cibles **mesurées** par unité sont recherchées à l’aide du
   * Une caméra + une broche : la broche 2 est automatiquement réglée sur « Ne pas utiliser »
   * Une caméra + deux broches : la broche 2 est automatiquement réglée sur « Ne pas utiliser »
   * Plusieurs caméras : sélection manuelle requise
-* **Remarque** : une même caméra ne peut pas être attribuée simultanément à la broche 1 et à la broche 2.***
+* **Remarque** : une même caméra ne peut pas être attribuée simultanément à la broche 1 et à la broche 2.
+
+***
 
 ## Capteur de lumière DAQ
 
@@ -209,7 +213,9 @@ Chaque ligne affiche le fichier, le modèle de capteur et la correction du capuc
 * **Description** : `Auto` utilise le cap enregistré dans chaque fichier (le cap Sunshine est supposé lorsque rien n’a été enregistré, mais les DAQ-U, DAQ-M et DAQ-E sont livrés sans cap et Chloros ne peut pas voir ce qui est installé, le traitement affiche donc un avertissement concernant un cap supposé : choisissez le cap qui était installé). Le choix d’un cap spécifique remplace **tous** les fichiers de rayonnement descendant du projet, à l’exception de ceux d’un DAQ-E-S, dont le diffuseur fait partie de son étalonnage ; un projet composé uniquement de DAQ-E-S n’affiche pas de liste déroulante : les enregistrements bruts sont corrigés avec celui-ci, et les enregistrements comportant déjà un capuchon sont ré-étalonnés (la correction enregistrée est annulée et celle sélectionnée est appliquée).
 * **Important** : le capuchon sélectionné doit correspondre à celui qui était physiquement installé lors de l’enregistrement. Ni le capteur ni le logiciel ne peuvent détecter le capuchon physique — un identifiant de capuchon incorrect entraîne une correction erronée des spectres.
 
-Il existe délibérément **un seul** paramètre valable pour l’ensemble du projet plutôt que des menus déroulants par fichier : ce réglage s’applique à toutes les sources descendantes du projet.***
+Il existe délibérément **un seul** paramètre valable pour l’ensemble du projet plutôt que des menus déroulants par fichier : ce réglage s’applique à toutes les sources descendantes du projet.
+
+***
 
 ## Alignement des réseaux
 

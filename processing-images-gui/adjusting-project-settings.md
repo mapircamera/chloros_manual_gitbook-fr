@@ -153,7 +153,9 @@ Cette section n’apparaît **que** lorsqu’au moins une image du projet compor
 
 * **Appliquer l’alignement du réseau** (par défaut : activé) : déforme chaque produit traité (débayérisé / aperçu / radiance / réflectance / indice) pour l’adapter à la géométrie de référence commune du réseau. Désactivé = exportation dans la géométrie native du capteur.
 * **Recadrer sur le chevauchement commun** (par défaut : activé) : recadre les exportations alignées sur la zone commune à tous les modules, afin que chaque bande ait la même empreinte. Désactivé conserve la zone complète du capteur (remplissage noir en dehors de la source).
-* **Rééchantillonnage**:**Bilinéaire (lisse, par défaut)**,**Proche (conserve les valeurs exactes)**— sans mélange entre pixels, pour une analyse radiométrique rigoureuse — ou**Cubique (plus net)**.***
+* **Rééchantillonnage**:**Bilinéaire (lisse, par défaut)**,**Proche (conserve les valeurs exactes)**— sans mélange entre pixels, pour une analyse radiométrique rigoureuse — ou**Cubique (plus net)**.
+
+***
 
 ## Enregistrement et chargement des paramètres
 

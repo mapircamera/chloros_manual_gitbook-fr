@@ -78,7 +78,9 @@ Chaque image comportant des données GPS est associée à un marqueur situé à 
 | Fournisseur        | Remarques                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Large couverture mondiale ; prend en charge les quatre types de tuiles                                                                                                            |
-| **Esri ArcGIS**| Images aériennes souvent de plus haute résolution dans certaines régions. Le type de tuile**Terrain** n'est pas proposé pour Esri et son bouton est désactivé lorsque Esri est sélectionné |***
+| **Esri ArcGIS**| Images aériennes souvent de plus haute résolution dans certaines régions. Le type de tuile**Terrain** n'est pas proposé pour Esri et son bouton est désactivé lorsque Esri est sélectionné |
+
+***
 
 ## Types de tuiles cartographiques
 
@@ -93,7 +95,9 @@ Choisissez le type de couche cartographique à l’aide des boutons (de gauche �
 | **Satellite**        | Images satellite détaillées, sans libellés — l’option nécessitant le plus de bande passante |
 | **Hybride** (par défaut) | Images satellite sur lesquelles sont superposées les routes et les libellés                |
 
-L'onglet « Carte » s'ouvre sur le mode **Hybride**. Votre choix s'applique également au changement de fournisseur lorsque celui-ci le prend en charge.***
+L'onglet « Carte » s'ouvre sur le mode **Hybride**. Votre choix s'applique également au changement de fournisseur lorsque celui-ci le prend en charge.
+
+***
 
 ## Navigation sur la carte
 
@@ -141,7 +145,9 @@ L'onglet « Carte » s'ouvre sur le mode **Hybride**. Votre choix s'applique ég
 
 ### La carte est vierge ou le chargement des tuiles s'arrête
 
-Les fournisseurs de tuiles sont des services en ligne. Si les tuiles cessent d’arriver, vérifiez la connexion réseau de l’appareil, puis essayez de changer de fournisseur. Si vous aviez un zoom très poussé, appuyez sur le bouton de réinitialisation **×** pour revenir à un niveau de zoom normal et laissez la carte redemander les tuiles.***
+Les fournisseurs de tuiles sont des services en ligne. Si les tuiles cessent d’arriver, vérifiez la connexion réseau de l’appareil, puis essayez de changer de fournisseur. Si vous aviez un zoom très poussé, appuyez sur le bouton de réinitialisation **×** pour revenir à un niveau de zoom normal et laissez la carte redemander les tuiles.
+
+***
 
 ## Pages associées
 

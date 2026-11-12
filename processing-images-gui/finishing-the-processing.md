@@ -112,7 +112,9 @@ La réflectance est stockée sous forme de nombre entier DN, et **la valeur DN c
 | LATTICE (M3C/M3M) | **32768** (marge jusqu’à ρ 2,0) | La balise XMP `Chloros:PixelScale=32768` est apposée sur le fichier |
 | Survey3          | **65535** (limité à ρ 1,0)     | Pas de balise `Chloros:PixelScale` — cette absence est le signe distinctif (les produits Survey3 comportent d’autres balises de traitement `Chloros:*`) |
 
-**Lisez la balise `Chloros:PixelScale` et divisez par ce chiffre** plutôt que de supposer systématiquement une valeur de 65535 — diviser la réflectance LATTICE par 65535 réduit silencieusement de moitié chaque valeur. Un fichier de réflectance antérieur à la version 1.3.0, enregistré en 8 bits, a été écrêté, et non redimensionné, et ne comporte pas de balise d’échelle : réexportez-le en 16 bits ou 32 bits au lieu de le diviser. Voir [Formats d’image de sortie](../output-image-formats.md) pour plus de détails.***
+**Lisez la balise `Chloros:PixelScale` et divisez par ce chiffre** plutôt que de supposer systématiquement une valeur de 65535 — diviser la réflectance LATTICE par 65535 réduit silencieusement de moitié chaque valeur. Un fichier de réflectance antérieur à la version 1.3.0, enregistré en 8 bits, a été écrêté, et non redimensionné, et ne comporte pas de balise d’échelle : réexportez-le en 16 bits ou 32 bits au lieu de le diviser. Voir [Formats d’image de sortie](../output-image-formats.md) pour plus de détails.
+
+***
 
 ## Métadonnées conservées lors des exportations
 
@@ -167,7 +169,9 @@ Pour conserver une trace du traitement ou pour l'envoyer au support MAPIR :
 3. Joignez-le à la documentation du projet
 4. Envoyez-le au support MAPIR si vous rencontrez des problèmes
 
-Pour signaler un problème directement à MAPIR, utilisez l’icône en forme d’insecte (**Signaler un bug**) en haut de l’onglet « Journal de débogage » — voir [Signaler un bug depuis l’onglet « Journal de débogage »](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+Pour signaler un problème directement à MAPIR, utilisez l’icône en forme d’insecte (**Signaler un bug**) en haut de l’onglet « Journal de débogage » — voir [Signaler un bug depuis l’onglet « Journal de débogage »](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## Problèmes courants liés aux résultats et solutions
 

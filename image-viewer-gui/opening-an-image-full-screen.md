@@ -57,7 +57,9 @@ Le grossissement « effectif » tient compte de la taille du bloc GSD : avec une
 | **←**                           | Plein écran | Image précédente                      |
 | **Ctrl + R**                    | Plein écran | Réinitialiser l'index/le bac à sable LUT         |
 | **Ctrl + `+`**/**Ctrl + `=`** | Grille        | Vignettes plus grandes (4 px par pression)  |
-| **Ctrl + `−`**                  | Grille        | Vignettes plus petites (4 px par pression) |***
+| **Ctrl + `−`**                  | Grille        | Vignettes plus petites (4 px par pression) |
+
+***
 
 ## Valeurs du curseur
 
@@ -100,7 +102,9 @@ La visionneuse, le bac à sable d’index/LUT et l’exportation d’index déte
 Deux conséquences à connaître :
 
 * Un **pourcentage 32 bits**TIFF stocke DN/65535 sous forme de nombre à virgule flottante, tandis qu’un**8 bits** PNG/JPG stocke DN × 255/65535 — la visionneuse convertit les deux valeurs avant d’afficher un pourcentage.
-* Un cas ne peut pas être récupéré : une **exportation TIFF sur 8 bits d’une capture provenant d’une source sur 8 bits** est écrêtée à la plage 0–255 au lieu d’être redimensionnée, et ne comporte délibérément aucune balise d’échelle. Pour ces fichiers, le panneau affiche uniquement les valeurs DN, sans colonne de pourcentage. Il s’agit là d’une réponse honnête, et non d’un bug.***
+* Un cas ne peut pas être récupéré : une **exportation TIFF sur 8 bits d’une capture provenant d’une source sur 8 bits** est écrêtée à la plage 0–255 au lieu d’être redimensionnée, et ne comporte délibérément aucune balise d’échelle. Pour ces fichiers, le panneau affiche uniquement les valeurs DN, sans colonne de pourcentage. Il s’agit là d’une réponse honnête, et non d’un bug.
+
+***
 
 ## L’histogramme du calque
 
@@ -126,7 +130,9 @@ Trois boutons se trouvent au-dessus de l'histogramme :
 | **INDEX**| Activé      | N'apparaît que lorsqu'un index est actif. Fait basculer l'histogramme des bandes sources vers la**distribution des valeurs d'index**, les deux seuils de coupure étant représentés par des lignes pointillées orange et la valeur d'index du curseur par une ligne blanche                                                          |
 | **RGB**| Désactivé     | Passe de la courbe combinée aux courbes par canal. Sur un capteur monochrome, ce bouton affiche**MONO** et est désactivé — il n’y a qu’un seul canal à afficher                                                                                                                                  |
 
-L’histogramme est calculé à partir des **blocs visibles**, et non des pixels sources situés derrière eux : modifiez la taille de bloc GSD et la distribution est recalculée, de sorte que l’histogramme, le marqueur du curseur et l’image affichée concordent toujours.***
+L’histogramme est calculé à partir des **blocs visibles**, et non des pixels sources situés derrière eux : modifiez la taille de bloc GSD et la distribution est recalculée, de sorte que l’histogramme, le marqueur du curseur et l’image affichée concordent toujours.
+
+***
 
 ## Taille de bloc GSD
 
@@ -185,7 +191,9 @@ Appliquez des indices multispectraux et des tables de correspondance (LUT) de co
 
 3. Choisissez le filtre de votre caméra et une formule d’indice, puis faites glisser les cercles de canal vers les emplacements de la formule
 4. Ajoutez une LUT et sélectionnez un dégradé, des seuils et un mode de rognage
-5. Consultez les valeurs au niveau du curseur, puis enregistrez le résultat avec **Exporter/Enregistrer l’image(s)**Consultez [Index/LUT Sandbox](index-lut-sandbox.md) pour le guide complet.***
+5. Consultez les valeurs au niveau du curseur, puis enregistrez le résultat avec **Exporter/Enregistrer l’image(s)**Consultez [Index/LUT Sandbox](index-lut-sandbox.md) pour le guide complet.
+
+***
 
 ## Dépannage
 

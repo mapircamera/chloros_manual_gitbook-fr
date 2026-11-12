@@ -180,7 +180,9 @@ Une fois lancé, l’ensemble du pipeline s’exécute automatiquement :
 * Une exécution arrêtée rend compte fidèlement de ce qu’elle a accompli (voir les lignes `[RUN-SUMMARY]` dans le journal)
 * Un nouveau traitement relance le pipeline depuis le début
 
-**Conseil de planification :** pour les très grands projets, envisagez de traiter par lots ou d’utiliser l’interface en ligne de commande (CLI) pour un meilleur contrôle.***
+**Conseil de planification :** pour les très grands projets, envisagez de traiter par lots ou d’utiliser l’interface en ligne de commande (CLI) pour un meilleur contrôle.
+
+***
 
 ## Suivi de votre traitement
 

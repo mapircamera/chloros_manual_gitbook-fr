@@ -136,7 +136,9 @@ Deux règles régissent ces chiffres :
 * Un thread qui est le **seul** actif se voit attribuer l’allocation maximale de son profil.
 * Lorsque plusieurs tâches GPU *lourdes* sont actives, l’allocation de base de chaque tâche lourde est répartie entre elles (sans jamais descendre en dessous du minimum configuré).
 
-La valeur effectivement utilisée lors de l’exécution est la **plus faible** entre l’allocation du profil de la plateforme et la recommandation en temps réel du moniteur de mémoire GPU ; ainsi, une carte très sollicitée l’emporte toujours sur un profil optimiste.***
+La valeur effectivement utilisée lors de l’exécution est la **plus faible** entre l’allocation du profil de la plateforme et la recommandation en temps réel du moniteur de mémoire GPU ; ainsi, une carte très sollicitée l’emporte toujours sur un profil optimiste.
+
+***
 
 ## Traitement tenant compte des textures
 

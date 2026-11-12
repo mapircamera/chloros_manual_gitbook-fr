@@ -10,7 +10,8 @@ Chloros 1.3.0 offre une prise en charge native sous Linux de la **CLI**et du**Py
 
 ## Tableau de prise en charge des plateformes
 
-| Fonctionnalité | Windows (interface graphique) | Windows (CLI/SDK) | Linux amd64 (CLI/ --- | --- | --- | --- |
+| Fonctionnalité | Windows (interface graphique) | Windows (CLI/SDK) | Linux amd64 (CLI/SDK) | Linux arm64 / Jetson (CLI/SDK) |
+| --- | --- | --- | --- | --- |
 | **Interface graphique de bureau** | Oui | N/A | Non | Non |
 | **Interface CLI** (`chloros-cli`) | Oui | Oui | Oui | Oui |
 | **SDK Python** (`chloros-sdk`) | Oui | Oui | Oui | Oui |
@@ -22,7 +23,9 @@ Chloros 1.3.0 offre une prise en charge native sous Linux de la **CLI**et du**Py
 | **Débayérisation sensible aux textures** (nécessite un GPU CUDA) | Oui (Chloros+) | Oui (Chloros+) | Oui (Chloros+) | Oui (Chloros+) |
 | **Adaptation dynamique des calculs** | Oui | Oui | Oui | Oui |
 | **Backend en tant que service système** (`chloros-backend@<user>.service`) | Non | Non | Oui (activation optionnelle) | Oui (activation optionnelle) |
-| **Mise à jour sur place** (`chloros-cli update`) | Non (exécuter le programme d'installation) | Non (exécuter le programme d'installation) | Oui | Oui |***
+| **Mise à jour sur place** (`chloros-cli update`) | Non (exécuter le programme d'installation) | Non (exécuter le programme d'installation) | Oui | Oui |
+
+***
 
 ## Architectures prises en charge
 
@@ -35,7 +38,9 @@ Chloros 1.3.0 offre une prise en charge native sous Linux de la **CLI**et du**Py
 
 * **Ubuntu 22.04 LTS ou version plus récente** (amd64)
 * **Debian 12 ou version plus récente** (amd64)
-* **NVIDIA JetPack 6** (arm64 — plateformes Jetson Orin)***
+* **NVIDIA JetPack 6** (arm64 — plateformes Jetson Orin)
+
+***
 
 ## Ce dont bénéficient les utilisateurs Linux
 
@@ -54,7 +59,9 @@ Chloros 1.3.0 offre une prise en charge native sous Linux de la **CLI**et du**Py
 
 * **Interface graphique de bureau** — pas d’interface graphique ; toutes les interactions s’effectuent via la CLI ou le Python SDK
 * **Visionneuse d’images** — pas de visionneuse d’images interactive, de vue en grille ni de marqueurs sur la carte
-* **Gestion visuelle des projets** — les projets sont créés et pilotés via des commandes CLI et des appels SDK (le matériel lui-même — caméras, capteurs, capture — reste entièrement contrôlable depuis le terminal)***
+* **Gestion visuelle des projets** — les projets sont créés et pilotés via des commandes CLI et des appels SDK (le matériel lui-même — caméras, capteurs, capture — reste entièrement contrôlable depuis le terminal)
+
+***
 
 ## Conditions de licence
 

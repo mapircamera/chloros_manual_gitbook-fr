@@ -71,7 +71,9 @@ Pour consulter la référence complète des formules — les trois listes de pr�
 
 ### Avec l’option « Index » cochée mais sans LUT
 
-L’image est affichée en **niveaux de gris**, étirée entre les deux valeurs de seuil. Ce rendu est intentionnel : l’image d’indice est constituée de données scalaires, et les niveaux de gris en constituent le rendu le plus fidèle. Ajoutez une table de correspondance (LUT) lorsque vous souhaitez obtenir des couleurs.***
+L’image est affichée en **niveaux de gris**, étirée entre les deux valeurs de seuil. Ce rendu est intentionnel : l’image d’indice est constituée de données scalaires, et les niveaux de gris en constituent le rendu le plus fidèle. Ajoutez une table de correspondance (LUT) lorsque vous souhaitez obtenir des couleurs.
+
+***
 
 ## Utilisation des tables de correspondance (LUT)
 
@@ -135,7 +137,9 @@ Exemple de fenêtres NDVI :
 | Végétation saine uniquement                 | 0,5  | 0,9 |
 | Mettre l’accent sur le stress                | 0,2  | 0,5 |
 
-Le fait de réduire la fenêtre augmente le contraste à l’intérieur de votre zone d’intérêt et fait sortir tout le reste de la plage — c’est alors que le **mode de découpage** détermine ce qu’il advient de ces éléments.***
+Le fait de réduire la fenêtre augmente le contraste à l’intérieur de votre zone d’intérêt et fait sortir tout le reste de la plage — c’est alors que le **mode de découpage** détermine ce qu’il advient de ces éléments.
+
+***
 
 ## Modes de rognage
 

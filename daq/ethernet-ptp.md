@@ -102,4 +102,4 @@ Détails pour les utilisateurs exigeant un alignement strict :
 | Domaine de diffusion | L’hôte et le capteur se trouvent sur le même segment L2 ; le mDNS ne s’achemine pas |
 | Pare-feu | Windows : la règle **Chloros Backend (UDP-In)** du programme d’installation autorise le flux DAQ-E (UDP 5002), le mDNS (5353) et le PTP (319/320) ; un pare-feu tiers doit être configuré de la même manière. Linux : le fichier `.deb` ouvre ces ports dans `ufw` / `firewalld` uniquement si le pare-feu était actif au moment de l’installation — autorisez-les vous-même si le pare-feu a été activé ultérieurement |
 | Hôte multi-carte réseau | La découverte parcourt le mDNS avec une solution de secours ARP ; `--eth-host <ip-or-hostname>` ignore la découverte et se connecte directement |
-| Nouvelle analyse via l’interface graphique | La découverte ne s’exécute que tant que la boîte de dialogue de connexion est ouverte ; utilisez « Actualiser » |</version>
+| Nouvelle analyse via l’interface graphique | La découverte ne s’exécute que tant que la boîte de dialogue de connexion est ouverte ; utilisez « Actualiser » |

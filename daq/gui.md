@@ -196,7 +196,9 @@ Pour obtenir des valeurs quantitatives d’irradiance, il faut calculer la moyen
 
 * Combinez plusieurs capteurs sur un même graphique (axes partagés), conservez des graphiques distincts (disposition en grille automatique), déplacez les capteurs d’un graphique à l’autre, réorganisez les lignes/tuiles par glisser-déposer et masquez des capteurs individuels à l’aide de l’icône en forme d’œil.
 * Pour chaque projet, Chloros conserve : les noms des périphériques, les couleurs des graphiques, la taille des graphiques, le mode d’affichage et les paramètres de chaque capteur (temps d’intégration, moyennage des images, état AE, sélection du capuchon).
-* **La réouverture d’un projet reconnecte automatiquement ses capteurs** par adresse — port COM pour DAQ-U, périphérique BLE pour DAQ-M, nom d’hôte mDNS pour DAQ-E (résolu même si l’adresse IP de l’appareil a changé) — et réapplique le profil de capteur enregistré, le moyennage des images, l’état AE et le temps d’intégration manuel de chaque capteur.***
+* **La réouverture d’un projet reconnecte automatiquement ses capteurs** par adresse — port COM pour DAQ-U, périphérique BLE pour DAQ-M, nom d’hôte mDNS pour DAQ-E (résolu même si l’adresse IP de l’appareil a changé) — et réapplique le profil de capteur enregistré, le moyennage des images, l’état AE et le temps d’intégration manuel de chaque capteur.
+
+***
 
 ## Appairage de la caméra (DLS)
 

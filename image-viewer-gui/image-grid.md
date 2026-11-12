@@ -10,7 +10,9 @@ Utilisez le curseur de zoom en haut à droite pour ajuster la taille des vignett
 * **Ctrl + `+`**/**Ctrl + `=`**et**Ctrl + `−`** modifient la taille par incréments de 4 px à chaque pression. La plage de réglage s'arrête à 64 px à la plus petite valeur et, à la plus grande valeur, à la taille permettant d'afficher exactement deux vignettes par ligne dans la fenêtre actuelle.
 * La taille que vous choisissez est enregistrée avec le projet (`UI → Grid thumbnail size` dans `project.json`, par défaut `160`) ; ainsi, la rouvrir permet de la rétablir.
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>La *résolution* des vignettes est un paramètre distinct de la *taille* des vignettes : voir **Affichage → Résolution des vignettes d’image** dans [Paramètres du projet](../project-settings/project-settings.md) (par défaut 512 px sur le côté le plus long). La taille correspond à la dimension de la tuile affichée ; la résolution correspond au niveau de détail utilisé pour la remplir.***
+<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>La *résolution* des vignettes est un paramètre distinct de la *taille* des vignettes : voir **Affichage → Résolution des vignettes d’image** dans [Paramètres du projet](../project-settings/project-settings.md) (par défaut 512 px sur le côté le plus long). La taille correspond à la dimension de la tuile affichée ; la résolution correspond au niveau de détail utilisé pour la remplir.
+
+***
 
 ## La barre d’outils de la grille
 

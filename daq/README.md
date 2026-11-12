@@ -17,7 +17,9 @@ MAPIR mesurent la lumière ambiante sous forme de spectres étalonnés radiomét
 | --- | --- | --- |
 | **DAQ-U** | USB (série) | balayage du port série |
 | **DAQ-M** | Bluetooth Low Energy | balayage BLE par nom |
-| **DAQ-E** | Ethernet (IPv4, alimentation PoE) | mDNS `_daq-e._tcp` (nom d’hôte `daq-e-<id>.local`) |**DAQ-E-S (nouveau dans la version 1.3.0).** Un DAQ-E équipé d’un diffuseur fixe et d’un capteur d’inclinaison. Chloros le répertorie sous le nom `DAQ-E-S` et le fait fonctionner exactement comme un DAQ-E, à l’exception qu’il n’effectue aucune correction de cap et que chaque mesure inclut l’inclinaison, le roulis et le tangage de l’appareil. Voir [DAQ-E-S : diffuseur fixe et inclinaison](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
+| **DAQ-E** | Ethernet (IPv4, alimentation PoE) | mDNS `_daq-e._tcp` (nom d’hôte `daq-e-<id>.local`) |
+
+**DAQ-E-S (nouveau dans la version 1.3.0).** Un DAQ-E équipé d’un diffuseur fixe et d’un capteur d’inclinaison. Chloros le répertorie sous le nom `DAQ-E-S` et le fait fonctionner exactement comme un DAQ-E, à l’exception qu’il n’effectue aucune correction de cap et que chaque mesure inclut l’inclinaison, le roulis et le tangage de l’appareil. Voir [DAQ-E-S : diffuseur fixe et inclinaison](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 Ces trois modèles utilisent le même protocole de communication et fournissent des données identiques :
 
