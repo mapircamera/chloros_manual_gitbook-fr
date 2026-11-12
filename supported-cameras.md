@@ -21,7 +21,7 @@ La gamme LATTICE est un système de caméras multispectrales modulaires basé su
 
 ```
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
-```.
+```
 
 Chloros l'affiche avec le préfixe `LATT-` (par exemple `LATT-M3M-L41-F550`), et cette chaîne de modèle gère tout en aval : le profil du capteur, la configuration des bandes et l’étalonnage sont déterminés automatiquement ; il n’y a rien à configurer pour chaque caméra. Le numéro d’objectif correspond au **champ de vision horizontal en degrés** : `L41` = étroit 41°, `L87` = large 87°.
 

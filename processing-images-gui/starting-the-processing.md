@@ -78,7 +78,11 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 1. **Détection** (Thread 1) – Recherche des cibles d’étalonnage
 2. **Analyse** (thread 2) – Examen des métadonnées de l’image et calcul de l’étalonnage
 3. **Étalonnage** (thread 3) – Débayérisation, correction du vignettage, étalonnage, calcul de l’indice
-4. **Exportation** (thread 4) – Enregistrement des images traitées et des indices**Interaction avec la barre de progression :*** **Passez la souris** sur la barre pour afficher le menu déroulant détaillé des 4 étapes
+4. **Exportation** (thread 4) – Enregistrement des images traitées et des indices
+
+**Interaction avec la barre de progression :**
+
+* **Passez la souris** sur la barre pour afficher le menu déroulant détaillé des 4 étapes
 * **Cliquez** sur la barre de progression pour figer le menu déroulant à l'écran
 * **Cliquez à nouveau** pour débloquer et masquer le menu**Temps de traitement :**
 
@@ -116,7 +120,9 @@ Chloros fonctionne selon deux modes de traitement différents en fonction de vot
 
 ### Étape 3 : Étalonnage
 
-**Ce que fait Chloros :*** **Correction du vignetage** : Supprime l’assombrissement des bords dû à l’objectif
+**Ce que fait Chloros :**
+
+* **Correction du vignetage** : Supprime l’assombrissement des bords dû à l’objectif
 * **Étalonnage de la réflectance** : normalise à l’aide des valeurs de réflectance cibles et/ou des données de rayonnement descendant issues de l’acquisition de données (DAQ)
 * Applique les corrections à toutes les bandes/canaux
 * Utilise une référence d’étalonnage appropriée pour chaque image en fonction de l’horodatage

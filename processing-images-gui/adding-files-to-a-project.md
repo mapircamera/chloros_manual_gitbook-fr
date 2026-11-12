@@ -57,7 +57,11 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Cochez la case « Ajouter le dossier » à la racine des captures** (`output/` ci-dessus). Lorsque le dossier sélectionné ne contient aucune image mais comporte des sous-dossiers, Chloros les explore automatiquement — les sous-dossiers de ce niveau ainsi que le dossier racine `.daq` sont tous récupérés en une seule fois.**Fonctionnement de l’importation des captures :*** Chaque capture est importée sous forme d’une **seule image**, regroupée par capture (et non pas une entrée par niveau). Les autres niveaux de la même capture apparaissent comme des modes d’affichage de cette image unique.
+**Cochez la case « Ajouter le dossier » à la racine des captures** (`output/` ci-dessus). Lorsque le dossier sélectionné ne contient aucune image mais comporte des sous-dossiers, Chloros les explore automatiquement — les sous-dossiers de ce niveau ainsi que le dossier racine `.daq` sont tous récupérés en une seule fois.
+
+**Fonctionnement de l’importation des captures :**
+
+* Chaque capture est importée sous forme d’une **seule image**, regroupée par capture (et non pas une entrée par niveau). Les autres niveaux de la même capture apparaissent comme des modes d’affichage de cette image unique.
 * **Le traitement commence toujours à partir de l’image brute.** Les autres niveaux sont visibles, mais seul le niveau `raw` est jamais traité par le pipeline — le retraitement d’un produit déjà traité entraînerait une double application des corrections, ce que Chloros refuse. Une exportation réimportée ne peut jamais occuper l’emplacement « brut » d’une capture.
 * Un dossier de capture enregistré **sans** importation des données brutes s’affiche normalement, mais le traitement l’ignore et l’indique dans le journal. (L’option CLI `--input-level` permet de forcer un point d’entrée dans ce cas — voir [la référence CLI](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * À partir de la version 1.3.0, un dossier de captures peut également contenir un dossier `clamp_masks/` (masques par pixel pour les niveaux de radiance et de réflectance — voir [Formats d’images de sortie](../output-image-formats.md#clamp-masks)). Les masques ne sont pas des images de la scène, et Chloros les ignore lors de l’importation, où qu’ils se trouvent.

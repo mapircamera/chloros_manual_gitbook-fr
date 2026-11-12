@@ -44,7 +44,9 @@ Le panneau Paramètres du projet est organisé en sections, comme indiqué ci-de
 
 Contrôle la manière dont Chloros identifie les cibles d’étalonnage dans vos images.
 
-**Paramètres clés :*** **Surface minimale de l’échantillon d’étalonnage (px)**: seuil de taille pour la détection des cibles (par défaut :**25**, plage 0–10 000)
+**Paramètres clés :**
+
+* **Surface minimale de l’échantillon d’étalonnage (px)**: seuil de taille pour la détection des cibles (par défaut :**25**, plage 0–10 000)
 * **Regroupement minimal des cibles (0-100)**: seuil de similarité pour le regroupement des zones cibles (par défaut :**60**)**Quand ajuster :**
 
 * Augmentez la surface d’échantillonnage en cas de fausses détections
@@ -59,19 +61,26 @@ Ces paramètres sont grisés lorsque l’option **« Étalonnage de la réflecta
 
 Options principales de traitement d’image et d’étalonnage.
 
-**Paramètres clés :*** **Correction du vignetage** : compense l'assombrissement des bords dû à l'objectif ✅ Recommandé
+**Paramètres clés :**
+
+* **Correction du vignetage** : compense l'assombrissement des bords dû à l'objectif ✅ Recommandé
 * **Étalonnage de la réflectance / balance des blancs** : étalonne les images à l'aide des cibles détectées (Survey3) et/ou des données du capteur de lumière DAQ (LATTICE) ✅ Recommandé
 * **Méthode de débayérisation** : algorithme permettant de convertir le format RAW en multispectral à 3 canaux
 * **Intervalle minimal de recalibrage**: durée minimale en secondes entre deux utilisations d’une cible de calibrage (par défaut :**0** = toutes les cibles, plage 0–3 600)**Produits de secours non calibrés :**Lorsqu’une image ne peut pas être calibrée en réflectance (aucune cible disponible ou calibration désactivée), elle est exportée sous la forme de l’un des deux produits de secours —**il n’existe qu’un seul produit de la paire par série**, choisi par le commutateur de correction de vignettage :
 
-* **Exporter la réponse du capteur**: écrit `Sensor_Response_Images` — utilisé lorsque la correction de vignettage est**désactivée*** **Exporter avec correction de vignettage**: écrit `Vignette_Corrected_Images` — utilisé lorsque la correction de vignettage est**activée**La case à cocher qui n’est pas sélectionnée est grisée. Décocher celle qui est active empêche complètement l’écriture de ce fichier.**Produits d’exportation LATTICE** (affichés pour chaque projet ; ils s’appliquent aux captures LATTICE) :
+* **Exporter la réponse du capteur**: écrit `Sensor_Response_Images` — utilisé lorsque la correction de vignettage est**désactivée**
+* **Exporter avec correction de vignettage**: écrit `Vignette_Corrected_Images` — utilisé lorsque la correction de vignettage est**activée**La case à cocher qui n’est pas sélectionnée est grisée. Décocher celle qui est active empêche complètement l’écriture de ce fichier.**Produits d’exportation LATTICE** (affichés pour chaque projet ; ils s’appliquent aux captures LATTICE) :
 
 * **Exporter l’image débayérisée** : l'image débayérisée linéaire (`Debayered_Images`) : le décalage de noir du pack d'étalonnage est supprimé, puis l'image est débayérisée, sans champ plat ni démixage — il s'agit du même fichier qu'une capture enregistre à son niveau débayérisé — dans l'orientation native du capteur. S'applique aux modules RGB et multispectraux.
 * **Exporter l'aperçu** : l'aperçu à l'écran (`Preview_Images`). RGB = balance des blancs (illuminant DAQ si disponible, sinon « gray-world ») + gamma ; multispectral = étirement en fausses couleurs.
 * **Exportation de la radiance** : radiance spectrale de type float32 (`Radiance_Images`, W/m²/sr/nm). Modules multispectraux uniquement — ne s’applique pas aux masters RGB.
 * **Exporter la réflectance** : réflectance de type uint16 (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1,0) lorsqu’une mesure descendante `.daq` ou une cible dans l’image recouvre l’image. Modules multispectraux uniquement.
 
-Ces quatre options sont **activées par défaut**: une image brute LATTICE importée est répartie vers tous les produits activés et applicables en un seul passage de traitement. La case à cocher**Exporter la réflectance** est grisée lorsque l’étalonnage de la réflectance est désactivé. Les paramètres rendus inactifs par un commutateur parent sont toujours grisés et accompagnés d’une info-bulle indiquant le commutateur à modifier.**Paramètres avancés :*** **Décalage horaire du capteur de lumière** : nombre d’heures par rapport à l’UTC pour la synchronisation horaire du capteur de lumière (par défaut : 0, plage de −12 à +12)
+Ces quatre options sont **activées par défaut**: une image brute LATTICE importée est répartie vers tous les produits activés et applicables en un seul passage de traitement. La case à cocher**Exporter la réflectance** est grisée lorsque l’étalonnage de la réflectance est désactivé. Les paramètres rendus inactifs par un commutateur parent sont toujours grisés et accompagnés d’une info-bulle indiquant le commutateur à modifier.
+
+**Paramètres avancés :**
+
+* **Décalage horaire du capteur de lumière** : nombre d’heures par rapport à l’UTC pour la synchronisation horaire du capteur de lumière (par défaut : 0, plage de −12 à +12)
 * **Appliquer les corrections PPK** : utilise les données GPS/broches d’exposition issues des fichiers `.daq` (par défaut : désactivé)
 * **Broches d’exposition 1/2** : attribue les caméras aux broches d’exposition pour les configurations à deux caméras
 
@@ -105,7 +114,9 @@ Configurez les indices de végétation à calculer et à exporter. Le menu déro
 3. Configurez les paramètres de visualisation (couleurs de la table de conversion [LUT], plages de valeurs)
 4. Ajoutez plusieurs indices selon vos besoins
 
-**Indices courants :*** **NDVI** : état général de la végétation (le plus courant)
+**Indices courants :**
+
+* **NDVI** : état général de la végétation (le plus courant)
 * **NDRE** : Détection précoce du stress avec RedEdge
 * **GNDVI** : sensible à la concentration en chlorophylle
 * **OSAVI** : fonctionne bien avec un sol visible
@@ -215,7 +226,11 @@ Si vous utilisez des enregistreurs DAQ MAPIR équipés d’un GPS pour une géol
 3. Définissez le**« Décalage horaire du capteur de lumière »** si nécessaire (par défaut : 0 pour UTC)
 4. Attribuez les caméras aux broches d’exposition :
    * **Caméra unique** : attribuée automatiquement à la broche 1
-   * **Deux caméras** : attribuez manuellement chaque caméra à la broche correspondante**Attribution des broches d’exposition :*** **Broche d’exposition 1** : sélectionnez le modèle de caméra dans la liste déroulante
+   * **Deux caméras** : attribuez manuellement chaque caméra à la broche correspondante
+
+**Attribution des broches d’exposition :**
+
+* **Broche d’exposition 1** : sélectionnez le modèle de caméra dans la liste déroulante
 * **Broche d’exposition 2** : sélectionnez la deuxième caméra ou « Ne pas utiliser »
 * Une même caméra ne peut pas être attribuée aux deux broches
 

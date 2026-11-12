@@ -32,7 +32,9 @@ Si **aucune** image n’est cochée, Chloros passe en mode de balayage de toutes
 
 Parcourez vos images importées dans le navigateur de fichiers et identifiez celles qui contiennent des cibles d’étalonnage.
 
-**Scénarios courants :*** **Cible pré-capture** : capturée avant le début de la session
+**Scénarios courants :**
+
+* **Cible pré-capture** : capturée avant le début de la session
 * **Cible post-capture** : capturée après la fin de la session
 * **Cibles sur le terrain** : cibles placées dans la zone de capture
 * **Cibles multiples** : 2 à 3 images de cibles par session (recommandé)
@@ -140,9 +142,17 @@ Utilisez cette colonne pour vérifier que vous avez marqué des cibles pour chaq
 
 ### Réglage de la sensibilité de détection
 
-Si Chloros ne détecte pas correctement vos cibles, modifiez ces paramètres dans [Paramètres du projet](adjusting-project-settings.md) :**Surface minimale de l'échantillon d'étalonnage (px) :*** **Par défaut** : 25 pixels
+Si Chloros ne détecte pas correctement vos cibles, modifiez ces paramètres dans [Paramètres du projet](adjusting-project-settings.md) :
+
+**Surface minimale de l'échantillon d'étalonnage (px) :**
+
+* **Par défaut** : 25 pixels
 * **Augmentez** cette valeur si vous obtenez de fausses détections sur de petits artefacts
-* **Réduisez** cette valeur si les cibles ne sont pas détectées**Regroupement minimal des cibles (0-100) :*** **Par défaut** : 60
+* **Réduisez** cette valeur si les cibles ne sont pas détectées
+
+**Regroupement minimal des cibles (0-100) :**
+
+* **Par défaut** : 60
 * **Augmentez** cette valeur si les cibles sont fractionnées en plusieurs détections
 * **Réduisez** cette valeur si les cibles présentant des variations de couleur ne sont pas entièrement détectées
 

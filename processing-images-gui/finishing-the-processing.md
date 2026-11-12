@@ -82,7 +82,9 @@ Ne comptez pas à l’aide d’une formule : le nombre de fichiers de sortie dé
 
 ### Aperçu dans des visionneuses d'images externes
 
-**Visionneuses recommandées :*** **QGIS** - Logiciel SIG gratuit (idéal pour l'analyse multispectrale géoréférencée)
+**Visionneuses recommandées :**
+
+* **QGIS** - Logiciel SIG gratuit (idéal pour l'analyse multispectrale géoréférencée)
 * **IrfanView** - Visionneuse d’images rapide et légère (prend en charge le format TIFF)
 * **Adobe Photoshop** - Édition professionnelle (prise en charge du format TIFF)
 * **GIMP** - Alternative gratuite à Photoshop
@@ -224,7 +226,9 @@ Pour signaler un problème directement à MAPIR, utilisez l’icône en forme d�
 
 ### Problème : les valeurs NDVI semblent erronées
 
-**Plages NDVI attendues :*** **Eau, roches, sol** : -0,1 à 0,2
+**Plages NDVI attendues :**
+
+* **Eau, roches, sol** : -0,1 à 0,2
 * **Végétation clairsemée/en mauvaise santé** : 0,2 à 0,4
 * **Végétation modérée** : 0,4 à 0,6
 * **Végétation saine et dense** : 0,6 à 0,9**Si les valeurs se situent en dehors de ces plages :**
@@ -278,12 +282,18 @@ Pour signaler un problème directement à MAPIR, utilisez l’icône en forme d�
 
 ### Stratégie de sauvegarde recommandée
 
-**Éléments à sauvegarder :*** ✅ **Images RAW/JPG d’origine ou captures brutes LATTICE** - À archiver sur un disque dur séparé ou dans le cloud ; les données brutes constituent la source du pipeline et tout le reste peut être régénéré à partir de celles-ci
+**Éléments à sauvegarder :**
+
+* ✅ **Images RAW/JPG d’origine ou captures brutes LATTICE** - À archiver sur un disque dur séparé ou dans le cloud ; les données brutes constituent la source du pipeline et tout le reste peut être régénéré à partir de celles-ci
 * ✅ **Fichiers du capteur de lumière `.daq` / `.csv`** – Nécessaires pour recalculer la réflectance ultérieurement
 * ✅ **Résultats traités** – Conserver les images calibrées et les indices
 * ✅ **Dossier du projet** (`project.json` et fichiers associés) - Contient tous les paramètres nécessaires à un nouveau traitement si besoin
 * ✅ **Journal de débogage** - Documente les détails du traitement
-* ✅ **Images cibles d’étalonnage** - Pour la vérification et le nouveau traitement**Recommandations de stockage :*** **Sauvegarde immédiate** : disque dur externe
+* ✅ **Images cibles d’étalonnage** - Pour la vérification et le nouveau traitement
+
+**Recommandations de stockage :**
+
+* **Sauvegarde immédiate** : disque dur externe
 * **Archivage à long terme** : stockage dans le cloud (Google Drive, Dropbox, etc.)
 * **Données critiques** : conserver 2 à 3 copies à des emplacements différents***
 

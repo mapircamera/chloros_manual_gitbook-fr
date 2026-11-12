@@ -258,10 +258,15 @@ Chloros vérifie la présence de mises à jour, vous informe lorsqu'une nouvelle
 
 **Date de sortie : 10 février 2026**
 
-**Nouvelles fonctionnalités*** **Méthode de débayérisation « Texture Aware » \[Chloros+ uniquement] -** « Texture Aware » utilise un débayériseur de haute qualité sensible aux contours, associé à un modèle de débruitage basé sur l’IA/ML qui élimine la quasi-totalité du bruit de débayérisation.
-* **Prise en charge des cibles d’étalonnage T4P*** **Traitement GPU plus rapide d’Chloros+, meilleure gestion de la mémoire**
+**Nouvelles fonctionnalités**
 
-**Corrections de bogues*** Interface utilisateur (GUI) entièrement nouvelle, qui devrait désormais fonctionner sur tous les ordinateurs Windows.
+* **Méthode de débayérisation « Texture Aware » \[Chloros+ uniquement] -** « Texture Aware » utilise un débayériseur de haute qualité sensible aux contours, associé à un modèle de débruitage basé sur l’IA/ML qui élimine la quasi-totalité du bruit de débayérisation.
+* **Prise en charge des cibles d’étalonnage T4P**
+* **Traitement GPU plus rapide d’Chloros+, meilleure gestion de la mémoire**
+
+**Corrections de bogues**
+
+* Interface utilisateur (GUI) entièrement nouvelle, qui devrait désormais fonctionner sur tous les ordinateurs Windows.
 
 </details>
 
@@ -271,14 +276,18 @@ Chloros vérifie la présence de mises à jour, vous informe lorsqu'une nouvelle
 
 **Date de sortie : 5 janvier 2026**
 
-**Nouvelles fonctionnalités*** **Bouton de basculement image/métadonnées** : ajout d’un bouton dans l’explorateur de fichiers permettant d’afficher les métadonnées de l’image sélectionnée sous forme de tableau plutôt que dans la grille d’images
+**Nouvelles fonctionnalités**
+
+* **Bouton de basculement image/métadonnées** : ajout d’un bouton dans l’explorateur de fichiers permettant d’afficher les métadonnées de l’image sélectionnée sous forme de tableau plutôt que dans la grille d’images
 * **Curseur de zoom de la grille d’images** : nouveau curseur dans l’interface utilisateur pour ajuster la taille des vignettes (prend également en charge la combinaison CTRL + molette de souris)
 * **Boutons d’exportation de la grille d’images** : boutons situés dans la rangée supérieure permettant de basculer les vignettes du format JPG vers des exportations traitées (Cibles, Réflectance, Indice, LUT)
 * **Onglet « Carte »** : nouvelle carte 2D interactive affichant les marqueurs de localisation GPS des images
   * Prise en charge de Google Maps et des tuiles cartographiques ESRI (sélection automatique du meilleur service de tuiles en fonction de la disponibilité des niveaux de zoom)
   * Aperçu des vignettes au survol de la souris sur les marqueurs de la carte
 
-**Corrections de bogues*** Amélioration de la prise en charge de l'installation d'Chloros sur des ordinateurs dont la langue n'est pas l'anglais
+**Corrections de bogues**
+
+* Amélioration de la prise en charge de l'installation d'Chloros sur des ordinateurs dont la langue n'est pas l'anglais
 
 </details>
 
@@ -288,13 +297,21 @@ Chloros vérifie la présence de mises à jour, vous informe lorsqu'une nouvelle
 
 **Date de sortie : 20 décembre 2025**
 
-**Nouvelles fonctionnalités*** Lancement initial
+**Nouvelles fonctionnalités**
 
-**Améliorations*** Lancement initial
+* Lancement initial
 
-**Corrections de bogues*** Lancement initial
+**Améliorations**
 
-**Problèmes connus*** Lancement initial
+* Lancement initial
+
+**Corrections de bogues**
+
+* Lancement initial
+
+**Problèmes connus**
+
+* Lancement initial
 
 </details>
 

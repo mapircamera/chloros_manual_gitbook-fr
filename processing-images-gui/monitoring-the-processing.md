@@ -28,7 +28,11 @@ Pour les utilisateurs disposant d’une licence Chloros+ :
 1.**Détection** – Recherche des cibles d’étalonnage
 2. **Analyse** – Examen des images et préparation du pipeline
 3. **Calibrage** - Application des corrections de vignettage et de réflectance
-4. **Exportation** - Enregistrement des fichiers traités**Fonctionnalités interactives :*** **Passez la souris sur** la barre de progression pour afficher le panneau détaillé en 4 étapes
+4. **Exportation** - Enregistrement des fichiers traités
+
+**Fonctionnalités interactives :**
+
+* **Passez la souris sur** la barre de progression pour afficher le panneau détaillé en 4 étapes
 * **Cliquez sur** la barre de progression pour figer/épingler le panneau détaillé
 * **Cliquez à nouveau** pour le débloquer ; il se masquera automatiquement lorsque vous retirerez la souris
 * Chaque étape affiche sa progression individuelle (0-100 %)
@@ -92,7 +96,9 @@ Pour les utilisateurs disposant d’une licence Chloros+ :
 
 ### Étape 3 : Étalonnage
 
-**Ce qui se passe :*** **Débayérisation** : conversion du motif RAW de Bayer en 3 canaux (étape ignorée pour les modules mono LATTICE, avec une note)
+**Ce qui se passe :**
+
+* **Débayérisation** : conversion du motif RAW de Bayer en 3 canaux (étape ignorée pour les modules mono LATTICE, avec une note)
 * **Correction du vignetage** : suppression de l’assombrissement aux bords de l’objectif
 * **Calibrage de la réflectance** : normalisation par rapport aux valeurs cibles et/ou au flux descendant du système d’acquisition de données (DAQ)
 * **Calcul des indices** : calcul des indices multispectraux
@@ -104,7 +110,9 @@ Pour les utilisateurs disposant d’une licence Chloros+ :
 * Image en cours de traitement
 * Images traitées / Nombre total d’images
 
-**Comportement du traitement :*** **Mode libre** : traite une image à la fois, de manière séquentielle
+**Comportement du traitement :**
+
+* **Mode libre** : traite une image à la fois, de manière séquentielle
 * **Mode Chloros+** : exécute un pool de workers adaptatif au matériel — 1 à 4 workers simultanés sur les systèmes GPU (en fonction de la VRAM), un worker par cœur physique (moins un) sur les systèmes exclusivement CPU. Voir [Adaptation dynamique du calcul](../processing-architecture/dynamic-compute-adaptation.md)
 * **Accélération GPU** : accélère considérablement cette étape**Points à surveiller :**
 

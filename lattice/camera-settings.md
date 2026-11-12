@@ -206,7 +206,7 @@ Tout ce qui se trouve dans cette section concerne **uniquement l’affichage**�
 * **Linéaire** — signal sombre + champ plat + balance des blancs ; pas de matrice de couleur, pas de gamma.
 * **Naturel** *(par défaut)* — linéaire plus la matrice de correction des couleurs mesurée et une courbe de tonalité adaptative à la scène.
 * **Amélioré**— Naturel plus la vibrance et le contraste local CLAHE. Le surcoût s’applique**uniquement à l’aperçu en direct** — les captures enregistrées bénéficient toujours du traitement complet, quel que soit le profil.
-* ****Température personnalisée** — « Naturel » avec la balance des blancs fixée à la valeur en Kelvin de votre choix.
+* **Température personnalisée** — « Naturel » avec la balance des blancs fixée à la valeur en Kelvin de votre choix.
 
 {% hint style="warning" %}
 Pour les modes « Naturel », « Amélioré » et « Température personnalisée », le volet affiche une remarque sur la tonalité : les images sont éclaircies en fonction de leur propre scène, de sorte que les images *d'affichage* enregistrées ne sont pas comparables d'une image à l'autre. **Exportez la radiance ou la réflectance pour les mesures.**
@@ -403,7 +403,7 @@ Référence rapide indiquant où se trouvent les paramètres lorsqu’une camér
 Autres comportements transversaux :
 
 * **Affichage combiné ou séparé** : le choix s’effectue lors de la connexion du réseau de caméras : combiné = une seule mosaïque composite alignée (les flux des caméras ne sont visibles que via la vue fractionnée) ; séparé = chaque caméra affiche sa propre mosaïque synchronisée. Une caméra n’affiche jamais à la fois un flux autonome et une mosaïque du réseau.
-* ****Reconnexion automatique** : l’ouverture d’un projet enregistré restaure ses caméras et ses matrices et réapplique tous les paramètres enregistrés au backend avant la reprise des flux.
+* **Reconnexion automatique** : l’ouverture d’un projet enregistré restaure ses caméras et ses matrices et réapplique tous les paramètres enregistrés au backend avant la reprise des flux.
 * **Filtrage de la capture** : les caméras masquées ou mises en pause sont exclues de la fonction « Capture All » ; une matrice n’est entièrement bloquée que lorsque TOUS ses membres sont masqués ou mis en pause. Voir [Paramètres et modes de capture](capture.md).
 
 ## Persistance des paramètres

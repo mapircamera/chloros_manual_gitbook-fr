@@ -45,7 +45,11 @@ Un thread de calcul dépendant du processeur. Lors d’une exécution Survey3 ou
 
 ### Fil 3 : Traitement (GPU)
 
-**Objectif**: appliquer les corrections et calculer les indices de végétation.**Il s’agit du thread le plus gourmand en ressources de calcul.*** **Débayérisation** : convertit les données RAW Bayer en images multicanaux
+**Objectif**: appliquer les corrections et calculer les indices de végétation.
+
+**Il s’agit du thread le plus gourmand en ressources de calcul.**
+
+* **Débayérisation** : convertit les données RAW Bayer en images multicanaux
   * Standard (rapide, qualité moyenne) — par défaut, `--debayer standard`
   * Texture Aware (lent, qualité maximale) — Chloros+ uniquement, `--debayer texture-aware`, utilise un modèle de débruitage basé sur l’IA/ML
   * Les captures LATTICE mono (M3M) sont monobandes : les étapes de dématriçage et de balance des blancs sont ignorées pour celles-ci (avec un message de journal d’une ligne), tandis que toutes les images M3C/Bayer du même cycle en bénéficient toujours

@@ -135,8 +135,8 @@ Il s’agit de la même structure que celle que les fichiers `chloros-cli lattic
 
 Les images brutes capturées ainsi que le fichier `.daq` enregistré constituent tout ce dont le pipeline de traitement a besoin — c’est pourquoi Fastest Capture peut être utilisé en toute sécurité pour un travail réel.
 
-* ****Interface graphique** : ajoutez le dossier de captures à un projet ([Ajout de fichiers à un projet](../processing-images-gui/adding-files-to-a-project.md)) et procédez au traitement comme d’habitude.
-* ****CLI**: indiquez à `process` l’**emplacement racine des captures** :
+* **Interface graphique** : ajoutez le dossier de captures à un projet ([Ajout de fichiers à un projet](../processing-images-gui/adding-files-to-a-project.md)) et procédez au traitement comme d’habitude.
+* **CLI**: indiquez à `process` l’**emplacement racine des captures** :
 
 ```bash
 chloros-cli process "C:/ChlorosProjects/MyField/captures"
